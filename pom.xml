@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!--
+
+      Licensed to the Apache Software Foundation (ASF) under one or more
+      contributor license agreements.  See the NOTICE file distributed with
+      this work for additional information regarding copyright ownership.
+      The ASF licenses this file to You under the Apache License, Version 2.0
+      (the "License"); you may not use this file except in compliance with
+      the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+  -->
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>4</version>
+  </parent>
+
+  <groupId>org.apache.servicemix.features</groupId>
+  <artifactId>features</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Apache ServiceMix Features</name>
+
+  <modules>
+    <module>camel</module>
+  </modules>
+
+  <scm>
+      <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</connection>
+      <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</developerConnection>
+      <url>http://svn.apache.org/viewvc/servicemix/smx4/features/trunk/</url>
+
+  </scm>
+  <issueManagement>
+      <system>jira</system>
+      <url>http://issues.apache.org/activemq/browse/SM</url>
+  </issueManagement>
+
+  <prerequisites>
+      <maven>2.0.7</maven>
+  </prerequisites>
+
+  <properties>
+      <camel.version>1.3-SNAPSHOT</camel.version>
+      <cxf.version>2.0.3-incubator</cxf.version>
+      <felix.plugin.version>1.1.0-r605854</felix.plugin.version>
+      <jaxb.api.version>2.0</jaxb.api.version>
+      <jaxb.impl.version>2.0.3</jaxb.impl.version>
+      <junit.version>4.4</junit.version>
+      <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
+      <spring.version>2.5</spring.version>
+  </properties>
+
+   <repositories>
+       <!-- Default repository -->
+       <repository>
+           <id>central</id>
+           <name>Default maven repo</name>
+           <url>http://repo1.maven.org/maven2</url>
+       </repository>
+       <!-- ServiceMix repo -->
+       <repository>
+           <id>servicemix</id>
+           <name>ServiceMix Repository</name>
+           <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+       </repository>
+   </repositories>
+
+  <pluginRepositories>
+      <!-- ServiceMix repo -->
+      <pluginRepository>
+          <id>servicemix</id>
+          <name>ServiceMix Repository</name>
+          <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+      </pluginRepository>
+  </pluginRepositories>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.mina</groupId>
+          <artifactId>mina-core</artifactId>
+          <version>${mina.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.mina</groupId>
+          <artifactId>mina-filter-ssl</artifactId>
+          <version>${mina.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>${junit.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>jline</groupId>
+          <artifactId>jline</artifactId>
+          <version>${jline.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>${commons.logging.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+      <defaultGoal>install</defaultGoal>
+
+      <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-eclipse-plugin</artifactId>
+              <version>2.4</version>
+              <configuration>
+                <outputDirectory>${basedir}/eclipse-classes</outputDirectory>
+                <downloadSources>true</downloadSources>
+                <downloadJavadocs>true</downloadJavadocs>
+              </configuration>
+            </plugin>              
+              <plugin>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>maven-bundle-plugin</artifactId>
+                  <version>${felix.plugin.version}</version>
+                  <extensions>true</extensions>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>2.0.2</version>
+                  <configuration>
+                      <source>1.5</source>
+                      <target>1.5</target>
+                      <maxmem>256M</maxmem>
+                      <fork>${compiler.fork}</fork>
+                  </configuration>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-idea-plugin</artifactId>
+                  <version>2.1</version>
+                  <configuration>
+                      <downloadSources>true</downloadSources>
+                      <downloadJavadocs>true</downloadJavadocs>
+                  </configuration>
+              </plugin>
+          </plugins>
+      </pluginManagement>
+      <plugins>
+          <plugin>
+              <artifactId>maven-remote-resources-plugin</artifactId>
+              <version>1.0-beta-2</version>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>process</goal>
+                      </goals>
+                      <configuration>
+                          <resourceBundles>
+                              <resourceBundle>org.apache:apache-jar-resource-bundle:1.3</resourceBundle>
+                          </resourceBundles>
+                          <properties>
+                              <addLicense>true</addLicense>
+                              <projectName>Apache ServiceMix</projectName>
+                          </properties>
+                      </configuration>
+                  </execution>
+              </executions>
+          </plugin>
+      </plugins>
+  </build>
+
+  <reporting>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-javadoc-plugin</artifactId>
+              <version>2.3</version>
+          </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jxr-plugin</artifactId>
+              <version>2.0</version>
+          </plugin>
+      </plugins>
+  </reporting>
+
+  <profiles>
+      <profile>
+          <id>fastinstall</id>
+          <properties>
+              <maven.test.skip>true</maven.test.skip>
+          </properties>
+      </profile>
+      <profile>
+          <id>rat</id>
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <artifactId>rat-maven-plugin</artifactId>
+                      <version>1.0-alpha-3</version>
+                      <executions>
+                          <execution>
+                              <phase>verify</phase>
+                              <goals>
+                                  <goal>check</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                      <configuration>
+                          <reportFile>${project.build.directory}/${project.build.finalName}.rat</reportFile>
+                          <excludes>
+                              <exclude>**/target/**/*</exclude>
+                              <!-- IDEA files -->
+                              <exclude>**/*.iml</exclude>
+                              <exclude>**/*.ipr</exclude>
+                              <exclude>**/*.iws</exclude>
+                              <!-- Eclipse files -->
+                              <exclude>**/.*</exclude>
+                              <exclude>**/eclipse-classes/**/*</exclude>
+                          </excludes>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>release</id>
+          <build>
+              <plugins>
+                  <!-- We want to deploy the artifact to a staging location for perusal -->
+                  <plugin>
+                      <inherited>true</inherited>
+                      <artifactId>maven-deploy-plugin</artifactId>
+                      <version>2.3</version>
+                      <configuration>
+                          <altDeploymentRepository>${deploy.altRepository}</altDeploymentRepository>
+                          <updateReleaseInfo>true</updateReleaseInfo>
+                      </configuration>
+                  </plugin>
+                  <!-- We want to sign the artifact, the POM, and all attached artifacts -->
+                  <plugin>
+                      <artifactId>maven-gpg-plugin</artifactId>
+                      <version>1.0-alpha-4</version>
+                      <executions>
+                          <execution>
+                              <goals>
+                                  <goal>sign</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>setup.eclipse</id>
+          <modules>
+              <module>assembly</module>
+          </modules>
+          <properties>
+              <eclipse.workspace.dir>${basedir}/../workspace</eclipse.workspace.dir>
+          </properties>
+          <build>
+              <defaultGoal>eclipse:eclipse</defaultGoal>
+              <plugins>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-eclipse-plugin</artifactId>
+                      <inherited>false</inherited>
+                      <executions>
+                          <execution>
+                              <id>setup.eclipse.workspace</id>
+                              <phase>process-test-sources</phase>
+                              <goals>
+                                  <goal>add-maven-repo</goal>
+                              </goals>
+                              <configuration>
+                                  <workspace>${eclipse.workspace.dir}</workspace>
+                              </configuration>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>deploy</id>
+          <build>
+              <defaultGoal>deploy</defaultGoal>
+              <plugins>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-source-plugin</artifactId>
+                      <version>2.0.4</version>
+                      <executions>
+                          <execution>
+                              <id>attach-sources</id>
+                              <goals>
+                                  <goal>jar</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-javadoc-plugin</artifactId>
+                      <executions>
+                          <execution>
+                              <id>attach-javadocs</id>
+                              <goals>
+                                  <goal>jar</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+  </profiles>
+
+</project>

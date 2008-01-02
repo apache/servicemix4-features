@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util
+  http://www.springframework.org/schema/util/spring-util.xsd
+  http://www.springframework.org/schema/osgi
+  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+  http://www.springframework.org/schema/osgi-compendium
+  http://www.springframework.org/schema/osgi/spring-osgi-compendium.xsd
+  ">
+	
+	<bean id="activemqBroker" class="org.apache.activemq.xbean.BrokerFactoryBean">
+	    <property name="config" value="file:${servicemix.home}/conf/activemq.xml" />
+	    <property name="start" value="${brokerStart}" />
+	</bean>
+	
+	<bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${brokerURL}" />
+	</bean>
+	
+  	<bean id="pooledConnectionFactory" class="org.jencks.amqpool.JcaPooledConnectionFactory">
+    	<constructor-arg>
+    		<ref bean="activemqConnectionFactory" />
+    	</constructor-arg>
+    	<property name="maxConnections" value="${maxConnections}" />
+    	<property name="transactionManager">
+    		<ref bean="brokerTransaction" />
+    	</property>
+  	</bean>
+  	
+  	<bean id="resourceManager" class="org.apache.servicemix.activemq.ActiveMQResourceManager" init-method="recoverResource">
+  		<property name="transactionManager">
+  			<ref bean="brokerTransaction"/>
+  		</property>
+  		<property name="connectionFactory">
+  			<ref bean="activemqConnectionFactory" />
+  		</property>
+  		<property name="resourceName" value="${resourceName}" />
+  	</bean>
+	
+	<osgi:reference id="brokerTransaction" interface="javax.transaction.TransactionManager"
+		  cardinality="0..1"/>
+	
+    <osgi:service ref="pooledConnectionFactory">
+        <osgi:interfaces>
+            <value>javax.jms.ConnectionFactory</value>
+        </osgi:interfaces>
+    </osgi:service>
+
+    <osgix:property-placeholder persistent-id="org.apache.servicemix.activemq">
+        <osgix:default-properties>
+            <prop key="brokerURL">tcp://localhost:61616</prop>
+            <prop key="maxConnections">10</prop>
+            <prop key="brokerStart">true</prop>
+            <prop key="resourceName">activeMQResource</prop>
+        </osgix:default-properties>
+    </osgix:property-placeholder>
+
+</beans>
