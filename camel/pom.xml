@@ -35,6 +35,7 @@
 
     <modules>
         <module>bundles</module>
+        <module>servicemix-camel</module>
     </modules>
 
 </project>

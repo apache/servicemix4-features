@@ -81,7 +81,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jaxb-impl-${jaxb.impl.version}</artifactId>
             <version>${pom.version}</version>
@@ -96,7 +96,7 @@
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.cxf</artifactId>
             <version>${cxf.version}-${pom.version}</version>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>

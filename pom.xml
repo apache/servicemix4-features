@@ -60,7 +60,9 @@
       <jaxb.impl.version>2.0.3</jaxb.impl.version>
       <junit.version>4.4</junit.version>
       <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
+      <commons.logging.version>1.1</commons.logging.version>
       <spring.version>2.5</spring.version>
+      <log4j.version>1.2.13</log4j.version>
   </properties>
 
    <repositories>
