@@ -25,12 +25,17 @@ import javax.xml.ws.BindingProvider;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.cxf.transport.CamelTransportFactory;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.cxf.Bus;
+import org.apache.cxf.BusFactory;
+import org.apache.cxf.bus.spring.SpringBusFactory;
 import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.message.Message;
+import org.apache.cxf.transport.ConduitInitiatorManager;
 import org.apache.hello_world_soap_http.BadRecordLitFault;
 import org.apache.hello_world_soap_http.Greeter;
 import org.apache.hello_world_soap_http.GreeterImpl;
@@ -41,7 +46,7 @@ import org.apache.servicemix.nmr.core.ServiceMix;
 
 
 public class ExceptionHandleTest extends ContextTestSupport {
-	protected static final String ROUTER_ADDRESS = "http://localhost:9000/SoapContext/SoapPort";
+	protected static final String ROUTER_ADDRESS = "camel://jetty:http://localhost:9000/SoapContext/SoapPort";
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.hello_world_soap_http.Greeter";
     private static final String WSDL_LOCATION = "wsdlURL=/wsdl/hello_world.wsdl";
@@ -93,7 +98,10 @@ public class ExceptionHandleTest extends ContextTestSupport {
     
     protected CamelContext createCamelContext() throws Exception {
     	camelContext = new DefaultCamelContext();
-    	
+    	Bus bus = BusFactory.getDefaultBus();
+    	CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
+        	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
+    	camelTransportFactory.setCamelContext(camelContext);
     	smxComponent = new ServiceMixComponent();
     	nmr = new ServiceMix();
     	((ServiceMix)nmr).init();
@@ -130,9 +138,9 @@ public class ExceptionHandleTest extends ContextTestSupport {
             BindingProvider bp = (BindingProvider)greeter;
             Map<String, Object> responseContext = bp.getResponseContext();
             String contentType = (String) responseContext.get(Message.CONTENT_TYPE);
-            assertEquals("text/xml; charset=utf-8", contentType);
+            assertEquals("text/xml", contentType);
             Integer responseCode = (Integer) responseContext.get(Message.RESPONSE_CODE);
-            assertEquals(500, responseCode.intValue());                
+            assertEquals(200, responseCode.intValue());                
             assertNotNull(brlf.getFaultInfo());
             assertEquals("BadRecordLitFault", brlf.getFaultInfo());
         }
@@ -149,5 +157,12 @@ public class ExceptionHandleTest extends ContextTestSupport {
         ClientProxy.getClient(greeter).getInInterceptors().add(new LoggingInInterceptor());
         ClientProxy.getClient(greeter).getOutInterceptors().add(new LoggingOutInterceptor());
         greeter.greetMeOneWay("test oneway");
+    }
+    
+    public void testGetTransportFactoryFromBus() throws Exception {
+    	Bus bus = BusFactory.getDefaultBus();
+    	
+    	assertNotNull(bus.getExtension(ConduitInitiatorManager.class)
+        	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID));
     }
 }

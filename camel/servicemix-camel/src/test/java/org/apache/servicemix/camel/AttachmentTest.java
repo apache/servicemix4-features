@@ -117,7 +117,7 @@ public class AttachmentTest extends ContextTestSupport {
     public void testAttachment() throws Exception {  
     	TestMtom mtomPort = createPort(MTOM_SERVICE, MTOM_PORT, TestMtom.class,
                 true);
-        try {
+    	try {
             
             Holder<DataHandler> param = new Holder<DataHandler>();
             

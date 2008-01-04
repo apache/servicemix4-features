@@ -62,6 +62,11 @@
             <artifactId>camel-cxf</artifactId>
             <version>${camel.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jetty</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -81,27 +86,30 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jaxb-impl-${jaxb.impl.version}</artifactId>
-            <version>${pom.version}</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jaxb-api-${jaxb.api.version}</artifactId>
-            <version>${pom.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.cxf</artifactId>
-            <version>${cxf.version}-${pom.version}</version>
-        </dependency-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
             <version>${cxf.version}</version>
-            <!--scope>test</scope-->
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-policy</artifactId>
+          <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-addr</artifactId>
+          <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-rm</artifactId>
+          <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-security</artifactId>
+          <version>${cxf.version}</version>
         </dependency>
     </dependencies>
 
@@ -116,6 +124,27 @@
                         <Export-Package>${pom.artifactId}</Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <forkMode>pertest</forkMode>
+                    <systemProperties>
+                        <property>
+                            <name>javax.xml.parsers.DocumentBuilderFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.datatype.DatatypeFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.parsers.SAXParserFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
             </plugin>
          </plugins>
