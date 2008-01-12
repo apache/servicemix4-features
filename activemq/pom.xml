@@ -27,15 +27,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.camel</groupId>
-    <artifactId>camel</artifactId>
+    <groupId>org.apache.servicemix.activemq</groupId>
+    <artifactId>activemq</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>ServiceMix Features :: Camel</name>
+    <name>ServiceMix Features :: ActiveMQ</name>
 
     <modules>
-        <module>bundles</module>
-        <module>servicemix-camel</module>
+        <module>activemq-osgi</module>
     </modules>
 
 </project>
