@@ -37,6 +37,7 @@
     <module>activemq</module>
     <module>camel</module>
     <module>war</module>
+    <module>assembly</module>
   </modules>
 
   <scm>
