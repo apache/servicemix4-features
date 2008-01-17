@@ -55,6 +55,11 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>org.apache.servicemix.preferences</artifactId>
+            <version>${servicemix.nmr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
             <artifactId>org.apache.servicemix.nmr.api</artifactId>
             <version>${servicemix.nmr.version}</version>
         </dependency>
@@ -180,7 +185,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2-beta-1</version>
+                <version>2.1</version>
                 <executions>
                     <execution>
                         <id>unix-bin</id>
@@ -247,7 +252,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.2-beta-1</version>
+                        <version>2.1</version>
                         <executions>
                             <execution>
                                 <id>unix-src</id>

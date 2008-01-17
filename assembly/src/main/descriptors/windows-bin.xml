@@ -96,6 +96,7 @@
             <scope>runtime</scope>
             <includes>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.woodstox-${woodstox.version}</include>
+                <include>org.apache.servicemix.nmr:org.apache.servicemix.preferences</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.api</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.core</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.spring</include>
