@@ -17,7 +17,7 @@
 package org.apache.servicemix.war.deployer.impl;
 
 import org.osgi.framework.*;
-import org.apache.servicemix.runtime.filemonitor.DeploymentListener;
+import org.apache.servicemix.kernel.filemonitor.DeploymentListener;
 
 public class Activator implements BundleActivator {
 	

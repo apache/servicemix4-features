@@ -35,15 +35,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.servicemix.runtime</groupId>
-            <artifactId>apache-servicemix-runtime</artifactId>
-            <version>${servicemix.runtime.version}</version>
+            <groupId>org.apache.servicemix.kernel</groupId>
+            <artifactId>apache-servicemix-kernel</artifactId>
+            <version>${servicemix.kernel.version}</version>
             <type>zip</type>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.runtime</groupId>
-            <artifactId>apache-servicemix-runtime</artifactId>
-            <version>${servicemix.runtime.version}</version>
+            <groupId>org.apache.servicemix.kernel</groupId>
+            <artifactId>apache-servicemix-kernel</artifactId>
+            <version>${servicemix.kernel.version}</version>
             <type>tar.gz</type>
         </dependency>
 
@@ -153,9 +153,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.servicemix.runtime</groupId>
-                                    <artifactId>apache-servicemix-runtime</artifactId>
-						            <version>${servicemix.runtime.version}</version>
+                                    <groupId>org.apache.servicemix.kernel</groupId>
+                                    <artifactId>apache-servicemix-kernel</artifactId>
+						            <version>${servicemix.kernel.version}</version>
                                     <type>tar.gz</type>
                                     <outputDirectory>target/dependencies/unix</outputDirectory>
                                 </artifactItem>
@@ -171,9 +171,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.servicemix.runtime</groupId>
-                                    <artifactId>apache-servicemix-runtime</artifactId>
-						            <version>${servicemix.runtime.version}</version>
+                                    <groupId>org.apache.servicemix.kernel</groupId>
+                                    <artifactId>apache-servicemix-kernel</artifactId>
+						            <version>${servicemix.kernel.version}</version>
                                     <type>zip</type>
                                     <outputDirectory>target/dependencies/win</outputDirectory>
                                 </artifactItem>

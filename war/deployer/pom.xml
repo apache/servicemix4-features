@@ -36,9 +36,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.servicemix.runtime</groupId>
-            <artifactId>org.apache.servicemix.runtime.filemonitor</artifactId>
-            <version>${servicemix.runtime.version}</version>
+            <groupId>org.apache.servicemix.kernel</groupId>
+            <artifactId>org.apache.servicemix.kernel.filemonitor</artifactId>
+            <version>${servicemix.kernel.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -58,6 +58,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>biz.aQute</groupId>
+            <artifactId>bndlib</artifactId>
+            <version>${bnd.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -71,6 +76,7 @@
                         <Bundle-Activator>${pom.artifactId}.impl.Activator</Bundle-Activator>
                         <Export-Package>${pom.artifactId}*</Export-Package>
                         <Import-Package>*</Import-Package>
+                        <Private-Package>aQute.*</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>

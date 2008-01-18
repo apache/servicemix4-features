@@ -24,7 +24,7 @@
 
         <!-- Expanded ServiceMix Runtime -->
         <fileSet>
-            <directory>target/dependencies/unix/apache-servicemix-runtime-${servicemix.runtime.version}</directory>
+            <directory>target/dependencies/unix/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
             <outputDirectory>/</outputDirectory>
         </fileSet>
 
