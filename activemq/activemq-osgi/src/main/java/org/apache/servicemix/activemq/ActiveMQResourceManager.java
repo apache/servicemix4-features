@@ -16,20 +16,15 @@
  */
 package org.apache.servicemix.activemq;
 
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
+
 import javax.jms.ConnectionFactory;
-import javax.jms.JMSException;
-import javax.jms.Session;
 import javax.transaction.TransactionManager;
 
-import org.apache.activemq.ActiveMQConnection;
-import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.ActiveMQSession;
-import org.apache.activemq.util.IOExceptionSupport;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.geronimo.transaction.manager.NamedXAResource;
-import org.apache.geronimo.transaction.manager.RecoverableTransactionManager;
-import org.apache.geronimo.transaction.manager.WrapperNamedXAResource;
 
 
 public class ActiveMQResourceManager {
@@ -42,31 +37,27 @@ public class ActiveMQResourceManager {
     
     private ConnectionFactory connectionFactory;
     
-    public void recoverResource() {        
-        if (isRecoverable()) {
-            try {
-                ActiveMQConnectionFactory connFactory = (ActiveMQConnectionFactory)connectionFactory;
-                ActiveMQConnection activeConn = (ActiveMQConnection)connFactory.createConnection();
-                ActiveMQSession session = (ActiveMQSession)activeConn.createSession(true, Session.SESSION_TRANSACTED);
-                NamedXAResource namedXaResource = new WrapperNamedXAResource(session.getTransactionContext(), resourceName);
-                
-                RecoverableTransactionManager rtxManager = (RecoverableTransactionManager) transactionManager;
-                rtxManager.recoverResourceManager(namedXaResource);
-                
-            } catch (JMSException e) {
-              IOExceptionSupport.create(e);
+    public void recoverResource() {
+        try {
+            Class recoveryClass = getClass().getClassLoader().loadClass("org.apache.servicemix.activemq.Recovery");
+            Method mth = recoveryClass.getMethod("recover", ActiveMQResourceManager.class);
+            Object res = mth.invoke(null, this);
+            if (!Boolean.TRUE.equals(res)) {
+                LOGGER.info("Resource manager is unrecoverable");
             }
-        } else {
-            LOGGER.warn("The ActiveMQResourceManager did not recover resource since it is unRecoverable");
+        } catch (ClassNotFoundException e) {
+            LOGGER.info("Resource manager is unrecoverable due to missing classes: " + e);
+        } catch (NoClassDefFoundError e) {
+            LOGGER.info("Resource manager is unrecoverable due to missing classes: " + e);
+        } catch (NoSuchMethodException e) {
+            throw new IllegalStateException(e);
+        } catch (IllegalAccessException e) {
+            throw new IllegalStateException(e);
+        } catch (InvocationTargetException e) {
+            LOGGER.warn("Error while recovering resource manager", e);
         }
     }
 
-    private boolean isRecoverable() {
-        return  connectionFactory instanceof ActiveMQConnectionFactory && 
-                transactionManager instanceof RecoverableTransactionManager && 
-                resourceName != null && !"".equals(resourceName);
-    }
-    
     public String getResourceName() {
         return resourceName;
     }

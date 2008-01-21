@@ -30,11 +30,11 @@
   http://www.springframework.org/schema/osgi
   http://www.springframework.org/schema/osgi/spring-osgi.xsd
   http://www.springframework.org/schema/osgi-compendium
-  http://www.springframework.org/schema/osgi/spring-osgi-compendium.xsd
+  http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
   ">
 	
 	<bean id="activemqBroker" class="org.apache.activemq.xbean.BrokerFactoryBean">
-	    <property name="config" value="file:${servicemix.home}/conf/activemq.xml" />
+	    <property name="config" value="file:${servicemix.home}/etc/activemq.xml" />
 	    <property name="start" value="${brokerStart}" />
 	</bean>
 	
@@ -42,27 +42,19 @@
 		<property name="brokerURL" value="${brokerURL}" />
 	</bean>
 	
-  	<bean id="pooledConnectionFactory" class="org.jencks.amqpool.JcaPooledConnectionFactory">
-    	<constructor-arg>
-    		<ref bean="activemqConnectionFactory" />
-    	</constructor-arg>
+  	<bean id="pooledConnectionFactory" class="org.apache.servicemix.activemq.PooledConnectionFactoryFactoryBean">
     	<property name="maxConnections" value="${maxConnections}" />
-    	<property name="transactionManager">
-    		<ref bean="brokerTransaction" />
-    	</property>
-  	</bean>
+    	<property name="transactionManager" ref="transactionManager" />
+        <property name="connectionFactory" ref="activemqConnectionFactory" />
+      </bean>
   	
   	<bean id="resourceManager" class="org.apache.servicemix.activemq.ActiveMQResourceManager" init-method="recoverResource">
-  		<property name="transactionManager">
-  			<ref bean="brokerTransaction"/>
-  		</property>
-  		<property name="connectionFactory">
-  			<ref bean="activemqConnectionFactory" />
-  		</property>
+  		<property name="transactionManager" ref="transactionManager" />
+  		<property name="connectionFactory" ref="activemqConnectionFactory" />
   		<property name="resourceName" value="${resourceName}" />
   	</bean>
 	
-	<osgi:reference id="brokerTransaction" interface="javax.transaction.TransactionManager"
+	<osgi:reference id="transactionManager" interface="javax.transaction.TransactionManager"
 		  cardinality="0..1"/>
 	
     <osgi:service ref="pooledConnectionFactory">
@@ -76,7 +68,7 @@
             <prop key="brokerURL">tcp://localhost:61616</prop>
             <prop key="maxConnections">10</prop>
             <prop key="brokerStart">true</prop>
-            <prop key="resourceName">activeMQResource</prop>
+            <prop key="resourceName">ActiveMQ</prop>
         </osgix:default-properties>
     </osgix:property-placeholder>
 

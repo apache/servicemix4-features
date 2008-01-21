@@ -73,8 +73,9 @@
       <felix.osgi.version>1.0.0</felix.osgi.version>
       <felix.plugin.version>1.1.0-r605854</felix.plugin.version>
       <geronimo.activation.version>1.0.1</geronimo.activation.version>
-      <geronimo.jms.version>1.1</geronimo.jms.version>
-      <geronimo.jta.version>1.1</geronimo.jta.version>
+      <geronimo.j2ee.management.version>1.0.1-SNAPSHOT</geronimo.j2ee.management.version>
+      <geronimo.jms.version>1.1.1-SNAPSHOT</geronimo.jms.version>
+      <geronimo.jta.version>1.1.1-SNAPSHOT</geronimo.jta.version>
       <geronimo.servlet.version>1.1.1</geronimo.servlet.version>
       <geronimo.stax.version>1.0.1</geronimo.stax.version>
       <geronimo.transaction.version>2.0.1</geronimo.transaction.version>
@@ -93,8 +94,9 @@
       <servicemix.kernel.version>1.0-m1-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
       <spring.version>2.5</spring.version>
-      <spring.osgi.version>1.0-rc1</spring.osgi.version>
+      <spring.osgi.version>1.0-rc2</spring.osgi.version>
       <xstream.version>1.2.2</xstream.version>
+      <xbean.version>3.4-SNAPSHOT</xbean.version>
   </properties>
 
    <repositories>
@@ -115,6 +117,12 @@
            <id>incubator</id>
            <name>Incubator Repository</name>
            <url>http://people.apache.org/repo/m2-incubating-repository</url>
+       </repository>
+       <!-- Spring Milestone repo -->
+       <repository>
+           <id>spring-milestone</id>
+           <name>Spring Milestone Repository</name>
+           <url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
        </repository>
    </repositories>
 
@@ -153,6 +161,21 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-test</artifactId>
           <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.osgi</groupId>
+          <artifactId>spring-osgi-extender</artifactId>
+          <version>${spring.osgi.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.osgi</groupId>
+          <artifactId>spring-osgi-core</artifactId>
+          <version>${spring.osgi.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.osgi</groupId>
+          <artifactId>spring-osgi-io</artifactId>
+          <version>${spring.osgi.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.mina</groupId>

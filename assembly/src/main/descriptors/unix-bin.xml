@@ -117,6 +117,15 @@
                 <include>org.apache.servicemix.jbi:org.apache.servicemix.jbi.osgi</include>
                 <include>org.apache.servicemix.jbi:org.apache.servicemix.jbi.deployer</include>
                 <include>org.apache.servicemix.jbi:org.apache.servicemix.jbi.commands</include>
+
+                <include>org.apache.geronimo.specs:geronimo-jta_1.1_spec</include>
+                <include>org.apache.geronimo.specs:geronimo-jms_1.1_spec</include>
+                <include>org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec</include>
+                <include>org.springframework:spring-web</include>
+                <include>org.apache.activemq:activemq-core</include>
+                <include>org.apache.xbean:xbean-spring</include>
+                <include>org.apache.servicemix.activemq:org.apache.servicemix.activemq</include>
+
             </includes>
         </dependencySet>
 

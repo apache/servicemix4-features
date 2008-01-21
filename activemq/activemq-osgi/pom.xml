@@ -92,7 +92,7 @@
             <groupId>org.jencks</groupId>
             <artifactId>jencks-amqpool</artifactId>
             <version>${jencks.version}</version>
-        </dependency>      
+        </dependency>
     </dependencies>
 
     <build>
@@ -104,17 +104,21 @@
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
-                        	org.apache.geronimo.transaction;resolution:=optional
+                        	org.apache.geronimo.transaction*;resolution:=optional,
+                            org.apache.activemq.ra*;resolution:=optional,
+                            javax.transaction,
+                            org.apache.activemq.xbean,
+                            org.apache.xbean.spring,
+                            org.springframework.core,
+                            *
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Private-Package>
 	                        org.apache.commons.pool*,
 	                        org.jencks.amqpool*,
-	                        org.apache.servicemix.activemq
+	                        org.apache.servicemix.activemq*,
                         </Private-Package>
-                        <Export-Package>
-                        	org.apache.commons.pool
-                        </Export-Package>
+                        <Export-Package></Export-Package>
+                        <Spring-Context>*;publish-context:=false;create-asynchronously:=true</Spring-Context>
                     </instructions>
                 </configuration>
             </plugin>
