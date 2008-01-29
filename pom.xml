@@ -106,7 +106,7 @@
       <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.0-RC2</pax.logging.version>
       <pax.runner.version>0.5.5</pax.runner.version>
-      <pax.web.version>0.3.0-SNAPSHOT</pax.web.version>
+      <pax.web.version>0.3.1</pax.web.version>
       <servicemix.kernel.version>1.0-m2-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
       <spring.version>2.5</spring.version>
@@ -139,6 +139,12 @@
            <id>spring-milestone</id>
            <name>Spring Milestone Repository</name>
            <url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
+       </repository>
+       <!-- OPS4j repository -->
+       <repository>
+           <id>ops4j</id>
+           <name>OPS4j repo</name>
+           <url>http://repository.ops4j.org/maven2</url>
        </repository>
    </repositories>
 
