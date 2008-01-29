@@ -34,9 +34,11 @@
   <name>Apache ServiceMix Features</name>
 
   <modules>
+    <module>transaction</module>
     <module>activemq</module>
     <module>camel</module>
     <module>war</module>
+    <module>ejb3</module>
     <module>assembly</module>
   </modules>
 
@@ -73,25 +75,39 @@
       <felix.osgi.version>1.0.0</felix.osgi.version>
       <felix.plugin.version>1.1.0-r605854</felix.plugin.version>
       <geronimo.activation.version>1.0.1</geronimo.activation.version>
+      <geronimo.annotation.version>1.1.1-SNAPSHOT</geronimo.annotation.version>
+      <geronimo.ejb3.version>1.0.1-SNAPSHOT</geronimo.ejb3.version>
+      <geronimo.interceptor.version>1.0.1-SNAPSHOT</geronimo.interceptor.version>
+      <geronimo.jacc.version>1.0.1-SNAPSHOT</geronimo.jacc.version>
+      <geronimo.javamail.version>1.2</geronimo.javamail.version>
+      <geronimo.jaxrpc.version>2.0-SNAPSHOT</geronimo.jaxrpc.version>
+      <geronimo.j2ee.connector.version>2.0-SNAPSHOT</geronimo.j2ee.connector.version>
       <geronimo.j2ee.management.version>1.0.1-SNAPSHOT</geronimo.j2ee.management.version>
       <geronimo.jms.version>1.1.1-SNAPSHOT</geronimo.jms.version>
       <geronimo.jta.version>1.1.1-SNAPSHOT</geronimo.jta.version>
+      <geronimo.jpa.version>1.1.1-SNAPSHOT</geronimo.jpa.version>
+      <geronimo.saaj.version>1.0-SNAPSHOT</geronimo.saaj.version>
       <geronimo.servlet.version>1.1.1</geronimo.servlet.version>
       <geronimo.stax.version>1.0.1</geronimo.stax.version>
-      <geronimo.transaction.version>2.0.1</geronimo.transaction.version>
-      <geronimo.connector.version>2.0.1</geronimo.connector.version>
+      <geronimo.wsmetadata.version>1.1.2-SNAPSHOT</geronimo.wsmetadata.version>
+      <geronimo.transaction.version>2.2-SNAPSHOT</geronimo.transaction.version>
+      <geronimo.connector.version>2.2-SNAPSHOT</geronimo.connector.version>
       <howl.version>1.0.1-1</howl.version>
       <jasper.version>6.0.14</jasper.version>
       <jaxb.api.version>2.0</jaxb.api.version>
       <jaxb.impl.version>2.0.3</jaxb.impl.version>
+      <jaxws.api.version>2.0</jaxws.api.version>
       <jencks.version>2.1</jencks.version>
       <jline.version>0.9.93</jline.version>
       <junit.version>4.4</junit.version>
       <log4j.version>1.2.14</log4j.version>
       <mina.version>1.1.6-r602102</mina.version>
+      <openejb.version>3.0.0-SNAPSHOT</openejb.version>
+      <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.0-RC2</pax.logging.version>
       <pax.runner.version>0.5.5</pax.runner.version>
-      <servicemix.kernel.version>1.0-m1-SNAPSHOT</servicemix.kernel.version>
+      <pax.web.version>0.3.0-SNAPSHOT</pax.web.version>
+      <servicemix.kernel.version>1.0-m2-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
       <spring.version>2.5</spring.version>
       <spring.osgi.version>1.0-rc2</spring.osgi.version>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+
+        Licensed to the Apache Software Foundation (ASF) under one or more
+        contributor license agreements.  See the NOTICE file distributed with
+        this work for additional information regarding copyright ownership.
+        The ASF licenses this file to You under the Apache License, Version 2.0
+        (the "License"); you may not use this file except in compliance with
+        the License.  You may obtain a copy of the License at
+
+           http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.servicemix.ejb3.bundles</groupId>
+        <artifactId>bundles</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.apache.servicemix.bundles</groupId>
+    <artifactId>org.apache.servicemix.bundles.cxf-2.0.3</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>ServiceMix OSGI Common Bundles: cxf</name>
+    <description>
+        This bundle simply wraps cxf ${pkgVersion}.
+    </description>
+
+    <properties>
+        <pkgVersion>2.0.3</pkgVersion>
+		<servicemix.osgi.export>
+            org.apache.cxf*;version=${pkgVersion},
+            org.xmlsoap.schemas*;version=${pkgVersion}
+        </servicemix.osgi.export>
+        <servicemix.osgi.import.pkg>
+            com.ibm*;resolution:=optional,
+            com.sun*;resolution:=optional,
+            javanet.staxutils*;resolution:=optional,
+            javax.jms*;resolution:=optional,
+            javax.xml.soap,
+            junit.framework*;resolution:=optional,
+            org.apache.axiom*;resolution:=optional,
+            org.apache.commons.lang*;resolution:=optional,
+            org.apache.log4j*;resolution:=optional,
+            org.apache.tools.ant*;resolution:=optional,
+            org.apache.velocity*;resolution:=optional,
+            org.apache.xmlbeans*;resolution:=optional,
+            org.apache.ws.security*;resolution:=optional,
+            org.codehaus.jra*;resolution:=optional,
+            org.jdom*;resolution:=optional,
+            org.junit*;resolution:=optional,
+            org.mortbay*;resolution:=optional,
+            org.mozilla.javascript*;resolution:=optional,
+            org.springframework*;resolution:=optional,
+            sun.misc*;resolution:=optional,
+            *
+        </servicemix.osgi.import.pkg>
+        <servicemix.osgi.private.pkg>
+            META-INF*,
+            org.apache.xml.resolver*,
+            org.apache.neethi*,
+        </servicemix.osgi.private.pkg>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle</artifactId>
+            <version>2.0.3-incubator</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>xml-resolver</groupId>
+            <artifactId>xml-resolver</artifactId>
+            <version>1.2</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.neethi</groupId>
+            <artifactId>neethi</artifactId>
+            <version>2.0.2</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.ws.commons.axiom</groupId>
+                    <artifactId>axiom-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.ws.commons.axiom</groupId>
+                    <artifactId>axiom-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>wsdl4j</groupId>
+                    <artifactId>wsdl4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>wstx-asl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Dependency on other bundles -->
+        <dependency>
+            <groupId>org.apache.ws.commons.schema</groupId>
+            <artifactId>XmlSchema</artifactId>
+            <version>1.3.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xmlunit</groupId>
+                    <artifactId>xmlunit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.ws.commons</groupId>
+                    <artifactId>ws-commons-java5</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+</project>
