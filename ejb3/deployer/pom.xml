@@ -37,7 +37,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.cxf-2.0.3</artifactId>
+            <artifactId>org.apache.servicemix.bundles.cxf-2.0.4</artifactId>
             <version>${pom.version}</version>
         </dependency>
         <dependency>
@@ -334,6 +334,27 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <forkMode>pertest</forkMode>
+                    <systemProperties>
+                        <property>
+                            <name>javax.xml.parsers.DocumentBuilderFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.datatype.DatatypeFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.parsers.SAXParserFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
             </plugin>
         </plugins>
     </build>
