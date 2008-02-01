@@ -25,19 +25,19 @@ import javax.transaction.TransactionManager;
 import org.apache.openejb.OpenEJB;
 import org.apache.openejb.OpenEJBException;
 import org.apache.openejb.assembler.classic.Assembler;
+import org.apache.openejb.assembler.classic.OpenEjbConfiguration;
 import org.apache.openejb.assembler.classic.SecurityServiceInfo;
 import org.apache.openejb.assembler.classic.TransactionServiceInfo;
-import org.apache.openejb.assembler.classic.OpenEjbConfiguration;
+import org.apache.openejb.assembler.classic.ProxyFactoryInfo;
 import org.apache.openejb.assembler.dynamic.PassthroughFactory;
 import org.apache.openejb.core.ServerFederation;
 import org.apache.openejb.loader.SystemInstance;
 import org.apache.openejb.ri.sp.PseudoSecurityService;
-import org.apache.openejb.server.ServerService;
-import org.apache.openejb.server.ServiceManager;
 import org.apache.openejb.server.SelfManaging;
-import org.apache.openejb.server.ServiceLogger;
+import org.apache.openejb.server.ServerService;
 import org.apache.openejb.server.ServiceAccessController;
 import org.apache.openejb.server.ServiceDaemon;
+import org.apache.openejb.server.ServiceLogger;
 import org.apache.openejb.server.webservices.WsRegistry;
 import org.apache.openejb.spi.ApplicationServer;
 import org.apache.openejb.spi.ContainerSystem;
@@ -45,6 +45,8 @@ import org.apache.openejb.spi.SecurityService;
 import org.apache.openejb.util.LogCategory;
 import org.apache.openejb.util.Logger;
 import org.apache.openejb.util.Messages;
+import org.apache.openejb.util.proxy.Jdk13ProxyFactory;
+import org.apache.openejb.util.proxy.ProxyFactory;
 
 /**
  * Factory for OpenEJB to intitialize everything.
@@ -58,6 +60,7 @@ public class OpenEjbFactory {
     private TransactionManager transactionManager;
     private WsRegistry wsRegistry;
     private SecurityService securityService;
+    private ProxyFactory proxyFactory;
     private List<ServerService> serverServices;
 
     static {
@@ -78,6 +81,10 @@ public class OpenEjbFactory {
 
     public void setSecurityService(SecurityService securityService) {
         this.securityService = securityService;
+    }
+
+    public void setProxyFactory(ProxyFactory proxyFactory) {
+        this.proxyFactory = proxyFactory;
     }
 
     public void setServerServices(List<ServerService> serverServices) {
@@ -121,6 +128,18 @@ public class OpenEjbFactory {
         }
         system.setComponent(ContainerSystem.class, containerSystem);
 
+        if (proxyFactory == null)  {
+            proxyFactory = new Jdk13ProxyFactory();
+        }
+        if (proxyFactory != null) {
+            ProxyFactoryInfo proxyFactoryInfo = new ProxyFactoryInfo();
+            PassthroughFactory.add(proxyFactoryInfo, proxyFactory);
+            proxyFactoryInfo.id = "Default Proxy Factory";
+            proxyFactoryInfo.service = "ProxyFactory";
+            assembler.createProxyFactory(proxyFactoryInfo);
+            system.setComponent(ProxyFactory.class, proxyFactory);
+        }
+        
         if (securityService == null) {
             securityService = new PseudoSecurityService();
         }

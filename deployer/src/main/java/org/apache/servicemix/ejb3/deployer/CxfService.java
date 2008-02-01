@@ -72,12 +72,14 @@ public class CxfService extends org.apache.openejb.server.cxf.CxfService {
         }
     }
 
+    @Override
     public void afterApplicationCreated(AppInfo appInfo) {
         System.out.println("CxfService:afterApplicationCreated");
         Thread.currentThread().setContextClassLoader(Bus.class.getClassLoader());
         super.afterApplicationCreated(appInfo);    //To change body of overridden methods use File | Settings | File Templates.
     }
 
+    @Override
     public void beforeApplicationDestroyed(AppInfo appInfo) {
         System.out.println("CxfService:beforeApplicationDestroyed");
         Thread.currentThread().setContextClassLoader(Bus.class.getClassLoader());

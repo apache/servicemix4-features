@@ -36,6 +36,8 @@
 
     <modules>
         <module>bundles</module>
+        <module>cxf-transport-nmr</module>
+        <module>cxf-binding-nmr</module>
         <module>deployer</module>
     </modules>
 
