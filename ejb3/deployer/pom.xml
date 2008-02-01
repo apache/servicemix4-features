@@ -41,6 +41,21 @@
             <version>${pom.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.ejb3</groupId>
+            <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.ejb3</groupId>
+            <artifactId>org.apache.servicemix.cxf.binding.nmr</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>org.apache.servicemix.nmr.api</artifactId>
+            <version>${servicemix.nmr.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jaxb-api-2.0</artifactId>
             <version>${servicemix.nmr.version}</version>
@@ -56,9 +71,14 @@
             <version>${pom.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.openejb-3.0.0-SNAPSHOT</artifactId>
-            <version>${pom.version}</version>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>openejb-core</artifactId>
+            <version>${openejb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>openejb-cxf</artifactId>
+            <version>${openejb.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -290,6 +310,17 @@
             <artifactId>geronimo-activation_1.1_spec</artifactId>
             <version>${geronimo.activation.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>org.apache.servicemix.nmr.core</artifactId>
+            <version>${servicemix.nmr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle</artifactId>
+            <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

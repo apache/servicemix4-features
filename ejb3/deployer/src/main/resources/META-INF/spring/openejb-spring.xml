@@ -44,6 +44,9 @@
                     <property name="authMethod" value="NONE" />
                     <property name="transportGuarantee" value="NONE" />
                 </bean>
+                <bean class="org.apache.servicemix.ejb3.deployer.NmrService">
+                    <property name="nmr" ref="nmr" />
+                </bean>
             </list>
         </property>
     </bean>
@@ -59,10 +62,15 @@
     <!-- Reference to the transaction manager -->
     <osgi:reference id="transactionManager"
                     interface="javax.transaction.TransactionManager"
-             cardinality="0..1" />
+                    cardinality="0..1" />
+
+    <!-- Reference to the NMR -->
+    <osgi:reference id="nmr"
+                    interface="org.apache.servicemix.nmr.api.NMR"
+                    cardinality="0..1" />
 
     <!-- Reference to the OSGi http service -->
     <osgi:reference id="httpService"
                     interface="org.osgi.service.http.HttpService"
-            cardinality="0..1" />
+                    cardinality="0..1" />
 </beans>
