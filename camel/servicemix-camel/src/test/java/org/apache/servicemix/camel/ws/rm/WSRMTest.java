@@ -117,10 +117,10 @@ public class WSRMTest extends ContextTestSupport {
     
     //ws-rm is in progress
     public void testDecoupled() throws Exception {
-    	/*SpringBusFactory bf = new SpringBusFactory();
+    	SpringBusFactory bf = new SpringBusFactory();
         bus = bf.createBus("/org/apache/servicemix/camel/ws/rm/decoupled.xml");
     	BusFactory.setDefaultBus(bus);
-        LoggingInInterceptor in = new LoggingInInterceptor();
+    	LoggingInInterceptor in = new LoggingInInterceptor();
         bus.getInInterceptors().add(in);
         bus.getInFaultInterceptors().add(in);
         LoggingOutInterceptor out = new LoggingOutInterceptor();
@@ -131,15 +131,15 @@ public class WSRMTest extends ContextTestSupport {
         GreeterService gs = new GreeterService(wsdl, serviceName);
         final Greeter greeter = gs.getGreeterPort();
         LOG.fine("Created greeter client.");
-       
+
         ConnectionHelper.setKeepAliveConnection(greeter, true);
 
-                
-        TwowayThread t = new TwowayThread(greeter);    
+
+        TwowayThread t = new TwowayThread(greeter);
         t.start();
-        
+
         // allow for partial response to twoway request to arrive
-        
+
         long wait = 3000;
         while (wait > 0) {
             long start = System.currentTimeMillis();
@@ -151,8 +151,9 @@ public class WSRMTest extends ContextTestSupport {
             wait -= System.currentTimeMillis() - start;
         }
 
-        //greeter.greetMeOneWay("oneway");
+        greeter.greetMeOneWay("oneway");
         t.join();
-        assertEquals("Unexpected response to twoway request", "oneway", t.getResponse());*/
+        
+        assertEquals("Unexpected response to twoway request", "oneway", t.getResponse());
     }
 }

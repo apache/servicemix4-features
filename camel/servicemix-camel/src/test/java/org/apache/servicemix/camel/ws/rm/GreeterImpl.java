@@ -67,19 +67,19 @@ public class GreeterImpl {
             useLastOnewayArg(true);
             setDelay(5000);
         }
-        /*if (delay > 0) {
+        if (delay > 0) {
             try {
                 Thread.sleep(delay);
             } catch (InterruptedException ex) {
                 // ignore
             }
-        }*/
+        }
         String result = null;
         synchronized (this) {
             result = useLastOnewayArg ? lastOnewayArg : arg0.toUpperCase();
         }
         LOG.fine("returning: " + result);
-        return "result";
+        return result;
     }
 
     public Future<?> greetMeAsync(String arg0, AsyncHandler<GreetMeResponse> arg1) {
