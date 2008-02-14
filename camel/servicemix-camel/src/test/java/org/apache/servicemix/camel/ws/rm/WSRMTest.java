@@ -115,7 +115,7 @@ public class WSRMTest extends ContextTestSupport {
         return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/ws/rm/server.xml");
     }
     
-    //ws-rm is in progress
+
     public void testDecoupled() throws Exception {
     	SpringBusFactory bf = new SpringBusFactory();
         bus = bf.createBus("/org/apache/servicemix/camel/ws/rm/decoupled.xml");
