@@ -74,22 +74,22 @@
       <felix.core.version>1.1.0-r605854</felix.core.version>
       <felix.osgi.version>1.0.0</felix.osgi.version>
       <felix.plugin.version>1.1.0-r605854</felix.plugin.version>
-      <geronimo.activation.version>1.0.1</geronimo.activation.version>
-      <geronimo.annotation.version>1.1.1-SNAPSHOT</geronimo.annotation.version>
-      <geronimo.ejb3.version>1.0.1-SNAPSHOT</geronimo.ejb3.version>
-      <geronimo.interceptor.version>1.0.1-SNAPSHOT</geronimo.interceptor.version>
-      <geronimo.jacc.version>1.0.1-SNAPSHOT</geronimo.jacc.version>
+      <geronimo.activation.version>1.0.2</geronimo.activation.version>
+      <geronimo.annotation.version>1.1.1</geronimo.annotation.version>
+      <geronimo.ejb3.version>1.0.1</geronimo.ejb3.version>
+      <geronimo.interceptor.version>1.0.1</geronimo.interceptor.version>
+      <geronimo.jacc.version>1.0.1</geronimo.jacc.version>
       <geronimo.javamail.version>1.2</geronimo.javamail.version>
-      <geronimo.jaxrpc.version>2.0-SNAPSHOT</geronimo.jaxrpc.version>
-      <geronimo.j2ee.connector.version>2.0-SNAPSHOT</geronimo.j2ee.connector.version>
-      <geronimo.j2ee.management.version>1.0.1-SNAPSHOT</geronimo.j2ee.management.version>
-      <geronimo.jms.version>1.1.1-SNAPSHOT</geronimo.jms.version>
-      <geronimo.jta.version>1.1.1-SNAPSHOT</geronimo.jta.version>
-      <geronimo.jpa.version>1.1.1-SNAPSHOT</geronimo.jpa.version>
-      <geronimo.saaj.version>1.0-SNAPSHOT</geronimo.saaj.version>
+      <geronimo.jaxrpc.version>2.0.0</geronimo.jaxrpc.version>
+      <geronimo.j2ee.connector.version>2.0.0</geronimo.j2ee.connector.version>
+      <geronimo.j2ee.management.version>1.0.1</geronimo.j2ee.management.version>
+      <geronimo.jms.version>1.1.1</geronimo.jms.version>
+      <geronimo.jta.version>1.1.1</geronimo.jta.version>
+      <geronimo.jpa.version>1.1.1</geronimo.jpa.version>
+      <geronimo.saaj.version>1.0.0</geronimo.saaj.version>
       <geronimo.servlet.version>1.1.1</geronimo.servlet.version>
       <geronimo.stax.version>1.0.1</geronimo.stax.version>
-      <geronimo.wsmetadata.version>1.1.2-SNAPSHOT</geronimo.wsmetadata.version>
+      <geronimo.wsmetadata.version>1.1.2</geronimo.wsmetadata.version>
       <geronimo.transaction.version>2.2-SNAPSHOT</geronimo.transaction.version>
       <geronimo.connector.version>2.2-SNAPSHOT</geronimo.connector.version>
       <howl.version>1.0.1-1</howl.version>
@@ -102,7 +102,7 @@
       <junit.version>4.4</junit.version>
       <log4j.version>1.2.14</log4j.version>
       <mina.version>1.1.6-r602102</mina.version>
-      <openejb.version>3.0-SNAPSHOT</openejb.version>
+      <openejb.version>3.0-beta-2</openejb.version>
       <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.0.0</pax.logging.version>
       <pax.runner.version>0.5.5</pax.runner.version>
@@ -139,6 +139,13 @@
            <id>ops4j</id>
            <name>OPS4j repo</name>
            <url>http://repository.ops4j.org/maven2</url>
+       </repository>
+
+       <!-- OPS4j repository -->
+       <repository>
+           <id>staging</id>
+           <name>Staging repo</name>
+           <url>http://people.apache.org/~dblevins/stage/repo</url>
        </repository>
    </repositories>
 

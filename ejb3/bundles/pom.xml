@@ -33,11 +33,12 @@
     <name>ServiceMix OSGI Common Bundles</name>
 
     <modules>
+        <module>commons-cli</module>
         <module>cxf</module>
         <module>jaxws-api</module>
-        <module>openejb</module>
         <module>openjpa</module>
         <module>saaj-impl</module>
+        <module>swizzle</module>
         <module>wsdl4j</module>
         <module>xmlschema</module>
     </modules>
