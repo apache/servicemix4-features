@@ -107,7 +107,7 @@
                 <!-- NMR / JBI -->
                 <include>org.apache.geronimo.specs:geronimo-activation_1.1_spec</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.woodstox-3.2.3</include>
-                <include>org.apache.servicemix.nmr:org.apache.servicemix.preferences</include>
+                <include>org.apache.felix:org.apache.felix.prefs</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.api</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.core</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.spring</include>

@@ -287,6 +287,11 @@
             <artifactId>pax-web-service</artifactId>
             <version>${pax.web.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.prefs</artifactId>
+            <version>${felix.prefs.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <resources>
@@ -371,6 +376,7 @@
                             </descriptors>
                             <finalName>${pom.artifactId}-${pom.version}</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
+                            <tarLongFileMode>gnu</tarLongFileMode>
                         </configuration>
                     </execution>
                     <execution>
@@ -397,6 +403,7 @@
                             <descriptors>
                                 <descriptor>src/main/descriptors/unix-src.xml</descriptor>
                             </descriptors>
+                            <tarLongFileMode>gnu</tarLongFileMode>
                         </configuration>
                     </execution>
                     <execution>

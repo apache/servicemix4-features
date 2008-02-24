@@ -74,6 +74,7 @@
       <felix.core.version>1.1.0-r605854</felix.core.version>
       <felix.osgi.version>1.0.0</felix.osgi.version>
       <felix.plugin.version>1.1.0-r605854</felix.plugin.version>
+      <felix.prefs.version>1.0.2</felix.prefs.version>
       <geronimo.activation.version>1.0.2</geronimo.activation.version>
       <geronimo.annotation.version>1.1.1</geronimo.annotation.version>
       <geronimo.ejb3.version>1.0.1</geronimo.ejb3.version>
@@ -87,7 +88,7 @@
       <geronimo.jta.version>1.1.1</geronimo.jta.version>
       <geronimo.jpa.version>1.1.1</geronimo.jpa.version>
       <geronimo.saaj.version>1.0.0</geronimo.saaj.version>
-      <geronimo.servlet.version>1.1.1</geronimo.servlet.version>
+      <geronimo.servlet.version>1.1.2</geronimo.servlet.version>
       <geronimo.stax.version>1.0.1</geronimo.stax.version>
       <geronimo.wsmetadata.version>1.1.2</geronimo.wsmetadata.version>
       <geronimo.transaction.version>2.2-SNAPSHOT</geronimo.transaction.version>
@@ -101,7 +102,7 @@
       <jline.version>0.9.93</jline.version>
       <junit.version>4.4</junit.version>
       <log4j.version>1.2.14</log4j.version>
-      <mina.version>1.1.6-r602102</mina.version>
+      <mina.version>1.1.6</mina.version>
       <openejb.version>3.0-beta-2</openejb.version>
       <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.0.0</pax.logging.version>
