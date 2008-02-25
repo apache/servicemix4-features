@@ -40,10 +40,18 @@
             <artifactId>org.apache.servicemix.nmr.osgi</artifactId>
             <version>${servicemix.nmr.version}</version>
         </dependency>
+        
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
             <version>${camel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>${felix.osgi.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
