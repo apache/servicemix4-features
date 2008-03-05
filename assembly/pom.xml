@@ -288,6 +288,21 @@
             <version>${pax.web.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-jsp</artifactId>
+            <version>${pax.web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web-extender</groupId>
+            <artifactId>pax-web-ex-war</artifactId>
+            <version>${pax.web.extender.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.url</groupId>
+            <artifactId>pax-url-war</artifactId>
+            <version>${pax.url.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.prefs</artifactId>
             <version>${felix.prefs.version}</version>

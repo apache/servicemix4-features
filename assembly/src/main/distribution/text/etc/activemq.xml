@@ -17,22 +17,43 @@
     limitations under the License.
 
 -->
-<beans
-  xmlns="http://www.springframework.org/schema/beans"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<beans xmlns:amq="http://activemq.org/config/1.0">
+  
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" />
 
-	<bean id="broker" class="org.apache.activemq.xbean.XBeanBrokerService">
-	    <property name="transportConnectorURIs">
-	      <list>
-	        <value>tcp://localhost:61616</value>
-	      </list>
-	    </property>
-	    <property name="useJmx">
-	    	<value>false</value>
-	    </property>
-	    <property name="persistent">
-	    	<value>false</value>
-	    </property>
-	</bean>
+  <!-- ActiveMQ JMS Broker configuration -->
+  <bean id="broker" class="org.apache.activemq.xbean.XBeanBrokerService">
+	<property name="useShutdownHook" value="false" />
+
+    <!-- Disable creation of the jmx connector 
+         which is created in the jmx.xml configuration file -->
+    <property name="managementContext">
+      <bean class="org.apache.activemq.broker.jmx.ManagementContext">
+        <property name="createConnector" value="false" />
+      </bean>
+    </property>
+
+    <!-- Use journaled Kaha persistence -->
+    <property name="persistenceAdapter">
+      <bean class="org.apache.activemq.store.kahadaptor.KahaPersistenceAdapter">
+	    <property name="directory" value="${servicemix.base}/data/amq" />
+	    <property name="maxDataFileLength" value="33554432" />
+	  </bean>
+    </property>
+  
+    <property name="transportConnectors">
+       <!-- Activate a TCP connector -->
+       <bean class="org.apache.activemq.broker.TransportConnector">
+	     <property name="uri" value="tcp://localhost:61616" />
+	   </bean>
+    </property>
+    
+    <!--  
+    <property name="networkConnectors">
+      <amq:networkConnector uri="static://(tcp://host1:61616,tcp://host2:61616)"/>
+    </property>
+    -->
+    
+  </bean>
+
 </beans>

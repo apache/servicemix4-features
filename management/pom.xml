@@ -23,16 +23,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix</groupId>
-        <artifactId>servicemix</artifactId>
-        <version>4.0-SNAPSHOT</version>
+        <groupId>org.apache.servicemix.features</groupId>
+        <artifactId>features</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.management</groupId>
     <artifactId>management</artifactId>
     <packaging>pom</packaging>
-    <version>4.0-SNAPSHOT</version>
-    <name>ServiceMix Management</name>
+    <version>1.0-SNAPSHOT</version>
+    <name>ServiceMix Features :: Management</name>
 
     <modules>
         <module>core</module>

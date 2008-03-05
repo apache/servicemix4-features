@@ -137,8 +137,11 @@
                 <include>org.apache.xbean:xbean-spring</include>
                 <include>org.apache.servicemix.activemq:org.apache.servicemix.activemq</include>
 
-                <!-- WEB -->
+                <!-- WEB / WAR -->
                 <include>org.ops4j.pax.web:pax-web-service</include>
+                <include>org.ops4j.pax.web:pax-web-jsp</include>
+                <include>org.ops4j.pax.web-extender:pax-web-ex-war</include>
+                <include>org.ops4j.pax.url:pax-url-war</include>
 
                 <!-- EJB3 / CXF -->
                 <include>org.apache.xbean:xbean-finder</include>
