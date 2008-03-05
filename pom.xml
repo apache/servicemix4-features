@@ -153,12 +153,12 @@
                <enabled>true</enabled>
            </snapshots>
        </repository>
-       <!-- Staging repo -->
+       <!-- Java.net repo -->
        <repository>
-           <id>kernel-staging</id>
-           <name>Kernel Staging Repository</name>
-           <url>http://people.apache.org/~gnodet/staging/servicemix-kernel-1.0-m2</url>
-       </repository>
+          <id>java.net</id>
+          <url>http://download.java.net/maven/1/</url>
+          <layout>legacy</layout>
+        </repository>
    </repositories>
 
   <pluginRepositories>
