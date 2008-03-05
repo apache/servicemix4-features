@@ -144,13 +144,16 @@
            <name>OPS4j repo</name>
            <url>http://repository.ops4j.org/maven2</url>
        </repository>
-
-       <!-- OPS4j repository -->
+       <!-- OPS4j snapshot repository -->
        <repository>
-           <id>staging</id>
-           <name>Staging repo</name>
-           <url>http://people.apache.org/~dblevins/stage/repo</url>
+           <id>ops4j.snapshots</id>
+           <name>OP4j Snapshots repo</name>
+           <url>http://repository.ops4j.org/mvn-snapshots</url>
+           <snapshots>
+               <enabled>true</enabled>
+           </snapshots>
        </repository>
+       
    </repositories>
 
   <pluginRepositories>
