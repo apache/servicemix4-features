@@ -110,6 +110,11 @@
                 <include>org.apache.servicemix.jbi:org.apache.servicemix.jbi.deployer</include>
                 <include>org.apache.servicemix.jbi:org.apache.servicemix.jbi.commands</include>
 
+                <!-- Management -->
+                <include>org.apache.servicemix.management:org.apache.servicemix.management.core</include>
+                <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.management</include>
+                <include>org.apache.servicemix.jbi:org.apache.servicemix.jbi.management</include>
+
                 <!-- Transaction -->
                 <include>org.apache.geronimo.specs:geronimo-jta_1.1_spec</include>
                 <include>org.apache.geronimo.specs:geronimo-j2ee-connector_1.5_spec</include>

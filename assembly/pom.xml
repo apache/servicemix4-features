@@ -57,9 +57,14 @@
             <version>${geronimo.javamail.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.nmr</groupId>
-            <artifactId>org.apache.servicemix.preferences</artifactId>
-            <version>${servicemix.nmr.version}</version>
+            <groupId>org.apache.geronimo.components</groupId>
+            <artifactId>geronimo-connector</artifactId>
+            <version>${geronimo.connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.prefs</artifactId>
+            <version>${felix.prefs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.nmr</groupId>
@@ -79,6 +84,11 @@
         <dependency>
             <groupId>org.apache.servicemix.nmr</groupId>
             <artifactId>org.apache.servicemix.nmr.osgi</artifactId>
+            <version>${servicemix.nmr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>org.apache.servicemix.nmr.management</artifactId>
             <version>${servicemix.nmr.version}</version>
         </dependency>
         <dependency>
@@ -104,12 +114,17 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.jbi</groupId>
+            <artifactId>org.apache.servicemix.jbi.runtime</artifactId>
+            <version>${servicemix.nmr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.jbi</groupId>
             <artifactId>org.apache.servicemix.jbi.osgi</artifactId>
             <version>${servicemix.nmr.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.jbi</groupId>
-            <artifactId>org.apache.servicemix.jbi.runtime</artifactId>
+            <artifactId>org.apache.servicemix.jbi.management</artifactId>
             <version>${servicemix.nmr.version}</version>
         </dependency>
         <dependency>
@@ -185,6 +200,11 @@
         <dependency>
             <groupId>org.apache.servicemix.transaction</groupId>
             <artifactId>org.apache.servicemix.transaction</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.management</groupId>
+            <artifactId>org.apache.servicemix.management.core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
