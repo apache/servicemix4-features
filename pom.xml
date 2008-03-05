@@ -111,7 +111,7 @@
       <pax.url.version>0.3.0</pax.url.version>
       <pax.web.version>0.4.0-SNAPSHOT</pax.web.version>
       <pax.web.extender.version>0.3.1-SNAPSHOT</pax.web.extender.version>
-      <servicemix.kernel.version>1.0-m2-SNAPSHOT</servicemix.kernel.version>
+      <servicemix.kernel.version>1.0-m2</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
       <spring.version>2.5.1</spring.version>
       <spring.osgi.version>1.0</spring.osgi.version>
@@ -153,7 +153,12 @@
                <enabled>true</enabled>
            </snapshots>
        </repository>
-       
+       <!-- Staging repo -->
+       <repository>
+           <id>kernel-staging</id>
+           <name>Kernel Staging Repository</name>
+           <url>http://people.apache.org/~gnodet/staging/servicemix-kernel-1.0-m2</url>
+       </repository>
    </repositories>
 
   <pluginRepositories>
