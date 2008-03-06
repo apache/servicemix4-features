@@ -44,8 +44,10 @@
   </bean>
   <bean id="endpointRegistry" class="org.apache.servicemix.nmr.core.EndpointRegistryImpl">
         <property name="nmr" ref="servicemix" />
+        <property name="registry" ref="serviceRegistry"/>
   </bean>  
   <bean id="listenerRegistry" class="org.apache.servicemix.nmr.core.ListenerRegistryImpl" />
   <bean id="flowRegistry" class="org.apache.servicemix.nmr.core.FlowRegistryImpl" />
   <bean id="staightThroughFlow" class="org.apache.servicemix.nmr.core.StraightThroughFlow" />
+  <bean id="serviceRegistry" class="org.apache.servicemix.nmr.core.ServiceRegistryImpl"/>
 </beans>
