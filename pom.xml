@@ -112,7 +112,7 @@
       <pax.web.version>0.3.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <servicemix.kernel.version>1.0-m2</servicemix.kernel.version>
-      <servicemix.nmr.version>1.0-SNAPSHOT</servicemix.nmr.version>
+      <servicemix.nmr.version>1.0-m1-SNAPSHOT</servicemix.nmr.version>
       <spring.version>2.5.1</spring.version>
       <spring.osgi.version>1.0</spring.osgi.version>
       <xstream.version>1.2.2</xstream.version>
