@@ -40,8 +40,8 @@
     <properties>
         <pkgVersion>2.0.4</pkgVersion>
 		<servicemix.osgi.export>
-            org.apache.cxf*;version=${pkgVersion},
-            org.xmlsoap.schemas*;version=${pkgVersion}
+            org.apache.cxf*;version=${pkgVersion};-split-package:=merge-first,
+            org.xmlsoap.schemas*;version=${pkgVersion};-split-package:=merge-first,
         </servicemix.osgi.export>
         <servicemix.osgi.import.pkg>
             com.ibm*;resolution:=optional,
@@ -50,7 +50,6 @@
             javax.jms*;resolution:=optional,
             javax.xml.soap,
             junit.framework*;resolution:=optional,
-            org.apache.axiom*;resolution:=optional,
             org.apache.commons.lang*;resolution:=optional,
             org.apache.log4j*;resolution:=optional,
             org.apache.tools.ant*;resolution:=optional,
@@ -63,11 +62,11 @@
             org.mortbay*;resolution:=optional,
             org.mozilla.javascript*;resolution:=optional,
             org.springframework*;resolution:=optional,
-            sun.misc*;resolution:=optional,
             *
         </servicemix.osgi.import.pkg>
         <servicemix.osgi.private.pkg>
-            META-INF*,
+            META-INF*;-split-package:=merge-first
+            schemas*;-split-package:=merge-first
         </servicemix.osgi.private.pkg>
     </properties>
 
