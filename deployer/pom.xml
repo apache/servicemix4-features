@@ -63,7 +63,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jaxb-impl-2.0.3</artifactId>
-            <version>${servicemix.nmr.version}</version>
+            <version>${pom.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
