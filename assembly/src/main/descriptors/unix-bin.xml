@@ -108,6 +108,7 @@
                 <include>org.apache.geronimo.specs:geronimo-activation_1.1_spec</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.woodstox-3.2.3</include>
                 <include>org.apache.felix:org.apache.felix.prefs</include>
+                <include>org.apache.xbean:xbean-classloader</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.api</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.core</include>
                 <include>org.apache.servicemix.nmr:org.apache.servicemix.nmr.spring</include>
@@ -143,7 +144,9 @@
                 <include>org.apache.servicemix.activemq:org.apache.servicemix.activemq</include>
 
                 <!-- WEB / WAR -->
-                <include>org.ops4j.pax.web:pax-web-service</include>
+                <include>org.mortbay.jetty:jetty-util</include>
+                <include>org.mortbay.jetty:jetty</include>
+                <include>org.ops4j.pax.web:pax-web-bundle</include>
                 <include>org.ops4j.pax.web:pax-web-jsp</include>
                 <include>org.ops4j.pax.web-extender:pax-web-ex-war</include>
                 <include>org.ops4j.pax.url:pax-url-war</include>

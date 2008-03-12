@@ -101,6 +101,7 @@
       <jaxb.impl.version>2.0.3</jaxb.impl.version>
       <jaxws.api.version>2.0</jaxws.api.version>
       <jencks.version>2.1</jencks.version>
+      <jetty.version>6.1.8</jetty.version>
       <jline.version>0.9.93</jline.version>
       <junit.version>4.4</junit.version>
       <log4j.version>1.2.14</log4j.version>
@@ -109,10 +110,10 @@
       <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.0.0</pax.logging.version>
       <pax.url.version>0.3.0</pax.url.version>
-      <pax.web.version>0.3.1</pax.web.version>
+      <pax.web.version>0.4.0-SNAPSHOT</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <servicemix.kernel.version>1.0-m2</servicemix.kernel.version>
-      <servicemix.nmr.version>1.0-m1-SNAPSHOT</servicemix.nmr.version>
+      <servicemix.nmr.version>1.0-m2-SNAPSHOT</servicemix.nmr.version>
       <spring.version>2.5.1</spring.version>
       <spring.osgi.version>1.0</spring.osgi.version>
       <xstream.version>1.2.2</xstream.version>
