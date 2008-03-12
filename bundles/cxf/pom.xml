@@ -42,6 +42,7 @@
 		<servicemix.osgi.export>
             org.apache.cxf*;version=${pkgVersion};-split-package:=merge-first,
             org.xmlsoap.schemas*;version=${pkgVersion};-split-package:=merge-first,
+            '=META-INF.cxf'
         </servicemix.osgi.export>
         <servicemix.osgi.import.pkg>
             com.ibm*;resolution:=optional,
@@ -65,7 +66,7 @@
             *
         </servicemix.osgi.import.pkg>
         <servicemix.osgi.private.pkg>
-            META-INF*;-split-package:=merge-first
+            META-INF*;-split-package:=merge-first,
             schemas*;-split-package:=merge-first
         </servicemix.osgi.private.pkg>
     </properties>
@@ -99,5 +100,32 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Export-Package>${servicemix.osgi.export}</Export-Package>
+                        <Import-Package>${servicemix.osgi.import.pkg}*</Import-Package>
+                        <Private-Package>${servicemix.osgi.private.pkg}</Private-Package>
+                        <_exportcontents>META-INF.cxf</_exportcontents>
+                        <_failok>true</_failok>
+                    </instructions>
+                    <unpackBundle>true</unpackBundle>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
