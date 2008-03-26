@@ -71,6 +71,17 @@
          another one is exported by a bundle with a higher ranking -->
     <osgi:reference id="jmxAuthenticator" interface="javax.management.remote.JMXAuthenticator" cardinality="0..1"/>
 
+    <!-- Simple authenticator -->
+    <bean id="simpleAuthenticator" class="org.apache.servicemix.management.SimpleAuthenticationManager">
+        <property name="login" value="smx" />
+        <property name="password" value="smx" />
+    </bean>
+    <osgi:service ref="simpleAuthenticator">
+        <osgi:interfaces>
+            <value>javax.management.remote.JMXAuthenticator</value>
+        </osgi:interfaces>
+    </osgi:service>
+
     <!-- Property place holder -->
     <osgix:property-placeholder persistent-id="org.apache.servicemix.management">
         <osgix:default-properties>
