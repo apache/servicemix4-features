@@ -58,11 +58,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>biz.aQute</groupId>
-            <artifactId>bndlib</artifactId>
-            <version>${bnd.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -73,10 +68,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Activator>${pom.artifactId}.impl.Activator</Bundle-Activator>
-                        <Export-Package>${pom.artifactId}*</Export-Package>
                         <Import-Package>*</Import-Package>
-                        <Private-Package>aQute.*</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
