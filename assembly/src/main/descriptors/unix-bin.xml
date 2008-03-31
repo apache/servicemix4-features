@@ -149,7 +149,9 @@
                 <include>org.ops4j.pax.web:pax-web-bundle</include>
                 <include>org.ops4j.pax.web:pax-web-jsp</include>
                 <include>org.ops4j.pax.web-extender:pax-web-ex-war</include>
+                <include>org.ops4j.pax.web-extender:pax-web-ex-whiteboard</include>
                 <include>org.ops4j.pax.url:pax-url-war</include>
+                <include>org.apache.servicemix.war:org.apache.servicemix.war.deployer</include>
 
                 <!-- EJB3 / CXF -->
                 <include>org.apache.xbean:xbean-finder</include>
@@ -188,6 +190,7 @@
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.xmlschema-1.3.2</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.xmlresolver-1.2</include>
                 <include>org.apache.servicemix.ejb3:org.apache.servicemix.cxf.transport.nmr</include>
+                <include>org.apache.servicemix.ejb3:org.apache.servicemix.cxf.transport.osgi</include>
                 <include>org.apache.servicemix.ejb3:org.apache.servicemix.cxf.binding.nmr</include>
                 <include>org.apache.servicemix.ejb3:org.apache.servicemix.ejb3.deployer</include>
 
