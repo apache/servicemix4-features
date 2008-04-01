@@ -79,6 +79,7 @@
                             '=META-INF.cxf.osgi'
                         </Export-Package>
                         <_failok>true</_failok>
+                        <Spring-Context>*;publish-context:=false</Spring-Context>
                     </instructions>
                 </configuration>
             </plugin>

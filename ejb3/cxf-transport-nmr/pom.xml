@@ -75,8 +75,12 @@
                         </Import-Package>
                         <!-- Needed for jaxb annotations classes -->
                         <DynamicImport-Package>*</DynamicImport-Package>
-                        <Export-Package>${pom.artifactId}*</Export-Package>
+                        <Export-Package>
+                            ${pom.artifactId}*,
+                            '=META-INF.cxf.transport.nmr'
+                        </Export-Package>
                         <Private-Package></Private-Package>
+                        <_failok>true</_failok>
                         <Spring-Context>*;publish-context:=false</Spring-Context>
                     </instructions>
                 </configuration>
