@@ -16,20 +16,12 @@
  */
 package org.apache.servicemix.camel;
 
-import org.apache.camel.component.cxf.CxfConstants;
 import org.apache.camel.impl.DefaultEndpoint;
-import org.apache.camel.spring.SpringCamelContext;
 import org.apache.camel.ExchangePattern;
 import org.apache.camel.Producer;
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
-import org.apache.servicemix.camel.spring.ServiceMixEndpointBean;
 import org.apache.servicemix.nmr.api.Exchange;
-import org.apache.servicemix.nmr.api.NMR;
-import org.apache.servicemix.nmr.api.internal.Flow;
-import org.apache.servicemix.nmr.api.service.ServiceHelper;
-import org.apache.servicemix.nmr.core.ServiceMix;
-import org.apache.servicemix.nmr.core.StraightThroughFlow;
 
 /**
  * Created by IntelliJ IDEA. User: gnodet Date: Sep 19, 2007 Time: 8:54:34 AM To
@@ -39,54 +31,11 @@ import org.apache.servicemix.nmr.core.StraightThroughFlow;
  */
 public class ServiceMixEndpoint extends DefaultEndpoint<ServiceMixExchange> {
 
-	public static final String SPRING_CONTEXT_ENDPOINT = "bean:";
-
 	private String endpointName;
 
-	public ServiceMixEndpoint(ServiceMixComponent component, String uri,
-			String endpointName) {
+	public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
 		super(uri, component);
-		this.setEndpointName(endpointName);
-		if (endpointName.startsWith(CxfConstants.SPRING_CONTEXT_ENDPOINT)) {
-			String beanId = endpointName
-					.substring(CxfConstants.SPRING_CONTEXT_ENDPOINT.length());
-			if (beanId.startsWith("//")) {
-				beanId = beanId.substring(2);
-			}
-			SpringCamelContext context = (SpringCamelContext) this.getContext();
-
-			ServiceMixEndpointBean smxEndpointBean = (ServiceMixEndpointBean) context
-					.getApplicationContext().getBean(beanId);
-
-			assert (smxEndpointBean != null);
-			NMR nmr = smxEndpointBean.getNmr();
-			Flow flow = smxEndpointBean.getFlow();
-			if (nmr != null) {
-				if (nmr.getFlowRegistry() != null) {
-					if (flow != null) {
-						// set Flow we get from configuration file
-						nmr.getFlowRegistry().register(
-								flow,
-								ServiceHelper.createMap(Flow.ID, flow
-										.getClass().getName()));
-					} else {
-						// set defaule Flow
-						nmr.getFlowRegistry().register(
-								new StraightThroughFlow(),
-								ServiceHelper.createMap(Flow.ID,
-										StraightThroughFlow.class.getName()));
-					}
-				}
-
-				((ServiceMix) nmr).init();
-				getComponent().setNmr(nmr);
-			}
-
-		}
-	}
-
-	public ServiceMixEndpoint() {
-		super("uri", new ServiceMixComponent());
+		this.endpointName = endpointName;
 	}
 
 	public ServiceMixComponent getComponent() {
@@ -106,19 +55,15 @@ public class ServiceMixEndpoint extends DefaultEndpoint<ServiceMixExchange> {
 	}
 
 	public ServiceMixExchange createExchange(Exchange exchange) {
-		return new ServiceMixExchange(getContext(), getExchangePattern(),
-				exchange);
+		return new ServiceMixExchange(getContext(), getExchangePattern(), exchange);
 	}
 
-	public ServiceMixExchange createExchange(ExchangePattern pattern,
-			Exchange exchange) {
+	public ServiceMixExchange createExchange(ExchangePattern pattern, Exchange exchange) {
 		return new ServiceMixExchange(getContext(), pattern, exchange);
 	}
 
-	public ServiceMixExchange createExchange(
-			org.apache.servicemix.nmr.api.Message inMessage, Exchange exchange) {
-		return new ServiceMixExchange(getContext(), getExchangePattern(),
-				inMessage, exchange);
+	public ServiceMixExchange createExchange(org.apache.servicemix.nmr.api.Message inMessage, Exchange exchange) {
+		return new ServiceMixExchange(getContext(), getExchangePattern(), inMessage, exchange);
 	}
 
 	public void setEndpointName(String endpointName) {

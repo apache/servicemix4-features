@@ -97,8 +97,8 @@ public class AttachmentTest extends ContextTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	from("cxf:bean:routerEndpoint").to("smx:bean:testEndpoint");
-            	from("smx:bean:testEndpoint").to("cxf:bean:serviceEndpoint");
+            	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
+            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");
             }
         };
     }

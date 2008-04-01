@@ -16,10 +16,9 @@
  */
 package org.apache.servicemix.camel;
 
-import org.apache.camel.CamelContext;
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.spring.SpringTestSupport;
+import org.apache.camel.CamelContext;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.bus.CXFBusFactory;
@@ -27,12 +26,10 @@ import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.frontend.ClientFactoryBean;
 import org.apache.cxf.frontend.ClientProxyFactoryBean;
 import org.apache.cxf.frontend.ServerFactoryBean;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-
-
-
-public class SmxToCxfTest extends ContextTestSupport {
+public class SmxToCxfTest extends SpringTestSupport {
     protected static final String ROUTER_ADDRESS = "http://localhost:9000/router";
     protected static final String SERVICE_ADDRESS = "local://smx/helloworld";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.servicemix.camel.HelloService";
@@ -41,8 +38,7 @@ public class SmxToCxfTest extends ContextTestSupport {
     private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO";
     
     private ServerImpl server;
-    private CamelContext camelContext;
-       
+
     
     @Override
     protected void setUp() throws Exception {
@@ -50,7 +46,15 @@ public class SmxToCxfTest extends ContextTestSupport {
                 
         startService();
     }
-    
+
+    protected ClassPathXmlApplicationContext createApplicationContext() {
+        return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/spring/EndpointBeans.xml");
+    }
+
+    protected void assertValidContext(CamelContext context) {
+        assertNotNull("No context found!", context);
+    }
+
     protected void startService() {
         //start a service
         ServerFactoryBean svrBean = new ServerFactoryBean();
@@ -81,12 +85,6 @@ public class SmxToCxfTest extends ContextTestSupport {
             }
         };
     }
-    
-    protected CamelContext createCamelContext() throws Exception {
-    	camelContext = new DefaultCamelContext();
-    	return camelContext;
-    }
-
     
     public void testInvokingServiceFromCXFClient() throws Exception {  
         Bus bus = BusFactory.getDefaultBus();

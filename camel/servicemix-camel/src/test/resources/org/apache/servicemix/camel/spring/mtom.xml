@@ -18,36 +18,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:cxf="http://activemq.apache.org/camel/schema/cxfEndpoint"      
-       xmlns:smx="http://servicemix.apache.org/camelEndpoint/"
        xmlns:mtom="http://cxf.apache.org/mime"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://activemq.apache.org/camel/schema/cxfEndpoint http://activemq.apache.org/camel/schema/cxf/cxfEndpoint.xsd
-       http://servicemix.apache.org/camelEndpoint/ http://servicemix.apache.org/camelEndpoint/.xsd
     ">
 
   
-  <cxf:cxfEndpoint id="routerEndpoint" address="http://localhost:9036/mime-test" 
-    serviceClass="org.apache.cxf.mime.TestMtom" wsdlURL="/wsdl/mtom_xop.wsdl" serviceName="mtom:TestMtomService"/>
+  <cxf:cxfEndpoint id="routerEndpoint"
+                   address="http://localhost:9036/mime-test"
+                   serviceClass="org.apache.cxf.mime.TestMtom"
+                   wsdlURL="/wsdl/mtom_xop.wsdl"
+                   serviceName="mtom:TestMtomService"/>
   
     
-  <cxf:cxfEndpoint id="serviceEndpoint" address="local://smx/attachment" 
-    serviceClass="org.apache.cxf.mime.TestMtom" wsdlURL="/wsdl/mtom_xop.wsdl" serviceName="mtom:TestMtomService"
-    transportId="http://cxf.apache.org/transports/local"/>
+  <cxf:cxfEndpoint id="serviceEndpoint"
+                   address="local://smx/attachment"
+                   serviceClass="org.apache.cxf.mime.TestMtom"
+                   wsdlURL="/wsdl/mtom_xop.wsdl"
+                   serviceName="mtom:TestMtomService"
+                   transportId="http://cxf.apache.org/transports/local"/>
 
-  <smx:smxEndpoint id="testEndpoint" nmr="#servicemix" flow="#staightThroughFlow"/>
-  
-  <bean id="servicemix" class="org.apache.servicemix.nmr.core.ServiceMix">
-        <property name="endpointRegistry" ref="endpointRegistry" />
-        <property name="listenerRegistry" ref="listenerRegistry" />
-        <property name="flowRegistry" ref="flowRegistry" />
-  </bean>
-  <bean id="endpointRegistry" class="org.apache.servicemix.nmr.core.EndpointRegistryImpl">
-        <property name="nmr" ref="servicemix" />
-        <property name="registry" ref="serviceRegistry"/>
-  </bean>  
-  <bean id="listenerRegistry" class="org.apache.servicemix.nmr.core.ListenerRegistryImpl" />
-  <bean id="flowRegistry" class="org.apache.servicemix.nmr.core.FlowRegistryImpl" />
-  <bean id="staightThroughFlow" class="org.apache.servicemix.nmr.core.StraightThroughFlow" />
-  <bean id="serviceRegistry" class="org.apache.servicemix.nmr.core.ServiceRegistryImpl"/>
+  <bean id="nmr" class="org.apache.servicemix.nmr.core.ServiceMix" init-method="init" />
+
 </beans>

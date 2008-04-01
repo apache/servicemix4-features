@@ -16,22 +16,16 @@
  */
 package org.apache.servicemix.camel;
 
+import java.util.Map;
+
 import org.apache.camel.ExchangePattern;
 import org.apache.camel.Processor;
 import org.apache.camel.impl.DefaultConsumer;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Exchange;
-import org.apache.servicemix.nmr.api.Pattern;
 import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
 
-/**
- * Created by IntelliJ IDEA.
- * User: gnodet
- * Date: Sep 19, 2007
- * Time: 8:59:46 AM
- * To change this template use File | Settings | File Templates.
- */
 public class ServiceMixConsumer extends DefaultConsumer<ServiceMixExchange> implements org.apache.servicemix.nmr.api.Endpoint {
 
     private Channel channel;
@@ -46,16 +40,18 @@ public class ServiceMixConsumer extends DefaultConsumer<ServiceMixExchange> impl
 
     protected void doStart() throws Exception {
         super.doStart();
-        getEndpoint().getComponent().registerEndpoint(this, 
-        		ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME, 
-        				getEndpoint().getEndpointName()));
+        getEndpoint().getComponent().registerEndpoint(this, createEndpointMap());
     }
 
     protected void doStop() throws Exception {
-        getEndpoint().getComponent().unregisterEndpoint(this, 
-        		ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME, 
-        				getEndpoint().getEndpointName()));
+        getEndpoint().getComponent().unregisterEndpoint(this, createEndpointMap());
         super.doStop();
+    }
+
+    private Map<String,?> createEndpointMap() {
+        return ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME,
+        				               getEndpoint().getEndpointName());
+
     }
 
     public void setChannel(Channel channel) {
@@ -68,18 +64,15 @@ public class ServiceMixConsumer extends DefaultConsumer<ServiceMixExchange> impl
             	ServiceMixExchange smExchange = getEndpoint().createExchange(exchange.getIn(), exchange);
             	smExchange.setPattern(ExchangePattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
                 getAsyncProcessor().process(smExchange);
-                exchange.setStatus(Status.Done);
-                if (exchange.getPattern() != Pattern.InOnly) {
-                	
-                	if (smExchange.getFault().getBody() != null) {
-                		exchange.getFault().setBody(smExchange.getFault().getBody());
-                	} else {
-                		exchange.getOut().setBody(smExchange.getOut().getBody());
-                	}
+                if (smExchange.getFault(false) != null) {
+                    exchange.getFault().setBody(smExchange.getFault().getBody());
+                } else if (smExchange.getOut(false) != null) {
+                    exchange.getOut().setBody(smExchange.getOut().getBody());
+                } else {
+                    exchange.setStatus(Status.Done);
                 }
                 channel.send(exchange);
             } catch (Exception e) {
-            	e.printStackTrace();
                 exchange.setError(e);
                 exchange.setStatus(Status.Error);
                 channel.send(exchange);

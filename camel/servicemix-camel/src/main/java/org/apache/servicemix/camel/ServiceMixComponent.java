@@ -19,29 +19,23 @@ package org.apache.servicemix.camel;
 import org.apache.camel.Endpoint;
 import org.apache.camel.impl.DefaultComponent;
 import org.apache.servicemix.nmr.api.NMR;
-import org.apache.servicemix.nmr.core.ServiceMix;
 
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
- * User: gnodet
- * Date: Sep 19, 2007
- * Time: 8:48:25 AM
- * To change this template use File | Settings | File Templates.
+ * A camel component to bridge ServiceMix NMR with Camel.
  */
 public class ServiceMixComponent extends DefaultComponent {
 
     private NMR nmr;
     
     public ServiceMixComponent() {
-    	if (nmr == null) {
-    		nmr = new ServiceMix();
-        	((ServiceMix)nmr).init();
-    	}
     }
 
     public NMR getNmr() {
+        if (nmr == null) {
+            nmr = getCamelContext().getRegistry().lookup("nmr", NMR.class);
+        }
         return nmr;
     }
 
@@ -54,10 +48,10 @@ public class ServiceMixComponent extends DefaultComponent {
     }
 
     public void registerEndpoint(org.apache.servicemix.nmr.api.Endpoint endpoint, Map<String, ?> properties) {
-        nmr.getEndpointRegistry().register(endpoint, properties);
+        getNmr().getEndpointRegistry().register(endpoint, properties);
     }
 
     public void unregisterEndpoint(org.apache.servicemix.nmr.api.Endpoint endpoint, Map<String, ?> properties) {
-        nmr.getEndpointRegistry().unregister(endpoint, properties);
+        getNmr().getEndpointRegistry().unregister(endpoint, properties);
     }
 }
