@@ -110,14 +110,14 @@
       <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.0.0</pax.logging.version>
       <pax.url.version>0.3.0</pax.url.version>
-      <pax.web.version>0.4.0-SNAPSHOT</pax.web.version>
+      <pax.web.version>0.4.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <servicemix.kernel.version>1.0-m2</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m1</servicemix.nmr.version>
       <spring.version>2.5.1</spring.version>
       <spring.osgi.version>1.0</spring.osgi.version>
       <xstream.version>1.2.2</xstream.version>
-      <xbean.version>3.3.1-r631610</xbean.version>
+      <xbean.version>3.3.1-r643297</xbean.version>
   </properties>
 
    <repositories>
