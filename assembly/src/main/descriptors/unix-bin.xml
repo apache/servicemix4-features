@@ -51,8 +51,8 @@
             <lineEnding>unix</lineEnding>
         </fileSet>        
         <fileSet>
-            <directory>target/classes</directory>
-            <outputDirectory>/</outputDirectory>
+            <directory>target/classes/etc</directory>
+            <outputDirectory>/etc/</outputDirectory>
             <lineEnding>unix</lineEnding>
         </fileSet>
 
@@ -177,7 +177,7 @@
                 <include>org.apache.openejb:openejb-webservices</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.asm-2.2.3</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-cli-1.1</include>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.cxf-2.0.4</include>
+                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.cxf-2.0.5</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-api-2.0</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-impl-2.0.3</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxws-api-2.0</include>

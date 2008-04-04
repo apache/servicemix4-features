@@ -51,7 +51,6 @@
             <artifactId>org.osgi.core</artifactId>
             <version>${felix.osgi.version}</version>
             <scope>provided</scope>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -101,22 +100,7 @@
         </dependency>
         <dependency>
           <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-policy</artifactId>
-          <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-addr</artifactId>
-          <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-rm</artifactId>
-          <version>${cxf.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-security</artifactId>
+          <artifactId>cxf-bundle</artifactId>
           <version>${cxf.version}</version>
         </dependency>
         <dependency>

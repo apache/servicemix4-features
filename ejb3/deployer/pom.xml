@@ -36,11 +36,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.cxf-2.0.4</artifactId>
-            <version>${pom.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.servicemix.ejb3</groupId>
             <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
             <version>${pom.version}</version>
@@ -320,7 +315,6 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
             <version>${cxf.version}</version>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 

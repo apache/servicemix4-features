@@ -29,7 +29,7 @@
     </parent>
 
     <groupId>org.apache.servicemix.bundles</groupId>
-    <artifactId>org.apache.servicemix.bundles.cxf-2.0.4</artifactId>
+    <artifactId>org.apache.servicemix.bundles.cxf-2.0.5</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>ServiceMix OSGI Common Bundles: cxf</name>
@@ -38,7 +38,7 @@
     </description>
 
     <properties>
-        <pkgVersion>2.0.4</pkgVersion>
+        <pkgVersion>2.0.5.incubator</pkgVersion>
 		<servicemix.osgi.export>
             org.apache.cxf*;version=${pkgVersion};-split-package:=merge-first,
             org.xmlsoap.schemas*;version=${pkgVersion};-split-package:=merge-first,
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
-            <version>2.0.4-incubator</version>
+            <version>2.0.5-incubator</version>
             <optional>true</optional>
         </dependency>
 
