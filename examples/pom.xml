@@ -35,6 +35,9 @@
     <name>ServiceMix Examples</name>
 
     <modules>
+        <module>camel-nmr</module>
+        <module>camel-osgi</module>
+        <module>cxf-camel-nmr</module>
         <module>cxf-nmr</module>
         <module>cxf-osgi</module>
     </modules>

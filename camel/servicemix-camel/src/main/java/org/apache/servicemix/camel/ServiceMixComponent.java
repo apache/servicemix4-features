@@ -34,7 +34,7 @@ public class ServiceMixComponent extends DefaultComponent {
 
     public NMR getNmr() {
         if (nmr == null) {
-            nmr = getCamelContext().getRegistry().lookup("nmr", NMR.class);
+            nmr = getCamelContext().getRegistry().lookup(NMR.class.getName(), NMR.class);
         }
         return nmr;
     }

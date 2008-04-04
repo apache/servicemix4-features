@@ -61,9 +61,24 @@
 		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.transport.osgi/${version}</bundle>
 	</feature>
 	<feature name="cxf-nmr">
+		<feature>cxf</feature>
 		<feature>nmr</feature>
 		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.transport.nmr/${version}</bundle>
 		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
+	</feature>
+	<feature name="camel">
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/${geronimo.activation.version}</bundle>
+		<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-api-2.0/${version}</bundle>
+		<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl-2.0.3/${version}</bundle>
+		<bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
+		<bundle>mvn:org.apache.camel/camel-core/${camel.version}</bundle>
+		<bundle>mvn:org.apache.camel/camel-spring/${camel.version}</bundle>
+		<bundle>mvn:org.apache.camel/camel-osgi/${camel.version}</bundle>
+	</feature>
+	<feature name="camel-nmr">
+		<feature>camel</feature>
+		<feature>nmr</feature>
+		<bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/${version}</bundle>
 	</feature>
 	<feature name="examples-cxf-osgi">
 		<feature>cxf-osgi</feature>
@@ -72,5 +87,18 @@
 	<feature name="examples-cxf-nmr">
 		<feature>cxf-nmr</feature>
 		<bundle>mvn:org.apache.servicemix.examples/cxf-nmr/${version}</bundle>
+	</feature>
+	<feature name="examples-camel-osgi">
+		<feature>camel</feature>
+		<bundle>mvn:org.apache.servicemix.examples/camel-osgi/${version}</bundle>
+	</feature>
+	<feature name="examples-camel-nmr">
+		<feature>camel-nmr</feature>
+		<bundle>mvn:org.apache.servicemix.examples/camel-nmr/${version}</bundle>
+	</feature>
+	<feature name="examples-cxf-camel-nmr">
+		<feature>camel-nmr</feature>
+		<feature>cxf-nmr</feature>
+		<bundle>mvn:org.apache.servicemix.examples/cxf-camel-nmr/${version}</bundle>
 	</feature>
 </features>

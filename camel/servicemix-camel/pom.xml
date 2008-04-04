@@ -125,8 +125,8 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Export-Package>${pom.artifactId}</Export-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Import-Package>*</Import-Package>
+                        <Export-Package>org.apache.servicemix.camel*</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

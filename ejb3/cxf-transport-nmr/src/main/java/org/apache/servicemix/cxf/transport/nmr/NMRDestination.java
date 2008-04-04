@@ -146,8 +146,7 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             // setup the message to be send back
             Channel dc = channel;
             message.put(Exchange.class, inMessage.get(Exchange.class));
-            message.setContent(OutputStream.class,
-                               new NMRDestinationOutputStream(inMessage, dc));
+            message.setContent(OutputStream.class, new NMRDestinationOutputStream(inMessage, dc));
         }        
 
         protected Logger getLogger() {
