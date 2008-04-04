@@ -66,7 +66,7 @@
 		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
 	</feature>
 	<feature name="examples-cxf-osgi">
-		<feature>cxf-ogi</feature>
+		<feature>cxf-osgi</feature>
 		<bundle>mvn:org.apache.servicemix.examples/cxf-osgi/${version}</bundle>
 	</feature>
 	<feature name="examples-cxf-nmr">
