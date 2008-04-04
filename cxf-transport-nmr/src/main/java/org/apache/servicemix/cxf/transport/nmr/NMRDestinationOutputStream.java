@@ -69,10 +69,8 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
             if (inMessage.getExchange().isOneWay()) {
                 return;
             } else {
-                
                 InputStream bais = getInputStream();
-                LOG.finest(new org.apache.cxf.common.i18n.Message(
-                    "BUILDING.DOCUMENT", LOG).toString());
+                LOG.finest(new org.apache.cxf.common.i18n.Message("BUILDING.DOCUMENT", LOG).toString());
                 DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
                 docBuilderFactory.setNamespaceAware(true);
                 DocumentBuilder builder = docBuilderFactory.newDocumentBuilder();
@@ -89,7 +87,6 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                     }
                 } else {
                     xchng.getOut().setBody(new DOMSource(doc));
-                    
                 }
                 LOG.fine(new org.apache.cxf.common.i18n.Message("POST.DISPATCH", LOG).toString());
                 channel.send(xchng);
