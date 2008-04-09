@@ -39,6 +39,6 @@
                    serviceName="mtom:TestMtomService"
                    transportId="http://cxf.apache.org/transports/local"/>
 
-  <bean id="nmr" class="org.apache.servicemix.nmr.core.ServiceMix" init-method="init" />
+  <bean id="org.apache.servicemix.nmr.api.NMR" class="org.apache.servicemix.nmr.core.ServiceMix" init-method="init" />
 
 </beans>
