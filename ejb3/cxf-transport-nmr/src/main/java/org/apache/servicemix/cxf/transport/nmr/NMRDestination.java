@@ -84,7 +84,6 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
     }
     
     public void shutdown() {
-        nmr.getEndpointRegistry().unregister(this, properties);
     }
 
     public void deactivate() {
