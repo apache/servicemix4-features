@@ -26,7 +26,7 @@ http://www.springframework.org/schema/osgi  http://www.springframework.org/schem
 
     <bean id="destinationRegistry" class="org.apache.servicemix.cxf.transport.http_osgi.OsgiDestinationRegistry" />
 
-    <bean id="osgiServlet" class="org.apache.servicemix.cxf.transport.http_osgi.OsgiServlet">
+    <bean id="osgiServlet" class="org.apache.servicemix.cxf.transport.http_osgi.SpringOsgiServlet">
         <constructor-arg ref="destinationRegistry"/>
     </bean>
 

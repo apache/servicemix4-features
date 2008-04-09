@@ -104,9 +104,9 @@ public class OsgiServlet extends HttpServlet {
         }
         String base = forcedBaseAddress == null ? getBaseURL(request) : forcedBaseAddress;
 
-        if (base.equals(lastBase)) {
-            return;
-        }
+        //if (base.equals(lastBase)) {
+        //    return;
+        //}
         Set<String> paths = transport.getDestinationsPaths();
         for (String path : paths) {
             OsgiDestination d2 = transport.getDestinationForPath(path);
