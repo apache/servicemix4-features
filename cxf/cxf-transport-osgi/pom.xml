@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <!--
+
+        Licensed to the Apache Software Foundation (ASF) under one or more
+        contributor license agreements.  See the NOTICE file distributed with
+        this work for additional information regarding copyright ownership.
+        The ASF licenses this file to You under the Apache License, Version 2.0
+        (the "License"); you may not use this file except in compliance with
+        the License.  You may obtain a copy of the License at
+
+           http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+	    <groupId>org.apache.servicemix.cxf</groupId>
+	    <artifactId>cxf</artifactId>
+        <version>4.0-m1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.apache.servicemix.cxf</groupId>
+    <artifactId>org.apache.servicemix.cxf.transport.osgi</artifactId>
+    <packaging>bundle</packaging>
+    <version>4.0-m1-SNAPSHOT</version>
+    <name>ServiceMix CXF Transport for OSGi</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>${felix.compendium.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Bundle generation -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>
+                            javax.xml.rpc*;resolution:=optional,
+                            javax.xml.soap,
+                            com.ctc.wstx.stax;resolution:=optional,
+                            org.apache.axis.soap;resolution:=optional,
+                            org.apache.axis2.saaj;resolution:=optional,
+                            com.sun.xml.messaging.saaj.soap.ver1_1;resolution:=optional,
+                            com.sun.xml.messaging.saaj.client.p2p;resolution:=optional,
+                            com.sun.xml.messaging.saaj.soap;resolution:=optional,
+                            *
+                        </Import-Package>
+                        <Export-Package>
+                            org.apache.servicemix.cxf.transport.http_osgi,
+                            '=META-INF.cxf.osgi'
+                        </Export-Package>
+                        <_failok>true</_failok>
+                        <Spring-Context>*;publish-context:=false</Spring-Context>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <!-- generate dependencies versions -->
+            <plugin>
+		        <groupId>org.apache.servicemix.kernel.testing</groupId>
+		        <artifactId>depends-maven-plugin</artifactId>
+                <version>${servicemix.kernel.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-depends-file</id>
+                        <goals>
+                            <goal>generate-depends-file</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <forkMode>pertest</forkMode>
+                    <systemProperties>
+                        <property>
+                            <name>javax.xml.parsers.DocumentBuilderFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.datatype.DatatypeFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.parsers.SAXParserFactory</name>
+                            <value>com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

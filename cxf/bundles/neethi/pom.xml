@@ -23,13 +23,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix.transaction.bundles</groupId>
+        <groupId>org.apache.servicemix.cxf.bundles</groupId>
         <artifactId>bundles</artifactId>
         <version>4.0-m1-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.bundles</groupId>
-    <artifactId>org.apache.servicemix.bundles.howl-1.0.1-1</artifactId>
+    <artifactId>org.apache.servicemix.bundles.neethi-2.0.2</artifactId>
     <version>4.0-m1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>ServiceMix OSGI Common Bundles: ${pkgArtifactId}</name>
@@ -38,20 +38,52 @@
     </description>
 
     <properties>
-        <pkgArtifactId>howl</pkgArtifactId>
-        <pkgVersion>1.0.1-1</pkgVersion>
-        <servicemix.osgi.export.pkg>org.objectweb.howl</servicemix.osgi.export.pkg>
+        <pkgArtifactId>neethi</pkgArtifactId>
+        <pkgVersion>2.0.2</pkgVersion>
         <servicemix.osgi.import.pkg>
+            org.apache.axiom*;resolution:=optional,
+            sun.misc*;resolution:=optional,
             *
         </servicemix.osgi.import.pkg>
+        <servicemix.osgi.export.pkg>
+            org.apache.neethi
+		</servicemix.osgi.export.pkg>
+        <servicemix.osgi.private.pkg></servicemix.osgi.private.pkg>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.objectweb.howl</groupId>
-            <artifactId>${pkgArtifactId}</artifactId>
+            <groupId>org.apache.neethi</groupId>
+            <artifactId>neethi</artifactId>
             <version>${pkgVersion}</version>
             <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.ws.commons.axiom</groupId>
+                    <artifactId>axiom-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.ws.commons.axiom</groupId>
+                    <artifactId>axiom-parent</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.ws.commons.axiom</groupId>
+                    <artifactId>axiom-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>woodstox</groupId>
+                    <artifactId>wstx-asl</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
+
 </project>

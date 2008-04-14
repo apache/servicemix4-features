@@ -23,13 +23,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix.transaction.bundles</groupId>
+        <groupId>org.apache.servicemix.cxf.bundles</groupId>
         <artifactId>bundles</artifactId>
         <version>4.0-m1-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.bundles</groupId>
-    <artifactId>org.apache.servicemix.bundles.howl-1.0.1-1</artifactId>
+    <artifactId>org.apache.servicemix.bundles.jaxws-api-2.0</artifactId>
     <version>4.0-m1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>ServiceMix OSGI Common Bundles: ${pkgArtifactId}</name>
@@ -38,20 +38,35 @@
     </description>
 
     <properties>
-        <pkgArtifactId>howl</pkgArtifactId>
-        <pkgVersion>1.0.1-1</pkgVersion>
-        <servicemix.osgi.export.pkg>org.objectweb.howl</servicemix.osgi.export.pkg>
+        <pkgArtifactId>jaxws-api</pkgArtifactId>
+        <pkgVersion>${jaxws.api.version}</pkgVersion>
+        <servicemix.osgi.export.pkg>javax.xml.ws*</servicemix.osgi.export.pkg>
         <servicemix.osgi.import.pkg>
+            javax.xml.soap*;resolution:=optional,
             *
         </servicemix.osgi.import.pkg>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.objectweb.howl</groupId>
+            <groupId>javax.xml.ws</groupId>
             <artifactId>${pkgArtifactId}</artifactId>
             <version>${pkgVersion}</version>
             <optional>true</optional>
+            <exclusions>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+            </exclusions>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.jaxb-api-2.0</artifactId>
+            <version>4.0-m1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-saaj_1.3_spec</artifactId>
+            <version>${geronimo.saaj.version}</version>
         </dependency>
     </dependencies>
 </project>

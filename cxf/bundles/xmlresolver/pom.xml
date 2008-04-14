@@ -23,13 +23,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix.transaction.bundles</groupId>
+        <groupId>org.apache.servicemix.cxf.bundles</groupId>
         <artifactId>bundles</artifactId>
         <version>4.0-m1-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.bundles</groupId>
-    <artifactId>org.apache.servicemix.bundles.howl-1.0.1-1</artifactId>
+    <artifactId>org.apache.servicemix.bundles.xmlresolver-1.2</artifactId>
     <version>4.0-m1-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>ServiceMix OSGI Common Bundles: ${pkgArtifactId}</name>
@@ -38,20 +38,19 @@
     </description>
 
     <properties>
-        <pkgArtifactId>howl</pkgArtifactId>
-        <pkgVersion>1.0.1-1</pkgVersion>
-        <servicemix.osgi.export.pkg>org.objectweb.howl</servicemix.osgi.export.pkg>
-        <servicemix.osgi.import.pkg>
-            *
-        </servicemix.osgi.import.pkg>
+        <pkgArtifactId>xmlresolver</pkgArtifactId>
+        <pkgVersion>1.2</pkgVersion>
+        <servicemix.osgi.export.pkg>org.apache.xml.resolver</servicemix.osgi.export.pkg>
+        <servicemix.osgi.private.pkg></servicemix.osgi.private.pkg>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.objectweb.howl</groupId>
-            <artifactId>${pkgArtifactId}</artifactId>
+            <groupId>xml-resolver</groupId>
+            <artifactId>xml-resolver</artifactId>
             <version>${pkgVersion}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
+
 </project>

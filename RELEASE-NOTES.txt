@@ -1,0 +1,33 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+                  Apache ServiceMix 4.0-m1
+                  ================================
+
+See the README.txt file for more general informations about ServiceMix 4.
+
+This is the first milestone of ServiceMix 4.  All the features are not 
+fully implemented yet and things may be changed until the final 4.0 release.
+Please refer to the web site for more informations and feel free to ask any
+questions on the ServiceMix mailing lists or simply to provide feedback 
+(we appreciate it very much).
+
+Thanks you for downloading ServiceMix Kernel.  Enjoy !
+
+The ServiceMix Team
+http://servicemix.apache.org/team.html
+

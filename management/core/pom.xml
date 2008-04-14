@@ -25,13 +25,13 @@
     <parent>
 	    <groupId>org.apache.servicemix.management</groupId>
 	    <artifactId>management</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>4.0-m1-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.management</groupId>
     <artifactId>org.apache.servicemix.management.core</artifactId>
     <packaging>bundle</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>4.0-m1-SNAPSHOT</version>
     <name>ServiceMix Management Core</name>
 
     <dependencies>

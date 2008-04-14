@@ -21,19 +21,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix.war</groupId>
-        <artifactId>war</artifactId>
+        <groupId>org.apache.servicemix.cxf</groupId>
+        <artifactId>cxf</artifactId>
         <version>4.0-m1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.war.bundles</groupId>
+    <groupId>org.apache.servicemix.cxf.bundles</groupId>
     <artifactId>bundles</artifactId>
     <packaging>pom</packaging>
     <version>4.0-m1-SNAPSHOT</version>
     <name>ServiceMix OSGI Common Bundles</name>
 
     <modules>
-        <module>jasper</module>
+        <module>cxf</module>
+        <module>jaxws-api</module>
+        <module>neethi</module>
+        <module>saaj-impl</module>
+        <module>wsdl4j</module>
+        <module>xmlresolver</module>
+        <module>xmlschema</module>
     </modules>
 
     <properties>

@@ -30,7 +30,7 @@
   <groupId>org.apache.servicemix.features</groupId>
   <artifactId>features</artifactId>
   <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>4.0-m1-SNAPSHOT</version>
   <name>Apache ServiceMix Features</name>
 
   <modules>
@@ -39,7 +39,10 @@
     <module>activemq</module>
     <module>camel</module>
     <module>war</module>
+    <module>cxf</module>
+    <!--
     <module>ejb3</module>
+    -->
     <module>examples</module>
     <module>assembly</module>
   </modules>

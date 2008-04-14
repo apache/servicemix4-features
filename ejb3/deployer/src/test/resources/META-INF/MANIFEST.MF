@@ -1,5 +1,0 @@
-Bundle-Version: 1.0.0.SNAPSHOT
-Bundle-ManifestVersion: 2
-Manifest-Version: 1.0
-Import-Package: javax.ejb,javax.jws
-Bundle-SymbolicName: test

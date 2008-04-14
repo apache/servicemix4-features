@@ -23,35 +23,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix.transaction.bundles</groupId>
-        <artifactId>bundles</artifactId>
+        <groupId>org.apache.servicemix.features</groupId>
+        <artifactId>features</artifactId>
         <version>4.0-m1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.bundles</groupId>
-    <artifactId>org.apache.servicemix.bundles.howl-1.0.1-1</artifactId>
+    <groupId>org.apache.servicemix.cxf</groupId>
+    <artifactId>cxf</artifactId>
+    <packaging>pom</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <packaging>bundle</packaging>
-    <name>ServiceMix OSGI Common Bundles: ${pkgArtifactId}</name>
-    <description>
-        This bundle simply wraps ${pkgArtifactId}-${pkgVersion}.jar.
-    </description>
+    <name>ServiceMix CXF Support</name>
 
-    <properties>
-        <pkgArtifactId>howl</pkgArtifactId>
-        <pkgVersion>1.0.1-1</pkgVersion>
-        <servicemix.osgi.export.pkg>org.objectweb.howl</servicemix.osgi.export.pkg>
-        <servicemix.osgi.import.pkg>
-            *
-        </servicemix.osgi.import.pkg>
-    </properties>
+    <modules>
+        <module>bundles</module>
+        <module>cxf-transport-nmr</module>
+        <module>cxf-transport-osgi</module>
+        <module>cxf-binding-nmr</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.objectweb.howl</groupId>
-            <artifactId>${pkgArtifactId}</artifactId>
-            <version>${pkgVersion}</version>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 </project>

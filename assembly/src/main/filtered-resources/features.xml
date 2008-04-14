@@ -18,6 +18,7 @@
 -->
 <features>
 	<feature name="web-core">
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
 		<bundle>mvn:org.mortbay.jetty/jetty-util/${jetty.version}</bundle>
 		<bundle>mvn:org.mortbay.jetty/jetty/${jetty.version}</bundle>
 		<bundle>mvn:org.ops4j.pax.web/pax-web-bundle/${pax.web.version}</bundle>
@@ -42,6 +43,7 @@
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo.annotation.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-javamail_1.4_spec/${geronimo.javamail.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-saaj_1.3_spec/${geronimo.saaj.version}</bundle>
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-stax-api_1.0_spec/${geronimo.stax.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
 		<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm-2.2.3/${servicemix.kernel.version}</bundle>
 		<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-api-2.0/${version}</bundle>
