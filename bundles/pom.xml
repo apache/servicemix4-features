@@ -34,15 +34,8 @@
 
     <modules>
         <module>commons-cli</module>
-        <module>cxf</module>
-        <module>jaxws-api</module>
-        <module>neethi</module>
         <module>openjpa</module>
-        <module>saaj-impl</module>
         <module>swizzle</module>
-        <module>wsdl4j</module>
-        <module>xmlresolver</module>
-        <module>xmlschema</module>
     </modules>
 
     <properties>
