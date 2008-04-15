@@ -31,7 +31,7 @@
     <artifactId>transaction</artifactId>
     <packaging>pom</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <name>ServiceMix Features :: Transaction</name> 
+    <name>Apache ServiceMix Features :: Transaction</name> 
 
     <modules>
         <module>bundles</module>

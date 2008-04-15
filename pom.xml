@@ -32,6 +32,7 @@
   <packaging>pom</packaging>
   <version>4.0-m1-SNAPSHOT</version>
   <name>Apache ServiceMix Features</name>
+  <inceptionYear>2005</inceptionYear>
 
   <modules>
     <module>transaction</module>
@@ -40,9 +41,6 @@
     <module>camel</module>
     <module>war</module>
     <module>cxf</module>
-    <!--
-    <module>ejb3</module>
-    -->
     <module>examples</module>
     <module>assembly</module>
   </modules>
@@ -51,15 +49,14 @@
       <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</connection>
       <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</developerConnection>
       <url>http://svn.apache.org/viewvc/servicemix/smx4/features/trunk/</url>
-
   </scm>
   <issueManagement>
       <system>jira</system>
-      <url>http://issues.apache.org/activemq/browse/SM</url>
+      <url>http://issues.apache.org/activemq/browse/SMX4</url>
   </issueManagement>
 
   <prerequisites>
-      <maven>2.0.7</maven>
+      <maven>2.0.8</maven>
   </prerequisites>
 
   <properties>
@@ -116,6 +113,7 @@
       <pax.url.version>0.3.0</pax.url.version>
       <pax.web.version>0.4.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
+      <servicemix.legal.version>1.0-SNAPSHOT</servicemix.legal.version>
       <servicemix.kernel.version>1.0-m2</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m1</servicemix.nmr.version>
       <spring.version>2.5.1</spring.version>
@@ -134,7 +132,7 @@
        <!-- ServiceMix repo -->
        <repository>
            <id>servicemix</id>
-           <name>ServiceMix Repository</name>
+           <name>Apache ServiceMix Repository</name>
            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
        </repository>
        <!-- Incubator repo -->
@@ -170,7 +168,7 @@
       <!-- ServiceMix repo -->
       <pluginRepository>
           <id>servicemix</id>
-          <name>ServiceMix Repository</name>
+          <name>Apache ServiceMix Repository</name>
           <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
       </pluginRepository>
       <!-- Snapshot repo -->
@@ -295,6 +293,58 @@
           <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
           <version>${geronimo.j2ee.management.version}</version>
       </dependency>
+      <dependency>
+          <groupId>org.apache.activemq</groupId>
+          <artifactId>activemq-core</artifactId>
+          <version>${activemq.version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.apache.activemq</groupId>
+                  <artifactId>activeio-core</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>org.apache.geronimo.specs</groupId>
+                  <artifactId>geronimo-j2ee-management_1.0_spec</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-bundle</artifactId>
+          <version>${cxf.version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>bouncycastle</groupId>
+                  <artifactId>bcprov-jdk14</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.jencks</groupId>
+          <artifactId>jencks</artifactId>
+          <version>${jencks.version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.apache.geronimo.specs</groupId>
+                  <artifactId>geronimo-jta_1.0.1B_spec</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>jencks</groupId>
+                  <artifactId>xapool-without-pool</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty</artifactId>
+          <version>${jetty.version}</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.mortbay.jetty</groupId>
+                  <artifactId>servlet-api-2.5</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -348,8 +398,33 @@
       </pluginManagement>
       <plugins>
           <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-dependency-plugin</artifactId>
+              <executions>
+                  <execution>
+                      <id>copy-legal</id>
+                      <phase>generate-resources</phase>
+                      <goals>
+                          <goal>copy</goal>
+                      </goals>
+                      <configuration>
+                          <artifactItems>
+                              <artifactItem>
+                                  <groupId>org.apache.servicemix.legal</groupId>
+                                  <artifactId>legal</artifactId>
+						          <version>${servicemix.legal.version}</version>
+                                  <type>xml</type>
+                                  <outputDirectory>target/legal/</outputDirectory>
+                              </artifactItem>
+                          </artifactItems>
+                          <stripVersion>true</stripVersion>
+                      </configuration>
+                  </execution>
+	          </executions>
+	      </plugin>
+          <plugin>
               <artifactId>maven-remote-resources-plugin</artifactId>
-              <version>1.0-beta-2</version>
+              <version>1.0</version>
               <executions>
                   <execution>
                       <goals>
@@ -357,10 +432,14 @@
                       </goals>
                       <configuration>
                           <resourceBundles>
-                              <resourceBundle>org.apache:apache-jar-resource-bundle:1.3</resourceBundle>
+                              <resourceBundle>org.apache:apache-jar-resource-bundle:1.4</resourceBundle>
                           </resourceBundles>
+                          <supplementalModels>
+                              <supplementalModel>target/legal/legal.xml</supplementalModel>
+                          </supplementalModels>
                           <properties>
                               <addLicense>true</addLicense>
+                              <addArtifact>true</addArtifact>
                               <projectName>Apache ServiceMix</projectName>
                           </properties>
                       </configuration>

@@ -91,6 +91,7 @@ public class WSSecurityTest extends ContextTestSupport {
         if (server != null) {
             server.stop();
         }
+        super.tearDown();
     }
   
     protected RouteBuilder createRouteBuilder() {

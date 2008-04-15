@@ -66,8 +66,6 @@ public class SmxToCxfTest extends SpringTestSupport {
 
         server = (ServerImpl)svrBean.create();
         server.start();
-        
-  
     }
     
     @Override
@@ -75,6 +73,7 @@ public class SmxToCxfTest extends SpringTestSupport {
         if (server != null) {
             server.stop();
         }
+        super.tearDown();
     }
   
     protected RouteBuilder createRouteBuilder() {
@@ -98,8 +97,6 @@ public class SmxToCxfTest extends SpringTestSupport {
         HelloService client = (HelloService) proxyFactory.create();
         String result = client.echo("hello world");
         assertEquals("we should get the right answer from router", "hello world echo", result);
-        
-                
     }
     
         

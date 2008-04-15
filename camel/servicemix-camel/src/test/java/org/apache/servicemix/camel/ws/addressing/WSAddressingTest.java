@@ -174,6 +174,8 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
         headerVerifier = null;
         verified = null;
         messageIDs.clear();
+        super.tearDown();
+        Thread.sleep(5000);
     }
   
     protected RouteBuilder createRouteBuilder() {

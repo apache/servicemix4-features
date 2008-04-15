@@ -32,7 +32,7 @@
     <artifactId>org.apache.servicemix.cxf.transport.osgi</artifactId>
     <packaging>bundle</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <name>ServiceMix CXF Transport for OSGi</name>
+    <name>Apache ServiceMix CXF Transport for OSGi</name>
 
     <dependencies>
         <dependency>
@@ -42,9 +42,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-bundle</artifactId>
-            <version>${cxf.version}</version>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.cxf-2.0.5</artifactId>
+            <version>${pom.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

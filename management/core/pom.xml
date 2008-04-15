@@ -32,7 +32,7 @@
     <artifactId>org.apache.servicemix.management.core</artifactId>
     <packaging>bundle</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <name>ServiceMix Management Core</name>
+    <name>Apache ServiceMix Management Core</name>
 
     <dependencies>
         <dependency>

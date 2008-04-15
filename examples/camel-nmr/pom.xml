@@ -32,7 +32,7 @@
     <artifactId>camel-nmr</artifactId>
     <packaging>bundle</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <name>ServiceMix Example :: Camel NMR</name>
+    <name>Apache ServiceMix Example :: Camel NMR</name>
 
     <dependencies>
         <dependency>

@@ -84,6 +84,7 @@ public class WSRMTest extends ContextTestSupport {
         if (server != null) {
             server.stop();
         }
+        super.tearDown();
     }
   
     protected RouteBuilder createRouteBuilder() {

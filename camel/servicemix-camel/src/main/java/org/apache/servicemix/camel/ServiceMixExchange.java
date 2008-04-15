@@ -21,6 +21,7 @@ import org.apache.camel.ExchangePattern;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultExchange;
+import org.apache.servicemix.nmr.api.Message;
 import org.apache.servicemix.nmr.api.Pattern;
 
 
@@ -127,17 +128,20 @@ public class ServiceMixExchange extends DefaultExchange {
 
     @Override
     protected ServiceMixMessage createInMessage() {
-        return new ServiceMixMessage();
+        Message msg = exchange.getIn(true);
+        return msg != null ? new ServiceMixMessage(msg) : null;
     }
 
     @Override
     protected ServiceMixMessage createOutMessage() {
-        return new ServiceMixMessage();
+        Message msg = exchange.getOut(true);
+        return msg != null ? new ServiceMixMessage(msg) : null;
     }
     
     @Override
     protected org.apache.camel.Message createFaultMessage() {
-        return new ServiceMixMessage();
+        Message msg = exchange.getFault(true); 
+        return msg != null ? new ServiceMixMessage(msg) : null;
     }
 
 }

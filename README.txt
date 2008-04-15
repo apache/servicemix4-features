@@ -17,7 +17,15 @@
 
 Welcome to Apache ServiceMix 4 
 ==============================
-Apache ServiceMix 4 is an integration platform.
+Apache ServiceMix is an open source ESB (Enterprise Service Bus) that combines 
+the functionality of a Service Oriented Architecture (SOA) and an Event Driven
+Architecture (EDA)  to create an agile, enterprise ESB.
+
+Apache ServiceMix is an open source distributed ESB built from the ground up on 
+the  Java Business Integration (JBI) specification JSR 208 and released under 
+the Apache license. The goal of JBI is to allow components and services to be 
+integrated in a vendor independent way, allowing users and vendors to plug and 
+play.
 
 Getting Started
 ===============

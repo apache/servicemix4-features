@@ -23,12 +23,10 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SmxToCxfSpringTest extends SmxToCxfTest {
-	protected AbstractXmlApplicationContext applicationContext;
-    
+
     @Override
     protected void setUp() throws Exception {
-        applicationContext = createApplicationContext();
-        super.setUp();        
+        super.setUp();
         assertNotNull("Should have created a valid spring context", applicationContext);
 
         
@@ -36,9 +34,6 @@ public class SmxToCxfSpringTest extends SmxToCxfTest {
 
     @Override
     protected void tearDown() throws Exception {        
-        if (applicationContext != null) {
-            applicationContext.destroy();
-        }
         super.tearDown();
     }
     

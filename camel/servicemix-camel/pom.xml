@@ -32,7 +32,7 @@
     <artifactId>org.apache.servicemix.camel.component</artifactId>
     <packaging>bundle</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <name>ServiceMix Camel Component</name>
+    <name>Apache ServiceMix Camel Component</name>
 
     <dependencies>
         <dependency>
@@ -139,12 +139,30 @@
       <artifactId>cxf-rt-management</artifactId>
       <version>${cxf.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-testutils</artifactId>
-      <version>${cxf.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-testutils</artifactId>
+          <version>${cxf.version}</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-addr</artifactId>
+          <version>${cxf.version}</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-security</artifactId>
+          <version>${cxf.version}</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-ws-policy</artifactId>
+          <version>${cxf.version}</version>
+          <scope>test</scope>
+        </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
       <artifactId>cxf-tools-common</artifactId>
@@ -156,11 +174,19 @@
         </exclusion>
       </exclusions>
     </dependency>
+        <!--
         <dependency>
           <groupId>org.apache.cxf</groupId>
           <artifactId>cxf-bundle</artifactId>
           <version>${cxf.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>jaxen</groupId>
+                    <artifactId>jaxen</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+        -->
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>

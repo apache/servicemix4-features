@@ -31,7 +31,7 @@
     <artifactId>apache-servicemix</artifactId>
     <packaging>pom</packaging>
     <version>4.0-m1-SNAPSHOT</version>
-    <name>ServiceMix Features :: Assembly</name>
+    <name>Apache ServiceMix Features :: Assembly</name>
 
     <dependencies>
         <dependency>
@@ -39,6 +39,12 @@
             <artifactId>apache-servicemix-kernel</artifactId>
             <version>${servicemix.kernel.version}</version>
             <type>zip</type>
+<exclusions>
+	<exclusion>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+	</exclusion>
+</exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.kernel</groupId>
@@ -106,6 +112,20 @@
             <groupId>org.apache.servicemix.jbi</groupId>
             <artifactId>org.apache.servicemix.jbi.commands</artifactId>
             <version>${servicemix.nmr.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-jdk14</artifactId>
+				</exclusion>
+			</exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.jbi</groupId>
@@ -228,6 +248,16 @@
             <version>${geronimo.j2ee.management.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-annotation_1.0_spec</artifactId>
+            <version>${geronimo.annotation.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+            <version>${geronimo.wsmetadata.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.activemq</groupId>
             <artifactId>org.apache.servicemix.activemq</artifactId>
             <version>${version}</version>
@@ -308,6 +338,12 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
             <version>${activemq.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.xml</groupId>
+					<artifactId>jaxb-api</artifactId>
+				</exclusion>
+			</exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.xbean</groupId>
@@ -379,6 +415,56 @@
             <artifactId>jetty-util</artifactId>
             <version>${jetty.version}</version>
         </dependency>
+		<!-- Dependencies not included directly, but repackaged in bundles.
+     	     Listed for legal reasons (and LICENSE file generation) -->
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb.api.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.activation</groupId>
+						<artifactId>activation</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>${jaxb.impl.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.activation</groupId>
+						<artifactId>activation</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+	            <groupId>javax.xml.ws</groupId>
+				<artifactId>jaxws-api</artifactId>
+				<version>${jaxws.api.version}</version>
+			</dependency>
+			<dependency>
+	            <groupId>com.sun.xml.messaging.saaj</groupId>
+				<artifactId>saaj-impl</artifactId>
+				<version>1.3</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.xml.soap</groupId>
+						<artifactId>saaj-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+	            <groupId>asm</groupId>
+	            <artifactId>asm-all</artifactId>
+				<version>${asm.version}</version>
+			</dependency>
+			<dependency>
+	            <groupId>wsdl4j</groupId>
+	            <artifactId>wsdl4j</artifactId>
+				<version>1.6.1</version>
+			</dependency>
     </dependencies>
     <build>
         <resources>

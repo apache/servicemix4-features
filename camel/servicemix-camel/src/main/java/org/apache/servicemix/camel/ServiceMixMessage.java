@@ -47,10 +47,6 @@ public class ServiceMixMessage extends DefaultMessage {
     	this.message = message;
     }
     
-    public ServiceMixMessage() {
-    	
-    }
-
     public String getMessageId() {
         return messageId;  //To change body of implemented methods use File | Settings | File Templates.
     }

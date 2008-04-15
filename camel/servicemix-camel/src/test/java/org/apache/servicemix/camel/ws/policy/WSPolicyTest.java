@@ -66,7 +66,6 @@ public class WSPolicyTest extends ContextTestSupport {
     	applicationContext = createApplicationContext();
         super.setUp();        
         startService();
-
     }
     
 
@@ -85,6 +84,7 @@ public class WSPolicyTest extends ContextTestSupport {
         if (server != null) {
             server.stop();
         }
+        super.tearDown();
     }
   
     protected RouteBuilder createRouteBuilder() {

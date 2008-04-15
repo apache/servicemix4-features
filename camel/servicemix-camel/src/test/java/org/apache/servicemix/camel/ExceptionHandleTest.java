@@ -59,32 +59,32 @@ public class ExceptionHandleTest extends ContextTestSupport {
     private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS 
     	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO";
     
-    private ServerImpl server;
     private CamelContext camelContext;
     private ServiceMixComponent smxComponent;
     private NMR nmr;
+    private javax.xml.ws.Endpoint endpoint;
     
     
     @Override
     protected void setUp() throws Exception {
         super.setUp();        
-                
-        startService();
-    }
-    
-    protected void startService() {
     	Object implementor = new GreeterImpl();
-        
-    	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
-        
-  
+    	endpoint = javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
     
     @Override
     protected void tearDown() throws Exception {
-        if (server != null) {
-            server.stop();
+        if (camelContext != null) {
+            camelContext.stop();
         }
+        if (endpoint != null) {
+            endpoint.stop();
+        }
+        super.tearDown();
+        // Not sure why we need a timeout here
+        // but if we don't, the jetty server is not fully
+        // stopped, so the next test fails. 
+        Thread.sleep(5000);
     }
   
     protected RouteBuilder createRouteBuilder() {
@@ -111,7 +111,6 @@ public class ExceptionHandleTest extends ContextTestSupport {
     }
     
     public void testException() throws Exception {  
-       
     	URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");
         assertNotNull(wsdl);
         SOAPService service1 = new SOAPService(wsdl, new QName(
@@ -144,7 +143,6 @@ public class ExceptionHandleTest extends ContextTestSupport {
             assertNotNull(brlf.getFaultInfo());
             assertEquals("BadRecordLitFault", brlf.getFaultInfo());
         }
-                      
     }
     
     
@@ -161,7 +159,6 @@ public class ExceptionHandleTest extends ContextTestSupport {
     
     public void testGetTransportFactoryFromBus() throws Exception {
     	Bus bus = BusFactory.getDefaultBus();
-    	
     	assertNotNull(bus.getExtension(ConduitInitiatorManager.class)
         	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID));
     }
