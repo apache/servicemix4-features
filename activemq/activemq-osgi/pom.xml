@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <!--
 
@@ -25,13 +23,13 @@
     <parent>
 	    <groupId>org.apache.servicemix.activemq</groupId>
 	    <artifactId>activemq</artifactId>
-        <version>4.0-m1-SNAPSHOT</version>
+        <version>4.0-m1</version>
     </parent>
 
     <groupId>org.apache.servicemix.activemq</groupId>
     <artifactId>org.apache.servicemix.activemq</artifactId>
     <packaging>bundle</packaging>
-    <version>4.0-m1-SNAPSHOT</version>
+    <version>4.0-m1</version>
     <name>Apache ServiceMix Features :: ActiveMQ</name>
     
     <properties>
@@ -117,7 +115,7 @@
 	                        org.jencks.amqpool*,
 	                        org.apache.servicemix.activemq*,
                         </Private-Package>
-                        <Export-Package></Export-Package>
+                        <Export-Package />
                         <Spring-Context>*;publish-context:=false;create-asynchronously:=true</Spring-Context>
                     </instructions>
                 </configuration>

@@ -23,13 +23,13 @@
     <parent>
         <groupId>org.apache.servicemix.camel</groupId>
         <artifactId>camel</artifactId>
-        <version>4.0-m1-SNAPSHOT</version>
+        <version>4.0-m1</version>
     </parent>
 
     <groupId>org.apache.servicemix.camel.bundles</groupId>
     <artifactId>bundles</artifactId>
     <packaging>pom</packaging>
-    <version>4.0-m1-SNAPSHOT</version>
+    <version>4.0-m1</version>
     <name>Apache ServiceMix OSGI Common Bundles</name>
 
     <modules>
