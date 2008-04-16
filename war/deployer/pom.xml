@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.apache.servicemix.war</groupId>
         <artifactId>war</artifactId>
-        <version>4.0-m1</version>
+        <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.war</groupId>
     <artifactId>org.apache.servicemix.war.deployer</artifactId>
     <packaging>bundle</packaging>
-    <version>4.0-m1</version>
+    <version>4.0-m2-SNAPSHOT</version>
     <name>Apache ServiceMix WAR Deployer</name>
 
     <dependencies>

@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.apache.servicemix.camel</groupId>
         <artifactId>camel</artifactId>
-        <version>4.0-m1</version>
+        <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.camel</groupId>
     <artifactId>org.apache.servicemix.camel.component</artifactId>
     <packaging>bundle</packaging>
-    <version>4.0-m1</version>
+    <version>4.0-m2-SNAPSHOT</version>
     <name>Apache ServiceMix Camel Component</name>
 
     <dependencies>

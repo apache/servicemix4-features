@@ -23,13 +23,13 @@
     <parent>
         <groupId>org.apache.servicemix.transaction</groupId>
         <artifactId>transaction</artifactId>
-        <version>4.0-m1</version>
+        <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.transaction.bundles</groupId>
     <artifactId>bundles</artifactId>
     <packaging>pom</packaging>
-    <version>4.0-m1</version>
+    <version>4.0-m2-SNAPSHOT</version>
     <name>Apache ServiceMix OSGI Common Bundles</name>
 
     <modules>

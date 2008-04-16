@@ -23,13 +23,13 @@
     <parent>
 	    <groupId>org.apache.servicemix.activemq</groupId>
 	    <artifactId>activemq</artifactId>
-        <version>4.0-m1</version>
+        <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.activemq</groupId>
     <artifactId>org.apache.servicemix.activemq</artifactId>
     <packaging>bundle</packaging>
-    <version>4.0-m1</version>
+    <version>4.0-m2-SNAPSHOT</version>
     <name>Apache ServiceMix Features :: ActiveMQ</name>
     
     <properties>
