@@ -113,7 +113,7 @@
       <pax.url.version>0.3.0</pax.url.version>
       <pax.web.version>0.4.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
-      <servicemix.legal.version>1.0-SNAPSHOT</servicemix.legal.version>
+      <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.kernel.version>1.0-m3-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m1</servicemix.nmr.version>
       <servicemix.specs.version>1.0-SNAPSHOT</servicemix.specs.version>
