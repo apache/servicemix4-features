@@ -43,6 +43,10 @@
 		            <groupId>org.springframework</groupId>
 		            <artifactId>spring-remoting</artifactId>
                 </exclusion>
+                <exclusion>
+		            <groupId>org.springframework</groupId>
+		            <artifactId>spring-jdbc</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -50,11 +54,13 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+<!--
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+-->
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.osgi.core</artifactId>

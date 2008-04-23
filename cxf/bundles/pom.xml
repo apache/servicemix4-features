@@ -34,7 +34,6 @@
 
     <modules>
         <module>cxf</module>
-        <module>jaxws-api</module>
         <module>neethi</module>
         <module>saaj-impl</module>
         <module>wsdl4j</module>

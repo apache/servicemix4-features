@@ -33,7 +33,6 @@
     <name>Apache ServiceMix OSGI Common Bundles</name>
 
     <modules>
-        <module>jaxb-api</module>
         <module>jaxb-impl</module>
     </modules>
 

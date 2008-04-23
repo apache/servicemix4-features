@@ -62,7 +62,6 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>javax.jws,META-INF.cxf,META-INF.cxf.transport.nmr,org.apache.servicemix.camel,*</Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxfcamel</Private-Package>
-                        <Require-Bundle>org.apache.servicemix.bundles.woodstox-3.2.3</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

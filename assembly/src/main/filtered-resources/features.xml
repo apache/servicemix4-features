@@ -60,13 +60,13 @@
 		<feature>cxf</feature>
 		<feature>web-core</feature>
         <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-whiteboard/${pax.web.extender.version}</bundle>
-		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.transport.osgi/${version}</bundle>
+		<bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.osgi/${version}</bundle>
 	</feature>
 	<feature name="cxf-nmr">
 		<feature>cxf</feature>
 		<feature>nmr</feature>
-		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.transport.nmr/${version}</bundle>
-		<bundle>mvn:org.apache.servicemix.ejb3/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
+		<bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.nmr/${version}</bundle>
+		<bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
 	</feature>
 	<feature name="camel">
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/${geronimo.activation.version}</bundle>
