@@ -54,9 +54,9 @@
             <version>${geronimo.annotation.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-stax-api_1.0_spec</artifactId>
-            <version>${geronimo.stax.version}</version>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.stax-api-1.0</artifactId>
+            <version>${servicemix.specs.version}</version>
         </dependency>
     </dependencies>
 
