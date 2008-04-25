@@ -104,9 +104,23 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.cxf-2.0.5</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle</artifactId>
+            <version>${cxf.version}</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.codehaus.jra</groupId>
+            		<artifactId>jra</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>xml-apis</groupId>
+            		<artifactId>xml-apis</artifactId>
+            	</exclusion>
+            	<exclusion>
+            		<groupId>jaxen</groupId>
+            		<artifactId>jaxen</artifactId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.nmr</groupId>

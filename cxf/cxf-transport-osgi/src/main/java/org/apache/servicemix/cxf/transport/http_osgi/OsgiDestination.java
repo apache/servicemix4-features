@@ -42,7 +42,7 @@ public class OsgiDestination extends AbstractHTTPDestination {
     final String path;
 
     /**
-     * Constructor, allowing subsititution of configuration.
+     * Constructor, allowing substitution of configuration.
      *
      * @param b the associated Bus
      * @param ci the associated conduit initiator
