@@ -70,7 +70,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.neethi-2.0.2"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.woodstox-3.2.3"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.wsdl4j-1.6.1"),
-            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlschema-1.3.2"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlschema-1.4.2"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlresolver-1.2"),
             getBundle("org.mortbay.jetty", "jetty-util"),
             getBundle("org.mortbay.jetty", "jetty"),
@@ -88,7 +88,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
 
     public void testJbiComponent() throws Exception {
         Thread.sleep(5000);
-        installBundle("org.apache.servicemix.examples", "cxf-nmr", null, "jar");
+        installBundle("org.apache.servicemix.examples", "cxf-osgi", null, "jar");
         Thread.sleep(5000);
     }
 
