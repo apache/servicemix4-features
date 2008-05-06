@@ -35,6 +35,7 @@
 
     <modules>
         <module>activemq-osgi</module>
+        <module>activemq-commands</module>
     </modules>
 
 </project>
