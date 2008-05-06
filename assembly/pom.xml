@@ -297,6 +297,11 @@
             <artifactId>org.apache.servicemix.cxf.transport.osgi</artifactId>
             <version>${version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.war</groupId>
+            <artifactId>org.apache.servicemix.war.deployer</artifactId>
+            <version>${version}</version>
+        </dependency>
         <!--
         <dependency>
             <groupId>org.apache.openejb</groupId>
