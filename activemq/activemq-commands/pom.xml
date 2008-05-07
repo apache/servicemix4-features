@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.apache.servicemix.kernel.gshell</groupId>
             <artifactId>org.apache.servicemix.kernel.gshell.core</artifactId>
-            <version>${pom.version}</version>
+            <version>${servicemix.kernel.version}</version>
         </dependency>
 
         <dependency>
