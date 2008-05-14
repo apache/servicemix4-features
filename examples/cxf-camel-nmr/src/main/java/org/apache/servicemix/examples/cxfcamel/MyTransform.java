@@ -16,19 +16,19 @@
  */
 package org.apache.servicemix.examples.cxfcamel;
 
+import java.util.logging.Logger;
+
 import javax.xml.transform.Source;
 
 import org.apache.camel.converter.jaxp.StringSource;
 import org.apache.camel.converter.jaxp.XmlConverter;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  * @version $Revision: 640450 $
  */
 public class MyTransform  {
 
-    private static final transient Log LOG = LogFactory.getLog(MyTransform.class);
+    private static final transient Logger LOG = Logger.getLogger(MyTransform.class.getName());
     private boolean verbose = true;
     private String value;
 

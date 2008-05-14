@@ -55,15 +55,15 @@ public class ServiceMixEndpoint extends DefaultEndpoint<ServiceMixExchange> {
 	}
 
 	public ServiceMixExchange createExchange(Exchange exchange) {
-		return new ServiceMixExchange(getContext(), getExchangePattern(), exchange);
+		return new ServiceMixExchange(getCamelContext(), getExchangePattern(), exchange);
 	}
 
 	public ServiceMixExchange createExchange(ExchangePattern pattern, Exchange exchange) {
-		return new ServiceMixExchange(getContext(), pattern, exchange);
+		return new ServiceMixExchange(getCamelContext(), pattern, exchange);
 	}
 
 	public ServiceMixExchange createExchange(org.apache.servicemix.nmr.api.Message inMessage, Exchange exchange) {
-		return new ServiceMixExchange(getContext(), getExchangePattern(), inMessage, exchange);
+		return new ServiceMixExchange(getCamelContext(), getExchangePattern(), inMessage, exchange);
 	}
 
 	public void setEndpointName(String endpointName) {
