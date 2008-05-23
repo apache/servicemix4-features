@@ -79,7 +79,7 @@
 	</feature>
 	<feature name="camel-nmr">
 		<feature>camel</feature>
-		<feature>nmr</feature>
+		<feature>jbi</feature>
 		<bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/${version}</bundle>
 	</feature>
 	<feature name="examples-cxf-osgi">
