@@ -93,110 +93,35 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+              <groupId>org.apache.cxf</groupId>
+              <artifactId>cxf-testutils</artifactId>
+              <version>${cxf.version}</version>
+              <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-testutils</artifactId>
+            <artifactId>cxf-bundle</artifactId>
             <version>${cxf.version}</version>
-        </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-core</artifactId>
-      <version>${cxf.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>com.sun.xml.bind</groupId>
-          <artifactId>jaxb-impl</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-http</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-http-jetty</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-transports-local</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-frontend-simple</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-frontend-jaxws</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-management</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-testutils</artifactId>
-          <version>${cxf.version}</version>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-addr</artifactId>
-          <version>${cxf.version}</version>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-security</artifactId>
-          <version>${cxf.version}</version>
-          <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-ws-policy</artifactId>
-          <version>${cxf.version}</version>
-          <scope>test</scope>
-        </dependency>
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-tools-common</artifactId>
-      <version>${cxf.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>com.sun.xml.bind</groupId>
-          <artifactId>jaxb-impl</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-        <!--
-        <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-bundle</artifactId>
-          <version>${cxf.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>jaxen</groupId>
-                    <artifactId>jaxen</artifactId>
+                        <groupId>org.codehaus.jra</groupId>
+                        <artifactId>jra</artifactId>
+                </exclusion>
+                <exclusion>
+                        <groupId>xml-apis</groupId>
+                        <artifactId>xml-apis</artifactId>
+                </exclusion>
+                <exclusion>
+                        <groupId>jaxen</groupId>
+                        <artifactId>jaxen</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-        -->
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>${jaxb.impl.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>bouncycastle</groupId>
+            <artifactId>bcprov-jdk14</artifactId>
+            <version>136</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
