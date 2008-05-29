@@ -60,7 +60,7 @@
   </prerequisites>
 
   <properties>
-      <activemq.version>5.1.0</activemq.version>
+      <activemq.version>5.2-SNAPSHOT</activemq.version>
       <acegi.version>1.0.0</acegi.version>
       <ant.version>1.7.0</ant.version>
       <aopalliance.version>1.0</aopalliance.version>
