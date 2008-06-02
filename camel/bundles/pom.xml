@@ -34,6 +34,7 @@
 
     <modules>
         <module>jaxb-impl</module>
+        <module>commons-io</module>
     </modules>
 
     <properties>
