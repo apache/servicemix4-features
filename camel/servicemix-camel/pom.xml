@@ -67,6 +67,44 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-cxf</artifactId>
             <version>${camel.version}</version>
+            <exclusions> 
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-transports-http</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-transports-local</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-frontend-simple</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-rt-management</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-testutils</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-tools-common</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -159,6 +197,31 @@
                     </systemProperties>
                 </configuration>
             </plugin>
+            <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf.version}</version>
+        <executions>
+                <execution>
+                        <id>generate-test-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                                <sourceRoot>${basedir}/target/generated</sourceRoot>
+                                <wsdlOptions>
+                                        <wsdlOption>
+                                                <wsdl>${basedir}/src/test/resources/person.wsdl</wsdl>
+                                                <extraargs>
+                                                        <extraarg>-verbose</extraarg>
+                                                </extraargs>
+                                        </wsdlOption>
+                                </wsdlOptions>
+                        </configuration>
+                        <goals>
+                                <goal>wsdl2java</goal>
+                        </goals>
+                </execution>
+        </executions>
+      </plugin>
          </plugins>
     </build>
 

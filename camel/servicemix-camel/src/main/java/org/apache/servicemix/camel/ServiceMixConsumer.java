@@ -64,10 +64,17 @@ public class ServiceMixConsumer extends DefaultConsumer<ServiceMixExchange> impl
             	ServiceMixExchange smExchange = getEndpoint().createExchange(exchange.getIn(), exchange);
             	smExchange.setPattern(ExchangePattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
                 getAsyncProcessor().process(smExchange);
-                if (smExchange.getFault(false) != null) {
+                /*if (smExchange.getFault(false) != null) {
                     exchange.getFault().setBody(smExchange.getFault().getBody());
                 } else if (smExchange.getOut(false) != null) {
                     exchange.getOut().setBody(smExchange.getOut().getBody());
+                } else {
+                    exchange.setStatus(Status.Done);
+                }*/
+                if (smExchange.getOut(false) != null) {
+                    exchange.getOut().setBody(smExchange.getOut().getBody());
+                } else if (smExchange.getFault(false) != null) {
+                    exchange.getFault().setBody(smExchange.getFault().getBody());
                 } else {
                     exchange.setStatus(Status.Done);
                 }
