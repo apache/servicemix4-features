@@ -194,7 +194,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jaxb-impl-2.0.3</artifactId>
+            <artifactId>org.apache.servicemix.bundles.jaxb-impl-2.1.6</artifactId>
             <version>${version}</version>
         </dependency>
         <dependency>
@@ -204,12 +204,12 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jaxb-api-2.0</artifactId>
+            <artifactId>org.apache.servicemix.specs.jaxb-api-2.1</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jaxws-api-2.0</artifactId>
+            <artifactId>org.apache.servicemix.specs.jaxws-api-2.1</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>

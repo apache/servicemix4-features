@@ -69,8 +69,9 @@
 		<bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
 	</feature>
 	<feature name="camel">
-                <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
+    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/${geronimo.activation.version}</bundle>
+		<bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
 		<bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.0/${servicemix.specs.version}</bundle>
 		<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl-2.0.3/${version}</bundle>
 		<bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>

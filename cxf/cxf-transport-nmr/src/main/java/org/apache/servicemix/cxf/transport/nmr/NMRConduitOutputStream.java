@@ -95,7 +95,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             QName interfaceName = new QName(ws.targetNamespace(), ws.name());
             QName serviceName;
             if (target != null) {
-                serviceName = EndpointReferenceUtils.getServiceName(target);
+                serviceName = EndpointReferenceUtils.getServiceName(target, conduit.getBus());
             } else {
                 serviceName = message.getExchange().get(org.apache.cxf.service.Service.class).getName();
             }
