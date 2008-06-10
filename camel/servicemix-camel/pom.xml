@@ -140,20 +140,6 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
             <version>${cxf.version}</version>
-            <exclusions>
-                <exclusion>
-                        <groupId>org.codehaus.jra</groupId>
-                        <artifactId>jra</artifactId>
-                </exclusion>
-                <exclusion>
-                        <groupId>xml-apis</groupId>
-                        <artifactId>xml-apis</artifactId>
-                </exclusion>
-                <exclusion>
-                        <groupId>jaxen</groupId>
-                        <artifactId>jaxen</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>bouncycastle</groupId>

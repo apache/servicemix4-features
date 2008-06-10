@@ -21,8 +21,14 @@ import java.io.InputStream;
 
 import javax.activation.DataHandler;
 import javax.jws.WebService;
+import javax.jws.WebResult;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.soap.SOAPBinding;
 import javax.mail.util.ByteArrayDataSource;
 import javax.xml.ws.Holder;
+
+import org.apache.cxf.mime.types.XopStringType;
 
 @WebService(serviceName = "TestMtomService", 
         portName = "TestMtomPort", 
@@ -47,7 +53,9 @@ public class MtomImpl {
         }
         
     }
-
+    public XopStringType testXopString(XopStringType data) {
+        return data;
+    }
 
 }
 
