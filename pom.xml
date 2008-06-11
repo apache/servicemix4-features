@@ -99,7 +99,7 @@
       <jasper.version>6.0.14</jasper.version>
       <jaxb.api.version>2.1</jaxb.api.version>
       <jaxb.impl.version>2.1.6</jaxb.impl.version>
-      <jaxws.api.version>2.0</jaxws.api.version>
+      <jaxws.api.version>2.1</jaxws.api.version>
       <jencks.version>2.1</jencks.version>
       <jetty.version>6.1.9</jetty.version>
       <jline.version>0.9.93</jline.version>
@@ -289,6 +289,11 @@
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>
           <version>${geronimo.j2ee.connector.version}</version>
+      </dependency>
+      <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jaxws_2.1_spec</artifactId>
+                <version>1.0</version>
       </dependency>
       <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
