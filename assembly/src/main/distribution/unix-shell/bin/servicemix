@@ -88,19 +88,21 @@ unlimitFD() {
     # Increase the maximum file descriptors if we can
     if [ "$os400" = "false" ] && [ "$cygwin" = "false" ]; then
         MAX_FD_LIMIT=`ulimit -H -n`
-        if [ $? -eq 0 ]; then
-            if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ]; then
-                # use the system max
-                MAX_FD="$MAX_FD_LIMIT"
-            fi
+        if [ "$MAX_FD_LIMIT" != 'unlimited' ]; then 
+            if [ $? -eq 0 ]; then
+                if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ]; then
+                    # use the system max
+                    MAX_FD="$MAX_FD_LIMIT"
+                fi
 
-            ulimit -n $MAX_FD
-            # echo "ulimit -n" `ulimit -n`
-            if [ $? -ne 0 ]; then
-                warn "Could not set maximum file descriptor limit: $MAX_FD"
+                ulimit -n $MAX_FD > /dev/null
+                # echo "ulimit -n" `ulimit -n`
+                if [ $? -ne 0 ]; then
+                    warn "Could not set maximum file descriptor limit: $MAX_FD"
+                fi
+            else
+                warn "Could not query system maximum file descriptor limit: $MAX_FD_LIMIT"
             fi
-        else
-            warn "Could not query system maximum file descriptor limit: $MAX_FD_LIMIT"
         fi
     fi
 }
@@ -118,11 +120,11 @@ locateHome() {
 
 locateBase() {
     if [ "x$SERVICEMIX_BASE" != "x" ]; then
-    	if [ ! -d "$SERVICEMIX_BASE" ]; then
-        	die "SERVICEMIX_BASE is not valid: $SERVICEMIX_BASE"
-    	fi
-	else
-	    SERVICEMIX_BASE=$SERVICEMIX_HOME
+        if [ ! -d "$SERVICEMIX_BASE" ]; then
+            die "SERVICEMIX_BASE is not valid: $SERVICEMIX_BASE"
+        fi
+    else
+        SERVICEMIX_BASE=$SERVICEMIX_HOME
     fi
 }
 
@@ -212,7 +214,11 @@ setupDefaults() {
     fi
 
     # Add the conf directory so it picks up the Log4J config
-    CLASSPATH="$CLASSPATH:$SERVICEMIX_BASE/conf"
+    if [ "x$CLASSPATH" = "x" ]; then
+        CLASSPATH="$SERVICEMIX_HOME/lib/servicemix.jar:$SERVICEMIX_HOME/lib/servicemix-jaas-boot.jar"
+    else
+        CLASSPATH="$CLASSPATH:$SERVICEMIX_HOME/lib/servicemix.jar:$SERVICEMIX_HOME/lib/servicemix-jaas-boot.jar"
+    fi
     DEFAULT_JAVA_DEBUG_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
     ##
@@ -268,12 +274,11 @@ run() {
             ;;
     esac
 
-    JAR=$SERVICEMIX_HOME/lib/servicemix.jar
     if $cygwin; then
         SERVICEMIX_HOME=`cygpath --path --windows "$SERVICEMIX_HOME"`
         SERVICEMIX_BASE=`cygpath --path --windows "$SERVICEMIX_BASE"`
     fi
-    exec $JAVA $JAVA_OPTS -Dservicemix.home="$SERVICEMIX_HOME" -Dservicemix.base="$SERVICEMIX_BASE" $OPTS -jar "$JAR" $*
+    exec $JAVA $JAVA_OPTS -Dservicemix.home="$SERVICEMIX_HOME" -Dservicemix.base="$SERVICEMIX_BASE" $OPTS -classpath "$CLASSPATH" org.apache.servicemix.kernel.main.Main $*
 }
 
 main() {

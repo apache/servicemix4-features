@@ -102,22 +102,22 @@
       <jaxws.api.version>2.1</jaxws.api.version>
       <jencks.version>2.1</jencks.version>
       <jetty.version>6.1.9</jetty.version>
-      <jline.version>0.9.93</jline.version>
+      <jline.version>0.9.94</jline.version>
       <junit.version>4.4</junit.version>
       <log4j.version>1.2.14</log4j.version>
       <mina.version>1.1.6</mina.version>
       <openejb.version>3.0-beta-2</openejb.version>
       <openjpa.version>1.0.1</openjpa.version>
-      <pax.logging.version>1.1.0</pax.logging.version>
+      <pax.logging.version>1.1.1</pax.logging.version>
       <pax.url.version>0.3.0</pax.url.version>
       <pax.web.version>0.4.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
-      <servicemix.kernel.version>1.0-m3</servicemix.kernel.version>
-      <servicemix.nmr.version>1.0-m1</servicemix.nmr.version>
+      <servicemix.kernel.version>1.0.0-rc1</servicemix.kernel.version>
+      <servicemix.nmr.version>1.0-m2-SNAPSHOT</servicemix.nmr.version>
       <servicemix.specs.version>1.0-SNAPSHOT</servicemix.specs.version>
-      <spring.version>2.5.2</spring.version>
-      <spring.osgi.version>1.0.2</spring.osgi.version>
+      <spring.version>2.5.4</spring.version>
+      <spring.osgi.version>1.1.0-m2</spring.osgi.version>
       <xstream.version>1.2.2</xstream.version>
       <xbean.version>3.4.1</xbean.version>
       <commons-io.version>1.3.2</commons-io.version>

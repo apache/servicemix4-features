@@ -105,9 +105,13 @@
                         	org.apache.geronimo.transaction*;resolution:=optional,
                             org.apache.activemq.ra*;resolution:=optional,
                             javax.transaction,
+                            org.apache.activemq.broker,
+                            org.apache.activemq.broker.jmx,
+                            org.apache.activemq.store.kahadaptor,
                             org.apache.activemq.xbean,
                             org.apache.xbean.spring,
                             org.springframework.core,
+                            org.springframework.beans.factory.config,
                             *
                         </Import-Package>
                         <Private-Package>
