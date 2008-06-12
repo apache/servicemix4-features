@@ -36,7 +36,10 @@
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec</bundle>
 		<bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
-		<bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-console/${activemq.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.activemq/org.apache.servicemix.activemq.rm/${version}</bundle>
+        <bundle>mvn:org.apache.servicemix.activemq/org.apache.servicemix.activemq.commands/${version}</bundle>
 	</feature>
 	<feature name="cxf">
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/${geronimo.activation.version}</bundle>
@@ -81,7 +84,7 @@
 	</feature>
 	<feature name="camel-nmr">
 		<feature>camel</feature>
-                <feature>nmr</feature>
+		<feature>nmr</feature>
 		<bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/${version}</bundle>
 	</feature>
 	<feature name="examples-cxf-osgi">

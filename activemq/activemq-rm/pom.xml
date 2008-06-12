@@ -121,7 +121,7 @@
                         <Private-Package>
 	                        org.apache.commons.pool*,
 	                        org.jencks.amqpool*,
-	                        org.apache.servicemix.activemq*,
+	                        org.apache.servicemix.activemq.rm*,
                         </Private-Package>
                         <Spring-Context>*;publish-context:=false;create-asynchronously:=true</Spring-Context>
                     </instructions>
