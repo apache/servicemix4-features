@@ -74,7 +74,13 @@
             <artifactId>activemq-console</artifactId>
             <version>${activemq.version}</version>
         </dependency>
-        
+
+        <dependency>
+            <groupId>org.apache.servicemix.activemq</groupId>
+            <artifactId>org.apache.servicemix.activemq.rm</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

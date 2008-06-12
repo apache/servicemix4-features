@@ -115,8 +115,8 @@ public class CreateBrokerCommand
 
 	private String filter(String line, HashMap<String, String> props) {
 		for (Map.Entry<String, String> i : props.entrySet()) {
-			int p1 = line.indexOf(i.getKey());
-			if( p1 >= 0 ) {
+            int p1;
+            while ((p1 = line.indexOf(i.getKey())) >= 0) {
 				String l1 = line.substring(0, p1);
 				String l2 = line.substring(p1+i.getKey().length());
 				line = l1+i.getValue()+l2;

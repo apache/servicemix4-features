@@ -39,9 +39,10 @@ public class AdministrationCommand implements Command
 		String[] args = Arguments.toStringArray(objArgs);
 		org.apache.activemq.console.CommandContext context2 = new org.apache.activemq.console.CommandContext();
 		context2.setFormatter(new CommandShellOutputFormatter(context.getIO().outputStream));
-		try {
-			command.setCommandContext(context2);
-			command.execute(new ArrayList<String>(Arrays.asList(args)));
+        org.apache.activemq.console.command.Command currentCommand = command.getClass().newInstance();
+        try {
+			currentCommand.setCommandContext(context2);
+			currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
 		} catch (Throwable e) {
 			Throwable cur = e;
 			while( cur.getCause()!=null ) {

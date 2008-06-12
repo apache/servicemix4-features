@@ -14,9 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.activemq;
+package org.apache.servicemix.activemq.rm;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
@@ -39,7 +38,7 @@ public class ActiveMQResourceManager {
     
     public void recoverResource() {
         try {
-            Class recoveryClass = getClass().getClassLoader().loadClass("org.apache.servicemix.activemq.Recovery");
+            Class recoveryClass = getClass().getClassLoader().loadClass("org.apache.servicemix.activemq.rm.Recovery");
             Method mth = recoveryClass.getMethod("recover", ActiveMQResourceManager.class);
             Object res = mth.invoke(null, this);
             if (!Boolean.TRUE.equals(res)) {

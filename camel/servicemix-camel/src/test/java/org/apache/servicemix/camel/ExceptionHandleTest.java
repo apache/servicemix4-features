@@ -29,8 +29,6 @@ import org.apache.camel.component.cxf.transport.CamelTransportFactory;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
-import org.apache.cxf.bus.spring.SpringBusFactory;
-import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;

@@ -27,10 +27,10 @@
     </parent>
 
     <groupId>org.apache.servicemix.activemq</groupId>
-    <artifactId>org.apache.servicemix.activemq</artifactId>
+    <artifactId>org.apache.servicemix.activemq.rm</artifactId>
     <packaging>bundle</packaging>
     <version>4.0-m2-SNAPSHOT</version>
-    <name>Apache ServiceMix Features :: ActiveMQ</name>
+    <name>Apache ServiceMix Features :: ActiveMQ Resource Manager</name>
     
     <properties>
     	<commons-pool.version>1.3</commons-pool.version>
@@ -101,6 +101,9 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Export-Package>
+                            org.apache.servicemix.activemq.rm*;version=${project.version}
+                        </Export-Package>
                         <Import-Package>
                         	org.apache.geronimo.transaction*;resolution:=optional,
                             org.apache.activemq.ra*;resolution:=optional,
@@ -109,6 +112,7 @@
                             org.apache.activemq.broker.jmx,
                             org.apache.activemq.store.kahadaptor,
                             org.apache.activemq.xbean,
+                            org.apache.activemq.broker.jmx,
                             org.apache.xbean.spring,
                             org.springframework.core,
                             org.springframework.beans.factory.config,
@@ -119,7 +123,6 @@
 	                        org.jencks.amqpool*,
 	                        org.apache.servicemix.activemq*,
                         </Private-Package>
-                        <Export-Package />
                         <Spring-Context>*;publish-context:=false;create-asynchronously:=true</Spring-Context>
                     </instructions>
                 </configuration>

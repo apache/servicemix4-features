@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.activemq;
+package org.apache.servicemix.activemq.rm;
 
 import javax.jms.ConnectionFactory;
 import javax.transaction.TransactionManager;
@@ -29,11 +29,22 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
- * Created by IntelliJ IDEA.
- * User: gnodet
- * Date: Jan 21, 2008
- * Time: 9:48:25 PM
- * To change this template use File | Settings | File Templates.
+ * Simple factory bean used to create a jencks connection pool.
+ * Depending on the properties set, it will create a simple pool,
+ * a transaction aware connection pool, or a jca aware connection pool.
+ *
+ * <pre class="code">
+ * <bean id="pooledConnectionFactory" class="javax.script.ScriptEngineFactory.PooledConnectionFactoryFactoryBean">
+ *   <property name="connectionFactory" ref="connectionFactory" />
+ *   <property name="transactionManager" ref="transactionManager" />
+ *   <property name="resourceName" value="ResourceName" />
+ * </bean>
+ * </pre>
+ *
+ * The <code>resourceName</code> property should be used along with the {@link ActiveMQResourceManager} and have
+ * the same value than its <code>resourceName</code> property. This will make sure the transaction manager
+ * maps correctly the connection factory to the recovery process. 
+ *
  */
 public class PooledConnectionFactoryFactoryBean implements FactoryBean, InitializingBean {
 
@@ -44,7 +55,7 @@ public class PooledConnectionFactoryFactoryBean implements FactoryBean, Initiali
     private int maxConnections;
     private int maximumActive;
     private Object transactionManager;
-    private String name;
+    private String resourceName;
     private ObjectPoolFactory poolFactory;
 
     public Object getObject() throws Exception {
@@ -83,12 +94,12 @@ public class PooledConnectionFactoryFactoryBean implements FactoryBean, Initiali
         this.transactionManager = transactionManager;
     }
 
-    public String getName() {
-        return name;
+    public String getResourceName() {
+        return resourceName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
     }
 
     public ConnectionFactory getConnectionFactory() {
@@ -108,11 +119,11 @@ public class PooledConnectionFactoryFactoryBean implements FactoryBean, Initiali
     }
 
     public void afterPropertiesSet() throws Exception {
-        if (pooledConnectionFactory == null && transactionManager != null && name != null) {
+        if (pooledConnectionFactory == null && transactionManager != null && resourceName != null) {
             try {
                 LOGGER.debug("Trying to build a JcaPooledConnectionFactory");
                 JcaPooledConnectionFactory f = new JcaPooledConnectionFactory();
-                f.setName(name);
+                f.setName(resourceName);
                 f.setTransactionManager((TransactionManager) transactionManager);
                 f.setMaxConnections(maxConnections);
                 f.setMaximumActive(maximumActive);

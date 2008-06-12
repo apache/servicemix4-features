@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.activemq;
+package org.apache.servicemix.activemq.rm;
 
 import java.io.IOException;
 
@@ -30,11 +30,8 @@ import org.apache.geronimo.transaction.manager.RecoverableTransactionManager;
 import org.apache.geronimo.transaction.manager.WrapperNamedXAResource;
 
 /**
- * Created by IntelliJ IDEA.
- * User: gnodet
- * Date: Jan 21, 2008
- * Time: 10:30:24 PM
- * To change this template use File | Settings | File Templates.
+ * This class will ensure the broker is properly recovered when wired with
+ * the Geronimo transaction manager.
  */
 public class Recovery {
 
