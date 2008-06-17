@@ -147,6 +147,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.document</groupId>
+            <artifactId>org.apache.servicemix.document</artifactId>
+            <version>${servicemix.nmr.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.cxf</groupId>
             <artifactId>org.apache.servicemix.cxf.transport.osgi</artifactId>
             <version>${project.version}</version>

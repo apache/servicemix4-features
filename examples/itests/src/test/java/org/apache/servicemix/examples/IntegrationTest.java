@@ -83,6 +83,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.core"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.spring"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
+            getBundle("org.apache.servicemix.document", "org.apache.servicemix.document")
 		};
 	}
 
