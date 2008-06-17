@@ -49,8 +49,23 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>javax.jws,META-INF.cxf,META-INF.cxf.osgi</Import-Package>
+                        <Import-Package>
+                            javax.jws,
+                            META-INF.cxf,
+                            META-INF.cxf.osgi,
+                            org.apache.cxf.bus,
+                            org.apache.cxf.bus.spring,
+                            org.apache.cxf.bus.resource,
+                            org.apache.cxf.configuration.spring,
+                            org.apache.cxf.resource,
+                            org.apache.servicemix.cxf.transport.http_osgi,
+                            org.springframework.beans.factory.config
+                        </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxf</Private-Package>
+                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
+                        <!--
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        -->
                     </instructions>
                 </configuration>
             </plugin>

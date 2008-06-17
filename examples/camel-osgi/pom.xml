@@ -50,7 +50,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>*</Import-Package>
+                        <Import-Package>*,org.apache.camel.osgi</Import-Package>
                         <Private-Package>org.apache.servicemix.examples.camel</Private-Package>
                     </instructions>
                 </configuration>
