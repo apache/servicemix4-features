@@ -68,6 +68,17 @@
           <outputDirectory>/</outputDirectory>
       </fileSet>
       
+      <!-- Copy over the examples -->
+      <fileSet>
+          <directory>../examples</directory>
+          <filtered>true</filtered>
+          <outputDirectory>/examples/</outputDirectory>
+          <lineEnding>dos</lineEnding>
+          <excludes>
+              <exclude>**/itests/**</exclude>
+              <exclude>**/target/**</exclude>
+          </excludes>
+      </fileSet>
     </fileSets>
 
     <files>
@@ -75,14 +86,14 @@
             <source>${basedir}/target/maven-shared-archive-resources/META-INF/LICENSE</source>
             <outputDirectory>/</outputDirectory>
             <destName>LICENSE.txt</destName>
-            <fileMode>420</fileMode> <!-- See http://jira.codehaus.org/browse/MASSEMBLY-173 -->
+            <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
             <source>${basedir}/target/maven-shared-archive-resources/META-INF/NOTICE</source>
             <outputDirectory>/</outputDirectory>
             <destName>NOTICE.txt</destName>
-            <fileMode>420</fileMode> <!-- See http://jira.codehaus.org/browse/MASSEMBLY-173 -->
+            <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
     </files>
@@ -92,6 +103,7 @@
         <!-- Mandatory bundles for everything -->
         <dependencySet>
             <outputDirectory>/system</outputDirectory>
+            <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
