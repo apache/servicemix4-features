@@ -49,8 +49,15 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>javax.jws,META-INF.cxf,META-INF.cxf.transport.nmr</Import-Package>
+                        <Import-Package>
+                           javax.jws, javax.wsdl,
+                           META-INF.cxf,META-INF.cxf.transport.nmr,
+                           org.springframework.beans.factory.config,
+                           org.apache.servicemix.cxf.transport.nmr,
+                           org.apache.servicemix.nmr.api,org.apache.servicemix.nmr.api.event,org.apache.servicemix.nmr.api.internal
+                        </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxf</Private-Package>
+                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

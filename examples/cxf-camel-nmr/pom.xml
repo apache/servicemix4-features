@@ -60,8 +60,15 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>javax.jws,META-INF.cxf,META-INF.cxf.transport.nmr,org.apache.servicemix.camel,*</Import-Package>
+                        <Import-Package>
+                           javax.jws,META-INF.cxf,META-INF.cxf.transport.nmr,
+                          org.apache.cxf.bus,org.apache.servicemix.camel,
+                          org.apache.servicemix.cxf.transport.nmr,
+                          org.apache.servicemix.nmr.api,org.apache.servicemix.nmr.api.event,org.apache.servicemix.nmr.api.internal,
+                          org.springframework.beans.factory.config, *
+                        </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxfcamel</Private-Package>
+                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>
