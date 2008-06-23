@@ -70,10 +70,9 @@ public class WSPolicyTest extends ContextTestSupport {
     
 
     
-    protected void startService() {
+    protected void startService() throws Exception {
     	Object implementor = new GreeterImpl();
     	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
- 
     }
     
     @Override
@@ -91,20 +90,18 @@ public class WSPolicyTest extends ContextTestSupport {
         return new RouteBuilder() {
             public void configure() {
             	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
-            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
+            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");  
+                
+                
             }
         };
     }
     
+    
+    @Override
     protected CamelContext createCamelContext() throws Exception {
     	camelContext = SpringCamelContext.springCamelContext(applicationContext);
-    	SpringBusFactory bf = new SpringBusFactory();
-        bus = bf
-                .createBus("/org/apache/servicemix/camel/ws/policy/addr.xml");
-        BusFactory.setDefaultBus(bus);
-    	CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
-        	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
-    	camelTransportFactory.setCamelContext(camelContext);
+    	
     	smxComponent = new ServiceMixComponent();
     	nmr = new ServiceMix();
     	((ServiceMix)nmr).init();

@@ -22,17 +22,24 @@
     xmlns:jaxws="http://cxf.apache.org/jaxws"
     xmlns:test="http://cxf.apache.org/greeter_control"
     xmlns:cxf="http://activemq.apache.org/camel/schema/cxfEndpoint"
+    xmlns:camel="http://cxf.apache.org/transports/camel"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans                     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
         http://cxf.apache.org/jaxws                                     http://cxf.apache.org/schemas/jaxws.xsd
         http://activemq.apache.org/camel/schema/cxfEndpoint http://activemq.apache.org/camel/schema/cxf/cxfEndpoint.xsd
+        http://cxf.apache.org/transports/camel http://cxf.apache.org/transports/camel.xsd
     ">
+    <camel:destination name="{http://cxf.apache.org/greeter_control}GreeterPort.camel-destination">
+        <camelContext id="camel" xmlns="http://activemq.apache.org/camel/schema/spring">
+        </camelContext>
+   </camel:destination>
 
     <bean id="mapAggregator" class="org.apache.cxf.ws.addressing.MAPAggregator"/>
     <bean id="mapCodec" class="org.apache.cxf.ws.addressing.soap.MAPCodec"/>
     <cxf:cxfEndpoint id="routerEndpoint" name="test:GreeterPort" address="camel://jetty:http://localhost:9020/SoapContext/GreeterPort"  serviceClass="org.apache.cxf.greeter_control.Greeter">
         <cxf:properties>
             <entry key="dataFormat" value="POJO"/>
+            <entry key="setDefaultBus" value="true"/>
         </cxf:properties>
         <cxf:features>
             <bean class="org.apache.cxf.feature.LoggingFeature"/>
@@ -62,6 +69,7 @@
       serviceClass="org.apache.cxf.greeter_control.Greeter">
         <cxf:properties>
             <entry key="dataFormat" value="POJO"/>
+            <entry key="setDefaultBus" value="true"/>
         </cxf:properties>
     </cxf:cxfEndpoint>
 

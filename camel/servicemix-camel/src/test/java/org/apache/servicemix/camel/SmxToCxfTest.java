@@ -34,8 +34,8 @@ public class SmxToCxfTest extends SpringTestSupport {
     protected static final String SERVICE_ADDRESS = "local://smx/helloworld";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.servicemix.camel.HelloService";
     
-    private String routerEndpointURI = "cxf://" + ROUTER_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO";
-    private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO";
+    private String routerEndpointURI = "cxf://" + ROUTER_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO&setDefaultBus=true";
+    private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO&setDefaultBus=true";
     
     private ServerImpl server;
 

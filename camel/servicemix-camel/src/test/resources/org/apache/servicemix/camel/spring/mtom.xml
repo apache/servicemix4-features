@@ -29,15 +29,22 @@
                    address="http://localhost:9036/mime-test"
                    serviceClass="org.apache.cxf.mime.TestMtom"
                    wsdlURL="/wsdl/mtom_xop.wsdl"
-                   serviceName="mtom:TestMtomService"/>
-  
+                   serviceName="mtom:TestMtomService">
+       <cxf:properties>
+           <entry key="setDefaultBus" value="true"/>
+       </cxf:properties>
+  </cxf:cxfEndpoint> 
     
   <cxf:cxfEndpoint id="serviceEndpoint"
                    address="local://smx/attachment"
                    serviceClass="org.apache.cxf.mime.TestMtom"
                    wsdlURL="/wsdl/mtom_xop.wsdl"
                    serviceName="mtom:TestMtomService"
-                   transportId="http://cxf.apache.org/transports/local"/>
+                   transportId="http://cxf.apache.org/transports/local">
+       <cxf:properties>
+           <entry key="setDefaultBus" value="true"/>
+       </cxf:properties>
+  </cxf:cxfEndpoint>
 
   <bean id="org.apache.servicemix.nmr.api.NMR" class="org.apache.servicemix.nmr.core.ServiceMix" init-method="init" />
 

@@ -105,10 +105,7 @@ public class WSSecurityTest extends ContextTestSupport {
     
     protected CamelContext createCamelContext() throws Exception {
     	camelContext = SpringCamelContext.springCamelContext(applicationContext);
-    	Bus bus = new SpringBusFactory().createBus(); 
-    	CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
-        	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
-    	camelTransportFactory.setCamelContext(camelContext);
+    	
     	smxComponent = new ServiceMixComponent();
     	nmr = new ServiceMix();
     	((ServiceMix)nmr).init();
