@@ -493,6 +493,194 @@
                     </execution>
                 </executions>
             </plugin>
+
+           <!-- Grab SMX 3 Dependencies -->            
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>dependency-maven-plugin</artifactId>
+              <version>1.0</version>
+              <executions>
+                <execution>
+                  <id>copy-components</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                    <goal>copy</goal>
+                  </goals>
+                  <configuration>
+                    <outputDirectory>target/components</outputDirectory>
+                    <artifactItems>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-http</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-jms</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-drools</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-eip</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-script</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-scripting</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-validation</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-file</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-ftp</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-xmpp</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-saxon</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-quartz</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-jsr181</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-mail</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-osworkflow</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-bean</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>                
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-truezip</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>                
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-cxf-se</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>                
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-cxf-bc</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>                
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-camel</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>                
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>servicemix-shared-compat</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <classifier>installer</classifier>
+                        <type>zip</type>
+                      </artifactItem>
+                    </artifactItems>
+                  </configuration>
+                </execution>
+                <execution>
+                  <id>get-smx3-examples</id>
+                  <phase>generate-resources</phase>
+                  <goals>
+                    <goal>unpack</goal>
+                  </goals>
+                  <configuration>
+                    <outputDirectory>target/samples</outputDirectory>
+                    <artifactItems>
+                      <artifactItem>
+                        <groupId>org.apache.servicemix</groupId>
+                        <artifactId>apache-servicemix</artifactId>
+                        <version>${servicemix3.version}</version>
+                        <type>zip</type>
+                      </artifactItem>
+                    </artifactItems>
+                  </configuration>
+                </execution>
+              </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -508,7 +696,7 @@
                                 <artifactItem>
                                     <groupId>org.apache.servicemix.kernel</groupId>
                                     <artifactId>apache-servicemix-kernel</artifactId>
-						            <version>${servicemix.kernel.version}</version>
+                                    <version>${servicemix.kernel.version}</version>
                                     <type>tar.gz</type>
                                     <outputDirectory>target/dependencies/unix</outputDirectory>
                                 </artifactItem>
@@ -526,7 +714,7 @@
                                 <artifactItem>
                                     <groupId>org.apache.servicemix.kernel</groupId>
                                     <artifactId>apache-servicemix-kernel</artifactId>
-						            <version>${servicemix.kernel.version}</version>
+                                    <version>${servicemix.kernel.version}</version>
                                     <type>zip</type>
                                     <outputDirectory>target/dependencies/win</outputDirectory>
                                 </artifactItem>

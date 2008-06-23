@@ -101,6 +101,22 @@
                 <exclude>**/target/**</exclude>
             </excludes>
         </fileSet>
+
+        <fileSet>
+          <directory>target/components</directory>
+          <outputDirectory>deploy</outputDirectory>
+        </fileSet>
+
+        <!-- add the examples from SMX3 -->
+        <fileSet>
+          <directory>target/samples/apache-servicemix-${servicemix3.version}/examples</directory>
+          <outputDirectory>examples</outputDirectory>
+          <excludes>
+            <!-- exclude examples that use jbi:embeddedServicemix --> 
+            <exclude>basic</exclude>
+          </excludes>
+        </fileSet>
+
     </fileSets>
 
     <files>
