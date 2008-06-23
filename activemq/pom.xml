@@ -34,7 +34,6 @@
     <name>Apache ServiceMix Features :: ActiveMQ</name>
 
     <modules>
-        <module>activemq-rm</module>
         <module>activemq-commands</module>
     </modules>
 

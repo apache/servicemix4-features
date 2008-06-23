@@ -184,8 +184,9 @@
                 <include>org.springframework:spring-web</include>
                 <include>org.apache.activemq:activemq-core</include>
                 <include>org.apache.activemq:activemq-console</include>
+                <include>org.apache.activemq:activemq-pool</include>
+                <include>commons-pool:commons-pool</include>
                 <include>org.apache.xbean:xbean-spring</include>
-                <include>org.apache.servicemix.activemq:org.apache.servicemix.activemq.rm</include>
                 <include>org.apache.servicemix.activemq:org.apache.servicemix.activemq.commands</include>
 
                 <!-- WEB / WAR -->

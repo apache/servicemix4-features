@@ -64,10 +64,10 @@ public class ServiceMixProducer extends DefaultProducer<ServiceMixExchange> {
         if (e.getPattern() != Pattern.InOnly) {
         	if (e.getFault().getBody() != null) {
         		exchange.getFault().setBody(e.getFault().getBody());
-        	} else
+        	} else {
         		exchange.getOut().setBody(e.getOut().getBody());
     		}
     	}
-        
+    }
     
 }

@@ -38,7 +38,7 @@
 		<bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-console/${activemq.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.activemq/org.apache.servicemix.activemq.rm/${version}</bundle>
+        <bundle>mvn:org.apache.activemq/activemq-pool/${activemq.version}</bundle>
         <bundle>mvn:org.apache.servicemix.activemq/org.apache.servicemix.activemq.commands/${version}</bundle>
 	</feature>
 	<feature name="cxf">

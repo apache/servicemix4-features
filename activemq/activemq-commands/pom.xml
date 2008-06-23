@@ -76,9 +76,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.servicemix.activemq</groupId>
-            <artifactId>org.apache.servicemix.activemq.rm</artifactId>
-            <version>${pom.version}</version>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>${activemq.version}</version>
         </dependency>
 
     </dependencies>

@@ -269,11 +269,6 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.activemq</groupId>
-            <artifactId>org.apache.servicemix.activemq.rm</artifactId>
-            <version>${version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.activemq</groupId>
             <artifactId>org.apache.servicemix.activemq.commands</artifactId>
             <version>${version}</version>
         </dependency>
@@ -365,6 +360,11 @@
             <version>${activemq.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>${activemq.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-finder</artifactId>
             <version>${xbean.version}</version>
@@ -434,7 +434,12 @@
             <artifactId>jetty-util</artifactId>
             <version>${jetty.version}</version>
         </dependency>
-		<!-- Dependencies not included directly, but repackaged in bundles.
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${commons.pool.version}</version>
+        </dependency>
+        <!-- Dependencies not included directly, but repackaged in bundles.
      	     Listed for legal reasons (and LICENSE file generation) -->
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
