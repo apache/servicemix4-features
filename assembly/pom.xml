@@ -518,147 +518,147 @@
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-http</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-jms</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-drools</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-eip</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-script</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-scripting</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-validation</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-file</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-ftp</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-xmpp</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-saxon</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-quartz</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-jsr181</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-mail</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-osworkflow</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-bean</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>                
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-truezip</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>                
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-cxf-se</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>                
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-cxf-bc</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>                
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-camel</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>                
                       <artifactItem>
                         <groupId>org.apache.servicemix</groupId>
                         <artifactId>servicemix-shared-compat</artifactId>
-                        <version>${servicemix3.version}</version>
+                        <version>${components.version}</version>
                         <classifier>installer</classifier>
                         <type>zip</type>
                       </artifactItem>
@@ -766,7 +766,6 @@
                                 <descriptor>src/main/descriptors/unix-bin.xml</descriptor>
                             </descriptors>
                             <finalName>${pom.artifactId}-${pom.version}</finalName>
-                            <appendAssemblyId>false</appendAssemblyId>
                             <tarLongFileMode>gnu</tarLongFileMode>
                         </configuration>
                     </execution>
@@ -781,7 +780,6 @@
                                 <descriptor>src/main/descriptors/windows-bin.xml</descriptor>
                             </descriptors>
                             <finalName>${pom.artifactId}-${pom.version}</finalName>
-                            <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
                     </execution>
                     <execution>
@@ -822,7 +820,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.1</version>
+                        <version>2.2-beta-2</version>
                         <executions>
                             <execution>
                                 <id>unix-src</id>

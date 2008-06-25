@@ -70,6 +70,7 @@
       <camel.version>1.4-SNAPSHOT</camel.version>
       <commons.logging.version>1.1</commons.logging.version>
       <commons.pool.version>1.4</commons.pool.version>
+      <components.version>4.0-SNAPSHOT</components.version>
       <cxf.version>2.1.1</cxf.version>
       <felix.bundlerepository.version>1.0.2</felix.bundlerepository.version>
       <felix.compendium.version>1.0.0</felix.compendium.version>
