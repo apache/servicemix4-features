@@ -33,7 +33,6 @@
     <name>Apache ServiceMix WAR Support</name>
 
     <modules>
-        <module>bundles</module>
         <module>deployer</module>
     </modules>
 

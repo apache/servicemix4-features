@@ -34,7 +34,6 @@
     <name>Apache ServiceMix Features :: Transaction</name> 
 
     <modules>
-        <module>bundles</module>
         <module>transaction</module>
     </modules>
 

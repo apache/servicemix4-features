@@ -34,7 +34,6 @@
     <name>Apache ServiceMix Features :: Camel</name>
 
     <modules>
-        <module>bundles</module>
         <module>servicemix-camel</module>
     </modules>
 
