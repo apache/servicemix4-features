@@ -26,6 +26,17 @@
       <fileSet>
           <directory>target/dependencies/win/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
           <outputDirectory>/</outputDirectory>
+		  <excludes>
+				<exclude>etc/*</exclude>
+		  </excludes>
+      </fileSet>
+      <fileSet>
+          <directory>target/dependencies/win/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
+          <outputDirectory>/</outputDirectory>
+		  <includes>
+				<include>etc/*</include>
+		  </includes>
+          <lineEnding>dos</lineEnding>			
       </fileSet>
 
       <!-- Copy license and other files from root -->
