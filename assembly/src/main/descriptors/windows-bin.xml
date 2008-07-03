@@ -102,7 +102,7 @@
         <outputDirectory>examples</outputDirectory>
           <excludes>
             <!-- exclude examples that use jbi:embeddedServicemix --> 
-            <exclude>basic</exclude>
+            <exclude>basic/**</exclude>
           </excludes>
       </fileSet>
 
