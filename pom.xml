@@ -123,6 +123,7 @@
       <servicemix.kernel.version>1.0.0-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m2-SNAPSHOT</servicemix.nmr.version>
       <servicemix.specs.version>1.0.0</servicemix.specs.version>
+      <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
 
       <servicemix-shared-version>4.0-SNAPSHOT</servicemix-shared-version>
       <servicemix-quartz-version>4.0-SNAPSHOT</servicemix-quartz-version>  
