@@ -75,6 +75,25 @@
      </dependency>
      <dependency>
        <groupId>org.apache.camel</groupId>
+       <artifactId>camel-http</artifactId>
+       <version>${camel.version}</version>
+       <exclusions>
+         <exclusion>
+           <groupId>commons-logging</groupId>
+           <artifactId>commons-logging-api</artifactId>
+         </exclusion>
+         <exclusion>
+           <groupId>commons-logging</groupId>
+           <artifactId>commons-logging</artifactId>
+         </exclusion>
+         <exclusion>
+           <groupId>org.apache.geronimo.specs</groupId>
+           <artifactId>geronimo-servlet_2.4_spec</artifactId>
+         </exclusion>
+       </exclusions>
+     </dependency>
+     <dependency>
+       <groupId>org.apache.camel</groupId>
        <artifactId>camel-ftp</artifactId>
        <version>${camel.version}</version>
        <exclusions>
