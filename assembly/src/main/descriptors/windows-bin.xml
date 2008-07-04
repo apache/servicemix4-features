@@ -103,6 +103,12 @@
           <excludes>
             <!-- exclude examples that use jbi:embeddedServicemix --> 
             <exclude>basic/**</exclude>
+            <!-- exclude examples that use static configuration -->
+            <exclude>loan-broker/**</exclude>
+            <exclude>file-binding/**</exclude>
+            <exclude>rss-binding/**</exclude>
+            <exclude>vfs-binding/**</exclude>
+            <exclude>wsn-http-binding/**</exclude>
           </excludes>
       </fileSet>
 
