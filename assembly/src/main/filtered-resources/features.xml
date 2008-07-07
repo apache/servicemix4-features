@@ -34,7 +34,8 @@
 	<feature name="activemq">
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${geronimo.jta.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
-		<bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec</bundle>
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>
+		<bundle>mvn:commons-pool/commons-pool/${commons.pool.version}</bundle>
 		<bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-console/${activemq.version}</bundle>
@@ -72,7 +73,7 @@
 		<bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
 	</feature>
 	<feature name="camel">
-    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
+		<bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/${geronimo.activation.version}</bundle>
 		<bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
 		<bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/${servicemix.specs.version}</bundle>
