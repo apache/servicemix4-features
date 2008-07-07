@@ -22,9 +22,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>4</version>
+    <groupId>org.apache.servicemix</groupId>
+    <artifactId>servicemix-pom</artifactId>
+    <version>1.0</version>
   </parent>
 
   <groupId>org.apache.servicemix.features</groupId>
@@ -75,11 +75,11 @@
       <components.version>4.0-SNAPSHOT</components.version>
       <cxf.version>2.1.1</cxf.version>
       <felix.bundlerepository.version>1.0.2</felix.bundlerepository.version>
-      <felix.compendium.version>1.0.0</felix.compendium.version>
+      <felix.compendium.version>1.0.1</felix.compendium.version>
       <felix.configadmin.version>1.0.0</felix.configadmin.version>
-      <felix.core.version>1.0.0</felix.core.version>
+      <felix.core.version>1.0.1</felix.core.version>
       <felix.osgi.version>1.0.1</felix.osgi.version>
-      <felix.plugin.version>1.4.0</felix.plugin.version>
+      <felix.plugin.version>1.4.1</felix.plugin.version>
       <felix.prefs.version>1.0.2</felix.prefs.version>
       <geronimo.activation.version>1.0.2</geronimo.activation.version>
       <geronimo.annotation.version>1.1.1</geronimo.annotation.version>
@@ -114,7 +114,7 @@
       <openejb.version>3.0-beta-2</openejb.version>
       <openjpa.version>1.0.1</openjpa.version>
       <pax.logging.version>1.1.1</pax.logging.version>
-      <pax.url.version>0.3.0</pax.url.version>
+      <pax.url.version>0.3.2</pax.url.version>
       <pax.web.version>0.4.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <saaj.impl.version>1.3_1-SNAPSHOT</saaj.impl.version>
@@ -148,12 +148,12 @@
       <servicemix-drools-version>4.0-SNAPSHOT</servicemix-drools-version>
       <servicemix-file-version>4.0-SNAPSHOT</servicemix-file-version>
       
-      <spring.version>2.5.4</spring.version>
-      <spring.osgi.version>1.1.0-m2</spring.osgi.version>
+      <spring.version>2.5.5</spring.version>
+      <spring.osgi.version>1.1.0</spring.osgi.version>
       <wsdl4j.version>1.6.1_1-SNAPSHOT</wsdl4j.version>
       <woodstox.version>3.2.6_1-SNAPSHOT</woodstox.version>
       <xstream.version>1.2.2</xstream.version>
-      <xbean.version>3.4.2</xbean.version>
+      <xbean.version>3.4.3</xbean.version>
       <xmlschema.version>1.4.2_1-SNAPSHOT</xmlschema.version>
       <xmlresolver.version>1.2_1-SNAPSHOT</xmlresolver.version>
   </properties>
