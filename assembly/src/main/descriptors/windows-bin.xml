@@ -204,6 +204,7 @@
                 <include>org.apache.servicemix.specs:org.apache.servicemix.specs.jaxb-api-2.1</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxb-impl</include>
                 <include>org.apache.servicemix.specs:org.apache.servicemix.specs.jaxws-api-2.1</include>
+                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.fastinfoset</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.neethi</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.saaj-impl</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.woodstox</include>

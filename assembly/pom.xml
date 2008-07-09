@@ -159,6 +159,11 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.fastinfoset</artifactId>
+            <version>${fastinfoset.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jencks</artifactId>
             <version>${jencks.version}</version>
         </dependency>
