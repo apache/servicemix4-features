@@ -110,6 +110,7 @@
             <exclude>rss-binding/**</exclude>
             <exclude>vfs-binding/**</exclude>
             <exclude>wsn-http-binding/**</exclude>
+            <exclude>ws-notification/**</exclude>
             <!-- exclude SMX3 itests, as well as the pom.xml that runs them (new pom.xml injected from src/main/distribution/text) -->
             <exclude>bridge/bridge-sa-itest/**</exclude>
             <exclude>bridge/pom.xml</exclude>
