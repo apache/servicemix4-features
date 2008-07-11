@@ -114,6 +114,12 @@
             <!-- exclude SMX3 itests, as well as the pom.xml that runs them (new pom.xml injected from src/main/distribution/text) -->
             <exclude>bridge/bridge-sa-itest/**</exclude>
             <exclude>bridge/pom.xml</exclude>
+            <!-- exclude SMX3 README.txt files - new ones will be injected from src/main/distribution/text -->
+            <exclude>bridge/README.txt</exclude>
+            <exclude>camel/README.txt</exclude>
+            <exclude>cxf-wsdl-first/README.txt</exclude>
+            <exclude>loan-broker-bpel/README.txt</exclude>
+            <exclude>wsdl-first/README.txt</exclude>
           </excludes>
       </fileSet>
 
