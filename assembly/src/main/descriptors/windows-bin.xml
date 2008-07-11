@@ -26,16 +26,23 @@
       <fileSet>
           <directory>target/dependencies/win/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
           <outputDirectory>/</outputDirectory>
-		  <excludes>
-				<exclude>etc/*</exclude>
-		  </excludes>
+          <excludes>
+            <exclude>etc/*</exclude>
+            <!-- excluding these to avoid they end up twice in the resulting zip file -->
+            <exclude>*.txt</exclude>
+            <exclude>system/org.apache.felix.prefs-${felix.prefs.version}.jar</exclude>
+          </excludes>
       </fileSet>
       <fileSet>
           <directory>target/dependencies/win/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
           <outputDirectory>/</outputDirectory>
-		  <includes>
-				<include>etc/*</include>
-		  </includes>
+	  <includes>
+ 	     <include>etc/*</include>
+          </includes>
+          <excludes>
+             <!-- excluding this to avoid they end up twice in the resulting zip file -->
+             <exclude>etc/startup.properties</exclude>
+          </excludes>
           <lineEnding>dos</lineEnding>			
       </fileSet>
 
