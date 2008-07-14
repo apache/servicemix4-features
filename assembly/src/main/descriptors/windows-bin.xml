@@ -95,6 +95,7 @@
           <excludes>
               <exclude>**/itests/**</exclude>
               <exclude>**/target/**</exclude>
+              <exclude>**/README.txt</exclude>
           </excludes>
       </fileSet>
 
@@ -147,6 +148,38 @@
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
+        
+        <!--filtering README.txt-->
+        <file>
+              <source>../examples/camel-osgi/README.txt</source>
+              <outputDirectory>/examples/camel-osgi</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+            </file>
+            <file>
+              <source>../examples/camel-nmr/README.txt</source>
+              <outputDirectory>/examples/camel-nmr</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+            </file>
+            <file>
+              <source>../examples/cxf-nmr/README.txt</source>
+              <outputDirectory>/examples/cxf-nmr</outputDirectory>               <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+            </file>
+            <file>
+              <source>../examples/cxf-osgi/README.txt</source>
+              <outputDirectory>/examples/cxf-osgi</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+            </file>
+            <file>
+              <source>../examples/cxf-camel-nmr/README.txt</source>
+              <outputDirectory>/examples/cxf-camel-nmr</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+            </file>
+
     </files>
 
     <dependencySets>
