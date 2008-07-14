@@ -172,11 +172,11 @@
            <name>Apache ServiceMix Repository</name>
            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
        </repository>
-       <!-- Incubator repo -->
+       <!-- ASF M2 snapshot repo -->
        <repository>
-           <id>incubator</id>
-           <name>Incubator Repository</name>
-           <url>http://people.apache.org/repo/m2-incubating-repository</url>
+          <id>apache.m2.snapshots</id>
+          <name>Apache m2 Snapshots Repository</name>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
        </repository>
        <!-- OPS4j repository -->
        <repository>
