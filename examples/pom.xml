@@ -33,6 +33,7 @@
     <name>Apache ServiceMix Examples</name>
 
     <modules>
+        <module>bridge</module>
         <module>camel-nmr</module>
         <module>camel-osgi</module>
         <module>cxf-camel-nmr</module>

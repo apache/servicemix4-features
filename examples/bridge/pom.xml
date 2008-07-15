@@ -22,12 +22,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix</groupId>
-        <artifactId>samples</artifactId>
-        <version>3.3-SNAPSHOT</version>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.samples</groupId>
+    <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>bridge</artifactId>
     <name>ServiceMix :: Samples :: Bridge</name>
     <packaging>pom</packaging>
@@ -95,6 +95,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
+                <version>${servicemix-jbi-plugin-version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>
