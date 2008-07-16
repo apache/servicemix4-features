@@ -151,7 +151,7 @@
       <servicemix-cxf-se-version>4.0-SNAPSHOT</servicemix-cxf-se-version>
       <servicemix-drools-version>4.0-SNAPSHOT</servicemix-drools-version>
       <servicemix-file-version>4.0-SNAPSHOT</servicemix-file-version>
-      <servicemix-jbi-plugin-version>3.2.1</servicemix-jbi-plugin-version>
+      <servicemix-jbi-plugin-version>4.0-SNAPSHOT</servicemix-jbi-plugin-version>
 
       
       <spring.version>2.5.5</spring.version>
@@ -450,6 +450,12 @@
                   </configuration>
               </plugin>
               <plugin>
+                  <groupId>org.apache.servicemix.tooling</groupId>
+                  <artifactId>jbi-maven-plugin</artifactId>
+                  <version>${servicemix-jbi-plugin-version}</version>
+                  <extensions>true</extensions>
+              </plugin>
+              <plugin>
                   <groupId>org.apache.felix</groupId>
                   <artifactId>maven-bundle-plugin</artifactId>
                   <version>${felix.plugin.version}</version>
@@ -499,7 +505,7 @@
                               <artifactItem>
                                   <groupId>org.apache.servicemix.legal</groupId>
                                   <artifactId>legal</artifactId>
-						          <version>${servicemix.legal.version}</version>
+                                   <version>${servicemix.legal.version}</version>
                                   <type>xml</type>
                                   <outputDirectory>target/legal/</outputDirectory>
                               </artifactItem>
