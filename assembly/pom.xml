@@ -741,7 +741,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2-beta-2</version>
                 <executions>
                     <execution>
                         <id>unix-bin</id>
@@ -808,7 +807,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.2-beta-2</version>
                         <executions>
                             <execution>
                                 <id>unix-src</id>
