@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" 
+        xmlns:lb="urn:logicblaze:soa:loanbroker"
+        xmlns:ca="urn:logicblaze:soa:creditagency"
+        xmlns:bk="urn:logicblaze:soa:bank">
+
+  <process name="lb:LoanBrokerService">
+    <active>true</active>
+    <provide partnerLink="LoanBroker">
+      <service name="lb:LoanBrokerService" port="broker" />
+    </provide>
+    <invoke partnerLink="CreditAgency">
+      <service name="ca:CreditAgencyService" port="agency" />
+    </invoke>
+    <invoke partnerLink="Bank1">
+      <service name="bk:Bank1" port="bank" />
+    </invoke>
+    <invoke partnerLink="Bank2">
+      <service name="bk:Bank2" port="bank" />
+    </invoke>
+    <invoke partnerLink="Bank3">
+      <service name="bk:Bank3" port="bank" />
+    </invoke>
+    <invoke partnerLink="Bank4">
+      <service name="bk:Bank4" port="bank" />
+    </invoke>
+    <invoke partnerLink="Bank5">
+      <service name="bk:Bank5" port="bank" />
+    </invoke>
+  </process>
+
+</deploy>

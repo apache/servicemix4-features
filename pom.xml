@@ -60,6 +60,9 @@
   </prerequisites>
 
   <properties>
+      <servicemix.version>4.0-m2-SNAPSHOT</servicemix.version>
+      <maven.assembly.version>2.1</maven.assembly.version>
+      <xfire.maven.plugin>4.0-SNAPSHOT</xfire.maven.plugin>
       <activemq.version>5.2-SNAPSHOT</activemq.version>
       <acegi.version>1.0.0</acegi.version>
       <ant.version>1.7.0_1</ant.version>
@@ -123,7 +126,7 @@
       <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.kernel.version>1.0.0-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m2-SNAPSHOT</servicemix.nmr.version>
-      <servicemix.specs.version>1.0.0</servicemix.specs.version>
+      <servicemix.specs.version>1.1-SNAPSHOT</servicemix.specs.version>
       <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
 
       <servicemix-shared-version>4.0-SNAPSHOT</servicemix-shared-version>
@@ -148,7 +151,7 @@
       <servicemix-cxf-se-version>4.0-SNAPSHOT</servicemix-cxf-se-version>
       <servicemix-drools-version>4.0-SNAPSHOT</servicemix-drools-version>
       <servicemix-file-version>4.0-SNAPSHOT</servicemix-file-version>
-      <servicemix-jbi-plugin-version>4.0-SNAPSHOT</servicemix-jbi-plugin-version>
+      <servicemix-jbi-plugin-version>3.2.1</servicemix-jbi-plugin-version>
 
       
       <spring.version>2.5.5</spring.version>

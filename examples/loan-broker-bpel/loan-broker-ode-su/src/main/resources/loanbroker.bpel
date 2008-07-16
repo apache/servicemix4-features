@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!-- $Rev: 356052 $ $Date: 2005-12-11 14:41:20 -0800 (dim., 11 d√©c. 2005) $ -->
+<bpel:process name="LoanBrokerService"
+	targetNamespace="urn:logicblaze:soa:loanbroker"
+	suppressJoinFailure="yes"
+	exitOnStandardFault="yes"
+	expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"
+	xmlns:tns="urn:logicblaze:soa:loanbroker"
+	xmlns:ca="urn:logicblaze:soa:creditagency"
+	xmlns:bk="urn:logicblaze:soa:bank"
+	xmlns:svc="urn:logicblaze:soa:service"
+	xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+
+	<bpel:import importType="http://schemas.xmlsoap.org/wsdl/" location="loanbroker.wsdl" namespace="urn:logicblaze:soa:loanbroker"/>
+
+	<bpel:partnerLinks>
+		<bpel:partnerLink myRole="LoanBrokerService" name="LoanBroker" partnerLinkType="tns:LoanBrokerPL"/>
+		<bpel:partnerLink partnerRole="CreditAgencyService" name="CreditAgency" partnerLinkType="ca:CreditAgencyPL"/>
+		<bpel:partnerLink partnerRole="BankService" name="Bank1" partnerLinkType="bk:BankPL"/>
+		<bpel:partnerLink partnerRole="BankService" name="Bank2" partnerLinkType="bk:BankPL"/>
+		<bpel:partnerLink partnerRole="BankService" name="Bank3" partnerLinkType="bk:BankPL"/>
+		<bpel:partnerLink partnerRole="BankService" name="Bank4" partnerLinkType="bk:BankPL"/>
+		<bpel:partnerLink partnerRole="BankService" name="Bank5" partnerLinkType="bk:BankPL"/>
+	</bpel:partnerLinks>
+
+	<bpel:variables>
+		<bpel:variable name="request" messageType="tns:getLoanQuoteRequest" />
+		<bpel:variable name="response" messageType="tns:getLoanQuoteResponse" />
+		<bpel:variable name="ca-score-request" messageType="ca:getCreditScoreRequest" />
+		<bpel:variable name="ca-score-response" messageType="ca:getCreditScoreResponse" />
+		<bpel:variable name="ca-history-request" messageType="ca:getCreditHistoryLengthRequest" />
+		<bpel:variable name="ca-history-response" messageType="ca:getCreditHistoryLengthResponse" />
+		<bpel:variable name="bk-loanquote-request" messageType="bk:getLoanQuoteRequest" />
+		<bpel:variable name="bk-loanquote-response-1" messageType="bk:getLoanQuoteResponse" />
+		<bpel:variable name="bk-loanquote-response-2" messageType="bk:getLoanQuoteResponse" />
+		<bpel:variable name="bk-loanquote-response-3" messageType="bk:getLoanQuoteResponse" />
+		<bpel:variable name="bk-loanquote-response-4" messageType="bk:getLoanQuoteResponse" />
+		<bpel:variable name="bk-loanquote-response-5" messageType="bk:getLoanQuoteResponse" />
+		<bpel:variable name="invalidSSN" messageType="tns:invalidSSNFault" />
+		<bpel:variable name="unknownSSN" messageType="tns:unknownSSNFault" />
+	</bpel:variables>
+	
+	<bpel:faultHandlers>
+		<bpel:catch faultName="ca:InvalidSSN">
+			<bpel:sequence>
+				<bpel:assign>
+					<bpel:copy>
+						<bpel:from>
+							<bpel:literal>
+								<tns:invalidSSNFault><tns:ssn/></tns:invalidSSNFault>
+							</bpel:literal>
+						</bpel:from>
+						<bpel:to>$invalidSSN.payload</bpel:to>
+					</bpel:copy>
+					<bpel:copy>
+						<bpel:from>$request.payload/tns:ssn</bpel:from>
+						<bpel:to>$invalidSSN.payload/tns:ssn</bpel:to>
+					</bpel:copy>
+				</bpel:assign>
+				<bpel:reply name="response" partnerLink="LoanBroker"
+					portType="tns:LoanBroker" operation="getLoanQuote"
+					variable="invalidSSN" faultName="tns:InvalidSSN" >
+				</bpel:reply>
+			</bpel:sequence>
+		</bpel:catch>
+		<bpel:catch faultName="ca:UnkownSSN">
+			<bpel:sequence>
+				<bpel:assign>
+					<bpel:copy>
+						<bpel:from>
+							<bpel:literal>
+								<tns:unknownSSNFault><tns:ssn/></tns:unknownSSNFault>
+							</bpel:literal>
+						</bpel:from>
+						<bpel:to>$invalidSSN.payload</bpel:to>
+					</bpel:copy>
+					<bpel:copy>
+						<bpel:from>$request.payload/tns:ssn</bpel:from>
+						<bpel:to>$unknownSSN.payload/tns:ssn</bpel:to>
+					</bpel:copy>
+				</bpel:assign>
+				<bpel:reply name="response" partnerLink="LoanBroker"
+					portType="tns:LoanBroker" operation="getLoanQuote"
+					variable="unknownSSN" faultName="tns:UnknownSSN" >
+				</bpel:reply>
+			</bpel:sequence>
+		</bpel:catch>
+	</bpel:faultHandlers>
+
+	<bpel:sequence>
+		<bpel:receive name="request" partnerLink="LoanBroker"
+			portType="tns:LoanBroker" operation="getLoanQuote" variable="request"
+			createInstance="yes">
+		</bpel:receive>
+
+			
+		<bpel:flow>
+		
+			<bpel:sequence>
+				<bpel:assign>
+					<bpel:copy>
+						<bpel:from>
+							<bpel:literal>
+								<ca:getCreditHistoryLengthRequest><ca:ssn/></ca:getCreditHistoryLengthRequest>
+							</bpel:literal>
+						</bpel:from>
+						<bpel:to>$ca-history-request.payload</bpel:to>
+					</bpel:copy>
+					<bpel:copy>
+						<bpel:from>$request.payload/tns:ssn</bpel:from>
+						<bpel:to>$ca-history-request.payload/ca:ssn</bpel:to>
+					</bpel:copy>
+				</bpel:assign>
+		
+				<bpel:invoke name="service" partnerLink="CreditAgency"
+					portType="ca:CreditAgency" operation="getCreditHistoryLength"
+					inputVariable="ca-history-request"
+					outputVariable="ca-history-response" />
+			</bpel:sequence>
+			
+			<bpel:sequence>
+				<bpel:assign>
+					<bpel:copy>
+						<bpel:from>
+							<bpel:literal>
+								<ca:getCreditScoreRequest><ca:ssn/></ca:getCreditScoreRequest>
+							</bpel:literal>
+						</bpel:from>
+						<bpel:to>$ca-score-request.payload</bpel:to>
+					</bpel:copy>
+					<bpel:copy>
+						<bpel:from>$request.payload/tns:ssn</bpel:from>
+						<bpel:to>$ca-score-request.payload/ca:ssn</bpel:to>
+					</bpel:copy>
+				</bpel:assign>
+		
+				<bpel:invoke name="service" partnerLink="CreditAgency"
+					portType="ca:CreditAgency" operation="getCreditScore"
+					inputVariable="ca-score-request"
+					outputVariable="ca-score-response" />
+			</bpel:sequence>
+		</bpel:flow>
+
+		<bpel:assign>
+			<bpel:copy>
+				<bpel:from>
+					<bpel:literal>
+						<bk:getLoanQuoteRequest><bk:ssn/><bk:amount/><bk:duration/><bk:score/><bk:length/></bk:getLoanQuoteRequest>
+					</bpel:literal>
+				</bpel:from>
+				<bpel:to>$bk-loanquote-request.payload</bpel:to>
+			</bpel:copy>
+			<bpel:copy>
+				<bpel:from>$request.payload/tns:ssn</bpel:from>
+				<bpel:to>$bk-loanquote-request.payload/bk:ssn</bpel:to>
+			</bpel:copy>
+			<bpel:copy>
+				<bpel:from>$request.payload/tns:amount</bpel:from>
+				<bpel:to>$bk-loanquote-request.payload/bk:amount</bpel:to>
+			</bpel:copy>
+			<bpel:copy>
+				<bpel:from>$request.payload/tns:duration</bpel:from>
+				<bpel:to>$bk-loanquote-request.payload/bk:duration</bpel:to>
+			</bpel:copy>
+			<bpel:copy>
+				<bpel:from>$ca-score-response.payload/ca:score</bpel:from>
+				<bpel:to>$bk-loanquote-request.payload/bk:score</bpel:to>
+			</bpel:copy>
+			<bpel:copy>
+				<bpel:from>$ca-history-response.payload/ca:length</bpel:from>
+				<bpel:to>$bk-loanquote-request.payload/bk:length</bpel:to>
+			</bpel:copy>
+			<bpel:copy>
+				<bpel:from>
+					<bpel:literal>
+						<tns:getLoanQuoteResponse><tns:rate/></tns:getLoanQuoteResponse>
+					</bpel:literal>
+				</bpel:from>
+				<bpel:to>$response.payload</bpel:to>
+			</bpel:copy>
+		</bpel:assign>
+
+		<bpel:if>
+			<bpel:condition>
+				$bk-loanquote-request.payload/bk:amount >= 75000.0 and
+				$bk-loanquote-request.payload/bk:score >= 600 and
+				$bk-loanquote-request.payload/bk:length >= 8
+			</bpel:condition>
+			<bpel:sequence>
+				<bpel:flow>
+					<bpel:invoke name="bank1" partnerLink="Bank1"
+							portType="bk:Bank" operation="getLoanQuote" 
+							inputVariable="bk-loanquote-request"
+							outputVariable="bk-loanquote-response-1" />
+							
+					<bpel:invoke name="bank2" partnerLink="Bank2"
+							portType="bk:Bank" operation="getLoanQuote" 
+							inputVariable="bk-loanquote-request"
+							outputVariable="bk-loanquote-response-2" />
+				</bpel:flow>
+				<bpel:if>
+					<bpel:condition>
+						$bk-loanquote-response-1.payload/bk:rate > $bk-loanquote-response-2.payload/bk:rate
+					</bpel:condition>
+					<bpel:assign>
+						<bpel:copy>
+							<bpel:from>$bk-loanquote-response-2.payload/bk:rate</bpel:from>
+							<bpel:to>$response.payload/tns:rate</bpel:to>
+						</bpel:copy>
+					</bpel:assign>
+					<bpel:else>
+						<bpel:assign>
+							<bpel:copy>
+								<bpel:from>$bk-loanquote-response-1.payload/bk:rate</bpel:from>
+								<bpel:to>$response.payload/tns:rate</bpel:to>
+							</bpel:copy>
+						</bpel:assign>
+					</bpel:else>
+				</bpel:if>
+			</bpel:sequence>
+		
+			<bpel:elseif>
+				<bpel:condition>
+					$bk-loanquote-request.payload/bk:amount >= 10000.0 and
+					$bk-loanquote-request.payload/bk:amount &lt; 75000.0 and
+					$bk-loanquote-request.payload/bk:score >= 400 and
+					$bk-loanquote-request.payload/bk:length >= 3
+				</bpel:condition>
+				<bpel:sequence>
+					<bpel:flow>      
+						<bpel:invoke name="bank3" partnerLink="Bank3"
+								portType="bk:Bank" operation="getLoanQuote" 
+								inputVariable="bk-loanquote-request"
+								outputVariable="bk-loanquote-response-3" />
+						<bpel:invoke name="bank4" partnerLink="Bank4"
+								portType="bk:Bank" operation="getLoanQuote" 
+								inputVariable="bk-loanquote-request"
+								outputVariable="bk-loanquote-response-4" />
+					</bpel:flow>
+					<bpel:if>
+						<bpel:condition>
+							$bk-loanquote-response-3.payload/bk:rate > $bk-loanquote-response-4.payload/bk:rate
+						</bpel:condition>
+						<bpel:assign>
+							<bpel:copy>
+								<bpel:from>$bk-loanquote-response-4.payload/bk:rate</bpel:from>
+								<bpel:to>$response.payload/tns:rate</bpel:to>
+							</bpel:copy>
+						</bpel:assign>
+						<bpel:else>
+							<bpel:assign>
+								<bpel:copy>
+									<bpel:from>$bk-loanquote-response-3.payload/bk:rate</bpel:from>
+									<bpel:to>$response.payload/tns:rate</bpel:to>
+								</bpel:copy>
+							</bpel:assign>
+						</bpel:else>
+					</bpel:if>
+				</bpel:sequence>
+			</bpel:elseif>
+		
+			<bpel:else>
+			
+				<bpel:sequence>
+					<bpel:invoke name="bank5" partnerLink="Bank5"
+							portType="bk:Bank" operation="getLoanQuote" 
+							inputVariable="bk-loanquote-request"
+							outputVariable="bk-loanquote-response-5" />
+					<bpel:assign>
+						<bpel:copy>
+							<bpel:from>$bk-loanquote-response-5.payload/bk:rate</bpel:from>
+							<bpel:to>$response.payload/tns:rate</bpel:to>
+						</bpel:copy>
+					</bpel:assign>
+				</bpel:sequence>
+	
+			</bpel:else>
+	
+		</bpel:if>
+		
+		<bpel:reply name="response" partnerLink="LoanBroker"
+			portType="tns:LoanBroker" operation="getLoanQuote"
+			variable="response" />
+
+	</bpel:sequence>
+
+</bpel:process>

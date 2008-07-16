@@ -29,11 +29,15 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>examples</artifactId>
     <packaging>pom</packaging>
-    <version>4.0-m2-SNAPSHOT</version>
+    <version>${servicemix.version}</version>
     <name>Apache ServiceMix Examples</name>
 
     <modules>
-        <module>bridge</module>
+<!--        <module>bridge</module>
+        <module>camel</module>
+        <module>cxf-wsdl-first</module>
+        <module>wsdl-first</module>
+        <module>loan-broker-bpel</module> -->
         <module>camel-nmr</module>
         <module>camel-osgi</module>
         <module>cxf-camel-nmr</module>

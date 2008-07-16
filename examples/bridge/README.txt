@@ -30,9 +30,9 @@ To start this sample, run:
 
 You can deploy the example on ServiceMix 4 in two different ways:
 - using hotdeploy: 
-   copy the bridge-sa/target/bridge-sa-4.0-m2-SNAPSHOT.jar to <servicemix_home>/deploy
+   copy the bridge-sa/target/bridge-sa-${version}.jar to <servicemix_home>/deploy
 - using the ServiceMix console:
-   osgi install -s mvn:org.apache.servicemix.examples.bridge/bridge-sa/4.0-m2-SNAPSHOT/zip
+   osgi install -s mvn:org.apache.servicemix.examples.bridge/bridge-sa/${version}/zip
   
 You can then launch the client.html in your favorite browser
 and send an HTTP request which will be transformed in a JMS

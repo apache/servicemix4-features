@@ -1,0 +1,59 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.apache.servicemix.drools
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.servicemix.drools.model.Exchange;
+
+global org.apache.servicemix.drools.model.JbiHelper jbi;
+
+rule UnkownOperation
+	when
+		me : Exchange( status == Exchange.ACTIVE, $in : in != null,
+					   operation != "{urn:logicblaze:soa:creditagency}getCreditHistoryLength", 
+		               operation != "{urn:logicblaze:soa:creditagency}getCreditScore" )
+	then
+		jbi.fault("<UnknownOperation xmlns='urn:logicblaze:soa:creditagency'/>");
+end
+
+/*
+rule BadSSN
+	when
+		me : Exchange( status == Exchange.ACTIVE, $in : in != null )
+		eval( $in.xpath("/*:ssn/text() <= 0") )
+	then
+		jbi.fault("<InvalidSSN xmlns='urn:logicblaze:soa:creditagency'><ssn>" + x + </ssn></InvalidSSN>");
+end
+*/
+
+rule CreditHistory
+	when
+		me : Exchange( status == Exchange.ACTIVE, $in : in != null,
+					   operation == "{urn:logicblaze:soa:creditagency}getCreditHistoryLength" )
+	then
+		jbi.answer("<getCreditHistoryLengthResponse xmlns='urn:logicblaze:soa:creditagency'><length>" + 100 + "</length></getCreditHistoryLengthResponse>");
+end
+
+rule CreditScore
+	when
+		me : Exchange( status == Exchange.ACTIVE, $in : in != null,
+		               operation == "{urn:logicblaze:soa:creditagency}getCreditScore" )
+	then
+		jbi.answer("<getCreditScoreResponse xmlns='urn:logicblaze:soa:creditagency'><score>" + 1000 + "</score></getCreditScoreResponse>");
+end
+

@@ -60,7 +60,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>4.0-SNAPSHOT</version>
+                <version>${servicemix-jbi-plugin-version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>examples</artifactId>
-        <version>4.0-m2-SNAPSHOT</version>
+        <version>${servicemix.version}</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>camel-osgi</artifactId>
     <packaging>bundle</packaging>
-    <version>4.0-m2-SNAPSHOT</version>
+    <version>${servicemix.version}</version>
     <name>Apache ServiceMix Example :: Camel OSGi</name>
 
     <dependencies>

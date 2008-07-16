@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>loan-broker</artifactId>
+        <version>${servicemix.version}</version>
+    </parent>
+
+    <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+    <artifactId>loan-broker-ode-su</artifactId>
+    <packaging>jbi-service-unit</packaging>
+    <name>ServiceMix :: Samples :: Loan Broker :: Ode</name>
+
+    <dependencies>
+        <!--
+        <dependency>
+            <groupId>org.apache.ode</groupId>
+            <artifactId>ode-tools</artifactId>
+            <version>${ode-version}</version>
+            <scope>test</scope>
+        </dependency>
+        -->
+    </dependencies>
+
+    <properties>
+        <ode-version>2.0-SNAPSHOT</ode-version>
+        <componentName>OdeBpelEngine</componentName>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <version>${servicemix-jbi-plugin-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>compile-bpel</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <taskdef classname="org.apache.ode.tools.bpelc.ant.BpelCTask" name="bpelc">
+                                    <classpath>
+                                        <pathelement path="${basedir}/target/classes" />
+                                        <path refid="maven.test.classpath" />
+                                    </classpath>
+                                </taskdef>
+                                <mkdir dir="${basedir}/target/bpel/" />
+                                <bpelc targetDir="${basedir}/target/bpel/">
+                                    <bpel url="${basedir}/src/main/resources/loanbroker.bpel" />
+                                </bpelc>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+        </plugins>
+    </build>
+</project>

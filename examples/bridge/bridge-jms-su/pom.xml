@@ -68,6 +68,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
+                <version>${servicemix-jbi-plugin-version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

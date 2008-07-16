@@ -97,6 +97,7 @@
             <outputDirectory>/examples/</outputDirectory>
             <lineEnding>unix</lineEnding>
             <excludes>
+                <exclude>pom.xml</exclude>
                 <exclude>**/itests/**</exclude>
                 <exclude>**/target/**</exclude>
                 <exclude>**/README.txt</exclude>
@@ -106,31 +107,6 @@
         <fileSet>
           <directory>target/components</directory>
           <outputDirectory>deploy</outputDirectory>
-        </fileSet>
-
-        <!-- add the examples from SMX3 -->
-        <fileSet>
-          <directory>target/samples/apache-servicemix-${servicemix3.version}/examples</directory>
-          <outputDirectory>examples</outputDirectory>
-          <excludes>
-            <!-- exclude examples that use jbi:embeddedServicemix --> 
-            <exclude>basic/**</exclude>
-            <!-- exclude examples that use static configuration -->
-            <exclude>cluster/**</exclude>
-            <exclude>loan-broker/**</exclude>
-            <exclude>file-binding/**</exclude>
-            <exclude>rss-binding/**</exclude>
-            <exclude>vfs-binding/**</exclude>
-            <exclude>wsn-http-binding/**</exclude>
-            <exclude>ws-notification/**</exclude>
-            <!-- exclude SMX3 examples that have already been ported over -->
-            <exclude>bridge/**</exclude>
-            <!-- exclude SMX3 README.txt files - new ones will be injected from src/main/distribution/text -->
-            <exclude>camel/README.txt</exclude>
-            <exclude>cxf-wsdl-first/README.txt</exclude>
-            <exclude>loan-broker-bpel/README.txt</exclude>
-            <exclude>wsdl-first/README.txt</exclude>
-          </excludes>
         </fileSet>
 
     </fileSets>
@@ -155,6 +131,30 @@
         <file>
               <source>../examples/bridge/README.txt</source>
               <outputDirectory>/examples/bridge</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+              <source>../examples/camel/README.txt</source>
+              <outputDirectory>/examples/camel</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+              <source>../examples/cxf-wsdl-first/README.txt</source>
+              <outputDirectory>/examples/cxf-wsdl-first</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+              <source>../examples/wsdl-first/README.txt</source>
+              <outputDirectory>/examples/wsdl-first</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+              <source>../examples/loan-broker-bpel/README.txt</source>
+              <outputDirectory>/examples/loan-broker-bpel</outputDirectory>
               <filtered>true</filtered>
               <lineEnding>unix</lineEnding>
         </file>
