@@ -93,7 +93,6 @@
         <!-- Copy over the examples -->
         <fileSet>
             <directory>../examples</directory>
-            <filtered>true</filtered>
             <outputDirectory>/examples/</outputDirectory>
             <lineEnding>unix</lineEnding>
             <excludes>
