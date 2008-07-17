@@ -30,7 +30,7 @@ To run this sample, launch the following commands:
 
 You can deploy the example on ServiceMix 4 in two different ways:
 - using hotdeploy: 
-   copy the wsdl-first-cxf-sa/target/wsdl-first-cxf-sa-${version}.jar to <servicemix_home>/deploy
+   copy the wsdl-first-cxf-sa/target/wsdl-first-cxf-sa-${version}.zip to <servicemix_home>/deploy
 - using the ServiceMix console:
    osgi install -s mvn:org.apache.servicemix.examples.cxf-wsdl-first/wsdl-first-cxf-sa/${version}/zip
 

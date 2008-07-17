@@ -30,7 +30,7 @@ To build this sample, launch the following commands:
 
 You can deploy the example on ServiceMix 4 in two different ways:
 - using hotdeploy: 
-   copy the wsdl-first-sa/target/wsdl-first-sa-${version}.jar to <servicemix_home>/deploy
+   copy the wsdl-first-sa/target/wsdl-first-sa-${version}.zip to <servicemix_home>/deploy
 - using the ServiceMix console:
    osgi install -s mvn:org.apache.servicemix.examples.wsdl-first/wsdl-first-sa/${version}/zip
 

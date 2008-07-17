@@ -30,7 +30,7 @@ To start this sample, run:
 
 You can deploy the example on ServiceMix 4 in two different ways:
 - using hotdeploy: 
-   copy the bridge-sa/target/bridge-sa-${version}.jar to <servicemix_home>/deploy
+   copy the bridge-sa/target/bridge-sa-${version}.zip to <servicemix_home>/deploy
 - using the ServiceMix console:
    osgi install -s mvn:org.apache.servicemix.examples.bridge/bridge-sa/${version}/zip
   
