@@ -93,7 +93,6 @@
           <outputDirectory>/examples/</outputDirectory>
           <lineEnding>dos</lineEnding>
           <excludes>
-              <exclude>pom.xml</exclude>
               <exclude>**/itests/**</exclude>
               <exclude>**/target/**</exclude>
               <exclude>**/README.txt</exclude>

@@ -97,7 +97,6 @@
             <outputDirectory>/examples/</outputDirectory>
             <lineEnding>unix</lineEnding>
             <excludes>
-                <exclude>pom.xml</exclude>
                 <exclude>**/itests/**</exclude>
                 <exclude>**/target/**</exclude>
                 <exclude>**/README.txt</exclude>
