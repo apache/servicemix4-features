@@ -266,9 +266,9 @@
         <plugins>
             <!-- generate dependencies versions -->
             <plugin>
-                <groupId>org.apache.servicemix.kernel.testing</groupId>
+                <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>depends-maven-plugin</artifactId>
-                <version>${servicemix.kernel.version}</version>
+                <version>${depends.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>generate-depends-file</id>
