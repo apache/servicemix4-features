@@ -104,6 +104,11 @@
             <version>${xmlresolver.version}</version>
         </dependency>
         <dependency>
+             <groupId>org.apache.servicemix.bundles</groupId> 
+             <artifactId>org.apache.servicemix.bundles.cglib</artifactId> 
+             <version>${cglib.version}</version>
+        </dependency>     
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
             <version>${cxf.version}</version>
@@ -173,6 +178,11 @@
         <dependency>
 		    <groupId>org.apache.servicemix.examples</groupId>
 		    <artifactId>cxf-osgi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.servicemix.examples</groupId>
+		    <artifactId>cxf-http-osgi</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

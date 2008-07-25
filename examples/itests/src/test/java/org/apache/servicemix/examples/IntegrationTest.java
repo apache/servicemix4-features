@@ -17,11 +17,15 @@
 package org.apache.servicemix.examples;
 
 import java.io.File;
+import java.util.jar.Manifest;
 import java.util.Properties;
 import java.util.List;
 
+import org.apache.servicemix.examples.cxf.HelloWorld;
 import org.apache.servicemix.kernel.testing.support.AbstractIntegrationTest;
 import org.springframework.osgi.test.platform.OsgiPlatform;
+import org.osgi.framework.Constants;
+import org.osgi.framework.ServiceReference;
 
 public class IntegrationTest extends AbstractIntegrationTest {
 
@@ -66,6 +70,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jaxb-api-2.1"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jaxws-api-2.1"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.asm"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jaxb-impl"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.neethi"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.woodstox"),
@@ -83,7 +88,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.core"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.spring"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
-            getBundle("org.apache.servicemix.document", "org.apache.servicemix.document")
+            getBundle("org.apache.servicemix.document", "org.apache.servicemix.document"),
+            getBundle("org.apache.servicemix.examples", "cxf-http-osgi"),
 		};
 	}
 
@@ -93,5 +99,28 @@ public class IntegrationTest extends AbstractIntegrationTest {
         Thread.sleep(5000);
     }
 
+    protected Manifest getManifest() {
+        Manifest mf = super.getManifest();
+        String exportP = mf.getMainAttributes().getValue(Constants.EXPORT_PACKAGE);
+        mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
+                                      exportP + ",org.apache.servicemix.examples.cxf");
+        return mf;
+    }
+
+    public void testHttpOsgi() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("cxf-http-osgi");
+        Thread.sleep(5000);
+
+        ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
+        assertNotNull("Service Reference is null", ref);
+
+        org.apache.servicemix.examples.cxf.HelloWorld helloWorld = null;
+
+        helloWorld = (org.apache.servicemix.examples.cxf.HelloWorld) bundleContext.getService(ref);
+        assertNotNull("Cannot find the service", helloWorld);
+
+        assertEquals("Hello Bonjour", helloWorld.sayHi("Bonjour"));
+    }
 
 }
