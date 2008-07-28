@@ -649,6 +649,7 @@
                                 <feature>servicemix-cxf-se</feature>
                                 <feature>servicemix-drools</feature>
                                 <feature>servicemix-eip</feature>
+                                <feature>servicemix-validation</feature>
                                 <feature>servicemix-saxon</feature>
                                 <feature>servicemix-wsn2005</feature>
                             </features>

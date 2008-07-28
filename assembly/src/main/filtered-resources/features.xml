@@ -222,6 +222,10 @@
         <feature>servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix/servicemix-eip/${servicemix-eip-version}</bundle>
     </feature>
+    <feature name="servicemix-validation">
+        <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-validation/${servicemix-validation-version}</bundle>
+    </feature>
     <feature name="servicemix-saxon">
         <feature>servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saxon/${saxon.version}</bundle>
