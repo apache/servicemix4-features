@@ -128,6 +128,7 @@
       <pax.url.version>0.3.2</pax.url.version>
       <pax.web.version>0.4.1</pax.web.version>
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
+      <quartz.version>1.5.2_1-SNAPSHOT</quartz.version>
       <saaj.impl.version>1.3_1-SNAPSHOT</saaj.impl.version>
       <saxon.version>9.1.0.1_1-SNAPSHOT</saxon.version>
       <servicemix3.version>3.3-SNAPSHOT</servicemix3.version>
