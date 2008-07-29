@@ -24,13 +24,13 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>examples</artifactId>
-        <version>${servicemix.version}</version>
+        <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>cxf-osgi</artifactId>
     <packaging>bundle</packaging>
-    <version>${servicemix.version}</version>
+    <version>4.0-m2-SNAPSHOT</version>
     <name>Apache ServiceMix Example :: CXF OSGi</name>
 
     <dependencies>
