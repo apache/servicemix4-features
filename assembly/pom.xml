@@ -397,6 +397,11 @@
             <version>${activemq.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-ra</artifactId>
+            <version>${activemq.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-finder</artifactId>
             <version>${xbean.version}</version>
@@ -619,6 +624,21 @@
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-shared</artifactId>
             <version>${servicemix-shared-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-common</artifactId>
+            <version>${servicemix-shared-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-utils</artifactId>
+            <version>${servicemix3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-services</artifactId>
+            <version>${servicemix3.version}</version>
         </dependency>
     </dependencies>
     <build>
