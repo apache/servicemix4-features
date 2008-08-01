@@ -209,6 +209,9 @@
     </feature>
     <feature name="servicemix-drools">
         <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/${jdt.core.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/${antlr.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.drools/${drools.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-drools/${servicemix-drools-version}</bundle>
     </feature>
     <feature name="servicemix-cxf-se">
@@ -222,11 +225,27 @@
         <feature>servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix/servicemix-eip/${servicemix-eip-version}</bundle>
     </feature>
+    <feature name="servicemix-osworkflow">
+        <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscore/${oscore.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.propertyset/${propertyset.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.osworkflow/${osworkflow.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-osworkflow/${servicemix-osworkflow-version}</bundle>
+    </feature>
     <feature name="servicemix-quartz">
         <feature>servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.version}</bundle>
-		<bundle>mvn:org.springframework/spring-context-support/${spring.version}</bundle>
+        <bundle>mvn:org.springframework/spring-context-support/${spring.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-quartz/${servicemix-quartz-version}</bundle>
+    </feature>
+    <feature name="servicemix-scripting">
+        <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-scripting/${servicemix-scripting-version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.groovy/${groovy.version}</bundle>
+        <bundle>mvn:com.google.code.scriptengines/scriptengines-groovy/${scriptengines.version}</bundle>
     </feature>
     <feature name="servicemix-validation">
         <feature>servicemix-shared</feature>
@@ -240,11 +259,11 @@
     <feature name="servicemix-wsn2005">
         <feature>servicemix-shared</feature>
         <feature>activemq</feature>
-  	    <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
-  	    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
-  	    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/${servicemix.specs.version}</bundle>
-  	    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-2.1/${servicemix.specs.version}</bundle>
-  	    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-2.1/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-wsn2005/${servicemix-wsn2005-version}</bundle>
     </feature>
 </features>

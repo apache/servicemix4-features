@@ -195,6 +195,21 @@
             <version>${quartz.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.oscore</artifactId>
+            <version>${oscore.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.osworkflow</artifactId>
+            <version>${osworkflow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.propertyset</artifactId>
+            <version>${propertyset.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
             <version>${cxf.version}</version>
@@ -641,6 +656,13 @@
             <version>${servicemix3.version}</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>scriptengines</id>
+            <name>ScriptEngines Repository</name>
+            <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
+        </repository>
+    </repositories>
     <build>
         <resources>
             <resource>
@@ -689,7 +711,9 @@
                                 <feature>servicemix-cxf-se</feature>
                                 <feature>servicemix-drools</feature>
                                 <feature>servicemix-eip</feature>
+                                <feature>servicemix-osworkflow</feature>
                                 <feature>servicemix-quartz</feature>
+                                <feature>servicemix-scripting</feature>
                                 <feature>servicemix-validation</feature>
                                 <feature>servicemix-saxon</feature>
                                 <feature>servicemix-wsn2005</feature>
