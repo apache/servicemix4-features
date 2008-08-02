@@ -655,6 +655,11 @@
             <artifactId>servicemix-services</artifactId>
             <version>${servicemix3.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.scriptengines</groupId>
+            <artifactId>scriptengines-groovy</artifactId>
+            <version>${scriptengines.version}</version>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
