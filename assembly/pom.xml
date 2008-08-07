@@ -206,6 +206,16 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
+            <version>${antlr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.antlr-runtime</artifactId>
+            <version>${antlr-runtime.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.propertyset</artifactId>
             <version>${propertyset.version}</version>
         </dependency>

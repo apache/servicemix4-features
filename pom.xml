@@ -67,6 +67,7 @@
       <acegi.version>1.0.0</acegi.version>
       <ant.version>1.7.0_1</ant.version>
       <antlr.version>3.0.1_1-SNAPSHOT</antlr.version>
+      <antlr-runtime.version>3.0.1_1-SNAPSHOT</antlr-runtime.version>
       <aopalliance.version>1.0_1</aopalliance.version>
       <asm.version>2.2.3_1</asm.version>
       <bnd.version>0.0.227</bnd.version>
