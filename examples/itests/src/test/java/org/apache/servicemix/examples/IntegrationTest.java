@@ -90,6 +90,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
             getBundle("org.apache.servicemix.document", "org.apache.servicemix.document"),
             getBundle("org.apache.servicemix.examples", "cxf-http-osgi"),
+            getBundle("org.apache.servicemix.examples", "cxf-soap-handler-osgi"),
+            getBundle("org.apache.servicemix.examples", "cxf-handler-cfg"),
 		};
 	}
 
@@ -97,14 +99,6 @@ public class IntegrationTest extends AbstractIntegrationTest {
         Thread.sleep(5000);
         installBundle("org.apache.servicemix.examples", "cxf-osgi", null, "jar");
         Thread.sleep(5000);
-    }
-
-    protected Manifest getManifest() {
-        Manifest mf = super.getManifest();
-        String exportP = mf.getMainAttributes().getValue(Constants.EXPORT_PACKAGE);
-        mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
-                                      exportP + ",org.apache.servicemix.examples.cxf");
-        return mf;
     }
 
     public void testHttpOsgi() throws Exception {
@@ -121,6 +115,51 @@ public class IntegrationTest extends AbstractIntegrationTest {
         assertNotNull("Cannot find the service", helloWorld);
 
         assertEquals("Hello Bonjour", helloWorld.sayHi("Bonjour"));
+    }
+
+    protected Manifest getManifest() {
+        Manifest mf = super.getManifest();
+        String exportP = mf.getMainAttributes().getValue(Constants.EXPORT_PACKAGE);
+        mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
+                                      exportP + ",org.apache.handlers, "
+                                      + "org.apache.springcfg.handlers, "
+                                      + "org.apache.handlers.types,org.apache.servicemix.examples.cxf,"
+                                      + "org.apache.servicemix.examples.cxf.soaphandler"
+                                      + "org.apache.servicemix.examples.cxf.springcfghandler");
+        return mf;
+    }
+
+    public void testSoapHandlerOsgi() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("cxf-soap-handler-osgi");
+        Thread.sleep(5000);
+
+        ServiceReference ref = bundleContext.getServiceReference(org.apache.handlers.AddNumbers.class.getName());
+        assertNotNull("Service Reference is null", ref);
+
+        org.apache.handlers.AddNumbers addNumbers = null;
+
+        addNumbers = (org.apache.handlers.AddNumbers) bundleContext.getService(ref);
+        assertNotNull("Cannot find the service", addNumbers);
+
+        assertEquals(2, addNumbers.addNumbers(1,1));
+
+    }
+
+     public void testSpringConfigHandlerOsgi() throws Exception {
+         Thread.sleep(5000);
+         waitOnContextCreation("cxf-handler-cfg");
+         Thread.sleep(5000);
+
+         ServiceReference ref = bundleContext.getServiceReference(org.apache.springcfg.handlers.AddNumbers.class.getName());
+         assertNotNull("Service Reference is null", ref);
+
+         org.apache.springcfg.handlers.AddNumbers addNumbers = null;
+
+         addNumbers = (org.apache.springcfg.handlers.AddNumbers) bundleContext.getService(ref);
+         assertNotNull("Cannot find the service", addNumbers);
+
+         assertEquals(1016, addNumbers.addNumbers(10, 16));
     }
 
 }

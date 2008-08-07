@@ -187,6 +187,16 @@
         </dependency>
         <dependency>
 		    <groupId>org.apache.servicemix.examples</groupId>
+		    <artifactId>cxf-soap-handler-osgi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.servicemix.examples</groupId>
+		    <artifactId>cxf-handler-cfg</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.servicemix.examples</groupId>
 		    <artifactId>cxf-nmr</artifactId>
             <version>${project.version}</version>
         </dependency>
