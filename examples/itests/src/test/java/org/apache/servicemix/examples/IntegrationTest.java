@@ -16,11 +16,14 @@
  */
 package org.apache.servicemix.examples;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.jar.Manifest;
 import java.util.Properties;
 import java.util.List;
 
+import org.apache.cxf.Bus;
 import org.apache.servicemix.examples.cxf.HelloWorld;
 import org.apache.servicemix.kernel.testing.support.AbstractIntegrationTest;
 import org.springframework.osgi.test.platform.OsgiPlatform;
@@ -92,6 +95,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.examples", "cxf-http-osgi"),
             getBundle("org.apache.servicemix.examples", "cxf-soap-handler-osgi"),
             getBundle("org.apache.servicemix.examples", "cxf-handler-cfg"),
+            getBundle("org.apache.servicemix.examples", "cxf-ws-addressing"),
 		};
 	}
 
@@ -119,13 +123,21 @@ public class IntegrationTest extends AbstractIntegrationTest {
 
     protected Manifest getManifest() {
         Manifest mf = super.getManifest();
+        String importP = mf.getMainAttributes().getValue(Constants.IMPORT_PACKAGE);
+        mf.getMainAttributes().putValue(Constants.IMPORT_PACKAGE,
+            importP + ",META-INF.cxf");
         String exportP = mf.getMainAttributes().getValue(Constants.EXPORT_PACKAGE);
         mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
                                       exportP + ",org.apache.handlers, "
                                       + "org.apache.springcfg.handlers, "
                                       + "org.apache.handlers.types,org.apache.servicemix.examples.cxf,"
-                                      + "org.apache.servicemix.examples.cxf.soaphandler"
-                                      + "org.apache.servicemix.examples.cxf.springcfghandler");
+                                      + "org.apache.servicemix.examples.cxf.soaphandler,"
+                                      + "org.apache.servicemix.examples.cxf.springcfghandler,"
+                                      + "org.apache.servicemix.examples.cxf.wsaddressing,"
+                                      + "org.apache.hello_world_soap_http,"
+                                      + "org.apache.cxf,"
+                                      + "org.apache.cxf.bus,"
+                                      + "org.apache.cxf.interceptor");
         return mf;
     }
 
@@ -160,6 +172,43 @@ public class IntegrationTest extends AbstractIntegrationTest {
          assertNotNull("Cannot find the service", addNumbers);
 
          assertEquals(1016, addNumbers.addNumbers(10, 16));
+    }
+
+    public void testWsAddressingOsgi() throws Exception {
+         Thread.sleep(5000);
+         waitOnContextCreation("cxf-ws-addressing");
+
+         ServiceReference busref = bundleContext.getServiceReference(org.apache.cxf.bus.CXFBusImpl.class.getName());
+         assertNotNull("Bus Reference is null", busref);
+
+         Bus bus = (Bus)bundleContext.getService(busref);
+
+         ByteArrayOutputStream input = new ByteArrayOutputStream();
+         PrintWriter writer = new PrintWriter(input, true);
+         org.apache.cxf.interceptor.LoggingInInterceptor in = new org.apache.cxf.interceptor.LoggingInInterceptor(writer);
+         bus.getInInterceptors().add(in);
+
+         ByteArrayOutputStream output = new ByteArrayOutputStream();
+         PrintWriter outwriter = new PrintWriter(output, true);
+         org.apache.cxf.interceptor.LoggingOutInterceptor out = new org.apache.cxf.interceptor.LoggingOutInterceptor(outwriter);
+         bus.getOutInterceptors().add(out);
+
+         ServiceReference ref = bundleContext.getServiceReference(org.apache.hello_world_soap_http.Greeter.class.getName());
+         assertNotNull("Service Reference is null", ref);
+
+
+         org.apache.hello_world_soap_http.Greeter greeter = null;
+
+         greeter = (org.apache.hello_world_soap_http.Greeter) bundleContext.getService(ref);
+         assertNotNull("Cannot find the service", greeter);
+
+         assertEquals("Bonjour", greeter.sayHi());
+
+         String expectedOut = "<Address>http://www.w3.org/2005/08/addressing/anonymous</Address>";
+         String expectedIn = "<RelatesTo xmlns=\"http://www.w3.org/2005/08/addressing\">";
+
+         assertTrue(output.toString().indexOf(expectedOut) != -1);
+         assertTrue(input.toString().indexOf(expectedIn) != -1);
     }
 
 }

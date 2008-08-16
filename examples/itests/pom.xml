@@ -196,6 +196,11 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+	    <groupId>org.apache.servicemix.examples</groupId>
+	    <artifactId>cxf-ws-addressing</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
 		    <groupId>org.apache.servicemix.examples</groupId>
 		    <artifactId>cxf-nmr</artifactId>
             <version>${project.version}</version>
@@ -269,6 +274,11 @@
             <groupId>org.ops4j.pax.web-extender</groupId>
             <artifactId>pax-web-ex-whiteboard</artifactId>
             <version>${pax.web.extender.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>2.5.5</version>
         </dependency>
     </dependencies>
 
