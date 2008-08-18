@@ -20,6 +20,8 @@ Welcome to the ServiceMix camel osgi example
 
 This example demonstrates using Apache Camel to deploy EIP routes in
 Servicemix.
+Also this example shows how to use osgi propertie placeholder and how to
+deploy the properties file from console.
 
 Quick steps to install the sample
 ---------------------------------
@@ -56,6 +58,19 @@ Finally, uninstall the examples-camel-osgi feature:
 
 As well, you can view ExampleRouter log entries in the ServiceMix log:
   log d
+
+You also can update and redeploy properties file which is used by the properties
+placeholder in the beans.xml from console.
+
+Edit the org.apache.servicemix.examples.cfg in this folder, change the
+value of key "prefix" whatever you want(for example YourTransform), then in
+the console 
+utils exec "cp
+$YOUR_SERVICEMIX_HOME/examples/camel-osgi/org.apache.servicemix.examples.cfg
+$YOUR_SERVICEMIX_HOME/etc" 
+And then stop and start the bundle of this example which name is "Apache ServiceMix Example :: Camel OSGi", you can use "osgi list"to get this bundle id.
+Then you should find the prefix of the output should like
+>>>> YourTransform set body:  Tue Jun 10 16:56:47 NDT 2008
 
 How does it work?
 -----------------
