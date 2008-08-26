@@ -142,7 +142,7 @@
       <scriptengines.version>1.0</scriptengines.version>
       <servicemix3.version>3.3-SNAPSHOT</servicemix3.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
-      <servicemix.kernel.version>1.0.0-SNAPSHOT</servicemix.kernel.version>
+      <servicemix.kernel.version>1.0.0-rc2</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m2-SNAPSHOT</servicemix.nmr.version>
       <servicemix.specs.version>1.1-SNAPSHOT</servicemix.specs.version>
       <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
