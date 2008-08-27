@@ -109,7 +109,17 @@
             <artifactId>org.apache.servicemix.nmr.spring</artifactId>
             <version>${servicemix.nmr.version}</version>
         </dependency>
-
+        
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
+            <version>${xmlsec.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.wss4j</artifactId>
+            <version>${wss4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.jbi-api-1.0</artifactId>
