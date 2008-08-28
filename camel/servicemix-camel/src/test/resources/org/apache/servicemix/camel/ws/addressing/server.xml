@@ -38,8 +38,8 @@
 
     <bean id="mapAggregator" class="org.apache.cxf.ws.addressing.MAPAggregator"/>
     <bean id="mapCodec" class="org.apache.cxf.ws.addressing.soap.MAPCodec"/>
-    <bean class="org.apache.servicemix.camel.ws.addressing.MAPVerifier" id="mapVerifier"/>
-    <bean class="org.apache.servicemix.camel.ws.addressing.HeaderVerifier" id="headVerifier"/>
+    <bean class="org.apache.servicemix.camel.nmr.ws.addressing.MAPVerifier" id="mapVerifier"/>
+    <bean class="org.apache.servicemix.camel.nmr.ws.addressing.HeaderVerifier" id="headVerifier"/>
     <cxf:cxfEndpoint id="routerEndpoint" name="test:GreeterPort" address="camel://jetty:http://localhost:9008/SoapContext/SoapPort"  serviceClass="org.apache.hello_world_soap_http.Greeter">
         <cxf:properties>
             <entry key="dataFormat" value="POJO"/>

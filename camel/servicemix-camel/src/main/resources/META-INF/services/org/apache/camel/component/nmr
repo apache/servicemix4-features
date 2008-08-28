@@ -15,4 +15,4 @@
 # limitations under the License.
 #
 
-class=org.apache.servicemix.camel.ServiceMixComponent
+class=org.apache.servicemix.camel.nmr.ServiceMixComponent

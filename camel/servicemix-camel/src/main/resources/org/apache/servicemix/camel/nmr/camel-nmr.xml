@@ -15,35 +15,21 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:cxf="http://activemq.apache.org/camel/schema/cxfEndpoint"
-       xmlns:camel="http://activemq.apache.org/camel/schema/spring"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:camel-osgi="http://activemq.apache.org/camel/schema/osgi"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
-       http://activemq.apache.org/camel/schema/cxfEndpoint http://activemq.apache.org/camel/schema/cxf/cxfEndpoint.xsd
+       http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd
        http://activemq.apache.org/camel/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd
-    ">
+       http://activemq.apache.org/camel/schema/osgi http://activemq.apache.org/camel/schema/osgi/camel-osgi.xsd">
 
-  
-  <cxf:cxfEndpoint id="routerEndpoint" address="http://localhost:9000/router" 
-                   serviceClass="org.apache.servicemix.camel.nmr.HelloService">
-       <cxf:properties>
-           <entry key="setDefaultBus" value="true"/>
-       </cxf:properties>
-  </cxf:cxfEndpoint>
-  
-    
-  <cxf:cxfEndpoint id="serviceEndpoint" address="local://smx/helloworld" 
-                   serviceClass="org.apache.servicemix.camel.nmr.HelloService">
-       <cxf:properties>
-           <entry key="setDefaultBus" value="true"/>
-       </cxf:properties>
-  </cxf:cxfEndpoint>
-
-  <camel:camelContext>
-  </camel:camelContext>
-
-  <bean id="org.apache.servicemix.nmr.api.NMR" class="org.apache.servicemix.nmr.core.ServiceMix" init-method="init" />
+    <bean id="nmr" class="org.apache.servicemix.camel.nmr.ServiceMixComponent">
+        <property name="nmr">
+            <osgi:reference interface="org.apache.servicemix.nmr.api.NMR" />
+        </property>
+    </bean>
 
 </beans>
