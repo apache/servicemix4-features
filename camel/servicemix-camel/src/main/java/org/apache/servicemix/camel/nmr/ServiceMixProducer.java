@@ -16,7 +16,6 @@
  */
 package org.apache.servicemix.camel.nmr;
 
-import org.apache.camel.component.cxf.CxfConstants;
 import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.Exchange;
 import org.apache.servicemix.nmr.api.Channel;
@@ -32,6 +31,8 @@ import org.apache.servicemix.nmr.api.service.ServiceHelper;
  * To change this template use File | Settings | File Templates.
  */
 public class ServiceMixProducer extends DefaultProducer<ServiceMixExchange> {
+	
+	private static final String OPERATION_NAME = "operationName"; 
 
     public ServiceMixProducer(ServiceMixEndpoint endpoint) {
         super(endpoint);
@@ -57,8 +58,8 @@ public class ServiceMixProducer extends DefaultProducer<ServiceMixExchange> {
         	ex.printStackTrace();
         }
         e.getIn().setBody(exchange.getIn().getBody());
-        e.getIn().setHeader(CxfConstants.OPERATION_NAME, 
-        		exchange.getIn().getHeader(CxfConstants.OPERATION_NAME));
+        e.getIn().setHeader(OPERATION_NAME, 
+        		exchange.getIn().getHeader(OPERATION_NAME));
                 
         client.sendSync(e);
         if (e.getPattern() != Pattern.InOnly) {
