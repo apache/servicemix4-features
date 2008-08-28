@@ -141,6 +141,7 @@
       <saxon.version>9.1.0.1_1-SNAPSHOT</saxon.version>
       <scriptengines.version>1.0</scriptengines.version>
       <servicemix3.version>3.3-SNAPSHOT</servicemix3.version>
+      <servicemix-utils.version>1.0-SNAPSHOT</servicemix-utils.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.kernel.version>1.0.0-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0-m2-SNAPSHOT</servicemix.nmr.version>
