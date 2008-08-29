@@ -124,7 +124,12 @@
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jdt-core</artifactId>
             <version>${jdt.core.version}</version>
-        </dependency>        
+        </dependency>       
+         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-net</artifactId>
+            <version>${commons.net.version}</version>
+        </dependency> 
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
@@ -136,8 +141,28 @@
             <version>${wss4j.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
+            <version>${commons.httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.oro</artifactId>
+            <version>${oro.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.jbi-api-1.0</artifactId>
+            <version>${servicemix.specs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.scripting-api-1.0</artifactId>
+            <version>${servicemix.specs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.stax-api-1.0</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
