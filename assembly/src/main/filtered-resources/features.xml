@@ -17,6 +17,20 @@
       limitations under the License.
 -->
 <features>
+    <feature name="management">
+        <bundle>mvn:org.apache.servicemix.management/org.apache.servicemix.management.core/${version}</bundle>
+    </feature>
+    <feature name="transaction">
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${geronimo.jta.version}</bundle>
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
+		<bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.howl/${howl.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.components/geronimo-transaction/${geronimo.transaction.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
+        <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jencks/${jencks.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.transaction/org.apache.servicemix.transaction/${version}</bundle>
+    </feature>
 	<feature name="web-core">
 		<bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
 		<bundle>mvn:org.mortbay.jetty/jetty-util/${jetty.version}</bundle>

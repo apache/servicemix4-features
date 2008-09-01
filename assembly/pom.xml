@@ -380,6 +380,26 @@
             <version>${version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.geronimo.components</groupId>
+            <artifactId>geronimo-transaction</artifactId>
+            <version>${geronimo.transaction.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.components</groupId>
+            <artifactId>geronimo-connector</artifactId>
+            <version>${geronimo.connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.jencks</artifactId>
+            <version>${jencks.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.howl</artifactId>
+            <version>${howl.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.transaction</groupId>
             <artifactId>org.apache.servicemix.transaction</artifactId>
             <version>${version}</version>
@@ -759,6 +779,8 @@
                                 <!--
                                     Those features are dependencies of JBI components, so no need to install them explicitely
                                   -->
+                                <feature>management</feature>
+                                <feature>transaction</feature>
                                 <!--
                                 <feature>jbi</feature>
                                 <feature>camel</feature>
