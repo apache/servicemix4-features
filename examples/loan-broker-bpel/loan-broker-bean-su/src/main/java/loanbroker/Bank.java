@@ -24,7 +24,7 @@ import javax.jbi.messaging.MessageExchange;
 import javax.jbi.messaging.MessagingException;
 import javax.jbi.messaging.NormalizedMessage;
 
-import org.apache.servicemix.MessageExchangeListener;
+import org.apache.servicemix.jbi.listener.MessageExchangeListener;
 import org.apache.servicemix.jbi.jaxp.StringSource;
 
 public class Bank implements MessageExchangeListener {
