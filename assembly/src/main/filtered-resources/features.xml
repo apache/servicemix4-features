@@ -177,7 +177,7 @@
         <bundle>mvn:org.mortbay.jetty/jetty-util/${jetty.version}</bundle>
         <bundle>mvn:org.mortbay.jetty/jetty/${jetty.version}</bundle>
         <bundle>mvn:org.mortbay.jetty/jetty-management/${jetty.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-client/${jetty.client.version}</bundle>
+        <bundle>mvn:org.mortbay.jetty/jetty-client/${jetty.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http-version}</bundle>
     </feature>
     <feature name="servicemix-jms">
