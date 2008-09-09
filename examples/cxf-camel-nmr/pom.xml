@@ -62,7 +62,7 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
                            javax.jws,javax.wsdl,META-INF.cxf,META-INF.cxf.transport.nmr,
-                          org.apache.cxf.bus,org.apache.servicemix.camel,
+                          org.apache.cxf.bus,org.apache.servicemix.camel.nmr,
                           org.apache.servicemix.cxf.transport.nmr,
                           org.apache.servicemix.nmr.api,org.apache.servicemix.nmr.api.event,org.apache.servicemix.nmr.api.internal,
                           org.springframework.beans.factory.config, *

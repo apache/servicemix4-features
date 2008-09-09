@@ -33,7 +33,7 @@
     <import resource="classpath:META-INF/cxf/cxf.xml" />
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
     <import resource="classpath:META-INF/cxf/transport/nmr/cxf-transport-nmr.xml" />
-    <import resource="classpath:org/apache/servicemix/camel/camel-nmr.xml" />
+    <import resource="classpath:org/apache/servicemix/camel/nmr/camel-nmr.xml" />
 
     <camel-osgi:camelContext xmlns="http://activemq.apache.org/camel/schema/spring">
         <!-- Route periodically sent events into the NMR -->
