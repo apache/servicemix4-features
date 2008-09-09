@@ -185,17 +185,17 @@
   </properties>
 
    <repositories>
-       <!-- Default repository -->
-       <repository>
-           <id>central</id>
-           <name>Default maven repo</name>
-           <url>http://repo1.maven.org/maven2</url>
-       </repository>
        <!-- ServiceMix repo -->
        <repository>
            <id>servicemix</id>
            <name>Apache ServiceMix Repository</name>
            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+       </repository>
+       <!-- Default repository -->
+       <repository>
+           <id>central</id>
+           <name>Default maven repo</name>
+           <url>http://repo1.maven.org/maven2</url>
        </repository>
        <!-- ASF M2 snapshot repo -->
        <repository>
