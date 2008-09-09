@@ -105,15 +105,18 @@
 
     <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactoryBean">
         <property name="maxConnections" value="8" />
-        <property name="transactionManager" ref="transactionManager" />
         <property name="connectionFactory" ref="activemqConnectionFactory" />
+        <!-- if using a JTA transaction manager, uncomment the two following properties to
+             enable integration 
+        <property name="transactionManager" ref="transactionManager" />
         <property name="resourceName" value="activemq.${name}" />
+        -->
     </bean>
 
     <bean id="resourceManager" class="org.apache.activemq.pool.ActiveMQResourceManager" init-method="recoverResource">
-          <property name="transactionManager" ref="transactionManager" />
-          <property name="connectionFactory" ref="activemqConnectionFactory" />
-          <property name="resourceName" value="activemq.${name}" />
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="connectionFactory" ref="activemqConnectionFactory" />
+        <property name="resourceName" value="activemq.${name}" />
     </bean>
 
     <osgi:reference id="transactionManager" interface="javax.transaction.TransactionManager"
