@@ -32,6 +32,7 @@
         <!-- Destination specific policies using destination names or wildcards -->
         <destinationPolicy>
             <policyMap>
+
                 <policyEntries>
                     <policyEntry queue=">" memoryLimit="5mb"/>
                     <policyEntry topic=">" memoryLimit="5mb">
@@ -41,6 +42,7 @@
                     </policyEntry>
                 </policyEntries>
             </policyMap>
+
         </destinationPolicy>
 
         <!-- Use the following to configure how ActiveMQ is exposed in JMX -->
@@ -51,6 +53,7 @@
         <!-- The store and forward broker networks ActiveMQ will listen to -->
         <networkConnectors>
             <!-- by default just auto discover the other brokers -->
+
             <networkConnector name="default-nc" uri="multicast://default"/>
             <!-- Example of a static configuration:
             <networkConnector name="host1 and host2" uri="static://(tcp://host1:61616,tcp://host2:61616)"/>
@@ -81,6 +84,7 @@
                 <memoryUsage>
                     <memoryUsage limit="20 mb"/>
                 </memoryUsage>
+
                 <storeUsage>
                     <storeUsage limit="1 gb" name="foo"/>
                 </storeUsage>
@@ -89,7 +93,6 @@
                 </tempUsage>
             </systemUsage>
         </systemUsage>
-
 
         <!-- The transport connectors ActiveMQ will listen to -->
         <transportConnectors>
@@ -100,29 +103,28 @@
     </broker>
 
     <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+
         <property name="brokerURL" value="tcp://localhost:61616" />
     </bean>
 
     <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactoryBean">
         <property name="maxConnections" value="8" />
-        <property name="connectionFactory" ref="activemqConnectionFactory" />
-        <!-- if using a JTA transaction manager, uncomment the two following properties to
-             enable integration 
         <property name="transactionManager" ref="transactionManager" />
+        <property name="connectionFactory" ref="activemqConnectionFactory" />
         <property name="resourceName" value="activemq.${name}" />
-        -->
     </bean>
 
     <bean id="resourceManager" class="org.apache.activemq.pool.ActiveMQResourceManager" init-method="recoverResource">
-        <property name="transactionManager" ref="transactionManager" />
-        <property name="connectionFactory" ref="activemqConnectionFactory" />
-        <property name="resourceName" value="activemq.${name}" />
+          <property name="transactionManager" ref="transactionManager" />
+          <property name="connectionFactory" ref="activemqConnectionFactory" />
+          <property name="resourceName" value="activemq.${name}" />
     </bean>
 
     <osgi:reference id="transactionManager" interface="javax.transaction.TransactionManager"
                     cardinality="0..1"/>
 
     <osgi:service ref="pooledConnectionFactory">
+
         <osgi:interfaces>
             <value>javax.jms.ConnectionFactory</value>
         </osgi:interfaces>
