@@ -79,6 +79,7 @@
                 <exclude>**/cxf-soap-handler-osgi/**</exclude>
                 <exclude>**/cxf-ws-addressing/**</exclude>
                 <exclude>**/simple/**</exclude>
+                <exclude>**/wsdl-first/**</exclude>
             </excludes>
         </fileSet>
         
@@ -128,12 +129,6 @@
         <file>
             <source>../examples/cxf-wsdl-first/README.txt</source>
             <outputDirectory>/examples/cxf-wsdl-first</outputDirectory>
-            <filtered>true</filtered>
-            <lineEnding>unix</lineEnding>
-        </file>
-        <file>
-            <source>../examples/wsdl-first/README.txt</source>
-            <outputDirectory>/examples/wsdl-first</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
