@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-drools</artifactId>
-            <version>${components.version}</version>
+            <version>${servicemix-drools-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
