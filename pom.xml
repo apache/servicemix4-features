@@ -118,8 +118,7 @@
       <jaxws.api.version>2.1</jaxws.api.version>
       <jdt.core.version>3.2.3_1-SNAPSHOT</jdt.core.version>
       <jencks.version>2.1_1-SNAPSHOT</jencks.version>
-      <jetty.version>6.1.12-rc1</jetty.version>
-      <jetty.client.version>6.1.12-rc1</jetty.client.version>
+      <jetty.version>6.1.12rc1-smx</jetty.version>
       <jline.version>0.9.94</jline.version>
       <junit.version>4.4</junit.version>
       <log4j.version>1.2.14</log4j.version>
