@@ -33,8 +33,7 @@
     </feature>
     <feature name="web-core">
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty-util/${jetty.version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty/${jetty.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.ops4j.pax.web/pax-web-bundle/${pax.web.version}</bundle>
     </feature>
     <feature name="web">
@@ -146,8 +145,7 @@
     </feature>
     <feature name="servicemix-cxf-bc">
         <feature>servicemix-shared</feature>
-        <bundle>mvn:org.mortbay.jetty/jetty-util/${jetty.version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty/${jetty.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/${geronimo.activation.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo.annotation.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-javamail_1.4_spec/${geronimo.javamail.version}</bundle>
@@ -187,12 +185,9 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlschema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wss4j/${wss4j.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared-version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared-version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty-util/${jetty.version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty/${jetty.version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty-management/${jetty.version}</bundle>
-        <bundle>mvn:org.mortbay.jetty/jetty-client/${jetty.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http-version}</bundle>
     </feature>
     <feature name="servicemix-jms">

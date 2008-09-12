@@ -117,6 +117,11 @@
         </dependency>        
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.jetty-bundle</artifactId>
+            <version>${jetty.bundle.version}</version>
+        </dependency>        
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.groovy</artifactId>
             <version>${groovy.version}</version>
         </dependency>
@@ -736,11 +741,6 @@
             <version>${servicemix-utils.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix</groupId>
-            <artifactId>servicemix-services</artifactId>
-            <version>${servicemix3.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.google.code.scriptengines</groupId>
             <artifactId>scriptengines-groovy</artifactId>
             <version>${scriptengines.version}</version>
@@ -751,6 +751,12 @@
             <id>scriptengines</id>
             <name>ScriptEngines Repository</name>
             <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>     
+                <enabled>false</enabled>
+            </snapshots>     
         </repository>
     </repositories>
     <build>
