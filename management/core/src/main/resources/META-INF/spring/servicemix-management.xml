@@ -73,8 +73,8 @@
 
     <!-- Simple authenticator -->
     <bean id="simpleAuthenticator" class="org.apache.servicemix.management.SimpleAuthenticationManager">
-        <property name="login" value="smx" />
-        <property name="password" value="smx" />
+        <property name="login" value="${jmxLogin}" />
+        <property name="password" value="${jmxPassword}" />
     </bean>
     <osgi:service ref="simpleAuthenticator">
         <osgi:interfaces>
@@ -82,6 +82,26 @@
         </osgi:interfaces>
     </osgi:service>
 
+    <!-- OSGI framework helper -->
+    <bean id="framework" class="org.apache.servicemix.management.osgi.OSGIFramework">
+    </bean>
+
+    <bean id="jmxAttributeSource" class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource"/>
+
+    <!-- will create management interface using annotation metadata -->
+    <bean id="assembler" class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler">
+        <property name="attributeSource" ref="jmxAttributeSource"/>
+    </bean>
+
+    <bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
+        <property name="beans">
+            <map>
+                <entry key="${frameworkName}" value-ref="framework"/>
+            </map>
+        </property>
+        <property name="assembler" ref="assembler"/>
+    </bean>
+    
     <!-- Property place holder -->
     <osgix:property-placeholder persistent-id="org.apache.servicemix.management">
         <osgix:default-properties>
@@ -92,6 +112,7 @@
             <prop key="daemon">true</prop>
             <prop key="threaded">true</prop>
             <prop key="objectName">connector:name=rmi</prop>
+            <prop key="frameworkName">org.osgi:name=Framework</prop>
         </osgix:default-properties>
     </osgix:property-placeholder>
 
