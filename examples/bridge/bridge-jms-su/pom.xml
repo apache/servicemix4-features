@@ -61,6 +61,12 @@
                </exclusion>
             </exclusions>
         </dependency>
+        <!-- this is a dependency for ActiveMQ -->
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>
