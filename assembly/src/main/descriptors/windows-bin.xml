@@ -67,6 +67,7 @@
               <exclude>**/cxf-ws-addressing/**</exclude>
               <exclude>**/simple/**</exclude>
               <exclude>**/wsdl-first/**</exclude>
+              <exclude>**/loan-broker-bpel/**</exclude>
           </excludes>
       </fileSet>
 
@@ -109,12 +110,6 @@
         <file>
               <source>../examples/cxf-wsdl-first/README.txt</source>
               <outputDirectory>/examples/cxf-wsdl-first</outputDirectory>
-              <filtered>true</filtered>
-              <lineEnding>dos</lineEnding>
-        </file>
-        <file>
-              <source>../examples/loan-broker-bpel/README.txt</source>
-              <outputDirectory>/examples/loan-broker-bpel</outputDirectory>
               <filtered>true</filtered>
               <lineEnding>dos</lineEnding>
         </file>

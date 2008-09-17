@@ -36,7 +36,6 @@
         <module>bridge</module>
         <module>camel</module>
         <module>cxf-wsdl-first</module>
-        <module>loan-broker-bpel</module>
         <module>camel-nmr</module>
         <module>camel-osgi</module>
         <module>cxf-camel-nmr</module>
