@@ -80,18 +80,25 @@
 
     <files>
         <file>
+            <source>${basedir}/target/classes/features.xml</source>
+            <outputDirectory>system/org/apache/servicemix/features/${artifactId}/${version}</outputDirectory>
+            <destName>${artifactId}-${version}-features.xml</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>dos</lineEnding>
+        </file>
+        <file>
             <source>${basedir}/target/maven-shared-archive-resources/META-INF/LICENSE</source>
             <outputDirectory>/</outputDirectory>
             <destName>LICENSE.txt</destName>
             <fileMode>0644</fileMode>
-            <lineEnding>unix</lineEnding>
+            <lineEnding>dos</lineEnding>
         </file>
         <file>
             <source>${basedir}/target/maven-shared-archive-resources/META-INF/NOTICE</source>
             <outputDirectory>/</outputDirectory>
             <destName>NOTICE.txt</destName>
             <fileMode>0644</fileMode>
-            <lineEnding>unix</lineEnding>
+            <lineEnding>dos</lineEnding>
         </file>
         
         <!--filtering README.txt-->
