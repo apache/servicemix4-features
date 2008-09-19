@@ -26,6 +26,9 @@
       <fileSet>
           <directory>target/dependencies/win/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
           <outputDirectory>/</outputDirectory>
+          <excludes>
+             <exclude>etc/org.apache.servicemix.features.cfg</exclude>
+          </excludes>
       </fileSet>
 
       <!-- Copy license and other files from root -->
