@@ -29,6 +29,10 @@
             <excludes>
               <exclude>bin/*</exclude>
               <exclude>etc/org.apache.servicemix.features.cfg</exclude>
+              <exclude>LICENSE.txt</exclude>
+              <exclude>NOTICE.txt</exclude>
+              <exclude>README.txt</exclude>
+              <exclude>RELEASE-NOTES.txt</exclude>
             </excludes>
         </fileSet>
 
