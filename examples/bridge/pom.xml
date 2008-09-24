@@ -38,6 +38,7 @@
       <module>bridge-xslt-su</module>
       <module>bridge-jms-su</module>
       <module>bridge-sa</module>
+      <module>client</module>
     </modules>
 
     <!-- Add ServiceMix repositories for snaphots and releases -->

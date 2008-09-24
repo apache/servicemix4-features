@@ -39,4 +39,6 @@ You can browse the WSDL at
   
 You can also open the client.html page in a browser
 to send a request to the service.
+Or you can launch a java client to send request
+cd client; mvn compile exec:java
 

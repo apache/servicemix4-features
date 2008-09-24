@@ -58,6 +58,9 @@ utils cat http://localhost:8080/cxf/HelloWorld?wsdl
 You can also open the client.html page in a browser to try sending a request
 to the service.
 
+Or you can launch java code client to send the request
+mvn compile exec:java
+
 How does it work?
 -----------------
 

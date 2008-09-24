@@ -39,6 +39,11 @@
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
             <version>${geronimo.wsmetadata.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-utils</artifactId>
+            <version>${servicemix-utils.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -68,6 +73,14 @@
                         <DynamicImport-Package>*</DynamicImport-Package>
                         -->
                     </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.apache.servicemix.samples.cxf_osgi.Client</mainClass>
+                    <includePluginDependencies>false</includePluginDependencies>
                 </configuration>
             </plugin>
         </plugins>

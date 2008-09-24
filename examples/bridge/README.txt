@@ -38,6 +38,8 @@ You can then launch the client.html in your favorite browser
 and send an HTTP request which will be transformed in a JMS
 message.  After the JMS message has been sent to the bridge.output queue successfully, 
 you will receive an HTTP STATUS 202 response code from the ESB.
+Or you can launch java code client to send the request
+cd client; mvn compile exec:java
 
 For more information on running this example please see:
   http://servicemix.apache.org/bridge.html
