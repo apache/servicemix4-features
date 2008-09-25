@@ -76,6 +76,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.cglib"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jaxb-impl"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.neethi"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.saaj-impl"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.woodstox"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.wsdl4j"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlschema"),

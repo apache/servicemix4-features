@@ -138,7 +138,7 @@
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <propertyset.version>1.3_1</propertyset.version>
       <quartz.version>1.5.2_1</quartz.version>
-      <saaj.impl.version>1.3_1-SNAPSHOT</saaj.impl.version>
+      <saaj.impl.version>1.3_2-SNAPSHOT</saaj.impl.version>
       <saxon.version>9.1.0.1_1</saxon.version>
       <scriptengines.version>1.0</scriptengines.version>
       <servicemix3.version>3.3-SNAPSHOT</servicemix3.version>
