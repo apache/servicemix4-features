@@ -140,7 +140,6 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-utils/${servicemix-utils.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-services/${servicemix3.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-common/${servicemix-shared-version}</bundle>
     </feature>
     <feature name="servicemix-cxf-bc">
