@@ -132,6 +132,11 @@
         </dependency>       
          <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
+        </dependency> 
+         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-net</artifactId>
             <version>${commons.net.version}</version>
         </dependency> 
