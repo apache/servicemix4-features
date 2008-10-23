@@ -85,7 +85,7 @@
       <commons.net.version>1.4.1_1</commons.net.version>
       <commons.pool.version>1.4</commons.pool.version>
       <components.version>4.0-SNAPSHOT</components.version>
-      <cxf.version>2.1.2</cxf.version>
+      <cxf.version>2.1.3</cxf.version>
       <dom4j.version>1.6_1-SNAPSHOT</dom4j.version>
       <drools.version>4.0.7_1</drools.version>
       <depends.maven.plugin.version>1.0</depends.maven.plugin.version>
