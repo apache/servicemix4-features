@@ -161,6 +161,16 @@
             <version>${oro.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.rhino</artifactId>
+            <version>${rhino.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.jruby</artifactId>
+            <version>${jruby.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.jbi-api-1.0</artifactId>
             <version>${servicemix.specs.version}</version>
@@ -748,6 +758,16 @@
         <dependency>
             <groupId>com.google.code.scriptengines</groupId>
             <artifactId>scriptengines-groovy</artifactId>
+            <version>${scriptengines.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.scriptengines</groupId>
+            <artifactId>scriptengines-javascript</artifactId>
+            <version>${scriptengines.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.scriptengines</groupId>
+            <artifactId>scriptengines-jruby</artifactId>
             <version>${scriptengines.version}</version>
         </dependency>
     </dependencies>

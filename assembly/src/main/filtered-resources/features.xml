@@ -256,7 +256,11 @@
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-scripting/${servicemix-scripting-version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.groovy/${groovy.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.rhino/${rhino.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jruby/${jruby.version}</bundle>
         <bundle>mvn:com.google.code.scriptengines/scriptengines-groovy/${scriptengines.version}</bundle>
+        <bundle>mvn:com.google.code.scriptengines/scriptengines-javascript/${scriptengines.version}</bundle>
+        <bundle>mvn:com.google.code.scriptengines/scriptengines-jruby/${scriptengines.version}</bundle>
     </feature>
     <feature name="servicemix-validation">
         <feature>servicemix-shared</feature>
