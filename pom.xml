@@ -167,7 +167,7 @@
       <rhino.version>1.7R1_1-SNAPSHOT</rhino.version>
       <saaj.impl.version>1.3_1</saaj.impl.version>
       <saxon.version>9.1.0.1_1</saxon.version>
-      <scriptengines.version>1.0</scriptengines.version>
+      <scriptengines.version>1.1</scriptengines.version>
       <servicemix3.version>3.3-SNAPSHOT</servicemix3.version>
       <servicemix-utils.version>1.0.0</servicemix-utils.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
