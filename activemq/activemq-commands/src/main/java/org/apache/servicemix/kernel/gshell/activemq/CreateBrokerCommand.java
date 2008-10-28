@@ -27,121 +27,125 @@ import java.util.Map;
 import java.util.Scanner;
 
 import org.apache.geronimo.gshell.clp.Option;
-import org.apache.geronimo.gshell.command.annotation.CommandComponent;
-import org.apache.geronimo.gshell.support.OsgiCommandSupport;
+import org.apache.servicemix.kernel.gshell.core.OsgiCommandSupport;
 
 /**
- *
  * @version $Rev$ $Date$
  */
-@CommandComponent(id="activemq:create-broker", description="Creates a broker instance.")
-public class CreateBrokerCommand
-    extends OsgiCommandSupport
-{
-	
-    @Option(name="-n", aliases={"--name"}, description="The name of the broker (defaults to localhost).")
-    private String name="localhost";
- 
-    protected Object doExecute() throws Exception {
-    	
-    	try {
-    		String name = getName();    		
-    		File base = new File(System.getProperty("servicemix.base"));
-    		File deploy = new File(base, "deploy");
-    		
-			HashMap<String, String> props = new HashMap<String, String>();
-			props.put("${name}", name);
-			
-			mkdir(deploy);
-			File configFile = new File(deploy,name+"-broker.xml");
-			copyFilteredResourceTo(configFile, "broker.xml", props);
+// @Command(id="activemq:create-broker", description="Creates a broker instance.")
+public class CreateBrokerCommand extends OsgiCommandSupport {
+    
+    @Option(name = "-n", aliases = {"--name"}, description = "The name of the broker (defaults to localhost).")
+    private String name = "localhost";
 
-			
-			io.out.println("");
-			io.out.println("Default ActiveMQ Broker ("+name+") configuration file created at: "+configFile.getPath());
-			io.out.println("Please review the configuration and modify to suite your needs.  ");
-			io.out.println("");
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw e;
-		}
+    /*
+     * (non-Javadoc)
+     * @see
+     * org.apache.servicemix.kernel.gshell.core.OsgiCommandSupport#doExecute()
+     */
+    protected Object doExecute() throws Exception {
+
+        try {
+            String name = getName();
+            File base = new File(System.getProperty("servicemix.base"));
+            File deploy = new File(base, "deploy");
+
+            HashMap<String, String> props = new HashMap<String, String>();
+            props.put("${name}", name);
+
+            mkdir(deploy);
+            File configFile = new File(deploy, name + "-broker.xml");
+            copyFilteredResourceTo(configFile, "broker.xml", props);
+
+            io.out.println("");
+            io.out.println("Default ActiveMQ Broker (" + name + ") configuration file created at: "
+                           + configFile.getPath());
+            io.out.println("Please review the configuration and modify to suite your needs.  ");
+            io.out.println("");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
 
         return 0;
     }
-	
-	private void copyFilteredResourceTo(File outFile, String resource, HashMap<String, String> props) throws Exception {
-		if( !outFile.exists() ) {
-	        io.out.println("Creating file: @|green "+outFile.getPath()+"|");
-			InputStream is = CreateBrokerCommand.class.getResourceAsStream(resource);
-			try {
-				// Read it line at a time so that we can use the platform line ending when we write it out.
-				PrintStream out = new PrintStream(new FileOutputStream(outFile));
-				try { 
-					Scanner scanner = new Scanner(is);
-					while (scanner.hasNextLine() ) {
-						String line = scanner.nextLine();
-						line = filter(line, props);
-						out.println(line);
-					}
-				} finally {
-					safeClose(out);
-				}
-			} finally {
-				safeClose(is);
-			}
-		} else {
-	        io.out.println("@|red File allready exists|. Move it out of the way if you want it re-created: "+outFile.getPath()+"");
-		}
-	}
 
-	private void safeClose(InputStream is) throws IOException {
-		if( is==null)
-			return;
-		try {
-			is.close();
-		} catch (Throwable ignore) {
-		}
-	}
-	
-	private void safeClose(OutputStream is) throws IOException {
-		if( is==null)
-			return;
-		try {
-			is.close();
-		} catch (Throwable ignore) {
-		}
-	}
+    private void copyFilteredResourceTo(File outFile, String resource, HashMap<String, String> props)
+        throws Exception {
+        if (!outFile.exists()) {
+            io.out.println("Creating file: @|green " + outFile.getPath() + "|");
+            InputStream is = CreateBrokerCommand.class.getResourceAsStream(resource);
+            try {
+                // Read it line at a time so that we can use the platform line
+                // ending when we write it out.
+                PrintStream out = new PrintStream(new FileOutputStream(outFile));
+                try {
+                    Scanner scanner = new Scanner(is);
+                    while (scanner.hasNextLine()) {
+                        String line = scanner.nextLine();
+                        line = filter(line, props);
+                        out.println(line);
+                    }
+                } finally {
+                    safeClose(out);
+                }
+            } finally {
+                safeClose(is);
+            }
+        } else {
+            io.out.println("@|red File allready exists|. Move it out of the way if you want it re-created: "
+                           + outFile.getPath() + "");
+        }
+    }
 
-	private String filter(String line, HashMap<String, String> props) {
-		for (Map.Entry<String, String> i : props.entrySet()) {
+    private void safeClose(InputStream is) throws IOException {
+        if (is == null)
+            return;
+        try {
+            is.close();
+        } catch (Throwable ignore) {
+        }
+    }
+
+    private void safeClose(OutputStream is) throws IOException {
+        if (is == null)
+            return;
+        try {
+            is.close();
+        } catch (Throwable ignore) {
+        }
+    }
+
+    private String filter(String line, HashMap<String, String> props) {
+        for (Map.Entry<String, String> i : props.entrySet()) {
             int p1;
             while ((p1 = line.indexOf(i.getKey())) >= 0) {
-				String l1 = line.substring(0, p1);
-				String l2 = line.substring(p1+i.getKey().length());
-				line = l1+i.getValue()+l2;
-			}
-		}
-		return line;
-	}
+                String l1 = line.substring(0, p1);
+                String l2 = line.substring(p1 + i.getKey().length());
+                line = l1 + i.getValue() + l2;
+            }
+        }
+        return line;
+    }
 
-	private void mkdir(File file) {
-		if( !file.exists() ) {
-	        io.out.println("Creating missing directory: @|green "+file.getPath()+"|");
-			file.mkdirs();
-		}
-	}
+    private void mkdir(File file) {
+        if (!file.exists()) {
+            io.out.println("Creating missing directory: @|green " + file.getPath() + "|");
+            file.mkdirs();
+        }
+    }
 
-	public String getName() {
-		if( name ==  null ) {
-    		File base = new File(System.getProperty("servicemix.base"));
-    		name = base.getName();
-		}
-		return name;
-	}
+    public String getName() {
+        if (name == null) {
+            File base = new File(System.getProperty("servicemix.base"));
+            name = base.getName();
+        }
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

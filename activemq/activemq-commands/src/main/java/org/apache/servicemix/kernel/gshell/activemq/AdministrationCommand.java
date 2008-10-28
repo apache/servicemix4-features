@@ -18,80 +18,74 @@ package org.apache.servicemix.kernel.gshell.activemq;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
+import org.apache.activemq.console.command.Command;
 import org.apache.activemq.console.formatter.CommandShellOutputFormatter;
-import org.apache.geronimo.gshell.command.Command;
+import org.apache.geronimo.gshell.clp.Argument;
+import org.apache.geronimo.gshell.command.Arguments;
+import org.apache.geronimo.gshell.command.CommandAction;
 import org.apache.geronimo.gshell.command.CommandContext;
-import org.apache.geronimo.gshell.common.Arguments;
+import org.apache.geronimo.gshell.io.IO;
 
 /**
- *
  * @version $Rev$ $Date$
  */
-public class AdministrationCommand implements Command
-{
+public class AdministrationCommand implements CommandAction {
 
-	private String description;
-	private String id;
-	private org.apache.activemq.console.command.Command command;
+    private Command command;
 
-	public Object execute(CommandContext context, Object... objArgs) throws Exception {
-		String[] args = Arguments.toStringArray(objArgs);
-		org.apache.activemq.console.CommandContext context2 = new org.apache.activemq.console.CommandContext();
-		context2.setFormatter(new CommandShellOutputFormatter(context.getIO().outputStream));
-        org.apache.activemq.console.command.Command currentCommand = command.getClass().newInstance();
+    @Argument(index=0, multiValued=true, required=true)
+    private Collection<String> arguments = null;
+
+    /*
+     * (non-Javadoc)
+     * @see
+     * org.apache.geronimo.gshell.command.CommandAction#execute(org.apache.geronimo
+     * .gshell.command.CommandContext)
+     */
+    public Object execute(CommandContext context) throws Exception {
+        final String[] args = Arguments.toStringArray(arguments.toArray());
+        final IO io = context.getIo();
+        
+        org.apache.activemq.console.CommandContext context2 = new org.apache.activemq.console.CommandContext();
+        context2.setFormatter(new CommandShellOutputFormatter(context.getIo().outputStream));
+        Command currentCommand = command.getClass().newInstance();
+        
         try {
-			currentCommand.setCommandContext(context2);
-			currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
-		} catch (Throwable e) {
-			Throwable cur = e;
-			while( cur.getCause()!=null ) {
-				cur = cur.getCause();
-			}
-			if( cur instanceof java.net.ConnectException ){
-				context2.print(
-						"\n"+
-						"Could not connect to JMX server.  This command requires that the remote JMX server be enabled.\n"+
-						"This is typically done by adding the following JVM arguments: \n" +
-						"   -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false \n" +
-						"   -Dcom.sun.management.jmxremote.ssl=false \n" +
-						"\n" +
-						"The connection error was: "+cur+"\n");
-			} else {
-				if( e instanceof Exception ) {
-					throw (Exception)e;
-				} else {
-					throw new RuntimeException(e);
-				}
-				
-			}
-		}
-		return SUCCESS;
-	}
+            currentCommand.setCommandContext(context2);
+            currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
+            return Result.SUCCESS;
+        } catch (Throwable e) {
+            Throwable cur = e;
+            while (cur.getCause() != null) {
+                cur = cur.getCause();
+            }
+            if (cur instanceof java.net.ConnectException) {
+                context2
+                    .print("\n"
+                           + "Could not connect to JMX server.  This command requires that the remote JMX server be enabled.\n"
+                           + "This is typically done by adding the following JVM arguments: \n"
+                           + "   -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false \n"
+                           + "   -Dcom.sun.management.jmxremote.ssl=false \n" + "\n"
+                           + "The connection error was: " + cur + "\n");
+            } else {
+                if (e instanceof Exception) {
+                    throw (Exception)e;
+                } else {
+                    throw new RuntimeException(e);
+                }
 
-	public String getDescription() {
-		return description;
-	}
+            }
+        }
+        return Result.FAILURE;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public Command getCommand() {
+        return command;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public org.apache.activemq.console.command.Command getCommand() {
-		return command;
-	}
-
-	public void setCommand(org.apache.activemq.console.command.Command command) {
-		this.command = command;
-	}
-	
- 
+    public void setCommand(Command command) {
+        this.command = command;
+    }
 }
