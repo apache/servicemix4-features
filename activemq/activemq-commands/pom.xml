@@ -37,10 +37,6 @@
         Provides the ActiveMQ commands
     </description>
 
-    <properties>
-      <gshell.version>1.0-alpha-2-SNAPSHOT</gshell.version>
-    </properties>
-
     <dependencies>
       <dependency>
         <groupId>org.apache.servicemix.kernel.gshell</groupId>
