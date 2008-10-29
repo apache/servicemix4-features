@@ -22,66 +22,59 @@ import java.util.Collection;
 
 import org.apache.activemq.console.command.Command;
 import org.apache.activemq.console.formatter.CommandShellOutputFormatter;
+import org.apache.activemq.console.CommandContext;
 import org.apache.geronimo.gshell.clp.Argument;
 import org.apache.geronimo.gshell.command.Arguments;
-import org.apache.geronimo.gshell.command.CommandAction;
-import org.apache.geronimo.gshell.command.CommandContext;
-import org.apache.geronimo.gshell.io.IO;
+import org.apache.servicemix.kernel.gshell.core.OsgiCommandSupport;
 
 /**
  * @version $Rev$ $Date$
  */
-public class AdministrationCommand implements CommandAction {
+public class AdministrationCommand extends OsgiCommandSupport {
 
     private Command command;
 
     @Argument(index=0, multiValued=true, required=true)
     private Collection<String> arguments = null;
 
-    /*
-     * (non-Javadoc)
-     * @see
-     * org.apache.geronimo.gshell.command.CommandAction#execute(org.apache.geronimo
-     * .gshell.command.CommandContext)
-     */
-    public Object execute(CommandContext context) throws Exception {
-        final String[] args = Arguments.toStringArray(arguments.toArray());
-        final IO io = context.getIo();
-        
-        org.apache.activemq.console.CommandContext context2 = new org.apache.activemq.console.CommandContext();
-        context2.setFormatter(new CommandShellOutputFormatter(context.getIo().outputStream));
-        Command currentCommand = command.getClass().newInstance();
-        
-        try {
-            currentCommand.setCommandContext(context2);
-            currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
-            return Result.SUCCESS;
-        } catch (Throwable e) {
-            Throwable cur = e;
-            while (cur.getCause() != null) {
-                cur = cur.getCause();
-            }
-            if (cur instanceof java.net.ConnectException) {
-                context2
-                    .print("\n"
-                           + "Could not connect to JMX server.  This command requires that the remote JMX server be enabled.\n"
-                           + "This is typically done by adding the following JVM arguments: \n"
-                           + "   -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false \n"
-                           + "   -Dcom.sun.management.jmxremote.ssl=false \n" + "\n"
-                           + "The connection error was: " + cur + "\n");
-            } else {
-                if (e instanceof Exception) {
-                    throw (Exception)e;
-                } else {
-                    throw new RuntimeException(e);
-                }
+  protected Object doExecute() throws Exception {
+    final String[] args = Arguments.toStringArray(arguments.toArray());
 
-            }
+    CommandContext context2 = new CommandContext();
+    context2.setFormatter(new CommandShellOutputFormatter(io.outputStream));
+    Command currentCommand = command.getClass().newInstance();
+
+    try {
+        currentCommand.setCommandContext(context2);
+        currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
+        return Result.SUCCESS;
+    } catch (Throwable e) {
+        Throwable cur = e;
+        while (cur.getCause() != null) {
+            cur = cur.getCause();
         }
-        return Result.FAILURE;
-    }
+        if (cur instanceof java.net.ConnectException) {
+            context2
+                .print("\n"
+                       + "Could not connect to JMX server.  This command requires that the remote JMX server be enabled.\n"
+                       + "This is typically done by adding the following JVM arguments: \n"
+                       + "   -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false \n"
+                       + "   -Dcom.sun.management.jmxremote.ssl=false \n" + "\n"
+                       + "The connection error was: " + cur + "\n");
+        } else {
+            if (e instanceof Exception) {
+                throw (Exception)e;
+            } else {
+                throw new RuntimeException(e);
+            }
 
-    public Command getCommand() {
+        }
+    }
+    return null;
+
+  }
+
+  public Command getCommand() {
         return command;
     }
 

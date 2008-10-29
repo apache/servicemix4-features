@@ -37,26 +37,17 @@
         Provides the ActiveMQ commands
     </description>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.servicemix.kernel.gshell</groupId>
-            <artifactId>org.apache.servicemix.kernel.gshell.core</artifactId>
-            <version>${servicemix.kernel.version}</version>
-        </dependency>
+    <properties>
+      <gshell.version>1.0-alpha-2-SNAPSHOT</gshell.version>
+    </properties>
 
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>${felix.osgi.version}</version>
-            <scope>provided</scope>
-        </dependency>
-		
-        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-core</artifactId>
-            <version>${spring.osgi.version}</version>
-        </dependency>
-        
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.servicemix.kernel.gshell</groupId>
+        <artifactId>org.apache.servicemix.kernel.gshell.core</artifactId>
+        <version>${servicemix.kernel.version}</version>
+      </dependency>
+
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
@@ -90,9 +81,14 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${artifactId}</Bundle-SymbolicName>
-                        <Export-Package>org.apache.servicemix.kernel.gshell.activemq*;version=${project.version};-split-package:=merge-first</Export-Package>
-                        <Import-Package>*</Import-Package>
+                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Export-Package>org.apache.servicemix.kernel.gshell.activemq;version=${project.version};-split-package:=merge-first</Export-Package>
+                        <Import-Package>
+                          org.apache.geronimo.gshell.wisdom.command,
+                          org.apache.servicemix.kernel.gshell.core,
+                          org.apache.geronimo.gshell.wisdom.registry,
+                          *
+                        </Import-Package>
                         <Private-Package>!*</Private-Package>
                         <Spring-Context>*;publish-context:=false;create-asynchronously:=false</Spring-Context>
                     </instructions>
