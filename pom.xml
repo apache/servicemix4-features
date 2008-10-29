@@ -172,7 +172,7 @@
       <servicemix-utils.version>1.0.0</servicemix-utils.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.kernel.version>1.1.0-SNAPSHOT</servicemix.kernel.version>
-      <servicemix.nmr.version>1.0.0-m3-SNAPSHOT</servicemix.nmr.version>
+      <servicemix.nmr.version>1.0.0-m4-SNAPSHOT</servicemix.nmr.version>
       <servicemix.specs.version>1.1.0</servicemix.specs.version>
       <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
 
