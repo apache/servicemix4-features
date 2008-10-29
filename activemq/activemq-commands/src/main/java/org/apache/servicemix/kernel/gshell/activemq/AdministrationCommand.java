@@ -47,7 +47,7 @@ public class AdministrationCommand extends OsgiCommandSupport {
     try {
         currentCommand.setCommandContext(context2);
         currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
-        return Result.SUCCESS;
+        return null;
     } catch (Throwable e) {
         Throwable cur = e;
         while (cur.getCause() != null) {
