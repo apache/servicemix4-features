@@ -256,6 +256,16 @@
             <version>${geronimo.servlet.version}</version>
         </dependency>
         <dependency>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>
+          <version>${geronimo.j2ee.connector.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-jta_1.1_spec</artifactId>
+          <version>${geronimo.jta.version}</version>
+        </dependency>
+        <dependency>
 		    <groupId>org.apache.geronimo.specs</groupId>
 		    <artifactId>geronimo-saaj_1.3_spec</artifactId>
             <version>${geronimo.saaj.version}</version>
