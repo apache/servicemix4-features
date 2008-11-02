@@ -181,6 +181,7 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
+            	errorHandler(noErrorHandler());
             	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
             	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
             }

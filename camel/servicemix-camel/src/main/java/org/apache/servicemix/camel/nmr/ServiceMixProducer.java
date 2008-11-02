@@ -63,7 +63,9 @@ public class ServiceMixProducer extends DefaultProducer<ServiceMixExchange> {
                 
         client.sendSync(e);
         if (e.getPattern() != Pattern.InOnly) {
-        	if (e.getFault().getBody() != null) {
+        	if (e.getError() != null) {
+        		exchange.setException(e.getError());
+        	} else if (e.getFault().getBody() != null) {
         		exchange.getFault().setBody(e.getFault().getBody());
         	} else {
         		exchange.getOut().setBody(e.getOut().getBody());

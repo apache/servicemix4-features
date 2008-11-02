@@ -88,6 +88,7 @@ public class ExceptionHandleTest extends ContextTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
+            	errorHandler(noErrorHandler());
             	from(routerEndpointURI).to("smx:testEndpoint");// like what do in binding component
             	from("smx:testEndpoint").to(serviceEndpointURI);// like what do in se
             }
