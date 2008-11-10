@@ -253,6 +253,7 @@ public class OsgiServlet extends HttpServlet {
             inMessage.put(Message.PATH_INFO, request.getPathInfo());
             inMessage.put(Message.QUERY_STRING, request.getQueryString());
             inMessage.put(Message.CONTENT_TYPE, request.getContentType());
+            inMessage.put(Message.ACCEPT_CONTENT_TYPE, request.getHeader("Accept"));
             inMessage.put(Message.BASE_PATH, d.getAddress().getAddress().getValue());
             inMessage.put(SecurityContext.class, new SecurityContext() {
                 public Principal getUserPrincipal() {
