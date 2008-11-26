@@ -121,7 +121,7 @@
       <groovy.version>1.5.6_1</groovy.version>
       <howl.version>1.0.1-1_1</howl.version>
       <httpcore.version>4.0-alpha6_1</httpcore.version>
-      <hamcrest.version>1.1_1</hamcrest.version>
+      <hamcrest.version>1.2-dev1_1-SNAPSHOT</hamcrest.version>
       <ibatis.version>2.3.4.726_1</ibatis.version>
       <irclib.version>1.10_1</irclib.version>
       <jackrabbit.version>1.5-SNAPSHOT</jackrabbit.version>
