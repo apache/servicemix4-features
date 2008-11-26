@@ -64,7 +64,7 @@
       <maven.assembly.version>2.2-beta-2</maven.assembly.version>
       <xfire.maven.plugin>4.0</xfire.maven.plugin>
       <abdera.version>0.4.0-incubating_1</abdera.version>
-      <activemq.version>5.3-SNAPSHOT</activemq.version>
+      <activemq.version>5.2.0</activemq.version>
       <acegi.version>1.0.0</acegi.version>
       <ant.version>1.7.0_1</ant.version>
       <antlr.version>3.0.1_1</antlr.version>
