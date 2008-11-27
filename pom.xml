@@ -176,7 +176,7 @@
       <servicemix.specs.version>1.1.0</servicemix.specs.version>
       <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
 
-      <servicemix-shared-version>2008.01</servicemix-shared-version>
+      <servicemix-shared-version>2008.02-SNAPSHOT</servicemix-shared-version>
       <servicemix-quartz-version>2008.01</servicemix-quartz-version>  
       <servicemix-jms-version>2008.01</servicemix-jms-version>
       <servicemix-jsr181-version>2008.01</servicemix-jsr181-version>
