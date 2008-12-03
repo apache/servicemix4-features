@@ -62,7 +62,7 @@
   <properties>
       <servicemix.version>4.0-m2-SNAPSHOT</servicemix.version>
       <maven.assembly.version>2.2-beta-2</maven.assembly.version>
-      <xfire.maven.plugin>4.0</xfire.maven.plugin>
+      <xfire.maven.plugin>4.1-SNAPSHOT</xfire.maven.plugin>
       <abdera.version>0.4.0-incubating_1</abdera.version>
       <activemq.version>5.2.0</activemq.version>
       <acegi.version>1.0.0</acegi.version>
@@ -81,14 +81,14 @@
       <commons-io.version>1.3.2_1</commons-io.version>
       <commons-codec.version>1.2_1</commons-codec.version>
       <commons-jxpath.version>1.2_1</commons-jxpath.version>
-      <commons.logging.version>1.1</commons.logging.version>
+      <commons.logging.version>1.1.1</commons.logging.version>
       <commons.net.version>1.4.1_1</commons.net.version>
       <commons.pool.version>1.4</commons.pool.version>
       <components.version>4.0-SNAPSHOT</components.version>
-      <cxf.version>2.1.3</cxf.version>
+      <cxf.version>2.1.4-SNAPSHOT</cxf.version>
       <dom4j.version>1.6_1</dom4j.version>
       <drools.version>4.0.7_1</drools.version>
-      <depends.maven.plugin.version>1.0</depends.maven.plugin.version>
+      <depends.maven.plugin.version>1.1-SNAPSHOT</depends.maven.plugin.version>
       <fastinfoset.version>1.2.2_1</fastinfoset.version>
       <features.maven.plugin.version>1.0</features.maven.plugin.version>
       <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
@@ -105,7 +105,7 @@
       <geronimo.el.version>1.0.1</geronimo.el.version>
       <geronimo.interceptor.version>1.0.1</geronimo.interceptor.version>
       <geronimo.jacc.version>1.0.1</geronimo.jacc.version>
-      <geronimo.javamail.version>1.2</geronimo.javamail.version>
+      <geronimo.javamail.version>1.5</geronimo.javamail.version>
       <geronimo.jaxrpc.version>2.0.0</geronimo.jaxrpc.version>
       <geronimo.j2ee.connector.version>2.0.0</geronimo.j2ee.connector.version>
       <geronimo.j2ee.management.version>1.0.1</geronimo.j2ee.management.version>
@@ -133,8 +133,8 @@
       <jdt.core.version>3.2.3_1</jdt.core.version>
       <jdom.version>1.1_1</jdom.version>
       <jencks.version>2.1_1</jencks.version>
-      <jetty.version>6.1.12rc1</jetty.version>
-      <jetty.bundle.version>6.1.12rc1_1</jetty.bundle.version>
+      <jetty.version>6.1.14</jetty.version>
+      <jetty.bundle.version>6.1.14_1-SNAPSHOT</jetty.bundle.version>
       <jexcelapi.version>2.4.2_1</jexcelapi.version>
       <jing.version>20030619_1</jing.version>
       <jline.version>0.9.94</jline.version>
@@ -169,36 +169,36 @@
       <saxon.version>9.1.0.1_1</saxon.version>
       <scriptengines.version>1.1</scriptengines.version>
       <servicemix3.version>3.3</servicemix3.version>
-      <servicemix-utils.version>1.0.0</servicemix-utils.version>
+      <servicemix-utils.version>1.1.0-SNAPSHOT</servicemix-utils.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.kernel.version>1.1.0-SNAPSHOT</servicemix.kernel.version>
       <servicemix.nmr.version>1.0.0-m4-SNAPSHOT</servicemix.nmr.version>
-      <servicemix.specs.version>1.1.0</servicemix.specs.version>
+      <servicemix.specs.version>1.2-SNAPSHOT</servicemix.specs.version>
       <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
 
       <servicemix-shared-version>2008.02-SNAPSHOT</servicemix-shared-version>
-      <servicemix-quartz-version>2008.01</servicemix-quartz-version>  
-      <servicemix-jms-version>2008.01</servicemix-jms-version>
-      <servicemix-jsr181-version>2008.01</servicemix-jsr181-version>
-      <servicemix-http-version>2008.01</servicemix-http-version>
-      <servicemix-mail-version>2008.01</servicemix-mail-version>
-      <servicemix-osworkflow-version>2008.01</servicemix-osworkflow-version>
-      <servicemix-wsn2005-version>2008.01</servicemix-wsn2005-version>
-      <servicemix-bean-version>2008.01</servicemix-bean-version>
-      <servicemix-eip-version>2008.01</servicemix-eip-version>
-      <servicemix-script-version>2008.01</servicemix-script-version>
-      <servicemix-scripting-version>2008.01</servicemix-scripting-version>
-      <servicemix-validation-version>2008.01</servicemix-validation-version>
-      <servicemix-ftp-version>2008.01</servicemix-ftp-version>
-      <servicemix-xmpp-version>2008.01</servicemix-xmpp-version>
-      <servicemix-saxon-version>2008.01</servicemix-saxon-version>
-      <servicemix-truezip-version>2008.01</servicemix-truezip-version>
-      <servicemix-camel-version>2008.01</servicemix-camel-version>
-      <servicemix-cxf-bc-version>2008.01</servicemix-cxf-bc-version>
-      <servicemix-cxf-se-version>2008.01</servicemix-cxf-se-version>
-      <servicemix-drools-version>2008.01</servicemix-drools-version>
-      <servicemix-file-version>2008.01</servicemix-file-version>
-      <servicemix-jbi-plugin-version>4.0</servicemix-jbi-plugin-version>
+      <servicemix-quartz-version>2008.02-SNAPSHOT</servicemix-quartz-version>  
+      <servicemix-jms-version>2008.02-SNAPSHOT</servicemix-jms-version>
+      <servicemix-jsr181-version>2008.02-SNAPSHOT</servicemix-jsr181-version>
+      <servicemix-http-version>2008.02-SNAPSHOT</servicemix-http-version>
+      <servicemix-mail-version>2008.02-SNAPSHOT</servicemix-mail-version>
+      <servicemix-osworkflow-version>2008.02-SNAPSHOT</servicemix-osworkflow-version>
+      <servicemix-wsn2005-version>2008.02-SNAPSHOT</servicemix-wsn2005-version>
+      <servicemix-bean-version>2008.02-SNAPSHOT</servicemix-bean-version>
+      <servicemix-eip-version>2008.02-SNAPSHOT</servicemix-eip-version>
+      <servicemix-script-version>2008.02-SNAPSHOT</servicemix-script-version>
+      <servicemix-scripting-version>2008.02-SNAPSHOT</servicemix-scripting-version>
+      <servicemix-validation-version>2008.02-SNAPSHOT</servicemix-validation-version>
+      <servicemix-ftp-version>2008.02-SNAPSHOT</servicemix-ftp-version>
+      <servicemix-xmpp-version>2008.02-SNAPSHOT</servicemix-xmpp-version>
+      <servicemix-saxon-version>2008.02-SNAPSHOT</servicemix-saxon-version>
+      <servicemix-truezip-version>2008.02-SNAPSHOT</servicemix-truezip-version>
+      <servicemix-camel-version>2008.02-SNAPSHOT</servicemix-camel-version>
+      <servicemix-cxf-bc-version>2008.02-SNAPSHOT</servicemix-cxf-bc-version>
+      <servicemix-cxf-se-version>2008.02-SNAPSHOT</servicemix-cxf-se-version>
+      <servicemix-drools-version>2008.02-SNAPSHOT</servicemix-drools-version>
+      <servicemix-file-version>2008.02-SNAPSHOT</servicemix-file-version>
+      <servicemix-jbi-plugin-version>4.1-SNAPSHOT</servicemix-jbi-plugin-version>
 
       <smack.version>3.0.4_1</smack.version>
       <spring.version>2.5.5</spring.version>
