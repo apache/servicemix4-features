@@ -36,7 +36,6 @@
 
   <modules>
     <module>transaction</module>
-    <module>management</module>
     <module>activemq</module>
     <module>camel</module>
     <module>war</module>

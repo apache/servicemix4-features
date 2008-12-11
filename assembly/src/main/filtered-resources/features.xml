@@ -18,9 +18,6 @@
 -->
 <features>
     <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
-    <feature name="management">
-        <bundle>mvn:org.apache.servicemix.management/org.apache.servicemix.management.core/${version}</bundle>
-    </feature>
     <feature name="transaction">
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${geronimo.jta.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
@@ -181,7 +178,7 @@
     </feature>
     <feature name="servicemix-http">
         <feature>servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons.codec.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons.httpclient.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlschema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
