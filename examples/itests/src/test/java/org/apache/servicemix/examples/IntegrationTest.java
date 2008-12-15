@@ -70,6 +70,19 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.geronimo.specs", "geronimo-ws-metadata_2.0_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-j2ee-connector_1.5_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-jta_1.1_spec"),
+            
+            //for activemq
+            getBundle("org.springframework", "spring-jms"),
+            getBundle("org.springframework", "spring-tx"),
+            getBundle("org.apache.geronimo.specs", "geronimo-j2ee-management_1.1_spec"),
+            getBundle("org.apache.geronimo.specs", "geronimo-jms_1.1_spec"),
+            getBundle("commons-pool", "commons-pool"),
+            getBundle("org.apache.xbean", "xbean-spring"),
+            getBundle("org.apache.activemq", "activemq-core"),
+            getBundle("org.apache.activemq", "activemq-ra"),
+            getBundle("org.apache.activemq", "activemq-console"),
+            getBundle("org.apache.activemq", "activemq-pool"),
+                        
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.stax-api-1.0"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.saaj-api-1.3"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jaxb-api-2.1"),
@@ -95,6 +108,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
             getBundle("org.apache.servicemix.document", "org.apache.servicemix.document"),
             getBundle("org.apache.servicemix.examples", "cxf-http-osgi"),
+            getBundle("org.apache.servicemix.examples", "cxf-jms-osgi"),
             getBundle("org.apache.servicemix.examples", "cxf-soap-handler-osgi"),
             getBundle("org.apache.servicemix.examples", "cxf-handler-cfg"),
             getBundle("org.apache.servicemix.examples", "cxf-ws-addressing"),
@@ -110,6 +124,22 @@ public class IntegrationTest extends AbstractIntegrationTest {
     public void testHttpOsgi() throws Exception {
         Thread.sleep(5000);
         waitOnContextCreation("cxf-http-osgi");
+        Thread.sleep(5000);
+
+        ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
+        assertNotNull("Service Reference is null", ref);
+
+        org.apache.servicemix.examples.cxf.HelloWorld helloWorld = null;
+
+        helloWorld = (org.apache.servicemix.examples.cxf.HelloWorld) bundleContext.getService(ref);
+        assertNotNull("Cannot find the service", helloWorld);
+
+        assertEquals("Hello Bonjour", helloWorld.sayHi("Bonjour"));
+    }
+    
+    public void testJmsOsgi() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("cxf-jms-osgi");
         Thread.sleep(5000);
 
         ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
