@@ -45,6 +45,7 @@
         <module>cxf-osgi</module>
         <module>cxf-http-osgi</module>
         <module>cxf-jms-osgi</module>
+        <module>cxf-nmr-osgi</module>
         <module>cxf-soap-handler-osgi</module>
         <module>cxf-handler-cfg</module>
         <module>cxf-ws-addressing</module>

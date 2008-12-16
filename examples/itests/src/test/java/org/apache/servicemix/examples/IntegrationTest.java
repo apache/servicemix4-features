@@ -20,12 +20,23 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.jar.Manifest;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.List;
 
+import javax.xml.transform.Source;
+
 import org.apache.cxf.Bus;
 import org.apache.servicemix.examples.cxf.HelloWorld;
+import org.apache.servicemix.jbi.jaxp.StringSource;
 import org.apache.servicemix.kernel.testing.support.AbstractIntegrationTest;
+import org.apache.servicemix.nmr.api.Channel;
+import org.apache.servicemix.nmr.api.Endpoint;
+import org.apache.servicemix.nmr.api.Exchange;
+import org.apache.servicemix.nmr.api.NMR;
+import org.apache.servicemix.nmr.api.Pattern;
+import org.apache.servicemix.nmr.api.Status;
 import org.springframework.osgi.test.platform.OsgiPlatform;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
@@ -70,8 +81,9 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.geronimo.specs", "geronimo-ws-metadata_2.0_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-j2ee-connector_1.5_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-jta_1.1_spec"),
-            
+                       
             //for activemq
+            
             getBundle("org.springframework", "spring-jms"),
             getBundle("org.springframework", "spring-tx"),
             getBundle("org.apache.geronimo.specs", "geronimo-j2ee-management_1.1_spec"),
@@ -82,7 +94,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.activemq", "activemq-ra"),
             getBundle("org.apache.activemq", "activemq-console"),
             getBundle("org.apache.activemq", "activemq-pool"),
-                        
+            
+            getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jbi-api-1.0"),            
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.stax-api-1.0"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.saaj-api-1.3"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jaxb-api-2.1"),
@@ -99,6 +112,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty-bundle"),
             getBundle("org.ops4j.pax.web", "pax-web-bundle"),
             getBundle("org.ops4j.pax.web-extender", "pax-web-ex-whiteboard"),
+            getBundle("org.apache.servicemix", "servicemix-utils"),
             getBundle("org.apache.cxf", "cxf-bundle"),
             getBundle("org.apache.servicemix.cxf", "org.apache.servicemix.cxf.transport.osgi"),
             getBundle("org.apache.servicemix.cxf", "org.apache.servicemix.cxf.transport.nmr"),
@@ -112,7 +126,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.examples", "cxf-soap-handler-osgi"),
             getBundle("org.apache.servicemix.examples", "cxf-handler-cfg"),
             getBundle("org.apache.servicemix.examples", "cxf-ws-addressing"),
-		};
+            getBundle("org.apache.servicemix.examples", "cxf-nmr-osgi"),
+        };
 	}
 
     public void testJbiComponent() throws Exception {
@@ -152,12 +167,30 @@ public class IntegrationTest extends AbstractIntegrationTest {
 
         assertEquals("Hello Bonjour", helloWorld.sayHi("Bonjour"));
     }
+    
+    public void testNMROsgi() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("cxf-nmr-osgi");
+        Thread.sleep(5000);
+        NMR nmr = getOsgiService(NMR.class);
+        assertNotNull(nmr);
+        
+        Channel client = nmr.createChannel();
+        Exchange e = client.createExchange(Pattern.InOut);
+        for (Endpoint ep : nmr.getEndpointRegistry().getServices()) {
+        	e.setTarget(nmr.getEndpointRegistry().lookup(nmr.getEndpointRegistry().getProperties(ep)));
+        	e.getIn().setBody(new StringSource("<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><ns2:sayHi xmlns:ns2=\"http://cxf.examples.servicemix.apache.org/\"><arg0>Bonjour</arg0></ns2:sayHi></soap:Body></soap:Envelope>"));
+        	boolean res = client.sendSync(e);
+        	assertTrue(res);
+        }
+    
+    }
 
     protected Manifest getManifest() {
         Manifest mf = super.getManifest();
         String importP = mf.getMainAttributes().getValue(Constants.IMPORT_PACKAGE);
         mf.getMainAttributes().putValue(Constants.IMPORT_PACKAGE,
-            importP + ",META-INF.cxf");
+            importP + ",META-INF.cxf, org.apache.servicemix.jbi.jaxp");
         String exportP = mf.getMainAttributes().getValue(Constants.EXPORT_PACKAGE);
         mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
                                       exportP + ",org.apache.handlers, "
@@ -169,7 +202,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
                                       + "org.apache.hello_world_soap_http,"
                                       + "org.apache.cxf,"
                                       + "org.apache.cxf.bus,"
-                                      + "org.apache.cxf.interceptor");
+                                      + "org.apache.cxf.interceptor"
+                                      );
         return mf;
     }
 
