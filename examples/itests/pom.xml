@@ -252,19 +252,19 @@
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
-		    <groupId>org.apache.geronimo.specs</groupId>
-		    <artifactId>geronimo-activation_1.1_spec</artifactId>
-            <version>${geronimo.activation.version}</version>
-        </dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
+            <version>${servicemix.specs.version}</version>
+        </dependency>        
         <dependency>
 		    <groupId>org.apache.geronimo.specs</groupId>
 		    <artifactId>geronimo-annotation_1.0_spec</artifactId>
             <version>${geronimo.annotation.version}</version>
         </dependency>
         <dependency>
-		    <groupId>org.apache.geronimo.specs</groupId>
-		    <artifactId>geronimo-javamail_1.4_spec</artifactId>
-            <version>${geronimo.javamail.version}</version>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.javamail-api-1.4</artifactId>
+            <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
 		    <groupId>org.apache.geronimo.specs</groupId>
