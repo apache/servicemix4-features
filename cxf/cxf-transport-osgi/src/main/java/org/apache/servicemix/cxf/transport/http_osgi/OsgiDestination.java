@@ -38,7 +38,7 @@ public class OsgiDestination extends AbstractHTTPDestination {
 
     private static final long serialVersionUID = 1L;
 
-    final OsgiDestinationRegistry factory;
+    final OsgiDestinationRegistryIntf factory;
     final String path;
 
     /**
@@ -54,7 +54,7 @@ public class OsgiDestination extends AbstractHTTPDestination {
     public OsgiDestination(Bus b,
                            ConduitInitiator ci,
                            EndpointInfo ei,
-                           OsgiDestinationRegistry fact,
+                           OsgiDestinationRegistryIntf fact,
                            String p)
         throws IOException {
         // would add the default port to the address

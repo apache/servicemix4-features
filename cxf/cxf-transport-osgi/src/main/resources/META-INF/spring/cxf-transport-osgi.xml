@@ -36,7 +36,7 @@ http://www.springframework.org/schema/osgi  http://www.springframework.org/schem
         </osgi:service-properties>
     </osgi:service>
 
-    <osgi:service ref="destinationRegistry" interface="org.apache.servicemix.cxf.transport.http_osgi.OsgiDestinationRegistry">
+    <osgi:service ref="destinationRegistry" interface="org.apache.servicemix.cxf.transport.http_osgi.OsgiDestinationRegistryIntf">
     </osgi:service>
 
 </beans>

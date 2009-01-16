@@ -30,9 +30,9 @@ import org.apache.cxf.transport.http.AbstractHTTPTransportFactory;
 public class OsgiTransportFactory extends AbstractHTTPTransportFactory
     implements DestinationFactory {
 
-    private OsgiDestinationRegistry registry;
+    private OsgiDestinationRegistryIntf registry;
 
-    public void setRegistry(OsgiDestinationRegistry registry) {
+    public void setRegistry(OsgiDestinationRegistryIntf registry) {
         this.registry = registry;
     }
 

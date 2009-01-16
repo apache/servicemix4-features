@@ -29,7 +29,7 @@ public class SpringOsgiServlet extends OsgiServlet implements ApplicationContext
 
     private ApplicationContext applicationContext;
 
-    public SpringOsgiServlet(OsgiDestinationRegistry transport) {
+    public SpringOsgiServlet(OsgiDestinationRegistryIntf transport) {
         super(transport);
     }
 

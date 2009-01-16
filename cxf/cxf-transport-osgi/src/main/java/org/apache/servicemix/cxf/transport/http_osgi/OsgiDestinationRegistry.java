@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public class OsgiDestinationRegistry {
+public class OsgiDestinationRegistry implements OsgiDestinationRegistryIntf {
 
     private ConcurrentMap<String, OsgiDestination> destinations = new ConcurrentHashMap<String, OsgiDestination>();
 

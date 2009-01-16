@@ -52,13 +52,13 @@ public class OsgiServlet extends HttpServlet {
 
     private static final Logger LOG = LogUtils.getL7dLogger(OsgiServlet.class);
 
-    private OsgiDestinationRegistry transport;
+    private OsgiDestinationRegistryIntf transport;
     private String lastBase = "";
     private boolean isHideServiceList;
     private boolean disableAddressUpdates;
     private String forcedBaseAddress;
 
-    public OsgiServlet(OsgiDestinationRegistry transport) {
+    public OsgiServlet(OsgiDestinationRegistryIntf transport) {
         this.transport = transport;
     }
 
