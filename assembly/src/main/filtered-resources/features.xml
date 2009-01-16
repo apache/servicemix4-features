@@ -82,7 +82,7 @@
     </feature>
     <feature name="cxf-nmr">
         <feature>cxf</feature>
-        <feature>nmr</feature>
+        <feature version="${servicemix.nmr.version}">nmr</feature>
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.nmr/${version}</bundle>
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
     </feature>
@@ -104,7 +104,7 @@
       -->
     <feature name="camel-nmr">
         <feature>camel</feature>
-        <feature>nmr</feature>
+        <feature version="${servicemix.nmr.version}">nmr</feature>
         <bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/${version}</bundle>
     </feature>
     <feature name="examples-cxf-osgi">
@@ -134,7 +134,7 @@
       -
       -->
     <feature name="servicemix-shared">
-        <feature>jbi</feature>
+        <feature version="${servicemix.nmr.version}">jbi</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-utils/${servicemix-utils.version}</bundle>
