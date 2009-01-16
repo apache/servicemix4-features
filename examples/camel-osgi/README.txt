@@ -32,11 +32,11 @@ in the root dir of this distribution.
 
 When inside the console, if you haven't already done so, addUrls for the
 nmr and kernel features:
-  features addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 Next install the examples-camel-osgi feature:
-  features install examples-camel-osgi
+  features/install examples-camel-osgi
 
 If you have all the bundles available in your local repo, the installation
 of the example will be very fast, otherwise it may take some time to
@@ -54,7 +54,7 @@ console:
 You can view the route configuration in META-INF/spring/beans.xml.
 
 Finally, uninstall the examples-camel-osgi feature:
-  features uninstall examples-camel-osgi
+  features/uninstall examples-camel-osgi
 
 As well, you can view ExampleRouter log entries in the ServiceMix log:
   log d
@@ -65,7 +65,7 @@ placeholder in the beans.xml from console.
 Edit the org.apache.servicemix.examples.cfg in this folder, change the
 value of key "prefix" whatever you want(for example YourTransform), then in
 the console 
-utils exec "cp
+optional/exec "cp
 $YOUR_SERVICEMIX_HOME/examples/camel-osgi/org.apache.servicemix.examples.cfg
 $YOUR_SERVICEMIX_HOME/etc" 
 And then stop and start the bundle of this example which name is "Apache ServiceMix Example :: Camel OSGi", you can use "osgi list"to get this bundle id.
@@ -79,10 +79,10 @@ The installation leverages ServiceMix Kernel by installing what's called
 'features'. You can see the features definition file using the following
 command inside the ServiceMix console:
 
-utils cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 The list of available features can be obtained using:
 
-features list
+features/list
 
 

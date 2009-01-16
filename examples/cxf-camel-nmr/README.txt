@@ -31,9 +31,9 @@ in the root dir of this distribution.
 When inside the console, just run the following commands to install the
 example:
 
-  features addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-  features install examples-cxf-camel-nmr
+  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+  features/install examples-cxf-camel-nmr
 
 If you have all the bundles available in your local repo, the installation
 of the example will be very fast, otherwise it may take some time to
@@ -48,7 +48,7 @@ to the CXF endpoint, and the responses are routed to the display method of
 the MyTransform class.
 
 Finally, uninstall the examples-camel-nmr feature:
-  features uninstall examples-cxf-camel-nmr
+  features/uninstall examples-cxf-camel-nmr
 
 You can also examine the ServiceMix log to see the activity:
   log display
@@ -60,10 +60,10 @@ The installation leverages ServiceMix Kernel by installing what's called
 'features'. You can see the features definition file using the following
 command inside ServiceMix console:
 
-utils cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 The list of available features can be obtained using:
 
-features list
+features/list
 
 

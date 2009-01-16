@@ -30,9 +30,9 @@ in the root dir of this distribution.
 When inside the console, just run the following commands to install the
 example:
 
-  features addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-  features install examples-cxf-nmr
+  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+  features/install examples-cxf-nmr
 
 If you have all the bundles available in your local repo, the installation
 of the example will be very fast, otherwise it may take some time to
@@ -58,10 +58,10 @@ The installation leverages ServiceMix Kernel by installing what's called
 'features'. You can see the features definition file using the following
 command inside ServiceMix console:
 
-utils cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 The list of available features can be obtained using:
 
-features list
+features/list
 
 

@@ -30,11 +30,11 @@ in the root dir of this distribution.
 
 When inside the console, if you haven't already done so, addUrls for the
 nmr and kernel features:
-  features addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 Next install the examples-camel-nmr feature:
-  features install examples-camel-nmr
+  features/install examples-camel-nmr
 
 If you have all the bundles available in your local repo, the installation
 of the example will be very fast, otherwise it may take some time to
@@ -53,7 +53,7 @@ to the console:
 You can view the route configuration in META-INF/spring/beans.xml.
 
 Finally, uninstall the examples-camel-nmr feature:
-  features uninstall examples-camel-nmr
+  features/uninstall examples-camel-nmr
 
 As well, you can view the log entries in the ServiceMix log:
   log d
@@ -65,10 +65,10 @@ The installation leverages ServiceMix Kernel by installing what's called
 'features'. You can see the features definition file using the following
 command inside the ServiceMix console:
 
-utils cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 The list of available features can be obtained using:
 
-features list
+features/list
 
 

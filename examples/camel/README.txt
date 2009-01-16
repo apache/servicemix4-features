@@ -35,7 +35,7 @@ You can deploy the example on ServiceMix 4 in two different ways:
 - using hotdeploy: 
    copy the camel-sa/target/camel-sa-${version}.zip to <servicemix_home>/deploy
 - using the ServiceMix console:
-   osgi install -s mvn:org.apache.servicemix.examples.camel/camel-sa/${version}/zip
+   osgi/install -s mvn:org.apache.servicemix.examples.camel/camel-sa/${version}/zip
 
 When the example is deployed, use 'log d' on the ServiceMix console to see the logged messages
   Exchange[Message: Hello World!]

@@ -31,9 +31,9 @@ in the root dir of this distribution.
 When inside the console, just run the following commands to install the
 example:
 
-  features addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-  features install examples-cxf-osgi
+  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
+  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+  features/install examples-cxf-osgi
 
 If you have all the bundles available in your local repo, the installation
 of the example will be very fast, otherwise it may take some time to
@@ -53,7 +53,7 @@ It should display the WSDL of the service (if you use Safari, make sure to
 right click the window and select 'Show Source', else the page will be blank).
 Or you can also test it from ServiceMix console using"
 
-utils cat http://localhost:8080/cxf/HelloWorld?wsdl
+optional/cat http://localhost:8080/cxf/HelloWorld?wsdl
 
 You can also open the client.html page in a browser to try sending a request
 to the service.
@@ -68,10 +68,10 @@ The installation leverages ServiceMix Kernel by installing what's called
 'features'. You can see the features definition file using the following
 command inside ServiceMix console:
 
-utils cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 The list of available features can be obtained using:
 
-features list
+features/list
 
 

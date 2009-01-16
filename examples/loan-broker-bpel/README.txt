@@ -40,7 +40,7 @@ You can deploy the example on ServiceMix 4 in two different ways:
 - using hotdeploy: 
    copy the loan-broker-sa/target/loan-broker-sa-${version}.zip to <servicemix_home>/deploy
 - using the ServiceMix console:
-   osgi install -s mvn:org.apache.servicemix.examples.loan-broker/loan-broker-sa/${version}/zip
+   osgi/install -s mvn:org.apache.servicemix.examples.loan-broker/loan-broker-sa/${version}/zip
 
 To test this sample, launch the following commands:
   ant run
