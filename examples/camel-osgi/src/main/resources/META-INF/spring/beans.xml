@@ -18,10 +18,12 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:ctx="http://www.springframework.org/schema/context"
        xmlns:osgi="http://activemq.apache.org/camel/schema/osgi"
        xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://activemq.apache.org/camel/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd
        http://activemq.apache.org/camel/schema/osgi http://activemq.apache.org/camel/schema/osgi/camel-osgi.xsd
        http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
@@ -38,10 +40,10 @@
     <property name="prefix" value="${prefix}"/>
   </bean>
    
-  <osgix:property-placeholder persistent-id="org.apache.servicemix.examples">
-        <osgix:default-properties>
-            <prop key="prefix">MyTransform</prop>
-        </osgix:default-properties>
-    </osgix:property-placeholder>
+    <osgix:cm-properties id="preProps" persistent-id="org.apache.servicemix.examples">
+        <prop key="prefix">MyTransform</prop>
+    </osgix:cm-properties>
+
+    <ctx:property-placeholder properties-ref="preProps" />
 
 </beans>
