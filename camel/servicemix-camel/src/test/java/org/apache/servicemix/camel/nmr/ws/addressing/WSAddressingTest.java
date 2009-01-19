@@ -23,6 +23,7 @@ import java.util.Map;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
+import javax.xml.ws.Endpoint;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.ContextTestSupport;
@@ -94,7 +95,8 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
     private ServiceMixComponent smxComponent;
     private NMR nmr;
     private Bus bus;
-    
+    private Endpoint endpoint;
+
     static {
         CONFIG = "org/apache/servicemix/camel/ws/addressing/addressing" 
             + (("HP-UX".equals(System.getProperty("os.name"))
@@ -146,15 +148,11 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
 
         mapVerifier.verificationCache = this;
         headerVerifier.verificationCache = this;
-
     }
-    
-
     
     protected void startService() {
     	Object implementor = new GreeterImpl();
-    	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
- 
+        endpoint = javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
     
     @Override
@@ -164,6 +162,9 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
         }
         if (server != null) {
             server.stop();
+        }
+        if (endpoint != null) {
+            endpoint.stop();
         }
         Interceptor[] interceptors = {mapVerifier, headerVerifier };
         removeInterceptors(staticBus.getInInterceptors(), interceptors);
