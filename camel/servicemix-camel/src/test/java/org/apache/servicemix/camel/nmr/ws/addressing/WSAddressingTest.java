@@ -176,6 +176,7 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
         verified = null;
         messageIDs.clear();
         super.tearDown();
+        BusFactory.setDefaultBus(null);
         Thread.sleep(5000);
     }
   
