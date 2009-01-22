@@ -69,6 +69,8 @@
               <exclude>**/target/**</exclude>
               <exclude>**/README.txt</exclude>
               <exclude>**/cxf-http-osgi/**</exclude>
+              <exclude>**/cxf-jms-osgi/**</exclude>
+              <exclude>**/cxf-nmr-osgi/**</exclude>
               <exclude>**/cxf-handler-cfg/**</exclude>
               <exclude>**/cxf-soap-handler-osgi/**</exclude>
               <exclude>**/cxf-ws-addressing/**</exclude>
