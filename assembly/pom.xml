@@ -859,6 +859,24 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>copy</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.apache.servicemix.kernel</groupId>
+                                    <artifactId>org.apache.servicemix.kernel.version</artifactId>
+                                    <version>${pom.version}</version>
+                                    <outputDirectory>target/dependencies</outputDirectory>
+                                    <destFileName>servicemix-version.jar</destFileName>
+                                </artifactItem>                               
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>unpack-unix</id>
                         <phase>generate-resources</phase>
                         <goals>

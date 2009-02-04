@@ -35,6 +35,7 @@
   <inceptionYear>2005</inceptionYear>
 
   <modules>
+    <module>branding</module>
     <module>transaction</module>
     <module>activemq</module>
     <module>camel</module>

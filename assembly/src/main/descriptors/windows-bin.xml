@@ -58,6 +58,15 @@
           <lineEnding>dos</lineEnding>
       </fileSet>
 
+      <!-- Copy over jar files -->
+      <fileSet>
+          <directory>target/dependencies</directory>
+          <includes>
+              <include>servicemix-version.jar</include>
+          </includes>
+          <outputDirectory>/lib/</outputDirectory>
+      </fileSet>
+
       <!-- Copy over the examples -->
       <fileSet>
           <directory>../examples</directory>

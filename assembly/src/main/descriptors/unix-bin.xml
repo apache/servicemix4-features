@@ -57,6 +57,15 @@
             <lineEnding>unix</lineEnding>
         </fileSet>
 
+        <!-- Copy over jar files -->
+        <fileSet>
+            <directory>target/dependencies</directory>
+            <includes>
+                <include>servicemix-version.jar</include>
+            </includes>
+            <outputDirectory>/lib/</outputDirectory>
+        </fileSet>
+
         <!-- Copy over everything that needs to get unix line endings -->
         <fileSet>
             <directory>src/main/distribution/text</directory>
