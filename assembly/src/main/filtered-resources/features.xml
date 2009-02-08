@@ -161,6 +161,8 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlschema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wss4j/${wss4j.version}</bundle>
+        <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>        
         <bundle>mvn:org.apache.cxf/cxf-bundle/${cxf.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared-version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-cxf-bc/${servicemix-cxf-bc-version}</bundle>
