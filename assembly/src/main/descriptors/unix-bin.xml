@@ -77,6 +77,11 @@
             <outputDirectory>/etc/</outputDirectory>
             <lineEnding>unix</lineEnding>
         </fileSet>
+        <fileSet>
+            <directory>src/main/distribution/ant</directory>
+            <outputDirectory>/ant</outputDirectory>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
 
         <!-- Copy over the examples -->
         <fileSet>

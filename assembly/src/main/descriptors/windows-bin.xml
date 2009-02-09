@@ -57,6 +57,11 @@
           <outputDirectory>/etc/</outputDirectory>
           <lineEnding>dos</lineEnding>
       </fileSet>
+      <fileSet>
+            <directory>src/main/distribution/ant</directory>
+            <outputDirectory>/ant</outputDirectory>
+            <lineEnding>dos</lineEnding>
+        </fileSet>
 
       <!-- Copy over jar files -->
       <fileSet>
