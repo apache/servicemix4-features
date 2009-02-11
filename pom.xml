@@ -161,7 +161,7 @@
       <pax.web.extender.version>0.3.0</pax.web.extender.version>
       <propertyset.version>1.3_1</propertyset.version>
       <qpid.version>1.0-incubating-M2.1_1</qpid.version>
-      <quartz.version>1.5.2_1</quartz.version>
+      <quartz.version>1.6.1_1-SNAPSHOT</quartz.version>
       <rhino.version>1.7R1_1-SNAPSHOT</rhino.version>
       <saaj.impl.version>1.3_1</saaj.impl.version>
       <saxon.version>9.1.0.1_1</saxon.version>
