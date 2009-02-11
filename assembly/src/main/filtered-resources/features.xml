@@ -246,6 +246,7 @@
     </feature>
     <feature name="servicemix-quartz">
         <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.version}</bundle>
         <bundle>mvn:org.springframework/spring-context-support/${spring.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-quartz/${servicemix-quartz-version}</bundle>
