@@ -172,11 +172,6 @@
        </exclusions>
      </dependency>
      <dependency>
-        <groupId>org.apache.servicemix.bundles</groupId>
-        <artifactId>org.apache.servicemix.bundles.commons-csv</artifactId>
-        <version>${commons-csv.version}</version>
-     </dependency>  
-     <dependency>
        <groupId>org.apache.camel</groupId>
        <artifactId>camel-flatpack</artifactId>
        <version>${camel.version}</version>
