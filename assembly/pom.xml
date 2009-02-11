@@ -156,8 +156,8 @@
             <version>${commons.httpclient.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.commons-collections</artifactId>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
             <version>${commons-collections.version}</version>
         </dependency>
         <dependency>
