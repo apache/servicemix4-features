@@ -43,6 +43,7 @@
         <bundle>mvn:org.apache.servicemix.war/org.apache.servicemix.war.deployer/${version}</bundle>
     </feature>
     <feature name="activemq">
+        <feature>transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${geronimo.jta.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>

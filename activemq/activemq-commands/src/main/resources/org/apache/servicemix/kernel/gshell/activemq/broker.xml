@@ -120,8 +120,7 @@
           <property name="resourceName" value="activemq.${name}" />
     </bean>
 
-    <osgi:reference id="transactionManager" interface="javax.transaction.TransactionManager"
-                    cardinality="0..1"/>
+    <osgi:reference id="transactionManager" interface="javax.transaction.TransactionManager" />
 
     <osgi:service ref="pooledConnectionFactory">
 
