@@ -239,6 +239,7 @@
     <feature name="servicemix-osworkflow">
         <feature>servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr.version}</bundle>
+        <bundle>mvn:commons-collections/commons-collections/${commons-collections.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscore/${oscore.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.propertyset/${propertyset.version}</bundle>
