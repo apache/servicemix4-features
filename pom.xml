@@ -171,8 +171,8 @@
       <servicemix-utils.version>1.1.0-SNAPSHOT</servicemix-utils.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.kernel.version>1.1.0-SNAPSHOT</servicemix.kernel.version>
-      <servicemix.nmr.version>1.0.0-m4-SNAPSHOT</servicemix.nmr.version>
-      <servicemix.specs.version>1.2-SNAPSHOT</servicemix.specs.version>
+      <servicemix.nmr.version>1.0.0-SNAPSHOT</servicemix.nmr.version>
+      <servicemix.specs.version>1.2.0</servicemix.specs.version>
       <servicemix.bundle.suffix>_1-SNAPSHOT</servicemix.bundle.suffix>
 
       <servicemix-shared-version>2009.01-SNAPSHOT</servicemix-shared-version>
