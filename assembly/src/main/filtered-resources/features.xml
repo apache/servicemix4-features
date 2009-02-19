@@ -206,6 +206,9 @@
     </feature>
     <feature name="servicemix-mail">
         <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.javamail-api-1.4/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.geronimo-javamail_1.4_provider/${geronimo.javamail.provider.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-mail/${servicemix-mail-version}</bundle>
     </feature>
     <feature name="servicemix-bean">
