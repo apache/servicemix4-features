@@ -121,7 +121,7 @@
       <groovy.version>1.5.6_1</groovy.version>
       <howl.version>1.0.1-1_1</howl.version>
       <httpcore.version>4.0-alpha6_1</httpcore.version>
-      <hamcrest.version>1.2-dev1_1-SNAPSHOT</hamcrest.version>
+      <hamcrest.version>1.2-dev1_1</hamcrest.version>
       <ibatis.version>2.3.4.726_1</ibatis.version>
       <irclib.version>1.10_1</irclib.version>
       <jackrabbit.version>1.5-SNAPSHOT</jackrabbit.version>
@@ -134,11 +134,11 @@
       <jdom.version>1.1_1</jdom.version>
       <jencks.version>2.1_1</jencks.version>
       <jetty.version>6.1.14</jetty.version>
-      <jetty.bundle.version>6.1.14_1-SNAPSHOT</jetty.bundle.version>
+      <jetty.bundle.version>6.1.14_1</jetty.bundle.version>
       <jexcelapi.version>2.4.2_1</jexcelapi.version>
       <jing.version>20030619_1</jing.version>
       <jline.version>0.9.94</jline.version>
-      <jruby.version>1.1.2_1-SNAPSHOT</jruby.version>
+      <jruby.version>1.1.2_1</jruby.version>
       <joda-time.version>1.5.2_1</joda-time.version>
       <josql.version>1.5_1</josql.version>
       <jsch.version>0.1.31_1</jsch.version>
@@ -164,7 +164,7 @@
       <propertyset.version>1.3_1</propertyset.version>
       <qpid.version>1.0-incubating-M2.1_1</qpid.version>
       <quartz.version>1.6.1_1-SNAPSHOT</quartz.version>
-      <rhino.version>1.7R1_1-SNAPSHOT</rhino.version>
+      <rhino.version>1.7R1_1</rhino.version>
       <saaj.impl.version>1.3_1</saaj.impl.version>
       <saxon.version>9.1.0.1_1</saxon.version>
       <scriptengines.version>1.1</scriptengines.version>
