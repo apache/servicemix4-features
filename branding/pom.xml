@@ -26,8 +26,8 @@
         <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.kernel</groupId>
-    <artifactId>org.apache.servicemix.kernel.version</artifactId>
+    <groupId>org.apache.servicemix.features</groupId>
+    <artifactId>org.apache.servicemix.features.branding</artifactId>
     <packaging>bundle</packaging>
     <version>4.0-m2-SNAPSHOT</version>
     <name>Apache ServiceMix Branding Support</name>

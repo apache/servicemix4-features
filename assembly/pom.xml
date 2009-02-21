@@ -899,8 +899,8 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.servicemix.kernel</groupId>
-                                    <artifactId>org.apache.servicemix.kernel.version</artifactId>
+                                    <groupId>org.apache.servicemix.features</groupId>
+                                    <artifactId>org.apache.servicemix.features.branding</artifactId>
                                     <version>${pom.version}</version>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>servicemix-version.jar</destFileName>
