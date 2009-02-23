@@ -27,7 +27,7 @@
     <!-- Allows us to use system properties as variables in this configuration file -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
 
-    <broker xmlns="http://activemq.apache.org/schema/core" brokerName="${name}" dataDirectory="${servicemix.base}/data/activemq/${name}">
+    <broker xmlns="http://activemq.apache.org/schema/core" brokerName="${name}" dataDirectory="${servicemix.base}/data/activemq/${name}" useShutdownHook="false">
 
         <!-- Destination specific policies using destination names or wildcards -->
         <destinationPolicy>
