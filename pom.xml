@@ -36,7 +36,6 @@
 
   <modules>
     <module>branding</module>
-    <module>transaction</module>
     <module>activemq</module>
     <module>camel</module>
     <module>war</module>
