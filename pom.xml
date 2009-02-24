@@ -247,7 +247,7 @@
        </repository>
        <!-- ASF M2 snapshot repo -->
        <repository>
-          <id>apache.m2.snapshots</id>
+          <id>apache-snapshots</id>
           <name>Apache m2 Snapshots Repository</name>
           <url>http://people.apache.org/repo/m2-snapshot-repository</url>
           <releases>
