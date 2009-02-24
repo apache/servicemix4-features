@@ -34,6 +34,7 @@
     <name>Apache ServiceMix Features :: Assembly</name>
 
     <dependencies>
+        <!-- making sure all kernel dependencies are in our local Maven repo -->
         <dependency>
             <groupId>org.apache.servicemix.kernel</groupId>
             <artifactId>apache-servicemix-kernel</artifactId>
@@ -52,6 +53,14 @@
             <version>${servicemix.kernel.version}</version>
             <type>tar.gz</type>
         </dependency>
+        <!-- let's grab all the NMR dependencies as well -->
+        <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>apache-servicemix-nmr</artifactId>
+            <version>${servicemix.nmr.version}</version>
+            <type>zip</type>
+        </dependency>
+        <!-- adding other dependencies for the SMX4 assembly -->
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
