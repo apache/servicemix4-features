@@ -391,6 +391,13 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <forkMode>pertest</forkMode>
+                    <systemProperties>
+                        <!--to work around the xml resolver bug-->
+                        <property>
+                            <name>user.dir</name>
+                            <value>//${basedir}</value>
+                        </property>
+                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>
