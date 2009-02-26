@@ -394,8 +394,8 @@
                     <systemProperties>
                         <!--to work around the xml resolver bug-->
                         <property>
-                            <name>user.dir</name>
-                            <value>//${basedir}</value>
+                            <name>xml.catalog.files</name>
+                            <value></value>
                         </property>
                     </systemProperties>
                 </configuration>
