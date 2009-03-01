@@ -18,6 +18,11 @@
 -->
 <features>
     <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
+    <feature name="connector">
+        <feature version="${servicemix.nmr.version}">transaction</feature>
+        <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jencks/${jencks.version}</bundle>
+    </feature>
     <feature name="web-core">
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
@@ -32,11 +37,9 @@
         <bundle>mvn:org.apache.servicemix.war/org.apache.servicemix.war.deployer/${version}</bundle>
     </feature>
     <feature name="activemq">
-        <feature>transaction</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${geronimo.jta.version}</bundle>
+        <feature>connector</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
         <bundle>mvn:commons-pool/commons-pool/${commons.pool.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>

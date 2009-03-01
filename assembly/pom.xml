@@ -234,11 +234,6 @@
             <version>${servicemix.nmr.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.jbi</groupId>
-            <artifactId>org.apache.servicemix.jbi.management</artifactId>
-            <version>${servicemix.nmr.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.howl</artifactId>
             <version>${howl.version}</version>
