@@ -436,7 +436,7 @@
         <dependency>
             <groupId>org.apache.servicemix.transaction</groupId>
             <artifactId>org.apache.servicemix.transaction</artifactId>
-            <version>${version}</version>
+            <version>${servicemix.nmr.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.cxf</groupId>
