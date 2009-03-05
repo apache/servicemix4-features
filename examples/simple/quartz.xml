@@ -51,9 +51,6 @@
         </quartz:trigger>
 	</quartz:endpoint>
 	
-	<osgi:reference id="jbi" interface="org.apache.camel.Component">
-	</osgi:reference>
-
     <bean class="org.apache.servicemix.common.osgi.EndpointExporter" />
 
 </beans>
