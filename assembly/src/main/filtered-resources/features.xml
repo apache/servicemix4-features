@@ -21,6 +21,7 @@
     <feature name="connector">
         <feature version="${servicemix.nmr.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jencks/${jencks.version}</bundle>
     </feature>
     <feature name="web-core">
@@ -38,7 +39,6 @@
     </feature>
     <feature name="activemq">
         <feature>connector</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>
         <bundle>mvn:commons-pool/commons-pool/${commons.pool.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
