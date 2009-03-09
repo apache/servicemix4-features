@@ -87,8 +87,8 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
         <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-core/${camel.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-spring/${camel.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-osgi/${camel.version}</bundle>
+        <bundle>mvn:org.apache.camel/camel-spring/${camel.version}</bundle>
     </feature>
     <!--
 	  -
