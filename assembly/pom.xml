@@ -838,16 +838,9 @@
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
                             </descriptors>
                             <features>
-                                <!--
-                                    Those features are dependencies of JBI components, so no need to install them explicitly
-                                  -->
-                                <feature>transaction</feature>
-                                <!--
-                                <feature>jbi</feature>
-                                <feature>camel</feature>
-                                <feature>activemq</feature>
-                                <feature>cxf</feature>
-                                 -->
+                                <feature>jbi-cluster</feature>
+                                <feature>web</feature>
+                                <!-- ServiceMix components -->
                                 <feature>servicemix-cxf-bc</feature>
                                 <feature>servicemix-file</feature>
                                 <feature>servicemix-ftp</feature>
