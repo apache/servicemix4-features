@@ -68,6 +68,7 @@
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>*</Import-Package>
+                        <Spring-Context>*;publish-context:=false;create-asynchronously:=true</Spring-Context>
                     </instructions>
                 </configuration>
             </plugin>
