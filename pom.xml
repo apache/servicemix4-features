@@ -123,6 +123,7 @@
       <hamcrest.version>1.2-dev1_1</hamcrest.version>
       <ibatis.version>2.3.4.726_1</ibatis.version>
       <irclib.version>1.10_1</irclib.version>
+      <isorelax.version>20050913_1-SNAPSHOT</isorelax.version>
       <jackrabbit.version>1.5-SNAPSHOT</jackrabbit.version>
       <jasper.version>6.0.14_1</jasper.version>
       <jaxb.api.version>2.1</jaxb.api.version>
@@ -205,6 +206,7 @@
       <smack.version>3.0.4_1</smack.version>
       <spring.version>2.5.6</spring.version>
       <spring.osgi.version>1.2.0-m2</spring.osgi.version>
+      <stringtemplate.version>3.2_1-SNAPSHOT</stringtemplate.version>
       <velocity.version>1.5_1</velocity.version>
       <wsdl4j.version>1.6.1_1</wsdl4j.version>
       <woodstox.version>3.2.7_1</woodstox.version>
