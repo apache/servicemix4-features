@@ -33,6 +33,7 @@ http://www.springframework.org/schema/osgi  http://www.springframework.org/schem
     <osgi:service ref="osgiServlet" interface="javax.servlet.Servlet">
         <osgi:service-properties>
             <entry key="alias" value="/cxf" />
+            <entry key="servlet-name" value="cxf-transport-osgi-servlet"/>
         </osgi:service-properties>
     </osgi:service>
 
