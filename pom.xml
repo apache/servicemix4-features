@@ -129,6 +129,7 @@
       <jaxb.api.version>2.1</jaxb.api.version>
       <jaxb.impl.version>2.1.6_1</jaxb.impl.version>
       <jaxws.api.version>2.1</jaxws.api.version>
+      <jaxrs.api.version>0.8</jaxrs.api.version>
       <jcr-api.version>1.0_1</jcr-api.version>
       <jdt.core.version>3.2.3_1</jdt.core.version>
       <jdom.version>1.1_1</jdom.version>
