@@ -19,32 +19,66 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:http="http://servicemix.apache.org/http/1.0"
+       xmlns:ctx="http://www.springframework.org/schema/context"
        xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
        xmlns:wsn="http://servicemix.org/wsnotification"
        xsi:schemaLocation="
-         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-         http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd
-         http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd
+         http://www.springframework.org/schema/beans             http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context           http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/util              http://www.springframework.org/schema/util/spring-util.xsd
+         http://www.springframework.org/schema/osgi              http://www.springframework.org/schema/osgi/spring-osgi.xsd
          http://www.springframework.org/schema/osgi-compendium   http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
-         http://servicemix.apache.org/http/1.0       http://servicemix.apache.org/http/1.0/servicemix-http.xsd
-         http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+         http://servicemix.apache.org/http/1.0                   http://servicemix.apache.org/http/1.0/servicemix-http.xsd">
 
+    <!-- Define a soap consumer targeting the ws-notification NotificationBroker endpoint.
+         The targetService and targetEndpoint attributes are not specified because 
+         the target endpoint has the same service / endpoint name as this endpoint.
+      -->
     <http:soap-consumer service="wsn:NotificationBroker" endpoint="Broker"
-                        locationURI="http://0.0.0.0:8192/wsn/Broker/"
+                        locationURI="${baseUrl}/Broker/"
                         validateWsdl="true">
+        <!-- Enable WS-Addressing on this endpoint -->
         <http:policies>
             <bean class="org.apache.servicemix.soap.ws.addressing.WsAddressingPolicy" />
         </http:policies>
     </http:soap-consumer>
 
+    <!-- Define a soap consumer targeting the ws-notification CreatePullPoint endpoint.
+         The targetService and targetEndpoint attributes are not specified because 
+         the target endpoint has the same service / endpoint name as this endpoint.
+      -->
     <http:soap-consumer service="wsn:CreatePullPoint" endpoint="Broker"
-                        locationURI="http://0.0.0.0:8192/wsn/CreatePullPoint/"
+                        locationURI="${baseUrl}/CreatePullPoint/"
                         validateWsdl="true">
+        <!-- Enable WS-Addressing on this endpoint -->
         <http:policies>
             <bean class="org.apache.servicemix.soap.ws.addressing.WsAddressingPolicy" />
         </http:policies>
     </http:soap-consumer>
 
+    <!-- Export this service assembly to the OSGi registry -->
     <bean class="org.apache.servicemix.common.osgi.EndpointExporter" />
+    
+    <!-- The target endpoints for this Service Assembly are defined outside the scope of this SA.
+         To make sure the SA is not create before those endpoints are available, we add
+         two dependencies at spring-dm level on the required endpoints.
+      -->
+    <osgi:reference id="notificationBrokerEndpoint" 
+                    interface="org.apache.servicemix.nmr.api.Endpoint" 
+                    filter="(&amp;(jbi.internal=true)(SERVICE_NAME={http://servicemix.org/wsnotification}NotificationBroker))" />
+    <osgi:reference id="createPullpointEndpoint" 
+                    interface="org.apache.servicemix.nmr.api.Endpoint" 
+                    filter="(&amp;(jbi.internal=true)(SERVICE_NAME={http://servicemix.org/wsnotification}CreatePullPoint))" />
+
+    <!-- Expose some properties using the OSGi Configuration Admin service.
+         The values specified here is the default value which can be overriden
+         by feeding the configuration admin service with the needed configuration.
+         This can be done by creating a file named etc/org.apache.servicemix.examples.wsn.cfg
+         containing the property below. -->
+    <osgix:cm-properties id="wsnProps" persistent-id="org.apache.servicemix.examples.wsn">
+        <prop key="baseUrl">http://0.0.0.0:8192/wsn</prop>
+    </osgix:cm-properties>
+    <ctx:property-placeholder properties-ref="wsnProps" />
 
 </beans>
