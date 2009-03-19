@@ -27,11 +27,11 @@
     <feature name="web-core">
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-jsp/${pax.web.version}</bundle>
         <bundle>mvn:org.ops4j.pax.web/pax-web-bundle/${pax.web.version}</bundle>
     </feature>
     <feature name="web">
         <feature>web-core</feature>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-jsp/${pax.web.version}</bundle>
         <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-war/${pax.web.extender.version}</bundle>
         <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-whiteboard/${pax.web.extender.version}</bundle>
         <bundle>mvn:org.ops4j.pax.url/pax-url-war/${pax.url.version}</bundle>
