@@ -71,7 +71,7 @@
       <aopalliance.version>1.0_1</aopalliance.version>
       <asm.version>2.2.3_1</asm.version>
       <bnd.version>0.0.227</bnd.version>
-      <cglib.version>2.1_3_1</cglib.version>
+      <cglib.version>2.1_3_2-SNAPSHOT</cglib.version>
       <camel.version>1.5.0</camel.version>
       <commons-beanutils.version>1.7.0_1</commons-beanutils.version>
       <commons-collections.version>3.2.1</commons-collections.version>
