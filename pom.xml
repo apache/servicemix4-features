@@ -116,7 +116,7 @@
       <geronimo.wsmetadata.version>1.1.2</geronimo.wsmetadata.version>
       <geronimo.transaction.version>2.2-r634076</geronimo.transaction.version>
       <geronimo.connector.version>2.2-r634076</geronimo.connector.version>
-      <geronimo.javamail.provider.version>1.6_2-SNAPSHOT</geronimo.javamail.provider.version>
+      <geronimo.javamail.provider.version>1.8-r755222_1-SNAPSHOT</geronimo.javamail.provider.version>
       <groovy.version>1.5.6_1</groovy.version>
       <howl.version>1.0.1-1_1</howl.version>
       <httpcore.version>4.0-alpha6_1</httpcore.version>
