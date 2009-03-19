@@ -299,6 +299,16 @@
             <version>${propertyset.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.snmp4j</artifactId>
+            <version>${snmp4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.jsmpp</artifactId>
+            <version>${jsmpp.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
             <version>${cxf.version}</version>
@@ -754,7 +764,6 @@
             <artifactId>servicemix-camel</artifactId>
             <version>${servicemix-camel-version}</version>
         </dependency>
-        <!-- Commented out until release                
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-snmp</artifactId>
@@ -770,7 +779,6 @@
             <artifactId>servicemix-smpp</artifactId>
             <version>${servicemix-smpp-version}</version>
         </dependency>
-         -->
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-shared</artifactId>
@@ -863,11 +871,9 @@
                                 <feature>servicemix-validation</feature>
                                 <feature>servicemix-saxon</feature>
                                 <feature>servicemix-wsn2005</feature>
-                                <!--  commented out until release
                                 <feature>servicemix-snmp</feature>
                                 <feature>servicemix-vfs</feature>
                                 <feature>servicemix-smpp</feature>
-                                -->
                             </features>
                             <repository>target/features-repo</repository>
                         </configuration>

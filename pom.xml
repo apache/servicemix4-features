@@ -143,6 +143,7 @@
       <joda-time.version>1.5.2_1</joda-time.version>
       <josql.version>1.5_1</josql.version>
       <jsch.version>0.1.31_1</jsch.version>
+      <jsmpp.version>2.0_1-SNAPSHOT</jsmpp.version>
       <juel.version>2.1.0_1</juel.version>
       <junit.version>4.4</junit.version>
       <junit.bundle.version>4.4_1</junit.bundle.version>
@@ -205,6 +206,7 @@
       <servicemix-jbi-plugin-version>4.1-SNAPSHOT</servicemix-jbi-plugin-version>
 
       <smack.version>3.0.4_1</smack.version>
+      <snmp4j.version>1.8.1_1</snmp4j.version>
       <spring.version>2.5.6</spring.version>
       <spring.osgi.version>1.2.0-m2</spring.osgi.version>
       <stringtemplate.version>3.2_1-SNAPSHOT</stringtemplate.version>

@@ -262,4 +262,18 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-wsn2005/${servicemix-wsn2005-version}</bundle>
     </feature>
+    <feature name="servicemix-snmp">
+        <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.snmp4j/${snmp4j.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-snmp/${servicemix-snmp-version}</bundle>
+    </feature>
+    <feature name="servicemix-vfs">
+        <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-vfs/${servicemix-vfs-version}</bundle>
+    </feature>
+    <feature name="servicemix-smpp">
+        <feature>servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/${jsmpp.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-smpp/${servicemix-smpp-version}</bundle>
+    </feature>
 </features>
