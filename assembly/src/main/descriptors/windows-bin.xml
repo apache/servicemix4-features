@@ -204,6 +204,15 @@
                 <include>org.apache.servicemix.nmr:apache-servicemix-nmr:xml:features</include>
             </includes>
         </dependencySet>
+        <dependencySet>
+            <outputDirectory>/system</outputDirectory>
+            <outputFileNameMapping>org/apache/servicemix/camel/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <include>org.apache.servicemix.camel:org.apache.servicemix.camel.features:xml:features</include>
+            </includes>
+        </dependencySet>
     </dependencySets>
 
 </assembly>

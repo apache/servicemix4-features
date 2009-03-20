@@ -809,6 +809,13 @@
             <artifactId>scriptengines-jruby</artifactId>
             <version>${scriptengines.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.camel</groupId>
+            <artifactId>org.apache.servicemix.camel.features</artifactId>
+            <version>${version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
