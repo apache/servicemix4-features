@@ -100,7 +100,6 @@
               <exclude>**/cxf-handler-cfg/**</exclude>
               <exclude>**/cxf-soap-handler-osgi/**</exclude>
               <exclude>**/cxf-ws-addressing/**</exclude>
-              <exclude>**/simple/**</exclude>
               <exclude>**/wsdl-first/**</exclude>
               <exclude>**/loan-broker-bpel/**</exclude>
           </excludes>
@@ -182,6 +181,12 @@
             <file>
               <source>../examples/cxf-camel-nmr/README.txt</source>
               <outputDirectory>/examples/cxf-camel-nmr</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+            </file>
+            <file>
+              <source>../examples/simple/README.txt</source>
+              <outputDirectory>/examples/simple</outputDirectory>
               <filtered>true</filtered>
               <lineEnding>dos</lineEnding>
             </file>
