@@ -124,7 +124,7 @@
       <ibatis.version>2.3.4.726_1</ibatis.version>
       <irclib.version>1.10_1</irclib.version>
       <isorelax.version>20050913_1-SNAPSHOT</isorelax.version>
-      <jackrabbit.version>1.5-SNAPSHOT</jackrabbit.version>
+      <jackrabbit.version>1.5.3</jackrabbit.version>
       <jasper.version>6.0.14_1</jasper.version>
       <jaxb.api.version>2.1</jaxb.api.version>
       <jaxb.impl.version>2.1.6_1</jaxb.impl.version>
