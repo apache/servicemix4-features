@@ -90,7 +90,7 @@
       <drools.version>4.0.7_1</drools.version>
       <depends.maven.plugin.version>1.1-SNAPSHOT</depends.maven.plugin.version>
       <fastinfoset.version>1.2.2_1</fastinfoset.version>
-      <features.maven.plugin.version>1.1-SNAPSHOT</features.maven.plugin.version>
+      <features.maven.plugin.version>1.1</features.maven.plugin.version>
       <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
       <felix.compendium.version>1.2.0</felix.compendium.version>
       <felix.configadmin.version>1.0.4</felix.configadmin.version>
@@ -137,6 +137,7 @@
       <jetty.version>6.1.14</jetty.version>
       <jetty.bundle.version>6.1.14_1</jetty.bundle.version>
       <jexcelapi.version>2.4.2_1</jexcelapi.version>
+      <jettison.version>1.0.1_1-SNAPSHOT</jettison.version>
       <jing.version>20030619_1</jing.version>
       <jline.version>0.9.94</jline.version>
       <jruby.version>1.1.2_1</jruby.version>
