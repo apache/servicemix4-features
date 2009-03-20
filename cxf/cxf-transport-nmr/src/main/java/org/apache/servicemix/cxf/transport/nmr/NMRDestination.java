@@ -57,7 +57,13 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
         super(getTargetReference(info, null), info);
         this.nmr = nmr;
         this.properties = new HashMap<String, Object>();
-        this.properties.put(Endpoint.NAME, info.getName().toString());
+        String address = info.getAddress();
+        if (address != null && address.startsWith("nmr:")) {
+            this.properties.put(Endpoint.NAME, address.substring(4, info.getAddress().length()));
+        } else {
+            this.properties.put(Endpoint.NAME, info.getName().toString());
+        }
+        
         this.properties.put(Endpoint.SERVICE_NAME, info.getService().getName().toString());
         this.properties.put(Endpoint.INTERFACE_NAME, info.getInterface().getName().toString());
     }

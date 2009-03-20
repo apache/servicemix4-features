@@ -40,7 +40,7 @@
         <route>
             <from uri="timer://myTimer?fixedRate=true&amp;period=5000&amp;exchangePattern=InOut" />
             <bean ref="myTransform" method="transform"/>
-            <to uri="nmr:{http://cxfcamel.examples.servicemix.apache.org/}HelloWorldImplPort"/>
+            <to uri="nmr:HelloWorld"/>
             <bean ref="myTransform" method="display" />
         </route>
     </camel-osgi:camelContext>
