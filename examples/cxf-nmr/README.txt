@@ -42,14 +42,14 @@ Testing the example
 -------------------
 
 When the feature is installed, output for publishing the cxf endpoint
-is displayed to the console:
+is recorded in data/log/servicemix.log:
+10:20:56,169 | INFO  | xtenderThread-76 | ConfigurerImpl                   |
+ransport.nmr.NMRTransportFactory  127 | Could not determine bean name for
+instance of class org.apache.servicemix.cxf.transport.nmr.NMRDestination.
+10:20:56,171 | INFO  | xtenderThread-76 | ServerImpl                       |
+e.cxf.frontend.ServerFactoryBean  118 | Setting the server's publish address
+to be nmr:HelloWorld
 
-Jun 16, 2008 12:29:29 AM org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromClass
-INFO: Creating Service {http://cxf.examples.servicemix.apache.org/}HelloWorldImplService from class org.apache.servicemix.examples.cxf.HelloWorld
-Jun 16, 2008 12:29:30 AM org.apache.cxf.configuration.spring.ConfigurerImpl getBeanName
-INFO: Could not determine bean name for instance of class org.apache.servicemix.cxf.transport.nmr.NMRDestination.
-Jun 16, 2008 12:29:30 AM org.apache.cxf.endpoint.ServerImpl initDestination
-INFO: Setting the server's publish address to be nmr:HelloWorld 
 
 How does it work?
 -----------------
