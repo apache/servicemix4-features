@@ -133,11 +133,12 @@
        <artifactId>camel-mina</artifactId>
        <version>${camel.version}</version>
      </dependency>
+<!-- is in the assembly's features.xml - generator includes the discovered bundle instead of our fixed one    
      <dependency>
        <groupId>org.apache.camel</groupId>
        <artifactId>camel-jetty</artifactId>
        <version>${camel.version}</version>
-     </dependency>
+     </dependency> -->
      <dependency>
        <groupId>org.apache.camel</groupId>
        <artifactId>camel-jms</artifactId>
@@ -296,11 +297,12 @@
        <artifactId>camel-script</artifactId>
        <version>${camel.version}</version>
      </dependency>
+<!-- is in the assembly's features.xml - the 1.0.1.RELEASE version used requires a later version of spring
      <dependency>
        <groupId>org.apache.camel</groupId>
        <artifactId>camel-spring-integration</artifactId>
        <version>${camel.version}</version>
-     </dependency>
+     </dependency> -->
      <dependency>
        <groupId>org.apache.camel</groupId>
        <artifactId>camel-sql</artifactId>

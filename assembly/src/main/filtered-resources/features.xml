@@ -90,6 +90,21 @@
         <bundle>mvn:org.apache.camel/camel-osgi/${camel.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-spring/${camel.version}</bundle>
     </feature>
+
+    <feature name='camel-jetty' version='${camel.version}'>
+        <feature version='${camel.version}'>camel-core</feature>
+        <feature version='${camel.version}'>camel-http</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
+        <bundle>mvn:org.apache.camel/camel-jetty/${camel.version}</bundle>  
+    </feature> 
+
+    <feature name='camel-spring-integration' version='${camel.version}'>
+        <feature version='${camel.version}'>camel-core</feature>
+        <feature version='${camel.version}'>camel-spring</feature>
+        <bundle>mvn:org.springframework.integration/org.springframework.integration/${spring.integration.version}</bundle>
+        <bundle>mvn:org.apache.camel/camel-spring-integration/${camel.version}</bundle>
+    </feature>
+
     <!--
 	  -
 	  -  Examples
