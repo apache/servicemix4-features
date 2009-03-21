@@ -27,11 +27,11 @@
         <version>4.0-m2-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.features</groupId>
+    <groupId>org.apache.servicemix</groupId>
     <artifactId>apache-servicemix</artifactId>
     <packaging>pom</packaging>
     <version>4.0-m2-SNAPSHOT</version>
-    <name>Apache ServiceMix Features :: Assembly</name>
+    <name>Apache ServiceMix :: Assembly</name>
 
     <dependencies>
         <!-- making sure all kernel dependencies are in our local Maven repo -->

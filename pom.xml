@@ -59,7 +59,8 @@
   </prerequisites>
 
   <properties>
-      <servicemix.version>4.0-m2-SNAPSHOT</servicemix.version>
+      <servicemix.version>${pom.version}</servicemix.version>
+
       <maven.assembly.version>2.2-beta-2</maven.assembly.version>
       <xfire.maven.plugin>4.1</xfire.maven.plugin>
       <abdera.version>0.4.0-incubating_1</abdera.version>
