@@ -36,22 +36,22 @@
         <dependency>
             <groupId>org.apache.servicemix.examples.loan-broker</groupId>
             <artifactId>loan-broker-ode-su</artifactId>
-            <version>${servicemix.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.examples.loan-broker</groupId>
             <artifactId>loan-broker-bean-su</artifactId>
-            <version>${servicemix.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.examples.loan-broker</groupId>
             <artifactId>loan-broker-drools-su</artifactId>
-            <version>${servicemix.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.examples.loan-broker</groupId>
             <artifactId>loan-broker-jms-su</artifactId>
-            <version>${servicemix.version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

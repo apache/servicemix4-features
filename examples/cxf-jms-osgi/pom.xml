@@ -31,7 +31,6 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>cxf-jms-osgi</artifactId>
     <packaging>bundle</packaging>
-    <version>${servicemix.version}</version>
     <name>Apache ServiceMix Example :: CXF JMS transport OSGi</name>
 
     <dependencies>

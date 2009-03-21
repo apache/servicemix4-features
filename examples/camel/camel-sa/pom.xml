@@ -42,7 +42,7 @@
     <dependency>
       <groupId>org.apache.servicemix.examples.camel</groupId>
       <artifactId>camel-simple-su</artifactId>
-      <version>${servicemix.version}</version>      
+      <version>${project.version}</version>      
     </dependency>      
   </dependencies>
   <build>

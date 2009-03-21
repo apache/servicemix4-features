@@ -31,7 +31,6 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>cxf-http-osgi</artifactId>
     <packaging>bundle</packaging>
-    <version>${servicemix.version}</version>
     <name>Apache ServiceMix Example :: CXF OSGi</name>
 
     <dependencies>
