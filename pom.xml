@@ -30,7 +30,7 @@
   <groupId>org.apache.servicemix.features</groupId>
   <artifactId>features</artifactId>
   <packaging>pom</packaging>
-  <version>4.0-m2-SNAPSHOT</version>
+  <version>4.0.0</version>
   <name>Apache ServiceMix Features</name>
   <inceptionYear>2005</inceptionYear>
 
@@ -45,9 +45,9 @@
   </modules>
 
   <scm>
-      <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</connection>
-      <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</developerConnection>
-      <url>http://svn.apache.org/viewvc/servicemix/smx4/features/trunk/</url>
+      <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/tags/features-4.0.0</connection>
+      <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/tags/features-4.0.0</developerConnection>
+      <url>http://svn.apache.org/viewvc/servicemix/smx4/features/tags/features-4.0.0</url>
   </scm>
   <issueManagement>
       <system>jira</system>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 <!--
@@ -24,7 +23,7 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>examples</artifactId>
-        <version>4.0-m2-SNAPSHOT</version>
+        <version>4.0.0</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
@@ -34,7 +33,8 @@
     
     <modules>
       <module>camel-simple-su</module>
-      <module>camel-sa</module>
+      <module>camel-sa</module>
+
     </modules>
 
     <!-- Add ServiceMix repositories for snaphots and releases -->
@@ -98,4 +98,3 @@
         </plugins>
     </build>
 </project>
-
