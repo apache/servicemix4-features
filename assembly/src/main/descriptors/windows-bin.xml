@@ -115,7 +115,7 @@
     <files>
         <file>
             <source>${basedir}/target/classes/features.xml</source>
-            <outputDirectory>system/org/apache/servicemix/features/${artifactId}/${version}</outputDirectory>
+            <outputDirectory>system/org/apache/servicemix/${artifactId}/${version}</outputDirectory>
             <destName>${artifactId}-${version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>dos</lineEnding>

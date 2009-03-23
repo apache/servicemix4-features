@@ -51,7 +51,7 @@ Finally, uninstall the examples-camel-nmr feature:
   features/uninstall examples-cxf-camel-nmr
 
 You can also examine the ServiceMix log to see the activity:
-  log display
+  log/display
 
 How does it work?
 -----------------
