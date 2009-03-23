@@ -23,13 +23,13 @@
     <parent>
         <groupId>org.apache.servicemix.features</groupId>
         <artifactId>features</artifactId>
-        <version>4.1.0-SNAPSHOT</version>
+        <version>4.0.0</version>
     </parent>
 
     <groupId>org.apache.servicemix.features</groupId>
     <artifactId>org.apache.servicemix.features.branding</artifactId>
     <packaging>bundle</packaging>
-    <version>4.1.0-SNAPSHOT</version>
+    <version>4.0.0</version>
     <name>Apache ServiceMix Branding Support</name>
 
     <build>

@@ -23,13 +23,13 @@
     <parent>
 	    <groupId>org.apache.servicemix.cxf</groupId>
 	    <artifactId>cxf</artifactId>
-        <version>4.1.0-SNAPSHOT</version>
+        <version>4.0.0</version>
     </parent>
 
     <groupId>org.apache.servicemix.cxf</groupId>
     <artifactId>org.apache.servicemix.cxf.transport.osgi</artifactId>
     <packaging>bundle</packaging>
-    <version>4.1.0-SNAPSHOT</version>
+    <version>4.0.0</version>
     <name>Apache ServiceMix CXF Transport for OSGi</name>
 
     <dependencies>
