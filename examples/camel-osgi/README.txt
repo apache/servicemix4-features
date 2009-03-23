@@ -57,7 +57,7 @@ Finally, uninstall the examples-camel-osgi feature:
   features/uninstall examples-camel-osgi
 
 As well, you can view ExampleRouter log entries in the ServiceMix log:
-  log d
+  log/d
 
 You also can update and redeploy properties file which is used by the properties
 placeholder in the beans.xml from console.

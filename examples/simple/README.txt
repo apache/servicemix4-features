@@ -41,9 +41,9 @@ org.apache.servicemix.jbi.runtime.impl.InOnlyImpl@41a330e4
 Hello, I got an input message <?xml version="1.0" encoding="UTF-8" standalone="no"?><timer><name>{http://servicemix.apache.org/examples/groovy}service:endpoint</name><group>DEFAULT</group><fullname>DEFAULT.{http://servicemix.apache.org/examples/groovy}service:endpoint</fullname><description/><fireTime>Fri Aug 08 13:50:16 CEST 2008</fireTime></timer>
 
 
-When the quartz.xml file is copied to the deploy directory, you can use the 'log d' command in the console to see this output in the log files:
+When the quartz.xml file is copied to the deploy directory, you can use the 'log/d' command in the console to see this output in the log files:
 
-14:04:53,709 | INFO  | x-camel-thread-3 | test                             | rg.apache.camel.processor.Logger   88 | Exchange[null]
+14:15:51,202 | INFO  | x-camel-thread-4 | test                             | rg.apache.camel.processor.Logger   88 | Exchange[BodyType:javax.xml.transform.dom.DOMSource, Body:<timer><name>{http://servicemix.apache.org/examples/camel}service:endpoint</name><group>DEFAULT</group><fullname>DEFAULT.{http://servicemix.apache.org/examples/camel}service:endpoint</fullname><description/><fireTime>Mon Mar 23 14:15:51 CST 2009</fireTime></timer>]
 
 
 How does it work?

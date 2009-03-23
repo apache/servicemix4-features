@@ -56,7 +56,7 @@ Finally, uninstall the examples-camel-nmr feature:
   features/uninstall examples-camel-nmr
 
 As well, you can view the log entries in the ServiceMix log:
-  log d
+  log/d
 
 How does it work?
 -----------------
