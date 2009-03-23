@@ -41,6 +41,7 @@
 
     <scripting:endpoint service="b:receiver" endpoint="endpoint" 
                         script="document-name:myscript"
+                        disableOutput="true"
                         language="groovy" />
 	
     <bean id="myscript" class="org.apache.servicemix.document.factory.DocumentFactory">
@@ -57,12 +58,6 @@
            println exchange;       
            def inputMessage = new SourceTransformer().toString(inMessage.getContent());
            println "Hello, I got an input message " + inputMessage;
-           NormalizedMessage out = exchange.createMessage();
-           out.setContent(new StringSource("&lt;response>" + bindings.get("answerGroovy") + "&lt;/response>"));
-           exchange.setMessage(out, "out");
-           println exchange;
-
-           println "Stopping JSR-223 groovy processor";
         </value>
       </property>
     </bean>
