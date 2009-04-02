@@ -209,7 +209,7 @@
       <spring.integration.version>1.0.0.RC2</spring.integration.version>
       <spring.osgi.version>1.2.0-m2</spring.osgi.version>
       <stringtemplate.version>3.2_1</stringtemplate.version>
-      <velocity.version>1.5_1</velocity.version>
+      <velocity.version>1.6.2_1-SNAPSHOT</velocity.version>
       <wsdl4j.version>1.6.1_1</wsdl4j.version>
       <woodstox.version>3.2.7_1</woodstox.version>
       <xstream.version>1.2.2</xstream.version>
