@@ -35,6 +35,7 @@
     <modules>
       <module>bridge-camel-su</module>
       <module>bridge-camel-sa</module>
+      <module>client</module>
     </modules>
 
     <!-- Add ServiceMix repositories for snaphots and releases -->
