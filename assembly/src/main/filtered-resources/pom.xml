@@ -34,6 +34,7 @@
 
     <modules>
         <module>bridge</module>
+        <module>bridge-camel</module>
         <module>camel</module>
         <module>cxf-wsdl-first</module>
         <module>camel-nmr</module>

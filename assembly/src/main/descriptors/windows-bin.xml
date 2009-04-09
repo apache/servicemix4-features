@@ -143,6 +143,12 @@
               <lineEnding>dos</lineEnding>
         </file>
         <file>
+              <source>../examples/bridge-camel/README.txt</source>
+              <outputDirectory>/examples/bridge-camel</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+        </file>
+        <file>
               <source>../examples/camel/README.txt</source>
               <outputDirectory>/examples/camel</outputDirectory>
               <filtered>true</filtered>
