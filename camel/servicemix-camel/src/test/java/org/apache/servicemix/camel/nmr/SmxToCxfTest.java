@@ -48,7 +48,7 @@ public class SmxToCxfTest extends SpringTestSupport {
     }
 
     protected ClassPathXmlApplicationContext createApplicationContext() {
-        return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/spring/EndpointBeans.xml");
+        return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/spring/DummyBean.xml");
     }
 
     protected void assertValidContext(CamelContext context) {
