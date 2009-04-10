@@ -60,7 +60,7 @@
 
         <!-- Copy license and other files from root -->
         <fileSet>
-            <directory>..</directory>
+            <directory>${basedir}/..</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>README.txt</include>
@@ -97,7 +97,7 @@
 
         <!-- Copy over the examples -->
         <fileSet>
-            <directory>../examples</directory>
+            <directory>${basedir}/../examples</directory>
             <outputDirectory>/examples/</outputDirectory>
             <lineEnding>unix</lineEnding>
             <excludes>
@@ -148,61 +148,61 @@
 
         <!--filtering README.txt-->
         <file>
-            <source>../examples/bridge/README.txt</source>
+            <source>${basedir}/../examples/bridge/README.txt</source>
             <outputDirectory>/examples/bridge</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/bridge-camel/README.txt</source>
+            <source>${basedir}/../examples/bridge-camel/README.txt</source>
             <outputDirectory>/examples/bridge-camel</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/camel/README.txt</source>
+            <source>${basedir}/../examples/camel/README.txt</source>
             <outputDirectory>/examples/camel</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/cxf-wsdl-first/README.txt</source>
+            <source>${basedir}/../examples/cxf-wsdl-first/README.txt</source>
             <outputDirectory>/examples/cxf-wsdl-first</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/camel-osgi/README.txt</source>
+            <source>${basedir}/../examples/camel-osgi/README.txt</source>
             <outputDirectory>/examples/camel-osgi</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/camel-nmr/README.txt</source>
+            <source>${basedir}/../examples/camel-nmr/README.txt</source>
             <outputDirectory>/examples/camel-nmr</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/cxf-nmr/README.txt</source>
+            <source>${basedir}/../examples/cxf-nmr/README.txt</source>
             <outputDirectory>/examples/cxf-nmr</outputDirectory>               
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/cxf-osgi/README.txt</source>
+            <source>${basedir}/../examples/cxf-osgi/README.txt</source>
             <outputDirectory>/examples/cxf-osgi</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/cxf-camel-nmr/README.txt</source>
+            <source>${basedir}/../examples/cxf-camel-nmr/README.txt</source>
             <outputDirectory>/examples/cxf-camel-nmr</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>../examples/simple/README.txt</source>
+            <source>${basedir}/../examples/simple/README.txt</source>
             <outputDirectory>/examples/simple</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
