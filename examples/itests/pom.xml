@@ -368,6 +368,11 @@
             <artifactId>org.apache.servicemix.specs.jbi-api-1.0</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
+            <version>${xmlsec.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
