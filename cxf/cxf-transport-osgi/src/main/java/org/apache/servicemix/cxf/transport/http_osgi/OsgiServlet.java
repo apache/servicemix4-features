@@ -249,7 +249,9 @@ public class OsgiServlet extends HttpServlet {
             inMessage.put(AbstractHTTPDestination.HTTP_REQUEST, request);
             inMessage.put(AbstractHTTPDestination.HTTP_RESPONSE, response);
             inMessage.put(AbstractHTTPDestination.HTTP_CONTEXT, getServletContext());
+            inMessage.put(AbstractHTTPDestination.HTTP_CONFIG, getServletConfig());
             inMessage.put(Message.HTTP_REQUEST_METHOD, request.getMethod());
+            inMessage.put(Message.REQUEST_URI, request.getRequestURI());
             inMessage.put(Message.PATH_INFO, request.getPathInfo());
             inMessage.put(Message.QUERY_STRING, request.getQueryString());
             inMessage.put(Message.CONTENT_TYPE, request.getContentType());
