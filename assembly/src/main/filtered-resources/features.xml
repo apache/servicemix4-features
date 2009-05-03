@@ -138,6 +138,10 @@
         <feature version="${version}">cxf-nmr</feature>
         <bundle>mvn:org.apache.servicemix.examples/cxf-camel-nmr/${version}</bundle>
     </feature>
+    <feature name="examples-cxf-ws-addressing">
+        <feature>cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-addressing/${version}</bundle>
+    </feature>
     <!--
       -
       -  JBI Components

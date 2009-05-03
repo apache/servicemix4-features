@@ -45,6 +45,11 @@
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
             <version>${geronimo.wsmetadata.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-utils</artifactId>
+            <version>${servicemix-utils.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -96,6 +101,7 @@
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.resource,
                             org.apache.servicemix.cxf.transport.http_osgi,
+                            org.apache.servicemix.util,
                             org.springframework.beans.factory.config
                         </Import-Package>
                         <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
@@ -106,6 +112,16 @@
                      </instructions>
                 </configuration>
             </plugin>
+
+           <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.apache.servicemix.examples.cxf.wsaddressing.Client</mainClass>
+                    <includePluginDependencies>false</includePluginDependencies>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
