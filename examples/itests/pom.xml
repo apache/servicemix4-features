@@ -198,6 +198,11 @@
         </dependency>
         <dependency>
 		    <groupId>org.apache.servicemix.examples</groupId>
+		    <artifactId>cxf-jaxrs</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.apache.servicemix.examples</groupId>
 		    <artifactId>cxf-http-osgi</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -373,6 +378,32 @@
             <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
             <version>${xmlsec.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.abdera</artifactId>
+            <version>${abdera.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.jettison</artifactId>
+            <version>${jettison.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
+            <version>${xmlbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}</artifactId>
+            <version>${servicemix.specs.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

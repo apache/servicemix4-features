@@ -18,7 +18,9 @@ package org.apache.servicemix.examples;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.util.jar.Manifest;
 import java.util.HashMap;
 import java.util.Map;
@@ -111,6 +113,11 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlsec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlresolver"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty-bundle"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-codec"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.abdera"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jettison"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlbeans"),
+            getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jsr311-api-1.0"),
             getBundle("org.ops4j.pax.web", "pax-web-bundle"),
             getBundle("org.ops4j.pax.web-extender", "pax-web-ex-whiteboard"),
             getBundle("org.apache.servicemix", "servicemix-utils"),
@@ -127,6 +134,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.examples", "cxf-soap-handler-osgi"),
             getBundle("org.apache.servicemix.examples", "cxf-handler-cfg"),
             getBundle("org.apache.servicemix.examples", "cxf-ws-addressing"),
+            getBundle("org.apache.servicemix.examples", "cxf-jaxrs"),
             getBundle("org.apache.servicemix.examples", "cxf-nmr-osgi"),
         };
 	}
@@ -278,4 +286,22 @@ public class IntegrationTest extends AbstractIntegrationTest {
          assertTrue(input.toString().indexOf(expectedIn) != -1);
     }
 
+    public void testJaxRS() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("cxf-jaxrs");
+
+        URL url = new URL("http://localhost:8080/cxf/crm/customerservice/customers/123");
+        InputStream in = url.openStream();
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        int c = 0;
+        while ((c = in.read()) != -1) {
+            bos.write(c);
+        }
+        in.close();
+        bos.close();
+        System.out.println(bos.toString());
+        assertEquals("{\"Customer\":{\"id\":123,\"name\":\"John\"}}",
+                     bos.toString());
+    }
 }

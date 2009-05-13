@@ -75,6 +75,13 @@
         <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-whiteboard/${pax.web.extender.version}</bundle>
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.osgi/${version}</bundle>
     </feature>
+    <feature name="cxf-jaxrs" version="${version}">
+        <feature version="${version}">cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jettison/${jettison.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}/${servicemix.specs.version}</bundle>
+    </feature>
     <feature name="cxf-nmr" version="${version}">
         <feature version="${cxf.version}">cxf</feature>
         <feature version="${servicemix.nmr.version}">nmr</feature>
@@ -120,6 +127,10 @@
     <feature name="examples-cxf-osgi" version="${version}">
         <feature version="${version}">cxf-osgi</feature>
         <bundle>mvn:org.apache.servicemix.examples/cxf-osgi/${version}</bundle>
+    </feature>
+    <feature name="examples-cxf-jaxrs" version="${version}">
+        <feature version="${version}">cxf-jaxrs</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs/${version}</bundle>
     </feature>
     <feature name="examples-cxf-nmr" version="${version}">
         <feature version="${version}">cxf-nmr</feature>
