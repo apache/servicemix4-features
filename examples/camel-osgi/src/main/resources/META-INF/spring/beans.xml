@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
@@ -29,6 +29,9 @@
        http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
 
   <osgi:camelContext xmlns="http://activemq.apache.org/camel/schema/spring">
+    <!-- install the Java DSL route builder -->
+    <package>org.apache.servicemix.examples.camel</package>
+    <!-- install the route which is defined with xml tags -->
     <route>
       <from uri="timer://myTimer?fixedRate=true&amp;period=2000"/>
       <bean ref="myTransform" method="transform"/>

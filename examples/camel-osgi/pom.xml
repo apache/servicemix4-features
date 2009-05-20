@@ -40,6 +40,11 @@
             <version>${commons.logging.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>${camel.version}</version>  
+        </dependency>
     </dependencies>
 
     <build>

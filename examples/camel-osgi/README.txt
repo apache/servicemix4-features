@@ -48,8 +48,8 @@ Testing the example
 Once the example feature is installed, periodic events are routed to the
 transform method of the MyTransform class which prints output to the 
 console: 
-
 >>>> MyTransform set body:  Tue Jun 10 16:56:47 NDT 2008
+>>>> JavaDSL set body: Tue Jun 10 16:56:47 NDT 2008
 
 You can view the route configuration in META-INF/spring/beans.xml.
 
@@ -65,12 +65,18 @@ placeholder in the beans.xml from console.
 Edit the org.apache.servicemix.examples.cfg in this folder, change the
 value of key "prefix" whatever you want(for example YourTransform), then in
 the console 
-optional/exec "cp
+exec cp
 $YOUR_SERVICEMIX_HOME/examples/camel-osgi/org.apache.servicemix.examples.cfg
-$YOUR_SERVICEMIX_HOME/etc" 
+$YOUR_SERVICEMIX_HOME/etc
+
+For Windows user, if you don't install the cigwin, you may need to change the cp command to xcopy or cmd /c copy.
+exec xcopy
+%YOUR_SERVICEMIX_HOME%\\examples\\camel-osgi\\org.apache.servicemix.examples.cfg %YOUR_SERVICEMIX_HOME%\\etc
+ 
 And then stop and start the bundle of this example which name is "Apache ServiceMix Example :: Camel OSGi", you can use "osgi list"to get this bundle id.
 Then you should find the prefix of the output should like
 >>>> YourTransform set body:  Tue Jun 10 16:56:47 NDT 2008
+>>>> JavaDSL set body: Tue Jun 10 16:56:47 NDT 2008
 
 How does it work?
 -----------------
@@ -79,7 +85,7 @@ The installation leverages ServiceMix Kernel by installing what's called
 'features'. You can see the features definition file using the following
 command inside the ServiceMix console:
 
-optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
 
 The list of available features can be obtained using:
 
