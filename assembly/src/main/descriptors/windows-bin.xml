@@ -102,6 +102,9 @@
               <exclude>**/cxf-ws-addressing/**</exclude>
               <exclude>**/wsdl-first/**</exclude>
               <exclude>**/loan-broker-bpel/**</exclude>
+              <exclude>**/.classpath</exclude>
+              <exclude>**/.project</exclude>
+              <exclude>**/.settings/**</exclude>
           </excludes>
       </fileSet>
 
