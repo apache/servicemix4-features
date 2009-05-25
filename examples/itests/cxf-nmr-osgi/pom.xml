@@ -23,14 +23,14 @@
 
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
-        <artifactId>examples</artifactId>
+        <artifactId>org.apache.servicemix.examples.itests</artifactId>
         <version>4.1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>cxf-nmr-osgi</artifactId>
+    <artifactId>org.apache.servicemix.examples.itests.cxf-nmr-osgi</artifactId>
     <packaging>bundle</packaging>
-    <name>Apache ServiceMix Example :: CXF NMR transport OSGi</name>
+    <name>Apache ServiceMix Example ITESTS BUNDLE:: CXF NMR transport OSGi</name>
 
     <dependencies>
         <dependency>

@@ -129,13 +129,13 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.spring"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
             getBundle("org.apache.servicemix.document", "org.apache.servicemix.document"),
-            getBundle("org.apache.servicemix.examples", "cxf-http-osgi"),
-            getBundle("org.apache.servicemix.examples", "cxf-jms-osgi"),
-            getBundle("org.apache.servicemix.examples", "cxf-soap-handler-osgi"),
-            getBundle("org.apache.servicemix.examples", "cxf-handler-cfg"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-http-osgi"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-jms-osgi"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-soap-handler-osgi"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-handler-cfg"),
             getBundle("org.apache.servicemix.examples", "cxf-ws-addressing"),
             getBundle("org.apache.servicemix.examples", "cxf-jaxrs"),
-            getBundle("org.apache.servicemix.examples", "cxf-nmr-osgi"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-nmr-osgi"),
         };
 	}
 
@@ -147,7 +147,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
 
     public void testHttpOsgi() throws Exception {
         Thread.sleep(5000);
-        waitOnContextCreation("cxf-http-osgi");
+        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-http-osgi");
         Thread.sleep(5000);
 
         ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
@@ -163,7 +163,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
     
     public void testJmsOsgi() throws Exception {
         Thread.sleep(5000);
-        waitOnContextCreation("cxf-jms-osgi");
+        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-jms-osgi");
         Thread.sleep(5000);
 
         ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
@@ -179,7 +179,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
     
     public void testNMROsgi() throws Exception {
         Thread.sleep(5000);
-        waitOnContextCreation("cxf-nmr-osgi");
+        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-nmr-osgi");
         Thread.sleep(5000);
         NMR nmr = getOsgiService(NMR.class);
         assertNotNull(nmr);
@@ -218,7 +218,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
 
     public void testSoapHandlerOsgi() throws Exception {
         Thread.sleep(5000);
-        waitOnContextCreation("cxf-soap-handler-osgi");
+        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-soap-handler-osgi");
         Thread.sleep(5000);
 
         ServiceReference ref = bundleContext.getServiceReference(org.apache.handlers.AddNumbers.class.getName());
@@ -235,7 +235,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
 
      public void testSpringConfigHandlerOsgi() throws Exception {
          Thread.sleep(5000);
-         waitOnContextCreation("cxf-handler-cfg");
+         waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-handler-cfg");
          Thread.sleep(5000);
 
          ServiceReference ref = bundleContext.getServiceReference(org.apache.springcfg.handlers.AddNumbers.class.getName());
