@@ -28,25 +28,15 @@
     </parent>
 
     <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
-    <artifactId>bridge-camel-sa</artifactId>
-    <packaging>jbi-service-assembly</packaging>
-    <name>ServiceMix :: Examples :: Bridge :: Camel :: SA</name>
+    <artifactId>bridge-http-su</artifactId>
+    <packaging>jbi-service-unit</packaging>
+    <name>ServiceMix :: Samples :: Bridge Camel:: HTTP</name>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
-            <artifactId>bridge-http-su</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
-            <artifactId>bridge-camel-su</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
-            <artifactId>bridge-jms-su</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-http</artifactId>
+            <version>${servicemix-http-version}</version>
         </dependency>
     </dependencies>
 
@@ -55,6 +45,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
+                <version>${servicemix-jbi-plugin-version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

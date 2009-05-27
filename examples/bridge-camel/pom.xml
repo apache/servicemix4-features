@@ -33,6 +33,8 @@
     <packaging>pom</packaging>
     
     <modules>
+      <module>bridge-jms-su</module>
+      <module>bridge-http-su</module>
       <module>bridge-camel-su</module>
       <module>bridge-camel-sa</module>
       <module>client</module>
