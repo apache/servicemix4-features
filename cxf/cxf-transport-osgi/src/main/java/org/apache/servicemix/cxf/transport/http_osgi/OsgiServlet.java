@@ -180,9 +180,9 @@ public class OsgiServlet extends HttpServlet {
                             }
                         }
                     }
+                } else {
+                    invokeDestination(request, res, d);
                 }
-
-                invokeDestination(request, res, d);
             }
         } catch (IOException e) {
             throw new ServletException(e);
@@ -244,7 +244,7 @@ public class OsgiServlet extends HttpServlet {
         }
 
         try {
-            MessageImpl inMessage = new MessageImpl();
+            MessageImpl inMessage = createInMessage();
             inMessage.setContent(InputStream.class, request.getInputStream());
             inMessage.put(AbstractHTTPDestination.HTTP_REQUEST, request);
             inMessage.put(AbstractHTTPDestination.HTTP_RESPONSE, response);
@@ -284,7 +284,7 @@ public class OsgiServlet extends HttpServlet {
             inMessage.put(Message.ENCODING, normalizedEncoding);
             SSLUtils.propogateSecureSession(request, inMessage);
 
-            ExchangeImpl exchange = new ExchangeImpl();
+            ExchangeImpl exchange = createExchange();
             exchange.setInMessage(inMessage);
             exchange.setSession(new HTTPSession(request));
 
@@ -293,5 +293,13 @@ public class OsgiServlet extends HttpServlet {
             throw new ServletException(e);
         }
 
+    }
+
+    protected MessageImpl createInMessage() {
+       return new MessageImpl();
+    }
+
+    protected ExchangeImpl createExchange() {
+       return new ExchangeImpl();
     }
 }
