@@ -58,7 +58,7 @@ public class CxfMessageTest extends SpringTestSupport {
 
     protected void startService() {
      	Object implementor = new PersonImpl();
-        String address = "http://localhost:9000/PersonService/";
+        String address = "http://localhost:19000/PersonService/";
         Endpoint.publish(address, implementor);
     }
     

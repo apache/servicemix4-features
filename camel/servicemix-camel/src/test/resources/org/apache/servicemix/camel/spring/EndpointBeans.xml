@@ -26,7 +26,7 @@
     ">
 
   
-  <cxf:cxfEndpoint id="routerEndpoint" address="http://localhost:9000/router" 
+  <cxf:cxfEndpoint id="routerEndpoint" address="http://localhost:19000/router" 
                    serviceClass="org.apache.servicemix.camel.nmr.HelloService">
        <cxf:properties>
            <entry key="setDefaultBus" value="true"/>

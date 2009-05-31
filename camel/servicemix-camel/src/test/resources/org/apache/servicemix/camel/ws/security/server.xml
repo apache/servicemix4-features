@@ -36,7 +36,7 @@
         </camelContext>
    </camel:destination>
     
-    <cxf:cxfEndpoint id="routerEndpoint" name="test:TimestampSignEncrypt" address="camel://jetty:http://localhost:9000/SOAPServiceWSSecurity/TimestampSignEncrypt"  serviceClass="org.apache.hello_world_soap_http.Greeter">
+    <cxf:cxfEndpoint id="routerEndpoint" name="test:TimestampSignEncrypt" address="camel://jetty:http://localhost:19000/SOAPServiceWSSecurity/TimestampSignEncrypt"  serviceClass="org.apache.hello_world_soap_http.Greeter">
         <cxf:features>
             <bean class="org.apache.cxf.feature.LoggingFeature"/>
         </cxf:features>

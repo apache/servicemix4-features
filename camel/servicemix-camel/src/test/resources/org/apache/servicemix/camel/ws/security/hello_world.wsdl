@@ -35,7 +35,7 @@
         <wsdl:port 
             name="TimestampSignEncrypt" 
             binding="tns:Greeter_SOAPBinding">
-            <soap:address location="http://localhost:9000/SOAPServiceWSSecurity/TimestampSignEncrypt"/>
+            <soap:address location="http://localhost:19000/SOAPServiceWSSecurity/TimestampSignEncrypt"/>
         </wsdl:port>
     </wsdl:service>
 

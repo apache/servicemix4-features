@@ -21,6 +21,7 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
+import javax.xml.ws.soap.SOAPBinding;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.ContextTestSupport;
@@ -44,7 +45,7 @@ import org.apache.servicemix.nmr.core.ServiceMix;
 
 
 public class ExceptionHandleTest extends ContextTestSupport {
-	protected static final String ROUTER_ADDRESS = "camel://jetty:http://localhost:9000/SoapContext/SoapPort";
+	protected static final String ROUTER_ADDRESS = "camel://jetty:http://localhost:19000/SoapContext/SoapPort";
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.hello_world_soap_http.Greeter";
     private static final String WSDL_LOCATION = "wsdlURL=/wsdl/hello_world.wsdl";
@@ -114,7 +115,10 @@ public class ExceptionHandleTest extends ContextTestSupport {
         assertNotNull(wsdl);
         SOAPService service1 = new SOAPService(wsdl, new QName(
                 "http://apache.org/hello_world_soap_http", "SOAPService"));
-        Greeter greeter = service1.getSoapPort();
+        QName endpoint = new QName("http://apache.org/hello_world_soap_http", "SoapPort");
+        service1.addPort(endpoint, 
+                SOAPBinding.SOAP12HTTP_BINDING, "http://localhost:19000/SoapContext/SoapPort");
+        Greeter greeter = service1.getPort(endpoint, Greeter.class);
         ClientProxy.getClient(greeter).getInInterceptors().add(new LoggingInInterceptor());
         ClientProxy.getClient(greeter).getOutInterceptors().add(new LoggingOutInterceptor());
         String ret = greeter.sayHi();
@@ -150,7 +154,10 @@ public class ExceptionHandleTest extends ContextTestSupport {
         assertNotNull(wsdl);
         SOAPService service1 = new SOAPService(wsdl, new QName(
                 "http://apache.org/hello_world_soap_http", "SOAPService"));
-        Greeter greeter = service1.getSoapPort();
+        QName endpoint = new QName("http://apache.org/hello_world_soap_http", "SoapPort");
+        service1.addPort(endpoint, 
+                SOAPBinding.SOAP12HTTP_BINDING, "http://localhost:19000/SoapContext/SoapPort");
+        Greeter greeter = service1.getPort(endpoint, Greeter.class);
         ClientProxy.getClient(greeter).getInInterceptors().add(new LoggingInInterceptor());
         ClientProxy.getClient(greeter).getOutInterceptors().add(new LoggingOutInterceptor());
         greeter.greetMeOneWay("test oneway");

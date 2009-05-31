@@ -30,7 +30,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class SmxToCxfTest extends SpringTestSupport {
-    protected static final String ROUTER_ADDRESS = "http://localhost:9000/router";
+    protected static final String ROUTER_ADDRESS = "http://localhost:19000/router";
     protected static final String SERVICE_ADDRESS = "local://smx/helloworld";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.servicemix.camel.nmr.HelloService";
     

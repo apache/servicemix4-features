@@ -33,7 +33,7 @@
                    xmlns:person="http://servicemix.apache.org/samples/wsdl-first"/>
   
     
-  <cxf:cxfEndpoint id="serviceEndpoint" address="http://localhost:9000/PersonService/" 
+  <cxf:cxfEndpoint id="serviceEndpoint" address="http://localhost:19000/PersonService/" 
                    serviceClass="org.apache.servicemix.samples.wsdl_first.Person"
                    endpointName="person:soap"
                    serviceName="person:PersonService"
