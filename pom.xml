@@ -151,6 +151,7 @@
       <mina.original.version>1.1.6</mina.original.version>
       <neethi.version>2.0.4_1</neethi.version>
       <ognl.version>2.7.3_1</ognl.version>
+      <easymock.version>2.4</easymock.version>
       <oscache.version>2.4_1</oscache.version>
       <oscore.version>2.2.4_1</oscore.version>
       <osworkflow.version>2.7.0_1</osworkflow.version>
@@ -553,6 +554,11 @@
           <groupId>org.apache.xbean</groupId>
           <artifactId>xbean-spring</artifactId>
           <version>${xbean.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.easymock</groupId>
+          <artifactId>easymock</artifactId>
+          <version>${easymock.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
