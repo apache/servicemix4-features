@@ -24,7 +24,7 @@
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   xmlns:jms="http://cxf.apache.org/transports/jms"
-                  xmlns:nmr="http://cxf.apache.org/transports/nmr">
+                  xmlns:nmr="http://cxf.servicemix.apache.org/transport/nmr">
     <wsdl:types>
         <xsd:schema attributeFormDefault="unqualified" 
                     elementFormDefault="unqualified" 

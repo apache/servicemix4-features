@@ -47,7 +47,7 @@ import org.apache.servicemix.nmr.api.ServiceMixException;
 public class NMRTransportFactory extends AbstractTransportFactory implements ConduitInitiator,
     DestinationFactory {
     
-    public static final String TRANSPORT_ID = "http://cxf.apache.org/transports/nmr";
+    public static final String TRANSPORT_ID = "http://cxf.servicemix.apache.org/transport/nmr";
     
     private static final Logger LOG = LogUtils.getL7dLogger(NMRTransportFactory.class);
 

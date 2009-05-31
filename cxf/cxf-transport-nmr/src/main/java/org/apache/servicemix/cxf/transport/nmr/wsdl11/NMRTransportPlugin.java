@@ -26,7 +26,7 @@ import javax.wsdl.WSDLException;
 import javax.wsdl.extensions.ExtensibilityElement;
 import javax.xml.namespace.QName;
 
-import org.apache.cxf.transports.nmr.AddressType;
+import org.apache.servicemix.cxf.transport.nmr.AddressType;
 import org.apache.cxf.wsdl.AbstractWSDLPlugin;
 import org.apache.servicemix.cxf.transport.nmr.NMRTransportFactory;
 

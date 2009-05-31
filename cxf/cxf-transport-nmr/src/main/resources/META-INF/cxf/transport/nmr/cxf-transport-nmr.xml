@@ -33,8 +33,8 @@ http://www.springframework.org/schema/osgi  http://www.springframework.org/schem
         </property>
         <property name="transportIds">
             <list>
-                <value>http://cxf.apache.org/transports/nmr</value>
-                <value>http://cxf.apache.org/transports/nmr/configuration</value>
+                <value>http://cxf.servicemix.apache.org/transport/nmr</value>
+                <value>http://cxf.servicemix.apache.org/transport/nmr/configuration</value>
             </list>
         </property>
     </bean>
