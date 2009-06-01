@@ -19,13 +19,24 @@
 
 package org.apache.servicemix.cxf.transport.nmr;
 
+import java.io.ByteArrayInputStream;
 import java.util.logging.Logger;
+
+import javax.xml.namespace.QName;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.message.Exchange;
 import org.apache.cxf.message.ExchangeImpl;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.message.MessageImpl;
+import org.apache.cxf.service.model.EndpointInfo;
+import org.apache.cxf.service.model.InterfaceInfo;
+import org.apache.cxf.service.model.ServiceInfo;
+import org.apache.cxf.transport.MessageObserver;
 import org.apache.servicemix.nmr.api.Channel;
+import org.apache.servicemix.nmr.api.EndpointRegistry;
 import org.easymock.EasyMock;
 
 
@@ -74,5 +85,53 @@ public class NMRDestinationTest extends AbstractJBITest {
         
         //Verify send method was called.
         EasyMock.verify(channel);
+    }
+    
+    
+    @Test
+    public void testNMRDestination() throws Exception {
+        EndpointInfo ei = new EndpointInfo();
+        ei.setAddress("nmr://dumy");
+        ei.setName(new QName("http://test", "endpoint"));
+        ServiceInfo si = new ServiceInfo();
+        si.setName(new QName("http://test", "service"));
+        InterfaceInfo interInfo = new InterfaceInfo(si, new QName("http://test", "interface"));
+        si.setInterface(interInfo);
+        ei.setService(si);
+        org.apache.servicemix.nmr.api.NMR nmr = control.createMock(org.apache.servicemix.nmr.api.NMR.class);
+        nmrTransportFactory.setNmr(nmr);
+        NMRDestination destination = (NMRDestination) nmrTransportFactory.getDestination(ei);
+        assertNotNull(destination);
+        String destName = ei.getService().getName().toString()
+        + ei.getInterface().getName().toString();
+        try {
+            nmrTransportFactory.putDestination(destName, destination);
+            fail();
+        } catch (Exception e) {
+            //should catch exception here since try put duplicated destination  
+        }
+        assertEquals(destination, nmrTransportFactory.getDestination(destName));
+        nmrTransportFactory.removeDestination(destName);
+        nmrTransportFactory.putDestination(destName, destination);
+        
+        org.apache.servicemix.nmr.api.Exchange xchg = control.createMock(org.apache.servicemix.nmr.api.Exchange.class);
+        org.apache.servicemix.nmr.api.Message inMsg = control.createMock(org.apache.servicemix.nmr.api.Message.class);
+        EasyMock.expect(xchg.getIn()).andReturn(inMsg);
+                
+        Source source = new StreamSource(new ByteArrayInputStream(
+                            "<message>TestHelloWorld</message>".getBytes()));
+        EasyMock.expect(inMsg.getBody(Source.class)).andReturn(source);
+        EndpointRegistry endpoints = control.createMock(EndpointRegistry.class);
+        EasyMock.expect(nmr.getEndpointRegistry()).andReturn(endpoints);
+        EasyMock.expect(nmrTransportFactory.getNmr().getEndpointRegistry()).andReturn(endpoints);
+        control.replay();
+        observer = new MessageObserver() {
+            public void onMessage(Message m) {                    
+                inMessage = m;
+            }
+        };
+        destination.setMessageObserver(observer);
+        destination.process(xchg);
+        assertNotNull(inMessage);
     }
 }

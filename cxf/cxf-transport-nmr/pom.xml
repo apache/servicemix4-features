@@ -173,6 +173,21 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- exclude generated class from Cobertura reports -->
+            <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>cobertura-maven-plugin</artifactId>
+               <configuration>
+                   <instrumentation>
+                       <excludes>
+                           <exclude>org/apache/servicemix/cxf/transport/nmr/ObjectFactory.class</exclude>
+                           <exclude>org/apache/servicemix/cxf/transport/nmr/package-info.class</exclude>
+                           <exclude>org/apache/servicemix/cxf/transport/nmr/AddressType.class</exclude>
+                       </excludes>
+                   </instrumentation>
+               </configuration>
+           </plugin>
+
         </plugins>
     </build>
 

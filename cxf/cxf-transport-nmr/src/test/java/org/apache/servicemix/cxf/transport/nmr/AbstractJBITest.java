@@ -49,11 +49,16 @@ public abstract class AbstractJBITest extends Assert {
     protected Message inMessage;
     protected IMocksControl control;
     protected NMR nmr;
+    protected NMRTransportFactory nmrTransportFactory;
+    
     @Before
     public void setUp() {
         BusFactory bf = BusFactory.newInstance();
         bus = bf.createBus();
         BusFactory.setDefaultBus(bus);
+        nmrTransportFactory = new NMRTransportFactory();
+        nmrTransportFactory.setBus(bus);
+        nmrTransportFactory.registerWithBindingManager();
         control = EasyMock.createNiceControl();
     }
     
@@ -66,14 +71,16 @@ public abstract class AbstractJBITest extends Assert {
         
     }
     
-    protected NMRConduit setupJBIConduit(boolean send, boolean decoupled) {
+    protected NMRConduit setupJBIConduit(boolean send, boolean decoupled) throws IOException {
         if (decoupled) {
             // setup the reference type
         } else {
             target = control.createMock(EndpointReferenceType.class);
         }    
         nmr = control.createMock(NMR.class);
-        NMRConduit jbiConduit = new NMRConduit(bus, target, nmr);
+        nmrTransportFactory.setNmr(nmr);
+        //NMRConduit jbiConduit = new NMRConduit(bus, target, nmr);
+        NMRConduit jbiConduit = (NMRConduit) nmrTransportFactory.getConduit(null, target);
         
         if (send) {
             // setMessageObserver
@@ -99,7 +106,7 @@ public abstract class AbstractJBITest extends Assert {
         try {
             conduit.prepare(message);
         } catch (IOException ex) {
-            assertFalse("JMSConduit can't perpare to send out message", false);
+            assertFalse("NMRConduit can't perpare to send out message", false);
             ex.printStackTrace();            
         }            
         OutputStream os = message.getContent(OutputStream.class);
