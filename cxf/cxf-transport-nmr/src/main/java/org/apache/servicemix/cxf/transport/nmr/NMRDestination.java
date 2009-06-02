@@ -85,7 +85,8 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
      * @return the inbuilt backchannel
      */
     protected Conduit getInbuiltBackChannel(Message inMessage) {
-        return null;
+        return new BackChannelConduit(EndpointReferenceUtils.getAnonymousEndpointReference(),
+                                      inMessage);
     }
     
     public void shutdown() {
@@ -119,5 +120,43 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             throw new ServiceMixException(ex);
         }
     }
-   
+
+
+    protected class BackChannelConduit extends AbstractConduit {
+        
+        protected Message inMessage;
+        protected NMRDestination nmrDestination;
+                
+        BackChannelConduit(EndpointReferenceType ref, Message message) {
+            super(ref);
+            inMessage = message;
+        }
+        
+        /**
+         * Register a message observer for incoming messages.
+         * 
+         * @param observer the observer to notify on receipt of incoming
+         */
+        public void setMessageObserver(MessageObserver observer) {
+            // shouldn't be called for a back channel conduit
+        }
+
+        /**
+         * Send an outbound message, assumed to contain all the name-value
+         * mappings of the corresponding input message (if any). 
+         * 
+         * @param message the message to be sent.
+         */
+        public void prepare(Message message) throws IOException {
+            // setup the message to be send back
+            Channel dc = channel;
+            message.put(Exchange.class, inMessage.get(Exchange.class));
+            message.setContent(OutputStream.class, new NMRDestinationOutputStream(inMessage, dc));
+        }        
+
+        protected Logger getLogger() {
+            return LOG;
+        }
+    }
+    
 }
