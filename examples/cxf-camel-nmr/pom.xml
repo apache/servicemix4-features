@@ -68,7 +68,7 @@
                           org.springframework.beans.factory.config, *
                         </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxfcamel</Private-Package>
-                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

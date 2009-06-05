@@ -78,7 +78,7 @@
                                 org.springframework.beans.factory.config,
                                 org.apache.servicemix.examples.cxf.jaxrs
                         </Import-Package>
-                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                         <Export-Package>org.apache.servicemix.examples.cxf.jaxrs
                         </Export-Package>
                         <DynamicImport-Package>javax.ws.rs.*</DynamicImport-Package>

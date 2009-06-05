@@ -106,7 +106,7 @@
                             javax.jms
                         </Import-Package>
                         <Export-Package>org.apache.servicemix.examples.cxf</Export-Package>
-                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

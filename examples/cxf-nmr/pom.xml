@@ -57,7 +57,7 @@
                            org.apache.servicemix.nmr.api,org.apache.servicemix.nmr.api.event,org.apache.servicemix.nmr.api.internal
                         </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxf</Private-Package>
-                        <Require-Bundle>org.apache.cxf.cxf-bundle</Require-Bundle>
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

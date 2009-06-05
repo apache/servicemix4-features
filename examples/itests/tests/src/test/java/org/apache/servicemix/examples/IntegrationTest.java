@@ -301,7 +301,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
         in.close();
         bos.close();
         System.out.println(bos.toString());
-        assertEquals("{\"Customer\":{\"id\":123,\"name\":\"John\"}}",
+        assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Customer><id>123</id><name>John</name></Customer>",
                      bos.toString());
     }
 }
