@@ -50,7 +50,8 @@ public class NMROperationInInterceptor extends AbstractPhaseInterceptor<NMRMessa
         Exchange ex = message.getExchange();
         Endpoint ep = ex.get(Endpoint.class);
         BindingOperationInfo boi = ex.get(BindingOperationInfo.class);
-        if (boi == null && message.getNmrExchange().getOperation() != null) {
+        if (boi == null && message.getNmrExchange()!= null 
+                && message.getNmrExchange().getOperation() != null) {
             BindingInfo service = ep.getEndpointInfo().getBinding();
             boi = getBindingOperationInfo(service, message.getNmrExchange().getOperation());
             if (boi == null) {
