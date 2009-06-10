@@ -42,6 +42,7 @@
         <module>cxf-camel-nmr</module>
         <module>cxf-nmr</module>
         <module>cxf-osgi</module>
+        <module>cxf-ws-addressing</module>
     </modules>
 
 </project>

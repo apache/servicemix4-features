@@ -110,7 +110,6 @@
                 <exclude>**/cxf-nmr-osgi/**</exclude>
                 <exclude>**/cxf-handler-cfg/**</exclude>
                 <exclude>**/cxf-soap-handler-osgi/**</exclude>
-                <exclude>**/cxf-ws-addressing/**</exclude>
                 <exclude>**/wsdl-first/**</exclude>
                 <exclude>**/loan-broker-bpel/**</exclude>
                 <exclude>**/.classpath</exclude>
@@ -153,6 +152,12 @@
         <file>
             <source>${basedir}/../examples/bridge/README.txt</source>
             <outputDirectory>/examples/bridge</outputDirectory>
+            <filtered>true</filtered>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/../examples/cxf-ws-addressing/README.txt</source>
+            <outputDirectory>/examples/cxf-ws-addressing</outputDirectory>
             <filtered>true</filtered>
             <lineEnding>unix</lineEnding>
         </file>
