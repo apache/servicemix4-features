@@ -72,7 +72,7 @@
     <bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
     <!-- We are adding the interceptors to the bus as we will have only one endpoint/service/bus. -->
 
-    <bean id="cxf" class="org.apache.cxf.bus.CXFBusImpl">
+    <!--bean id="cxf" class="org.apache.cxf.bus.CXFBusImpl">
         <property name="inInterceptors">
             <list>
                 <ref bean="mapAggregator"/>
@@ -98,7 +98,12 @@
                 <ref bean="mapCodec"/>
             </list>
         </property>
-    </bean>
+    </bean-->
+    <cxf:bus>
+        <cxf:features>
+            <wsa:addressing/>
+        </cxf:features>
+    </cxf:bus>
 
       
 </beans>

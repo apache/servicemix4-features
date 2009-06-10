@@ -151,6 +151,12 @@
               <lineEnding>dos</lineEnding>
         </file>
         <file>
+              <source>${basedir}/../examples/cxf-jaxrs/README.txt</source>
+              <outputDirectory>/examples/cxf-jaxrs</outputDirectory>
+              <filtered>true</filtered>
+              <lineEnding>dos</lineEnding>
+        </file>
+        <file>
               <source>${basedir}/../examples/bridge-camel/README.txt</source>
               <outputDirectory>/examples/bridge-camel</outputDirectory>
               <filtered>true</filtered>

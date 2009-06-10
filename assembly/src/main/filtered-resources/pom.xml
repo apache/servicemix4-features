@@ -43,6 +43,7 @@
         <module>cxf-nmr</module>
         <module>cxf-osgi</module>
         <module>cxf-ws-addressing</module>
+        <module>cxf-jaxrs</module>
     </modules>
 
 </project>
