@@ -44,6 +44,7 @@
         <module>cxf-osgi</module>
         <module>cxf-ws-addressing</module>
         <module>cxf-jaxrs</module>
+        <module>cxf-wsdl-first-osgi-package</module>
     </modules>
 
 </project>

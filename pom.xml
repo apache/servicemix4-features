@@ -195,8 +195,8 @@
       <servicemix-saxon-version>2009.01</servicemix-saxon-version>
       <servicemix-truezip-version>2009.01</servicemix-truezip-version>
       <servicemix-camel-version>2009.01</servicemix-camel-version>
-      <servicemix-cxf-bc-version>2009.01</servicemix-cxf-bc-version>
-      <servicemix-cxf-se-version>2009.01</servicemix-cxf-se-version>
+      <servicemix-cxf-bc-version>2009.02-SNAPSHOT</servicemix-cxf-bc-version>
+      <servicemix-cxf-se-version>2009.02-SNAPSHOT</servicemix-cxf-se-version>
       <servicemix-drools-version>2009.01</servicemix-drools-version>
       <servicemix-file-version>2009.01</servicemix-file-version>
       <servicemix-snmp-version>2009.01</servicemix-snmp-version>

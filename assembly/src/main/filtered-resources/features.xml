@@ -153,6 +153,12 @@
         <feature>cxf-osgi</feature>
         <bundle>mvn:org.apache.servicemix.examples/cxf-ws-addressing/${version}</bundle>
     </feature>
+    <feature name="example-cxf-wsdl-first-osgi-package" version="${version}">
+        <feature version="${servicemix-cxf-bc-version}">servicemix-cxf-bc</feature>
+        <feature version="${servicemix-cxf-se-version}">servicemix-cxf-se</feature>
+        <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfbc-bundle/${version}</bundle>
+        <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfse-bundle/${version}</bundle>
+    </feature>
     <!--
       -
       -  JBI Components
