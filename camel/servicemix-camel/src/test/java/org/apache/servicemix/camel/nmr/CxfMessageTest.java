@@ -30,7 +30,6 @@ import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.servicemix.samples.wsdl_first.Person;
-import org.apache.servicemix.samples.wsdl_first.PersonImpl;
 import org.apache.servicemix.samples.wsdl_first.PersonService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

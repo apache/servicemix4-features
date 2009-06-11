@@ -14,10 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.samples.wsdl_first;
+package org.apache.servicemix.camel.nmr;
 
 import javax.jws.WebService;
 import javax.xml.ws.Holder;
+
+import org.apache.servicemix.samples.wsdl_first.Person;
+import org.apache.servicemix.samples.wsdl_first.UnknownPersonFault;
 
 @WebService(serviceName = "PersonService",
         targetNamespace = "http://servicemix.apache.org/samples/wsdl-first",
