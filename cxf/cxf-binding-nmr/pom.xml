@@ -181,4 +181,70 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+      <id>ibmjdk</id>
+      <activation>
+        <property>
+          <name>java.vendor</name>
+          <value>IBM Corporation</value>
+        </property>
+      </activation>
+      <!--
+        Add the Sun jaxp-ri as a dependency when using the ibm jdk, so that
+        cxf's dependency on the Sun saaj can work with the ibm jdk.
+      -->
+      <dependencies>
+        <dependency>
+          <groupId>com.sun.xml.parsers</groupId>
+          <artifactId>jaxp-ri</artifactId>
+          <version>1.4.2</version>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <includes>
+                <include>**/*Test*</include>
+              </includes>
+              <excludes>
+                <exclude>**/*$*</exclude>
+              </excludes>
+              <forkMode>${surefire.fork.mode}</forkMode>
+              <systemProperties>
+                <property>
+                  <name>derby.system.home</name>
+                  <value>${basedir}/target/derby</value>
+                </property>
+                <!--
+                  With Maven 2.0.7, it's possible that jaxp-ri will be placed
+                  in front of woodstox on the classpath. If this happens, cxf
+                  will not use woodstox, causing test failures (e.g.,
+                  CxfBcProviderConsumerMtomTest). So, set these properties to
+                  ensure woodstox is used.  Maven 2.0.9 doesn't require this
+                  work-around since it consistently places jaxp-ri at the end
+                  of the dependencies.
+                -->
+                <property>
+                  <name>javax.xml.stream.XMLInputFactory</name>
+                  <value>com.ctc.wstx.stax.WstxInputFactory</value>
+                </property>
+                <property>
+                  <name>javax.xml.stream.XMLOutputFactory</name>
+                  <value>com.ctc.wstx.stax.WstxOutputFactory</value>
+                </property>
+              </systemProperties>
+            </configuration>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    </profiles>
+
+
 </project>
