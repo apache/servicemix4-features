@@ -238,7 +238,7 @@
          </plugins>
     </build>
 
-    <!-- IBM JDK java security properties configuration. -->
+    <!-- IBM JDK configuration. -->
     <profiles>
             <profile>
                     <id>ibmjdk</id>
@@ -250,17 +250,6 @@
                     </activation>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <includes>
-                                    <include>**/*Test*</include>
-                            </includes>
-                            <forkMode>pertest</forkMode>
-                            <argLine>-Djava.security.properties==${basedir}/src/test/resources/ibm.jdk15.security</argLine>
-                        </configuration>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.cxf</groupId>
                         <artifactId>cxf-codegen-plugin</artifactId>
