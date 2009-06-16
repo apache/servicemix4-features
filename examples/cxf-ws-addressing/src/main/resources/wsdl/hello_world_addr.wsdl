@@ -166,7 +166,7 @@
     </wsdl:binding>
     <wsdl:service name="SOAPService">
         <wsdl:port binding="tns:Greeter_SOAPBinding" name="SoapPort">
-            <soap:address location="http://localhost:8080/cxf/SoapContext/SoapPort"/>
+            <soap:address location="http://localhost:8181/cxf/SoapContext/SoapPort"/>
             <wswa:UsingAddressing xmlns:wswa="http://www.w3.org/2005/02/addressing/wsdl"/>
         </wsdl:port>
     </wsdl:service>

@@ -47,13 +47,13 @@ is displayed to the console.
 
 Now, just open your browser and go to the following url:
 
-  http://localhost:8080/cxf/SoapContext/SoapPort?wsdl
+  http://localhost:8181/cxf/SoapContext/SoapPort?wsdl
 
 It should display the WSDL of the service (if you use Safari, make sure to
 right click the window and select 'Show Source', else the page will be blank).
 Or you can also test it from ServiceMix console using"
 
-  optional/cat http://localhost:8080/cxf/SoapContext/SoapPort?wsdl
+  optional/cat http://localhost:8181/cxf/SoapContext/SoapPort?wsdl
 
 You can also open the client.html page in a browser to try sending a request
 to the service.

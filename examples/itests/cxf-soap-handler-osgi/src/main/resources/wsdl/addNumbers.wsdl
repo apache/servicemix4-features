@@ -90,7 +90,7 @@
     </binding>
     <service name="AddNumbersService">
         <port name="AddNumbersPort" binding="tns:AddNumbersBinding">
-            <soap:address location="http://localhost:8080/cxf/SoapHandler" />
+            <soap:address location="http://localhost:8181/cxf/SoapHandler" />
         </port>
     </service>
 </definitions>

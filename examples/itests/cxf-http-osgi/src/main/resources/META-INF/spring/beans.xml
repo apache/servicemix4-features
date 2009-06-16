@@ -49,7 +49,7 @@
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"
         xmlns:s="http://cxf.examples.servicemix.apache.org/"
      	wsdlLocation="wsdl/hello_world.wsdl"
-     	address="http://localhost:8080/cxf/HelloWorld"/>   
+     	address="http://localhost:8181/cxf/HelloWorld"/>   
  
     <osgi:service id="testHelloWorld" ref="client"
         interface="org.apache.servicemix.examples.cxf.HelloWorld"/>

@@ -73,7 +73,7 @@
     </wsdl:binding>
     <wsdl:service name="HelloWorldImplService">
         <wsdl:port binding="tns:HelloWorldImplServiceSoapBinding" name="HelloWorldImplPort">
-            <soap:address location="http://localhost:8080/cxf/HelloWorld" />
+            <soap:address location="http://localhost:8181/cxf/HelloWorld" />
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

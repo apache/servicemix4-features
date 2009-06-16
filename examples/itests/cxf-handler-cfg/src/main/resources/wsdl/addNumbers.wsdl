@@ -90,7 +90,7 @@
     </binding>
     <service name="AddNumbersService">
         <port name="AddNumbersPort" binding="tns:AddNumbersBinding">
-            <soap:address location="http://localhost:8080/cxf/SpringConfigHandler" />
+            <soap:address location="http://localhost:8181/cxf/SpringConfigHandler" />
         </port>
     </service>
 </definitions>

@@ -35,7 +35,7 @@ public class Client{
     }
     
     public void sendRequest() throws Exception {
-        URLConnection connection = new URL("http://localhost:8080/cxf/HelloWorld")
+        URLConnection connection = new URL("http://localhost:8181/cxf/HelloWorld")
                 .openConnection();
         connection.setDoInput(true);
         connection.setDoOutput(true);
