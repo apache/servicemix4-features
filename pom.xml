@@ -59,7 +59,7 @@
   </prerequisites>
 
   <properties>
-      <maven.assembly.version>2.2-beta-2</maven.assembly.version>
+      <maven.assembly.version>2.2-beta-4</maven.assembly.version>
       <xfire.maven.plugin>4.1</xfire.maven.plugin>
       <abdera.version>0.4.0-incubating_1</abdera.version>
       <activemq.version>5.2.0</activemq.version>
