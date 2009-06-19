@@ -2,7 +2,7 @@
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Header>
       <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:123456789</MessageID>
-      <To xmlns="http://www.w3.org/2005/08/addressing">http://localhost:8181/SoapContext/SoapPort</To>
+      <To xmlns="http://www.w3.org/2005/08/addressing">http://localhost:8080/SoapContext/SoapPort</To>
       <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
          <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
       </ReplyTo>

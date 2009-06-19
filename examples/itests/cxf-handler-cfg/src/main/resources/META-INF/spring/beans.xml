@@ -55,7 +55,7 @@
 	    xmlns:e="http://apache.org/springcfg/handlers"
             xmlns:s="http://apache.org/springcfg/handlers"
      	    wsdlLocation="wsdl/addNumbers.wsdl"
-     	    address="http://localhost:8181/cxf/SpringConfigHandler">
+     	    address="http://localhost:8080/cxf/SpringConfigHandler">
      	    <jaxws:handlers>
 	        <bean class="org.apache.servicemix.examples.cxf.springcfghandler.ModifyNumberHandler"/>
     	    </jaxws:handlers>

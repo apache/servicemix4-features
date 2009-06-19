@@ -290,7 +290,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
         Thread.sleep(5000);
         waitOnContextCreation("cxf-jaxrs");
 
-        URL url = new URL("http://localhost:8181/cxf/crm/customerservice/customers/123");
+        URL url = new URL("http://localhost:8080/cxf/crm/customerservice/customers/123");
         InputStream in = url.openStream();
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();

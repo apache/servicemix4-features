@@ -56,7 +56,7 @@
 	    xmlns:e="http://apache.org/hello_world_soap_http"
             xmlns:s="http://apache.org/hello_world_soap_http"
      	    wsdlLocation="wsdl/hello_world_addr.wsdl"
-     	    address="http://localhost:8181/cxf/SoapContext/SoapPort">
+     	    address="http://localhost:8080/cxf/SoapContext/SoapPort">
      	</jaxws:client>
  
        <osgi:service id="testWSAddressing" ref="client"
