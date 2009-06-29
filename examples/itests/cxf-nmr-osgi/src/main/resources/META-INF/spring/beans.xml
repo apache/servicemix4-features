@@ -33,10 +33,10 @@
 
 	<jaxws:endpoint id="NMREndpoint"
 	    implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
-	    wsdlLocation="wsdl/hello_world.wsdl"
-	    endpointName="e:HelloWorldImplPort"
+            endpointName="e:HelloWorldImplPort"
 	    serviceName="s:HelloWorldImplService"
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"
+            address="nmr:HelloWorld"
         xmlns:s="http://cxf.examples.servicemix.apache.org/">
             <jaxws:features>
                 <bean class="org.apache.cxf.feature.LoggingFeature"/>
@@ -46,11 +46,11 @@
 
     <jaxws:client id="client" 
      	serviceClass="org.apache.servicemix.examples.cxf.HelloWorld"    
-	    endpointName="e:HelloWorldImplPort"
-	    serviceName="s:HelloWorldImplService"
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"
         xmlns:s="http://cxf.examples.servicemix.apache.org/"
-     	wsdlLocation="wsdl/hello_world.wsdl"
+        endpointName="e:HelloWorldImplPort"     
+            serviceName="s:HelloWorldImplService"
+        address="nmr:HelloWorld"
      	>   
         <jaxws:features>
            <bean class="org.apache.cxf.feature.LoggingFeature"/>

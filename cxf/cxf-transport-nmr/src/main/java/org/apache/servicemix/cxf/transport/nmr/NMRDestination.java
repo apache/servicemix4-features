@@ -64,8 +64,8 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             this.properties.put(Endpoint.NAME, info.getName().toString());
         }
         
-        this.properties.put(Endpoint.SERVICE_NAME, info.getService().getName().toString());
-        this.properties.put(Endpoint.INTERFACE_NAME, info.getInterface().getName().toString());
+        this.properties.put(Endpoint.SERVICE_NAME, info.getService().getName());
+        this.properties.put(Endpoint.INTERFACE_NAME, info.getInterface().getName());
     }
 
     public void setChannel(Channel dc) {
