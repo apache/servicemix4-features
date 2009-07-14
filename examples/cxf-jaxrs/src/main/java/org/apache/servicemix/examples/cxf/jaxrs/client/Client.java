@@ -39,14 +39,14 @@ public final class Client {
 
         // Sent HTTP GET request to query customer info
         System.out.println("Sent HTTP GET request to query customer info");
-        URL url = new URL("http://localhost:8080/cxf/crm/customerservice/customers/123");
+        URL url = new URL("http://localhost:8181/cxf/crm/customerservice/customers/123");
         InputStream in = url.openStream();
         System.out.println(getStringFromInputStream(in));
 
         // Sent HTTP GET request to query sub resource product info
         System.out.println("\n");
         System.out.println("Sent HTTP GET request to query sub resource product info");
-        url = new URL("http://localhost:8080/cxf/crm/customerservice/orders/223/products/323");
+        url = new URL("http://localhost:8181/cxf/crm/customerservice/orders/223/products/323");
         in = url.openStream();
         System.out.println(getStringFromInputStream(in));
 
@@ -56,7 +56,7 @@ public final class Client {
         Client client = new Client();
         String inputFile = client.getClass().getResource("update_customer.xml").getFile();
         File input = new File(inputFile);
-        PutMethod put = new PutMethod("http://localhost:8080/cxf/crm/customerservice/customers");
+        PutMethod put = new PutMethod("http://localhost:8181/cxf/crm/customerservice/customers");
         RequestEntity entity = new FileRequestEntity(input, "text/xml; charset=ISO-8859-1");
         put.setRequestEntity(entity);
         HttpClient httpclient = new HttpClient();
@@ -77,7 +77,7 @@ public final class Client {
         System.out.println("Sent HTTP POST request to add customer");
         inputFile = client.getClass().getResource("add_customer.xml").getFile();
         input = new File(inputFile);
-        PostMethod post = new PostMethod("http://localhost:8080/cxf/crm/customerservice/customers");
+        PostMethod post = new PostMethod("http://localhost:8181/cxf/crm/customerservice/customers");
         post.addRequestHeader("Accept" , "text/xml");
         entity = new FileRequestEntity(input, "text/xml; charset=ISO-8859-1");
         post.setRequestEntity(entity);

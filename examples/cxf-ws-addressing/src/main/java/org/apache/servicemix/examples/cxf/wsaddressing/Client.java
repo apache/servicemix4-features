@@ -35,7 +35,7 @@ public class Client{
     }
     
     public void sendRequest() throws Exception {
-        URLConnection connection = new URL("http://localhost:8080/cxf/SoapContext/SoapPort")
+        URLConnection connection = new URL("http://localhost:8181/cxf/SoapContext/SoapPort")
                 .openConnection();
         connection.setDoInput(true);
         connection.setDoOutput(true);

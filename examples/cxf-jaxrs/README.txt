@@ -47,7 +47,7 @@ is displayed to the console.
 
 Now, just open your browser and go to the following url:
 
-  http://localhost:8080/cxf/crm/customerservice/customers/123
+  http://localhost:8181/cxf/crm/customerservice/customers/123
 
 It should display an XML representation for customer 123 (if you use Safari, 
 make sure to right click the window and select 'Show Source', else the page
@@ -55,7 +55,7 @@ will be blank).
 
 Or you can also test it from ServiceMix console using:
 
-  utils/cat http://localhost:8080/cxf/crm/customerservice/customers/123
+  utils/cat http://localhost:8181/cxf/crm/customerservice/customers/123
 
 Or you can launch a programmatic Java client via:
 
@@ -70,16 +70,16 @@ features/<branch>/examples/cxf-jaxrs:
 # Create a customer
 #
 #
-curl -X POST -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/add_customer.xml -H "Content-Type: text/xml" http://localhost:8080/cxf/crm/customerservice/customers
+curl -X POST -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/add_customer.xml -H "Content-Type: text/xml" http://localhost:8181/cxf/crm/customerservice/customers
 
 # Retrieve the customer instance with id 123
 #
-curl http://localhost:8080/cxf/crm/customerservice/customers/123
+curl http://localhost:8181/cxf/crm/customerservice/customers/123
 
 # Update the customer instance with id 123
 #
-curl -X PUT -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/update_customer.xml -H "Content-Type: text/xml" http://localhost:8080/cxf/crm/customerservice/customers
+curl -X PUT -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/update_customer.xml -H "Content-Type: text/xml" http://localhost:8181/cxf/crm/customerservice/customers
 
 # Delete the customer instance with id 123
 #
-curl -X DELETE http://localhost:8079/cxf/crm/customerservice/customers/123
+curl -X DELETE http://localhost:8181/cxf/crm/customerservice/customers/123
