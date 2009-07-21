@@ -943,6 +943,13 @@
                                     <type>tar.gz</type>
                                     <outputDirectory>target/dependencies/unix</outputDirectory>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.servicemix.nmr</groupId>
+                                    <artifactId>apache-servicemix-nmr</artifactId>
+                                    <version>${servicemix.nmr.version}</version>
+                                    <type>tar.gz</type>
+                                    <outputDirectory>target/dependencies/unix</outputDirectory>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
@@ -958,6 +965,13 @@
                                     <groupId>org.apache.servicemix.kernel</groupId>
                                     <artifactId>apache-servicemix-kernel</artifactId>
                                     <version>${servicemix.kernel.version}</version>
+                                    <type>zip</type>
+                                    <outputDirectory>target/dependencies/win</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.servicemix.nmr</groupId>
+                                    <artifactId>apache-servicemix-nmr</artifactId>
+                                    <version>${servicemix.nmr.version}</version>
                                     <type>zip</type>
                                     <outputDirectory>target/dependencies/win</outputDirectory>
                                 </artifactItem>

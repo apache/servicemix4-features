@@ -46,6 +46,13 @@
             <include>**/smx4web/**</include>
           </includes>
       </fileSet>
+      
+      <!-- Copy over ant files -->
+       <fileSet>
+            <directory>target/dependencies/unix/apache-servicemix-nmr-${servicemix.nmr.version}/ant</directory>
+            <outputDirectory>/ant</outputDirectory>
+            <lineEnding>dos</lineEnding>
+       </fileSet>
 
       <!-- Copy license and other files from root -->
       <fileSet>
@@ -69,11 +76,6 @@
           <outputDirectory>/etc/</outputDirectory>
           <lineEnding>dos</lineEnding>
       </fileSet>
-      <fileSet>
-            <directory>src/main/distribution/ant</directory>
-            <outputDirectory>/ant</outputDirectory>
-            <lineEnding>dos</lineEnding>
-        </fileSet>
 
       <!-- Copy over jar files -->
       <fileSet>
