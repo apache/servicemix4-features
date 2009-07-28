@@ -865,6 +865,8 @@
                             <features>
                                 <feature>jbi-cluster</feature>
                                 <feature>web</feature>
+                                <feature>cxf-nmr</feature>
+                                <feature>cxf-osgi</feature>
                                 <!-- ServiceMix components -->
                                 <feature>servicemix-cxf-bc</feature>
                                 <feature>servicemix-file</feature>
