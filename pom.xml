@@ -114,7 +114,6 @@
       <geronimo.wsmetadata.version>1.1.2</geronimo.wsmetadata.version>
       <geronimo.transaction.version>2.2-r634076</geronimo.transaction.version>
       <geronimo.connector.version>2.2-r634076</geronimo.connector.version>
-      <geronimo.javamail.provider.version>1.8-r755222_1</geronimo.javamail.provider.version>
       <groovy.version>1.5.6_1</groovy.version>
       <howl.version>1.0.1-1_1</howl.version>
       <httpcore.version>4.0-alpha6_1</httpcore.version>
@@ -206,8 +205,10 @@
 
       <smack.version>3.0.4_1</smack.version>
       <snmp4j.version>1.8.1_1</snmp4j.version>
+      <spring.javax.activation.version>1.1.1</spring.javax.activation.version>
       <spring.version>2.5.6</spring.version>
       <spring.integration.version>1.0.0.RC2</spring.integration.version>
+      <spring.javax.mail.version>1.4.1</spring.javax.mail.version>
       <spring.osgi.version>1.2.0-rc1</spring.osgi.version>
       <stringtemplate.version>3.2_1</stringtemplate.version>
       <velocity.version>1.6.2_1-SNAPSHOT</velocity.version>
