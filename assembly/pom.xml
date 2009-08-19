@@ -155,8 +155,8 @@
             <version>${xmlsec.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.wss4j</artifactId>
+            <groupId>org.apache.ws.security</groupId>
+            <artifactId>wss4j</artifactId>
             <version>${wss4j.version}</version>
         </dependency>
         <dependency>
