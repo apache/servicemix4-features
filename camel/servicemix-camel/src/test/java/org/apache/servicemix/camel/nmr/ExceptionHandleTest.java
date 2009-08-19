@@ -139,8 +139,6 @@ public class ExceptionHandleTest extends ContextTestSupport {
         } catch (BadRecordLitFault brlf) {                
             BindingProvider bp = (BindingProvider)greeter;
             Map<String, Object> responseContext = bp.getResponseContext();
-            String encodingType = (String) responseContext.get(Message.ENCODING);
-            assertEquals("UTF-8", encodingType);
             Integer responseCode = (Integer) responseContext.get(Message.RESPONSE_CODE);
             assertEquals(200, responseCode.intValue());                
             assertNotNull(brlf.getFaultInfo());
