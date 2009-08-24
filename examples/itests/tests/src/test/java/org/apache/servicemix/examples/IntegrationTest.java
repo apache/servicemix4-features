@@ -76,9 +76,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
 	protected String[] getTestBundlesNames() {
         return new String[] {
             getBundle("org.apache.felix", "org.apache.felix.prefs"),
-            getBundle("javax.activation", "com.springsource.javax.activation"),
+            getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.activation-api-1.1"),
             getBundle("org.apache.geronimo.specs", "geronimo-annotation_1.0_spec"),
-            getBundle("javax.mail", "com.springsource.javax.mail"),
             getBundle("org.apache.geronimo.specs", "geronimo-servlet_2.5_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-ws-metadata_2.0_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-j2ee-connector_1.5_spec"),
@@ -113,6 +112,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlsec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlresolver"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty-bundle"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.javax.mail"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-codec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.abdera"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jettison"),
@@ -137,7 +137,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.examples", "cxf-jaxrs"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-nmr-osgi"),
         };
-	}
+    }
 
     public void testJbiComponent() throws Exception {
         Thread.sleep(5000);

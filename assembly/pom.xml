@@ -62,9 +62,9 @@
         </dependency>
         <!-- adding other dependencies for the SMX4 assembly -->
         <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>com.springsource.javax.activation</artifactId>
-            <version>${spring.javax.activation.version}</version>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
+            <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.components</groupId>
@@ -434,9 +434,9 @@
             <version>${geronimo.connector.version}</version>
         </dependency>
         <dependency>
-        <groupId>javax.mail</groupId>
-           <artifactId>com.springsource.javax.mail</artifactId>
-           <version>${spring.javax.mail.version}</version>
+           <groupId>org.apache.servicemix.bundles</groupId>
+           <artifactId>org.apache.servicemix.bundles.javax.mail</artifactId>
+           <version>${javax.mail.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -828,11 +828,6 @@
             <snapshots>     
                 <enabled>false</enabled>
             </snapshots>     
-        </repository>
-        <repository>
-            <id>com.springsource.repository.bundles.external</id>
-            <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
-            <url>http://repository.springsource.com/maven/bundles/external</url>
         </repository>
     </repositories>
     <build>

@@ -127,6 +127,7 @@
       <jaxb.impl.version>2.1.6_1</jaxb.impl.version>
       <jaxws.api.version>2.1</jaxws.api.version>
       <jaxrs.api.version>1.0</jaxrs.api.version>
+      <javax.mail.version>1.4.1_1-SNAPSHOT</javax.mail.version>
       <jcr-api.version>1.0_1</jcr-api.version>
       <jdt.core.version>3.2.3_1</jdt.core.version>
       <jdom.version>1.1_1</jdom.version>
@@ -205,10 +206,8 @@
 
       <smack.version>3.0.4_1</smack.version>
       <snmp4j.version>1.8.1_1</snmp4j.version>
-      <spring.javax.activation.version>1.1.1</spring.javax.activation.version>
       <spring.version>2.5.6</spring.version>
       <spring.integration.version>1.0.0.RC2</spring.integration.version>
-      <spring.javax.mail.version>1.4.1</spring.javax.mail.version>
       <spring.osgi.version>1.2.0-rc1</spring.osgi.version>
       <stringtemplate.version>3.2_1</stringtemplate.version>
       <velocity.version>1.6.2_1-SNAPSHOT</velocity.version>
