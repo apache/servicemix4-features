@@ -82,8 +82,7 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.geronimo.specs", "geronimo-ws-metadata_2.0_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-j2ee-connector_1.5_spec"),
             getBundle("org.apache.geronimo.specs", "geronimo-jta_1.1_spec"),
-         
-            getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jbi-api-1.0"),            
+            getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jbi-api-1.0"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.stax-api-1.0"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.saaj-api-1.3"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jaxb-api-2.1"),
@@ -108,10 +107,12 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.ops4j.pax.web", "pax-web-bundle"),
             getBundle("org.ops4j.pax.web-extender", "pax-web-ex-whiteboard"),
             getBundle("org.apache.servicemix", "servicemix-utils"),
+            getBundle("org.fusesource.commonman", "commons-management"),
+            getBundle("org.apache.servicemix.kernel", "org.apache.servicemix.kernel.management"),
             getBundle("org.apache.cxf", "cxf-bundle"),
-           
             getBundle("org.apache.servicemix.cxf", "org.apache.servicemix.cxf.transport.nmr"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.api"),
+            getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.management"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.core"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.spring"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),

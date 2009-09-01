@@ -69,6 +69,12 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.kernel</groupId>
+            <artifactId>org.apache.servicemix.kernel.management</artifactId>
+            <version>${servicemix.kernel.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.ant</artifactId>
             <version>${ant.version}</version>
