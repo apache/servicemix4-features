@@ -22,7 +22,7 @@
         xmlns:cxfse="http://servicemix.apache.org/cxfse/1.0"
         xsi:schemaLocation="
                 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                http://servicemix.apache.org/cxfse/1.0 http://servicemix.apache.org/schema/servicemix-cxf-se-2009.01.xsd">
+                http://servicemix.apache.org/cxfse/1.0 http://servicemix.apache.org/cxfse/1.0/servicemix-cxf-se.xsd">
 
 
     <cxfse:endpoint>

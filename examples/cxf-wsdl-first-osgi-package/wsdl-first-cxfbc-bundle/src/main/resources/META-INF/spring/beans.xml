@@ -23,7 +23,7 @@
        xmlns:person="http://servicemix.apache.org/samples/wsdl-first"
         xsi:schemaLocation="
                 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                http://servicemix.apache.org/cxfbc/1.0 http://servicemix.apache.org/schema/servicemix-cxf-bc-2009.01.xsd">
+                http://servicemix.apache.org/cxfbc/1.0 http://servicemix.apache.org/cxfbc/1.0/servicemix-cxf-bc.xsd">
 
   <cxfbc:consumer wsdl="classpath:person.wsdl"
                       targetService="person:PersonService"
