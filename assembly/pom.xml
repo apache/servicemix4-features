@@ -155,6 +155,12 @@
             <version>${xmlsec.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.opensaml</artifactId>
+            <version>${opensaml.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.ws.security</groupId>
             <artifactId>wss4j</artifactId>
             <version>${wss4j.version}</version>

@@ -219,6 +219,7 @@
       <xmlbeans.version>2.4.0_2</xmlbeans.version>
       <xmlschema.version>1.4.3_1</xmlschema.version>
       <xmlsec.version>1.4.3_1-SNAPSHOT</xmlsec.version>
+      <opensaml.version>1.1_1</opensaml.version>
       <xmlresolver.version>1.2_1</xmlresolver.version>
       <xpp3.version>1.1.4c_1</xpp3.version>
       <werken-xpath.version>0.9.4_1</werken-xpath.version>
