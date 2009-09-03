@@ -94,7 +94,7 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.saaj-impl"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.woodstox"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.wsdl4j"),
-            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlschema"),
+            getBundle("org.apache.ws.commons.schema", "XmlSchema"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlsec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlresolver"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty-bundle"),

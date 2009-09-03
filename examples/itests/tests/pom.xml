@@ -115,8 +115,8 @@
             <version>${wsdl4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.xmlschema</artifactId>
+            <groupId>org.apache.ws.commons.schema</groupId>
+            <artifactId>XmlSchema</artifactId>
             <version>${xmlschema.version}</version>
         </dependency>
         <dependency>

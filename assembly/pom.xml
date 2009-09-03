@@ -150,8 +150,8 @@
             <version>${saaj.impl.version}</version>
         </dependency> 
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
+            <groupId>org.apache.ws.commons.schema</groupId>
+            <artifactId>XmlSchema</artifactId>
             <version>${xmlsec.version}</version>
         </dependency>
         <dependency>
@@ -335,8 +335,8 @@
             <version>${neethi.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.xmlschema</artifactId>
+            <groupId>org.apache.ws.commons.schema</groupId>
+            <artifactId>XmlSchema</artifactId>
             <version>${xmlschema.version}</version>
         </dependency>
         <dependency>

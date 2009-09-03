@@ -63,7 +63,7 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/${saaj.impl.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.woodstox/${woodstox.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlschema/${xmlschema.version}</bundle>
+        <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/${xmlresolver.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
@@ -198,7 +198,7 @@
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons.httpclient.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlschema/${xmlschema.version}</bundle>
+        <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
@@ -208,7 +208,7 @@
     </feature>
     <feature name="servicemix-jms" version="${servicemix-jms-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlschema/${xmlschema.version}</bundle>
+        <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared-version}</bundle>
