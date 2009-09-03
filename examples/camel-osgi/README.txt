@@ -15,80 +15,222 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix camel osgi example
-==========================================
+CAMEL OSGI EXAMPLE
+==================
 
-This example demonstrates using Apache Camel to deploy EIP routes in
-Servicemix.
-Also this example shows how to use osgi propertie placeholder and how to
-deploy the properties file from console.
+Purpose
+-------
+This example demonstrates how to deploy a Camel EIP route as an OSGi
+bundle in ServiceMix. The example also shows you how to use OSGi
+property placeholders and how to deploy the properties file from the
+ServiceMix console.
 
-Quick steps to install the sample
----------------------------------
 
-Launch the ServiceMix Kernel by running
-  bin/servicemix
-in the root dir of this distribution.
+Explanation
+-----------
+The Camel route is defined in a Spring XML file, beans.xml, which can be
+found in the src/main/resources/META-INF/spring directory of this example.
+The route is defined in the <route> element and can be explained as follows:
 
-When inside the console, if you haven't already done so, addUrls for the
-nmr and kernel features:
-  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+1. A timer endpoint generates a heartbeat event every 2000ms.
+       
+2. A callout is made to a transformer bean that transforms each
+   heartbeat message to the current date and time.
+        
+3. A log endpoint sends the transformed message to the
+   Jakarta commons logger.
+      
+The beans.xml file also contains the following elements: 
 
-Next install the examples-camel-osgi feature:
-  features/install examples-camel-osgi
+-  A <bean> element that instantiates the transformer bean using standard
+   Spring configuration syntax and specifies a prefix value using a
+   property placeholder. 
+   
+-  An <osgix:cm-properties> element which allows you to specify placeholder
+   values using the OSGi Configuration Admin service. In this case, the 
+   property is also given the default value of "MyTransform".
+   
+The route and configuration is deployed to the ServiceMix container as
+an OSGi bundle.   
 
-If you have all the bundles available in your local repo, the installation
-of the example will be very fast, otherwise it may take some time to
-download everything needed.
+   
+Prerequisites for Running the Example
+-------------------------------------
+1. You must have the following installed on your machine:
 
-Testing the example
+   - JDK 1.5 or higher
+
+   - Maven 2.0.6 or higher (for building)
+   
+  For more information, see the README in the top-level examples
+  directory.
+
+2. Start a ServiceMix server by running the following command:
+
+    <servicemix_home>/bin/servicemix          (on UNIX)
+    <servicemix_home>\bin\servicemix          (on Windows)
+
+
+Running the Example
 -------------------
+You can run the example in two ways:
 
-Once the example feature is installed, periodic events are routed to the
-transform method of the MyTransform class which prints output to the 
-console: 
->>>> MyTransform set body:  Tue Jun 10 16:56:47 NDT 2008
->>>> JavaDSL set body: Tue Jun 10 16:56:47 NDT 2008
+- A. Using a Prebuilt Deployment Bundle: Quick and Easy
+  This option is useful if you want to see the example up and
+  running quickly.
 
-You can view the route configuration in META-INF/spring/beans.xml.
+- B. Building the Example Bundle Yourself
+  This option is useful if you want to change the example in any way.
+  It tells you how to build and deploy the example. This option might
+  be slower than option A because, if you do not already have the
+  required bundles in your local Maven repository, Maven will have to
+  download the bundles it needs.
 
-Finally, uninstall the examples-camel-osgi feature:
-  features/uninstall examples-camel-osgi
 
-As well, you can view ExampleRouter log entries in the ServiceMix log:
-  log/d
+A. Using a Prebuilt Deployment Bundle
+-------------------------------------
+To install and run a prebuilt version of this example, enter the
+following command in the ServiceMix console:
 
-You also can update and redeploy properties file which is used by the properties
-placeholder in the beans.xml from console.
+  features/install examples-camel-osgi
+  
+This command makes use of the ServiceMix features facility. For more
+information about the features facility, see the README.txt file in the
+examples parent directory.
 
-Edit the org.apache.servicemix.examples.cfg in this folder, change the
-value of key "prefix" whatever you want(for example YourTransform), then in
-the console 
-exec cp
-$YOUR_SERVICEMIX_HOME/examples/camel-osgi/org.apache.servicemix.examples.cfg
-$YOUR_SERVICEMIX_HOME/etc
+Once the example is running, periodic events are routed to the transform
+method of the MyTransform class and you should see output similar to the
+following being logged to your console screen:
 
-For Windows user, if you don't install the cigwin, you may need to change the cp command to xcopy or cmd /c copy.
-exec xcopy
-%YOUR_SERVICEMIX_HOME%\\examples\\camel-osgi\\org.apache.servicemix.examples.cfg %YOUR_SERVICEMIX_HOME%\\etc
+>>>> MyTransform set body:  Tue Aug 11 16:56:06 BST 2009
+>>>> MyTransform set body:  Tue Aug 11 16:56:08 BST 2009
+>>>> MyTransform set body:  Tue Aug 11 16:56:10 BST 2009
+
+Updating and Redeploying the Properties File from the Console
+-------------------------------------------------------------
+You can update and redeploy the properties file that is used by the
+properties placeholder in the beans.xml from console as follows:
+
+1. Edit the org.apache.servicemix.examples.cfg file located in this
+   folder by changing the value of the "prefix" key to whatever you
+   want (for example, YourTransform).
+  
+2. Copy the updated configuration file to your <servicemix_home>/etc
+   directory. You can do this from the ServiceMix console by typing:
+
+     copy /examples/camel-osgi/org.apache.servicemix.examples.cfg
+     $YOUR_SERVICEMIX_HOME/etc
+
+   On Windows you need to replace / in the path with \\.
+
+   Note, the text you are typing might intermingle with the output being
+   logged. This is nothing to worry about.
+
+3. Restart the example bundle:
+
+   (i) First you must know the bundle ID that ServiceMix has assigned
+       to it. To get the bundle ID, enter the following command in the
+       ServiceMix console:
+
+         osgi/list
+
+      At the end of the listing, you should see an entry similar to
+      the following:
+
+      [158] [Active     ] [Started  ] [  60] Apache ServiceMix Example :: Camel OSGi (4.1.0.fuse)
  
-And then stop and start the bundle of this example which name is "Apache ServiceMix Example :: Camel OSGi", you can use "osgi list"to get this bundle id.
-Then you should find the prefix of the output should like
->>>> YourTransform set body:  Tue Jun 10 16:56:47 NDT 2008
->>>> JavaDSL set body: Tue Jun 10 16:56:47 NDT 2008
+      In this case, the bundle ID is 158.
 
-How does it work?
------------------
+   (ii) Enter the following command at the ServiceMix console to
+        restart the bundle:
+    
+          osgi/restart <bundle_id>
+  
+  The prefix of the output should change, and the output should look
+  similar to the following:
 
-The installation leverages ServiceMix Kernel by installing what's called
-'features'. You can see the features definition file using the following
-command inside the ServiceMix console:
-
-cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-
-The list of available features can be obtained using:
-
-features/list
+  >>>> YourTransform set body:  Tue Aug 11 17:14:12 BST 2009
+  >>>> YourTransform set body:  Tue Aug 11 17:14:14 BST 2009
+  >>>> YourTransform set body:  Tue Aug 11 17:14:16 BST 2009
+  
+For information on how to stop and/or uninstall the example, see
+"Stopping and Uninstalling the Example" below.
 
 
+B. Building the Example Bundle Yourself
+---------------------------------------
+To install and run the example where you build the example bundle
+yourself, complete the following steps:
+
+1. If you have already run the example using the prebuilt version as
+   described above, you must first uninstall the examples-camel-osgi
+   feature by entering the following command in the ServiceMix console:
+
+     features/uninstall examples-camel-osgi
+
+2. Build the example by opening a command prompt, changing directory to
+   examples/camel-osgi (this example) and entering the following Maven
+   command:
+
+     mvn install
+   
+   If all of the required OSGi bundles are available in your local Maven
+   repository, the example will build very quickly. Otherwise it may
+   take some time for Maven to download everything it needs.
+   
+   The mvn install command builds the example deployment bundle and
+   copies it to your local Maven repository and to the target directory
+   of this example.
+     
+3. The easiest way to install the example bundle that you just built
+   is to enter the following command in the ServiceMix console:
+   
+     features/install examples-camel-osgi
+       
+   It makes use of the ServiceMix features facility. For more information
+   about the features facility, see the README.txt file in the examples
+   parent directory.
+   
+Once the example is running, periodic events are routed to the
+transform method of the MyTransform class and you should see output
+similar to the following being logged to your console screen:
+
+>>>> MyTransform set body:  Tue Aug 11 16:56:06 BST 2009
+>>>> MyTransform set body:  Tue Aug 11 16:56:08 BST 2009
+>>>> MyTransform set body:  Tue Aug 11 16:56:10 BST 2009
+
+Now, if you have not already done so, try updating and redeploying,
+from the console, the properties file that is used by the properties
+placeholder in the beans.xml file. For details on how to do this, see
+the "Updating and Redeploying the Properties File from the Console"
+section above.
+
+
+Stopping and Uninstalling the Example
+-------------------------------------
+To stop the example, enter the following command in the ServiceMix
+console:
+
+  osgi/stop <bundle_id>
+
+For information on how to find the bundle_id assigned to the example,
+see step 3 in the "Updating and Redeploying the Properties File 
+from the Console" section above.
+
+To uninstall the example, enter one of the following commands in
+the ServiceMix console:
+
+  features/uninstall examples-camel-osgi
+ 
+or
+ 
+  osgi/uninstall <bundle_id>
+  
+
+Viewing the Log Entries
+-----------------------
+You can view the log entries in the servicemix.log file in the
+data/log directory of your ServiceMix installation, or by typing
+the following command in the ServiceMix console:
+
+  log/d
