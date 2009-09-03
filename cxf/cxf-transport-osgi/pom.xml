@@ -101,6 +101,8 @@
                             com.sun.xml.messaging.saaj.soap.ver1_1;resolution:=optional,
                             com.sun.xml.messaging.saaj.client.p2p;resolution:=optional,
                             com.sun.xml.messaging.saaj.soap;resolution:=optional,
+                            org.apache.xml.security.transforms.implementations;resolution:=optional,
+                            org.apache.ws.security.processor;resolution:=optional,
                             *
                         </Import-Package>
                         <Export-Package>
