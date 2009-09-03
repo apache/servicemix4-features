@@ -72,6 +72,7 @@
       <bnd.version>0.0.227</bnd.version>
       <cglib.version>2.1_3_2</cglib.version>
       <camel.version>1.6.0</camel.version>
+      <commons.management.version>1.0</commons.management.version>
       <commons-beanutils.version>1.7.0_1</commons-beanutils.version>
       <commons-collections.version>3.2.1</commons-collections.version>
       <commons-csv.version>1.0-r706899_1</commons-csv.version>
