@@ -24,12 +24,13 @@
 
         <!-- Expanded ServiceMix Runtime -->
         <fileSet>
-            <directory>target/dependencies/unix/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
+            <directory>target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}</directory>
             <outputDirectory>/</outputDirectory>
             <excludes>
               <exclude>bin/*</exclude>
               <exclude>**/demos/**</exclude>
-              <exclude>etc/org.apache.servicemix.features.cfg</exclude>
+              <exclude>etc/org.apache.felix.karaf.features.cfg</exclude>
+              <exclude>etc/config.properties</exclude>
               <exclude>LICENSE.txt</exclude>
               <exclude>NOTICE.txt</exclude>
               <exclude>README.txt</exclude>
@@ -39,7 +40,7 @@
 
         <!-- Copy over bin/servicemix separately to get the correct file mode -->
         <fileSet>
-            <directory>target/dependencies/unix/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
+            <directory>target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
               <include>bin/*</include>
@@ -49,8 +50,8 @@
 
         <!-- Copy over kernel demo to examples folder -->
         <fileSet>
-            <directory>target/dependencies/unix/apache-servicemix-kernel-${servicemix.kernel.version}/demos</directory>
-            <outputDirectory>/examples/kernel-demos</outputDirectory>
+            <directory>target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}/demos</directory>
+            <outputDirectory>/examples/karaf-demos</outputDirectory>
             <lineEnding>unix</lineEnding>
             <includes>
               <include>pom.xml</include>

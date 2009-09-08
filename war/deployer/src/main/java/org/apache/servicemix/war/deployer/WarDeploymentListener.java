@@ -26,10 +26,10 @@ import java.util.jar.Manifest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.servicemix.kernel.filemonitor.DeploymentListener;
+import org.apache.felix.fileinstall.ArtifactTransformer;
 
 
-public class WarDeploymentListener implements DeploymentListener {
+public class WarDeploymentListener implements ArtifactTransformer {
 	
 	private static final Log LOGGER = LogFactory.getLog(WarDeploymentListener.class);
 	
@@ -53,7 +53,7 @@ public class WarDeploymentListener implements DeploymentListener {
 		}
 	}
 
-	public File handle(File artifact, File tmpDir) {
+	public File transform(File artifact, File tmpDir) {
 		try {
             URL war = new URL("war:" + artifact.toURL().toString());
             File outFile = new File(tmpDir, artifact.getName());

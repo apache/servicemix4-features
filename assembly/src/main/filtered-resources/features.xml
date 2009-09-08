@@ -22,7 +22,7 @@
         <feature version="${servicemix.nmr.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jencks/${jencks.version}</bundle>
+        <bundle>mvn:org.jencks/jencks/${jencks.version}</bundle>
     </feature>
     <feature name="web-core" version="${version}">
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
@@ -309,6 +309,7 @@
     </feature>
     <feature name="servicemix-vfs" version="${servicemix-vfs-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/${commons.vfs.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-vfs/${servicemix-vfs-version}</bundle>
     </feature>
     <feature name="servicemix-smpp" version="${servicemix-smpp-version}">

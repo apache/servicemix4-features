@@ -82,9 +82,9 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.apache.servicemix.tooling</groupId>
+          <groupId>org.apache.felix.karaf.tooling</groupId>
           <artifactId>features-maven-plugin</artifactId>
-          <version>${features.maven.plugin.version}</version>
+          <version>${felix.karaf.version}</version>
           <executions>
             <execution>
               <phase>compile</phase>
@@ -92,7 +92,7 @@
                 <goal>generate-features-xml</goal>
               </goals>
               <configuration>
-                <kernelVersion>${servicemix.kernel.version}</kernelVersion>
+                <kernelVersion>${felix.karaf.version}</kernelVersion>
                 <bundles>target/classes/bundles.properties</bundles>
               </configuration>
             </execution>

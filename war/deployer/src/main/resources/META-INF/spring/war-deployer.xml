@@ -32,6 +32,6 @@
     <!-- The WAR deployment listener -->
     <bean id="warDeployer" class="org.apache.servicemix.war.deployer.WarDeploymentListener" />
 
-    <osgi:service ref="warDeployer" interface="org.apache.servicemix.kernel.filemonitor.DeploymentListener" />
+    <osgi:service ref="warDeployer" interface="org.apache.felix.fileinstall.ArtifactTransformer" />
 
 </beans>

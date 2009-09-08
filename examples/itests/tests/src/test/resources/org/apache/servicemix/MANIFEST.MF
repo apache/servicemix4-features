@@ -28,5 +28,5 @@ Import-Package: junit.framework,
  org.springframework.osgi.test.platform,
  org.apache.servicemix.nmr.api,
  org.apache.servicemix.nmr.core,
- org.apache.servicemix.kernel.testing.support,
+ org.apache.servicemix.platform.testing.support,
  org.springframework.osgi.util

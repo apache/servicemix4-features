@@ -23,9 +23,8 @@ import java.util.Collection;
 import org.apache.activemq.console.command.Command;
 import org.apache.activemq.console.formatter.CommandShellOutputFormatter;
 import org.apache.activemq.console.CommandContext;
-import org.apache.geronimo.gshell.clp.Argument;
-import org.apache.geronimo.gshell.command.Arguments;
-import org.apache.servicemix.kernel.gshell.core.OsgiCommandSupport;
+import org.apache.felix.karaf.gshell.console.OsgiCommandSupport;
+import org.apache.felix.gogo.commands.Argument;
 
 /**
  * @version $Rev$ $Date$
@@ -38,10 +37,10 @@ public class AdministrationCommand extends OsgiCommandSupport {
     private Collection<String> arguments = null;
 
   protected Object doExecute() throws Exception {
-    final String[] args = Arguments.toStringArray(arguments.toArray());
+    final String[] args = toStringArray(arguments.toArray());
 
     CommandContext context2 = new CommandContext();
-    context2.setFormatter(new CommandShellOutputFormatter(io.outputStream));
+    context2.setFormatter(new CommandShellOutputFormatter(System.out));
     Command currentCommand = command.getClass().newInstance();
 
     try {
@@ -80,5 +79,13 @@ public class AdministrationCommand extends OsgiCommandSupport {
 
     public void setCommand(Command command) {
         this.command = command;
+    }
+
+    public static String[] toStringArray(Object args[]) {
+        String strings[] = new String[args.length];
+        for(int i = 0; i < args.length; i++) {
+            strings[i] = String.valueOf(args[i]);
+        }
+        return strings;
     }
 }

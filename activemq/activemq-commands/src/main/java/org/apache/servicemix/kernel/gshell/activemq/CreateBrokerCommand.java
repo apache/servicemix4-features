@@ -26,13 +26,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.apache.geronimo.gshell.clp.Option;
-import org.apache.servicemix.kernel.gshell.core.OsgiCommandSupport;
+import org.apache.felix.gogo.commands.Option;
+import org.apache.felix.gogo.commands.Command;
+import org.apache.felix.karaf.gshell.console.OsgiCommandSupport;
 
 /**
  * @version $Rev$ $Date$
  */
-// @Command(id="activemq:create-broker", description="Creates a broker instance.")
+ @Command(scope="activemq", name="create-broker", description="Creates a broker instance.")
 public class CreateBrokerCommand extends OsgiCommandSupport {
     
     @Option(name = "-n", aliases = {"--name"}, description = "The name of the broker (defaults to localhost).")
@@ -41,7 +42,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
     /*
      * (non-Javadoc)
      * @see
-     * org.apache.servicemix.kernel.gshell.core.OsgiCommandSupport#doExecute()
+     * org.apache.felix.karaf.gshell.console.OsgiCommandSupport#doExecute()
      */
     protected Object doExecute() throws Exception {
 
@@ -57,11 +58,11 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
             File configFile = new File(deploy, name + "-broker.xml");
             copyFilteredResourceTo(configFile, "broker.xml", props);
 
-            io.out.println("");
-            io.out.println("Default ActiveMQ Broker (" + name + ") configuration file created at: "
+            System.out.println("");
+            System.out.println("Default ActiveMQ Broker (" + name + ") configuration file created at: "
                            + configFile.getPath());
-            io.out.println("Please review the configuration and modify to suite your needs.  ");
-            io.out.println("");
+            System.out.println("Please review the configuration and modify to suite your needs.  ");
+            System.out.println("");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,7 +75,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
     private void copyFilteredResourceTo(File outFile, String resource, HashMap<String, String> props)
         throws Exception {
         if (!outFile.exists()) {
-            io.out.println("Creating file: @|green " + outFile.getPath() + "|");
+            System.out.println("Creating file: @|green " + outFile.getPath() + "|");
             InputStream is = CreateBrokerCommand.class.getResourceAsStream(resource);
             try {
                 // Read it line at a time so that we can use the platform line
@@ -94,7 +95,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
                 safeClose(is);
             }
         } else {
-            io.out.println("@|red File allready exists|. Move it out of the way if you want it re-created: "
+            System.out.println("@|red File allready exists|. Move it out of the way if you want it re-created: "
                            + outFile.getPath() + "");
         }
     }
@@ -131,7 +132,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
 
     private void mkdir(File file) {
         if (!file.exists()) {
-            io.out.println("Creating missing directory: @|green " + file.getPath() + "|");
+            System.out.println("Creating missing directory: @|green " + file.getPath() + "|");
             file.mkdirs();
         }
     }

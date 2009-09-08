@@ -34,11 +34,11 @@
     <name>Apache ServiceMix :: Assembly</name>
 
     <dependencies>
-        <!-- making sure all kernel dependencies are in our local Maven repo -->
+        <!-- making sure all karaf dependencies are in our local Maven repo -->
         <dependency>
-            <groupId>org.apache.servicemix.kernel</groupId>
-            <artifactId>apache-servicemix-kernel</artifactId>
-            <version>${servicemix.kernel.version}</version>
+            <groupId>org.apache.felix.karaf</groupId>
+            <artifactId>apache-felix-karaf</artifactId>
+            <version>${felix.karaf.version}</version>
             <type>zip</type>
             <exclusions>
 	            <exclusion>
@@ -48,9 +48,9 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.kernel</groupId>
-            <artifactId>apache-servicemix-kernel</artifactId>
-            <version>${servicemix.kernel.version}</version>
+            <groupId>org.apache.felix.karaf</groupId>
+            <artifactId>apache-felix-karaf</artifactId>
+            <version>${felix.karaf.version}</version>
             <type>tar.gz</type>
         </dependency>
         <!-- let's grab all the NMR dependencies as well -->
@@ -64,6 +64,11 @@
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
+            <version>${servicemix.specs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.javamail-api-1.4</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
@@ -260,8 +265,8 @@
             <version>${fastinfoset.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jencks</artifactId>
+            <groupId>org.jencks</groupId>
+            <artifactId>jencks</artifactId>
             <version>${jencks.version}</version>
         </dependency>
         <dependency>
@@ -443,11 +448,6 @@
            <groupId>org.apache.servicemix.bundles</groupId>
            <artifactId>org.apache.servicemix.bundles.javax.mail</artifactId>
            <version>${javax.mail.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jencks</artifactId>
-            <version>${jencks.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -848,9 +848,9 @@
         </resources>
         <plugins>
             <plugin>
-                <groupId>org.apache.servicemix.tooling</groupId>
+                <groupId>org.apache.felix.karaf.tooling</groupId>
                 <artifactId>features-maven-plugin</artifactId>
-                <version>1.0</version>
+                <version>${felix.karaf.version}</version>
                 <executions>
                     <execution>
                         <id>add-features-to-repo</id>
@@ -860,6 +860,7 @@
                         </goals>
                         <configuration>
                             <descriptors>
+                                <descriptor>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
                             </descriptors>
@@ -940,9 +941,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.servicemix.kernel</groupId>
-                                    <artifactId>apache-servicemix-kernel</artifactId>
-                                    <version>${servicemix.kernel.version}</version>
+                                    <groupId>org.apache.felix.karaf</groupId>
+                                    <artifactId>apache-felix-karaf</artifactId>
+                                    <version>${felix.karaf.version}</version>
                                     <type>tar.gz</type>
                                     <outputDirectory>target/dependencies/unix</outputDirectory>
                                 </artifactItem>
@@ -965,9 +966,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.servicemix.kernel</groupId>
-                                    <artifactId>apache-servicemix-kernel</artifactId>
-                                    <version>${servicemix.kernel.version}</version>
+                                    <groupId>org.apache.felix.karaf</groupId>
+                                    <artifactId>apache-felix-karaf</artifactId>
+                                    <version>${felix.karaf.version}</version>
                                     <type>zip</type>
                                     <outputDirectory>target/dependencies/win</outputDirectory>
                                 </artifactItem>

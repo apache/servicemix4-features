@@ -24,11 +24,12 @@
 
       <!-- Expanded ServiceMix Runtime -->
       <fileSet>
-          <directory>target/dependencies/win/apache-servicemix-kernel-${servicemix.kernel.version}</directory>
+          <directory>target/dependencies/win/apache-felix-karaf-${felix.karaf.version}</directory>
           <outputDirectory>/</outputDirectory>
           <excludes>
              <exclude>**/demos/**</exclude>
              <exclude>etc/org.apache.servicemix.features.cfg</exclude>
+             <exclude>etc/config.properties</exclude>
              <exclude>LICENSE.txt</exclude>
              <exclude>NOTICE.txt</exclude>
              <exclude>README.txt</exclude>
@@ -38,9 +39,9 @@
 
       <!-- Copy over kernel demo to examples folder -->
       <fileSet>
-          <directory>target/dependencies/unix/apache-servicemix-kernel-${servicemix.kernel.version}/demos</directory>
-          <outputDirectory>/examples/kernel-demos</outputDirectory>
-          <lineEnding>unix</lineEnding>
+          <directory>target/dependencies/win/apache-felix-karaf-${felix.karaf.version}/demos</directory>
+          <outputDirectory>/examples/karaf-demos</outputDirectory>
+          <lineEnding>dos</lineEnding>
           <includes>
             <include>pom.xml</include>
             <include>**/smx4web/**</include>
@@ -49,7 +50,7 @@
       
       <!-- Copy over ant files -->
        <fileSet>
-            <directory>target/dependencies/unix/apache-servicemix-nmr-${servicemix.nmr.version}/ant</directory>
+            <directory>target/dependencies/win/apache-servicemix-nmr-${servicemix.nmr.version}/ant</directory>
             <outputDirectory>/ant</outputDirectory>
             <lineEnding>dos</lineEnding>
        </fileSet>

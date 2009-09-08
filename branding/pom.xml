@@ -52,7 +52,7 @@
                         <Import-Package>*</Import-Package>
                         <Private-Package>!*</Private-Package>
                         <Export-Package>
-                            org.apache.servicemix.kernel.version        
+                            org.apache.felix.karaf.version        
                         </Export-Package>
                         <Spring-Context>*;publish-context:=false</Spring-Context>
                     </instructions>
