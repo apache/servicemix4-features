@@ -35,7 +35,7 @@ public class DestroyBrokerCommand extends OsgiCommandSupport {
 
         try {
             String name = getName();
-            File base = new File(System.getProperty("servicemix.base"));
+            File base = new File(System.getProperty("karaf.base"));
             File deploy = new File(base, "deploy");
             File configFile = new File(deploy, name + "-broker.xml");
 
@@ -56,7 +56,7 @@ public class DestroyBrokerCommand extends OsgiCommandSupport {
 
     public String getName() {
         if (name == null) {
-            File base = new File(System.getProperty("servicemix.base"));
+            File base = new File(System.getProperty("karaf.base"));
             name = base.getName();
         }
         return name;

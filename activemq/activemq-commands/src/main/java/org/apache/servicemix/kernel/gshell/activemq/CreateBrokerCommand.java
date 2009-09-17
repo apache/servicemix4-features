@@ -48,7 +48,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
 
         try {
             String name = getName();
-            File base = new File(System.getProperty("servicemix.base"));
+            File base = new File(System.getProperty("karaf.base"));
             File deploy = new File(base, "deploy");
 
             HashMap<String, String> props = new HashMap<String, String>();
@@ -139,7 +139,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
 
     public String getName() {
         if (name == null) {
-            File base = new File(System.getProperty("servicemix.base"));
+            File base = new File(System.getProperty("karaf.base"));
             name = base.getName();
         }
         return name;
