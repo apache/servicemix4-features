@@ -89,6 +89,7 @@
       <dom4j.version>1.6_1</dom4j.version>
       <drools.version>4.0.7_1</drools.version>
       <depends.maven.plugin.version>1.2-SNAPSHOT</depends.maven.plugin.version>
+      <equinox.version>3.5.0.v20090520</equinox.version>
       <fastinfoset.version>1.2.2_1</fastinfoset.version>
       <features.maven.plugin.version>1.1</features.maven.plugin.version>
       <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
@@ -165,6 +166,8 @@
       <openejb.version>3.0-beta-2</openejb.version>
       <openjpa.version>1.0.1</openjpa.version>
       <openjpa.bundle.version>1.2.0_1</openjpa.bundle.version>
+      <pax.exam.version>1.0.0</pax.exam.version>
+      <pax.runner.version>1.1.1</pax.runner.version>
       <pax.logging.version>1.4</pax.logging.version>
       <pax.url.version>0.3.3</pax.url.version>
       <pax.web.version>0.5.2</pax.web.version>
@@ -566,6 +569,31 @@
           <groupId>org.easymock</groupId>
           <artifactId>easymock</artifactId>
           <version>${easymock.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.ops4j.pax.exam</groupId>
+          <artifactId>pax-exam</artifactId>
+          <version>${pax.exam.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.ops4j.pax.exam</groupId>
+          <artifactId>pax-exam-junit</artifactId>
+          <version>${pax.exam.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.ops4j.pax.exam</groupId>
+          <artifactId>pax-exam-container-default</artifactId>
+          <version>${pax.exam.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.ops4j.pax.exam</groupId>
+          <artifactId>pax-exam-junit-extender-impl</artifactId>
+          <version>${pax.exam.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.ops4j.pax.runner</groupId>
+          <artifactId>pax-runner-no-jcl</artifactId>
+          <version>${pax.runner.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
