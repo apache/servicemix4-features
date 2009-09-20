@@ -17,57 +17,58 @@
     limitations under the License.
 
 -->
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+<blueprint xmlns:shell="http://felix.apache.org/karaf/xmlns/shell/v1.0.0"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-    <command-bundle xmlns="http://felix.apache.org/karaf/xmlns/gshell/v1.0.0">
+    <shell:command-bundle>
 
-        <command name="activemq/create-broker">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.CreateBrokerCommand"/>
-        </command>
+        <shell:command name="activemq/create-broker">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.CreateBrokerCommand"/>
+        </shell:command>
 
-        <command name="activemq/destroy-broker">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.DestroyBrokerCommand"/>
-        </command>
+        <shell:command name="activemq/destroy-broker">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.DestroyBrokerCommand"/>
+        </shell:command>
 
-        <command name="activemq/list">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
-                <property name="command">
+        <shell:command name="activemq/list">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
+                <shell:property name="command">
                     <bean class="org.apache.activemq.console.command.ListCommand"/>
-                </property>
-            </action>
-        </command>
-        <link name="activemq/ls" target="activemq/list"/>
+                </shell:property>
+            </shell:action>
+        </shell:command>
+        <shell:link name="activemq/ls" target="activemq/list"/>
 
-        <command name="activemq/query">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
-                <property name="command">
+        <shell:command name="activemq/query">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
+                <shell:property name="command">
                     <bean class="org.apache.activemq.console.command.QueryCommand"/>
-                </property>
-            </action>
-        </command>
+                </shell:property>
+            </shell:action>
+        </shell:command>
 
-        <command name="activemq/browse">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
-                <property name="command">
+        <shell:command name="activemq/browse">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
+                <shell:property name="command">
                     <bean class="org.apache.activemq.console.command.AmqBrowseCommand"/>
-                </property>
-            </action>
-        </command>
-        <command name="activemq/purge">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
-                <property name="command">
+                </shell:property>
+            </shell:action>
+        </shell:command>
+        <shell:command name="activemq/purge">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
+                <shell:property name="command">
                     <bean class="org.apache.activemq.console.command.PurgeCommand"/>
-                </property>
-            </action>
-        </command>
-        <command name="activemq/bstat">
-            <action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
-                <property name="command">
+                </shell:property>
+            </shell:action>
+        </shell:command>
+        <shell:command name="activemq/bstat">
+            <shell:action class="org.apache.servicemix.kernel.gshell.activemq.AdministrationCommand">
+                <shell:property name="command">
                     <bean class="org.apache.activemq.console.command.BstatCommand"/>
-                </property>
-            </action>
-        </command>
+                </shell:property>
+            </shell:action>
+        </shell:command>
 
-    </command-bundle>
+    </shell:command-bundle>
 
 </blueprint>
