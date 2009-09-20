@@ -39,8 +39,8 @@
 
     <dependencies>
       <dependency>
-        <groupId>org.apache.felix.karaf.gshell</groupId>
-        <artifactId>org.apache.felix.karaf.gshell.console</artifactId>
+        <groupId>org.apache.felix.karaf.shell</groupId>
+        <artifactId>org.apache.felix.karaf.shell.console</artifactId>
         <version>${felix.karaf.version}</version>
       </dependency>
 
@@ -83,12 +83,6 @@
                           org.apache.felix.gogo.commands,
                           *
                         </Import-Package>
-                        <!--Import-Package>
-                          org.apache.geronimo.gshell.wisdom.command,
-                          org.apache.felix.karaf.gshell.core,
-                          org.apache.geronimo.gshell.wisdom.registry,
-                          *
-                        </Import-Package-->
                         <Private-Package>!*</Private-Package>
                         <Spring-Context>*;publish-context:=false;create-asynchronously:=false</Spring-Context>
                     </instructions>
