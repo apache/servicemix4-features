@@ -20,7 +20,7 @@ import java.io.File;
 
 import org.apache.felix.gogo.commands.Option;
 import org.apache.felix.gogo.commands.Command;
-import org.apache.felix.karaf.gshell.console.OsgiCommandSupport;
+import org.apache.felix.karaf.shell.console.OsgiCommandSupport;
 
 /**
  * @version $Rev$ $Date$
