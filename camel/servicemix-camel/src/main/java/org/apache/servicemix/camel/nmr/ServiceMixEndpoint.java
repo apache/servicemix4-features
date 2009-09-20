@@ -17,60 +17,52 @@
 package org.apache.servicemix.camel.nmr;
 
 import org.apache.camel.impl.DefaultEndpoint;
-import org.apache.camel.ExchangePattern;
+import org.apache.camel.Endpoint;
+import org.apache.camel.Exchange;
 import org.apache.camel.Producer;
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
-import org.apache.servicemix.nmr.api.Exchange;
 
 /**
- * Created by IntelliJ IDEA. User: gnodet Date: Sep 19, 2007 Time: 8:54:34 AM To
- * change this template use File | Settings | File Templates.
+ * A Camel {@link Endpoint} to interact with the ServiceMix NMR from within a Camel route
  * 
  * @org.apache.xbean.XBean element="smxEndpoint"
  */
-public class ServiceMixEndpoint extends DefaultEndpoint<ServiceMixExchange> {
+public class ServiceMixEndpoint extends DefaultEndpoint {
 
-	private String endpointName;
+    private String endpointName;
 
-	public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
-		super(uri, component);
-		this.endpointName = endpointName;
-	}
+    public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
+        super(uri, component);
+        this.endpointName = endpointName;
+    }
 
-	public ServiceMixComponent getComponent() {
-		return (ServiceMixComponent) super.getComponent();
-	}
+    public ServiceMixComponent getComponent() {
+        return (ServiceMixComponent)super.getComponent();
+    }
 
-	public boolean isSingleton() {
-		return true;
-	}
+    public boolean isSingleton() {
+        return true;
+    }
 
-	public Producer<ServiceMixExchange> createProducer() throws Exception {
-		return new ServiceMixProducer(this);
-	}
+    public Producer createProducer() throws Exception {
+        return new ServiceMixProducer(this);
+    }
 
-	public Consumer<ServiceMixExchange> createConsumer(Processor processor) throws Exception {
-		return new ServiceMixConsumer(this, processor);
-	}
+    public Consumer createConsumer(Processor processor) throws Exception {
+        return new ServiceMixConsumer(this, processor);
+    }
 
-	public ServiceMixExchange createExchange(Exchange exchange) {
-		return new ServiceMixExchange(getCamelContext(), getExchangePattern(), exchange);
-	}
+    public Exchange createExchange(org.apache.servicemix.nmr.api.Exchange nmrExchange) {
+        return getComponent().getBinding().populateCamelExchangeFromNmrExchange(getCamelContext(),
+                                                                                nmrExchange);
+    }
 
-	public ServiceMixExchange createExchange(ExchangePattern pattern, Exchange exchange) {
-		return new ServiceMixExchange(getCamelContext(), pattern, exchange);
-	}
+    public void setEndpointName(String endpointName) {
+        this.endpointName = endpointName;
+    }
 
-	public ServiceMixExchange createExchange(org.apache.servicemix.nmr.api.Message inMessage, Exchange exchange) {
-		return new ServiceMixExchange(getCamelContext(), getExchangePattern(), inMessage, exchange);
-	}
-
-	public void setEndpointName(String endpointName) {
-		this.endpointName = endpointName;
-	}
-
-	public String getEndpointName() {
-		return endpointName;
-	}
+    public String getEndpointName() {
+        return endpointName;
+    }
 }

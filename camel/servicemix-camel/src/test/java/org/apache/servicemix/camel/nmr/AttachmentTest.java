@@ -29,9 +29,9 @@ import javax.xml.ws.Holder;
 import javax.xml.ws.soap.SOAPBinding;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.spring.SpringCamelContext;
+import org.apache.camel.test.CamelTestSupport;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.endpoint.Client;
@@ -47,7 +47,7 @@ import org.apache.cxf.service.model.EndpointInfo;
 import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AttachmentTest extends ContextTestSupport {
+public class AttachmentTest extends CamelTestSupport {
     
 	protected static final String SERVICE_ADDRESS = "local://smx/attachment";
 	protected static final String ROUTER_ADDRESS = "http://localhost:9036/mime-test";

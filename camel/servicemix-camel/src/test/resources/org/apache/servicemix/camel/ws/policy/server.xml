@@ -21,22 +21,35 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:jaxws="http://cxf.apache.org/jaxws"
     xmlns:test="http://cxf.apache.org/greeter_control"
-    xmlns:cxf="http://activemq.apache.org/camel/schema/cxfEndpoint"
-    xmlns:camel="http://cxf.apache.org/transports/camel"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xmlns:camel="http://camel.apache.org/schema/spring"
     xmlns:smx="http://servicemix.apache.org/camelEndpoint/"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans                     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
         http://cxf.apache.org/jaxws                                     http://cxf.apache.org/schemas/jaxws.xsd
-        http://activemq.apache.org/camel/schema/cxfEndpoint http://activemq.apache.org/camel/schema/cxf/cxfEndpoint.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
         http://servicemix.apache.org/camelEndpoint/ http://servicemix.apache.org/camelEndpoint/.xsd
-        http://activemq.apache.org/camel/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd
-        http://cxf.apache.org/transports/camel http://cxf.apache.org/transports/camel.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
     ">
-
-    <camel:destination name="{http://cxf.apache.org/greeter_control}GreeterPort.camel-destination">
-        <camelContext id="camel" xmlns="http://activemq.apache.org/camel/schema/spring">
-        </camelContext>
-   </camel:destination> 
+    
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-http-jetty.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-extension-local.xml" />
+    
+    <bean class="org.apache.camel.component.cxf.transport.CamelTransportFactory" lazy-init="true">
+        <property name="bus" ref="cxf"/>
+        <property name="camelContext" ref="camel_context"/>
+        <property name="transportIds">
+            <list>
+              <value>http://cxf.apache.org/transports/camel</value>
+            </list>
+        </property>
+    </bean>
+        
+    <camel:camelContext id="camel_context">
+    </camel:camelContext>
+   
     <cxf:cxfEndpoint id="routerEndpoint" name="test:GreeterPort" address="camel://jetty:http://localhost:9020/SoapContext/GreeterPort"  serviceClass="org.apache.cxf.greeter_control.Greeter">
         <cxf:features>
             <bean class="org.apache.cxf.feature.LoggingFeature"/>

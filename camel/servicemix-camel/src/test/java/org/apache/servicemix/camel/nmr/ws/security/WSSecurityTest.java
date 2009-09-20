@@ -19,10 +19,9 @@ package org.apache.servicemix.camel.nmr.ws.security;
 import java.util.logging.Logger;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.cxf.transport.CamelTransportFactory;
 import org.apache.camel.spring.SpringCamelContext;
+import org.apache.camel.test.CamelTestSupport;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.bus.spring.SpringBusFactory;
@@ -30,7 +29,6 @@ import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
-import org.apache.cxf.transport.ConduitInitiatorManager;
 import org.apache.hello_world_soap_http.Greeter;
 import org.apache.servicemix.camel.nmr.ServiceMixComponent;
 import org.apache.servicemix.nmr.api.NMR;
@@ -38,7 +36,7 @@ import org.apache.servicemix.nmr.core.ServiceMix;
 import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class WSSecurityTest extends ContextTestSupport {
+public class WSSecurityTest extends CamelTestSupport {
 	
 	private static final Logger LOG = LogUtils.getL7dLogger(WSSecurityTest.class);
     

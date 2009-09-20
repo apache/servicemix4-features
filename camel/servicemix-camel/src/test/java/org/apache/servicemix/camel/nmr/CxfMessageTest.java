@@ -23,7 +23,7 @@ import javax.xml.ws.Endpoint;
 import javax.xml.ws.Holder;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.spring.SpringTestSupport;
+import org.apache.camel.test.CamelSpringTestSupport;
 import org.apache.camel.CamelContext;
 import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.frontend.ClientProxy;
@@ -34,7 +34,7 @@ import org.apache.servicemix.samples.wsdl_first.PersonService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-public class CxfMessageTest extends SpringTestSupport {
+public class CxfMessageTest extends CamelSpringTestSupport {
        
     
     private ServerImpl server;

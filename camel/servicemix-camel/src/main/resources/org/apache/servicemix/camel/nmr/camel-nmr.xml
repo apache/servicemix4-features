@@ -23,8 +23,8 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd
-       http://activemq.apache.org/camel/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd
-       http://activemq.apache.org/camel/schema/osgi http://activemq.apache.org/camel/schema/osgi/camel-osgi.xsd">
+       http://camel.apache.org/schema/spring http://camel.apache.org/camel/schema/spring/camel-spring.xsd
+       http://camel.apache.org/schema/osgi http://camel.apache.org/schema/osgi/camel-osgi.xsd">
 
     <bean id="nmr" class="org.apache.servicemix.camel.nmr.ServiceMixComponent">
         <property name="nmr">

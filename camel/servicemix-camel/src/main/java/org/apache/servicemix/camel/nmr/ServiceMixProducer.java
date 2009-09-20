@@ -24,15 +24,11 @@ import org.apache.servicemix.nmr.api.Pattern;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
 
 /**
- * Created by IntelliJ IDEA.
- * User: gnodet
- * Date: Sep 19, 2007
- * Time: 8:59:25 AM
- * To change this template use File | Settings | File Templates.
+ * A {@link Producer} that receives exchanges from the ServiceMix NMR and sends {@link org.apache.camel.Exchange}s into the Camel route
  */
-public class ServiceMixProducer extends DefaultProducer<ServiceMixExchange> {
+public class ServiceMixProducer extends DefaultProducer {
 	
-	private static final String OPERATION_NAME = "operationName"; 
+    private static final String OPERATION_NAME = "operationName"; 
 
     public ServiceMixProducer(ServiceMixEndpoint endpoint) {
         super(endpoint);
@@ -48,28 +44,29 @@ public class ServiceMixProducer extends DefaultProducer<ServiceMixExchange> {
     	Channel client = nmr.createChannel();
     	
         org.apache.servicemix.nmr.api.Exchange e = client.createExchange(
-        		Pattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
+            Pattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
         
         try {
-        	e.setTarget(nmr.getEndpointRegistry().lookup(
-        		ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME, 
-        				getEndpoint().getEndpointName())));
+            e.setTarget(nmr.getEndpointRegistry().lookup(
+                ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME, 
+                getEndpoint().getEndpointName())));
         } catch (Exception ex) {
-        	ex.printStackTrace();
+            ex.printStackTrace();
         }
         e.getIn().setBody(exchange.getIn().getBody());
-        e.getIn().setHeader(OPERATION_NAME, 
-        		exchange.getIn().getHeader(OPERATION_NAME));
+        e.getIn().setHeader(OPERATION_NAME, exchange.getIn().getHeader(OPERATION_NAME));
                 
         client.sendSync(e);
+        // TODO do we need to copy the message headers        
         if (e.getPattern() != Pattern.InOnly) {
-        	if (e.getError() != null) {
-        		exchange.setException(e.getError());
-        	} else if (e.getFault().getBody() != null) {
-        		exchange.getFault().setBody(e.getFault().getBody());
-        	} else {
-        		exchange.getOut().setBody(e.getOut().getBody());
-    		}
+            if (e.getError() != null) {
+                exchange.setException(e.getError());
+            } else if (e.getFault().getBody() != null) {
+                exchange.getOut().setFault(true);
+                exchange.getOut().setBody(e.getFault().getBody());        		
+            } else {
+                exchange.getOut().setBody(e.getOut().getBody());
+            }
     	}
     }
     

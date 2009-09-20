@@ -16,11 +16,11 @@
  */
 package org.apache.servicemix.camel.nmr;
 
+import java.util.Map;
+
 import org.apache.camel.Endpoint;
 import org.apache.camel.impl.DefaultComponent;
 import org.apache.servicemix.nmr.api.NMR;
-
-import java.util.Map;
 
 /**
  * A camel component to bridge ServiceMix NMR with Camel.
@@ -28,8 +28,20 @@ import java.util.Map;
 public class ServiceMixComponent extends DefaultComponent {
 
     private NMR nmr;
+    private ServiceMixBinding binding;
     
     public ServiceMixComponent() {
+    }
+   
+    public ServiceMixBinding getBinding() {
+        if (binding == null) {
+            binding = new ServiceMixBinding();
+        }
+        return binding;
+    }
+
+    public void setBinding(ServiceMixBinding binding) {
+        this.binding = binding;
     }
 
     public NMR getNmr() {
@@ -43,6 +55,7 @@ public class ServiceMixComponent extends DefaultComponent {
         this.nmr = nmr;
     }
 
+    @SuppressWarnings("unchecked")
     protected Endpoint createEndpoint(String uri, String remaining, Map parameters) throws Exception {
         return new ServiceMixEndpoint(this, uri, remaining);
     }

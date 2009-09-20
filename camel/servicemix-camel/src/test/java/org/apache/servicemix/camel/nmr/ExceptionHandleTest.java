@@ -24,10 +24,10 @@ import javax.xml.ws.BindingProvider;
 import javax.xml.ws.soap.SOAPBinding;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.cxf.transport.CamelTransportFactory;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.camel.test.CamelTestSupport;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.frontend.ClientProxy;
@@ -44,7 +44,7 @@ import org.apache.servicemix.nmr.api.NMR;
 import org.apache.servicemix.nmr.core.ServiceMix;
 
 
-public class ExceptionHandleTest extends ContextTestSupport {
+public class ExceptionHandleTest extends CamelTestSupport {
 	protected static final String ROUTER_ADDRESS = "camel://jetty:http://localhost:19000/SoapContext/SoapPort";
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.hello_world_soap_http.Greeter";

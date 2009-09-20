@@ -17,7 +17,7 @@
 package org.apache.servicemix.camel.nmr;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.spring.SpringTestSupport;
+import org.apache.camel.test.CamelSpringTestSupport;
 import org.apache.camel.CamelContext;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
@@ -29,7 +29,7 @@ import org.apache.cxf.frontend.ServerFactoryBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-public class SmxToCxfTest extends SpringTestSupport {
+public class SmxToCxfTest extends CamelSpringTestSupport {
     protected static final String ROUTER_ADDRESS = "http://localhost:19000/router";
     protected static final String SERVICE_ADDRESS = "local://smx/helloworld";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.servicemix.camel.nmr.HelloService";

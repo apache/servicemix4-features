@@ -22,10 +22,9 @@ import java.util.logging.Logger;
 import javax.xml.namespace.QName;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.cxf.transport.CamelTransportFactory;
 import org.apache.camel.spring.SpringCamelContext;
+import org.apache.camel.test.CamelTestSupport;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.bus.spring.SpringBusFactory;
@@ -35,7 +34,6 @@ import org.apache.cxf.greeter_control.Greeter;
 import org.apache.cxf.greeter_control.GreeterService;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
-import org.apache.cxf.transport.ConduitInitiatorManager;
 import org.apache.servicemix.camel.nmr.ServiceMixComponent;
 import org.apache.servicemix.camel.nmr.ws.policy.ConnectionHelper;
 import org.apache.servicemix.nmr.api.NMR;
@@ -44,9 +42,9 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
-public class WSRMTest extends ContextTestSupport {
+public class WSRMTest extends CamelTestSupport {
 	
-	private static final Logger LOG = LogUtils.getL7dLogger(WSRMTest.class);
+    private static final Logger LOG = LogUtils.getL7dLogger(WSRMTest.class);
     
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
 

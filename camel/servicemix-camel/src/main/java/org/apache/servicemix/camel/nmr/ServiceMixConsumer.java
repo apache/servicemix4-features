@@ -18,6 +18,7 @@ package org.apache.servicemix.camel.nmr;
 
 import java.util.Map;
 
+import org.apache.camel.Consumer;
 import org.apache.camel.ExchangePattern;
 import org.apache.camel.Processor;
 import org.apache.camel.impl.DefaultConsumer;
@@ -26,7 +27,10 @@ import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
 
-public class ServiceMixConsumer extends DefaultConsumer<ServiceMixExchange> implements org.apache.servicemix.nmr.api.Endpoint {
+/**
+ * A {@link Consumer} that receives Camel {@link org.apache.camel.Exchange}s and sends them into the ServiceMix NMR
+ */
+public class ServiceMixConsumer extends DefaultConsumer implements org.apache.servicemix.nmr.api.Endpoint {
 
     private Channel channel;
 
@@ -61,16 +65,17 @@ public class ServiceMixConsumer extends DefaultConsumer<ServiceMixExchange> impl
     public void process(Exchange exchange) {
     	if (exchange.getStatus() == Status.Active) {
             try {
-            	ServiceMixExchange smExchange = getEndpoint().createExchange(exchange.getIn(), exchange);
-            	smExchange.setPattern(ExchangePattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
-                getAsyncProcessor().process(smExchange);
-
-                if (smExchange.getOut(false).getBody() != null) {
-                    exchange.getOut().setBody(smExchange.getOut().getBody());
-                } else if (smExchange.getFault(false).getBody() != null) {
-                    exchange.getFault().setBody(smExchange.getFault().getBody());
-                } else if (smExchange.getException() != null) {
-                	throw (Exception)smExchange.getException();
+            	org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
+            	camelExchange.setPattern(ExchangePattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
+                getProcessor().process(camelExchange);
+                
+                // just copy the camelExchange back to the nmr exchange
+                if (camelExchange.hasOut() && !camelExchange.getOut().isFault()) {
+                    exchange.getOut().setBody(camelExchange.getOut().getBody());
+                } else if (camelExchange.hasOut() && camelExchange.getOut().isFault()) {
+                    exchange.getFault().setBody(camelExchange.getOut().getBody());
+                } else if (camelExchange.getException() != null) {
+                	throw (Exception)camelExchange.getException();
                 } else {
                     exchange.setStatus(Status.Done);
                 }

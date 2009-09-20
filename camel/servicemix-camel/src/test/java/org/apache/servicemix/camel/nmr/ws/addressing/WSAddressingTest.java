@@ -26,10 +26,9 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Endpoint;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.cxf.transport.CamelTransportFactory;
 import org.apache.camel.spring.SpringCamelContext;
+import org.apache.camel.test.CamelTestSupport;
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.bus.spring.SpringBusFactory;
@@ -37,7 +36,6 @@ import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.jaxws.ServiceImpl;
 import org.apache.cxf.jaxws.support.ServiceDelegateAccessor;
-import org.apache.cxf.transport.ConduitInitiatorManager;
 import org.apache.cxf.ws.addressing.AddressingProperties;
 import org.apache.cxf.ws.addressing.ContextUtils;
 import org.apache.cxf.ws.addressing.EndpointReferenceType;
@@ -55,7 +53,7 @@ import org.apache.servicemix.nmr.core.ServiceMix;
 import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class WSAddressingTest extends ContextTestSupport implements VerificationCache {
+public class WSAddressingTest extends CamelTestSupport implements VerificationCache {
 	
 	
     
@@ -150,7 +148,7 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
         headerVerifier.verificationCache = this;
     }
     
-    protected void startService() {
+    protected void startService() {       
     	Object implementor = new GreeterImpl();
         endpoint = javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
@@ -183,6 +181,7 @@ public class WSAddressingTest extends ContextTestSupport implements Verification
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
+                // configure the route from spring application
             	errorHandler(noErrorHandler());
             	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
             	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
