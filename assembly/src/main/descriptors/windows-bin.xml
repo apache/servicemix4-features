@@ -45,7 +45,7 @@
           <lineEnding>dos</lineEnding>
           <includes>
             <include>pom.xml</include>
-            <include>**/smx4web/**</include>
+            <include>**/web/**</include>
           </includes>
       </fileSet>
       
