@@ -77,10 +77,10 @@ Prerequisites for Running this Example
    examples directory.
 
 
-2. Launch the ServiceMix server by running the following command:
+2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/servicemix          (on UNIX)
-  <servicemix_home>\bin\servicemix          (on Windows)
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
   
 
 Building and Deploying
@@ -112,7 +112,7 @@ You can deploy the SA in two ways:
   
   Type the following command:
 
-  osgi/install -s mvn:org.apache.servicemix.examples.bridge/bridge-sa/${version}/zip
+  osgi:install -s mvn:org.apache.servicemix.examples.bridge/bridge-sa/${version}/zip
 
 
 Running a Client
@@ -140,11 +140,11 @@ To run the java code client:
 Viewing the Log Entries
 -----------------------
 You can view the message that is sent by viewing the log entries
-in the servicemix.log file in the data/log directory of your
+in the karaf.log file in the data/log directory of your
 ServiceMix installation, or by typing the following
 command in the ServiceMix console:
 
-  log/d
+  log:display
   
 
 Changing the Example
@@ -157,4 +157,5 @@ above.
 More Information
 ----------------
 For more information about this example, see:
+
   http://servicemix.apache.org/creating-a-protocol-bridge.html

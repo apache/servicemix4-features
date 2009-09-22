@@ -20,9 +20,9 @@ CAMEL OSGI EXAMPLE
 
 Purpose
 -------
-This example demonstrates how to deploy a Camel EIP route as an OSGi
-bundle in ServiceMix. The example also shows you how to use OSGi
-property placeholders and how to deploy the properties file from the
+Deploys a Camel EIP route as an OSGi bundle. Configuration makes use
+of the OSGi Configuration Admin service and Spring property placeholders,
+and the example demonstrates how to deploy the properties file from the
 ServiceMix console.
 
 
@@ -50,8 +50,7 @@ The beans.xml file also contains the following elements:
    values using the OSGi Configuration Admin service. In this case, the 
    property is also given the default value of "MyTransform".
    
-The route and configuration is deployed to the ServiceMix container as
-an OSGi bundle.   
+The route and configuration are deployed in an OSGi bundle.   
 
    
 Prerequisites for Running the Example
@@ -65,10 +64,10 @@ Prerequisites for Running the Example
   For more information, see the README in the top-level examples
   directory.
 
-2. Start a ServiceMix server by running the following command:
+2. Start ServiceMix by running the following command:
 
-    <servicemix_home>/bin/servicemix          (on UNIX)
-    <servicemix_home>\bin\servicemix          (on Windows)
+    <servicemix_home>/bin/karaf          (on UNIX)
+    <servicemix_home>\bin\karaf          (on Windows)
 
 
 Running the Example
@@ -87,12 +86,12 @@ You can run the example in two ways:
   download the bundles it needs.
 
 
-A. Using a Prebuilt Deployment Bundle
--------------------------------------
+A. Using a Prebuilt Deployment Bundle: Quick and Easy
+-----------------------------------------------------
 To install and run a prebuilt version of this example, enter the
 following command in the ServiceMix console:
 
-  features/install examples-camel-osgi
+  features:install examples-camel-osgi
   
 This command makes use of the ServiceMix features facility. For more
 information about the features facility, see the README.txt file in the
@@ -111,9 +110,9 @@ Updating and Redeploying the Properties File from the Console
 You can update and redeploy the properties file that is used by the
 properties placeholder in the beans.xml from console as follows:
 
-1. Edit the org.apache.servicemix.examples.cfg file located in this
-   folder by changing the value of the "prefix" key to whatever you
-   want (for example, YourTransform).
+1. Edit the org.apache.servicemix.examples.cfg file, located in the
+   same folder as this README, by changing the value of the "prefix"
+   key to whatever you want (for example, YourTransform).
   
 2. Copy the updated configuration file to your <servicemix_home>/etc
    directory. You can do this from the ServiceMix console by typing:
@@ -123,8 +122,8 @@ properties placeholder in the beans.xml from console as follows:
 
    On Windows you need to replace / in the path with \\.
 
-   Note, the text you are typing might intermingle with the output being
-   logged. This is nothing to worry about.
+   Note, the text you are typing might intermingle with the output
+   being logged. This is nothing to worry about.
 
 3. Restart the example bundle:
 
@@ -132,19 +131,19 @@ properties placeholder in the beans.xml from console as follows:
        to it. To get the bundle ID, enter the following command in the
        ServiceMix console:
 
-         osgi/list
+         osgi:list
 
       At the end of the listing, you should see an entry similar to
       the following:
 
-      [158] [Active     ] [Started  ] [  60] Apache ServiceMix Example :: Camel OSGi (4.1.0.fuse)
+      [158] [Active     ] [Started  ] [  60] Apache ServiceMix Example :: Camel OSGi (4.1.0)
  
       In this case, the bundle ID is 158.
 
-   (ii) Enter the following command at the ServiceMix console to
+   (ii) Enter the following command in the ServiceMix console to
         restart the bundle:
     
-          osgi/restart <bundle_id>
+          osgi:restart <bundle_id>
   
   The prefix of the output should change, and the output should look
   similar to the following:
@@ -166,7 +165,7 @@ yourself, complete the following steps:
    described above, you must first uninstall the examples-camel-osgi
    feature by entering the following command in the ServiceMix console:
 
-     features/uninstall examples-camel-osgi
+     features:uninstall examples-camel-osgi
 
 2. Build the example by opening a command prompt, changing directory to
    examples/camel-osgi (this example) and entering the following Maven
@@ -182,10 +181,10 @@ yourself, complete the following steps:
    copies it to your local Maven repository and to the target directory
    of this example.
      
-3. The easiest way to install the example bundle that you just built
-   is to enter the following command in the ServiceMix console:
+3. Install the example by entering the following command in
+   the ServiceMix console:
    
-     features/install examples-camel-osgi
+     features:install examples-camel-osgi
        
    It makes use of the ServiceMix features facility. For more information
    about the features facility, see the README.txt file in the examples
@@ -211,7 +210,7 @@ Stopping and Uninstalling the Example
 To stop the example, enter the following command in the ServiceMix
 console:
 
-  osgi/stop <bundle_id>
+  osgi:stop <bundle_id>
 
 For information on how to find the bundle_id assigned to the example,
 see step 3 in the "Updating and Redeploying the Properties File 
@@ -220,17 +219,17 @@ from the Console" section above.
 To uninstall the example, enter one of the following commands in
 the ServiceMix console:
 
-  features/uninstall examples-camel-osgi
+  features:uninstall examples-camel-osgi
  
 or
  
-  osgi/uninstall <bundle_id>
+  osgi:uninstall <bundle_id>
   
 
 Viewing the Log Entries
 -----------------------
-You can view the log entries in the servicemix.log file in the
+You can view the log entries in the karaf.log file in the
 data/log directory of your ServiceMix installation, or by typing
 the following command in the ServiceMix console:
 
-  log/d
+  log:display

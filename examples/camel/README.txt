@@ -15,31 +15,117 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix Camel Example
-=======================================
+CAMEL JAVA JBI EXAMPLE
+======================
 
-This example shows how to use Apache Camel to deploy EIP routes
+Purpose
+-------
+Write a simple Camel EIP route in Java, and deploy it as a JBI
+component.
 
-You can run this example using an embedded ServiceMix install via
-  cd camel-sa
-  mvn jbi:servicemix
 
-Or if you prefer you can start a ServiceMix server (if not already started) by running
-  bin/servicemix
-in the root dir of this ditribution.
+Explanation
+-----------
+The Camel route is written in Java and can be found in the 
+MyRouteBuilder.java file, which is located in the following
+directory of this example:
 
-To start this sample, run:
+  camel-simple-su/src/main/java/org/apache/servicemix/samples
+  
+The contents of the MyRouteBuilder.java file can be described as
+follows:
+
+- Defines a MyRouteBuilder class that extends
+  org.apache.camel.builder.RouteBuilder.
+
+- Writes a configure() method that sets up the route.
+
+- The route does the following:
+
+  1. Uses the Camel timer component to create a heartbeat event
+     every second.
+  2. Sets the event message body to "Hello World".
+  3. Forwards the message to a logger.
+
+
+The Camel configuration file, camel-context.xml, specifies the name of
+the Java package containing one or more RouteBuiler classes. When the
+application is deployed, Camel searches the specified Java package for
+any classes that inherit from RouteBuilder. All such classes are
+instantiated and registered with the CamelContext object, thereby
+installing and activating the Java routes. The camel-content.xml
+configuration file is located in the following directory of this
+example:
+
+  camel-simple-su/src/main/resources 
+
+
+Prerequisites for Running the Example
+-------------------------------------
+1. You must have the following installed on your machine:
+
+   - JDK 1.5 or higher
+   
+   - Maven 2.0.6 or higher
+
+   For more information, see the README in the top-level
+   examples directory.
+
+
+2. Start ServiceMix by running the following command:
+
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
+
+
+Building and Deploying
+----------------------
+To build this example, run the following command (from the directory
+that contains this README):
+
   mvn install
+  
 
-You can deploy the example on ServiceMix 4 in two different ways:
-- using hotdeploy: 
-   copy the camel-sa/target/camel-sa-${version}.zip to <servicemix_home>/deploy
-- using the ServiceMix console:
-   osgi/install -s mvn:org.apache.servicemix.examples.camel/camel-sa/${version}/zip
+If all of the required OSGi bundles are available in your local
+Maven repository, the example will build quickly. Otherwise it
+may take some time for Maven to download everything it needs.
 
-When the example is deployed, use 'log/d' on the ServiceMix console to see the logged messages
+Once complete, you will find the example service assembly, called
+camel-sa-${version}.zip, in the camel-sa/target directory.
+
+You can deploy the example in two ways:
+
+- Using Hot Deployment
+  --------------------
+  
+  Copy the camel-sa/target/camel-sa-${version}.zip to the 
+  <servicemix_home>/deploy directory.
+
+
+- Using the ServiceMix Console
+  ----------------------------
+
+  Enter the following command:
+  
+  osgi:install -s mvn:org.apache.servicemix.examples.camel/camel-sa/${version}/zip
+
+
+Once deployed, you can view the following logged message in the
+karaf.log file in the data/log directory of your ServiceMix
+installation, or by typing 'log:display' in the ServiceMix console:
+
   Exchange[BodyType:String, Body:Hello World!]
   
-For more information on running this example please see:
-  http://servicemix.apache.org/camel-example.html
 
+Changing the Example
+--------------------
+If you want to change the code or configuration in this example,
+use 'mvn install' to rebuild the JBI Service Assembly zip, and
+deploy it as described above.
+
+
+More Information
+----------------
+For more information on running this example, see:
+  
+http://servicemix.apache.org/camel-example.html

@@ -15,35 +15,137 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix Bridge Camel Example
-========================================
+CAMEL BRIDGE EXAMPLE
+====================
 
-This example shows a bridge between the HTTP and JMS protocols,
-with an XSLT transformation using Camel in between.
+Purpose
+-------
+Demonstrates how to use Camel and JBI to create a protocol bridge
+that receives a message via HTTP, transforms it and sends it to a
+JMS queue.
 
-First start a ServiceMix server (if not already started) by running
-  bin/servicemix
-in the root dir of this ditribution.
+This example uses the Camel integration framework. The bridge
+example, on the other hand, uses the older ServiceMix EIP
+implementation to achieve the same result. For more details on
+how Camel compares to ServiceMix EIP, see:
 
-To start this sample, run:
+http://camel.apache.org/how-does-camel-compare-to-servicemix-eip.html
+
+
+Explanation
+-----------
+The bridge consists of three JBI Service Units (SUs) wrapped up
+in a JBI Service Assembly (SA) that is deployed to ServiceMix.
+
+The three SUs can be described as follows:
+
+1. HTTP SU (see the bridge/bridge-http-su directory)
+   A HTTP endpoint that listens on port 8192 for HTTP requests.
+
+2. JMS SU (see the bridge/bridge-jms-su directory)
+   An ActiveMQ JMS endpoint to which Camel sends messages.
+   
+3. Camel SU (see the bridge-camel-su directory)
+   A Camel route that receives messages from the HTTP endpoint,
+   transforms them using an XSLT stylesheet, logs them, and then
+   sends them to the JMS endpoint.
+   
+   The Camel routing information is contained in the camel-context.xml
+   file, which is located in the ./bridge-camel-su/src/main/resources
+   directory, and is shown below:
+
+    <route>
+      <from uri="jbi:endpoint:http://servicemix.apache.org/samples/bridge/pipeline/endpoint"/>
+      <to uri="xslt:bridge.xslt"/>
+      <to uri="log:org.apache.servicemix.example?level=INFO"/>
+      <to uri="jbi:endpoint:http://servicemix.apache.org/samples/bridge/jms/endpoint"/>
+    </route>
+
+The bridge-camel-sa directory contains the POM file that tells
+Maven how to build the SA.
+   
+
+Prerequisites for Building and Running this Example
+---------------------------------------------------
+1. You must have the following installed on your machine:
+
+   - JDK 1.5 or higher.
+
+   - Apache Maven 2.0.6 or higher.
+
+   For more information, see the README in the top-level examples
+   directory.
+
+2. Start ServiceMix by running the following command:
+
+  <servicemix_home>/bin/karaf	(on UNIX)
+  <servicemix_home>\bin\karaf	(on Windows)
+
+
+Building and Deploying
+----------------------
+This example uses the ServiceMix JBI Maven plugin to build the SUs
+and the SA. To build the example, run the following command
+(from the directory that contains this README):
+
   mvn install
+  
+If all of the required OSGi bundles are available in your local Maven
+repository, the example will build quickly. Otherwise it may take
+some time for Maven to download everything it needs.
 
-You can deploy the example on ServiceMix 4 in two different ways:
-- using hotdeploy:
-   copy the bridge-camel-sa/target/bridge-camel-sa-${version}.zip to
-<servicemix_home>/deploy
-- using the ServiceMix console:
-   osgi/install -s
-mvn:org.apache.servicemix.examples.bridge-camel/bridge-camel-sa/${version}/zip
+Once complete, you will find the SA, called bridge-camel-sa-${version}.zip,
+in the bridge-camel-sa/target directory.
 
-You can then launch the client.html in your favorite browser
-and send an HTTP request which will be transformed in a JMS
-message.  After the JMS message has been sent to the bridge.output queue
-successfully,
-you will receive an HTTP STATUS 202 response code from the ESB.
-Or you can launch java code client to send the request
-cd client; mvn compile exec:java
+You can deploy the SA in two ways:
 
-For more information on running this example please see:
-  http://servicemix.apache.org/bridge.html
+- Using Hot Deployment
+  --------------------
+  
+  Copy the bridge-camel-sa/target/bridge-camel-sa-${version}.zip
+  to the <servicemix_home>/deploy directory.
+     
+- Using the ServiceMix Console
+ -----------------------------
+  
+  Type the following command:
 
+  osgi:install -s mvn:org.apache.servicemix.examples.bridge-camel/bridge-camel-sa/${version}/zip
+ 
+ 
+Running a Client
+----------------
+To run the web client:
+
+1. Open the client.html, which is located in the same directory as this
+   README file, in your favorite browser.
+
+2. Send a HTTP request. It will be transformed into a JMS message.
+
+   Once the JMS message has been successfully sent to the bridge.output
+   queue,  you will receive an HTTP STATUS 202 response code from the ESB.
+
+To run the java code client:
+
+1. Change to the <servicemix_home>/examples/bridge-camel/client
+   directory.
+
+2. Run the following command:
+
+     mvn compile exec:java
+
+
+Viewing the Log Entries
+-----------------------
+You can view the message that is sent by viewing the entries
+in the karaf.log file in the data/log directory of your
+ServiceMix installation, or by typing the following
+command in the ServiceMix console:
+
+  log:display
+
+
+Changing the Example
+--------------------
+If you change the code or configuration in this example, use 'mvn install'
+to rebuild the SA, and deploy it as described above.

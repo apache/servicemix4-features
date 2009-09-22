@@ -77,12 +77,9 @@ List of Examples
 - cxf-wsdl-first-osgi-package
   Publishes, as OSGi bundles, a WSDL-defined web service created using CXF.
 
-- kernel-demos
-  Embeds the ServiceMix Kernel in a web application.
-  
 - simple
-  Adds new endpoints using only XML configuration files.
-  
+  Adds new endpoints using XML configuration files only.
+
 
 Prerequisites for Running the Examples
 =========================================
@@ -91,7 +88,6 @@ Java Development Kit (JDK)
 --------------------------
 You must have JDK 1.5 or higher installed on your machine to
 run the ServiceMix examples.
-
 
 Apache Maven
 ------------
@@ -105,7 +101,15 @@ repository on your machine. The next time you run Maven it uses the
 locally stored JARs where possible.
 
 To download and find out more about Maven, visit:
-http://maven.apache.org
+  http://maven.apache.org
+
+ServiceMix Container
+--------------------
+You must have ServiceMix up and running. To start the ServiceMix
+container, run the following command:
+
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
 
 
 ServiceMix Features Facility
@@ -116,34 +120,29 @@ together to provide some functionality. The details of what makes up
 a feature are contained in a features definition file. The ServiceMix
 console includes a features subshell that provides commands to enable
 you to add and remove features, and to point to feature repositories.
-If you add a feature, the ServiceMix container uses the details
-provided in the features definition file to load and activate all of
-the required bundles that are not already present in the container.
+If you add a feature, ServiceMix uses the details provided in
+the features definition file to load and activate all of the
+required bundles that are not already present in the container.
 
 ServiceMix includes a number of features that make the running of
 the examples quick and easy. Each feature enables you to use a single
 command to install the example bundle and any bundles that the example
 depends on.
 
-To view a list of available features commands, enter the following
-command in the ServiceMix console:
-
-  features/help
-
 To view a list of the features that are already installed, enter
 the following command in the ServiceMix console:
 
-  features/list
+  features:list
 
 To view a list of the features that are used by the examples, enter
 the following command in the ServiceMix console:
 
-  features/list | grep examples
+  features:list | grep examples
 
 To view the repository URLs currently associated with the features
 facility, enter the following command in the ServiceMix console:
 
-  features/listUrl
+  features:listUrl
 
 To view the contents of the features definition file that includes
 definitions for each of the features used by the examples, enter the

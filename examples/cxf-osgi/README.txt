@@ -15,63 +15,198 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix cxf osgi example
-==========================================
+CXF OSGi HTTP WEB SERVICE
+=========================
 
-This example leverages CXF and Spring-DM to create a web service and expose
-it through the OSGi HTTP Service.
+Purpose
+-------
+Create a web service with CXF and expose it through the OSGi HTTP
+Service.
 
-Quick steps to install the sample
----------------------------------
 
-Launch the ServiceMix Kernel by running
-  bin/servicemix
-in the root dir of this distribution.
+Explanation
+-----------
+The web service is a simple JAX-WS web service called HelloWorld. The 
+interface and the implementation are located in the src/main/java/org/
+apache/servicemix/examples/cxf directory of this example.
 
-When inside the console, just run the following commands to install the
-example:
+The beans.xml file, located in the src/main/resources/META-INF/spring
+directory:
 
-  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-  features/install examples-cxf-osgi
+1. Imports the configuration files needed to enable CXF and OSGi work
+   together.
 
-If you have all the bundles available in your local repo, the installation
-of the example will be very fast, otherwise it may take some time to
-download everything needed.
+2. Configures the web service endpoint as follows:
 
-Testing the example
+  <jaxws:endpoint id="helloWorld"
+         implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
+         address="/HelloWorld"/>
+
+
+Prerequisites for Running the Example
+-------------------------------------
+1. You must have the following installed on your machine:
+
+   - JDK 1.5 or higher
+   
+   - Maven 2.0.6 or higher
+   
+  For more information, see the README in the top-level examples
+  directory.
+
+
+2. Start ServiceMix by running the following command:
+
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
+
+
+Running the Example
 -------------------
+You can run the example in two ways:
 
-When the feature is installed, output for publishing the cxf endpoint
-is displayed to the console.
+- A. Using a Prebuilt Deployment Bundle: Quick and Easy
+This option is useful if you want to see the example up and
+running as quickly as possible.
 
-Now, just open your browser and go to the following url:
+- B. Building the Example Bundle Yourself
+This option is useful if you want to change the example in any
+way. It tells you how to build and deploy the example. This
+option might be slower than option A because, if you do not
+already have the required bundles in your local Maven
+repository, Maven will have to download the bundles it needs.
 
-http://localhost:8181/cxf/HelloWorld?wsdl
+A. Using a Prebuilt Deployment Bundle: Quick and Easy
+-----------------------------------------------------
+To install and run a prebuilt version of this example, enter
+the following command in the ServiceMix console:
 
-It should display the WSDL of the service (if you use Safari, make sure to
-right click the window and select 'Show Source', else the page will be blank).
-Or you can also test it from ServiceMix console using"
+  features:install examples-cxf-osgi
+  
+This command makes use of the ServiceMix features facility. For
+more information about the features facility, see the README.txt
+file in the examples parent directory.
 
-optional/cat http://localhost:8181/cxf/HelloWorld?wsdl
+When the feature is installed, output for publishing the CXF
+endpoint is displayed to the console.
 
-You can also open the client.html page in a browser to try sending a request
-to the service.
+To view the service WSDL, open your browser and go to the following
+URL:
 
-Or you can launch java code client to send the request
-mvn compile exec:java
+  http://localhost:8181/cxf/HelloWorld?wsdl
 
-How does it work?
------------------
+Note, if you use Safari, right click the window and select
+'Show Source'.
 
-The installation leverages ServiceMix Kernel by installing what's called
-'features'. You can see the features definition file using the following
-command inside ServiceMix console:
+Running a Client
+----------------
+To run the web client:
 
-optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
+1. Open the client.html, which is located in the same directory as
+   this README file, in your favorite browser.
 
-The list of available features can be obtained using:
+2. Click the Send button to send a request.
 
-features/list
+To run the java code client:
+
+1. Change to the <servicemix_home>/examples/cxf-osgi
+   directory.
+
+2. Run the following command:
+
+     mvn compile exec:java
 
 
+B. Building the Example Bundle Yourself
+---------------------------------------
+To install and run the example where you build the example bundle
+yourself, complete the following steps:
+
+1. If you have already run the example using the prebuilt version as
+   described above, you must first uninstall the examples-cxf-osgi
+   feature by entering the following command in the ServiceMix console:
+
+     features:uninstall examples-cxf-osgi
+
+   
+2. Build the example by opening a command prompt, changing directory to
+   examples/cxf-osgi (this example) and entering the following Maven
+   command:
+
+     mvn install
+   
+   If all of the required OSGi bundles are available in your local
+   Maven repository, the example will build very quickly. Otherwise
+   it may take some time for Maven to download everything it needs.
+   
+   The mvn install command builds the example deployment bundle and
+   copies it to your local Maven repository and to the target directory
+   of this example.
+     
+3. Install the example by entering the following command in
+   the ServiceMix console:
+   
+     features:install examples-cxf-osgi
+       
+   It makes use of the ServiceMix features facility. For more
+   information about the features facility, see the README.txt file
+   in the examples parent directory.
+
+
+When the feature is installed, output for publishing the CXF
+endpoint is displayed to the console.
+
+To view the service WSDL, open your browser and go to the following
+URL:
+
+  http://localhost:8181/cxf/HelloWorld?wsdl
+
+Note, if you use Safari, right click the window and select
+'Show Source'.
+
+You can try running a client against your service by following the
+instructions in the "Running a Client" section above.
+
+
+Stopping and Uninstalling the Example
+-------------------------------------
+To stop the example, you must first know the bundle ID that ServiceMix
+has assigned to it. To get the bundle ID, enter the following command
+at the ServiceMix console (Note, the text you are typing will intermingle
+with the output being logged. This is nothing to worry about.):
+
+  osgi:list
+
+At the end of the listing, you should see an entry similar to the
+following:
+
+  [170] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF OSGi (4.1.0)
+
+In this case, the bundle ID is 170.
+
+To stop the example, enter the following command at the ServiceMix
+console:
+
+  osgi:stop <bundle_id>
+
+For example:
+
+  osgi:stop 170
+
+To uninstall the example, enter one of the following commands in
+the ServiceMix console:
+
+  features:uninstall examples-cxf-osgi
+ 
+or
+ 
+  osgi:uninstall <bundle_id>
+  
+
+Viewing the Log Entries
+-----------------------
+You can view the log entries in the karaf.log file in the
+data/log directory of your ServiceMix installation, or by typing
+the following command in the ServiceMix console:
+
+  log:display

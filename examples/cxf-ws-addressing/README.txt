@@ -15,66 +15,259 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix cxf ws-addressing example
-===================================================
+CXF WS-Addressing Example
+=========================
 
-This example leverages CXF and Spring-DM to create a web service enabled for 
-WS-Addressing, and then expose it through the OSGi HTTP Service.
+Purpose
+-------
+Use CXF to create a web service enabled for WS-Addressing and
+expose it through the OSGi HTTP Service.
 
-Quick steps to install the sample
----------------------------------
 
-Launch the ServiceMix Kernel by running
+Explanation
+-----------
+This example is based on the WS-Addressing sample in Apache CXF
+(http://cxf.apache.org/). There is a more complete explanation
+of WS-Addressing in that sample's README.
 
-  bin/servicemix
+The WS-Addressing functionality is implemented as interceptors.
+It is configured in the beans.xml file, which is located in the
+src/main/resources/META-INF/spring directory of this example.
+The configuration can be explained as follows:
 
-in the root dir of this distribution.
+1. The following entry adds the addressing interceptors (org.apache.
+   cxf.ws.addressing.MAPAggregator and org.apache.cxf.ws.addressing.
+   soap.MAPCodec) to the inbound and outbound interceptor chains.
+   The interceptors add the appropriate WS-Addressing headers to the
+   SOAP messages and remove them at the service end.
 
-When inside the console, just run the following commands to install the
-example:
+  <bean id="mapAggregator" class="org.apache.cxf.ws.addressing.MAPAggregator"/>
+  <bean id="mapCodec" class="org.apache.cxf.ws.addressing.soap.MAPCodec"/>
 
-  features/install examples-cxf-ws-addressing
+    <!--bean id="cxf" class="org.apache.cxf.bus.CXFBusImpl">
+        <property name="inInterceptors">
+            <list>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
+            </list>
+        </property>
+        <property name="inFaultInterceptors">
+            <list>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
+                <ref bean="logInbound"/>
+            </list>
+        </property>
+        <property name="outInterceptors">
+            <list>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
+            </list>
+        </property>
+        <property name="outFaultInterceptors">
+            <list>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
+            </list>
+        </property>
+    </bean--> 
 
-If you have all the bundles available in your local repo, the installation
-of the example will be very fast, otherwise it may take some time to
-download everything needed.
+2. The following entry enables WS-Addressing for all services
+   on the bus:
 
-Testing the example
+   <cxf:bus>
+       <cxf:features>
+           <wsa:addressing/>
+       </cxf:features>
+   </cxf:bus>
+
+In addition, the service WSDL, hello_world_addr.wsdl, includes
+WS-Addressing configuration as shown below:
+
+    <wsdl:service ... >
+        <wsdl:port ...>
+            <soap:address ... />
+            <wswa:UsingAddressing xmlns:wswa="http://www.w3.org/2005/02/addressing/wsdl"/>
+        </wsdl:port>
+    </wsdl:service>
+
+The WSDL file is located in the src/main/resources/wsdl
+directory of this example.
+
+The various clients send the request.xml file, located in src/main/
+resources/org/apache/servicemix/examples/cxf/wsaddressing. It
+contains SOAP request with some WS-Addressing headers set in it.
+
+
+Prerequisites for Running the Example
+-------------------------------------
+1. You must have the following installed on your machine:
+
+   - JDK 1.5 or higher
+   
+   - Maven 2.0.6 or higher
+   
+  For more information, see the README in the top-level examples
+  directory.
+
+
+2. Start ServiceMix by running the following command:
+
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
+
+
+Running the Example
 -------------------
+You can run the example in two ways:
 
-When the feature is installed, output for publishing the cxf endpoint
-is displayed to the console.
+- A. Using a Prebuilt Deployment Bundle: Quick and Easy
+This option is useful if you want to see the example up and
+running as quickly as possible.
 
-Now, just open your browser and go to the following url:
+- B. Building the Example Bundle Yourself
+This option is useful if you want to change the example in any
+way. It tells you how to build and deploy the example. This
+option might be slower than option A because, if you do not
+already have the required bundles in your local Maven
+repository, Maven will have to download the bundles it needs.
+
+A. Using a Prebuilt Deployment Bundle: Quick and Easy
+-----------------------------------------------------
+To install and run a prebuilt version of this example, enter
+the following command in the ServiceMix console:
+
+  features:install examples-cxf-ws-addressing
+  
+This command makes use of the ServiceMix features facility. For
+more information about the features facility, see the README.txt
+file in the examples parent directory.
+
+To view the service WSDL, open your browser and go to the following
+URL:
 
   http://localhost:8181/cxf/SoapContext/SoapPort?wsdl
 
-It should display the WSDL of the service (if you use Safari, make sure to
-right click the window and select 'Show Source', else the page will be blank).
-Or you can also test it from ServiceMix console using"
+Note, if you use Safari, right click the window and select
+'Show Source'.
 
-  optional/cat http://localhost:8181/cxf/SoapContext/SoapPort?wsdl
+Running a Client
+----------------
+To run the web client:
 
-You can also open the client.html page in a browser to try sending a request
-to the service.
+1. Open the client.html, which is located in the same directory as
+   this README file, in your favorite browser.
 
-Or you can launch a programmatic Java client via:
+2. Click the Send button to send a request.
 
-  mvn compile exec:java
-
-which makes an invocation with WS-Addressing headers and displays the response.
-
-How does it work?
------------------
-
-The installation leverages ServiceMix Kernel by installing what's called
-'features'. You can see the features definition file using the following
-command inside ServiceMix console:
-
-  optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-
-The list of available features can be obtained using:
-
-  features/list
+   You should receive a SOAP message as a response.
 
 
+To run the java code client:
+
+1. Change to the <servicemix_home>/examples/cxf-ws-addressing
+   directory.
+
+2. Run the following command:
+
+     mvn compile exec:java
+
+   It makes an invocation with WS-Addressing headers and displays
+   the response.
+
+
+B. Building the Example Bundle Yourself
+---------------------------------------
+To install and run the example where you build the example bundle
+yourself, complete the following steps:
+
+1. If you have already run the example using the prebuilt version as
+   described above, you must first uninstall the
+   examples-cxf-ws-addressing feature by entering the following
+   command in the ServiceMix console:
+
+     features:uninstall examples-cxf-ws-addressing
+
+   
+2. Build the example by opening a command prompt, changing directory
+   to examples/cxf-ws-addressing (this example) and entering the
+   following Maven command:
+
+     mvn install
+   
+   If all of the required OSGi bundles are available in your local
+   Maven repository, the example will build very quickly. Otherwise
+   it may take some time for Maven to download everything it needs.
+   
+   The mvn install command builds the example deployment bundle and
+   copies it to your local Maven repository and to the target directory
+   of this example.
+     
+3. Install the example by entering the following command in
+   the ServiceMix console:
+   
+     features:install examples-cxf-ws-addressing
+       
+   It makes use of the ServiceMix features facility. For more
+   information about the features facility, see the README.txt file
+   in the examples parent directory.
+
+
+When the feature is installed, output for publishing the CXF
+endpoint is displayed to the console.
+
+To view the service WSDL, open your browser and go to the following
+URL:
+
+    http://localhost:8181/cxf/SoapContext/SoapPort?wsdl
+
+Note, if you use Safari, right click the window and select
+'Show Source'.
+
+You can try running a client against your service by following the
+instructions in the "Running a Client" section above.
+
+
+Stopping and Uninstalling the Example
+-------------------------------------
+To stop the example, you must first know the bundle ID that ServiceMix
+has assigned to it. To get the bundle ID, enter the following command
+in the ServiceMix console (Note, the text you are typing will
+intermingle with the output being logged. This is nothing to worry
+about.):
+
+  osgi:list
+
+At the end of the listing, you should see an entry similar to the
+following:
+
+  [171] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF WS-ADDRESSING OSGI (4.1.0)
+
+In this case, the bundle ID is 171.
+
+To stop the example, enter the following command in the ServiceMix
+console:
+
+  osgi:stop <bundle_id>
+
+For example:
+
+  osgi:stop 171
+
+To uninstall the example, enter one of the following commands in
+the ServiceMix console:
+
+  features:uninstall examples-cxf-ws-addressing
+ 
+or
+ 
+  osgi:uninstall <bundle_id>
+  
+
+Viewing the Log Entries
+-----------------------
+You can view the log entries in the karaf.log file in the
+data/log directory of your ServiceMix installation, or by typing
+the following command in the ServiceMix console:
+
+  log:display

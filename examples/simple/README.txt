@@ -15,44 +15,93 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix simple xml deployment examples
-========================================================
+Simple Configuration Only Example
+=================================
 
-This example leverages ServiceMix 4 support for deploying simple XML files to add new endpoints.
-
-Quick steps to install the sample
----------------------------------
-
-Launch the ServiceMix Kernel by running
-  bin/servicemix
-in the root dir of this distribution.
-
-Just copy any of the XML files in this directory to the /deploy directory in the root dir of this distribution 
-to deploy the sample.
+Purpose
+-------
+Add new endpoints using XML configuration files only.
 
 
-Testing the example
+Explanation
+-----------
+There are two parts to this example: Quartz and Groovy. In both cases,
+the JBI endpoints are specified in Spring XML files. When the XML files 
+are deployed to ServiceMix the endpoints are automatically registered
+in the NMR.  
+
+1. Quartz
+The quartz.xml file, located in the same director as this README,
+shows you how to deploy a Camel route together with a JBI endpoint
+in the same XML file. It contains configuration for using the
+Quartz job scheduling system to send messages periodically to
+a JBI endpoint called 'endpoint'. These messages are routed,
+using Camel, to the 'test' logger.
+
+2. Groovy:
+The groovy.xml file, also located in the same directory as this
+README, demonstrates how to embed a service implementation in a
+configuration file, using a scripting language. In this case, we
+use groovy. It uses quartz to send a message every second to the
+service 'receiver'. This service is defined as a scripting endpoint, 
+written in Groovy, using the ServiceMix scripting service engine.
+The Groovy script is stored in ServiceMix's document repository
+and the script is executed whenever a message is received by the
+'receiver' service.
+
+
+Prerequisites for Running the Example
+-------------------------------------
+1. You must have the following installed on your machine:
+
+   - JDK 1.5 or higher
+      
+  For more information, see the README in the top-level examples
+  directory.
+
+2. Start ServiceMix by running the following command:
+
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
+
+
+Running the Example
 -------------------
+To run the example, copy either of the XML files, quartz.xml or
+groovy.xml, from the examples/simple directory to the
+<servicemix_home>/deploy directory.
 
-When the groovy.xml file is copied to the deploy directory, you should see output in the console:
+When the quartz.xml file is copied to the deploy directory, it sends
+messages to the log. You can view the log entries by typing the
+following command in the ServiceMix console:
 
-Starting JSR-223 groovy processor
-org.apache.servicemix.jbi.runtime.impl.InOnlyImpl@41a330e4
-Hello, I got an input message <?xml version="1.0" encoding="UTF-8" standalone="no"?><timer><name>{http://servicemix.apache.org/examples/groovy}service:endpoint</name><group>DEFAULT</group><fullname>DEFAULT.{http://servicemix.apache.org/examples/groovy}service:endpoint</fullname><description/><fireTime>Fri Aug 08 13:50:16 CEST 2008</fireTime></timer>
+  log:display
+
+You should see an entry similar to the following:
+
+  14:15:51,202 | INFO  | x-camel-thread-4 | test                 
+  | rg.apache.camel.processor.Logger   88 | Exchange
+  [BodyType:javax.xml.transform.dom.DOMSource, 
+  Body:<timer><name>{http://servicemix.apache.org/examples/camel}
+  service:endpoint</name><group>DEFAULT</group><fullname>DEFAULT.
+  {http://servicemix.apache.org/examples/camel}service:endpoint
+  </fullname><description/><fireTime>Mon Mar 23 14:15:51 CST 2009
+  </fireTime></timer>]
+
+When the groovy.xml file is copied to the deploy directory, you should 
+see the output similar to the following displayed in the console:
+
+  Starting JSR-223 groovy processor
+  org.apache.servicemix.jbi.runtime.impl.InOnlyImpl@41a330e4
+  Hello, I got an input message <?xml version="1.0" encoding="UTF-8"
+  standalone="no"?><timer><name>{http://servicemix.apache.org/examples
+  /groovy} service:endpoint</name><group>DEFAULT</group><fullname>
+  DEFAULT.{http://servicemix.apache.org/examples/groovy}service:
+  endpoint</fullname><description/><fireTime>Fri Aug 08 13:50:16 
+  CEST 2008</fireTime></timer>
 
 
-When the quartz.xml file is copied to the deploy directory, you can use the 'log/d' command in the console to see this output in the log files:
-
-14:15:51,202 | INFO  | x-camel-thread-4 | test                             | rg.apache.camel.processor.Logger   88 | Exchange[BodyType:javax.xml.transform.dom.DOMSource, Body:<timer><name>{http://servicemix.apache.org/examples/camel}service:endpoint</name><group>DEFAULT</group><fullname>DEFAULT.{http://servicemix.apache.org/examples/camel}service:endpoint</fullname><description/><fireTime>Mon Mar 23 14:15:51 CST 2009</fireTime></timer>]
-
-
-How does it work?
------------------
-
-The installation leverages ServiceMix Kernel by installing a plain Spring XML file.
-The JBI endpoints in the Spring XML file will automatically be registered in the NMR.  
-The quartz.xml file also shows how you can deploy a Camel route together with JBI endpoints from the same XML file.
-
-Both files have a servicemix-quartz endpoint that sends a new message exchange on a regular interval.
-In groovy.xml, this exchange is handled by a Groovy script through the servicemix-scripting SE.
-In quartz.xml, the exchange is sent directly to a Camel route.
+Removing the Example
+--------------------
+To remove the example, remove the XML file from the
+deploy directory.

@@ -15,55 +15,182 @@
  * limitations under the License.
  */
 
-Welcome to the ServiceMix cxf camel nmr example
-==========================================
+CXF, CAMEL and NMR EXAMPLE
+==========================
 
-This example demonstrates the use of CXF and CAMEL exposed to the ServiceMix
-nmr.
+Purpose
+-------
+Create a Camel route that transforms a message, then passes it to a
+CXF web service via the NMR.
 
-Quick steps to install the sample
----------------------------------
 
-Launch the ServiceMix Kernel by running
-  bin/servicemix
-in the root dir of this distribution.
+Explanation
+-----------
+The Camel route is defined in the beans.xml file that is located
+in the src/main/resources/META-INF/spring directory of this example.
 
-When inside the console, just run the following commands to install the
-example:
+The route is defined in the <route> element and can be explained
+as follows:
 
-  features/addUrl mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features
-  features/addUrl mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-  features/install examples-cxf-camel-nmr
+1. A message flow is triggered every five seconds.
 
-If you have all the bundles available in your local repo, the installation
-of the example will be very fast, otherwise it may take some time to
-download everything needed.
+2. It is sent to the MyTransform bean, which adds a SOAP message.
 
-Testing the example
+3. It is sent via the NMR to the HelloWorld web service.
+
+4. Responses are routed to the display method of the MyTransform
+   class.
+
+The web service is defined as follows:
+
+ <jaxws:endpoint id="helloWorld"
+       implementor="org.apache.servicemix.examples.cxfcamel.HelloWorldImpl"
+       address="nmr:HelloWorld" />
+
+
+Prerequisites for Running the Example
+-------------------------------------
+1. You must have the following installed on your machine:
+
+   - JDK 1.5 or higher
+   
+   - Maven 2.0.6 or higher
+   
+  For more information, see the README in the top-level examples
+  directory.
+
+
+2. Start ServiceMix by running the following command:
+
+  <servicemix_home>/bin/karaf          (on UNIX)
+  <servicemix_home>\bin\karaf          (on Windows)
+  
+
+Running the Example
 -------------------
+You can run the example in two ways:
 
-When the example is installed, periodic soap messages are displayed by
-the transform method of the MyTransform class.  These messages are routed
-to the CXF endpoint, and the responses are routed to the display method of
-the MyTransform class.
+- A. Using a Prebuilt Deployment Bundle: Quick and Easy
+This option is useful if you want to see the example up and
+running as quickly as possible.
 
-Finally, uninstall the examples-camel-nmr feature:
-  features/uninstall examples-cxf-camel-nmr
-
-You can also examine the ServiceMix log to see the activity:
-  log/display
-
-How does it work?
------------------
-
-The installation leverages ServiceMix Kernel by installing what's called
-'features'. You can see the features definition file using the following
-command inside ServiceMix console:
-
-optional/cat mvn:org.apache.servicemix.features/apache-servicemix/${version}/xml/features
-
-The list of available features can be obtained using:
-
-features/list
+- B. Building the Example Bundle Yourself
+This option is useful if you want to change the example in any
+way. It tells you how to build and deploy the example. This
+option might be slower than option A because, if you do not
+already have the required bundles in your local Maven
+repository, Maven will have to download the bundles it needs.
 
 
+A. Using a Prebuilt Deployment Bundle: Quick and Easy
+-----------------------------------------------------
+To install and run a prebuilt version of this example, enter
+the following command in the ServiceMix console:
+
+  features:install examples-cxf-camel-nmr
+  
+This command makes use of the ServiceMix features facility. For
+more information about the features facility, see the README.txt
+file in the examples parent directory.
+
+Once the example is running, periodic SOAP messages are displayed by
+the transform method of the MyTransform class. These messages are routed
+to the CXF endpoint, and the responses are routed to the display method
+of the MyTransform class. You should see output similar to the following
+being logged to your console screen:
+
+>>>> <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body><ns1:sayHi xmlns:ns1="http://cxf.examples.servicemix.apache.org/
+"><arg0>Guillaume</arg0></ns1:sayHi></soap:Body></soap:Envelope>
+<<<< <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body><ns2:sayHiResponse xmlns:ns2="http://cxfcamel.examples.
+servicemix.apache.org/"><return>Hello Guillaume</return>
+</ns2:sayHiResponse></soap:Body></soap:Envelope>
+
+For information on how to stop and/or uninstall the example,
+see "Stopping and Uninstalling the Example" below.
+  
+
+B. Building the Example Bundle Yourself
+---------------------------------------
+To install and run the example where you build the example bundle
+yourself, complete the following steps:
+
+1. If you have already run the example using the prebuilt version as
+   described above, you must first uninstall the examples-cxf-camel-nmr
+   feature by entering the following command in the ServiceMix console:
+
+     features:uninstall examples-cxf-camel-nmr
+
+2. Build the example by opening a command prompt, changing directory to
+   examples/cxf-camel-nmr (this example) and entering the following Maven
+   command:
+
+     mvn install
+   
+   If all of the required OSGi bundles are available in your local Maven
+   repository, the example will build very quickly. Otherwise it may
+   take some time for Maven to download everything it needs.
+   
+   The mvn install command builds the example deployment bundle and
+   copies it to your local Maven repository and to the target directory
+   of this example.
+     
+3. Install the example by entering the following command in
+   the ServiceMix console:
+   
+     features:install examples-cxf-camel-nmr
+       
+   It makes use of the ServiceMix features facility. For more information
+   about the features facility, see the README.txt file in the examples
+   parent directory.
+   
+Once the example is running, periodic SOAP messages are displayed by
+the transform method of the MyTransform class. These messages are routed
+to the CXF endpoint, and the responses are routed to the display method
+of the MyTransform class. You should see the messages displayed on your
+console.
+
+
+Stopping and Uninstalling the Example
+-------------------------------------
+To stop the example, you must first know the bundle ID that ServiceMix
+has assigned to it. To get the bundle ID, enter the following command
+in the ServiceMix console (Note, the text you are typing will intermingle
+with the output being logged. This is nothing to worry about.):
+
+  osgi:list
+
+At the end of the listing, you should see an entry similar to the
+following:
+
+  [165] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF-Camel NMR (4.1.0)
+
+In this case, the bundle ID is 165.
+
+To stop the example, enter the following command in the ServiceMix
+console:
+
+  osgi:stop <bundle_id>
+
+For example:
+
+  osgi:stop 165
+
+To uninstall the example, enter one of the following commands in
+the ServiceMix console:
+
+  features:uninstall examples-cxf-camel-nmr
+ 
+or
+ 
+  osgi:uninstall <bundle_id>
+  
+
+Viewing the Log Entries
+-----------------------
+You can view the log entries in the karaf.log file in the
+data/log directory of your ServiceMix installation, or by typing
+the following command in the ServiceMix console:
+
+  log:display
