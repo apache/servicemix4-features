@@ -29,6 +29,7 @@
             <excludes>
               <exclude>bin/*</exclude>
               <exclude>**/demos/**</exclude>
+              <exclude>etc/system.properties</exclude>
               <exclude>etc/startup.properties</exclude>
               <exclude>etc/org.apache.felix.karaf.features.cfg</exclude>
               <exclude>etc/config.properties</exclude>
