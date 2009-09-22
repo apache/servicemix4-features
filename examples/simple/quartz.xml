@@ -19,7 +19,7 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:quartz="http://servicemix.apache.org/quartz/1.0"
-       xmlns:camel="http://activemq.apache.org/camel/schema/spring"
+       xmlns:camel="http://camel.apache.org/schema/spring"
        xmlns:osgi="http://www.springframework.org/schema/osgi"
        xmlns:b="http://servicemix.apache.org/examples/camel"
        xsi:schemaLocation="
@@ -33,8 +33,8 @@
          http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd
          http://servicemix.apache.org/quartz/1.0
          http://servicemix.apache.org/quartz/1.0/servicemix-quartz.xsd
-         http://activemq.apache.org/camel/schema/spring 
-         http://activemq.apache.org/camel/schema/spring/camel-spring.xsd
+         http://camel.apache.org/schema/spring
+         http://camel.apache.org/schema/spring/camel-spring.xsd
          http://www.springframework.org/schema/osgi
          http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 

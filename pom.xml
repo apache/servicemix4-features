@@ -203,7 +203,7 @@
       <servicemix-xmpp-version>2009.01</servicemix-xmpp-version>
       <servicemix-saxon-version>2009.01</servicemix-saxon-version>
       <servicemix-truezip-version>2009.01</servicemix-truezip-version>
-      <servicemix-camel-version>2009.01</servicemix-camel-version>
+      <servicemix-camel-version>2009.02-SNAPSHOT</servicemix-camel-version>
       <servicemix-cxf-bc-version>2009.02-SNAPSHOT</servicemix-cxf-bc-version>
       <servicemix-cxf-se-version>2009.02-SNAPSHOT</servicemix-cxf-se-version>
       <servicemix-drools-version>2009.01</servicemix-drools-version>

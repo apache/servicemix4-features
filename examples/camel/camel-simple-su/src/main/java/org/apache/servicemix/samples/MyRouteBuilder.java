@@ -16,20 +16,18 @@
  */
 package org.apache.servicemix.samples;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 
 /**
  * A Camel Router
- *
+ * 
  * @version $Revision: 1.1 $
  */
 public class MyRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
 
-	    from("timer:myTimerEvent?fixedRate=true")
-			.setBody(constant("Hello World!")).
-				to("log:org.apache.servicemix.samples.camel.ExampleCamelRoute");
+        from("timer:myTimerEvent?fixedRate=true")
+            .setBody(constant("Hello World!"))
+            .to("log:org.apache.servicemix.samples.camel.ExampleCamelRoute");
     }
 }
