@@ -23,11 +23,6 @@
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
-        <bundle>mvn:org.springframework/spring-aop/${spring.version}</bundle>
-        <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
-        <bundle>mvn:org.springframework/spring-context/${spring.version}</bundle>
-        <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
         <bundle>mvn:org.jencks/jencks/${jencks.version}</bundle>
     </feature>
     <feature name="web-core" version="${version}">

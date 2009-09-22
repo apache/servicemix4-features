@@ -85,6 +85,7 @@
       <commons.net.version>1.4.1_1</commons.net.version>
       <commons.pool.version>1.4</commons.pool.version>
       <commons.vfs.version>1.0_1</commons.vfs.version>
+      <commons.jexl.version>1.1_1</commons.jexl.version>
       <cxf.version>2.2.3</cxf.version>
       <dom4j.version>1.6_1</dom4j.version>
       <drools.version>4.0.7_1</drools.version>
@@ -94,7 +95,7 @@
       <features.maven.plugin.version>1.1</features.maven.plugin.version>
       <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
       <felix.compendium.version>1.4.0</felix.compendium.version>
-      <felix.configadmin.version>1.0.4</felix.configadmin.version>
+      <felix.configadmin.version>1.2.4</felix.configadmin.version>
       <felix.core.version>1.4.0</felix.core.version>
       <felix.fileinstall.version>2.0.0</felix.fileinstall.version>
       <felix.framework.version>2.0.0</felix.framework.version>
@@ -154,7 +155,7 @@
       <junit.version>4.4</junit.version>
       <junit.bundle.version>4.4_1</junit.bundle.version>
       <log4j.version>1.2.14</log4j.version>
-      <mina.version>1.1.6_1</mina.version>
+      <mina.version>2.0.0-M6</mina.version>
       <mina.original.version>1.1.6</mina.original.version>
       <neethi.version>2.0.4_1</neethi.version>
       <ognl.version>2.7.3_1</ognl.version>
@@ -169,7 +170,7 @@
       <pax.exam.version>1.0.0</pax.exam.version>
       <pax.runner.version>1.1.1</pax.runner.version>
       <pax.logging.version>1.4</pax.logging.version>
-      <pax.url.version>0.3.3</pax.url.version>
+      <pax.url.version>1.0.0</pax.url.version>
       <pax.web.version>0.5.2</pax.web.version>
       <pax.web.extender.version>0.5.0</pax.web.extender.version>
       <propertyset.version>1.3_1</propertyset.version>
@@ -232,6 +233,11 @@
       <xpp3.version>1.1.4c_1</xpp3.version>
       <werken-xpath.version>0.9.4_1</werken-xpath.version>
       <wss4j.version>1.5.8</wss4j.version>
+      <jaxp.ri.version>1.4.2_1</jaxp.ri.version>
+      <geronimo.blueprint.version>1.0.0</geronimo.blueprint.version>
+      <felix.gogo.version>0.2.0</felix.gogo.version>
+      <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
+      <sshd.version>0.2.0</sshd.version>      
       <sonar.skippedModules>examples</sonar.skippedModules>
   </properties>
 
