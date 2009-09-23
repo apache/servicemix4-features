@@ -98,14 +98,6 @@
               <exclude>pom.xml</exclude>
               <exclude>**/itests/**</exclude>
               <exclude>**/target/**</exclude>
-              <exclude>**/README.txt</exclude>
-              <exclude>**/cxf-http-osgi/**</exclude>
-              <exclude>**/cxf-jms-osgi/**</exclude>
-              <exclude>**/cxf-nmr-osgi/**</exclude>
-              <exclude>**/cxf-handler-cfg/**</exclude>
-              <exclude>**/cxf-soap-handler-osgi/**</exclude>
-              <exclude>**/wsdl-first/**</exclude>
-              <exclude>**/loan-broker-bpel/**</exclude>
               <exclude>**/.classpath</exclude>
               <exclude>**/.project</exclude>
               <exclude>**/.settings/**</exclude>
