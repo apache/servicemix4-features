@@ -53,6 +53,13 @@
             <version>${felix.karaf.version}</version>
             <type>tar.gz</type>
         </dependency>
+        <dependency>
+            <groupId>org.apache.felix.karaf</groupId>
+            <artifactId>apache-felix-karaf</artifactId>
+            <version>${felix.karaf.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
         <!-- let's grab all the NMR dependencies as well -->
         <dependency>
             <groupId>org.apache.servicemix.nmr</groupId>
@@ -153,7 +160,12 @@
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.saaj-impl</artifactId>
             <version>${saaj.impl.version}</version>
-        </dependency> 
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.wsdl4j</artifactId>
+            <version>${wsdl4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.ws.commons.schema</groupId>
             <artifactId>XmlSchema</artifactId>
