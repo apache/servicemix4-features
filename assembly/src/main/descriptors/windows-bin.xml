@@ -249,11 +249,11 @@
         </dependencySet>
         <dependencySet>
             <outputDirectory>/system</outputDirectory>
-            <outputFileNameMapping>org/apache/servicemix/camel/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+            <outputFileNameMapping>org/apache/camel/karaf/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
-                <include>org.apache.servicemix.camel:org.apache.servicemix.camel.features:xml:features</include>
+                <include>org.apache.camel.karaf:features:xml:features</include>
             </includes>
         </dependencySet>
         <dependencySet>

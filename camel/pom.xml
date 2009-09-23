@@ -43,7 +43,6 @@
 
     <modules>
         <module>servicemix-camel</module>
-        <module>camel-features</module>
     </modules>
 
 </project>

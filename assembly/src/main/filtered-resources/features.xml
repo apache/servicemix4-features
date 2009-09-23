@@ -18,6 +18,7 @@
 -->
 <features>
     <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
+    <repository>mvn:org.apache.camel.karaf/features/${camel.version}/xml/features</repository>
     <feature name="connector" version="${version}">
         <feature version="${servicemix.nmr.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
@@ -96,28 +97,9 @@
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
     </feature>
     <feature name="camel" version="${camel.version}">
-        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-${jaxb.api.version}/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
-        <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-core/${camel.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-osgi/${camel.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-spring/${camel.version}</bundle>
-    </feature>
-
-    <feature name='camel-jetty' version='${camel.version}'>
-        <feature version='${camel.version}'>camel-core</feature>
-        <feature version='${camel.version}'>camel-http</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-jetty/${camel.version}</bundle>  
-    </feature> 
-
-    <feature name='camel-spring-integration' version='${camel.version}'>
-        <feature version='${camel.version}'>camel-core</feature>
-        <feature version='${camel.version}'>camel-spring</feature>
-        <bundle>mvn:org.springframework.integration/org.springframework.integration/${spring.integration.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-spring-integration/${camel.version}</bundle>
+        <feature version="${camel.version}">camel-core</feature>
+        <feature version="${camel.version}">camel-osgi</feature>
+        <feature version="${camel.version}">camel-spring</feature>
     </feature>
 
     <!--
