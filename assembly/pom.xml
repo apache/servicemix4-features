@@ -837,7 +837,22 @@
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
-         <dependency>
+        <dependency>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-core</artifactId>
+          <version>${camel.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-spring</artifactId>
+          <version>${camel.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-osgi</artifactId>
+          <version>${camel.version}</version>
+        </dependency>
+          <dependency>
                 <groupId>org.apache.servicemix.specs</groupId>
                 <artifactId>org.apache.servicemix.specs.jaxp-api-1.4</artifactId>
                 <version>${servicemix.specs.version}</version>
