@@ -69,6 +69,7 @@
       <antlr-runtime.version>3.0.1_1</antlr-runtime.version>
       <aopalliance.version>1.0_1</aopalliance.version>
       <asm.version>2.2.3_1</asm.version>
+      <bcel.version>5.2_1-SNAPSHOT</bcel.version>
       <bnd.version>0.0.227</bnd.version>
       <cglib.version>2.1_3_2</cglib.version>
       <camel.version>2.0.0</camel.version>
@@ -229,6 +230,8 @@
       <xmlschema.version>1.4.5</xmlschema.version>
       <xmlsec.version>1.4.3_1-SNAPSHOT</xmlsec.version>
       <opensaml.version>1.1_1</opensaml.version>
+      <xalan.version>2.7.1_2-SNAPSHOT</xalan.version>
+      <xerces.version>2.9.1_2-SNAPSHOT</xerces.version>
       <xmlresolver.version>1.2_1</xmlresolver.version>
       <xpp3.version>1.1.4c_1</xpp3.version>
       <werken-xpath.version>0.9.4_1</werken-xpath.version>
