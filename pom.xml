@@ -99,7 +99,7 @@
       <felix.core.version>1.4.0</felix.core.version>
       <felix.fileinstall.version>2.0.0</felix.fileinstall.version>
       <felix.framework.version>2.0.0</felix.framework.version>
-      <felix.karaf.version>0.9.0-SNAPSHOT</felix.karaf.version>
+      <felix.karaf.version>1.1.0-SNAPSHOT</felix.karaf.version>
       <felix.osgi.version>1.2.0</felix.osgi.version>
       <felix.plugin.version>1.4.1</felix.plugin.version>
       <felix.prefs.version>1.0.2</felix.prefs.version>
@@ -664,6 +664,23 @@
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-assembly-plugin</artifactId>
                   <version>${maven.assembly.version}</version>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-antrun-plugin</artifactId>
+                  <version>1.2</version>
+                  <dependencies>
+                      <dependency>
+                          <groupId>ant-contrib</groupId>
+                          <artifactId>ant-contrib</artifactId>
+                          <version>1.0b3</version>
+                      </dependency>
+                      <dependency>
+                          <groupId>ant</groupId>
+                          <artifactId>ant-optional</artifactId>
+                          <version>1.5.3-1</version>
+                      </dependency>
+                  </dependencies>
               </plugin>
           </plugins>
       </pluginManagement>
