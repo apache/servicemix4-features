@@ -52,7 +52,7 @@
                         <Import-Package>*</Import-Package>
                         <Private-Package>!*</Private-Package>
                         <Export-Package>
-                            org.apache.felix.karaf.version        
+                            org.apache.felix.karaf.branding        
                         </Export-Package>
                         <Spring-Context>*;publish-context:=false</Spring-Context>
                     </instructions>

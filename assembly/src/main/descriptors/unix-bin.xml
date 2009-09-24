@@ -47,7 +47,7 @@
             <directory>target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-              <include>bin/*</include>
+              <include>bin/admin</include>
             </includes>
             <fileMode>0755</fileMode>
         </fileSet>
@@ -125,6 +125,18 @@
     </fileSets>
 
     <files>
+        <file>
+            <source>${basedir}/target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}/bin/karaf</source>
+            <outputDirectory>/bin/</outputDirectory>
+            <destName>servicemix</destName>
+            <fileMode>0755</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/target/dependencies/servicemix-version.jar</source>
+            <outputDirectory>/lib/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </file>
         <file>
             <source>${basedir}/target/classes/features.xml</source>
             <outputDirectory>system/org/apache/servicemix/${artifactId}/${version}</outputDirectory>
