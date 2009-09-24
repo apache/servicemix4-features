@@ -269,7 +269,7 @@
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
-                <include>org.apache.camel.karaf:org.apache.servicemix.camel.features:xml:features</include>
+                <include>org.apache.camel.karaf:features:xml:features</include>
             </includes>
         </dependencySet>
         <dependencySet>
