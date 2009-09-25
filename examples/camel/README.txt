@@ -66,7 +66,7 @@ Prerequisites for Running the Example
 
    - JDK 1.5 or higher
    
-   - Maven 2.0.6 or higher
+   - Maven 2.0.9 or higher
 
    For more information, see the README in the top-level
    examples directory.
@@ -74,8 +74,8 @@ Prerequisites for Running the Example
 
 2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/karaf          (on UNIX)
-  <servicemix_home>\bin\karaf          (on Windows)
+  <servicemix_home>/bin/servicemix          (on UNIX)
+  <servicemix_home>\bin\servicemix          (on Windows)
 
 
 Building and Deploying
@@ -110,9 +110,10 @@ You can deploy the example in two ways:
   osgi:install -s mvn:org.apache.servicemix.examples.camel/camel-sa/${version}/zip
 
 
-Once deployed, you can view the following logged message in the
-karaf.log file in the data/log directory of your ServiceMix
-installation, or by typing 'log:display' in the ServiceMix console:
+Once deployed, you can view the following message in the
+log file in the data/log directory of your ServiceMix
+installation, or by typing 'log:display' in the ServiceMix
+console:
 
   Exchange[BodyType:String, Body:Hello World!]
   

@@ -92,7 +92,7 @@ run the ServiceMix examples.
 Apache Maven
 ------------
 The examples use Apache Maven for building code. You must install
-Maven 2.0.6 or higher and add the Maven bin/ directory to your PATH
+Maven 2.0.9 or higher and add the Maven bin/ directory to your PATH
 if you want to build any of the examples. 
 
 If you have not used Maven before, the first time you use it to
@@ -108,8 +108,8 @@ ServiceMix Container
 You must have ServiceMix up and running. To start the ServiceMix
 container, run the following command:
 
-  <servicemix_home>/bin/karaf          (on UNIX)
-  <servicemix_home>\bin\karaf          (on Windows)
+  <servicemix_home>/bin/servicemix          (on UNIX)
+  <servicemix_home>\bin\servicemix          (on Windows)
 
 
 ServiceMix Features Facility

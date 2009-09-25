@@ -48,7 +48,7 @@ Prerequisites for Running the Example
 
    - JDK 1.5 or higher
    
-   - Maven 2.0.6 or higher
+   - Maven 2.0.9 or higher
    
   For more information, see the README in the top-level examples
   directory.
@@ -56,8 +56,8 @@ Prerequisites for Running the Example
 
 2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/karaf          (on UNIX)
-  <servicemix_home>\bin\karaf          (on Windows)
+  <servicemix_home>/bin/servicemix          (on UNIX)
+  <servicemix_home>\bin\servicemix          (on Windows)
 
 
 Running the Example
@@ -89,9 +89,9 @@ file in the examples parent directory.
 Verifying the Web Service Deployed to the NMR
 ---------------------------------------------
 You can verify that the web service was deployed to the NMR by
-looking at the log file, karaf.log, which can be found in the
-data/log directory of your ServiceMix installation, or by typing
-the following command in the ServiceMix console:
+looking at the log file in the data/log directory of your
+ServiceMix installation, or by typing the following command
+in the ServiceMix console:
 
   log:display
 

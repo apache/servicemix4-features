@@ -71,7 +71,7 @@ Prerequisites for Running this Example
 
    - JDK 1.5 or higher.
 
-   - Apache Maven 2.0.6 or higher.
+   - Apache Maven 2.0.9 or higher.
 
    For more information, see the README in the top-level
    examples directory.
@@ -79,8 +79,8 @@ Prerequisites for Running this Example
 
 2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/karaf          (on UNIX)
-  <servicemix_home>\bin\karaf          (on Windows)
+  <servicemix_home>/bin/servicemix          (on UNIX)
+  <servicemix_home>\bin\servicemix          (on Windows)
   
 
 Building and Deploying
@@ -139,10 +139,10 @@ To run the java code client:
 
 Viewing the Log Entries
 -----------------------
-You can view the message that is sent by viewing the log entries
-in the karaf.log file in the data/log directory of your
-ServiceMix installation, or by typing the following
-command in the ServiceMix console:
+You can view the message that is sent by viewing the entries
+in the log file in the data/log directory of your ServiceMix
+installation, or by typing the following command in the
+ServiceMix console:
 
   log:display
   

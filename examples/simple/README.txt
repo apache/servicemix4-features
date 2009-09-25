@@ -61,8 +61,8 @@ Prerequisites for Running the Example
 
 2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/karaf          (on UNIX)
-  <servicemix_home>\bin\karaf          (on Windows)
+  <servicemix_home>/bin/servicemix          (on UNIX)
+  <servicemix_home>\bin\servicemix          (on Windows)
 
 
 Running the Example

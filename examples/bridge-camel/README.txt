@@ -39,10 +39,10 @@ in a JBI Service Assembly (SA) that is deployed to ServiceMix.
 
 The three SUs can be described as follows:
 
-1. HTTP SU (see the bridge/bridge-http-su directory)
+1. HTTP SU (see the bridge-http-su directory)
    A HTTP endpoint that listens on port 8192 for HTTP requests.
 
-2. JMS SU (see the bridge/bridge-jms-su directory)
+2. JMS SU (see the bridge-jms-su directory)
    An ActiveMQ JMS endpoint to which Camel sends messages.
    
 3. Camel SU (see the bridge-camel-su directory)
@@ -71,15 +71,15 @@ Prerequisites for Building and Running this Example
 
    - JDK 1.5 or higher.
 
-   - Apache Maven 2.0.6 or higher.
+   - Apache Maven 2.0.9 or higher.
 
    For more information, see the README in the top-level examples
    directory.
 
 2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/karaf	(on UNIX)
-  <servicemix_home>\bin\karaf	(on Windows)
+  <servicemix_home>/bin/servicemix	(on UNIX)
+  <servicemix_home>\bin\servicemix	(on Windows)
 
 
 Building and Deploying
@@ -138,9 +138,9 @@ To run the java code client:
 Viewing the Log Entries
 -----------------------
 You can view the message that is sent by viewing the entries
-in the karaf.log file in the data/log directory of your
-ServiceMix installation, or by typing the following
-command in the ServiceMix console:
+in the log file in the data/log directory of your ServiceMix
+installation, or by typing the following command in the
+ServiceMix console:
 
   log:display
 

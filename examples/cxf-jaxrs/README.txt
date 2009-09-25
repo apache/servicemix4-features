@@ -56,15 +56,15 @@ Prerequisites for Running the Example
 
    - JDK 1.5 or higher
    
-   - Maven 2.0.6 or higher
+   - Maven 2.0.9 or higher
    
   For more information, see the README in the top-level examples
   directory.
 
 2. Start ServiceMix by running the following command:
 
-  <servicemix_home>/bin/karaf          (on UNIX)
-  <servicemix_home>\bin\karaf          (on Windows)
+  <servicemix_home>/bin/servicemix          (on UNIX)
+  <servicemix_home>\bin\servicemix          (on Windows)
   
 
 Running the Example
@@ -134,7 +134,7 @@ the invocations. For example, try using curl as follows:
   # Create a customer
   #
   #
-  curl -X POST -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/add_customer.xml -H "Content-Type: text/xml" http://localhost:8080/cxf/crm/customerservice/customers
+  curl -X POST -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/add_customer.xml -H "Content-Type: text/xml" http://localhost:8181/cxf/crm/customerservice/customers
 
   # Retrieve the customer instance with id 123
   #
@@ -142,7 +142,7 @@ the invocations. For example, try using curl as follows:
  
   # Update the customer instance with id 123
   #
-  curl -X PUT -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/update_customer.xml -H "Content-Type: text/xml" http://localhost:8080/cxf/crm/customerservice/customers
+  curl -X PUT -T src/main/resources/org/apache/servicemix/examples/cxf/jaxrs/client/update_customer.xml -H "Content-Type: text/xml" http://localhost:8181/cxf/crm/customerservice/customers
   
   # Delete the customer instance with id 123
   #
@@ -224,8 +224,8 @@ or
 
 Viewing the Log Entries
 -----------------------
-You can view the log entries in the karaf.log file in the
-data/log directory of your ServiceMix installation, or by
-typing the following command in the ServiceMix console:
+You can view the entries in the log file in the data/log
+directory of your ServiceMix installation, or by typing
+the following command in the ServiceMix console:
 
   log:display
