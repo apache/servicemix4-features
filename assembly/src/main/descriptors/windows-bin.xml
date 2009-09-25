@@ -29,6 +29,7 @@
           <excludes>
              <exclude>**/demos/**</exclude>
              <exclude>bin/karaf.bat</exclude>
+             <exclude>bin/start.bat</exclude>
              <exclude>etc/system.properties</exclude>
              <exclude>etc/startup.properties</exclude>
              <exclude>etc/org.apache.felix.karaf.features.cfg</exclude>
@@ -93,6 +94,11 @@
       <fileSet>
           <directory>target/classes/etc</directory>
           <outputDirectory>/etc/</outputDirectory>
+          <lineEnding>dos</lineEnding>
+      </fileSet>
+      <fileSet>
+          <directory>src/main/distribution/windows-text</directory>
+          <outputDirectory>/</outputDirectory>
           <lineEnding>dos</lineEnding>
       </fileSet>
 

@@ -28,8 +28,9 @@
             <directory>target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}</directory>
             <outputDirectory>/</outputDirectory>
             <excludes>
-              <exclude>bin/*</exclude>
               <exclude>**/demos/**</exclude>
+              <exclude>bin/karaf</exclude>
+              <exclude>bin/start</exclude>
               <exclude>etc/system.properties</exclude>
               <exclude>etc/startup.properties</exclude>
               <exclude>etc/org.apache.felix.karaf.features.cfg</exclude>
@@ -41,8 +42,7 @@
             </excludes>
         </fileSet>
 
-        <!-- Copy over bin/servicemix separately to get the correct file mode
--->
+        <!-- Copy over bin/servicemix separately to get the correct file mode -->
         <fileSet>
             <directory>target/dependencies/unix/apache-felix-karaf-${felix.karaf.version}</directory>
             <outputDirectory>/</outputDirectory>
@@ -115,6 +115,12 @@
             <directory>target/classes/etc</directory>
             <outputDirectory>/etc/</outputDirectory>
             <lineEnding>unix</lineEnding>
+        </fileSet>
+	<fileSet>
+            <directory>src/main/distribution/unix-shell</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0755</fileMode>
         </fileSet>
 
         <!-- Copy over the examples -->
