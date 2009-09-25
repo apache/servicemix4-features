@@ -31,7 +31,7 @@
              <exclude>bin/karaf.bat</exclude>
              <exclude>etc/system.properties</exclude>
              <exclude>etc/startup.properties</exclude>
-             <exclude>etc/org.apache.servicemix.features.cfg</exclude>
+             <exclude>etc/org.apache.felix.karaf.features.cfg</exclude>
              <exclude>etc/config.properties</exclude>
              <exclude>LICENSE.txt</exclude>
              <exclude>NOTICE.txt</exclude>
