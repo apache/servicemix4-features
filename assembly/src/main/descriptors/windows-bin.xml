@@ -58,6 +58,21 @@
             <lineEnding>dos</lineEnding>
        </fileSet>
 
+      <!-- Copy over nmr examples files -->
+      <fileSet>
+           <directory>target/dependencies/win/apache-servicemix-nmr-${servicemix.nmr.version}/examples</directory>
+           <outputDirectory>/examples/</outputDirectory>
+           <excludes>
+               <exclude>pom.xml</exclude>
+               <exclude>**/itests/**</exclude>
+               <exclude>**/target/**</exclude>
+               <exclude>**/.classpath</exclude>
+               <exclude>**/.project</exclude>
+               <exclude>**/.settings/**</exclude>
+           </excludes>
+           <lineEnding>dos</lineEnding>
+      </fileSet>
+
       <!-- Copy license and other files from root -->
       <fileSet>
           <directory>${basedir}/..</directory>
