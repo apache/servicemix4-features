@@ -65,6 +65,7 @@
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.resource,
                             org.apache.servicemix.cxf.transport.http_osgi,
+                            org.apache.servicemix.util,
                             org.springframework.beans.factory.config
                         </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxf</Private-Package>

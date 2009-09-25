@@ -76,7 +76,9 @@
                                 org.apache.cxf.jaxrs.utils,
                                 org.apache.servicemix.cxf.transport.http_osgi,
                                 org.springframework.beans.factory.config,
-                                org.apache.servicemix.examples.cxf.jaxrs
+                                org.apache.servicemix.examples.cxf.jaxrs,
+                                org.apache.commons.httpclient, 
+                                org.apache.commons.httpclient.methods
                         </Import-Package>
                         <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                         <Export-Package>org.apache.servicemix.examples.cxf.jaxrs
