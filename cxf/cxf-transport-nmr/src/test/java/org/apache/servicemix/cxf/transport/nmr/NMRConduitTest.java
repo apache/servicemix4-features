@@ -23,7 +23,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
@@ -68,13 +67,9 @@ public class NMRConduitTest extends AbstractJBITest {
         LOG.info("test send");
         NMRConduit conduit = setupJBIConduit(true, false); 
         Message message = new MessageImpl();
-        Member method = control.createMock(Member.class);
-        message.put(Method.class.getName(), method);
-                
-        EasyMock.expect(method.getDeclaringClass()).andStubReturn(
-                                        (Class<?>)org.apache.servicemix.cxf.transport.nmr.Greeter.class);
-        
-                
+        Class<org.apache.servicemix.cxf.transport.nmr.Greeter> greeterCls
+            = org.apache.servicemix.cxf.transport.nmr.Greeter.class;
+        message.put(Method.class.getName(), greeterCls.getMethod("sayHi"));
         
         org.apache.cxf.message.Exchange exchange = new ExchangeImpl();
         exchange.setOneWay(false);
