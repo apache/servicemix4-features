@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.kernel.gshell.activemq;
+package org.apache.servicemix.activemq.commands;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,7 +29,7 @@ import org.apache.felix.gogo.commands.Argument;
 /**
  * @version $Rev$ $Date$
  */
-public class AdministrationCommand extends OsgiCommandSupport {
+public class ActiveMQCommandSupport extends OsgiCommandSupport {
 
     private Command command;
 

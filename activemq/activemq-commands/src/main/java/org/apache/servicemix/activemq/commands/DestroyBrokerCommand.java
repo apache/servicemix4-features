@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.kernel.gshell.activemq;
+package org.apache.servicemix.activemq.commands;
 
 import java.io.File;
 

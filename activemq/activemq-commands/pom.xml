@@ -43,6 +43,16 @@
         <artifactId>org.apache.felix.karaf.shell.console</artifactId>
         <version>${felix.karaf.version}</version>
       </dependency>
+      <dependency>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>org.osgi.core</artifactId>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>org.osgi.core</artifactId>
+          <scope>provided</scope>
+      </dependency>
 
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -79,12 +89,13 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Export-Package>org.apache.servicemix.kernel.gshell.activemq;version=${project.version};-split-package:=merge-first</Export-Package>
+                        <Export-Package>org.apache.servicemix.activemq.commands;version=${project.version};-split-package:=merge-first</Export-Package>
                         <Import-Package>
                           org.apache.felix.gogo.commands,
                           *
                         </Import-Package>
                         <Private-Package>!*</Private-Package>
+                        <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
                     </instructions>
                 </configuration>
             </plugin>
