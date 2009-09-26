@@ -101,7 +101,7 @@
       <felix.fileinstall.version>2.0.0</felix.fileinstall.version>
       <felix.framework.version>2.0.0</felix.framework.version>
       <felix.karaf.version>1.1.0-SNAPSHOT</felix.karaf.version>
-      <felix.osgi.version>1.2.0</felix.osgi.version>
+      <felix.osgi.version>1.4.0</felix.osgi.version>
       <felix.plugin.version>2.0.0</felix.plugin.version>
       <felix.prefs.version>1.0.2</felix.prefs.version>
       <flatpack.version>3.1.1_1</flatpack.version>
@@ -389,16 +389,6 @@
               <artifactId>javax.servlet</artifactId>
             </exclusion>
           </exclusions>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>org.osgi.core</artifactId>
-          <version>${felix.osgi.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>org.osgi.core</artifactId>
-          <version>${felix.osgi.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.felix</groupId>

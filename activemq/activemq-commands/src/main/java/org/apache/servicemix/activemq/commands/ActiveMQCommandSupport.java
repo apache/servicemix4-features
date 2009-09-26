@@ -36,44 +36,44 @@ public class ActiveMQCommandSupport extends OsgiCommandSupport {
     @Argument(index=0, multiValued=true, required=true)
     private Collection<String> arguments = null;
 
-  protected Object doExecute() throws Exception {
-    final String[] args = toStringArray(arguments.toArray());
+    protected Object doExecute() throws Exception {
+        final String[] args = toStringArray(arguments.toArray());
 
-    CommandContext context2 = new CommandContext();
-    context2.setFormatter(new CommandShellOutputFormatter(System.out));
-    Command currentCommand = command.getClass().newInstance();
+        CommandContext context2 = new CommandContext();
+        context2.setFormatter(new CommandShellOutputFormatter(System.out));
+        Command currentCommand = command.getClass().newInstance();
 
-    try {
-        currentCommand.setCommandContext(context2);
-        currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
-        return null;
-    } catch (Throwable e) {
-        Throwable cur = e;
-        while (cur.getCause() != null) {
-            cur = cur.getCause();
-        }
-        if (cur instanceof java.net.ConnectException) {
-            context2
-                .print("\n"
-                       + "Could not connect to JMX server.  This command requires that the remote JMX server be enabled.\n"
-                       + "This is typically done by adding the following JVM arguments: \n"
-                       + "   -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false \n"
-                       + "   -Dcom.sun.management.jmxremote.ssl=false \n" + "\n"
-                       + "The connection error was: " + cur + "\n");
-        } else {
-            if (e instanceof Exception) {
-                throw (Exception)e;
-            } else {
-                throw new RuntimeException(e);
+        try {
+            currentCommand.setCommandContext(context2);
+            currentCommand.execute(new ArrayList<String>(Arrays.asList(args)));
+            return null;
+        } catch (Throwable e) {
+            Throwable cur = e;
+            while (cur.getCause() != null) {
+                cur = cur.getCause();
             }
+            if (cur instanceof java.net.ConnectException) {
+                context2
+                    .print("\n"
+                        + "Could not connect to JMX server.  This command requires that the remote JMX server be enabled.\n"
+                        + "This is typically done by adding the following JVM arguments: \n"
+                        + "   -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.authenticate=false \n"
+                        + "   -Dcom.sun.management.jmxremote.ssl=false \n" + "\n"
+                        + "The connection error was: " + cur + "\n");
+            } else {
+                if (e instanceof Exception) {
+                    throw (Exception)e;
+                } else {
+                    throw new RuntimeException(e);
+                }
 
+            }
         }
+        return null;
+
     }
-    return null;
 
-  }
-
-  public Command getCommand() {
+    public Command getCommand() {
         return command;
     }
 
