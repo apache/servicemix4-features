@@ -167,11 +167,6 @@
             <version>${wsdl4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.ws.commons.schema</groupId>
-            <artifactId>XmlSchema</artifactId>
-            <version>${xmlsec.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.opensaml</artifactId>
             <version>${opensaml.version}</version>
