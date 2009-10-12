@@ -71,7 +71,7 @@
       <asm.version>2.2.3_1</asm.version>
       <bcel.version>5.2_1-SNAPSHOT</bcel.version>
       <bnd.version>0.0.227</bnd.version>
-      <cglib.version>2.1_3_2</cglib.version>
+      <cglib.version>2.1_3_3-SNAPSHOT</cglib.version>
       <camel.version>2.1-SNAPSHOT</camel.version>
       <commons.management.version>1.0</commons.management.version>
       <commons-beanutils.version>1.7.0_1</commons-beanutils.version>
