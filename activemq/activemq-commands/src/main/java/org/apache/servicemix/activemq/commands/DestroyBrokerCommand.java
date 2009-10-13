@@ -25,7 +25,7 @@ import org.apache.felix.karaf.shell.console.OsgiCommandSupport;
 /**
  * @version $Rev$ $Date$
  */
-@Command(scope="activemq", name="destroy-broker", description="Creates a broker instance.")
+@Command(scope="activemq", name="destroy-broker", description="Destory a broker instance.")
 public class DestroyBrokerCommand extends OsgiCommandSupport {
 
     @Option(name = "-n", aliases = {"--name"}, description = "The name of the broker (defaults to localhost).")
