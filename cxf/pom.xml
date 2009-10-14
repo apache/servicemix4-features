@@ -34,7 +34,6 @@
 
     <modules>
         <module>cxf-transport-nmr</module>
-        <module>cxf-transport-osgi</module>
         <module>cxf-binding-nmr</module>
     </modules>
 

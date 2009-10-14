@@ -96,6 +96,20 @@ file in the examples parent directory.
 
 Running a Client
 ----------------
+
+You can browse WADL at
+
+http://localhost:8191/cxf/crm/customerservice?_wadl&_type=xml
+
+or
+
+http://localhost:8191/cxf/crm?_wadl&_type=xml
+
+The latter URI can be used to see the desription of multiple root resource classes.
+
+You can see the services listing at http://localhost:8191/cxf.
+
+
 You can make invocations on the web service in several ways, including
 using a web client, using a Java client and using a command-line
 utility such a curl or Wget. See below for more details.
@@ -148,7 +162,17 @@ the invocations. For example, try using curl as follows:
   #
   curl -X DELETE http://localhost:8181/cxf/crm/customerservice/customers/123
 
+Changing /cxf servlet alias
+---------------------------
+By default CXF Servlet is assigned a '/cxf' alias. You can change it in a couple of ways
 
+a. Add org.apache.cxf.osgi.cfg to /etc directory and set the 'org.apache.cxf.servlet.context' property, for example :
+   org.apache.cxf.servlet.context=/custom
+b. Use shell config commands, for example :
+   config:edit org.apache.cxf.osgi   
+   config:propset org.apache.cxf.servlet.context /super
+   config:update
+  
 B. Building the Example Bundle Yourself
 ---------------------------------------
 To install and run the example where you build the example bundle

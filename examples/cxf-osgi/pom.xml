@@ -64,7 +64,7 @@
                             org.apache.cxf.bus.resource,
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.resource,
-                            org.apache.servicemix.cxf.transport.http_osgi,
+                            org.apache.cxf.transport.http_osgi,
                             org.apache.servicemix.util,
                             org.springframework.beans.factory.config
                         </Import-Package>

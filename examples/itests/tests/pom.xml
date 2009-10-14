@@ -175,12 +175,6 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.cxf</groupId>
-            <artifactId>org.apache.servicemix.cxf.transport.osgi</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.cxf</groupId>
             <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
@@ -204,9 +198,9 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-		    <groupId>org.apache.servicemix.examples</groupId>
-		    <artifactId>cxf-jaxrs</artifactId>
-            <version>${project.version}</version>
+	    <groupId>org.apache.servicemix.examples</groupId>
+	    <artifactId>cxf-jaxrs</artifactId>
+          <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.examples</groupId>
@@ -433,8 +427,8 @@
             <version>${abdera.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jettison</artifactId>
+            <groupId>org.codehaus.jettison</groupId>
+            <artifactId>jettison</artifactId>
             <version>${jettison.version}</version>
         </dependency>
         <dependency>

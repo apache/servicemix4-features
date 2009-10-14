@@ -36,7 +36,7 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jsr311-api-0.8</artifactId>
+            <artifactId>org.apache.servicemix.specs.jsr311-api-1.0</artifactId>
             <version>1.3.0</version>
         </dependency>
         <dependency>
@@ -74,7 +74,7 @@
                                 org.apache.cxf.configuration.spring,
                                 org.apache.cxf.binding,
                                 org.apache.cxf.jaxrs.utils,
-                                org.apache.servicemix.cxf.transport.http_osgi,
+                                org.apache.cxf.transport.http_osgi,
                                 org.springframework.beans.factory.config,
                                 org.apache.servicemix.examples.cxf.jaxrs,
                                 org.apache.commons.httpclient, 

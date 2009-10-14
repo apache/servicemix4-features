@@ -82,12 +82,11 @@
         <feature version="${cxf.version}">cxf</feature>
         <feature version="${version}">web-core</feature>
         <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-whiteboard/${pax.web.extender.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.osgi/${version}</bundle>
     </feature>
     <feature name="cxf-jaxrs" version="${version}">
         <feature version="${version}">cxf-osgi</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jettison/${jettison.version}</bundle>
+        <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}/${servicemix.specs.version}</bundle>
     </feature>

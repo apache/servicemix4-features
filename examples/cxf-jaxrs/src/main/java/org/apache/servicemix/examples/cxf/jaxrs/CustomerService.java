@@ -27,9 +27,10 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-@Path("/cxf/crm/customerservice/")
+@Path("/customerservice/")
 public class CustomerService {
     long currentId = 123;
     Map<Long, Customer> customers = new HashMap<Long, Customer>();
@@ -41,6 +42,7 @@ public class CustomerService {
 
     @GET
     @Path("/customers/{id}/")
+    @Produces("application/xml")
     public Customer getCustomer(@PathParam("id") String id) {
         System.out.println("----invoking getCustomer, Customer id is: " + id);
         long idNumber = Long.parseLong(id);
@@ -72,7 +74,7 @@ public class CustomerService {
 
         customers.put(customer.getId(), customer);
 
-        return Response.ok(customer).build();
+        return Response.ok().type("application/xml").entity(customer).build();
     }
 
     @DELETE

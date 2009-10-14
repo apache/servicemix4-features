@@ -175,6 +175,16 @@ To run the java code client:
    It makes an invocation with WS-Addressing headers and displays
    the response.
 
+Changing /cxf servlet alias
+---------------------------
+By default CXF Servlet is assigned a '/cxf' alias. You can change it in a couple of ways
+
+a. Add org.apache.cxf.osgi.cfg to /etc directory and set the 'org.apache.cxf.servlet.context' property, for example :
+   org.apache.cxf.servlet.context=/custom
+b. Use shell config commands, for example :
+   config:edit org.apache.cxf.osgi   
+   config:propset org.apache.cxf.servlet.context /super
+   config:update
 
 B. Building the Example Bundle Yourself
 ---------------------------------------

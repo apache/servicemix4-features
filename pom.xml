@@ -87,7 +87,7 @@
       <commons.pool.version>1.4</commons.pool.version>
       <commons.vfs.version>1.0_1</commons.vfs.version>
       <commons.jexl.version>1.1_1</commons.jexl.version>
-      <cxf.version>2.2.3</cxf.version>
+      <cxf.version>2.2.4</cxf.version>
       <dom4j.version>1.6_1</dom4j.version>
       <drools.version>4.0.7_1</drools.version>
       <depends.maven.plugin.version>1.2-SNAPSHOT</depends.maven.plugin.version>
@@ -144,7 +144,7 @@
       <jetty.version>6.1.14</jetty.version>
       <jetty.bundle.version>6.1.14_1</jetty.bundle.version>
       <jexcelapi.version>2.4.2_1</jexcelapi.version>
-      <jettison.version>1.0.1_1</jettison.version>
+      <jettison.version>1.1</jettison.version>
       <jing.version>20030619_1</jing.version>
       <jline.version>0.9.94</jline.version>
       <jruby.version>1.1.2_1</jruby.version>
