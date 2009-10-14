@@ -303,4 +303,11 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/${jsmpp.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-smpp/${servicemix-smpp-version}</bundle>
     </feature>
+    
+    <!-- Default broker configuration -->
+    <feature name="activemq-broker" version="${version}">
+        <feature>spring-dm</feature>
+        <feature version="${activemq.version}">activemq</feature>
+        <bundle>spring:file:etc/activemq-broker.xml</bundle>
+    </feature>
 </features>
