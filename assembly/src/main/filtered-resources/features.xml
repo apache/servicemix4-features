@@ -44,6 +44,7 @@
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>
         <bundle>mvn:commons-pool/commons-pool/${commons.pool.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
+        <bundle>mvn:org.apache.activemq/kahadb/${activemq.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-ra/${activemq.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-console/${activemq.version}</bundle>

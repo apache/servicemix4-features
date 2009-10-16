@@ -559,6 +559,11 @@
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
+            <artifactId>kahadb</artifactId>
+            <version>${activemq.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-console</artifactId>
             <version>${activemq.version}</version>
         </dependency>

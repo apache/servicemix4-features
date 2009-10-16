@@ -33,11 +33,21 @@
         <destinationPolicy>
             <policyMap>
                 <policyEntries>
-                    <policyEntry queue=">" memoryLimit="5mb"/>
-                    <policyEntry topic=">" memoryLimit="5mb">
-                        <subscriptionRecoveryPolicy>
-                            <lastImageSubscriptionRecoveryPolicy/>
-                        </subscriptionRecoveryPolicy>
+                    <policyEntry topic=">" producerFlowControl="true" memoryLimit="1mb">
+                        <pendingSubscriberPolicy>
+                            <vmCursor />
+                        </pendingSubscriberPolicy>
+                    </policyEntry>
+                    <policyEntry queue=">" producerFlowControl="true" memoryLimit="1mb">
+                        <!-- Use VM cursor for better latency
+                             For more information, see:
+
+                             http://activemq.apache.org/message-cursors.html
+      
+                        <pendingQueuePolicy>
+                          <vmQueueCursor/>
+                        </pendingQueuePolicy>
+                        -->
                     </policyEntry>
                 </policyEntries>
             </policyMap>
@@ -58,7 +68,7 @@
         </networkConnectors>
 
         <persistenceAdapter>
-            <amqPersistenceAdapter syncOnWrite="false" directory="${karaf.base}/data/activemq/default" maxFileLength="20 mb"/>
+            <kahaDB directory="${karaf.base}/data/activemq/default" />
         </persistenceAdapter>
 
         <!-- Use the following if you wish to configure the journal with JDBC -->
