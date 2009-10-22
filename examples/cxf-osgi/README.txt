@@ -87,9 +87,6 @@ This command makes use of the ServiceMix features facility. For
 more information about the features facility, see the README.txt
 file in the examples parent directory.
 
-When the feature is installed, output for publishing the CXF
-endpoint is displayed to the console.
-
 To view the service WSDL, open your browser and go to the following
 URL:
 
@@ -107,6 +104,18 @@ To run the web client:
 
 2. Click the Send button to send a request.
 
+   Once the request has been successfully sent, a response similar
+   to the following should appear in the right-hand panel of the
+   web page:
+   
+   STATUS: 200
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Body><ns2:sayHiResponse xmlns:ns2="http://cxf.examples.
+     servicemix.apache.org/"><return>Hello John Doe</return>
+     </ns2:sayHiResponse>
+     </soap:Body>
+   </soap:Envelope>
+
 To run the java code client:
 
 1. Change to the <servicemix_home>/examples/cxf-osgi
@@ -116,17 +125,33 @@ To run the java code client:
 
      mvn compile exec:java
 
+   If the client request is successful, a response similar to the
+   following should appear in the ServiceMix console:
+
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Body><ns2:sayHiResponse xmlns:ns2="http://cxf.examples.
+       servicemix.apache.org/"><return>Hello John Doe</return>
+       </ns2:sayHiResponse>
+     </soap:Body>
+   </soap:Envelope>
+
 
 Changing /cxf servlet alias
 ---------------------------
-By default CXF Servlet is assigned a '/cxf' alias. You can change it in a couple of ways
+By default CXF Servlet is assigned a '/cxf' alias. You can
+change it in a couple of ways
 
-a. Add org.apache.cxf.osgi.cfg to /etc directory and set the 'org.apache.cxf.servlet.context' property, for example :
-   org.apache.cxf.servlet.context=/custom
+a. Add org.apache.cxf.osgi.cfg to the /etc directory and set
+   the 'org.apache.cxf.servlet.context' property, for example:
+   
+     org.apache.cxf.servlet.context=/custom
+   
 b. Use shell config commands, for example :
-   config:edit org.apache.cxf.osgi   
-   config:propset org.apache.cxf.servlet.context /super
-   config:update
+   
+     config:edit org.apache.cxf.osgi   
+     config:propset org.apache.cxf.servlet.context /super
+     config:update
+
 
 B. Building the Example Bundle Yourself
 ---------------------------------------
@@ -163,10 +188,6 @@ yourself, complete the following steps:
    information about the features facility, see the README.txt file
    in the examples parent directory.
 
-
-When the feature is installed, output for publishing the CXF
-endpoint is displayed to the console.
-
 To view the service WSDL, open your browser and go to the following
 URL:
 
@@ -183,15 +204,14 @@ Stopping and Uninstalling the Example
 -------------------------------------
 To stop the example, you must first know the bundle ID that ServiceMix
 has assigned to it. To get the bundle ID, enter the following command
-at the ServiceMix console (Note, the text you are typing will intermingle
-with the output being logged. This is nothing to worry about.):
+at the ServiceMix console:
 
   osgi:list
 
 At the end of the listing, you should see an entry similar to the
 following:
 
-  [170] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF OSGi (4.1.0)
+  [170] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF OSGi (4.2.0.0)
 
 In this case, the bundle ID is 170.
 

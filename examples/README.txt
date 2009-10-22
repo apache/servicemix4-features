@@ -76,6 +76,26 @@ List of Examples
 
 - cxf-wsdl-first-osgi-package
   Publishes, as OSGi bundles, a WSDL-defined web service created using CXF.
+  
+- interceptors
+  Contains two interceptor examples:
+
+  1. /endpoint
+     Deploys a custom endpoint listener that captures and reports, to
+     the ServiceMix log, when an endpoint registers and unregisters with
+     the NMR.
+
+  2. /exchange
+     Deploys a custom exchange listener that captures and reports, to
+     the ServiceMix log, the exchanges that are sent and delivered using
+     the NMR.
+
+- karaf-demos/web
+  Embeds the ServiceMix Kernel in a web application.
+
+- nmr
+  Exposes a simple NMR endpoint.
+
 
 - simple
   Adds new endpoints using XML configuration files only.

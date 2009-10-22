@@ -160,7 +160,29 @@ To run the web client:
 
 2. Click the Send button to send a request.
 
-   You should receive a SOAP message as a response.
+   Once the request has been successfully sent, you should receive
+   a SOAP message similar to the following as a response. It should
+   appear in the right-hand panel of the web page:
+   
+   STATUS: 200
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Header>
+       <Action xmlns="http://www.w3.org/2005/08/addressing">
+       http://apache.org/hello_world_soap_http/Greeter/sayHiResponse
+       </Action>
+       <MessageID xmlns="http://www.w3.org/2005/08/addressing">
+       urn:uuid:4352861b-3451-4ae8-b97f-11f7e2535807</MessageID>
+       <To xmlns="http://www.w3.org/2005/08/addressing">
+       http://www.w3.org/2005/08/addressing/anonymous</To>
+       <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">
+       urn:uuid:10fb2ee6-43db-4d88-a3e5-6316f1763669</RelatesTo>
+     </soap:Header>
+     <soap:Body>
+       <sayHiResponse xmlns="http://apache.org/hello_world_soap_http/types">
+       <responseType>Bonjour</responseType>
+       </sayHiResponse>
+     </soap:Body>
+   </soap:Envelope>
 
 
 To run the java code client:
@@ -172,19 +194,26 @@ To run the java code client:
 
      mvn compile exec:java
 
-   It makes an invocation with WS-Addressing headers and displays
-   the response.
+   It makes an invocation with WS-Addressing headers and displays,
+   in the ServiceMix console, a response similar to that shown 
+   in the web client (see above).
 
 Changing /cxf servlet alias
 ---------------------------
-By default CXF Servlet is assigned a '/cxf' alias. You can change it in a couple of ways
+By default CXF Servlet is assigned a '/cxf' alias. You can
+change it in a couple of ways:
 
-a. Add org.apache.cxf.osgi.cfg to /etc directory and set the 'org.apache.cxf.servlet.context' property, for example :
-   org.apache.cxf.servlet.context=/custom
-b. Use shell config commands, for example :
-   config:edit org.apache.cxf.osgi   
-   config:propset org.apache.cxf.servlet.context /super
-   config:update
+a. Add org.apache.cxf.osgi.cfg to the /etc directory and
+   set the 'org.apache.cxf.servlet.context' property, for example:
+   
+     org.apache.cxf.servlet.context=/custom
+
+b. Use shell config commands, for example:
+
+     config:edit org.apache.cxf.osgi   
+     config:propset org.apache.cxf.servlet.context /super
+     config:update
+
 
 B. Building the Example Bundle Yourself
 ---------------------------------------
@@ -222,10 +251,6 @@ yourself, complete the following steps:
    information about the features facility, see the README.txt file
    in the examples parent directory.
 
-
-When the feature is installed, output for publishing the CXF
-endpoint is displayed to the console.
-
 To view the service WSDL, open your browser and go to the following
 URL:
 
@@ -251,7 +276,7 @@ about.):
 At the end of the listing, you should see an entry similar to the
 following:
 
-  [171] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF WS-ADDRESSING OSGI (4.1.0)
+  [171] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF WS-ADDRESSING OSGI (4.2.0)
 
 In this case, the bundle ID is 171.
 

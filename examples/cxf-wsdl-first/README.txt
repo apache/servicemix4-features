@@ -22,9 +22,9 @@ Purpose
 -------
 Publish a WSDL-defined web service, as a JBI service assembly, using CXF.
 
-This example is the same as the cxf-wsdl-first-osgi example except it is
-deployed as a JBI service assembly, whereas the cxf-wsdl-first-osgi
-example is deployed as OSGi bundles.
+This example is the same as the cxf-wsdl-first-osgi-package example except
+it is deployed as a JBI service assembly, whereas the cxf-wsdl-first-osgi-
+package example is deployed as OSGi bundles.
 
 
 Explanation
@@ -69,7 +69,8 @@ web service. Each one is packaged in a service unit (SU), as follows:
                       targetInterface="person:Person"/>
 
 Lastly, Maven uses the pom.xml file, located in the wsdl-first-cxf-sa
-directory, to package the SUs into a JBI service assembly ready for deployment.
+directory, to package the SUs into a JBI service assembly (SA) ready
+for deployment.
 
 
 Prerequisites for Building and Running this Example
@@ -100,7 +101,7 @@ If all of the required OSGi bundles are available in your local Maven
 repository, the example will build quickly. Otherwise it may take
 some time for Maven to download everything it needs.
 
-Once complete, you will find the SA, called cxf-wsdl-first-cxf-sa-
+Once complete, you will find the SA, called wsdl-first-cxf-sa-
 ${version}.zip, in the wsdl-first-cxf-sa/target directory.
 
 You can deploy the SA in two ways:
@@ -132,7 +133,19 @@ To run the web client:
 
 2. Click the Send button to send a request.
 
-To run the java code client:
+   Once the request has been successfully sent, a response similar
+   to the following should appear in the right-hand panel of the
+   web page:
+   
+   STATUS: 200
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Body><GetPersonResponse xmlns="http://servicemix.apache.org/
+     samples/wsdl-first/types"><personId>world</personId>
+     <ssn>000-000-0000</ssn><name>Guillaume</name></GetPersonResponse>
+     </soap:Body>
+   </soap:Envelope>
+
+To run the Java code client:
 
 1. Change to the <servicemix_home>/examples/cxf-wsdl-first/client
    directory.
@@ -140,18 +153,56 @@ To run the java code client:
 2. Run the following command:
 
      mvn compile exec:java
+     
+   If the client request is successful, a response similar to the
+   following should appear in the ServiceMix console:
+        
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Body><GetPersonResponse xmlns="http://servicemix.apache.org/
+       samples/wsdl-first/types"><personId>world</personId>
+       <ssn>000-000-0000</ssn><name>Guillaume</name></GetPersonResponse>
+     </soap:Body>
+   </soap:Envelope>
+
+
+Stopping and Uninstalling the Example
+-------------------------------------
+To stop the example, you must first know the bundle ID that ServiceMix
+has assigned to it. To get the bundle ID, enter the following command
+in the ServiceMix console:
+
+  osgi:list
+
+At the end of the listing, you should see an entry similar to one of
+the following (depending on how you deployed the example):
+
+[ 183] [Active     ] [       ] [     ] [   60] mvn:org.apache.servicemix.examples.cxf-wsdl-first/wsdl-first-cxf-sa/${version}/zip
+
+[ 183] [Active     ] [       ] [     ] [   60] wsdl-first-cxf-sa (0.0.0)
+
+In this case, the bundle ID is 183.
+
+To stop the example, enter the following command in the ServiceMix
+console:
+
+  osgi:stop <bundle_id>
+
+To uninstall the example, enter the following command in the
+ServiceMix console:
+
+  osgi:uninstall <bundle_id>
 
 
 Viewing the Log Entries
 -----------------------
-You can view the entries in the log file in the data/log
-directory of your ServiceMix installation, or by typing
-the following command in the ServiceMix console:
+You can view the entries in the log file in the data/log directory
+of your ServiceMix installation, or by typing the following command
+in the ServiceMix console:
 
   log:display
 
 
 Changing the Example
 --------------------
-If you wish to change the code or configuration, just use 'mvn install'
-to rebuild the JBI Service Assembly zip, and deploy it as before.
+If you want to change the code or configuration, just use 'mvn install'
+to rebuild the JBI Service Assembly zip file, and deploy it as before.

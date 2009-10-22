@@ -16,7 +16,7 @@
  */
 
 WSDL First OSGi Bundles Example
-===================================
+===============================
 
 Purpose
 -------
@@ -83,78 +83,17 @@ Prerequisites for Running the Example
   For more information, see the README in the top-level examples
   directory.
 
-
 2. Start ServiceMix by running the following command:
 
   <servicemix_home>/bin/servicemix          (on UNIX)
   <servicemix_home>\bin\servicemix          (on Windows)
 
 
-Running the Example
--------------------
-You can run the example in two ways:
+Building and Running the Example
+--------------------------------
+To build and run the example, complete the following steps:
 
-- A. Using a Prebuilt Deployment Bundle: Quick and Easy
-This option is useful if you want to see the example up and
-running as quickly as possible.
-
-- B. Building the Example Bundle Yourself
-This option is useful if you want to change the example in any
-way. It tells you how to build and deploy the example. This
-option might be slower than option A because, if you do not
-already have the required bundles in your local Maven
-repository, Maven will have to download the bundles it needs.
-
-A. Using a Prebuilt Deployment Bundle: Quick and Easy
------------------------------------------------------
-To install and run a prebuilt version of this example, enter
-the following command in the ServiceMix console:
-
-  features:install examples-cxf-wsdl-first-osgi-package
-  
-This command makes use of the ServiceMix features facility. For
-more information about the features facility, see the README.txt
-file in the examples parent directory.
-
-You can browse the WSDL at:
-
-  http://localhost:8092/PersonService?wsdl
-
-Note, if you use Safari, right click the window and select
-'Show Source'.
-
-Running a Client
-----------------
-To run the web client:
-
-1. Open the client.html, which is located in the same directory as
-   this README file, in your favorite browser.
-
-2. Click the Send button to send a request.
-
-To run the java code client:
-
-1. Change to the <servicemix_home>/examples/cxf-wsdl-first-osgi-package
-   directory.
-
-2. Run the following command:
-
-     mvn compile exec:java
-
-     
-B. Building the Example Bundle Yourself
----------------------------------------
-To install and run the example where you build the example bundle
-yourself, complete the following steps:
-
-1. If you have already run the example using the prebuilt version as
-   described above, you must first uninstall the
-   examples-cxf-wsdl-first-osgi-package feature by entering the
-   following command in the ServiceMix console:
-
-     features:uninstall examples-cxf-wsdl-first-osgi-package
-
-2. Build the example by opening a command prompt, changing directory
+1. Build the example by opening a command prompt, changing directory
    to examples/cxf-wsdl-first-osgi-package (this example) and entering
    the following Maven command:
 
@@ -168,7 +107,7 @@ yourself, complete the following steps:
    copies it to your local Maven repository and to the target directory
    of this example.
      
-3. Install the example by entering the following command in
+2. Install the example by entering the following command in
    the ServiceMix console:
    
      features:install examples-cxf-wsdl-first-osgi-package
@@ -184,26 +123,64 @@ You can browse the WSDL at:
 Note, if you use Safari, right click the window and select
 'Show Source'.
 
-You can try running a client against your service by following the
-instructions in the "Running a Client" section above.
 
+Running a Client
+----------------
+To run the web client:
+
+1. Open the client.html, which is located in the same directory as
+   this README file, in your favorite browser.
+
+2. Click the Send button to send a request.
+
+   Once the request has been successfully sent, a response similar
+   to the following should appear in the right-hand panel of the
+   web page:
+   
+   STATUS: 200
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Body><GetPersonResponse xmlns="http://servicemix.apache.org/
+     samples/wsdl-first/types"><personId>world</personId>
+     <ssn>000-000-0000</ssn><name>Guillaume</name></GetPersonResponse>
+     </soap:Body>
+   </soap:Envelope>
+
+To run the java code client:
+
+1. Change to the <servicemix_home>/examples/cxf-wsdl-first-osgi-package/
+   client directory.
+
+2. Run the following command:
+
+     mvn compile exec:java
+     
+   If the client request is successful, a response similar to the
+   following should appear in the ServiceMix console:
+        
+   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+     <soap:Body><GetPersonResponse xmlns="http://servicemix.apache.org/
+       samples/wsdl-first/types"><personId>world</personId>
+       <ssn>000-000-0000</ssn><name>Guillaume</name></GetPersonResponse>
+     </soap:Body>
+   </soap:Envelope>
+   
 
 Stopping and Uninstalling the Example
 -------------------------------------
 To stop the example, you must first know the bundle ID that ServiceMix
 has assigned to it. To get the bundle ID, enter the following command
-in the ServiceMix console (Note, the text you are typing will
-intermingle with the output being logged. This is nothing to worry
-about.):
+in the ServiceMix console:
 
   osgi:list
 
 At the end of the listing, you should see an entry similar to the
 following:
 
-  [172] [Active     ] [Started] [  60] Apache ServiceMix Example :: CXF OSGi (4.1.0)
+  [180] [Active     ] [     ] [  60] ServiceMix :: Samples :: WSDL first :: CXF BC BUNDLE (4.2.0)
+  [181] [Active     ] [     ] [  60] ServiceMix :: Samples :: WSDL first :: CXF SE BUNDLE (4.2.0)
 
-In this case, the bundle ID is 172.
+
+In this case, the bundle IDs are 180 and 181.
 
 To stop the example, enter the following command in the ServiceMix
 console:
@@ -212,7 +189,8 @@ console:
 
 For example:
 
-  osgi:stop 172
+  osgi:stop 180
+  osgi:stop 181
 
 To uninstall the example, enter one of the following commands in
 the ServiceMix console:
@@ -231,6 +209,12 @@ directory of your ServiceMix installation, or by typing
 the following command in the ServiceMix console:
 
   log:display
+
+
+Changing the Example
+--------------------
+If you want to change the code or configuration, just use 'mvn install'
+to rebuild the OSGi bundles and deploy as before.
 
 
 More Information
