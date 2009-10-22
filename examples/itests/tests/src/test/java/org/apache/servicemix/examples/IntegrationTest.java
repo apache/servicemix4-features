@@ -95,7 +95,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.activemq", "activemq-ra"),
             getBundle("org.apache.activemq", "activemq-console"),
             getBundle("org.apache.activemq", "activemq-pool"),
-            
+            getBundle("org.apache.activemq", "kahadb"),           
+ 
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jbi-api-1.0"),            
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.stax-api-1.0"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.saaj-api-1.3"),
