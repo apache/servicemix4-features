@@ -99,16 +99,16 @@ Running a Client
 
 You can browse WSDL at:
 
-http://localhost:8191/cxf/crm/customerservice?_wadl&_type=xml
+http://localhost:8181/cxf/crm/customerservice?_wadl&_type=xml
 
 or
 
-http://localhost:8191/cxf/crm?_wadl&_type=xml
+http://localhost:8181/cxf/crm?_wadl&_type=xml
 
 The latter URI can be used to see the desription of multiple root
 resource classes.
 
-You can see the services listing at http://localhost:8191/cxf.
+You can see the services listing at http://localhost:8181/cxf.
 
 You can make invocations on the web service in several ways, including
 using a web client, using a Java client and using a command-line
