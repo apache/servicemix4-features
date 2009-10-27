@@ -228,6 +228,7 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/${jdt.core.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/${antlr.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.drools/${drools.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mvel/${mvel.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-drools/${servicemix-drools-version}</bundle>
     </feature>
     <feature name="servicemix-cxf-se" version="${servicemix-cxf-se-version}">
