@@ -32,6 +32,9 @@
     <name>ServiceMix :: Samples :: Loan Broker</name>
     <packaging>pom</packaging>
     
+    <properties>
+	    <lingo.version>1.3</lingo.version>
+    </properties>
     <!-- Add ServiceMix repositories for snaphots and releases -->
     <pluginRepositories>
       <pluginRepository>
@@ -88,6 +91,7 @@
       <module>loan-broker-ode-su</module>
       <module>loan-broker-jms-su</module>
       <module>loan-broker-sa</module>
+	<module>client</module>
     </modules>
     
     <build>

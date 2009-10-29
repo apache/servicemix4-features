@@ -37,6 +37,41 @@
             <artifactId>servicemix-jms</artifactId>
             <version>${servicemix-jms-version}</version>
         </dependency>
+	<dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>${activemq.version}</version>
+	    <exclusions>
+		<exclusion>
+		    <groupId>org.apache.activemq.protobuf</groupId>
+		    <artifactId>activemq-protobuf</artifactId>
+		</exclusion>
+		<exclusion>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>kahadb</artifactId>
+		</exclusion>
+		<exclusion>
+		    <groupId>commons-logging</groupId>
+		    <artifactId>commons-logging-api</artifactId>
+		</exclusion>
+		<exclusion>
+		    <groupId>commons-net</groupId>
+		    <artifactId>commons-net</artifactId>
+		</exclusion>
+		<exclusion>
+		    <groupId>org.apache.geronimo.specs</groupId>
+		    <artifactId>geronimo-jta_1.0.1B_spec</artifactId>
+		</exclusion>
+		<exclusion>
+		    <groupId>org.apache.geronimo.specs</groupId>
+		    <artifactId>geronimo-jms_1.1_spec</artifactId>
+		</exclusion>
+		<exclusion>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		</exclusion>
+	    </exclusions>
+        </dependency>
     </dependencies>
 
     <build>

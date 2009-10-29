@@ -207,7 +207,7 @@
       <servicemix-camel-version>2009.02-SNAPSHOT</servicemix-camel-version>
       <servicemix-cxf-bc-version>2009.02-SNAPSHOT</servicemix-cxf-bc-version>
       <servicemix-cxf-se-version>2009.02-SNAPSHOT</servicemix-cxf-se-version>
-      <servicemix-drools-version>2009.01</servicemix-drools-version>
+      <servicemix-drools-version>2009.02-SNAPSHOT</servicemix-drools-version>
       <servicemix-file-version>2009.01</servicemix-file-version>
       <servicemix-snmp-version>2009.01</servicemix-snmp-version>
       <servicemix-smpp-version>2009.02-SNAPSHOT</servicemix-smpp-version>
