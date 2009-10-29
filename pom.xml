@@ -133,7 +133,7 @@
       <jackrabbit.version>1.5.3</jackrabbit.version>
       <jasper.version>6.0.14_1</jasper.version>
       <jaxb.api.version>2.1</jaxb.api.version>
-      <jaxb.impl.version>2.1.6_1</jaxb.impl.version>
+      <jaxb.impl.version>2.1.12_1</jaxb.impl.version>
       <jaxws.api.version>2.1</jaxws.api.version>
       <jaxrs.api.version>1.0</jaxrs.api.version>
       <javax.mail.version>1.4.1_1-SNAPSHOT</javax.mail.version>
