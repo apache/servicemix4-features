@@ -67,11 +67,11 @@
       <ant.version>1.7.0_1</ant.version>
       <antlr.version>3.0.1_1</antlr.version>
       <antlr-runtime.version>3.0.1_1</antlr-runtime.version>
-      <aopalliance.version>1.0_1</aopalliance.version>
+      <aopalliance.version>1.0_3</aopalliance.version>
       <asm.version>2.2.3_1</asm.version>
-      <bcel.version>5.2_1-SNAPSHOT</bcel.version>
+      <bcel.version>5.2_2</bcel.version>
       <bnd.version>0.0.227</bnd.version>
-      <cglib.version>2.1_3_3-SNAPSHOT</cglib.version>
+      <cglib.version>2.1_3_4</cglib.version>
       <camel.version>2.1-SNAPSHOT</camel.version>
       <commons.management.version>1.0</commons.management.version>
       <commons-beanutils.version>1.7.0_1</commons-beanutils.version>
@@ -98,7 +98,7 @@
       <felix.compendium.version>1.4.0</felix.compendium.version>
       <felix.configadmin.version>1.2.4</felix.configadmin.version>
       <felix.core.version>1.4.0</felix.core.version>
-      <felix.fileinstall.version>2.0.1-SNAPSHOT</felix.fileinstall.version>
+      <felix.fileinstall.version>2.0.4</felix.fileinstall.version>
       <felix.framework.version>2.0.1</felix.framework.version>
       <felix.karaf.version>1.1.0-SNAPSHOT</felix.karaf.version>
       <felix.osgi.version>1.4.0</felix.osgi.version>
@@ -136,7 +136,7 @@
       <jaxb.impl.version>2.1.12_1</jaxb.impl.version>
       <jaxws.api.version>2.1</jaxws.api.version>
       <jaxrs.api.version>1.0</jaxrs.api.version>
-      <javax.mail.version>1.4.1_1-SNAPSHOT</javax.mail.version>
+      <javax.mail.version>1.4.1_2</javax.mail.version>
       <jcr-api.version>1.0_1</jcr-api.version>
       <jdt.core.version>3.2.3_1</jdt.core.version>
       <jdom.version>1.1_1</jdom.version>
@@ -167,14 +167,14 @@
       <osworkflow.version>2.7.0_1</osworkflow.version>
       <oro.version>2.0.8_1</oro.version>
       <openejb.version>3.0-beta-2</openejb.version>
-      <openjpa.bundle.version>1.2.1_1-SNAPSHOT</openjpa.bundle.version>
+      <openjpa.bundle.version>1.2.1_2</openjpa.bundle.version>
       <pax.exam.version>1.0.0</pax.exam.version>
       <pax.runner.version>1.1.1</pax.runner.version>
       <pax.logging.version>1.4</pax.logging.version>
       <pax.url.version>1.0.0</pax.url.version>
       <pax.web.version>0.5.2</pax.web.version>
       <pax.web.extender.version>0.5.0</pax.web.extender.version>
-      <propertyset.version>1.3_2-SNAPSHOT</propertyset.version>
+      <propertyset.version>1.3_3</propertyset.version>
       <qpid.version>1.0-incubating-M2.1_1</qpid.version>
       <quartz.version>1.6.1_1</quartz.version>
       <rhino.version>1.7R1_1</rhino.version>
@@ -221,7 +221,7 @@
       <spring.osgi.version>1.2.0</spring.osgi.version>
       <stringtemplate.version>3.2_1</stringtemplate.version>
       <velocity.version>1.6.2_1</velocity.version>
-      <wsdl4j.version>1.6.2_1-SNAPSHOT</wsdl4j.version>
+      <wsdl4j.version>1.6.2_2</wsdl4j.version>
       <woodstox.version>4.0.5</woodstox.version>
       <woodstox.stax2api.version>3.0.1</woodstox.stax2api.version>
       <xstream.version>1.2.2</xstream.version>
@@ -229,10 +229,10 @@
       <xbean.version>3.5</xbean.version>
       <xmlbeans.version>2.4.0_2</xmlbeans.version>
       <xmlschema.version>1.4.5</xmlschema.version>
-      <xmlsec.version>1.4.3_1-SNAPSHOT</xmlsec.version>
+      <xmlsec.version>1.4.3_2</xmlsec.version>
       <opensaml.version>1.1_1</opensaml.version>
-      <xalan.version>2.7.1_2-SNAPSHOT</xalan.version>
-      <xerces.version>2.9.1_2-SNAPSHOT</xerces.version>
+      <xalan.version>2.7.1_2</xalan.version>
+      <xerces.version>2.9.1_3</xerces.version>
       <xmlresolver.version>1.2_1</xmlresolver.version>
       <xpp3.version>1.1.4c_1</xpp3.version>
       <werken-xpath.version>0.9.4_1</werken-xpath.version>
