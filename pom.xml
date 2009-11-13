@@ -172,7 +172,7 @@
       <pax.runner.version>1.1.1</pax.runner.version>
       <pax.logging.version>1.4</pax.logging.version>
       <pax.url.version>1.0.0</pax.url.version>
-      <pax.web.version>0.5.2</pax.web.version>
+      <pax.web.version>0.6.0</pax.web.version>
       <pax.web.extender.version>0.5.0</pax.web.extender.version>
       <propertyset.version>1.3_3</propertyset.version>
       <qpid.version>1.0-incubating-M2.1_1</qpid.version>
