@@ -91,6 +91,7 @@
                             org.apache.cxf.bus.resource,
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.resource,
+                            org.apache.cxf.feature,
                             org.springframework.beans.factory.config,
                             org.apache.servicemix.nmr.api,
                             org.apache.servicemix.cxf.transport.nmr,

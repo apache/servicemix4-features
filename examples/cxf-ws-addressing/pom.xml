@@ -101,6 +101,10 @@
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.resource,
                             org.apache.cxf.transport.http_osgi,
+                            org.apache.cxf.feature,
+                            org.apache.cxf.interceptor,
+                            org.apache.cxf.ws.addressing, 
+                            org.apache.cxf.ws.addressing.soap,
                             org.apache.servicemix.util,
                             org.springframework.beans.factory.config
                         </Import-Package>
