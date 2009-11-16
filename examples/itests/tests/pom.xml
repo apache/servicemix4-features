@@ -268,11 +268,6 @@
             <version>${geronimo.annotation.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
-            <version>${servicemix.specs.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.javax.mail</artifactId>
             <version>${javax.mail.version}</version>

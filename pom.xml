@@ -190,19 +190,19 @@
       <servicemix-shared-version>2009.02-SNAPSHOT</servicemix-shared-version>
       <servicemix-quartz-version>2009.02-SNAPSHOT</servicemix-quartz-version>
       <servicemix-jms-version>2009.02-SNAPSHOT</servicemix-jms-version>
-      <servicemix-jsr181-version>2009.01</servicemix-jsr181-version>
+      <servicemix-jsr181-version>2009.02-SNAPSHOT</servicemix-jsr181-version>
       <servicemix-http-version>2009.02-SNAPSHOT</servicemix-http-version>
       <servicemix-mail-version>2009.01</servicemix-mail-version>
       <servicemix-osworkflow-version>2009.01</servicemix-osworkflow-version>
       <servicemix-wsn2005-version>2009.01</servicemix-wsn2005-version>
-      <servicemix-bean-version>2009.01</servicemix-bean-version>
-      <servicemix-eip-version>2009.01</servicemix-eip-version>
+      <servicemix-bean-version>2009.02-SNAPSHOT</servicemix-bean-version>
+      <servicemix-eip-version>2009.02-SNAPSHOT</servicemix-eip-version>
       <servicemix-script-version>2009.01</servicemix-script-version>
       <servicemix-scripting-version>2009.01</servicemix-scripting-version>
       <servicemix-validation-version>2009.01</servicemix-validation-version>
       <servicemix-ftp-version>2009.01</servicemix-ftp-version>
       <servicemix-xmpp-version>2009.01</servicemix-xmpp-version>
-      <servicemix-saxon-version>2009.01</servicemix-saxon-version>
+      <servicemix-saxon-version>2009.02-SNAPSHOT</servicemix-saxon-version>
       <servicemix-truezip-version>2009.01</servicemix-truezip-version>
       <servicemix-camel-version>2009.02-SNAPSHOT</servicemix-camel-version>
       <servicemix-cxf-bc-version>2009.02-SNAPSHOT</servicemix-cxf-bc-version>
@@ -376,6 +376,11 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+          <groupId>org.apache.servicemix</groupId>
+          <artifactId>servicemix-utils</artifactId>
+          <version>${servicemix-utils.version}</version>
+      </dependency>
       <dependency>
           <groupId>org.apache.felix</groupId>
           <artifactId>org.osgi.compendium</artifactId>
@@ -729,7 +734,7 @@
 	      </plugin>
           <plugin>
               <artifactId>maven-remote-resources-plugin</artifactId>
-              <version>1.0</version>
+              <version>1.1</version>
               <executions>
                   <execution>
                       <goals>
