@@ -91,7 +91,6 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.version}</bundle>
         <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}/${servicemix.specs.version}</bundle>
     </feature>
     <feature name="cxf-nmr" version="${version}">
         <feature version="${cxf.version}">cxf</feature>
