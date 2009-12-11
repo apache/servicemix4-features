@@ -32,19 +32,7 @@
     <packaging>jbi-service-unit</packaging>
     <name>ServiceMix :: Samples :: Loan Broker :: Ode</name>
 
-    <dependencies>
-        <!--
-        <dependency>
-            <groupId>org.apache.ode</groupId>
-            <artifactId>ode-tools</artifactId>
-            <version>${ode-version}</version>
-            <scope>test</scope>
-        </dependency>
-        -->
-    </dependencies>
-
     <properties>
-        <ode-version>2.0-SNAPSHOT</ode-version>
         <componentName>OdeBpelEngine</componentName>
     </properties>
 
@@ -56,35 +44,6 @@
                 <version>${servicemix-jbi-plugin-version}</version>
                 <extensions>true</extensions>
             </plugin>
-            <!--
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>compile-bpel</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <taskdef classname="org.apache.ode.tools.bpelc.ant.BpelCTask" name="bpelc">
-                                    <classpath>
-                                        <pathelement path="${basedir}/target/classes" />
-                                        <path refid="maven.test.classpath" />
-                                    </classpath>
-                                </taskdef>
-                                <mkdir dir="${basedir}/target/bpel/" />
-                                <bpelc targetDir="${basedir}/target/bpel/">
-                                    <bpel url="${basedir}/src/main/resources/loanbroker.bpel" />
-                                </bpelc>
-                            </tasks>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            -->
         </plugins>
     </build>
 </project>

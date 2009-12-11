@@ -18,32 +18,78 @@
 Welcome to the Servicemix Loan Broker example
 =============================================
 
-This example is based on the great EIP book 
+This example is based on the EIP book 
 (http://www.enterpriseintegrationpatterns.com/ComposedMessagingExample.html).
 It leverages the BPEL service engine, JMS binding component and some 
 lightweight components provided by ServiceMix.
 
-First start a ServiceMix server (if not already started) by running
-  bin/servicemix
-in the root dir of this ditribution.
+Prerequisites for Running this Example
+--------------------------------------
+1. You must have the following installed on your machine:
+   - JDK 1.5 or higher.
+   - Apache Maven 2.0.9 or higher.
 
-This example depends on Apache Ode JBI Service Engine which has not been
-released yet.  You will need to build it yourself (more informations at
-http://incubator.apache.org/ode/getting-ode.html).  You will need to copy
-the Service Engine installer to the install directory of this distribution
-prior to the following instructions.
+For more information, see the README in the top-level examples directory.
 
-To run this sample, launch the following commands:
+2. Start ServiceMix by running the following command:
+   <servicemix_home>/bin/servicemix    (on UNIX)
+   <servicemix_home>\bin\servicemix    (on Windows)
+
+Installing ODE
+--------------
+
+This example depends on the Apache ODE JBI service engine. This component
+has not yet been released with support ServiceMix 4 but a SNAPSHOT is
+available.
+
+Install ODE from the ServiceMix Console with the following commands:
+
+   features:addUrl mvn:org.apache.ode.ode-jbi-karaf/features/1.3.4-SNAPSHOT/xml/features
+   features:install ode
+
+Building and Deploying
+----------------------
+This example uses the ServiceMix JBI Maven plugin to build the SUs and the SA.
+To build the example, run the following command (from the directory that contains
+this README):
+
   mvn install
 
-You can deploy the example on ServiceMix 4 in two different ways:
-- using hotdeploy: 
-   copy the loan-broker-sa/target/loan-broker-sa-${version}.zip to <servicemix_home>/deploy
-- using the ServiceMix console:
-   osgi/install -s mvn:org.apache.servicemix.examples.loan-broker/loan-broker-sa/${version}/zip
+If all of the required bundles are available in your local Maven repository, 
+the example will build quickly. Otherwise it may take some time for Maven
+to download everything it needs.
 
-To test this sample, launch the following commands:
-  ant run
+Once complete, you will find the SA, called
+loan-broker-sa-${version}.zip, in the loan-broker-sa/target directory
+of this example.
 
-For more information on this example please see
-  http://servicemix.apache.org/loan-broker-bpel.html
+You can deploy the SA in two ways:
+
+- Using Hot Deployment
+  --------------------
+   
+  Copy the loan-broker-sa-${version}.zip file to the
+  <servicemix_home>/deploy directory.
+
+- Using the ServiceMix Console
+  ----------------------------
+
+  Type the following command:
+
+  osgi:install -s mvn:org.apache.servicemix.examples.loan-broker/loan-broker-sa/${version}/zip
+
+
+Running the Client
+------------------
+This example provides a simple JMS client. To run the client:
+
+1. Change to the <servicemix_home>/examples/loan-broker-bpel/client directory.
+
+2. Run the following command:
+
+   mvn compile exec:java
+
+Changing the Example
+--------------------
+If you change the code or configuration in the example, use 'mvn install' to rebuild the
+JBI SA zip, and deploy it as described above.

@@ -134,7 +134,6 @@
                 <exclude>**/.classpath</exclude>
                 <exclude>**/.project</exclude>
                 <exclude>**/.settings/**</exclude>
-                <exclude>**/loan-broker-bpel/**</exclude>
             </excludes>
         </fileSet>
         
