@@ -98,22 +98,31 @@
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.nmr/${version}</bundle>
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
     </feature>
+    
     <feature name="camel" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
         <feature version="${camel.version}">camel-osgi</feature>
         <feature version="${camel.version}">camel-spring</feature>
     </feature>
 
-    <!--
-	  -
-	  -  Examples
-	  -
-      -->
     <feature name="camel-nmr" version="${version}">
         <feature version="${camel.version}">camel</feature>
         <feature version="${servicemix.nmr.version}">nmr</feature>
         <bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/${version}</bundle>
     </feature>
+    
+    <feature name="camel-activemq" version="${version}">
+        <feature version="${activemq.version}">activemq</feature>
+        <feature version="${camel.version}">camel-jms</feature>
+        <bundle>mvn:org.apache.activemq/activemq-camel/${activemq.version}</bundle>
+    </feature>
+
+    <!--
+	  -
+	  -  Examples
+	  -
+    -->
+
     <feature name="examples-cxf-osgi" version="${version}">
         <feature version="${version}">cxf-osgi</feature>
         <bundle>mvn:org.apache.servicemix.examples/cxf-osgi/${version}</bundle>

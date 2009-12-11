@@ -557,6 +557,11 @@
             <version>${activemq.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <version>${activemq.version}</version>
+        </dependency> 
+        <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-finder</artifactId>
             <version>${xbean.version}</version>
@@ -953,6 +958,7 @@
                                 <feature>web</feature>
                                 <feature>cxf-nmr</feature>
                                 <feature>cxf-osgi</feature>
+                                <feature>camel-activemq</feature>  
                                 <!-- ServiceMix components -->
                                 <feature>servicemix-cxf-bc</feature>
                                 <feature>servicemix-file</feature>
