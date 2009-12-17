@@ -955,7 +955,7 @@
                             <descriptors>
                                 <descriptor>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
-                                <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.camel.karaf/features/${camel.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
                             </descriptors>
                             <features>

@@ -18,7 +18,7 @@
 -->
 <features>
     <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
-    <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
+    <repository>mvn:org.apache.camel.karaf/features/${camel.version}/xml/features</repository>
     <feature name="connector" version="${version}">
         <feature version="${servicemix.nmr.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
