@@ -19,6 +19,7 @@ package org.apache.servicemix.camel.nmr;
 import java.net.URL;
 import java.util.Map;
 
+import javax.naming.Context;
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.soap.SOAPBinding;
@@ -50,20 +51,17 @@ public class ExceptionHandleTest extends CamelTestSupport {
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.hello_world_soap_http.Greeter";
     private static final String WSDL_LOCATION = "wsdlURL=/wsdl/hello_world.wsdl";
     private static final String SERVICE_NAME = "serviceName=%7bhttp://apache.org/hello_world_soap_http%7dSOAPService";
-    
-    
-    
+
     private String routerEndpointURI = "cxf://" + ROUTER_ADDRESS + "?" + SERVICE_CLASS 
-    	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO";
-    private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS 
-    	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO";
-    
+    	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
+    private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS
+    	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
+
     private CamelContext camelContext;
     private ServiceMixComponent smxComponent;
     private NMR nmr;
     private javax.xml.ws.Endpoint endpoint;
-    
-    
+
     @Override
     protected void setUp() throws Exception {
         super.setUp();        
@@ -97,7 +95,7 @@ public class ExceptionHandleTest extends CamelTestSupport {
     }
     
     protected CamelContext createCamelContext() throws Exception {
-    	camelContext = new DefaultCamelContext();
+    	camelContext = new DefaultCamelContext(createJndiContext());
     	Bus bus = BusFactory.getDefaultBus();
     	CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
         	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
@@ -109,8 +107,15 @@ public class ExceptionHandleTest extends CamelTestSupport {
     	camelContext.addComponent("smx", smxComponent);
         return camelContext;
     }
-    
-    public void testException() throws Exception {  
+
+    @Override
+    protected Context createJndiContext() throws Exception {
+        Context ctx = super.createJndiContext();
+        ctx.bind("Bus", BusFactory.getDefaultBus());
+        return ctx;    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    public void testException() throws Exception {
     	URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");
         assertNotNull(wsdl);
         SOAPService service1 = new SOAPService(wsdl, new QName(
@@ -144,8 +149,7 @@ public class ExceptionHandleTest extends CamelTestSupport {
             assertNotNull(brlf.getFaultInfo());
             assertEquals("BadRecordLitFault", brlf.getFaultInfo());
         }
-    }
-    
+    } 
     
     public void testOneway() throws Exception {
     	URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");

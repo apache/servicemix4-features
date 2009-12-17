@@ -26,29 +26,45 @@ import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.frontend.ClientFactoryBean;
 import org.apache.cxf.frontend.ClientProxyFactoryBean;
 import org.apache.cxf.frontend.ServerFactoryBean;
+import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class SmxToCxfTest extends CamelSpringTestSupport {
+
+    private static final String BUS_BEAN_NAME = "Bus";
     protected static final String ROUTER_ADDRESS = "http://localhost:19000/router";
     protected static final String SERVICE_ADDRESS = "local://smx/helloworld";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.servicemix.camel.nmr.HelloService";
-    
-    private String routerEndpointURI = "cxf://" + ROUTER_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO&setDefaultBus=true";
-    private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS + "&dataFormat=POJO&setDefaultBus=true";
-    
-    private ServerImpl server;
 
-    
+    private String routerEndpointURI =
+            String.format("cxf://%s?%s&dataFormat=POJO&setDefaultBus=true&bus=#%s", ROUTER_ADDRESS, SERVICE_CLASS, BUS_BEAN_NAME);
+
+    private String serviceEndpointURI =
+            String.format("cxf://%s?%s&dataFormat=POJO&setDefaultBus=true&bus=#%s", SERVICE_ADDRESS, SERVICE_CLASS, BUS_BEAN_NAME);
+
+    private ServerImpl server;
+    private Bus bus;
+
     @Override
     protected void setUp() throws Exception {
+        bus = CXFBusFactory.getDefaultBus();
+        
         super.setUp();        
                 
         startService();
     }
 
     protected ClassPathXmlApplicationContext createApplicationContext() {
-        return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/spring/DummyBean.xml");
+        return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/spring/DummyBean.xml") {
+            @Override
+            public Object getBean(String name, Class requiredType) throws BeansException {
+                if (BUS_BEAN_NAME.equals(name)) {
+                    return bus;
+                }                
+                return super.getBean(name, requiredType);    //To change body of overridden methods use File | Settings | File Templates.
+            }
+        };
     }
 
     protected void assertValidContext(CamelContext context) {
@@ -84,8 +100,8 @@ public class SmxToCxfTest extends CamelSpringTestSupport {
             }
         };
     }
-    
-    public void testInvokingServiceFromCXFClient() throws Exception {  
+
+    public void testInvokingServiceFromCXFClient() throws Exception {
         Bus bus = BusFactory.getDefaultBus();
         
         ClientProxyFactoryBean proxyFactory = new ClientProxyFactoryBean();
