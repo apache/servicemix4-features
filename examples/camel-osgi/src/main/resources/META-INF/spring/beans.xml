@@ -33,7 +33,7 @@
     <package>org.apache.servicemix.examples.camel</package>
     <!-- install the route which is defined with xml tags -->
     <route>
-      <from uri="timer://myTimer?fixedRate=true&amp;period=2000"/>
+      <from uri="timer://springTimer?fixedRate=true&amp;period=2000"/>
       <bean ref="myTransform" method="transform"/>
       <to uri="log:ExampleRouter"/>
     </route>
