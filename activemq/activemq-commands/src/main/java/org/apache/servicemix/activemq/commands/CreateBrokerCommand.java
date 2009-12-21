@@ -95,7 +95,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
                 safeClose(is);
             }
         } else {
-            System.out.println("@|red File allready exists|. Move it out of the way if you want it re-created: "
+            System.out.println("@|red File already exists|. Move it out of the way if you want it re-created: "
                            + outFile.getPath() + "");
         }
     }
