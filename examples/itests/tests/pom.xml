@@ -209,6 +209,12 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.examples</groupId>
+            <artifactId>org.apache.servicemix.examples.itests.cxf-ws-security-osgi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.servicemix.examples</groupId>
             <artifactId>org.apache.servicemix.examples.itests.cxf-jms-osgi</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -441,6 +447,17 @@
             <artifactId>org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.ws.security</groupId>
+            <artifactId>wss4j</artifactId>
+            <version>${wss4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.opensaml</artifactId>
+            <version>${opensaml.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

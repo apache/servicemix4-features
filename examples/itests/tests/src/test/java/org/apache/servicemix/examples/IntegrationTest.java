@@ -20,7 +20,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.io.OutputStream;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.jar.Manifest;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +42,7 @@ import org.apache.servicemix.nmr.api.NMR;
 import org.apache.servicemix.nmr.api.Pattern;
 import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.platform.testing.support.AbstractIntegrationTest;
+import org.apache.servicemix.util.FileUtil;
 import org.springframework.osgi.test.platform.OsgiPlatform;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
@@ -96,6 +100,10 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.activemq", "activemq-console"),
             getBundle("org.apache.activemq", "activemq-pool"),
             getBundle("org.apache.activemq", "kahadb"),           
+            
+            //for ws-security
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.opensaml"),
+            getBundle("org.apache.ws.security", "wss4j"),
  
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jbi-api-1.0"),            
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.stax-api-1.0"),
@@ -138,6 +146,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
             getBundle("org.apache.servicemix.document", "org.apache.servicemix.document"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-http-osgi"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-ws-security-osgi"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-jms-osgi"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-soap-handler-osgi"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-handler-cfg"),
@@ -216,6 +225,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
                                       + "org.apache.servicemix.examples.cxf.soaphandler,"
                                       + "org.apache.servicemix.examples.cxf.springcfghandler,"
                                       + "org.apache.servicemix.examples.cxf.wsaddressing,"
+                                      + "org.apache.servicemix.util,"
                                       + "org.apache.hello_world_soap_http,"
                                       + "org.apache.cxf,"
                                       + "org.apache.cxf.bus,"
@@ -311,5 +321,25 @@ public class IntegrationTest extends AbstractIntegrationTest {
         System.out.println(bos.toString());
         assertEquals("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Customer><id>123</id><name>John</name></Customer>",
                      bos.toString());
+    }
+
+    public void testWSSecurity() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-ws-security-osgi");
+        Thread.sleep(5000);
+        URLConnection connection = new URL("http://localhost:8080/cxf/HelloWorldSecurity")
+                .openConnection();
+        connection.setDoInput(true);
+        connection.setDoOutput(true);
+        OutputStream os = connection.getOutputStream();
+        // Post the request file.
+        InputStream fis = getClass().getClassLoader().getResourceAsStream("org/apache/servicemix/request.xml");
+        FileUtil.copyInputStream(fis, os);
+        // Read the response.
+        InputStream is = connection.getInputStream();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        FileUtil.copyInputStream(is, baos);
+        assertTrue(baos.toString().indexOf("Hello John Doe") >= 0);
+
     }
 }
