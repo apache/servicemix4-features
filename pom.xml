@@ -187,32 +187,33 @@
       <servicemix.nmr.version>1.1.0-SNAPSHOT</servicemix.nmr.version>
       <servicemix.specs.version>1.4.0</servicemix.specs.version>
 
-      <servicemix-shared-version>2009.02-SNAPSHOT</servicemix-shared-version>
-      <servicemix-quartz-version>2009.02-SNAPSHOT</servicemix-quartz-version>
-      <servicemix-jms-version>2009.02-SNAPSHOT</servicemix-jms-version>
-      <servicemix-jsr181-version>2009.02-SNAPSHOT</servicemix-jsr181-version>
-      <servicemix-http-version>2009.02-SNAPSHOT</servicemix-http-version>
-      <servicemix-mail-version>2009.01</servicemix-mail-version>
-      <servicemix-osworkflow-version>2009.01</servicemix-osworkflow-version>
-      <servicemix-wsn2005-version>2009.01</servicemix-wsn2005-version>
-      <servicemix-bean-version>2009.02-SNAPSHOT</servicemix-bean-version>
-      <servicemix-eip-version>2009.02-SNAPSHOT</servicemix-eip-version>
-      <servicemix-script-version>2009.01</servicemix-script-version>
-      <servicemix-scripting-version>2009.01</servicemix-scripting-version>
-      <servicemix-validation-version>2009.01</servicemix-validation-version>
-      <servicemix-ftp-version>2009.01</servicemix-ftp-version>
-      <servicemix-xmpp-version>2009.01</servicemix-xmpp-version>
-      <servicemix-saxon-version>2009.02-SNAPSHOT</servicemix-saxon-version>
-      <servicemix-truezip-version>2009.01</servicemix-truezip-version>
-      <servicemix-camel-version>2009.02-SNAPSHOT</servicemix-camel-version>
-      <servicemix-cxf-bc-version>2009.02-SNAPSHOT</servicemix-cxf-bc-version>
-      <servicemix-cxf-se-version>2009.02-SNAPSHOT</servicemix-cxf-se-version>
-      <servicemix-drools-version>2009.02-SNAPSHOT</servicemix-drools-version>
-      <servicemix-file-version>2009.01</servicemix-file-version>
-      <servicemix-snmp-version>2009.01</servicemix-snmp-version>
-      <servicemix-smpp-version>2009.02-SNAPSHOT</servicemix-smpp-version>
-      <servicemix-vfs-version>2009.01</servicemix-vfs-version>
-      <servicemix-jbi-plugin-version>4.1</servicemix-jbi-plugin-version>
+      <servicemix-shared-version>2009.02</servicemix-shared-version>
+      <servicemix-quartz-version>2009.02</servicemix-quartz-version>
+      <servicemix-jms-version>2009.02</servicemix-jms-version>
+      <servicemix-jsr181-version>2009.02</servicemix-jsr181-version>
+      <servicemix-http-version>2009.02</servicemix-http-version>
+      <servicemix-mail-version>2009.02</servicemix-mail-version>
+      <servicemix-osworkflow-version>2009.02</servicemix-osworkflow-version>
+      <servicemix-wsn2005-version>2009.02</servicemix-wsn2005-version>
+      <servicemix-bean-version>2009.02</servicemix-bean-version>
+      <servicemix-eip-version>2009.02</servicemix-eip-version>
+      <servicemix-script-version>2009.02</servicemix-script-version>
+      <servicemix-scripting-version>2009.02</servicemix-scripting-version>
+      <servicemix-validation-version>2009.02</servicemix-validation-version>
+      <servicemix-ftp-version>2009.02</servicemix-ftp-version>
+      <servicemix-xmpp-version>2009.02</servicemix-xmpp-version>
+      <servicemix-saxon-version>2009.02</servicemix-saxon-version>
+      <servicemix-truezip-version>2009.02</servicemix-truezip-version>
+      <servicemix-camel-version>2009.02</servicemix-camel-version>
+      <servicemix-cxf-bc-version>2009.02</servicemix-cxf-bc-version>
+      <servicemix-cxf-se-version>2009.02</servicemix-cxf-se-version>
+      <servicemix-drools-version>2009.02</servicemix-drools-version>
+      <servicemix-file-version>2009.02</servicemix-file-version>
+      <servicemix-snmp-version>2009.02</servicemix-snmp-version>
+      <servicemix-smpp-version>2009.02</servicemix-smpp-version>
+      <servicemix-vfs-version>2009.02</servicemix-vfs-version>
+      <servicemix-exec-version>2009.02</servicemix-exec-version>
+      <servicemix-jbi-plugin-version>4.2</servicemix-jbi-plugin-version>
 
       <smack.version>3.0.4_1</smack.version>
       <snmp4j.version>1.8.1_1</snmp4j.version>

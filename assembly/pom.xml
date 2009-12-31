@@ -791,6 +791,11 @@
             <version>${servicemix-vfs-version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-exec</artifactId>
+            <version>${servicemix-exec-version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-vfs</artifactId>
             <version>${commons.vfs.version}</version>

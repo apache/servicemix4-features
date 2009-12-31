@@ -314,6 +314,10 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/${jsmpp.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-smpp/${servicemix-smpp-version}</bundle>
     </feature>
+    <feature name="servicemix-exec" version="${servicemix-exec-version}">
+         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+         <bundle>mvn:org.apache.servicemix/servicemix-exec/${servicemix-exec-version}</bundle>
+    </feature>
     
     <!-- Default broker configuration -->
     <feature name="activemq-broker" version="${version}">
