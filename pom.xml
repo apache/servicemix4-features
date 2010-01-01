@@ -213,7 +213,7 @@
       <servicemix-smpp-version>2009.02</servicemix-smpp-version>
       <servicemix-vfs-version>2009.02</servicemix-vfs-version>
       <servicemix-exec-version>2009.02</servicemix-exec-version>
-      <servicemix-jbi-plugin-version>4.2</servicemix-jbi-plugin-version>
+      <servicemix-jbi-plugin-version>4.1</servicemix-jbi-plugin-version>
 
       <smack.version>3.0.4_1</smack.version>
       <snmp4j.version>1.8.1_1</snmp4j.version>
