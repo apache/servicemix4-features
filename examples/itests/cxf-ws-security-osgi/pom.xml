@@ -62,6 +62,7 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
                             javax.jws,
+                            javax.xml.bind.annotation,
                             javax.wsdl,
                             META-INF.cxf,
                             META-INF.cxf.osgi,

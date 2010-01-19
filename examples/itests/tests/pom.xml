@@ -488,6 +488,7 @@
                             <value />
                         </property>
                     </systemProperties>
+                    <argLine>-Dxml.catalog.files=</argLine>
                 </configuration>
             </plugin>
         </plugins>
