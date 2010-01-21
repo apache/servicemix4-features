@@ -144,7 +144,7 @@
       <jetty.version>6.1.14</jetty.version>
       <jetty.bundle.version>6.1.14_1</jetty.bundle.version>
       <jexcelapi.version>2.4.2_1</jexcelapi.version>
-      <jettison.version>1.1</jettison.version>
+      <jettison.version>1.2</jettison.version>
       <jing.version>20030619_1</jing.version>
       <jline.version>0.9.94</jline.version>
       <jruby.version>1.1.2_1</jruby.version>
