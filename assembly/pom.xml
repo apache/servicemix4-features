@@ -593,7 +593,22 @@
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
-            <artifactId>pax-web-bundle</artifactId>
+            <artifactId>pax-web-api</artifactId>
+            <version>${pax.web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-spi</artifactId>
+            <version>${pax.web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-runtime</artifactId>
+            <version>${pax.web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-jetty</artifactId>
             <version>${pax.web.version}</version>
         </dependency>
         <dependency>

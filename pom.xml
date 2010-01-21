@@ -168,11 +168,11 @@
       <oro.version>2.0.8_1</oro.version>
       <openejb.version>3.0-beta-2</openejb.version>
       <openjpa.bundle.version>1.2.1_2</openjpa.bundle.version>
-      <pax.exam.version>1.0.0</pax.exam.version>
-      <pax.runner.version>1.1.1</pax.runner.version>
+      <pax.exam.version>1.1.0</pax.exam.version>
+      <pax.runner.version>1.2.1</pax.runner.version>
       <pax.logging.version>1.4</pax.logging.version>
-      <pax.url.version>1.0.0</pax.url.version>
-      <pax.web.version>0.6.0</pax.web.version>
+      <pax.url.version>1.1.2</pax.url.version>
+      <pax.web.version>0.7.1</pax.web.version>
       <pax.web.extender.version>0.5.0</pax.web.extender.version>
       <propertyset.version>1.3_3</propertyset.version>
       <qpid.version>1.0-incubating-M2.1_1</qpid.version>
