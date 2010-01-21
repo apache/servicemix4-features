@@ -19,6 +19,7 @@
 <features>
     <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
     <repository>mvn:org.apache.camel.karaf/features/${camel.version}/xml/features</repository>
+    <repository>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</repository>
     <feature name="connector" version="${version}">
         <feature version="${servicemix.nmr.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
@@ -29,13 +30,8 @@
         <bundle>mvn:org.jencks/jencks/${jencks.version}</bundle>
     </feature>
     <feature name="web-core" version="${version}">
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
+        <feature version="${felix.karaf.version}">http</feature>
         <bundle>mvn:org.ops4j.pax.web/pax-web-jsp/${pax.web.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-api/${pax.web.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-spi/${pax.web.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-runtime/${pax.web.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-jetty/${pax.web.version}</bundle>
     </feature>
     <feature name="web" version="${version}">
         <feature version="${version}">web-core</feature>
