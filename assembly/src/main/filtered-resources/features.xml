@@ -157,6 +157,10 @@
         <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfbc-bundle/${version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfse-bundle/${version}</bundle>
     </feature>
+    <feature name="examples-cxf-ws-security-osgi" version="${version}">
+        <feature>cxf-osgi</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-osgi/${version}</bundle>
+    </feature>
     <!--
       -
       -  JBI Components

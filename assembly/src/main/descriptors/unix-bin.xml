@@ -247,6 +247,13 @@
             <lineEnding>unix</lineEnding>
         </file>
         <file>
+            <source>${basedir}/../examples/cxf-ws-security-osgi/README.txt</source>
+            <outputDirectory>/examples/cxf-ws-security-osgi</outputDirectory>
+            <filtered>true</filtered>
+            <lineEnding>unix</lineEnding>
+        </file>
+
+        <file>
             <source>${basedir}/../examples/cxf-camel-nmr/README.txt</source>
             <outputDirectory>/examples/cxf-camel-nmr</outputDirectory>
             <filtered>true</filtered>
