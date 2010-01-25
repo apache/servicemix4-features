@@ -194,6 +194,7 @@
     </feature>
     <feature name="servicemix-http" version="${servicemix-http-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons.httpclient.version}</bundle>
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
