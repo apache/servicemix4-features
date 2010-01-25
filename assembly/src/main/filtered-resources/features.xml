@@ -100,8 +100,7 @@
     
     <feature name="camel" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
-        <feature version="${camel.version}">camel-osgi</feature>
-        <feature version="${camel.version}">camel-spring</feature>
+        <feature version="${camel.version}">camel-spring-osgi</feature>
     </feature>
 
     <feature name="camel-nmr" version="${version}">
