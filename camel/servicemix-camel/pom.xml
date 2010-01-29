@@ -160,6 +160,12 @@
          <artifactId>jaxp-ri</artifactId>
          <version>1.4.2</version>
       </dependency>
+      <dependency>
+        <groupId>org.codehaus.woodstox</groupId>
+        <artifactId>woodstox-core-asl</artifactId>
+        <version>${woodstox.version}</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
 
     <build>
@@ -193,14 +199,22 @@
                             <name>javax.xml.parsers.SAXParserFactory</name>
                             <value>com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl</value>
                         </property>
+                        <property>
+                            <name>javax.xml.stream.XMLInputFactory</name>
+                            <value>com.ctc.wstx.stax.WstxInputFactory</value>
+                        </property>
+                        <property>
+                            <name>javax.xml.stream.XMLOutputFactory</name>
+                            <value>com.ctc.wstx.stax.WstxOutputFactory</value>
+                        </property>
                     </systemProperties>
                 </configuration>
             </plugin>
             <plugin>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-codegen-plugin</artifactId>
-        <version>${cxf.version}</version>
-        <executions>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>${cxf.version}</version>
+                <executions>
                 <execution>
                         <id>generate-test-sources</id>
                         <phase>generate-sources</phase>
