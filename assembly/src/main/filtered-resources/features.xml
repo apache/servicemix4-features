@@ -160,6 +160,29 @@
         <feature>cxf-osgi</feature>
         <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-osgi/${version}</bundle>
     </feature>
+    <feature name="jpa-hibernate" version="${version}">
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.java-persistence-api-1.1.1/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/${commons-dbcp.version}</bundle>
+        <bundle>mvn:org.springframework/spring-jdbc/${spring.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.dom4j/${dom4j.version}</bundle>
+        <bundle>mvn:org.antlr/com.springsource.antlr/${antlr.springsource.version}</bundle>
+        <bundle>mvn:org.jgroups/com.springsource.org.jgroups/${jgroups.springsource.version}</bundle>
+        <bundle>mvn:org.objectweb.asm/com.springsource.org.objectweb.asm/${asm.springsource.version}</bundle>
+        <bundle>mvn:net.sourceforge.cglib/com.springsource.net.sf.cglib/${cglib.springsource.version}</bundle>
+        <bundle>mvn:org.jboss.javassist/com.springsource.javassist/${javassist.springsource.version}</bundle>
+        <bundle>mvn:org.hibernate/com.springsource.org.hibernate.annotations.common/${hibernate.annotations.common.springsource.version}</bundle>
+        <bundle>mvn:org.hibernate/com.springsource.org.hibernate.annotations/${hibernate.annotations.springsource.version}</bundle>
+        <bundle>mvn:org.hibernate/com.springsource.org.hibernate.ejb/${hibernate.ejb.springsource.version}</bundle>
+        <bundle>mvn:org.hibernate/com.springsource.org.hibernate/${hibernate.springsource.version}</bundle>
+        <bundle>mvn:org.springframework/spring-orm/${spring.version}</bundle>
+    </feature>
+    <feature name="examples-jpa-osgi" version="${version}">
+        <feature version="${version}">jpa-hibernate</feature>
+        <bundle>wrap:mvn:hsqldb/hsqldb/${hsqldb.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.examples.jpa-osgi/wsdl-first-cxfbc-bundle/${version}</bundle>
+        <bundle>mvn:org.apache.servicemix.examples.jpa-osgi/wsdl-first-cxfse-bundle/${version}</bundle>
+    </feature>
+
     <!--
       -
       -  JBI Components
