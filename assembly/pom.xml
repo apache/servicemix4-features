@@ -79,11 +79,6 @@
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.java-persistence-api-1.1.1</artifactId>
-            <version>${servicemix.specs.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.geronimo.components</groupId>
             <artifactId>geronimo-connector</artifactId>
             <version>${geronimo.connector.version}</version>
@@ -155,17 +150,12 @@
             <artifactId>org.apache.servicemix.bundles.jdt-core</artifactId>
             <version>${jdt.core.version}</version>
         </dependency>       
-        <dependency>
+         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-codec</artifactId>
             <version>${commons-codec.version}</version>
         </dependency> 
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.commons-dbcp</artifactId>
-            <version>${commons-dbcp.version}</version>
-        </dependency>
-        <dependency>
+         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-net</artifactId>
             <version>${commons.net.version}</version>
@@ -597,16 +587,6 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-api</artifactId>
             <version>${pax.web.version}</version>
@@ -913,66 +893,12 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
+           <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.jaxp-ri</artifactId>
                 <version>${jaxp.ri.version}</version>
             </dependency>
-            <dependency>
-                <groupId>hsqldb</groupId>
-                <artifactId>hsqldb</artifactId>
-                <version>${hsqldb.version}</version>
-            </dependency> 
-            <dependency>
-                <groupId>org.apache.servicemix.bundles</groupId>
-                <artifactId>org.apache.servicemix.bundles.dom4j</artifactId>
-                <version>${dom4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.antlr</groupId>
-                <artifactId>com.springsource.antlr</artifactId>
-                <version>${antlr.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jgroups</groupId>
-                <artifactId>com.springsource.org.jgroups</artifactId>
-                <version>${jgroups.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.objectweb.asm</groupId>
-                <artifactId>com.springsource.org.objectweb.asm</artifactId>
-                <version>${asm.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.sourceforge.cglib</groupId>
-                <artifactId>com.springsource.net.sf.cglib</artifactId>
-                <version>${cglib.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.javassist</groupId>
-                <artifactId>com.springsource.javassist</artifactId>
-                <version>${javassist.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>com.springsource.org.hibernate.annotations.common</artifactId>
-                <version>${hibernate.annotations.common.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>com.springsource.org.hibernate.annotations</artifactId>
-                <version>${hibernate.annotations.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>com.springsource.org.hibernate.ejb</artifactId>
-                <version>${hibernate.ejb.springsource.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>com.springsource.org.hibernate</artifactId>
-                <version>${hibernate.springsource.version}</version>
-            </dependency>
+  
     </dependencies>
     <repositories>
         <repository>
@@ -1057,8 +983,7 @@
                                 <feature>web</feature>
                                 <feature>cxf-nmr</feature>
                                 <feature>cxf-osgi</feature>
-                                <feature>camel-activemq</feature>
-                                <feature>jpa-hibernate</feature>
+                                <feature>camel-activemq</feature>  
                                 <!-- ServiceMix components -->
                                 <feature>servicemix-cxf-bc</feature>
                                 <feature>servicemix-file</feature>

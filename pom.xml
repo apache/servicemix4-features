@@ -88,10 +88,10 @@
       <commons.vfs.version>1.0_1</commons.vfs.version>
       <commons.jexl.version>1.1_1</commons.jexl.version>
       <cxf.version>2.2.5</cxf.version>
-      <dom4j.version>1.6.1_2</dom4j.version>
+      <dom4j.version>1.6_1</dom4j.version>
       <drools.version>4.0.7_4</drools.version>
       <depends.maven.plugin.version>1.2</depends.maven.plugin.version>
-      <equinox.version>3.5.1.v20090827</equinox.version>
+      <equinox.version>3.5.0.v20090520</equinox.version>
       <fastinfoset.version>1.2.2_1</fastinfoset.version>
       <features.maven.plugin.version>1.1</features.maven.plugin.version>
       <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
@@ -244,18 +244,6 @@
       <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
       <sshd.version>0.2.0</sshd.version>      
       <sonar.skippedModules>examples</sonar.skippedModules>
- 
-      <!--below bundles is used for jpa-hibernate feature-->
-      <hsqldb.version>1.8.0.7</hsqldb.version>
-      <antlr.springsource.version>2.7.7</antlr.springsource.version>
-      <jgroups.springsource.version>2.5.1</jgroups.springsource.version>
-      <asm.springsource.version>1.5.3</asm.springsource.version>
-      <cglib.springsource.version>2.2.0</cglib.springsource.version>
-      <javassist.springsource.version>3.9.0.GA</javassist.springsource.version>
-      <hibernate.annotations.common.springsource.version>3.3.0.GA</hibernate.annotations.common.springsource.version>
-      <hibernate.annotations.springsource.version>3.4.0.GA</hibernate.annotations.springsource.version>
-      <hibernate.ejb.springsource.version>3.4.0.GA</hibernate.ejb.springsource.version>
-      <hibernate.springsource.version>3.3.2.GA</hibernate.springsource.version>
   </properties>
 
   <repositories>
@@ -368,28 +356,6 @@
                <enabled>false</enabled>
            </snapshots>
        </repository>
-       <repository>
-        <id>springsource.release</id>
-        <name>springsource release Repository</name>
-        <url>http://repository.springsource.com/maven/bundles/release</url>
-        <snapshots>
-          <enabled>false</enabled>
-        </snapshots>
-        <releases>
-           <enabled>true</enabled>
-        </releases>
-      </repository>
-      <repository>
-        <id>springsource.external</id>
-        <name>springsource external Repository</name>
-        <url>http://repository.springsource.com/maven/bundles/external</url>
-        <snapshots>
-          <enabled>false</enabled>
-        </snapshots>
-        <releases>
-           <enabled>true</enabled>
-        </releases>
-      </repository>
    </repositories>
 
   <pluginRepositories>
