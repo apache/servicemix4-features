@@ -46,7 +46,7 @@
     </camel-osgi:camelContext>
 
     <bean id="myTransform" class="org.apache.servicemix.examples.cxfcamel.MyTransform">
-        <property name="value"><value><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns1:sayHi xmlns:ns1="http://cxf.examples.servicemix.apache.org/"><arg0>Guillaume</arg0></ns1:sayHi></soap:Body></soap:Envelope>]]></value></property>
+        <property name="value"><value><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns1:sayHi xmlns:ns1="http://cxfcamel.examples.servicemix.apache.org/"><arg0>Guillaume</arg0></ns1:sayHi></soap:Body></soap:Envelope>]]></value></property>
     </bean>
 
     <jaxws:endpoint id="helloWorld"
