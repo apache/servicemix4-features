@@ -91,16 +91,16 @@
       <dom4j.version>1.6_1</dom4j.version>
       <drools.version>4.0.7_4</drools.version>
       <depends.maven.plugin.version>1.2</depends.maven.plugin.version>
-      <equinox.version>3.5.0.v20090520</equinox.version>
+      <equinox.version>3.5.1.v20090827</equinox.version>
       <fastinfoset.version>1.2.2_1</fastinfoset.version>
       <features.maven.plugin.version>1.1</features.maven.plugin.version>
       <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
       <felix.compendium.version>1.4.0</felix.compendium.version>
       <felix.configadmin.version>1.2.4</felix.configadmin.version>
       <felix.core.version>1.4.0</felix.core.version>
-      <felix.fileinstall.version>2.0.4</felix.fileinstall.version>
+      <felix.fileinstall.version>2.0.8</felix.fileinstall.version>
       <felix.framework.version>2.0.1</felix.framework.version>
-      <felix.karaf.version>1.2.0</felix.karaf.version>
+      <felix.karaf.version>1.3.0-SNAPSHOT</felix.karaf.version>
       <felix.osgi.version>1.4.0</felix.osgi.version>
       <felix.plugin.version>2.0.1</felix.plugin.version>
       <felix.prefs.version>1.0.2</felix.prefs.version>
@@ -240,9 +240,9 @@
       <wss4j.version>1.5.8</wss4j.version>
       <jaxp.ri.version>1.4.2_1</jaxp.ri.version>
       <geronimo.blueprint.version>1.0.0</geronimo.blueprint.version>
-      <felix.gogo.version>0.3.0-SNAPSHOT</felix.gogo.version>
+      <felix.gogo.version>0.2.2</felix.gogo.version>
       <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
-      <sshd.version>0.2.0</sshd.version>      
+      <sshd.version>0.3.0</sshd.version>      
       <sonar.skippedModules>examples</sonar.skippedModules>
   </properties>
 
