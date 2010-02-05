@@ -223,7 +223,7 @@
       <stringtemplate.version>3.2_1</stringtemplate.version>
       <velocity.version>1.6.2_1</velocity.version>
       <wsdl4j.version>1.6.2_2</wsdl4j.version>
-      <woodstox.version>4.0.5</woodstox.version>
+      <woodstox.version>4.0.7</woodstox.version>
       <woodstox.stax2api.version>3.0.1</woodstox.stax2api.version>
       <xstream.version>1.2.2</xstream.version>
       <xstream.bundle.version>1.3_1</xstream.bundle.version>
