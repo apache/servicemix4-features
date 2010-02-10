@@ -141,8 +141,8 @@
       <jdt.core.version>3.2.3_1</jdt.core.version>
       <jdom.version>1.1_1</jdom.version>
       <jencks.version>2.2</jencks.version>
-      <jetty.version>6.1.14</jetty.version>
-      <jetty.bundle.version>6.1.14_1</jetty.bundle.version>
+      <jetty.version>6.1.22</jetty.version>
+      <jetty.bundle.version>6.1.22_1</jetty.bundle.version>
       <jexcelapi.version>2.4.2_1</jexcelapi.version>
       <jettison.version>1.2</jettison.version>
       <jing.version>20030619_1</jing.version>
@@ -172,7 +172,7 @@
       <pax.runner.version>1.2.1</pax.runner.version>
       <pax.logging.version>1.4</pax.logging.version>
       <pax.url.version>1.1.2</pax.url.version>
-      <pax.web.version>0.7.1</pax.web.version>
+      <pax.web.version>0.7.2</pax.web.version>
       <pax.web.extender.version>0.5.0</pax.web.extender.version>
       <propertyset.version>1.3_3</propertyset.version>
       <qpid.version>1.0-incubating-M2.1_1</qpid.version>
