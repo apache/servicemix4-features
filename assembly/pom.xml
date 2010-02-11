@@ -317,6 +317,11 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
+            <version>${antlr2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
             <version>${antlr.version}</version>
         </dependency>
         <dependency>
