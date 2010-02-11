@@ -58,6 +58,14 @@
       <maven>2.0.7</maven>
   </prerequisites>
 
+  <dependencies>
+      <dependency>
+         <groupId>org.apache.servicemix.bundles</groupId>
+         <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
+         <version>${antlr2.version}</version>
+      </dependency>
+  </dependencies>
+
   <properties>
       <maven.assembly.version>2.2-beta-4</maven.assembly.version>
       <xfire.maven.plugin>4.1</xfire.maven.plugin>
