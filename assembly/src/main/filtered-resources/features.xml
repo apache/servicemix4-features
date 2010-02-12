@@ -35,8 +35,8 @@
     </feature>
     <feature name="web" version="${version}">
         <feature version="${version}">web-core</feature>
-        <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-war/${pax.web.extender.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-whiteboard/${pax.web.extender.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-war/${pax.web.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-whiteboard/${pax.web.version}</bundle>
         <bundle>mvn:org.ops4j.pax.url/pax-url-war/${pax.url.version}</bundle>
         <bundle>mvn:org.apache.servicemix.war/org.apache.servicemix.war.deployer/${version}</bundle>
     </feature>
@@ -83,7 +83,7 @@
     <feature name="cxf-osgi" version="${version}">
         <feature version="${cxf.version}">cxf</feature>
         <feature version="${version}">web-core</feature>
-        <bundle>mvn:org.ops4j.pax.web-extender/pax-web-ex-whiteboard/${pax.web.extender.version}</bundle>
+        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-whiteboard/${pax.web.version}</bundle>
     </feature>
     <feature name="cxf-jaxrs" version="${version}">
         <feature version="${version}">cxf-osgi</feature>

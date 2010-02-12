@@ -112,7 +112,7 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.ops4j.pax.web", "pax-web-spi"),
             getBundle("org.ops4j.pax.web", "pax-web-runtime"),
             getBundle("org.ops4j.pax.web", "pax-web-jetty"),
-            getBundle("org.ops4j.pax.web-extender", "pax-web-ex-whiteboard"),
+            getBundle("org.ops4j.pax.web", "pax-web-extender-whiteboard"),
             getBundle("org.apache.servicemix", "servicemix-utils"),
             getBundle("org.fusesource.commonman", "commons-management"),
             getBundle("org.apache.felix.karaf", "org.apache.felix.karaf.management"),

@@ -371,9 +371,9 @@
             <version>${pax.web.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.ops4j.pax.web-extender</groupId>
-            <artifactId>pax-web-ex-whiteboard</artifactId>
-            <version>${pax.web.extender.version}</version>
+            <groupId>org.ops4j.pax.web</groupId>
+            <artifactId>pax-web-extender-whiteboard</artifactId>
+            <version>${pax.web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
