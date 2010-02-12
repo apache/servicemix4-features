@@ -24,3 +24,12 @@ Portions of the included XmlSchema library are Copyright 2006 International Busi
 
 Additional copyright notices and license terms applicable are
 present in the licenses directory of this distribution.
+
+This product includes Java classes originally released under the Common 
+Development and Distribution License (CDDL) and relicenced here under the
+Apache Software License. These include:
+  Java Activation API (javax.activation.*)
+  Java Persistence API (javax.persistence.*)
+  Java API for RESTful Web Services (javax.xml.ws.*)
+Any additional rights under the Apache License are offered by this project
+alone, and not by the Initial Developer or Contributor. 
