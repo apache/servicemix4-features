@@ -91,6 +91,7 @@
           <directory>src/main/distribution/text</directory>
           <outputDirectory>/</outputDirectory>
           <lineEnding>dos</lineEnding>
+          <fileMode>0644</fileMode>
       </fileSet>        
       <fileSet>
           <directory>target/classes/etc</directory>
