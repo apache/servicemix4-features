@@ -30,6 +30,6 @@ Development and Distribution License (CDDL) and relicenced here under the
 Apache Software License. These include:
   Java Activation API (javax.activation.*)
   Java Persistence API (javax.persistence.*)
-  Java API for RESTful Web Services (javax.xml.ws.*)
+  Java API for RESTful Web Services (javax.xml.rs.*)
 Any additional rights under the Apache License are offered by this project
 alone, and not by the Initial Developer or Contributor. 
