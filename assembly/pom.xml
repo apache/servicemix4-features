@@ -527,6 +527,11 @@
         </dependency>
         -->
         <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${activemq.commons.pool.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
             <version>${activemq.version}</version>
@@ -846,8 +851,13 @@
             <version>${scriptengines.version}</version>
         </dependency>
         <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${commons.pool.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.camel.karaf</groupId>
-            <artifactId>features</artifactId>
+            <artifactId>apache-camel</artifactId>
             <version>${camel.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
@@ -975,7 +985,7 @@
                             <descriptors>
                                 <descriptor>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
-                                <descriptor>mvn:org.apache.camel.karaf/features/${camel.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
                             </descriptors>
                             <features>

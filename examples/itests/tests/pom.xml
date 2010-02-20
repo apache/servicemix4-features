@@ -301,7 +301,7 @@
         <dependency>
           <groupId>commons-pool</groupId>
           <artifactId>commons-pool</artifactId>
-          <version>${commons.pool.version}</version>
+          <version>${activemq.commons.pool.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.xbean</groupId>

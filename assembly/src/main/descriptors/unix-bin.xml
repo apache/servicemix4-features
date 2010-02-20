@@ -39,7 +39,7 @@
               <exclude>NOTICE</exclude>
               <exclude>README</exclude>
               <exclude>RELEASE-NOTES</exclude>
-              <exclude>manual*</exclude>
+              <exclude>karaf-manual*</exclude>
             </excludes>
         </fileSet>
 
@@ -294,7 +294,7 @@
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
-                <include>org.apache.camel.karaf:features:xml:features</include>
+                <include>org.apache.camel.karaf:apache-camel:xml:features</include>
             </includes>
         </dependencySet>
         <dependencySet>
