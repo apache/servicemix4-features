@@ -158,7 +158,7 @@
          <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-net</artifactId>
-            <version>${commons.net.version}</version>
+            <version>${commons-net.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -193,7 +193,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-            <version>${commons.httpclient.version}</version>
+            <version>${commons-httpclient.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-collections</groupId>
@@ -527,9 +527,9 @@
         </dependency>
         -->
         <dependency>
-            <groupId>commons-pool</groupId>
-            <artifactId>commons-pool</artifactId>
-            <version>${activemq.commons.pool.version}</version>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
+            <version>${activemq.commons-pool.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -647,9 +647,9 @@
             <version>${jetty.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-pool</groupId>
-            <artifactId>commons-pool</artifactId>
-            <version>${commons.pool.version}</version>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
+            <version>${commons-pool.version}</version>
         </dependency>
         <!-- Dependencies not included directly, but repackaged in bundles.
      	     Listed for legal reasons (and LICENSE file generation) 
@@ -813,7 +813,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-vfs</artifactId>
-            <version>${commons.vfs.version}</version>
+            <version>${commons-vfs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
@@ -849,11 +849,6 @@
             <groupId>com.google.code.scriptengines</groupId>
             <artifactId>scriptengines-jruby</artifactId>
             <version>${scriptengines.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-pool</groupId>
-            <artifactId>commons-pool</artifactId>
-            <version>${commons.pool.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.karaf</groupId>
@@ -895,7 +890,7 @@
           <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.commons-jexl</artifactId>
-                <version>${commons.jexl.version}</version>
+                <version>${commons-jexl.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>junit</groupId>

@@ -60,7 +60,7 @@
         <dependency>
             <groupId>org.fusesource.commonman</groupId>
             <artifactId>commons-management</artifactId>
-            <version>${commons.management.version}</version>
+            <version>${commons-management.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -299,9 +299,9 @@
           <version>${geronimo.jta.version}</version>
         </dependency>
         <dependency>
-          <groupId>commons-pool</groupId>
-          <artifactId>commons-pool</artifactId>
-          <version>${activemq.commons.pool.version}</version>
+          <groupId>org.apache.servicemix.bundles</groupId>
+          <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
+          <version>${activemq.commons-pool.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.xbean</groupId>
@@ -439,7 +439,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-            <version>${commons.httpclient.version}</version>
+            <version>${commons-httpclient.version}</version>
         </dependency>
 
         <dependency>

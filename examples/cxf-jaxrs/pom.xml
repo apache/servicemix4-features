@@ -48,7 +48,7 @@
        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-            <version>${commons.httpclient.version}</version>
+            <version>${commons-httpclient.version}</version>
         </dependency>
     </dependencies>
 

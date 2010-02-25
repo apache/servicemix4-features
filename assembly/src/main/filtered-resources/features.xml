@@ -43,7 +43,7 @@
     <feature name="activemq" version="${activemq.version}">
         <feature version="${version}">connector</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>
-        <bundle>mvn:commons-pool/commons-pool/${activemq.commons.pool.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/${activemq.commons-pool.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.activemq/kahadb/${activemq.version}</bundle>
         <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
@@ -188,15 +188,15 @@
     <feature name="servicemix-ftp" version="${servicemix-ftp-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-net/${commons.net.version}</bundle>
-        <bundle>mvn:commons-pool/commons-pool/${commons.pool.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-net/${commons-net.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/${commons-pool.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-ftp/${servicemix-ftp-version}</bundle>
     </feature>
     <feature name="servicemix-http" version="${servicemix-http-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons.httpclient.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.version}</bundle>
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
@@ -309,7 +309,7 @@
     </feature>
     <feature name="servicemix-vfs" version="${servicemix-vfs-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/${commons.vfs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/${commons-vfs.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-vfs/${servicemix-vfs-version}</bundle>
     </feature>
     <feature name="servicemix-smpp" version="${servicemix-smpp-version}">
