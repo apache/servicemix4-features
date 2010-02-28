@@ -86,9 +86,9 @@
       <commons-jxpath.version>1.2_3</commons-jxpath.version>
       <commons-logging.version>1.1.1</commons-logging.version>
       <commons-net.version>1.4.1_3</commons-net.version>
-      <commons-pool.version>1.5.4_1-SNAPSHOT</commons-pool.version>
+      <commons-pool.version>1.5.4_1</commons-pool.version>
       <!-- Required by ActiveMQ -->
-      <activemq.commons-pool.version>1.4_1-SNAPSHOT</activemq.commons-pool.version>
+      <activemq.commons-pool.version>1.4_1</activemq.commons-pool.version>
       <commons-vfs.version>1.0_3</commons-vfs.version>
       <commons-jexl.version>1.1_3</commons-jexl.version>
       <cxf.version>2.2.6</cxf.version>
