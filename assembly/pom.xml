@@ -455,8 +455,8 @@
             <version>${geronimo.transaction.version}</version>
         </dependency>
         <dependency>
-           <groupId>org.apache.servicemix.bundles</groupId>
-           <artifactId>org.apache.servicemix.bundles.javax.mail</artifactId>
+           <groupId>javax.mail</groupId>
+           <artifactId>mail</artifactId>
            <version>${javax.mail.version}</version>
         </dependency>
         <dependency>

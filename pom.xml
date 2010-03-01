@@ -140,7 +140,7 @@
       <jaxb.impl.version>2.1.12_1</jaxb.impl.version>
       <jaxws.api.version>2.1</jaxws.api.version>
       <jaxrs.api.version>1.0</jaxrs.api.version>
-      <javax.mail.version>1.4.1_2</javax.mail.version>
+      <javax.mail.version>1.4.3</javax.mail.version>
       <jcr-api.version>1.0_2</jcr-api.version>
       <jdt.core.version>3.2.3_2</jdt.core.version>
       <jdom.version>1.1_2</jdom.version>

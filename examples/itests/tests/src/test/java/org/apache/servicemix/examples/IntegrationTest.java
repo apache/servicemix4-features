@@ -125,7 +125,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xalan"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlsec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty-bundle"),
-            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.javax.mail"),
+            getBundle("javax.mail", "mail"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-codec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-httpclient"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.abdera"),
