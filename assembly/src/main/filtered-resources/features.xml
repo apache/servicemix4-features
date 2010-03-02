@@ -78,6 +78,13 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.opensaml/${opensaml.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.version}</bundle>
+        <bundle>mvn:commons-lang/commons-lang/${commons-lang-version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/${velocity.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.version}</bundle>
+        <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.version}</bundle>
+        <bundle>mvn:org.apache.ws.commons.axiom/axiom-impl/${axiom.version}</bundle>
+        <bundle>mvn:org.apache.ws.commons.axiom/axiom-api/${axiom.version}</bundle>
         <bundle>mvn:org.apache.cxf/cxf-bundle/${cxf.version}</bundle>
     </feature>
     <feature name="cxf-osgi" version="${version}">
