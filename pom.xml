@@ -79,7 +79,6 @@
       <commons-beanutils.version>1.7.0_3</commons-beanutils.version>
       <commons-collections.version>3.2.1</commons-collections.version>
       <commons-csv.version>1.0-r706899_1</commons-csv.version>
-      <commons-dbcp.version>1.2.2_5</commons-dbcp.version>
       <commons-httpclient.version>3.1_4</commons-httpclient.version>
       <commons-io.version>1.3.2_3</commons-io.version>
       <commons-codec.version>1.3_2</commons-codec.version>
@@ -87,8 +86,8 @@
       <commons-logging.version>1.1.1</commons-logging.version>
       <commons-net.version>1.4.1_3</commons-net.version>
       <commons-pool.version>1.5.4_1</commons-pool.version>
-      <!-- Required by ActiveMQ -->
-      <activemq.commons-pool.version>1.4_1</activemq.commons-pool.version>
+      <commons-pool.camel.version>1.5.4</commons-pool.camel.version>
+      <commons-pool.activemq.version>1.4_1</commons-pool.activemq.version>
       <commons-vfs.version>1.0_3</commons-vfs.version>
       <commons-jexl.version>1.1_3</commons-jexl.version>
       <commons-lang-version>2.4</commons-lang-version>
@@ -147,8 +146,9 @@
       <jdt.core.version>3.2.3_2</jdt.core.version>
       <jdom.version>1.1_2</jdom.version>
       <jencks.version>2.2</jencks.version>
-      <jetty.version>6.1.19</jetty.version>
-      <jetty.bundle.version>6.1.19_2</jetty.bundle.version>
+      <jetty.version>6.1.22</jetty.version>
+      <jetty.karaf.bundle.version>6.1.22_1</jetty.karaf.bundle.version>
+      <jetty.camel.bundle.version>6.1.19_2</jetty.camel.bundle.version>
       <jexcelapi.version>2.4.2_2</jexcelapi.version>
       <jettison.version>1.2</jettison.version>
       <jing.version>20030619_2</jing.version>
