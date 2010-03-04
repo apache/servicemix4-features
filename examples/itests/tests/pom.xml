@@ -301,7 +301,7 @@
         <dependency>
           <groupId>org.apache.servicemix.bundles</groupId>
           <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-          <version>${activemq.commons-pool.version}</version>
+          <version>${commons-pool.activemq.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.xbean</groupId>
