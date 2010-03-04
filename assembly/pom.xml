@@ -886,6 +886,11 @@
             <version>${commons-pool.camel.version}</version>
         </dependency>
         <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.camel.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.camel.karaf</groupId>
             <artifactId>apache-camel</artifactId>
             <version>${camel.version}</version>

@@ -88,6 +88,7 @@
       <commons-pool.version>1.5.4_1</commons-pool.version>
       <commons-pool.camel.version>1.5.4</commons-pool.camel.version>
       <commons-pool.activemq.version>1.4_1</commons-pool.activemq.version>
+      <commons-dbcp.camel.version>1.3</commons-dbcp.camel.version>
       <commons-vfs.version>1.0_3</commons-vfs.version>
       <commons-jexl.version>1.1_3</commons-jexl.version>
       <commons-lang-version>2.4</commons-lang-version>
