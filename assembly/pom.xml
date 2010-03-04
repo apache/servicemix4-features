@@ -559,11 +559,6 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-            <version>${commons-pool.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
             <version>${commons-pool.activemq.version}</version>
         </dependency>
         <dependency>
@@ -879,11 +874,6 @@
             <groupId>com.google.code.scriptengines</groupId>
             <artifactId>scriptengines-jruby</artifactId>
             <version>${scriptengines.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-pool</groupId>
-            <artifactId>commons-pool</artifactId>
-            <version>${commons-pool.camel.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-dbcp</groupId>
