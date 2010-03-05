@@ -86,9 +86,8 @@
       <commons-logging.version>1.1.1</commons-logging.version>
       <commons-net.version>1.4.1_3</commons-net.version>
       <commons-pool.version>1.5.4_1</commons-pool.version>
-      <commons-pool.camel.version>1.5.4</commons-pool.camel.version>
       <commons-pool.activemq.version>1.4_1</commons-pool.activemq.version>
-      <commons-dbcp.camel.version>1.3</commons-dbcp.camel.version>
+      <commons-dbcp.version>1.3</commons-dbcp.version>
       <commons-vfs.version>1.0_3</commons-vfs.version>
       <commons-jexl.version>1.1_3</commons-jexl.version>
       <commons-lang-version>2.4</commons-lang-version>
@@ -148,8 +147,7 @@
       <jdom.version>1.1_2</jdom.version>
       <jencks.version>2.2</jencks.version>
       <jetty.version>6.1.22</jetty.version>
-      <jetty.karaf.bundle.version>6.1.22_1</jetty.karaf.bundle.version>
-      <jetty.camel.bundle.version>6.1.19_2</jetty.camel.bundle.version>
+      <jetty.bundle.version>6.1.22_1</jetty.bundle.version>
       <jexcelapi.version>2.4.2_2</jexcelapi.version>
       <jettison.version>1.2</jettison.version>
       <jing.version>20030619_2</jing.version>
