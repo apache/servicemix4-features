@@ -876,11 +876,6 @@
             <version>${commons-dbcp.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-            <version>${commons-pool.version}</version>
-        </dependency>
-        <dependency>
           <groupId>org.apache.camel</groupId>
           <artifactId>camel-core</artifactId>
           <version>${camel.version}</version>
