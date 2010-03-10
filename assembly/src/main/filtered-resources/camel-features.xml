@@ -21,7 +21,6 @@
 <features>
   <repository>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</repository>
   <feature name='camel' version='${camel.version}'>
-    <feature version='${camel.version}'>camel-core</feature>
     <feature version='${camel.version}'>camel-spring-osgi</feature>
   </feature>
   <feature name='camel-core' version='${camel.version}'>
