@@ -21,6 +21,7 @@ import org.apache.camel.Exchange;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.NMR;
 import org.apache.servicemix.nmr.api.Pattern;
+import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
 
 /**
@@ -43,9 +44,9 @@ public class ServiceMixProducer extends DefaultProducer {
     	NMR nmr = getEndpoint().getComponent().getNmr();
     	Channel client = nmr.createChannel();
     	
-        org.apache.servicemix.nmr.api.Exchange e = client.createExchange(
-            Pattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
-        
+        org.apache.servicemix.nmr.api.Exchange e 
+        	= getEndpoint().getComponent().getBinding().populateNmrExchangeFromCamelExchange(exchange, client);
+            
         try {
             e.setTarget(nmr.getEndpointRegistry().lookup(
                 ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME, 
@@ -53,21 +54,30 @@ public class ServiceMixProducer extends DefaultProducer {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        e.getIn().setBody(exchange.getIn().getBody());
-        e.getIn().setHeader(OPERATION_NAME, exchange.getIn().getHeader(OPERATION_NAME));
-                
+                       
         client.sendSync(e);
-        // TODO do we need to copy the message headers        
-        if (e.getPattern() != Pattern.InOnly) {
+                
+        handleResponse(exchange, client, e);
+    }
+
+	private void handleResponse(Exchange exchange, Channel client,
+			org.apache.servicemix.nmr.api.Exchange e) {
+		if (e.getPattern() != Pattern.InOnly) {
             if (e.getError() != null) {
                 exchange.setException(e.getError());
-            } else if (e.getFault().getBody() != null) {
-                exchange.getOut().setFault(true);
-                exchange.getOut().setBody(e.getFault().getBody());        		
             } else {
-                exchange.getOut().setBody(e.getOut().getBody());
+            	exchange.getProperties().putAll(e.getProperties());
+            	if (e.getFault().getBody() != null) {
+                    exchange.getOut().setFault(true);
+                    getEndpoint().getComponent().getBinding().copyNmrMessageToCamelMessage(e.getFault(), exchange.getOut());
+            	} else {
+            		getEndpoint().getComponent().getBinding().copyNmrMessageToCamelMessage(e.getOut(), exchange.getOut());
+                }
+            	e.setStatus(Status.Done);
+            	client.send(e);
             }
+            	
     	}
-    }
+	}
     
 }

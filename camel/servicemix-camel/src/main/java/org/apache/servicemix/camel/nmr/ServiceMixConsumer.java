@@ -66,14 +66,16 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
     	if (exchange.getStatus() == Status.Active) {
             try {
             	org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
-            	camelExchange.setPattern(ExchangePattern.fromWsdlUri(exchange.getPattern().getWsdlUri()));
-                getProcessor().process(camelExchange);
+            	getProcessor().process(camelExchange);
                 
                 // just copy the camelExchange back to the nmr exchange
+            	exchange.getProperties().putAll(camelExchange.getProperties());
                 if (camelExchange.hasOut() && !camelExchange.getOut().isFault()) {
-                    exchange.getOut().setBody(camelExchange.getOut().getBody());
+                	getEndpoint().getComponent().getBinding().
+                		copyCamelMessageToNmrMessage(exchange.getOut(), camelExchange.getOut());
                 } else if (camelExchange.hasOut() && camelExchange.getOut().isFault()) {
-                    exchange.getFault().setBody(camelExchange.getOut().getBody());
+                	getEndpoint().getComponent().getBinding().
+            			copyCamelMessageToNmrMessage(exchange.getFault(), camelExchange.getOut());
                 } else if (camelExchange.getException() != null) {
                 	throw (Exception)camelExchange.getException();
                 } else {

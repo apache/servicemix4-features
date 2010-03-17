@@ -30,6 +30,7 @@ import org.apache.camel.ExchangePattern;
 import org.apache.camel.Message;
 import org.apache.camel.impl.DefaultExchange;
 import org.apache.camel.impl.DefaultMessage;
+import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Pattern;
 
 /**
@@ -56,9 +57,21 @@ public class ServiceMixBinding {
         addCamelAttachments(nmrMessage, camelMessage);        
     }
     
+    public org.apache.servicemix.nmr.api.Exchange populateNmrExchangeFromCamelExchange(Exchange camelExchange, Channel client) 
+    	throws MessagingException {
+    	org.apache.servicemix.nmr.api.Exchange e = client.createExchange(
+                Pattern.fromWsdlUri(camelExchange.getPattern().getWsdlUri()));
+    	e.getProperties().putAll(camelExchange.getProperties());
+    	org.apache.servicemix.nmr.api.Message inMessage = e.getIn();
+        copyCamelMessageToNmrMessage(inMessage, camelExchange.getIn());
+        return e;
+        	   	
+    }
+    
+    
     public Exchange populateCamelExchangeFromNmrExchange(CamelContext context, org.apache.servicemix.nmr.api.Exchange nmrExchange) {
         Exchange answer = new DefaultExchange(context);
-        answer.setPattern(ExchangePattern.fromWsdlUri(nmrExchange.getPattern().toString()));
+        answer.setPattern(ExchangePattern.fromWsdlUri(nmrExchange.getPattern().getWsdlUri()));
         
         // copy the nmrExchange's properties
         answer.getProperties().putAll(nmrExchange.getProperties());
@@ -74,52 +87,11 @@ public class ServiceMixBinding {
         if (nmrExchange != null && nmrExchange.getOperation() != null) {
             answer.setProperty(NMR_OPERATION, nmrExchange.getOperation().toString());
         }
-        
-        if (nmrExchange.getPattern() != Pattern.InOnly && nmrExchange.getOut(false)!= null) {
-            Message message = new DefaultMessage();
-            copyNmrMessageToCamelMessage(nmrExchange.getOut(), message);
-            answer.setOut(message);
-        } 
-        
-        if (nmrExchange.getFault(false) != null) {
-            Message message = new DefaultMessage();
-            copyNmrMessageToCamelMessage(nmrExchange.getFault(), message);
-            answer.setOut(message);
-            answer.getOut().setFault(true);
-        }  
+      
         return answer;
     }
     
-    public org.apache.servicemix.nmr.api.Exchange detachExchange(Exchange camelExchange) throws MessagingException {
-        org.apache.servicemix.nmr.api.Exchange nmrExchange = 
-            (org.apache.servicemix.nmr.api.Exchange) camelExchange.removeProperty(NMR_EXCHANGE);
-        if (nmrExchange == null) {
-            return null;
-        }
-        // copy back the Exchange properties
-        nmrExchange.getProperties().putAll(camelExchange.getProperties());
-        // set the normalized message back
-        org.apache.servicemix.nmr.api.Message inMessage = nmrExchange.getIn();
-        copyCamelMessageToNmrMessage(inMessage, camelExchange.getIn());
-        // deal with the out message
-        if (camelExchange.hasOut()) {
-            if (camelExchange.isFailed()) {
-                if (camelExchange.getException() != null) {
-                    nmrExchange.setError(camelExchange.getException());
-                } else {
-                    org.apache.servicemix.nmr.api.Message fault = nmrExchange.getFault(true);
-                    fault.setBody(camelExchange.getOut().getBody());
-                    
-                }
-            } else {
-               if (nmrExchange.getPattern() != Pattern.InOnly) {
-                   org.apache.servicemix.nmr.api.Message outMessage = nmrExchange.getOut(true);
-                   copyCamelMessageToNmrMessage(outMessage, camelExchange.getOut());
-               }    
-            }
-        }
-        return nmrExchange;
-    }
+    
     
     @SuppressWarnings("unchecked")
     protected void addNmrHeaders(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) {
