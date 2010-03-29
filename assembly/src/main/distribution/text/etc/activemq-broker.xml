@@ -121,8 +121,6 @@
         <property name="resourceName" value="activemq.default" />
     </bean>
 
-    <bean id="pooledConnectionFactoryBean" factory-bean="pooledConnectionFactory" factory-method="getConnectionFactory" />
-
     <bean id="resourceManager" class="org.apache.activemq.pool.ActiveMQResourceManager" init-method="recoverResource">
           <property name="transactionManager" ref="transactionManager" />
           <property name="connectionFactory" ref="activemqConnectionFactory" />
@@ -131,7 +129,7 @@
 
     <osgi:reference id="transactionManager" interface="javax.transaction.TransactionManager" />
 
-    <osgi:service ref="pooledConnectionFactoryBean">
+    <osgi:service ref="pooledConnectionFactory">
         <osgi:interfaces>
             <value>javax.jms.ConnectionFactory</value>
         </osgi:interfaces>
