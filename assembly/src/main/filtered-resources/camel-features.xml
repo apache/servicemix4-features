@@ -21,7 +21,8 @@
 <features>
   <repository>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</repository>
   <feature name='camel' version='${camel.version}'>
-    <feature version='${camel.version}'>camel-spring-osgi</feature>
+     <feature version='${camel.version}'>camel-core</feature>
+     <feature version='${camel.version}'>camel-spring-osgi</feature>
   </feature>
   <feature name='camel-core' version='${camel.version}'>
     <feature version="2.5.6.SEC01">spring</feature>
@@ -312,11 +313,6 @@
   <feature name='camel-ldap' version='${camel.version}'>
     <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.camel/camel-ldap/${camel.version}</bundle>
-  </feature>
-  <feature name='camel-lucene' version='${camel.version}'>
-    <feature version='${camel.version}'>camel-core</feature>
-    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.lucene/3.0.1</bundle>
-    <bundle>mvn:org.apache.camel/camel-lucene/${camel.version}</bundle>
   </feature>
   <feature name='camel-mail' version='${camel.version}'>
     <bundle>mvn:org.springframework/spring-context/2.5.6.SEC01</bundle>
