@@ -48,6 +48,7 @@
         <module>cxf-ws-addressing</module>
         <module>cxf-wsdl-first-osgi-package</module>
         <module>cxf-ws-security-osgi</module>
+        <module>cxf-ws-rm</module>
         <module>itests</module>
     </modules>
 

@@ -192,6 +192,9 @@
         <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-osgi/${version}</bundle>
     </feature>
+    <feature name="examples-cxf-ws-rm" version="${version}">
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-rm/${version}</bundle>
+    </feature>
     <!--
       -
       -  JBI Components

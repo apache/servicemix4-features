@@ -46,6 +46,7 @@
         <module>cxf-jaxrs</module>
         <module>cxf-wsdl-first-osgi-package</module>
         <module>cxf-ws-security-osgi</module>
-    </modules>
+        <module>cxf-ws-rm</module> 
+   </modules>
 
 </project>
