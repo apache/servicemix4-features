@@ -235,7 +235,7 @@
       <xmlbeans.version>2.4.0_3</xmlbeans.version>
       <xmlschema.version>1.4.5</xmlschema.version>
       <xmlsec.version>1.4.3_2</xmlsec.version>
-      <opensaml.version>1.1_3</opensaml.version>
+      <opensaml.version>1.1_4-SNAPSHOT</opensaml.version>
       <xalan.version>2.7.1_2</xalan.version>
       <xerces.version>2.9.1_3</xerces.version>
       <xmlresolver.version>1.2_2</xmlresolver.version>
