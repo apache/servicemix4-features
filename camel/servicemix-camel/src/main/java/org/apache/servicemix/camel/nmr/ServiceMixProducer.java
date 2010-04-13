@@ -30,6 +30,7 @@ import org.apache.servicemix.nmr.api.service.ServiceHelper;
 public class ServiceMixProducer extends DefaultProducer {
 	
     private static final String OPERATION_NAME = "operationName"; 
+    private Channel client;
 
     public ServiceMixProducer(ServiceMixEndpoint endpoint) {
         super(endpoint);
@@ -40,10 +41,9 @@ public class ServiceMixProducer extends DefaultProducer {
     }
 
     public void process(Exchange exchange) throws Exception {
-    	
-    	NMR nmr = getEndpoint().getComponent().getNmr();
-    	Channel client = nmr.createChannel();
-    	
+
+        NMR nmr = getEndpoint().getComponent().getNmr();
+
         org.apache.servicemix.nmr.api.Exchange e 
         	= getEndpoint().getComponent().getBinding().populateNmrExchangeFromCamelExchange(exchange, client);
             
@@ -79,5 +79,17 @@ public class ServiceMixProducer extends DefaultProducer {
             	
     	}
 	}
+
+    @Override
+    protected void doStart() throws Exception {
+        NMR nmr = getEndpoint().getComponent().getNmr();
+        client = nmr.createChannel();
+    }
+
+    @Override
+    protected void doStop() throws Exception {
+        client.close();
+        client = null;
+    }
     
 }
