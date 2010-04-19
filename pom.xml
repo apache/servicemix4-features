@@ -791,9 +791,9 @@
           <build>
               <plugins>
                   <plugin>
-                      <groupId>org.codehaus.mojo</groupId>
-                      <artifactId>rat-maven-plugin</artifactId>
-                      <version>1.0-alpha-3</version>
+                      <groupId>org.apache.rat</groupId>
+                      <artifactId>apache-rat-plugin</artifactId>
+                      <version>0.6</version>
                       <executions>
                           <execution>
                               <phase>verify</phase>
@@ -804,6 +804,7 @@
                       </executions>
                       <configuration>
                           <reportFile>${project.build.directory}/${project.build.finalName}.rat</reportFile>
+                          <excludeSubProjects>false</excludeSubProjects>
                           <excludes>
                               <exclude>**/target/**/*</exclude>
                               <!-- IDEA files -->
@@ -813,6 +814,7 @@
                               <!-- Eclipse files -->
                               <exclude>**/.*</exclude>
                               <exclude>**/eclipse-classes/**/*</exclude>
+                              <exclude>**/dependency-reduced-pom.xml</exclude>
                           </excludes>
                       </configuration>
                   </plugin>
