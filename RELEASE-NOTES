@@ -15,6 +15,253 @@
  * limitations under the License.
  */
 
+                      Apache ServiceMix 4.2.0
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.2.0 is a major release of the OSGi based ServiceMix ESB platform.  This release contains many
+bugfixes and feature enhancements over the 4.0.0 release.  ServiceMix 4.2.0 includes the following dependencies:
+
+- Apache Felix Karaf 1.4.0 (http://felix.apache.org/site/apache-felix-karaf.html)
+  A lightweight OSGi platform built on top of Apache Felix OSGi framework.  Karaf provides much of the core OSGi
+  functionality and features (SSH shell, console commands, provisioning, blueprint XML support, etc...)
+
+- Apache ServiceMix NMR 1.2.0
+  An OSGi based NMR and JBI container, with a new clustering engine ready for enterprise deployment
+
+- Apache ServiceMix Components 2010.01
+  OSGi and JBI compatible components for common integration bindings such as FTP, HTTP, JMS, etc. as well as
+  service engines such as Camel (Enterprise Integration Patterns), Quartz, JSR-223 Scripting, etc.
+
+
+ServiceMix 4.2.0 also ships with a web console for administering and deploying endpoints and components,
+additional OSGi bundles, and configuration files.  We also include support for running outof the box web applications
+via WAR file deployment.  This release includes preliminary implementations of the OSGi Enterprise Specification 4.2
+and includes support for OSGi fragment bundles.  OSGi framework support defauls to Apache Felix, but can be changed
+via a simple configuration paramater to use Eclipse Equinox.
+
+ Changelog
+ ---------
+The following list shows the bug fixes and enhancements included in this release.
+
+
+Release Notes - ServiceMix 4 - Version 4.2.0
+
+** Sub-task
+    * [SMX4-220] - Extend the help command to display usefull help for all commands available
+    * [SMX4-221] - The option --help on commands doesn't display good enough help
+
+** Bug
+    * [SMX4-51] - Loan broker bpel demo fails in smx4
+    * [SMX4-93] - servicemix binary throws error on startup
+    * [SMX4-206] - Apache ServiceMix 4 binary assembly zip file is not valid
+    * [SMX4-246] - Avoid duplication of config files for NMR and Features assembly build
+    * [SMX4-258] - add wss4j and xmlsec bundle in cxf feature
+    * [SMX4-260] - fix groovy.xml for simple example
+    * [SMX4-264] - Upgrade Features to Spring DM 1.2.0-rc1
+    * [SMX4-270] - Features build fails on Hudson when building the assembly
+    * [SMX4-274] - servicemix-osgi-cxf-code-first-archetype no longer works.....
+    * [SMX4-275] - Upgrading jaxrs api from  0.8 to 1.0
+    * [SMX4-278] - cxf-transport-osgi: OsgiServlet fails to set Message.REQUEST_URI property, resulting in NPE in JAXRSInInterceptor
+    * [SMX4-283] - there's no README for the cxf-jaxrs example in the kit
+    * [SMX4-287] - can't build bridge-camel example if not build bridge example first
+    * [SMX4-298] - servicemix-scripting feature can't start alone
+    * [SMX4-302] - CXF feature doesn't include the saaj-impl bundle
+    * [SMX4-303] - *.jks shouldn't be changed when generated src kit
+    * [SMX4-304] - Hudson does not deploy artifacts for SMX4 features/assembly
+    * [SMX4-305] - SMX 4 development builds have two files with ${} names not replaced
+    * [SMX4-307] - servicemix-client fails with java.lang.NoClassDefFoundError: org/apache/sshd/client/future/ConnectFuture
+    * [SMX4-308] - Update examples to co-ordinate with OSGI HTTP Service default port to now be 8181
+    * [SMX4-309] - Problem in ActiveMQ command documentation and/or implementation
+    * [SMX4-310] - JAX-WS consumer can not access the JAX-WS service deployed into the nmr
+    * [SMX4-311] - Problems using CXF http-centric client api in ServiceMix JBI component
+    * [SMX4-312] - gshell failed when invoking osgi/list command
+    * [SMX4-317] - camel features doen't includes right version of bundles which are shipped with Servicemix
+    * [SMX4-320] - port used in examples should be changed from 8080 to 8181
+    * [SMX4-322] - Copying zip file to deploy directory on Windows causes error from java.util.zip.ZipFile file in use by another process
+    * [SMX4-323] - ant tasks do not work from install (taskdef.properties incorrect)
+    * [SMX4-326] - Hot-deployed CXF bundles do no start after restarting servicemix
+    * [SMX4-338] - FUSE ESB 4 Failover does not work with PostgreSQL and Oracle
+    * [SMX4-340] - servicemix xmlsec(1.4.2 & 1.4.3) bundle should use optional import
+    * [SMX4-345] - feature name for cxf-wsdl-first-osgi-package example should be examples-cxf-wsdl-first-osgi-package
+    * [SMX4-357] - xmlbeans bundle should import ant optionally
+    * [SMX4-362] - Missined commons-vfs bundle dependency in features/assembly/pom
+    * [SMX4-363] - Unable to create a camel-jpa route inside Servicemix
+    * [SMX4-364] - nmr/examples not getting picked up in generated zip/gz
+    * [SMX4-365] - Some remaining references to servicemix.base (vs. karaf.base)
+    * [SMX4-370] - add a startup.properties for features kit
+    * [SMX4-371] - porting camel example working with karaf and camel 2.0
+    * [SMX4-372] - porting bridge-camel example working with karaf and camel 2.0
+    * [SMX4-373] - porting simple example working with karaf and camel 2.0
+    * [SMX4-374] - add system.properties for features kit
+    * [SMX4-375] - strange output of console
+    * [SMX4-376] - restart karaf container in servicemix kit will hang
+    * [SMX4-377] - Replace our own camel features descriptor with the one provided by Camel itself
+    * [SMX4-378] - Updates to the servicemix example readmes: Maven version and port no updates
+    * [SMX4-380] - Zip distro for features includes the wrong etc/org.apache.felix.karaf.features.cfg files
+    * [SMX4-381] - update maven-bundle-plugin version to 2.0.0
+    * [SMX4-383] - cluster demo can't work in current Servicemix kit
+    * [SMX4-385] - NMRConduitTest compilation failure on JDK 6
+    * [SMX4-386] - unix kit is missing the start/stop scripts
+    * [SMX4-387] - The start scripts call bin/karaf rather than bin/servicemix
+    * [SMX4-388] - Update the bundle to export the version number
+    * [SMX4-389] - Features repository url not available during startup
+    * [SMX4-392] - Default JMX connector path used by JBI ant tasks has been superceeded by Karaf switch-over
+    * [SMX4-393] - XMLSec bundle has bad imports
+    * [SMX4-395] - update org.apache.servicemix.management.cfg with new jmx url/user/password with karaf
+    * [SMX4-396] - Problems using JbossMessaging JMS provider (jndi problem)
+    * [SMX4-397] - help content for activemq command isn't correct
+    * [SMX4-398] - openjpa bundle should import the transaction package without optional flag
+    * [SMX4-399] - Assembly build failures from mismatch of versions in features.xml
+    * [SMX4-403] - Failed to parse a schema during ServiceMix 4 / Fuse ESB 4.1.0.2 build
+    * [SMX4-404] - Updates to ServiceMix example readmes
+    * [SMX4-406] - Groovy bundle fails to build
+    * [SMX4-407] - java.io.FileNotFoundException: etc/activemq-broker.xml when start servicemix not from $SMX_HOME
+    * [SMX4-413] - some port specified in cxf-jaxrs demo isn't correct
+    * [SMX4-414] - shouldn't ship loan-broker-bpel example in smx4 kit
+    * [SMX4-415] - need add josql bundle to activemq feature
+    * [SMX4-416] - Bridge example fails after restart
+    * [SMX4-420] - In-only consumers break Camel routes containing in-out parts
+    * [SMX4-421] - JBI Maven plugin can not build SA if several Camel SUs are included
+    * [SMX4-422] - CamelCXF Producer does not work if deployed inside JBI SU
+    * [SMX4-426] - Redundancy in bundles/versions for PAX-WEB between feature file of ServiceMix 4.1.0-SNAPSHOT and Karaf 1.1.0-SNAPSHOT
+    * [SMX4-437] - Update loan-broker-bpel example to use ode-1.3.4 feature
+    * [SMX4-440] - servicemix-osgi-cxf-wsdl-first-archetype and servicemix-osgi-cxf-code-first-archetype doesn't work anymore
+    * [SMX4-442] - Inconsisten Jetty versions between SMX4.1-SNAPSHOT and Camel 2.1-SNAPSHOT breaks CXF
+    * [SMX4-443] - CXF JAX-RS feature lists a duplicate JAX-RS 1.0 specs bundle dependency
+    * [SMX4-451] - camel-osgi demo fails with org.apache.camel.FailedToStartRouteException (Multiple consumers for the same endpoint)
+    * [SMX4-453] - servicemix.bat doesn't handle server and client parameter properly
+    * [SMX4-461] - Test failures in SMX4 Features' project on AIX
+    * [SMX4-462] - Installing camel-cxf breaks the console
+    * [SMX4-463] - servicemix-osgi-camel-archetype uses obsolete XML schema namespaces for Camel
+    * [SMX4-466] - camel-osgi feature no longer exists in Camel 2.1
+    * [SMX4-467] - Feature for 'servicemix-http' is incomplete
+    * [SMX4-468] - Unable to start admin:create'd instances with the provided bin/karaf command
+    * [SMX4-473] - WSRMTest fails on AIX
+    * [SMX4-474] - namespace of the message in cxf-camel-nmr example should match the class package
+    * [SMX4-476] - ServiceMix camel-ognl feature don't include all required dependencies
+    * [SMX4-477] - groovy-bundle references to wrong antlr versions
+    * [SMX4-478] - SMX4 assembly contains several files named <original-name>.<id>.formatted
+    * [SMX4-480] - Files in deploy folder before initial startup are getting deployed before boot features
+    * [SMX4-481] - Not correct file mode in etc directory of the distribution
+    * [SMX4-485] - ServiceMix 4 doesn't use the etc/shell.init.script provided in the distro
+    * [SMX4-491] - Wrap commons-pool 1.4 and 1.5.4 in servicemix bundles
+    * [SMX4-500] - version filter for README.txt of examples doesn't work anymore
+    * [SMX4-501] - miss bundle for activemq feature
+    * [SMX4-502] - stop script doesn't match the default user/pass used by ServiceMix
+    * [SMX4-504] - headers/attachment would lose from camel exchange to nmr  exchange
+    * [SMX4-508] - features should be self contained
+    * [SMX4-515] - opensaml bundle should include conf/schemas resource folders
+    * [SMX4-516] - The camel-nmr ServiceMixProducer creates a new Channel per-exchange, also doesn't close it.
+
+** Improvement
+    * [SMX4-203] - Name of the Endpoints / MBeans in JConsole is confusing and useless
+    * [SMX4-219] - The help of the shell commands is wrong or not sufficient and needs improvement
+    * [SMX4-259] - minor revise for examples README
+    * [SMX4-267] - Port bridge sample to use camel instead of eip component
+    * [SMX4-282] - Add the Java DSL example for the example of camel-osgi
+    * [SMX4-284] - add filter to exclude artifacts after running mvn eclipse:eclipse for examples
+    * [SMX4-286] - Restructure and add more description to 'bridge' example
+    * [SMX4-293] - change cxf nmr transport id to match the package path of generated code
+    * [SMX4-316] - add xmlbeans bundle for cxf feature
+    * [SMX4-319] - feature for cxf-ws-addressing miss version attribute
+    * [SMX4-324] - feature kit should reuse the ant related files from nmr kit
+    * [SMX4-325] - Fixed the XMLResolver's IOException of JDK 1.5 in XMLResolver bundle
+    * [SMX4-327] - add cxf-osgi and cxf-nmr features to features-repo
+    * [SMX4-334] - Create top-level examples  README that lists with a brief description all the examples, and general info
+    * [SMX4-346] - shouldn't specify release version for xsi:schemaLocation for cxf-wsdl-first-osgi-package example
+    * [SMX4-347] - add opensaml bundle for cxf feature
+    * [SMX4-349] -  Restructure and add more description to 'camel-osgi' example
+    * [SMX4-351] - add more package import for cxf-osgi-transport bundle so that it can work with ws-security
+    * [SMX4-352] - Fix the ClassNotFoundException in the xml security bundle
+    * [SMX4-353] - add cxf-ws-security test in examples/itests
+    * [SMX4-354] - OSGi bundles and versioning
+    * [SMX4-356] - Added OpenJPA 1.2.1 bundle
+    * [SMX4-366] - Update rest of SMX4 examples
+    * [SMX4-379] - Redo the branding for ServiceMix
+    * [SMX4-401] - ServiceMix 4 features file must be updated for ActiveMq 5.3.0
+    * [SMX4-428] - Support direct delegation to Camel routes
+    * [SMX4-446] - Update Feature file of SMX4 to use HTTP feature of karaf and same version of jetty as camel feature file
+    * [SMX4-475] - Add a new bundle for Lucene 3.0.0  (lucene-core) jar in order to support the camel-lucene feature in Camel
+    * [SMX4-479] - Override etc/org.ops4j.pax.logging.cfg to generate servicemix.log in place of karaf.log
+    * [SMX4-482] - Default user is karaf/karaf and not smx/smx in the distribution
+    * [SMX4-484] - Create a smack 3.1.0 bundle
+    * [SMX4-494] - Add a new bundle for Lucene 3.0.1 (lucene-core) jar in order to support the latest version of the camel-lucene feature in Camel
+    * [SMX4-496] - add optional package bundle for cxf feature
+    * [SMX4-512] - Upgrade to ActiveMQ 5.3.1
+    * [SMX4-514] - Need a Netty bundle in Servicemix 4/Karaf to facilitate installation of the recently added camel-netty component
+
+** New Feature
+    * [SMX4-143] - Create an "servicemix-osgi-restful-service" archetype that shows how to deploy a RESTful CXF web service in SMX4
+    * [SMX4-268] - add java client for the new added bridge-camel example which is easy for CPI test
+    * [SMX4-279] - Provide cxf-jaxrs feature and associated demo
+    * [SMX4-313] - ruby webservice support
+    * [SMX4-314] -  groovy webservice support
+    * [SMX4-315] - javascript webservice support
+    * [SMX4-444] - Add camel-activemq feature
+    * [SMX4-448] - Create bundle for AspectJ
+    * [SMX4-450] - Create a specs bundle for JPA 2.0
+    * [SMX4-454] - Provide example : camel-loadbalancing-cxf-jax-rs-dao
+    * [SMX4-460] - Add bundle for jstl and standard jars files required for Web project using jsp/taglibs
+    * [SMX4-470] - Create bundle for Dozer
+    * [SMX4-486] - Add an example to show how to use ServiceMix' Transaction support in a Camel route
+    * [SMX4-495] - Added new version (6.1.22) of jetty cometd bundle
+    * [SMX4-499] - Add jsendnsa-core-1.3.1 bundle for camel-nagios
+    * [SMX4-509] - add cxf ws-rm example
+
+** Task
+    * [SMX4-201] - Upgrade to woodstox 4.x as it comes natively as an osgi bundle
+    * [SMX4-257] - Provide a Xalan 2.7.1 bundle
+    * [SMX4-261] - add Velocity 1.6.2 Bundle
+    * [SMX4-271] - flesh out features/examples/cxf-ws-addressing
+    * [SMX4-272] - Upgrade to CXF 2.2
+    * [SMX4-273] - add opensaml bundle
+    * [SMX4-281] - Improve test coverage :: SMX4 :: cxf-transport-osgi
+    * [SMX4-290] - Improve test coverage :: SMX4 :: cxf-transport-nmr
+    * [SMX4-291] - Improve test coverage :: SMX4 :: cxf-binding-nmr
+    * [SMX4-292] - add example to demostrate how to package JBI endpoint with spring dm osgi bundle
+    * [SMX4-294] - refactor tests to not use port 9000 so that the tests can pass with sonar on same machine
+    * [SMX4-296] - upgrade to cxf 2.2.2
+    * [SMX4-300] - add cxf-ws-addressing example into the kit
+    * [SMX4-301] - Improve test coverage :: SMX4 :: servicemix-camel
+    * [SMX4-306] - ensure all test pass with IBM jdk
+    * [SMX4-332] - Port SMX4 nmr and features over to karaf
+    * [SMX4-335] - Replace the Geronimo mail bundle with Sun's ri
+    * [SMX4-336] - update cxf version to 2.2.3
+    * [SMX4-337] - use wss4j bundle jar directly instead of the servicemix wss4j bundle one
+    * [SMX4-339] - Create Javax mail 1.4.1 bundle
+    * [SMX4-341] - use new created xmlsec 1.4.3 bundle in smx4 kit
+    * [SMX4-367] - upgrade the org.apache.servicemix.camel.component to use camel 2.0
+    * [SMX4-369] - upgrade org.osgi.compendium and org.osgi.core version to 1.4.0
+    * [SMX4-400] - Upgrade the Features project to depend on CXF 2.2.4
+    * [SMX4-411] - Remove unused file: org.apache.servicemix.management.cfg
+    * [SMX4-436] - Add a bundle for juel 2.1.2
+    * [SMX4-438] - Change out-of-the-box etc/activemq-broker.xml to listen on tcp://0.0.0.0:61616 instead of tcp://localhost:61616
+    * [SMX4-464] - add a demo for cxf with ws-security using http-osgi transport
+    * [SMX4-465] - Update Jettison dependency to 1.2
+    * [SMX4-471] - Upgrade to Camel 2.2.0
+    * [SMX4-472] - add JPA/Hibernate example in SMX4
+    * [SMX4-483] - Add explicit statement to top-level NOTICES.txt on relicensing of specs bundles under ASL
+    * [SMX4-488] - Add a bundle for JavaMail 1.4.3
+    * [SMX4-492] - Upgrade to use JavaMail 1.4.3
+    * [SMX4-493] - Upgrade to commons-dbcp 1.3
+    * [SMX4-498] - Added new version (7.0.1.v20091125) of jetty cometd bundle
+    * [SMX4-517] - create a OSGi  bundle for jsch 0.1.42
+
+** Test
+    * [SMX4-269] - remove unnecessary camel endpoint spring definition for SmxToCxfTest
+    * [SMX4-288] - Exclude demo/example modules from Sonar test coverage reports.
+    * [SMX4-368] - fix IntegrationTest wit karaf
+    * [SMX4-409] - examples/itests/test/IntegrationTest failed after upgrade to activemq 5.3
+    * [SMX4-447] - Failing unit in servicemix-camel component in the features project
+
+** Wish
+    * [SMX4-348] - use XmlSchema 1.4.5 directly as it's already a bundle
+
+
+
+
                   Apache ServiceMix 4.0
                   ================================
  Overview
