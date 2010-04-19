@@ -815,6 +815,8 @@
                               <exclude>**/.*</exclude>
                               <exclude>**/eclipse-classes/**/*</exclude>
                               <exclude>**/dependency-reduced-pom.xml</exclude>
+                              <exclude>assembly/src/main/distribution/text/licenses/**</exclude>
+                              <exclude>cxf/cxf-transport-nmr/src/main/build-resources/wsdl.*</exclude>
                           </excludes>
                       </configuration>
                   </plugin>
