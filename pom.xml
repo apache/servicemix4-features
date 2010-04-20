@@ -715,7 +715,6 @@
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-dependency-plugin</artifactId>
-              <version>2.0</version>
               <executions>
                   <execution>
                       <id>copy-legal</id>
@@ -728,6 +727,7 @@
                               <artifactItem>
                                   <groupId>org.apache.servicemix.legal</groupId>
                                   <artifactId>legal</artifactId>
+                                  <version>${servicemix.legal.version}</version>
                                   <type>xml</type>
                                   <outputDirectory>target/legal/</outputDirectory>
                               </artifactItem>
@@ -833,7 +833,6 @@
                       <artifactId>maven-deploy-plugin</artifactId>
                       <version>2.3</version>
                       <configuration>
-                          <altDeploymentRepository>${deploy.altRepository}</altDeploymentRepository>
                           <updateReleaseInfo>true</updateReleaseInfo>
                       </configuration>
                   </plugin>
