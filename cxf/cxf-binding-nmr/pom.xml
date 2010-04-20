@@ -23,13 +23,13 @@
     <parent>
 	    <groupId>org.apache.servicemix.cxf</groupId>
 	    <artifactId>cxf</artifactId>
-        <version>4.2.0</version>
+        <version>4.3.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.cxf</groupId>
     <artifactId>org.apache.servicemix.cxf.binding.nmr</artifactId>
     <packaging>bundle</packaging>
-    <version>4.2.0</version>
+    <version>4.3.0-SNAPSHOT</version>
     <name>Apache ServiceMix CXF Binding for NMR</name>
 
     <dependencies>
