@@ -33,6 +33,10 @@
     <version>4.3.0-SNAPSHOT</version>
     <name>Apache ServiceMix Camel Component</name>
 
+    <properties>
+      <excluded.tests/>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix.nmr</groupId>
@@ -166,6 +170,20 @@
         <version>${woodstox.version}</version>
         <scope>test</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-core</artifactId>
+        <version>${camel.version}</version>
+        <type>test-jar</type>
+        <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
 
     <build>
@@ -208,6 +226,9 @@
                             <value>com.ctc.wstx.stax.WstxOutputFactory</value>
                         </property>
                     </systemProperties>
+                    <excludes>
+                      <exclude>${excluded.tests}</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -250,5 +271,20 @@
          </plugins>
     </build>
 
+    <!-- Workaround for SMX4-518: test fails on MacOS + JDK 1.6 -->
+    <profiles>
+      <profile>
+        <id>mac-jdk6-exclude-tests</id>
+        <activation>
+          <jdk>1.6</jdk>
+          <os>
+            <family>mac</family>
+          </os>
+        </activation>
+        <properties>
+          <excluded.tests>**/WSSecurityTest.*</excluded.tests>
+        </properties>
+      </profile>
+    </profiles>
 
 </project>

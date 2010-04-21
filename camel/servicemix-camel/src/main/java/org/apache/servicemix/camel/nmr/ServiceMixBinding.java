@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.activation.DataHandler;
-import javax.jbi.messaging.MessagingException;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -41,7 +40,7 @@ public class ServiceMixBinding {
     public static final String NMR_EXCHANGE = "nmrExchange";
     public static final String NMR_OPERATION = "nmrOperation";
     
-    public void copyCamelMessageToNmrMessage(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) throws MessagingException {
+    public void copyCamelMessageToNmrMessage(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) {
         nmrMessage.setBody(camelMessage.getBody());
         nmrMessage.getHeaders().clear();
         addNmrHeaders(nmrMessage, camelMessage);
@@ -57,8 +56,7 @@ public class ServiceMixBinding {
         addCamelAttachments(nmrMessage, camelMessage);        
     }
     
-    public org.apache.servicemix.nmr.api.Exchange populateNmrExchangeFromCamelExchange(Exchange camelExchange, Channel client) 
-    	throws MessagingException {
+    public org.apache.servicemix.nmr.api.Exchange populateNmrExchangeFromCamelExchange(Exchange camelExchange, Channel client)  {
     	org.apache.servicemix.nmr.api.Exchange e = client.createExchange(
                 Pattern.fromWsdlUri(camelExchange.getPattern().getWsdlUri()));
     	e.getProperties().putAll(camelExchange.getProperties());

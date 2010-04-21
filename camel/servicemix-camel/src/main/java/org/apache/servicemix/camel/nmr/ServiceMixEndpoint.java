@@ -16,6 +16,8 @@
  */
 package org.apache.servicemix.camel.nmr;
 
+import java.util.Map;
+
 import org.apache.camel.impl.DefaultEndpoint;
 import org.apache.camel.Endpoint;
 import org.apache.camel.Exchange;
@@ -30,11 +32,19 @@ import org.apache.camel.Processor;
  */
 public class ServiceMixEndpoint extends DefaultEndpoint {
 
+    private static final String SYNCHRONOUS = "synchronous";
+
     private String endpointName;
+    private boolean synchronous;
 
     public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
         super(uri, component);
         this.endpointName = endpointName;
+    }
+    @Override
+
+    public void configureProperties(Map<String, Object> options) {
+        synchronous = Boolean.valueOf((String) options.remove(SYNCHRONOUS));
     }
 
     public ServiceMixComponent getComponent() {
@@ -43,6 +53,10 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
 
     public boolean isSingleton() {
         return true;
+    }
+
+    public boolean isSynchronous() {
+        return synchronous;
     }
 
     public Producer createProducer() throws Exception {

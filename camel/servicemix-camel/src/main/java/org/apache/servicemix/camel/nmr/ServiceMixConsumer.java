@@ -19,10 +19,10 @@ package org.apache.servicemix.camel.nmr;
 import java.util.Map;
 
 import org.apache.camel.Consumer;
-import org.apache.camel.ExchangePattern;
 import org.apache.camel.Processor;
 import org.apache.camel.impl.DefaultConsumer;
 import org.apache.servicemix.nmr.api.Channel;
+import org.apache.servicemix.nmr.api.Endpoint;
 import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
@@ -53,9 +53,10 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
     }
 
     private Map<String,?> createEndpointMap() {
-        return ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME,
-        				               getEndpoint().getEndpointName());
-
+        Map<String, Object> result = ServiceHelper.createMap(Endpoint.NAME,
+                                                             getEndpoint().getEndpointName());
+        result.put(Endpoint.CHANNEL_SYNC_DELIVERY, getEndpoint().isSynchronous());
+        return result;
     }
 
     public void setChannel(Channel channel) {
