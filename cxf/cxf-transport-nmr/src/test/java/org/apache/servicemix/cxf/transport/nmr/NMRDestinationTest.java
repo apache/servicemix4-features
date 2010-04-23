@@ -37,6 +37,7 @@ import org.apache.cxf.service.model.ServiceInfo;
 import org.apache.cxf.transport.MessageObserver;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.EndpointRegistry;
+import org.apache.servicemix.nmr.api.Status;
 import org.easymock.EasyMock;
 
 
@@ -115,7 +116,9 @@ public class NMRDestinationTest extends AbstractJBITest {
         nmrTransportFactory.putDestination(destName, destination);
         
         org.apache.servicemix.nmr.api.Exchange xchg = control.createMock(org.apache.servicemix.nmr.api.Exchange.class);
+        
         org.apache.servicemix.nmr.api.Message inMsg = control.createMock(org.apache.servicemix.nmr.api.Message.class);
+        EasyMock.expect(xchg.getStatus()).andReturn(Status.Active);
         EasyMock.expect(xchg.getIn()).andReturn(inMsg);
                 
         Source source = new StreamSource(new ByteArrayInputStream(

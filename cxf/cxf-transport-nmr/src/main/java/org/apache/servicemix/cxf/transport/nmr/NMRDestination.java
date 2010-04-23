@@ -44,7 +44,9 @@ import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Endpoint;
 import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.NMR;
+import org.apache.servicemix.nmr.api.Pattern;
 import org.apache.servicemix.nmr.api.ServiceMixException;
+import org.apache.servicemix.nmr.api.Status;
 
 public class NMRDestination extends AbstractDestination implements Endpoint {
     
@@ -101,6 +103,13 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
     }
 
     public void process(Exchange exchange) {
+    	if (exchange == null || exchange.getStatus() != Status.Active) {
+    		return;
+    	}
+		if (exchange.getPattern() == Pattern.InOnly || exchange.getPattern() == Pattern.RobustInOnly) {
+			exchange.setStatus(Status.Done);
+			getChannel().send(exchange);
+		}
         QName opName = exchange.getOperation();
         getLogger().fine("dispatch method: " + opName);
 
