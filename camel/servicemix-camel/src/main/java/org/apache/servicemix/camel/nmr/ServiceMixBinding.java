@@ -41,12 +41,14 @@ public class ServiceMixBinding {
     public static final String NMR_OPERATION = "nmrOperation";
     
     public void copyCamelMessageToNmrMessage(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) {
-        nmrMessage.setBody(camelMessage.getBody());
-        nmrMessage.getHeaders().clear();
-        addNmrHeaders(nmrMessage, camelMessage);
-        nmrMessage.getAttachments().clear();
-        nmrMessage.getAttachments().putAll(camelMessage.getAttachments());
-        addSecuritySubject(nmrMessage, camelMessage);
+        if (nmrMessage != null && camelMessage != null) {
+            nmrMessage.setBody(camelMessage.getBody());
+            nmrMessage.getHeaders().clear();
+            addNmrHeaders(nmrMessage, camelMessage);
+            nmrMessage.getAttachments().clear();
+            nmrMessage.getAttachments().putAll(camelMessage.getAttachments());
+            addSecuritySubject(nmrMessage, camelMessage);
+        }
     }
 
     public void copyNmrMessageToCamelMessage(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) {
@@ -137,6 +139,15 @@ public class ServiceMixBinding {
         }
         return null;
     }
-    
-    
+
+
+    /**
+     * Extract the NMR Exchange from the Camel Exchange
+     *
+     * @param camel the Camel Exchange
+     * @return the NMR Exchange
+     */
+    public org.apache.servicemix.nmr.api.Exchange extractNmrExchange(Exchange camel) {
+        return (org.apache.servicemix.nmr.api.Exchange) camel.getProperties().remove(NMR_EXCHANGE);
+    }
 }

@@ -18,6 +18,9 @@ package org.apache.servicemix.camel.nmr;
 
 import org.apache.camel.ContextTestSupport;
 import org.apache.camel.impl.JndiRegistry;
+import org.apache.servicemix.executors.ExecutorFactory;
+import org.apache.servicemix.executors.impl.ExecutorConfig;
+import org.apache.servicemix.executors.impl.ExecutorFactoryImpl;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.core.ServiceMix;
 
@@ -35,6 +38,7 @@ public abstract class AbstractComponentTest extends ContextTestSupport {
     @Override
     protected void setUp() throws Exception {
         nmr = new ServiceMix();
+        nmr.setExecutorFactory(createExecutorFactory());
         nmr.init();
 
         component = new ServiceMixComponent();
@@ -42,6 +46,22 @@ public abstract class AbstractComponentTest extends ContextTestSupport {
 
         super.setUp();
     }
+
+    /*
+     * Create the ExecutorFactory for the unit test
+     * based on the default configuration used in ServiceMix 4
+     */
+    protected ExecutorFactory createExecutorFactory() {
+        ExecutorFactoryImpl factory = new ExecutorFactoryImpl();
+
+        ExecutorConfig config = factory.getDefaultConfig();
+        config.setCorePoolSize(1);
+        config.setMaximumPoolSize(16);
+        config.setQueueSize(256);
+        config.setBypassIfSynchronous(true);
+
+        return factory;
+    };
 
     @Override
     protected JndiRegistry createRegistry() throws Exception {

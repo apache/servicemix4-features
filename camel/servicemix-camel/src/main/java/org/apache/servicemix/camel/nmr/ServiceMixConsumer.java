@@ -21,6 +21,7 @@ import java.util.Map;
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
 import org.apache.camel.impl.DefaultConsumer;
+import org.apache.camel.spi.Synchronization;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Endpoint;
 import org.apache.servicemix.nmr.api.Exchange;
@@ -68,7 +69,10 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
             try {
             	org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
             	getProcessor().process(camelExchange);
-                
+
+                // extract the NMR Exchange from the Camel Exchange
+                getEndpoint().getComponent().getBinding().extractNmrExchange(camelExchange);
+
                 // just copy the camelExchange back to the nmr exchange
             	exchange.getProperties().putAll(camelExchange.getProperties());
                 if (camelExchange.hasOut() && !camelExchange.getOut().isFault()) {
@@ -78,7 +82,7 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
                 	getEndpoint().getComponent().getBinding().
             			copyCamelMessageToNmrMessage(exchange.getFault(), camelExchange.getOut());
                 } else if (camelExchange.getException() != null) {
-                	throw (Exception)camelExchange.getException();
+                	throw (Exception) camelExchange.getException();
                 } else {
                     exchange.setStatus(Status.Done);
                 }
