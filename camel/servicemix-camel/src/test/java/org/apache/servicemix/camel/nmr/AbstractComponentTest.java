@@ -22,6 +22,9 @@ import org.apache.servicemix.executors.ExecutorFactory;
 import org.apache.servicemix.executors.impl.ExecutorConfig;
 import org.apache.servicemix.executors.impl.ExecutorFactoryImpl;
 import org.apache.servicemix.nmr.api.Channel;
+import org.apache.servicemix.nmr.api.Exchange;
+import org.apache.servicemix.nmr.api.event.ExchangeListener;
+import org.apache.servicemix.nmr.api.service.ServiceHelper;
 import org.apache.servicemix.nmr.core.ServiceMix;
 
 /**
@@ -29,7 +32,7 @@ import org.apache.servicemix.nmr.core.ServiceMix;
  * - the NMR component is available with URI prefix nmr:
  * - a client channel to the NMR can be obtained with the {@link #getChannel()} method
  */
-public abstract class AbstractComponentTest extends ContextTestSupport {
+public abstract class AbstractComponentTest extends ContextTestSupport implements ExchangeListener {
 
     private ServiceMix nmr;
     private ServiceMixComponent component;
@@ -40,6 +43,8 @@ public abstract class AbstractComponentTest extends ContextTestSupport {
         nmr = new ServiceMix();
         nmr.setExecutorFactory(createExecutorFactory());
         nmr.init();
+        
+        nmr.getListenerRegistry().register(this, ServiceHelper.createMap());
 
         component = new ServiceMixComponent();
         component.setNmr(nmr);
@@ -57,7 +62,7 @@ public abstract class AbstractComponentTest extends ContextTestSupport {
         ExecutorConfig config = factory.getDefaultConfig();
         config.setCorePoolSize(1);
         config.setMaximumPoolSize(16);
-        config.setQueueSize(256);
+        config.setQueueSize(0);
         config.setBypassIfSynchronous(true);
 
         return factory;
@@ -81,5 +86,17 @@ public abstract class AbstractComponentTest extends ContextTestSupport {
         }
 
         return channel;
+    }
+
+    public void exchangeSent(Exchange exchange) {
+        // graciously do nothing
+    }
+
+    public void exchangeDelivered(Exchange exchange) {
+        // graciously do nothing
+    }
+
+    public void exchangeFailed(Exchange exchange) {
+        // graciously do nothing
     }
 }

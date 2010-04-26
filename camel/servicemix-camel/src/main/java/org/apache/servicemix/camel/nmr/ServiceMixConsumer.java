@@ -31,7 +31,7 @@ import org.apache.servicemix.nmr.api.service.ServiceHelper;
 /**
  * A {@link Consumer} that receives Camel {@link org.apache.camel.Exchange}s and sends them into the ServiceMix NMR
  */
-public class ServiceMixConsumer extends DefaultConsumer implements org.apache.servicemix.nmr.api.Endpoint {
+public class ServiceMixConsumer extends DefaultConsumer implements org.apache.servicemix.nmr.api.Endpoint, Synchronization {
 
     private Channel channel;
 
@@ -68,30 +68,42 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
     	if (exchange.getStatus() == Status.Active) {
             try {
             	org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
-            	getProcessor().process(camelExchange);
+                camelExchange.addOnCompletion(this);
 
-                // extract the NMR Exchange from the Camel Exchange
-                getEndpoint().getComponent().getBinding().extractNmrExchange(camelExchange);
-
-                // just copy the camelExchange back to the nmr exchange
-            	exchange.getProperties().putAll(camelExchange.getProperties());
-                if (camelExchange.hasOut() && !camelExchange.getOut().isFault()) {
-                	getEndpoint().getComponent().getBinding().
-                		copyCamelMessageToNmrMessage(exchange.getOut(), camelExchange.getOut());
-                } else if (camelExchange.hasOut() && camelExchange.getOut().isFault()) {
-                	getEndpoint().getComponent().getBinding().
-            			copyCamelMessageToNmrMessage(exchange.getFault(), camelExchange.getOut());
-                } else if (camelExchange.getException() != null) {
-                	throw (Exception) camelExchange.getException();
-                } else {
-                    exchange.setStatus(Status.Done);
-                }
-                channel.send(exchange);
+                getProcessor().process(camelExchange);
             } catch (Exception e) {
                 exchange.setError(e);
                 exchange.setStatus(Status.Error);
                 channel.send(exchange);
             }
         }
+    }
+
+    private void handleCamelResponse(Exchange exchange, org.apache.camel.Exchange camelExchange) {
+        // just copy the camelExchange back to the nmr exchange
+        exchange.getProperties().putAll(camelExchange.getProperties());
+        if (camelExchange.hasOut() && !camelExchange.getOut().isFault()) {
+            getEndpoint().getComponent().getBinding().
+                copyCamelMessageToNmrMessage(exchange.getOut(), camelExchange.getOut());
+        } else if (camelExchange.hasOut() && camelExchange.getOut().isFault()) {
+            getEndpoint().getComponent().getBinding().
+                copyCamelMessageToNmrMessage(exchange.getFault(), camelExchange.getOut());
+        } else if (camelExchange.getException() != null) {
+            exchange.setError(camelExchange.getException());
+            exchange.setStatus(Status.Error);
+        } else {
+            exchange.setStatus(Status.Done);
+        }
+        channel.send(exchange);
+    }
+
+    public void onComplete(org.apache.camel.Exchange exchange) {
+        Exchange nmr = getEndpoint().getComponent().getBinding().extractNmrExchange(exchange);
+        handleCamelResponse(nmr, exchange);
+    }
+
+    public void onFailure(org.apache.camel.Exchange exchange) {
+        Exchange nmr = getEndpoint().getComponent().getBinding().extractNmrExchange(exchange);
+        handleCamelResponse(nmr, exchange);
     }
 }
