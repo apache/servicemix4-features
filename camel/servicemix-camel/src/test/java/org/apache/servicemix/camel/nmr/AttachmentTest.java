@@ -153,7 +153,7 @@ public class AttachmentTest extends CamelTestSupport {
         EndpointInfo ei = service.getEndpointInfo(portName);
         JaxWsEndpointImpl jaxwsEndpoint = new JaxWsEndpointImpl(bus, service,
                 ei);
-        SOAPBinding jaxWsSoapBinding = new SOAPBindingImpl(ei.getBinding());
+        SOAPBinding jaxWsSoapBinding = new SOAPBindingImpl(ei.getBinding(), jaxwsEndpoint);
         jaxWsSoapBinding.setMTOMEnabled(enableMTOM);
 
         Client client = new ClientImpl(bus, jaxwsEndpoint);

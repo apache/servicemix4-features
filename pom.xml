@@ -92,7 +92,7 @@
       <commons-jexl.version>1.1_3</commons-jexl.version>
       <commons-lang-version>2.4</commons-lang-version>
       <axiom.version>1.2.8</axiom.version>
-      <cxf.version>2.2.6</cxf.version>
+      <cxf.version>2.2.7</cxf.version>
       <dom4j.version>1.6.1_2</dom4j.version>
       <drools.version>4.0.7_4</drools.version>
       <depends.maven.plugin.version>1.2</depends.maven.plugin.version>
