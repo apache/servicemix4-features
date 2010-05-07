@@ -45,6 +45,9 @@
     <feature name="activemq" version="${activemq.version}">
         <feature version="${version}">connector</feature>
         <feature version="${spring.version}">spring</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.josql/${josql.version}</bundle>
+        <bundle>mvn:commons-lang/commons-lang/${commons-lang-version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/${velocity.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.version}</bundle>
         <bundle>mvn:commons-collections/commons-collections/${commons-collections.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>

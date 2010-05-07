@@ -103,13 +103,14 @@
         <property name="brokerURL" value="tcp://localhost:61616" />
     </bean>
 
-    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactoryBean">
+    <bean id="pooledConnectionFactoryFactory" class="org.apache.activemq.pool.PooledConnectionFactoryBean">
         <property name="maxConnections" value="8" />
         <property name="maximumActive" value="500" />
         <property name="transactionManager" ref="transactionManager" />
         <property name="connectionFactory" ref="activemqConnectionFactory" />
         <property name="resourceName" value="activemq.default" />
     </bean>
+    <bean id="pooledConnectionFactory" factory-bean="pooledConnectionFactoryFactory" factory-method="getConnectionFactory" />
 
     <bean id="resourceManager" class="org.apache.activemq.pool.ActiveMQResourceManager" init-method="recoverResource">
           <property name="transactionManager" ref="transactionManager" />

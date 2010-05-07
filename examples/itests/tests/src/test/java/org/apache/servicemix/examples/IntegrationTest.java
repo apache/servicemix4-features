@@ -88,7 +88,11 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.geronimo.specs", "geronimo-jta_1.1_spec"),
                        
             //for activemq
-            
+            getBundle("commons-lang", "commons-lang"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.josql"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.oro"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.velocity"),
+            getBundle("commons-collections", "commons-collections"),
             getBundle("org.springframework", "spring-jms"),
             getBundle("org.springframework", "spring-tx"),
             getBundle("org.apache.geronimo.specs", "geronimo-j2ee-management_1.1_spec"),
