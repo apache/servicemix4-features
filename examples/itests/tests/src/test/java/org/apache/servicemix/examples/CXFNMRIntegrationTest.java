@@ -92,6 +92,7 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jaxb-impl"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.neethi"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.saaj-impl"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-pool"),
             getBundle("org.codehaus.woodstox", "stax2-api"),
             getBundle("org.codehaus.woodstox", "woodstox-core-asl"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.wsdl4j"),

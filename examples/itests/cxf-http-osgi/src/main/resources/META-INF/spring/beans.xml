@@ -34,7 +34,7 @@
 
 	<jaxws:endpoint id="HTTPEndpoint"
 	    implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
-	    address="/HelloWorld"
+	    address="/HelloWorldOSGi"
 	    wsdlLocation="wsdl/hello_world.wsdl"
 	    endpointName="e:HelloWorldImplPort"
 	    serviceName="s:HelloWorldImplService"
@@ -49,7 +49,7 @@
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"
         xmlns:s="http://cxf.examples.servicemix.apache.org/"
      	wsdlLocation="wsdl/hello_world.wsdl"
-     	address="http://localhost:8080/cxf/HelloWorld"/>   
+     	address="http://localhost:8080/cxf/HelloWorldOSGi"/>   
  
     <osgi:service id="testHelloWorld" ref="client"
         interface="org.apache.servicemix.examples.cxf.HelloWorld"/>
