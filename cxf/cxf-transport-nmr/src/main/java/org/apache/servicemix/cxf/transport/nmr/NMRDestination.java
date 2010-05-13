@@ -22,15 +22,20 @@ package org.apache.servicemix.cxf.transport.nmr;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.activation.DataHandler;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 
+import org.apache.cxf.attachment.AttachmentImpl;
 import org.apache.cxf.common.logging.LogUtils;
+import org.apache.cxf.message.Attachment;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.message.MessageImpl;
 import org.apache.cxf.service.model.EndpointInfo;
@@ -118,9 +123,23 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
 
             MessageImpl inMessage = new MessageImpl();
             inMessage.put(Exchange.class, exchange);
-
+            
             final InputStream in = NMRMessageHelper.convertMessageToInputStream(nm.getBody(Source.class));
             inMessage.setContent(InputStream.class, in);
+            //copy attachments
+            Collection<Attachment> cxfAttachmentList = new ArrayList<Attachment>();
+            for (Map.Entry<String, Object> ent : nm.getAttachments().entrySet()) {
+            	cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
+            }
+            inMessage.setAttachments(cxfAttachmentList);
+            
+            //copy properties
+            for (Map.Entry<String, Object> ent : nm.getHeaders().entrySet()) {
+            	if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
+            		inMessage.put(ent.getKey(), ent.getValue());
+            	}
+            }
+            
             inMessage.setDestination(this);
             getMessageObserver().onMessage(inMessage);
 
@@ -160,7 +179,7 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             // setup the message to be send back
             Channel dc = channel;
             message.put(Exchange.class, inMessage.get(Exchange.class));
-            message.setContent(OutputStream.class, new NMRDestinationOutputStream(inMessage, dc));
+            message.setContent(OutputStream.class, new NMRDestinationOutputStream(inMessage, message, dc));
         }        
 
         protected Logger getLogger() {

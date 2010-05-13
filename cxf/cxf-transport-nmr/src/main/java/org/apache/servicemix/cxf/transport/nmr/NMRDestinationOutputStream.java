@@ -21,6 +21,9 @@ package org.apache.servicemix.cxf.transport.nmr;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,6 +35,7 @@ import org.w3c.dom.Document;
 
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.io.CachedOutputStream;
+import org.apache.cxf.message.Attachment;
 import org.apache.cxf.message.Message;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Exchange;
@@ -40,12 +44,15 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
 
     private static final Logger LOG = LogUtils.getL7dLogger(NMRDestinationOutputStream.class);
     private Message inMessage;
+    private Message outMessage;
     private Channel channel;
     
     public NMRDestinationOutputStream(Message m,
+    						   Message outM,
                                Channel dc) {
         super();
         inMessage = m;
+        outMessage = outM;
         channel = dc;
     }
     
@@ -86,6 +93,26 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                         xchng.setError(f);
                     }
                 } else {
+                	//copy attachments
+                    if (outMessage != null && outMessage.getAttachments() != null) {
+                        for (Attachment att : outMessage.getAttachments()) {
+                        	xchng.getOut().addAttachment(att.getId(), att
+                                    .getDataHandler());
+                        }
+                    }
+                    
+                    //copy properties
+                    for (Map.Entry<String, Object> ent : outMessage.entrySet()) {
+                        //check if value is Serializable, and if value is Map or collection,
+                        //just exclude it since the entry of it may not be Serializable as well
+                        if (ent.getValue() instanceof Serializable
+                                && !(ent.getValue() instanceof Map)
+                                && !(ent.getValue() instanceof Collection)) {
+                        	xchng.getOut().setHeader(ent.getKey(), ent.getValue());
+                        }
+                    }
+
+
                     xchng.getOut().setBody(new DOMSource(doc));
                 }
                 LOG.fine(new org.apache.cxf.common.i18n.Message("POST.DISPATCH", LOG).toString());

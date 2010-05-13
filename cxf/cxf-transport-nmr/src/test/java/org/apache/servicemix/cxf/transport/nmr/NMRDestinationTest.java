@@ -20,6 +20,7 @@
 package org.apache.servicemix.cxf.transport.nmr;
 
 import java.io.ByteArrayInputStream;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 import javax.xml.namespace.QName;
@@ -67,7 +68,7 @@ public class NMRDestinationTest extends AbstractJBITest {
         channel.send(messageExchange);
         EasyMock.replay(channel);
         
-        NMRDestinationOutputStream jbiOS = new NMRDestinationOutputStream(message, channel);
+        NMRDestinationOutputStream jbiOS = new NMRDestinationOutputStream(message, new MessageImpl(), channel);
         
         //Create array of more than what is in threshold in CachedOutputStream, 
         //though the threshold in CachedOutputStream should be made protected 
@@ -120,7 +121,8 @@ public class NMRDestinationTest extends AbstractJBITest {
         org.apache.servicemix.nmr.api.Message inMsg = control.createMock(org.apache.servicemix.nmr.api.Message.class);
         EasyMock.expect(xchg.getStatus()).andReturn(Status.Active);
         EasyMock.expect(xchg.getIn()).andReturn(inMsg);
-                
+        EasyMock.expect(inMsg.getAttachments()).andReturn(new HashMap<String, Object>());
+        EasyMock.expect(inMsg.getHeaders()).andReturn(new HashMap<String, Object>());
         Source source = new StreamSource(new ByteArrayInputStream(
                             "<message>TestHelloWorld</message>".getBytes()));
         EasyMock.expect(inMsg.getBody(Source.class)).andReturn(source);

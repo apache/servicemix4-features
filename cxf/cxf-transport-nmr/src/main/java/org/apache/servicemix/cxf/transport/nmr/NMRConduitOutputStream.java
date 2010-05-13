@@ -21,19 +21,25 @@ package org.apache.servicemix.cxf.transport.nmr;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import javax.activation.DataHandler;
 import javax.jws.WebService;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.cxf.attachment.AttachmentImpl;
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.io.CachedOutputStream;
+import org.apache.cxf.message.Attachment;
 import org.apache.cxf.message.Exchange;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.message.MessageImpl;
@@ -114,6 +120,26 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             LOG.info(new org.apache.cxf.common.i18n.Message("EXCHANGE.ENDPOINT", LOG).toString() + serviceName);
             LOG.info("setup message contents on " + inMsg);
             inMsg.setBody(getMessageContent(message));
+            //copy attachments
+            if (message != null && message.getAttachments() != null) {
+                for (Attachment att : message.getAttachments()) {
+                	inMsg.addAttachment(att.getId(), att
+                            .getDataHandler());
+                }
+            }
+            
+            //copy properties
+            for (Map.Entry<String, Object> ent : message.entrySet()) {
+                //check if value is Serializable, and if value is Map or collection,
+                //just exclude it since the entry of it may not be Serializable as well
+                if (ent.getValue() instanceof Serializable
+                        && !(ent.getValue() instanceof Map)
+                        && !(ent.getValue() instanceof Collection)) {
+                	inMsg.setHeader(ent.getKey(), ent.getValue());
+                }
+            }
+            
+            
             LOG.info("service for exchange " + serviceName);
 
             Map<String,Object> refProps = new HashMap<String,Object>();
@@ -126,10 +152,13 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             if (!isOneWay) {
                 channel.sendSync(xchng);
                 Source content = null;
+                org.apache.servicemix.nmr.api.Message nm = null;
                 if (xchng.getFault(false) != null) {
                     content = xchng.getFault().getBody(Source.class);
+                    nm = xchng.getFault();
                 } else {
                     content = xchng.getOut().getBody(Source.class);
+                    nm = xchng.getOut();
                 }
                 Message inMessage = new MessageImpl();
                 message.getExchange().setInMessage(inMessage);
@@ -138,6 +167,20 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                     throw new IOException(new org.apache.cxf.common.i18n.Message("UNABLE.RETRIEVE.MESSAGE", LOG).toString());
                 }
                 inMessage.setContent(InputStream.class, ins);
+                //copy attachments
+                Collection<Attachment> cxfAttachmentList = new ArrayList<Attachment>();
+                for (Map.Entry<String, Object> ent : nm.getAttachments().entrySet()) {
+                	cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
+                }
+                inMessage.setAttachments(cxfAttachmentList);
+                
+                //copy properties
+                for (Map.Entry<String, Object> ent : nm.getHeaders().entrySet()) {
+                	if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
+                		inMessage.put(ent.getKey(), ent.getValue());
+                	}
+                }
+                
                 conduit.getMessageObserver().onMessage(inMessage);
 
                 xchng.setStatus(Status.Done);

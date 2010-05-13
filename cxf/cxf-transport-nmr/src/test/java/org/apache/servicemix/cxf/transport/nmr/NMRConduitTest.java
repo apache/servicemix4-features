@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 import javax.xml.stream.XMLStreamReader;
@@ -94,7 +95,9 @@ public class NMRConduitTest extends AbstractJBITest {
         Source source = new StreamSource(new ByteArrayInputStream(
                             "<message>TestHelloWorld</message>".getBytes()));
         EasyMock.expect(outMsg.getBody(Source.class)).andReturn(source);
-        
+        EasyMock.expect(xchg.getOut()).andReturn(outMsg);
+        EasyMock.expect(outMsg.getAttachments()).andReturn(new HashMap<String, Object>());
+        EasyMock.expect(outMsg.getHeaders()).andReturn(new HashMap<String, Object>());
         control.replay();
         try {
             conduit.prepare(message);
