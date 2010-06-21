@@ -95,14 +95,7 @@
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
-                            javax.xml.rpc*;resolution:=optional,
-                            javax.xml.soap,
-                            com.ctc.wstx.stax;resolution:=optional,
-                            org.apache.axis.soap;resolution:=optional,
-                            org.apache.axis2.saaj;resolution:=optional,
-                            com.sun.xml.messaging.saaj.soap.ver1_1;resolution:=optional,
-                            com.sun.xml.messaging.saaj.client.p2p;resolution:=optional,
-                            com.sun.xml.messaging.saaj.soap;resolution:=optional,
+                            javax.xml.stream;version="[0.0,2)",
                             *
                         </Import-Package>
                         <!-- Needed for jaxb annotations classes -->
@@ -114,6 +107,7 @@
                         <Private-Package />
                         <_failok>true</_failok>
                         <Spring-Context>*;publish-context:=false</Spring-Context>
+                        <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
                     </instructions>
                 </configuration>
             </plugin>
