@@ -143,8 +143,12 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             LOG.info("service for exchange " + serviceName);
 
             Map<String,Object> refProps = new HashMap<String,Object>();
-            refProps.put(Endpoint.INTERFACE_NAME, interfaceName);
-            refProps.put(Endpoint.SERVICE_NAME, serviceName);
+            if (interfaceName != null) {
+                refProps.put(Endpoint.INTERFACE_NAME, interfaceName.toString());
+            }
+            if (serviceName != null) {
+                refProps.put(Endpoint.SERVICE_NAME, serviceName.toString());
+            }
             Reference ref = channel.getNMR().getEndpointRegistry().lookup(refProps);
             xchng.setTarget(ref);
             xchng.setOperation(bop.getName());
