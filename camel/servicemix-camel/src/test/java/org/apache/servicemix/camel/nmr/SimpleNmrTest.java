@@ -16,6 +16,8 @@
  */
 package org.apache.servicemix.camel.nmr;
 
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 
@@ -25,14 +27,59 @@ import org.apache.camel.component.mock.MockEndpoint;
  */
 public class SimpleNmrTest extends AbstractComponentTest {
 
-    public void testSimpleExchange() throws InterruptedException {
-        MockEndpoint mock = getMockEndpoint("mock:simple");
-        mock.expectedBodiesReceived("Simple message body");
+    private static final String REQUEST_MESSAGE = "Simple message body";
+    private static final String RESPONSE_MESSAGE = "Simple message reply";
 
-        template.sendBody("direct:simple", "Simple message body");
+    public void testSimpleInOnly() throws InterruptedException {
+        MockEndpoint mock = getMockEndpoint("mock:simple");
+        mock.expectedBodiesReceived(REQUEST_MESSAGE);
+
+        template.sendBody("direct:simple", REQUEST_MESSAGE);
 
         assertMockEndpointsSatisfied();
     }
+
+    public void testSimpleInOnlyWithMultipleHops() throws Exception {
+        MockEndpoint mock = getMockEndpoint("mock:hops");
+        mock.expectedBodiesReceived(REQUEST_MESSAGE);
+
+        template.sendBody("direct:hops", REQUEST_MESSAGE);
+
+        assertMockEndpointsSatisfied();        
+    }
+
+    public void testSimpleInOut() throws InterruptedException {
+        MockEndpoint mock = getMockEndpoint("mock:simple");
+        mock.expectedBodiesReceived(REQUEST_MESSAGE);
+
+        final String response = template.requestBody("direct:simple", REQUEST_MESSAGE, String.class);
+
+        assertMockEndpointsSatisfied();
+        assertEquals("Receiving back the reply set by the second route",
+                     RESPONSE_MESSAGE, response);
+    }
+
+    public void testSimpleInOutWithMultipleHops() throws InterruptedException {
+        MockEndpoint mock = getMockEndpoint("mock:hops");
+        mock.expectedBodiesReceived(REQUEST_MESSAGE);
+
+        final String response = template.requestBody("direct:hops", REQUEST_MESSAGE, String.class);
+
+        assertMockEndpointsSatisfied();
+        assertEquals("Receiving back the reply set by the second route",
+                     RESPONSE_MESSAGE, response);
+    }
+
+    public void testSimpleInvalidEndpoint() throws InterruptedException {
+        Exchange exchange = template.send("direct:error", new Processor() {
+            public void process(Exchange exchange) throws Exception {
+                exchange.getIn().setBody(REQUEST_MESSAGE);
+            }
+        });
+
+        assertTrue("Sending to an invalid NMR endpoint should have failed", exchange.isFailed());
+    }
+
 
     @Override
     protected RouteBuilder createRouteBuilder() throws Exception {
@@ -41,7 +88,13 @@ public class SimpleNmrTest extends AbstractComponentTest {
             @Override
             public void configure() throws Exception {
                 from("direct:simple").to("nmr:simple");
-                from("nmr:simple").to("mock:simple");
+                from("nmr:simple").to("mock:simple").setBody(constant(RESPONSE_MESSAGE));
+
+                from("direct:hops").to("nmr:hop1");
+                from("nmr:hop1").to("nmr:hop2");
+                from("nmr:hop2").to("mock:hops").setBody(constant(RESPONSE_MESSAGE));
+
+                from("direct:error").to("nmr:invalid-endpoint-name");
             }
         };
     }

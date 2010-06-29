@@ -18,6 +18,7 @@ package org.apache.servicemix.camel.nmr;
 
 import java.util.Map;
 
+import org.apache.camel.AsyncCallback;
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
 import org.apache.camel.impl.DefaultConsumer;
@@ -29,7 +30,7 @@ import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
 
 /**
- * A {@link Consumer} that receives Camel {@link org.apache.camel.Exchange}s and sends them into the ServiceMix NMR
+ * A {@link Consumer} that receives NMR {@link org.apache.servicemix.nmr.api.Exchange}s and invokes the Camel route
  */
 public class ServiceMixConsumer extends DefaultConsumer implements org.apache.servicemix.nmr.api.Endpoint, Synchronization {
 
@@ -64,13 +65,22 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
         this.channel = channel;
     }
 
+    /**
+     * Process an NMR {@link org.apache.servicemix.nmr.api.Exchange} by creating and sending a Camel {@link org.apache.servicemix.nmr.api.Exchange}
+     * through the defined route
+     */
     public void process(Exchange exchange) {
     	if (exchange.getStatus() == Status.Active) {
             try {
             	org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
                 camelExchange.addOnCompletion(this);
 
-                getProcessor().process(camelExchange);
+                getAsyncProcessor().process(camelExchange, new AsyncCallback() {
+
+                    public void done(boolean doneSync) {
+                        // this is handled by the onComplete/onFailure method
+                    }
+                });
             } catch (Exception e) {
                 exchange.setError(e);
                 exchange.setStatus(Status.Error);
@@ -79,6 +89,10 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
         }
     }
 
+    /**
+     * Handle the Camel {@link org.apache.camel.Exchange) response by updating the matching NMR {@link org.apache.servicemix.nmr.api.Exchange}
+     * and finishing the NMR MEP
+     */
     private void handleCamelResponse(Exchange exchange, org.apache.camel.Exchange camelExchange) {
         // just copy the camelExchange back to the nmr exchange
         exchange.getProperties().putAll(camelExchange.getProperties());
@@ -97,11 +111,17 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
         channel.send(exchange);
     }
 
+    /*
+     * Handle a successfully completed Camel Exchange
+     */
     public void onComplete(org.apache.camel.Exchange exchange) {
         Exchange nmr = getEndpoint().getComponent().getBinding().extractNmrExchange(exchange);
         handleCamelResponse(nmr, exchange);
     }
 
+    /*
+     * Handle a Caml exchange failure
+     */
     public void onFailure(org.apache.camel.Exchange exchange) {
         Exchange nmr = getEndpoint().getComponent().getBinding().extractNmrExchange(exchange);
         handleCamelResponse(nmr, exchange);

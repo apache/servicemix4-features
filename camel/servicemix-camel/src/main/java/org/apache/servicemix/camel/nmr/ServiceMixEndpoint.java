@@ -60,7 +60,7 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     }
 
     public Producer createProducer() throws Exception {
-        return new ServiceMixProducer(this);
+        return new ServiceMixProducer(this, getComponent().getNmr());
     }
 
     public Consumer createConsumer(Processor processor) throws Exception {

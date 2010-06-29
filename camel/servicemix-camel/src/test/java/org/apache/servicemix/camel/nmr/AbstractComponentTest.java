@@ -22,10 +22,15 @@ import org.apache.servicemix.executors.ExecutorFactory;
 import org.apache.servicemix.executors.impl.ExecutorConfig;
 import org.apache.servicemix.executors.impl.ExecutorFactoryImpl;
 import org.apache.servicemix.nmr.api.Channel;
+import org.apache.servicemix.nmr.api.Endpoint;
 import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.event.ExchangeListener;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
+import org.apache.servicemix.nmr.core.InternalEndpointWrapper;
 import org.apache.servicemix.nmr.core.ServiceMix;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Abstract base class for building NMR component unit tests
@@ -50,6 +55,35 @@ public abstract class AbstractComponentTest extends ContextTestSupport implement
         component.setNmr(nmr);
 
         super.setUp();
+    }
+
+    @Override
+    protected void tearDown() throws Exception {
+        for (ServiceMixProducer producer : findEndpoints(ServiceMixProducer.class)) {
+            if (producer.getContinuations().size() > 0) {
+                // let's wait for a moment to give the last exchanges the time to get Done
+                Thread.sleep(500);
+            }
+            assertEquals("There should be no more pending Camel exchanges in the producer endpoints",
+                         0, producer.getContinuations().size());
+        }
+
+        nmr.shutdown();
+        super.tearDown();
+    }
+
+    private<E extends Endpoint> List<E> findEndpoints(Class<E> type) {
+        List result = new LinkedList();
+
+        for (Endpoint endpoint : nmr.getEndpointRegistry().getServices()) {
+            if (endpoint instanceof InternalEndpointWrapper) {
+                InternalEndpointWrapper wrapper = (InternalEndpointWrapper) endpoint;
+                if (type.isAssignableFrom(wrapper.getEndpoint().getClass())) {
+                    result.add(wrapper.getEndpoint());
+                }
+            }
+        }
+        return result;
     }
 
     /*

@@ -74,7 +74,7 @@
       <bcel.version>5.2_2</bcel.version>
       <bnd.version>0.0.384</bnd.version>
       <cglib.version>2.1_3_4</cglib.version>
-      <camel.version>2.2.0</camel.version>
+      <camel.version>2.4-SNAPSHOT</camel.version>
       <commons-management.version>1.0</commons-management.version>
       <commons-beanutils.version>1.7.0_3</commons-beanutils.version>
       <commons-collections.version>3.2.1</commons-collections.version>

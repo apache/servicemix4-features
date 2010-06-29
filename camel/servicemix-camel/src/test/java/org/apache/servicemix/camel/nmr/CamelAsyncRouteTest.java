@@ -56,14 +56,15 @@ public class CamelAsyncRouteTest extends AbstractComponentTest {
 
         assertMockEndpointsSatisfied();
 
+        assertTrue("All NMR exchanges should have been marked DONE",
+                   done.await(20, TimeUnit.SECONDS));                
+        
         for (Exchange exchange : mock.getExchanges()) {
             Thread thread = exchange.getProperty(HANDLED_BY_THREAD, Thread.class);
-            assertTrue("onCompletion should have been called from the Camel 'threads' thread pool",
-                       thread.getName().contains("Camel") && thread.getName().contains("Threads"));
+            assertTrue("processor should have been called from the Camel 'threads' thread pool instead of " + thread.getName(),
+                       thread.getName().contains("Camel") && thread.getName().contains("Thread"));
         }
 
-        assertTrue("All NMR exchanges should have been marked DONE",
-                   done.await(20, TimeUnit.SECONDS));        
     }
 
     public void testCamelSeda() throws InterruptedException {       
@@ -88,12 +89,13 @@ public class CamelAsyncRouteTest extends AbstractComponentTest {
             public void configure() throws Exception {
                 from("direct:threads").to("mock:sent").to("nmr:threads");
                 from("nmr:threads")
-                    .onCompletion().process(new Processor() {
+                    .threads(5)
+                    .process(new Processor() {
                         public void process(Exchange exchange) throws Exception {
                             exchange.setProperty(HANDLED_BY_THREAD, Thread.currentThread());
                         }
                     })
-                    .threads(5).to("mock:threads");
+                    .to("mock:threads");
 
                 from("seda:seda?concurrentConsumers=10").to("mock:sent").to("nmr:seda");
                 from("nmr:seda").to("seda:seda-internal?waitForTaskToComplete=Never");
