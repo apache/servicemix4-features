@@ -85,7 +85,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
                             javax.xml.bind*;version="[0.0,3)",
                             javax.activation;version="[0.0,2)",
@@ -96,7 +96,7 @@
                         <!-- Needed for jaxb annotations classes -->
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Export-Package>
-                            ${pom.artifactId}*,
+                            ${project.artifactId}*,
                             org.apache.cxf.transports.nmr,
                             '=META-INF.cxf.transport.nmr'
                         </Export-Package>

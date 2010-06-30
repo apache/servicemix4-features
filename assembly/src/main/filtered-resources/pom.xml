@@ -23,13 +23,13 @@
     <parent>
         <groupId>org.apache.servicemix.features</groupId>
         <artifactId>features</artifactId>
-        <version>${version}</version>
+        <version>${project.version}</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>examples</artifactId>
     <packaging>pom</packaging>
-    <version>${version}</version>
+    <version>${project.version}</version>
     <name>Apache ServiceMix Examples</name>
 
     <modules>

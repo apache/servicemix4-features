@@ -472,7 +472,7 @@
         <dependency>
             <groupId>org.apache.servicemix.activemq</groupId>
             <artifactId>org.apache.servicemix.activemq.commands</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.components</groupId>
@@ -492,17 +492,17 @@
         <dependency>
             <groupId>org.apache.servicemix.cxf</groupId>
             <artifactId>org.apache.servicemix.cxf.binding.nmr</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.cxf</groupId>
             <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.war</groupId>
             <artifactId>org.apache.servicemix.war.deployer</artifactId>
-            <version>${version}</version>
+            <version>${project.version}</version>
         </dependency>
         <!--
         <dependency>
@@ -939,7 +939,7 @@
     <build>
         <resources>
             <resource>
-                <directory>${pom.basedir}/src/main/filtered-resources</directory>
+                <directory>${project.basedir}/src/main/filtered-resources</directory>
                 <filtering>true</filtering>
                 <includes>
                     <include>**/*</include>
@@ -1063,7 +1063,7 @@
                                 <artifactItem>
                                     <groupId>org.apache.servicemix.features</groupId>
                                     <artifactId>org.apache.servicemix.features.branding</artifactId>
-                                    <version>${pom.version}</version>
+                                    <version>${project.version}</version>
                                     <outputDirectory>target/dependencies</outputDirectory>
                                     <destFileName>servicemix-version.jar</destFileName>
                                 </artifactItem>                               
@@ -1159,7 +1159,7 @@
                             <descriptors>
                                 <descriptor>src/main/descriptors/unix-bin.xml</descriptor>
                             </descriptors>
-                            <finalName>${pom.artifactId}-${pom.version}</finalName>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
                             <tarLongFileMode>gnu</tarLongFileMode>
                         </configuration>
                     </execution>
@@ -1173,7 +1173,7 @@
                             <descriptors>
                                 <descriptor>src/main/descriptors/windows-bin.xml</descriptor>
                             </descriptors>
-                            <finalName>${pom.artifactId}-${pom.version}</finalName>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
                         </configuration>
                     </execution>
                     <execution>

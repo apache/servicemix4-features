@@ -82,7 +82,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Export-Package>org.apache.servicemix.activemq.commands;version=${project.version};-split-package:=merge-first</Export-Package>
                         <Import-Package>
                           org.apache.felix.gogo.commands,
