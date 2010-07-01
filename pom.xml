@@ -100,16 +100,15 @@
       <equinox.version>3.5.1.v20090827</equinox.version>
       <fastinfoset.version>1.2.7_2</fastinfoset.version>
       <features.maven.plugin.version>1.1</features.maven.plugin.version>
-      <felix.bundlerepository.version>1.2.0</felix.bundlerepository.version>
-      <felix.compendium.version>1.4.0</felix.compendium.version>
+      <felix.bundlerepository.version>1.6.4</felix.bundlerepository.version>
+      <osgi.compendium.version>4.2.0</osgi.compendium.version>
+      <osgi.core.version>4.2.0</osgi.core.version>
       <felix.configadmin.version>1.2.4</felix.configadmin.version>
-      <felix.core.version>1.4.0</felix.core.version>
-      <felix.fileinstall.version>2.0.8</felix.fileinstall.version>
-      <felix.framework.version>2.0.4</felix.framework.version>
-      <felix.karaf.version>1.4.0</felix.karaf.version>
-      <felix.osgi.version>1.4.0</felix.osgi.version>
-      <felix.plugin.version>2.0.1</felix.plugin.version>
-      <felix.prefs.version>1.0.2</felix.prefs.version>
+      <felix.fileinstall.version>3.0.0</felix.fileinstall.version>
+      <felix.framework.version>3.0.1</felix.framework.version>
+      <felix.karaf.version>1.6.0</felix.karaf.version>
+      <felix.plugin.version>2.1.0</felix.plugin.version>
+      <felix.prefs.version>1.0.4</felix.prefs.version>
       <flatpack.version>3.1.1_3</flatpack.version>
       <geronimo.annotation.version>1.1.1</geronimo.annotation.version>
       <geronimo.ejb3.version>1.0.1</geronimo.ejb3.version>
@@ -244,7 +243,7 @@
       <werken-xpath.version>0.9.4_3</werken-xpath.version>
       <wss4j.version>1.5.8</wss4j.version>
       <jaxp.ri.version>1.4.2_3</jaxp.ri.version>
-      <geronimo.blueprint.version>1.0.0</geronimo.blueprint.version>
+      <aries.blueprint.version>0.1-incubating</aries.blueprint.version>
       <felix.gogo.version>0.2.2</felix.gogo.version>
       <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
       <sshd.version>0.3.0</sshd.version>      
@@ -377,24 +376,14 @@
           <version>${servicemix-utils.version}</version>
       </dependency>
       <dependency>
-          <groupId>org.apache.felix</groupId>
+          <groupId>org.osgi</groupId>
           <artifactId>org.osgi.compendium</artifactId>
-          <version>${felix.compendium.version}</version>
-          <exclusions>
-            <exclusion>
-              <groupId>org.apache.felix</groupId>
-              <artifactId>org.osgi.foundation</artifactId>
-            </exclusion>
-            <exclusion>
-              <groupId>org.apache.felix</groupId>
-              <artifactId>javax.servlet</artifactId>
-            </exclusion>
-          </exclusions>
+          <version>${osgi.compendium.version}</version>
       </dependency>
       <dependency>
-          <groupId>org.apache.felix</groupId>
+          <groupId>org.osgi</groupId>
           <artifactId>org.osgi.core</artifactId>
-          <version>${felix.osgi.version}</version>
+          <version>${osgi.core.version}</version>
       </dependency>
       <dependency>
           <groupId>org.springframework</groupId>

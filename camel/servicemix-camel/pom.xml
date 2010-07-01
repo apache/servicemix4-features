@@ -46,9 +46,8 @@
             <version>${camel.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.felix</groupId>
+            <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
-            <version>${felix.osgi.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
