@@ -28,7 +28,7 @@ import java.util.Scanner;
 
 import org.apache.felix.gogo.commands.Option;
 import org.apache.felix.gogo.commands.Command;
-import org.apache.felix.karaf.shell.console.OsgiCommandSupport;
+import org.apache.karaf.shell.console.OsgiCommandSupport;
 
 /**
  * @version $Rev$ $Date$
@@ -42,7 +42,7 @@ public class CreateBrokerCommand extends OsgiCommandSupport {
     /*
      * (non-Javadoc)
      * @see
-     * org.apache.felix.karaf.shell.console.OsgiCommandSupport#doExecute()
+     * org.apache.karaf.shell.console.OsgiCommandSupport#doExecute()
      */
     protected Object doExecute() throws Exception {
 

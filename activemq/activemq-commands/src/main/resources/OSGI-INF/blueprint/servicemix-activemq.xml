@@ -42,7 +42,7 @@
     <service ref="listcommand" activation="lazy" >
         <interfaces>
             <value>org.osgi.service.command.Function</value>
-            <value>org.apache.felix.karaf.shell.console.CompletableFunction</value>
+            <value>org.apache.karaf.shell.console.CompletableFunction</value>
         </interfaces>
         <service-properties>
             <entry key="osgi.command.scope" value="activemq"/>
@@ -68,7 +68,7 @@
     <service ref="querycommand" activation="lazy" >
         <interfaces>
             <value>org.osgi.service.command.Function</value>
-            <value>org.apache.felix.karaf.shell.console.CompletableFunction</value>
+            <value>org.apache.karaf.shell.console.CompletableFunction</value>
         </interfaces>
         <service-properties>
             <entry key="osgi.command.scope" value="activemq"/>
@@ -94,7 +94,7 @@
     <service ref="browsecommand" activation="lazy" >
         <interfaces>
             <value>org.osgi.service.command.Function</value>
-            <value>org.apache.felix.karaf.shell.console.CompletableFunction</value>
+            <value>org.apache.karaf.shell.console.CompletableFunction</value>
         </interfaces>
         <service-properties>
             <entry key="osgi.command.scope" value="activemq"/>
@@ -120,7 +120,7 @@
     <service ref="bstatcommand" activation="lazy" >
         <interfaces>
             <value>org.osgi.service.command.Function</value>
-            <value>org.apache.felix.karaf.shell.console.CompletableFunction</value>
+            <value>org.apache.karaf.shell.console.CompletableFunction</value>
         </interfaces>
         <service-properties>
             <entry key="osgi.command.scope" value="activemq"/>
@@ -146,7 +146,7 @@
     <service ref="purgecommand" activation="lazy" >
         <interfaces>
             <value>org.osgi.service.command.Function</value>
-            <value>org.apache.felix.karaf.shell.console.CompletableFunction</value>
+            <value>org.apache.karaf.shell.console.CompletableFunction</value>
         </interfaces>
         <service-properties>
             <entry key="osgi.command.scope" value="activemq"/>

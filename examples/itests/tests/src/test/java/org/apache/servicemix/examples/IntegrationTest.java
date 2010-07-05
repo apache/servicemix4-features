@@ -143,7 +143,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.ops4j.pax.web", "pax-web-extender-whiteboard"),
             getBundle("org.apache.servicemix", "servicemix-utils"),
             getBundle("org.fusesource.commonman", "commons-management"),
-            getBundle("org.apache.felix.karaf", "org.apache.felix.karaf.management"),
+            getBundle("org.apache.karaf", "org.apache.karaf.management"),
             getBundle("org.apache.cxf", "cxf-bundle"),
             getBundle("org.apache.servicemix.cxf", "org.apache.servicemix.cxf.transport.nmr"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.api"),

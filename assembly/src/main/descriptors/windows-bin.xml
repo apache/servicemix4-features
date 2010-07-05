@@ -24,13 +24,13 @@
 
       <!-- Expanded ServiceMix Runtime -->
       <fileSet>
-          <directory>target/dependencies/win/apache-felix-karaf-${felix.karaf.version}</directory>
+          <directory>target/dependencies/win/apache-karaf-${karaf.version}</directory>
           <outputDirectory>/</outputDirectory>
           <excludes>
              <exclude>**/demos/**</exclude>
              <exclude>bin/start.bat</exclude>
              <exclude>etc/system.properties</exclude>
-             <exclude>etc/org.apache.felix.karaf.features.cfg</exclude>
+             <exclude>etc/org.apache.karaf.features.cfg</exclude>
              <exclude>etc/org.ops4j.pax.logging.cfg</exclude>
              <exclude>etc/users.properties</exclude>
              <exclude>etc/config.properties</exclude>
@@ -44,7 +44,7 @@
 
       <!-- Copy over kernel demo to examples folder -->
       <fileSet>
-          <directory>target/dependencies/win/apache-felix-karaf-${felix.karaf.version}/demos</directory>
+          <directory>target/dependencies/win/apache-karaf-${karaf.version}/demos</directory>
           <outputDirectory>/examples/karaf-demos</outputDirectory>
           <lineEnding>dos</lineEnding>
           <includes>
@@ -143,7 +143,7 @@
 
     <files>
         <file>
-            <source>${basedir}/target/dependencies/win/apache-felix-karaf-${felix.karaf.version}/bin/karaf.bat</source>
+            <source>${basedir}/target/dependencies/win/apache-karaf-${karaf.version}/bin/karaf.bat</source>
             <outputDirectory>/bin/</outputDirectory>
             <destName>servicemix.bat</destName>
             <fileMode>0755</fileMode>

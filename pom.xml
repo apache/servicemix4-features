@@ -106,7 +106,7 @@
       <felix.configadmin.version>1.2.4</felix.configadmin.version>
       <felix.fileinstall.version>3.0.0</felix.fileinstall.version>
       <felix.framework.version>3.0.1</felix.framework.version>
-      <felix.karaf.version>1.6.0</felix.karaf.version>
+      <karaf.version>1.99.0-SNAPSHOT</karaf.version>
       <felix.plugin.version>2.1.0</felix.plugin.version>
       <felix.prefs.version>1.0.4</felix.prefs.version>
       <flatpack.version>3.1.1_3</flatpack.version>

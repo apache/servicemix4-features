@@ -36,9 +36,9 @@
     <dependencies>
         <!-- making sure all karaf dependencies are in our local Maven repo -->
         <dependency>
-            <groupId>org.apache.felix.karaf</groupId>
-            <artifactId>apache-felix-karaf</artifactId>
-            <version>${felix.karaf.version}</version>
+            <groupId>org.apache.karaf</groupId>
+            <artifactId>apache-karaf</artifactId>
+            <version>${karaf.version}</version>
             <type>zip</type>
             <exclusions>
 	            <exclusion>
@@ -48,15 +48,15 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.felix.karaf</groupId>
-            <artifactId>apache-felix-karaf</artifactId>
-            <version>${felix.karaf.version}</version>
+            <groupId>org.apache.karaf</groupId>
+            <artifactId>apache-karaf</artifactId>
+            <version>${karaf.version}</version>
             <type>tar.gz</type>
         </dependency>
         <dependency>
-            <groupId>org.apache.felix.karaf</groupId>
-            <artifactId>apache-felix-karaf</artifactId>
-            <version>${felix.karaf.version}</version>
+            <groupId>org.apache.karaf</groupId>
+            <artifactId>apache-karaf</artifactId>
+            <version>${karaf.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
@@ -961,7 +961,7 @@
                             <tasks>
                                 <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath" />
                                 <property name="ant.regexp.regexpimpl" value="org.apache.tools.ant.util.regexp.Jdk14RegexpRegexp" />
-                                <property name="mv" value="${felix.karaf.version}" />
+                                <property name="mv" value="${karaf.version}" />
                                 <echo message="Maven version: ${mv}" />
                                 <propertyregex property="ov.p1" input="${mv}" regexp="(\d+)(?:\.(\d+)(?:\.(\d+))?)?(?:[^a-zA-Z0-9](.*))?" replace="\1" defaultValue="0" />
                                 <propertyregex property="ov.p2" input="${mv}" regexp="(\d+)(?:\.(\d+)(?:\.(\d+))?)?(?:[^a-zA-Z0-9](.*))?" replace=".\2" defaultValue=".0" />
@@ -984,9 +984,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.felix.karaf.tooling</groupId>
+                <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>features-maven-plugin</artifactId>
-                <version>${felix.karaf.version}</version>
+                <version>${karaf.version}</version>
                 <executions>
                     <execution>
                         <id>add-features-to-repo</id>
@@ -996,7 +996,7 @@
                         </goals>
                         <configuration>
                             <descriptors>
-                                <descriptor>mvn:org.apache.felix.karaf/apache-felix-karaf/${felix.karaf.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/camel-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
@@ -1079,9 +1079,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.felix.karaf</groupId>
-                                    <artifactId>apache-felix-karaf</artifactId>
-                                    <version>${felix.karaf.version}</version>
+                                    <groupId>org.apache.karaf</groupId>
+                                    <artifactId>apache-karaf</artifactId>
+                                    <version>${karaf.version}</version>
                                     <type>tar.gz</type>
                                     <outputDirectory>target/dependencies/unix</outputDirectory>
                                 </artifactItem>
@@ -1104,9 +1104,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.apache.felix.karaf</groupId>
-                                    <artifactId>apache-felix-karaf</artifactId>
-                                    <version>${felix.karaf.version}</version>
+                                    <groupId>org.apache.karaf</groupId>
+                                    <artifactId>apache-karaf</artifactId>
+                                    <version>${karaf.version}</version>
                                     <type>zip</type>
                                     <outputDirectory>target/dependencies/win</outputDirectory>
                                 </artifactItem>
