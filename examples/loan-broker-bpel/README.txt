@@ -44,7 +44,6 @@ available.
 
 Install ODE from the ServiceMix Console with the following commands:
 
-   features:addUrl mvn:org.apache.ode.ode-jbi-karaf/features/1.3.4-SNAPSHOT/xml/features
    features:install ode
 
 Building and Deploying
