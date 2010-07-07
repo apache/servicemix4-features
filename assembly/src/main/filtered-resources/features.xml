@@ -20,7 +20,7 @@
     <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
     <repository>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</repository>
     <feature name="connector" version="${version}">
-        <feature version="${servicemix.nmr.version}">transaction</feature>
+        <feature version="${aries.transaction.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
@@ -29,7 +29,7 @@
         <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
         <bundle>mvn:org.springframework/spring-context/${spring.version}</bundle>
         <bundle>mvn:org.springframework/spring-aop/${spring.version}</bundle>
-        <bundle>mvn:org.jencks/jencks/${jencks.version}</bundle>
+        <!--bundle>mvn:org.jencks/jencks/${jencks.version}</bundle-->
     </feature>
     <feature name="web-core" version="${version}">
         <feature version="${karaf.version}">http</feature>
@@ -362,7 +362,7 @@
     
     <!-- Default broker configuration -->
     <feature name="activemq-broker" version="${version}">
-        <feature>spring2-dm</feature>
+        <feature>spring-dm</feature>
         <feature version="${activemq.version}">activemq</feature>
         <bundle>spring:file:etc/activemq-broker.xml</bundle>
     </feature>

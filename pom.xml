@@ -145,7 +145,7 @@
       <jaxrs.api.version>1.0</jaxrs.api.version>
       <javax.mail.version>1.4.3</javax.mail.version>
       <jcr-api.version>1.0_2</jcr-api.version>
-      <jdt.core.version>3.2.3_2</jdt.core.version>
+      <jdt.core.version>3.2.3_3</jdt.core.version>
       <jdom.version>1.1_2</jdom.version>
       <jencks.version>2.2</jencks.version>
       <jetty.version>6.1.22</jetty.version>
@@ -225,7 +225,7 @@
       <serp.version>1.13.1_2</serp.version>
       <smack.version>3.0.4_2</smack.version>
       <snmp4j.version>1.8.1_3</snmp4j.version>
-      <spring.version>2.5.6.SEC01</spring.version>
+      <spring.version>3.0.3.RELEASE</spring.version>
       <spring.integration.version>1.0.0.RC2</spring.integration.version>
       <spring.osgi.version>1.2.0</spring.osgi.version>
       <stringtemplate.version>3.2_3</stringtemplate.version>
@@ -251,6 +251,7 @@
       <aries.blueprint.version>0.1-incubating</aries.blueprint.version>
       <aries.util.version>0.1-incubating</aries.util.version>
       <aries.jpa.version>0.1-incubating</aries.jpa.version>
+      <aries.transaction.version>0.1-incubating</aries.transaction.version>
       <felix.gogo.version>0.2.2</felix.gogo.version>
       <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
       <sshd.version>0.3.0</sshd.version>      
