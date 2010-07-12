@@ -42,24 +42,6 @@
         <bundle>mvn:org.ops4j.pax.url/pax-url-war/${pax.url.version}</bundle>
         <bundle>mvn:org.apache.servicemix.war/org.apache.servicemix.war.deployer/${version}</bundle>
     </feature>
-    <feature name="activemq" version="${activemq.version}">
-        <feature version="${version}">connector</feature>
-        <feature version="${spring.version}">spring</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.josql/${josql.version}</bundle>
-    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/${commons-lang-version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/${velocity.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.version}</bundle>
-    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${geronimo.j2ee.management.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/${commons-pool.activemq.version}</bundle>
-        <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
-        <bundle>mvn:org.apache.activemq/kahadb/${activemq.version}</bundle>
-        <bundle>mvn:org.apache.activemq/activemq-core/${activemq.version}</bundle>
-        <bundle>mvn:org.apache.activemq/activemq-ra/${activemq.version}</bundle>
-        <bundle>mvn:org.apache.activemq/activemq-console/${activemq.version}</bundle>
-        <bundle>mvn:org.apache.activemq/activemq-pool/${activemq.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.activemq/org.apache.servicemix.activemq.commands/${version}</bundle>
-    </feature>
     <feature name="cxf" version="${cxf.version}">
 		<feature>transaction</feature>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
@@ -362,8 +344,7 @@
     
     <!-- Default broker configuration -->
     <feature name="activemq-broker" version="${version}">
-        <feature>spring-dm</feature>
-        <feature version="${activemq.version}">activemq</feature>
-        <bundle>spring:file:etc/activemq-broker.xml</bundle>
+        <feature version="${activemq.version}">activemq-blueprint</feature>
+        <bundle>blueprint:file:etc/activemq-broker.xml</bundle>
     </feature>
 </features>

@@ -470,9 +470,9 @@
             <version>${geronimo.wsmetadata.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.activemq</groupId>
-            <artifactId>org.apache.servicemix.activemq.commands</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-karaf</artifactId>
+            <version>${activemq.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.components</groupId>
@@ -1014,6 +1014,7 @@
                             <descriptors>
                                 <descriptor>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/camel-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/ode-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
@@ -1024,6 +1025,7 @@
                                 <feature>cxf-nmr</feature>
                                 <feature>cxf-osgi</feature>
                                 <feature>camel-activemq</feature>  
+								<feature>activemq-broker</feature>
                                 <!-- ServiceMix components -->
                                 <feature>servicemix-cxf-bc</feature>
                                 <feature>servicemix-file</feature>
