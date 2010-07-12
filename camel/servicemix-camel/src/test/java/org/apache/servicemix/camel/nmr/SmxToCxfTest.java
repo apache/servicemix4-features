@@ -58,9 +58,9 @@ public class SmxToCxfTest extends CamelSpringTestSupport {
     protected ClassPathXmlApplicationContext createApplicationContext() {
         return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/spring/DummyBean.xml") {
             @Override
-            public Object getBean(String name, Class requiredType) throws BeansException {
+            public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
                 if (BUS_BEAN_NAME.equals(name)) {
-                    return bus;
+                    return requiredType.cast(bus);
                 }                
                 return super.getBean(name, requiredType);    //To change body of overridden methods use File | Settings | File Templates.
             }

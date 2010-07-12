@@ -93,7 +93,6 @@ public class ServiceMixBinding {
     
     
     
-    @SuppressWarnings("unchecked")
     protected void addNmrHeaders(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) {
         // get headers from the Camel in message
         Set<Map.Entry<String, Object>> entries = camelMessage.getHeaders().entrySet();

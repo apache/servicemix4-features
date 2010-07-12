@@ -49,13 +49,9 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
     
     public static final String TRANSPORT_ID = "http://cxf.servicemix.apache.org/transport/nmr";
     
-    private static final Logger LOG = LogUtils.getL7dLogger(NMRTransportFactory.class);
-
-
     private NMR nmr;
     private Bus bus;
     private final Map<String, NMRDestination> destinationMap =  new HashMap<String, NMRDestination>();
-    
 
     private Collection<String> activationNamespaces;
 

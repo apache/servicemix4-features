@@ -92,7 +92,6 @@ public class WSAddressingTest extends CamelTestSupport implements VerificationCa
     private CamelContext camelContext;
     private ServiceMixComponent smxComponent;
     private NMR nmr;
-    private Bus bus;
     private Endpoint endpoint;
 
     static {

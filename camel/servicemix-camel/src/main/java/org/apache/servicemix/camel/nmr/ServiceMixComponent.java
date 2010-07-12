@@ -55,7 +55,6 @@ public class ServiceMixComponent extends DefaultComponent {
         this.nmr = nmr;
     }
 
-    @SuppressWarnings("unchecked")
     protected Endpoint createEndpoint(String uri, String remaining, Map parameters) throws Exception {
         return new ServiceMixEndpoint(this, uri, remaining);
     }

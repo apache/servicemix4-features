@@ -72,14 +72,14 @@ public abstract class AbstractComponentTest extends ContextTestSupport implement
         super.tearDown();
     }
 
-    private<E extends Endpoint> List<E> findEndpoints(Class<E> type) {
-        List result = new LinkedList();
+    private <E extends Endpoint> List<E> findEndpoints(Class<E> type) {
+        List<E> result = new LinkedList<E>();
 
         for (Endpoint endpoint : nmr.getEndpointRegistry().getServices()) {
             if (endpoint instanceof InternalEndpointWrapper) {
                 InternalEndpointWrapper wrapper = (InternalEndpointWrapper) endpoint;
                 if (type.isAssignableFrom(wrapper.getEndpoint().getClass())) {
-                    result.add(wrapper.getEndpoint());
+                    result.add(type.cast(wrapper.getEndpoint()));
                 }
             }
         }
