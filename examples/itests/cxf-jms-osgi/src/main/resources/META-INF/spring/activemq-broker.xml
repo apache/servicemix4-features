@@ -106,9 +106,7 @@
     <bean id="pooledConnectionFactoryFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
         <property name="maxConnections" value="8" />
         <property name="maximumActive" value="500" />
-        <property name="transactionManager" ref="transactionManager" />
         <property name="connectionFactory" ref="activemqConnectionFactory" />
-        <property name="resourceName" value="activemq.default" />
     </bean>
     <bean id="pooledConnectionFactory" factory-bean="pooledConnectionFactoryFactory" factory-method="getConnectionFactory" />
 

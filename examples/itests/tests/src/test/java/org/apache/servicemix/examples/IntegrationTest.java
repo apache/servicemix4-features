@@ -227,7 +227,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
         mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
                                       exportP + ",org.apache.handlers, "
                                       + "org.apache.springcfg.handlers, "
-                                      + "org.apache.handlers.types,org.apache.servicemix.examples.cxf,"
+                                      + "org.apache.handlers.types, "
+                                      + "org.apache.servicemix.examples.cxf,"
                                       + "org.apache.servicemix.examples.cxf.soaphandler,"
                                       + "org.apache.servicemix.examples.cxf.springcfghandler,"
                                       + "org.apache.servicemix.examples.cxf.wsaddressing,"
