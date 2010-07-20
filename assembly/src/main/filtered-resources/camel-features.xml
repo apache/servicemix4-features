@@ -18,33 +18,33 @@
 
 <features>
   <repository>mvn:org.apache.karaf/apache-karaf/1.99.0-SNAPSHOT/xml/features</repository>
-  <feature name='camel' version='2.4-SNAPSHOT'>
-     <feature version='2.4-SNAPSHOT'>camel-core</feature>
-     <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+  <feature name='camel' version='${camel.version}'>
+     <feature version='${camel.version}'>camel-core</feature>
+     <feature version='${camel.version}'>camel-spring</feature>
   </feature>
-  <feature name='camel-core' version='2.4-SNAPSHOT'>
+  <feature name='camel-core' version='${camel.version}'>
     <feature version="3.0.3.RELEASE">spring</feature>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/1.4.0</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/1.4.0</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/1.4.0</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/2.1.12_1</bundle>
     <bundle>mvn:org.fusesource.commonman/commons-management/1.0</bundle>
-    <bundle>mvn:org.apache.camel/camel-core/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-core/${camel.version}</bundle>
   </feature>
-  <feature name='camel-spring' version='2.4-SNAPSHOT'>
+  <feature name='camel-spring' version='${camel.version}'>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
     <feature version='3.0.3.RELEASE'>spring</feature>
     <feature version='1.2.0'>spring-dm</feature>
     <bundle>mvn:org.springframework/spring-tx/3.0.3.RELEASE</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-spring/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-spring/${camel.version}</bundle>
   </feature>
-   <feature name='camel-test' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+   <feature name='camel-test' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.junit/4.7_1</bundle>    
-    <bundle>mvn:org.apache.camel/camel-test/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-test/${camel.version}</bundle>
   </feature> 
-  <feature name='camel-cxf' version='2.4-SNAPSHOT'>
+  <feature name='camel-cxf' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/1.5.4_1</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>
     <bundle>mvn:org.springframework/spring-jms/3.0.3.RELEASE</bundle>
@@ -82,51 +82,51 @@
     <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/1.1.2</bundle>
     <bundle>mvn:org.apache.cxf/cxf-bundle/${cxf.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-io/1.3.2_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+    <feature version='${camel.version}'>camel-spring</feature>
     <feature version='1.99.0-SNAPSHOT'>http</feature>
-    <bundle>mvn:org.apache.camel/camel-cxf/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-cxf/${camel.version}</bundle>
   </feature>
-  <feature name='camel-cache' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-cache' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:http://repository.springsource.com/maven/bundles/external!net.sourceforge.ehcache/com.springsource.net.sf.ehcache/1.6.2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/1.1_2</bundle> 
-    <bundle>mvn:org.apache.camel/camel-cache/2.4-SNAPSHOT</bundle> 
+    <bundle>mvn:org.apache.camel/camel-cache/${camel.version}</bundle> 
   </feature>
-  <feature name='camel-castor' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-castor' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:http://repository.springsource.com/maven/bundles/external!org.codehaus.castor/com.springsource.org.castor/1.2.0</bundle>
-    <bundle>mvn:org.apache.camel/camel-castor/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-castor/${camel.version}</bundle>
   </feature>
-  <feature name='camel-dozer' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-dozer' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:commons-lang/commons-lang/2.4</bundle>
     <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-beanutils/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.dozer/5.2.0_1</bundle>
-    <bundle>mvn:org.apache.camel/camel-dozer/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-dozer/${camel.version}</bundle>
   </feature>
-  <feature name='camel-http' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-http' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.httpcomponents/httpcore-osgi/4.0.1</bundle>
     <bundle>mvn:org.apache.httpcomponents/httpclient-osgi/4.0.1</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
-    <bundle>mvn:org.apache.camel/camel-http/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-http/${camel.version}</bundle>
   </feature>
-  <feature name='camel-mina' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-mina' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mina/1.1.7_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-mina/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-mina/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jetty' version='2.4-SNAPSHOT'>
+  <feature name='camel-jetty' version='${camel.version}'>
      <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/6.1.22_1</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-http</feature>
-    <bundle>mvn:org.apache.camel/camel-jetty/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-http</feature>
+    <bundle>mvn:org.apache.camel/camel-jetty/${camel.version}</bundle>
   </feature>
-  <feature name='camel-servlet' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-http</feature>
-    <bundle>mvn:org.apache.camel/camel-servlet/2.4-SNAPSHOT</bundle>
+  <feature name='camel-servlet' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-http</feature>
+    <bundle>mvn:org.apache.camel/camel-servlet/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jms' version='2.4-SNAPSHOT'>
+  <feature name='camel-jms' version='${camel.version}'>
     <bundle>mvn:org.springframework/spring-core/3.0.3.RELEASE</bundle>
     <bundle>mvn:org.springframework/spring-beans/3.0.3.RELEASE</bundle>
     <bundle>mvn:org.springframework/spring-context/3.0.3.RELEASE</bundle>
@@ -135,24 +135,24 @@
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/1.5.4_1</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>
     <bundle>mvn:org.springframework/spring-jms/3.0.3.RELEASE</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-jms/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-jms/${camel.version}</bundle>
   </feature>
-  <feature name='camel-amqp' version='2.4-SNAPSHOT'>
+  <feature name='camel-amqp' version='${camel.version}'>
     <bundle>mvn:commons-lang/commons-lang/2.4</bundle>
     <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mina/1.1.7_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.qpid/0.5.0_2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-jms</feature>
-    <bundle>mvn:org.apache.camel/camel-amqp/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-jms</feature>
+    <bundle>mvn:org.apache.camel/camel-amqp/${camel.version}</bundle>
   </feature>
-  <feature name='camel-atom' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-atom' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/1.3_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/0.4.0-incubating_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-atom/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-atom/${camel.version}</bundle>
   </feature>
-  <feature name='camel-bam' version='2.4-SNAPSHOT'>
+  <feature name='camel-bam' version='${camel.version}'>
     <feature>http</feature>
     <bundle>mvn:org.springframework/spring-tx/3.0.3.RELEASE</bundle>
     <bundle>mvn:org.springframework/spring-web/3.0.3.RELEASE</bundle>
@@ -167,60 +167,60 @@
     <bundle>mvn:org.springframework/spring-orm/3.0.3.RELEASE</bundle>        
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscache/2.4_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ibatis-sqlmap/2.3.4.726_2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-bam/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-bam/${camel.version}</bundle>
   </feature>
-  <feature name='camel-bindy' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-bindy/2.4-SNAPSHOT</bundle>
+  <feature name='camel-bindy' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-bindy/${camel.version}</bundle>
   </feature>
-  <feature name='camel-cometd' version='2.4-SNAPSHOT'>
+  <feature name='camel-cometd' version='${camel.version}'>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/6.1.22_1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-cometd/6.1.11_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-cometd/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-cometd/${camel.version}</bundle>
   </feature>
-  <feature name='camel-csv' version='2.4-SNAPSHOT'>
+  <feature name='camel-csv' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-csv/1.0-r706899_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-csv/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-csv/${camel.version}</bundle>
   </feature>
-  <feature name='camel-flatpack' version='2.4-SNAPSHOT'>
+  <feature name='camel-flatpack' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/1.1_2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jexcelapi/2.4.2_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.flatpack/3.1.1_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-flatpack/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-flatpack/${camel.version}</bundle>
   </feature>
-  <feature name='camel-freemarker' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+  <feature name='camel-freemarker' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.freemarker/2.3.15_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-freemarker/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-freemarker/${camel.version}</bundle>
   </feature>
-  <feature name='camel-ftp' version='2.4-SNAPSHOT'>
+  <feature name='camel-ftp' version='${camel.version}'>
     <bundle>mvn:commons-net/commons-net/2.0</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsch/0.1.31_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-ftp/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-ftp/${camel.version}</bundle>
   </feature>
-  <feature name='camel-guice' version='2.4-SNAPSHOT'>
+  <feature name='camel-guice' version='${camel.version}'>
     <bundle>mvn:http://guiceyfruit.googlecode.com/svn/repo/releases!org.guiceyfruit/guiceyfruit-core/2.0</bundle>
     <bundle>mvn:http://guiceyfruit.googlecode.com/svn/repo/releases!org.guiceyfruit/guice-all/2.0</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/1.1.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-guice/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-guice/${camel.version}</bundle>
   </feature>
-  <feature name='camel-groovy' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-groovy' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/1.4.0</bundle>
     <bundle>mvn:org.codehaus.groovy/groovy-all/1.7.0</bundle>
-    <bundle>mvn:org.apache.camel/camel-groovy/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-groovy/${camel.version}</bundle>
   </feature>
-  <feature name='camel-hl7' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-hl7' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/1.2_2</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>
@@ -230,50 +230,50 @@
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.hapi/0.5.1_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mina/1.1.7_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-hl7/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-hl7/${camel.version}</bundle>
   </feature>
-  <feature name='camel-ibatis' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+  <feature name='camel-ibatis' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/1.5.4_1</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
     <bundle>mvn:commons-dbcp/commons-dbcp/1.3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscache/2.4_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/2.1_3_4</bundle>    
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ibatis-sqlmap/2.3.4.726_2</bundle>
-    <bundle>mvn:org.apache.camel/camel-ibatis/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-ibatis/${camel.version}</bundle>
   </feature>
-  <feature name='camel-irc' version='2.4-SNAPSHOT'>
+  <feature name='camel-irc' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.irclib/1.10_2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-irc/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-irc/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jaxb' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-jaxb/2.4-SNAPSHOT</bundle>
+  <feature name='camel-jaxb' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-jaxb/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jcr' version='2.4-SNAPSHOT'>
+  <feature name='camel-jcr' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jcr-api/1.0_2</bundle>
     <bundle>mvn:org.apache.jackrabbit/jackrabbit-jcr-commons/1.5.3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-jcr/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-jcr/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jing' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+  <feature name='camel-jing' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.isorelax/20050913_1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jing/20030619_1</bundle>
-    <bundle>mvn:org.apache.camel/camel-jing/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-jing/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jdbc' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-jdbc/2.4-SNAPSHOT</bundle>
+  <feature name='camel-jdbc' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-jdbc/${camel.version}</bundle>
   </feature>
-  <feature name='camel-josql' version='2.4-SNAPSHOT'>
+  <feature name='camel-josql' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.josql/1.5_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-josql/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-josql/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jpa' version='2.4-SNAPSHOT'>
+  <feature name='camel-jpa' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.java-persistence-api-1.1.1/1.4.0</bundle>
     <bundle>mvn:org.springframework/spring-tx/3.0.3.RELEASE</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-el_1.0_spec/1.0.1</bundle>
@@ -288,10 +288,10 @@
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.openjpa/1.2.1_2</bundle>
     <bundle>mvn:org.springframework/spring-orm/3.0.3.RELEASE</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-jpa/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-jpa/${camel.version}</bundle>
   </feature>
-  <feature name='camel-jxpath' version='2.4-SNAPSHOT'>
+  <feature name='camel-jxpath' version='${camel.version}'>
     <!-- All those bundles should be optional I think, but the commons-jxpath osgi metadata is not really good -->
     <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-el_1.0_spec/1.0.1</bundle>
@@ -299,144 +299,144 @@
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-beanutils/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/1.1_2</bundle>
     <bundle>mvn:commons-jxpath/commons-jxpath/1.3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-jxpath/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-jxpath/${camel.version}</bundle>
   </feature>
-  <feature name='camel-juel' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-juel' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-el_1.0_spec/1.0.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.juel/2.1.2_1</bundle>
-    <bundle>mvn:org.apache.camel/camel-juel/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-juel/${camel.version}</bundle>
   </feature>
-  <feature name='camel-ldap' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-ldap/2.4-SNAPSHOT</bundle>
+  <feature name='camel-ldap' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-ldap/${camel.version}</bundle>
   </feature>
-  <feature name='camel-mail' version='2.4-SNAPSHOT'>
+  <feature name='camel-mail' version='${camel.version}'>
     <bundle>mvn:org.springframework/spring-context/3.0.3.RELEASE</bundle>
     <bundle>mvn:org.springframework/spring-context-support/3.0.3.RELEASE</bundle>
     <bundle>mvn:javax.mail/mail/1.4.3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-mail/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-mail/${camel.version}</bundle>
   </feature>
-  <feature name='camel-msv' version='2.4-SNAPSHOT'>
+  <feature name='camel-msv' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/1.2_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xerces/2.9.1_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.isorelax/20050913_1</bundle>
-    <bundle>mvn:org.apache.camel/camel-msv/2.4-SNAPSHOT</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+    <bundle>mvn:org.apache.camel/camel-msv/${camel.version}</bundle>
+    <feature version='${camel.version}'>camel-spring</feature>
   </feature>
-  <feature name='camel-mvel' version='2.4-SNAPSHOT'>
+  <feature name='camel-mvel' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mvel/2.0.8_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-mvel/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-mvel/${camel.version}</bundle>
   </feature>
-  <feature name='camel-ognl' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-ognl' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ognl/2.7.3_3</bundle>
     <bundle>mvn:http://repository.springsource.com/maven/bundles/external!org.jboss.javassist/com.springsource.javassist/3.9.0.GA</bundle>
-    <bundle>mvn:org.apache.camel/camel-ognl/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-ognl/${camel.version}</bundle>
   </feature>
-  <feature name='camel-printer' version='2.4-SNAPSHOT'>
+  <feature name='camel-printer' version='${camel.version}'>
     <bundle>mvn:commons-net/commons-net/2.0</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsch/0.1.31_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-printer/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-printer/${camel.version}</bundle>
   </feature>
-  <feature name='camel-protobuf' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.protobuf-java/2.4-SNAPSHOT_1</bundle>
-    <bundle>mvn:org.apache.camel/camel-protobuf/2.4-SNAPSHOT</bundle>
+  <feature name='camel-protobuf' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.protobuf-java/${camel.version}_1</bundle>
+    <bundle>mvn:org.apache.camel/camel-protobuf/${camel.version}</bundle>
   </feature>
-  <feature name='camel-quartz' version='2.4-SNAPSHOT'>
+  <feature name='camel-quartz' version='${camel.version}'>
     <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/1.5.4_1</bundle>
     <bundle>mvn:commons-dbcp/commons-dbcp/1.3</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-beanutils/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/1.6.6_1</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-quartz/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-quartz/${camel.version}</bundle>
   </feature>
-  <feature name='camel-restlet' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-restlet/2.4-SNAPSHOT</bundle>
+  <feature name='camel-restlet' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-restlet/${camel.version}</bundle>
     <bundle>mvn:http://maven.restlet.org!org.restlet/org.restlet/1.1.8</bundle>
     <bundle>mvn:http://maven.restlet.org!com.noelios.restlet/com.noelios.restlet/1.1.8</bundle>
   </feature>
-  <feature name='camel-rmi' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-rmi/2.4-SNAPSHOT</bundle>
+  <feature name='camel-rmi' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-rmi/${camel.version}</bundle>
   </feature>
-  <feature name='camel-rss' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-atom</feature>
+  <feature name='camel-rss' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-atom</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/1.1_2</bundle>
     <bundle>mvn:http://download.java.net/maven/2!rome/rome/1.0</bundle>
-    <bundle>mvn:org.apache.camel/camel-rss/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-rss/${camel.version}</bundle>
   </feature>
-  <feature name='camel-saxon' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+  <feature name='camel-saxon' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saxon/9.1.0.1_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-saxon/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-saxon/${camel.version}</bundle>
   </feature>
-  <feature name='camel-scala' version='2.4-SNAPSHOT'>
+  <feature name='camel-scala' version='${camel.version}'>
     <bundle>mvn:http://scala-tools.org/repo-releases!org.scala-lang-osgi/scala-library/2.7.7</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-scala/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-scala/${camel.version}</bundle>
   </feature>
-  <feature name='camel-script' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-script' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/1.4.0</bundle>
-    <bundle>mvn:org.apache.camel/camel-script/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-script/${camel.version}</bundle>
   </feature>
-  <feature name='camel-smpp' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-smpp' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/2.0_2</bundle>
-    <bundle>mvn:org.apache.camel/camel-smpp/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-smpp/${camel.version}</bundle>
   </feature>
-  <feature name='camel-snmp' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+  <feature name='camel-snmp' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.snmp4j/1.8.1_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-snmp/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-snmp/${camel.version}</bundle>
   </feature>
-  <feature name='camel-spring-integration' version='2.4-SNAPSHOT'>
+  <feature name='camel-spring-integration' version='${camel.version}'>
     <bundle>mvn:http://repository.springsource.com/maven/bundles/release!org.springframework.integration/org.springframework.integration/1.0.3.RELEASE</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
-    <bundle>mvn:org.apache.camel/camel-spring-integration/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-spring</feature>
+    <bundle>mvn:org.apache.camel/camel-spring-integration/${camel.version}</bundle>
   </feature>
   <!-- current camel-spring-javaconfig need to use spring 3.0.0.RELEASE, so we comment it out
-    feature name='camel-spring-javaconfig' version='2.4-SNAPSHOT'>
+    feature name='camel-spring-javaconfig' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/2.1_3_4</bundle>
     <bundle>mvn:http://repository.springsource.com/maven/bundles/release!org.springframework/org.springframework.test/3.0.3.RELEASE</bundle>
     <bundle>mvn:http://svn.apache.org/repos/asf/camel/m2-repo!org.springframework.javaconfig/org.springframework.config.java/1.0.0-20090215</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.cglib/2.1_3_4</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
-    <bundle>mvn:org.apache.camel/camel-spring-javaconfig/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-spring</feature>
+    <bundle>mvn:org.apache.camel/camel-spring-javaconfig/${camel.version}</bundle>
   </feature-->
-  <feature name='camel-sql' version='2.4-SNAPSHOT'>
+  <feature name='camel-sql' version='${camel.version}'>
     <bundle>mvn:org.springframework/spring-tx/3.0.3.RELEASE</bundle>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
     <bundle>mvn:org.springframework/spring-jdbc/3.0.3.RELEASE</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-sql/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-sql/${camel.version}</bundle>
   </feature>
-  <feature name='camel-stream' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-stream/2.4-SNAPSHOT</bundle>
+  <feature name='camel-stream' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-stream/${camel.version}</bundle>
   </feature>
-  <feature name='camel-string-template' version='2.4-SNAPSHOT'>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
+  <feature name='camel-string-template' version='${camel.version}'>
+    <feature version='${camel.version}'>camel-spring</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/2.7.7_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.stringtemplate/3.2_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-stringtemplate/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-stringtemplate/${camel.version}</bundle>
   </feature>
-  <feature name='camel-tagsoup' version='2.4-SNAPSHOT'>
+  <feature name='camel-tagsoup' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.tagsoup/1.2_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-tagsoup/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-tagsoup/${camel.version}</bundle>
   </feature>
-  <feature name='camel-velocity' version='2.4-SNAPSHOT'>
+  <feature name='camel-velocity' version='${camel.version}'>
     <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/1.1.2</bundle>
     <bundle>mvn:commons-lang/commons-lang/2.4</bundle>
     <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
@@ -446,38 +446,38 @@
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.werken-xpath/0.9.4_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/2.0.8_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/1.6.2_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-spring</feature>
-    <bundle>mvn:org.apache.camel/camel-velocity/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-spring</feature>
+    <bundle>mvn:org.apache.camel/camel-velocity/${camel.version}</bundle>
   </feature>
-  <feature name='camel-xmlbeans' version='2.4-SNAPSHOT'>
+  <feature name='camel-xmlbeans' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.7.0_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/2.4.0_3</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-xmlbeans/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-xmlbeans/${camel.version}</bundle>
   </feature>
-  <feature name='camel-xmlsecurity' version='2.4-SNAPSHOT'>
+  <feature name='camel-xmlsecurity' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/1.4.3_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xerces/2.9.1_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/1.2_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/5.2_2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-xmlsecurity/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-xmlsecurity/${camel.version}</bundle>
   </feature>
-  <feature name='camel-xmpp' version='2.4-SNAPSHOT'>
+  <feature name='camel-xmpp' version='${camel.version}'>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xpp3/1.1.4c_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.smack/3.0.4_2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
-    <bundle>mvn:org.apache.camel/camel-xmpp/2.4-SNAPSHOT</bundle>
+    <feature version='${camel.version}'>camel-core</feature>
+    <bundle>mvn:org.apache.camel/camel-xmpp/${camel.version}</bundle>
   </feature>
-  <feature name='camel-xstream' version='2.4-SNAPSHOT'>
+  <feature name='camel-xstream' version='${camel.version}'>
     <bundle>mvn:org.codehaus.jettison/jettison/1.2</bundle>
-    <feature version='2.4-SNAPSHOT'>camel-core</feature>
+    <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xpp3/1.1.4c_3</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.joda-time/1.5.2_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/1.1_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.dom4j/1.6.1_2</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xstream/1.3_3</bundle>
-    <bundle>mvn:org.apache.camel/camel-xstream/2.4-SNAPSHOT</bundle>
+    <bundle>mvn:org.apache.camel/camel-xstream/${camel.version}</bundle>
   </feature>
 </features>
