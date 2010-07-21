@@ -31,21 +31,10 @@
         <bundle>mvn:org.springframework/spring-aop/${spring.version}</bundle>
         <!--bundle>mvn:org.jencks/jencks/${jencks.version}</bundle-->
     </feature>
-    <feature name="web-core" version="${version}">
-        <feature version="${karaf.version}">http</feature>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-jsp/${pax.web.version}</bundle>
-    </feature>
-    <feature name="web" version="${version}">
-        <feature version="${version}">web-core</feature>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-war/${pax.web.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-whiteboard/${pax.web.version}</bundle>
-        <bundle>mvn:org.ops4j.pax.url/pax-url-war/${pax.url.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.war/org.apache.servicemix.war.deployer/${version}</bundle>
-    </feature>
     <feature name="cxf" version="${cxf.version}">
 		<feature>transaction</feature>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo.annotation.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo.annotation.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-${jaxb.api.version}/${servicemix.specs.version}</bundle>
@@ -85,8 +74,7 @@
     </feature>
     <feature name="cxf-osgi" version="${version}">
         <feature version="${cxf.version}">cxf</feature>
-        <feature version="${version}">web-core</feature>
-        <bundle>mvn:org.ops4j.pax.web/pax-web-extender-whiteboard/${pax.web.version}</bundle>
+        <feature version="${karaf.version}">war</feature>
     </feature>
     <feature name="cxf-jaxrs" version="${version}">
         <feature version="${version}">cxf-osgi</feature>
@@ -246,7 +234,7 @@
     </feature>
     <feature name="servicemix-bean" version="${servicemix-bean-version}">
         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo.annotation.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo.annotation.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-bean/${servicemix-bean-version}</bundle>
     </feature>
     <feature name="servicemix-camel" version="${servicemix-camel-version}">

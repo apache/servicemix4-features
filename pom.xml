@@ -39,7 +39,6 @@
     <module>deps</module>
     <module>branding</module>
     <module>camel</module>
-    <module>war</module>
     <module>cxf</module>
     <module>examples</module>
     <module>assembly</module>
@@ -110,7 +109,7 @@
       <felix.plugin.version>2.1.0</felix.plugin.version>
       <felix.prefs.version>1.0.4</felix.prefs.version>
       <flatpack.version>3.1.1_3</flatpack.version>
-      <geronimo.annotation.version>1.1.1</geronimo.annotation.version>
+      <geronimo.annotation.version>1.0</geronimo.annotation.version>
       <geronimo.ejb3.version>1.0.1</geronimo.ejb3.version>
       <geronimo.el.version>1.0.1</geronimo.el.version>
       <geronimo.interceptor.version>1.0.1</geronimo.interceptor.version>

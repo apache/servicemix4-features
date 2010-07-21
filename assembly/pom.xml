@@ -461,7 +461,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-annotation_1.0_spec</artifactId>
+            <artifactId>geronimo-annotation_1.1_spec</artifactId>
             <version>${geronimo.annotation.version}</version>
         </dependency>
         <dependency>
@@ -497,11 +497,6 @@
         <dependency>
             <groupId>org.apache.servicemix.cxf</groupId>
             <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.war</groupId>
-            <artifactId>org.apache.servicemix.war.deployer</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!--
@@ -1011,10 +1006,11 @@
                             </descriptors>
                             <features>
                                 <feature>jbi-cluster</feature>
-                                <feature>web</feature>
+                                <feature>war</feature>
                                 <feature>cxf-nmr</feature>
                                 <feature>cxf-osgi</feature>
-                                <feature>camel-activemq</feature>  
+                                <feature>camel-blueprint</feature>  
+                                <feature>camel-activemq</feature>
 								<feature>activemq-broker</feature>
                                 <!-- ServiceMix components -->
                                 <feature>servicemix-cxf-bc</feature>
