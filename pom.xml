@@ -247,10 +247,10 @@
       <werken-xpath.version>0.9.4_3</werken-xpath.version>
       <wss4j.version>1.5.8</wss4j.version>
       <jaxp.ri.version>1.4.2_3</jaxp.ri.version>
-      <aries.blueprint.version>0.1-incubating</aries.blueprint.version>
-      <aries.util.version>0.1-incubating</aries.util.version>
-      <aries.jpa.version>0.1-incubating</aries.jpa.version>
-      <aries.transaction.version>0.1-incubating</aries.transaction.version>
+      <aries.blueprint.version>0.1-r964701</aries.blueprint.version>
+      <aries.util.version>0.1-r964701</aries.util.version>
+      <aries.jpa.version>0.1-r964701</aries.jpa.version>
+      <aries.transaction.version>0.1-r964701</aries.transaction.version>
       <felix.gogo.version>0.2.2</felix.gogo.version>
       <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
       <sshd.version>0.3.0</sshd.version>      
