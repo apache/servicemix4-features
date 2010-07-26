@@ -163,20 +163,6 @@
             <lineEnding>unix</lineEnding>
         </file>
         <file>
-            <source>${basedir}/target/classes/bin/start</source>
-            <outputDirectory>/bin/</outputDirectory>
-            <destName>start</destName>
-            <fileMode>0755</fileMode>
-            <lineEnding>unix</lineEnding>
-        </file>
-        <file>
-            <source>${basedir}/target/classes/bin/stop</source>
-            <outputDirectory>/bin/</outputDirectory>
-            <destName>stop</destName>
-            <fileMode>0755</fileMode>
-            <lineEnding>unix</lineEnding>
-        </file>
-        <file>
             <source>${basedir}/target/dependencies/servicemix-version.jar</source>
             <outputDirectory>/lib/</outputDirectory>
             <fileMode>0644</fileMode>
