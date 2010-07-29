@@ -38,6 +38,7 @@
         <module>cxf-nmr-osgi</module>
         <module>cxf-soap-handler-osgi</module>
         <module>cxf-handler-cfg</module>
+        <module>cxf-mtom-osgi</module>
         <module>tests</module>
     </modules>
 

@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.io.OutputStream;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.jar.Manifest;
@@ -29,9 +30,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.List;
-
+import javax.activation.DataHandler;
 import javax.xml.transform.Source;
-
+import javax.xml.ws.Holder;
 import org.apache.cxf.Bus;
 import org.apache.servicemix.examples.cxf.HelloWorld;
 import org.apache.servicemix.jbi.jaxp.StringSource;
@@ -155,6 +156,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-ws-security-osgi"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-jms-osgi"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-soap-handler-osgi"),
+            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-mtom-osgi"),
             getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-handler-cfg"),
             getBundle("org.apache.servicemix.examples", "cxf-ws-addressing"),
             getBundle("org.apache.servicemix.examples", "cxf-jaxrs"),
@@ -227,6 +229,9 @@ public class IntegrationTest extends AbstractIntegrationTest {
         mf.getMainAttributes().putValue(Constants.EXPORT_PACKAGE,
                                       exportP + ",org.apache.handlers, "
                                       + "org.apache.springcfg.handlers, "
+                                      + "org.apache.cxf.mime, "
+                                      + "javax.xml.ws, "
+                                      + "javax.activation, "
                                       + "org.apache.handlers.types, "
                                       + "org.apache.servicemix.examples.cxf,"
                                       + "org.apache.servicemix.examples.cxf.soaphandler,"
@@ -349,4 +354,44 @@ public class IntegrationTest extends AbstractIntegrationTest {
         assertTrue(baos.toString().indexOf("Hello John Doe") >= 0);
 
     }
+
+    public void testMtomOsgi() throws Exception {
+        Thread.sleep(5000);
+        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-mtom-osgi");
+        Thread.sleep(5000);
+
+        ServiceReference ref = bundleContext.getServiceReference(org.apache.cxf.mime.TestMtom.class.getName());
+        assertNotNull("Service Reference is null", ref);
+
+        org.apache.cxf.mime.TestMtom testMtom = null;
+
+        testMtom = (org.apache.cxf.mime.TestMtom) bundleContext.getService(ref);
+        assertNotNull("Cannot find the service", testMtom);
+         
+        URL fileURL = getClass().getClassLoader().getResource("me.bmp");
+        System.out.println("\nStarting MTOM test with DataHandler:");
+        Holder<String> name = new Holder<String>("Bob");
+        Holder<DataHandler> handler = new Holder<DataHandler>();
+
+        handler.value = new DataHandler(fileURL);
+
+        System.out.println("--Sending the me.bmp image to server");
+        System.out.println("--Sending a name value of " + name.value);
+
+        testMtom.testXop(name, handler);
+
+        InputStream mtomIn = handler.value.getInputStream();
+        long fileSize = 0;
+        for (int i = mtomIn.read(); i != -1; i = mtomIn.read()) {
+            fileSize++;
+        }
+
+        System.out.println("--Received DataHandler back from server, "
+            + "returned size is " + fileSize);
+        System.out.println("--Returned string value is " + name.value);
+        assertEquals(fileSize, 163166);
+        System.out.println("Successfully ran MTOM/DataHandler demo");
+
+    }
+
 }

@@ -237,6 +237,11 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.examples</groupId>
+            <artifactId>org.apache.servicemix.examples.itests.cxf-mtom-osgi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
 		    <groupId>org.apache.servicemix.examples</groupId>
 		    <artifactId>org.apache.servicemix.examples.itests.cxf-soap-handler-osgi</artifactId>
             <version>${project.version}</version>
