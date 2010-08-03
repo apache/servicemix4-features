@@ -475,6 +475,13 @@
             <version>${activemq.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-karaf</artifactId>
+            <version>${activemq.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>        
+        <dependency>
             <groupId>org.apache.geronimo.components</groupId>
             <artifactId>geronimo-transaction</artifactId>
             <version>${geronimo.transaction.version}</version>
