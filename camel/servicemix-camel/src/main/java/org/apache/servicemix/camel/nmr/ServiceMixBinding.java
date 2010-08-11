@@ -22,6 +22,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.activation.DataHandler;
+import javax.security.auth.Subject;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -47,7 +48,10 @@ public class ServiceMixBinding {
             addNmrHeaders(nmrMessage, camelMessage);
             nmrMessage.getAttachments().clear();
             nmrMessage.getAttachments().putAll(camelMessage.getAttachments());
-            addSecuritySubject(nmrMessage, camelMessage);
+            //addSecuritySubject(nmrMessage, camelMessage);
+
+            // propagate the security subject
+            nmrMessage.setSecuritySubject(camelMessage.getHeader(Exchange.AUTHENTICATION, Subject.class));
         }
     }
 
@@ -55,7 +59,10 @@ public class ServiceMixBinding {
         camelMessage.setBody(nmrMessage.getBody());
         camelMessage.setHeader(NMR_MESSAGE, nmrMessage);
         camelMessage.getHeaders().putAll(nmrMessage.getHeaders());
-        addCamelAttachments(nmrMessage, camelMessage);        
+        addCamelAttachments(nmrMessage, camelMessage);
+
+        // copy the security subject
+        camelMessage.setHeader(Exchange.AUTHENTICATION, nmrMessage.getSecuritySubject());
     }
     
     public org.apache.servicemix.nmr.api.Exchange populateNmrExchangeFromCamelExchange(Exchange camelExchange, Channel client)  {
@@ -75,7 +82,7 @@ public class ServiceMixBinding {
         
         // copy the nmrExchange's properties
         answer.getProperties().putAll(nmrExchange.getProperties());
-        
+
         org.apache.servicemix.nmr.api.Message inMessage = nmrExchange.getIn();
         if (inMessage != null) {
             Message message = new DefaultMessage();
@@ -122,23 +129,19 @@ public class ServiceMixBinding {
         }
         
     }
-    
-    protected void addSecuritySubject(org.apache.servicemix.nmr.api.Message nmrMessage, Message camelMessage) {
-        org.apache.servicemix.nmr.api.Message from = getNmrMessage(camelMessage);
-        if (from != null) {
-            // copy the security subject
-            nmrMessage.setSecuritySubject(from.getSecuritySubject());
-        }       
-                
-   }
-        
-    protected org.apache.servicemix.nmr.api.Message getNmrMessage(Message message) {
+
+    /**
+     * Extract the underlying NMR {@link org.apache.servicemix.nmr.api.Message} for a Camel message
+     *
+     * @param message the Camel Message
+     * @return the corresponding NMR message
+     */
+    public org.apache.servicemix.nmr.api.Message getNmrMessage(Message message) {
         if (message.getHeader(NMR_MESSAGE) != null) {
-            return (org.apache.servicemix.nmr.api.Message)message.getHeader(NMR_MESSAGE);
+            return message.getHeader(NMR_MESSAGE, org.apache.servicemix.nmr.api.Message.class);
         }
         return null;
     }
-
 
     /**
      * Extract the NMR Exchange from the Camel Exchange
