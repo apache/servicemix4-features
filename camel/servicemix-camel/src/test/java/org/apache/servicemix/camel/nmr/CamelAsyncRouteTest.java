@@ -32,7 +32,9 @@ import org.apache.servicemix.nmr.api.Status;
 public class CamelAsyncRouteTest extends AbstractComponentTest {
 
     private static final String HANDLED_BY_THREAD = "HandledByThread";
+    
     private static final int COUNT = 1000;
+    private static final long DELAY = 60000;
 
     /* Latch to count NMR Done Exchanges */
     private CountDownLatch done;
@@ -45,40 +47,41 @@ public class CamelAsyncRouteTest extends AbstractComponentTest {
     }
 
     public void testCamelThreads() throws InterruptedException {
-        MockEndpoint mock = getMockEndpoint("mock:threads");
-        mock.expectedMessageCount(COUNT);
-
-        getMockEndpoint("mock:sent").expectedMessageCount(COUNT);
-
+        expectDefaultMessageCount("mock:sent");
+        expectDefaultMessageCount("mock:threads").whenAnyExchangeReceived(new AssertHandledByCamelThreadProcessor());
+        
         for (int i = 0 ; i < COUNT ; i++) {
-            template.asyncSendBody("direct:threads", "Simple message body");
+            template.asyncSendBody("direct:threads", "Simple message body " + i);
         }
 
         assertMockEndpointsSatisfied();
 
         assertTrue("All NMR exchanges should have been marked DONE",
-                   done.await(20, TimeUnit.SECONDS));                
-        
-        for (Exchange exchange : mock.getExchanges()) {
-            Thread thread = exchange.getProperty(HANDLED_BY_THREAD, Thread.class);
-            assertTrue("processor should have been called from the Camel 'threads' thread pool instead of " + thread.getName(),
-                       thread.getName().contains("Camel") && thread.getName().contains("Thread"));
-        }
-
+                   done.await(DELAY, TimeUnit.MILLISECONDS));
     }
 
-    public void testCamelSeda() throws InterruptedException {       
-        getMockEndpoint("mock:sent").expectedMessageCount(COUNT);
-        getMockEndpoint("mock:seda").expectedMessageCount(COUNT);
+    public void testCamelSeda() throws InterruptedException {
+        expectDefaultMessageCount("mock:sent");
+        expectDefaultMessageCount("mock:seda");
 
         for (int i = 0 ; i < COUNT ; i++) {
-            template.asyncSendBody("seda:seda", "Simple message body");
+            template.asyncSendBody("seda:seda", "Simple message body " + i);
         }
 
         assertMockEndpointsSatisfied();
 
         assertTrue("All NMR exchanges should have been marked DONE",
-                   done.await(20, TimeUnit.SECONDS));
+                   done.await(DELAY, TimeUnit.MILLISECONDS));
+    }
+
+    /*
+     * Configure the mock endpoint to expect {@value #COUNT} messages to arrive in {@value #DELAY}ms
+     */
+    private MockEndpoint expectDefaultMessageCount(String endpoint) {
+        final MockEndpoint mock = getMockEndpoint(endpoint);
+        mock.setResultWaitTime(DELAY);
+        mock.expectedMessageCount(COUNT);
+        return mock;
     }
 
     @Override
@@ -110,5 +113,18 @@ public class CamelAsyncRouteTest extends AbstractComponentTest {
         if (exchange.getStatus().equals(Status.Done)) {
             done.countDown();
         }
+    }
+
+    /*
+     * Processor to ensure that the exchange has been handled by a Camel thread instead of an NMR thread
+     */
+    private static final class AssertHandledByCamelThreadProcessor implements Processor {
+
+        public void process(Exchange exchange) throws Exception {
+            Thread thread = exchange.getProperty(HANDLED_BY_THREAD, Thread.class);
+            assertTrue("processor should have been called from the Camel 'threads' thread pool instead of " + thread.getName(),
+                       thread.getName().contains("Camel") && thread.getName().contains("Thread"));
+        }
+
     }
 }
