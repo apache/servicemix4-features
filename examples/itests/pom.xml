@@ -32,6 +32,7 @@
     
  
     <modules>
+        <module>test-commons</module>
         <module>cxf-http-osgi</module>
         <module>cxf-ws-security-osgi</module>
         <module>cxf-jms-osgi</module>

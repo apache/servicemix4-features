@@ -17,9 +17,10 @@
  * under the License.
  */
 // START SNIPPET: service
-package org.apache.servicemix.examples.cxf;
+package org.apache.servicemix.examples.cxf_jms_osgi;
 
 import javax.jws.WebService;
+import org.apache.servicemix.examples.cxf.*;
 
 //@WebService(endpointInterface = "org.apache.servicemix.examples.cxf.HelloWorld")
 @WebService(serviceName = "HelloWorldImplService",

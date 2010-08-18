@@ -32,7 +32,7 @@
     <import resource="classpath:META-INF/cxf/transport/nmr/cxf-transport-nmr.xml" />
 
 	<jaxws:endpoint id="NMREndpoint"
-	    implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
+	    implementor="org.apache.servicemix.examples.cxf_nmr_osgi.HelloWorldImpl"
             endpointName="e:HelloWorldImplPort"
 	    serviceName="s:HelloWorldImplService"
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"

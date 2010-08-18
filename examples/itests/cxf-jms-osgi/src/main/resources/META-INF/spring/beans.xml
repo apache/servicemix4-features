@@ -32,7 +32,7 @@
     <import resource="classpath:META-INF/cxf/cxf-extension-jms.xml" />
 
 	<jaxws:endpoint id="JMSEndpoint"
-	    implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
+	    implementor="org.apache.servicemix.examples.cxf_jms_osgi.HelloWorldImpl"
 	    wsdlLocation="wsdl/hello_world.wsdl"
 	    endpointName="e:HelloWorldImplPort"
 	    serviceName="s:HelloWorldImplService"

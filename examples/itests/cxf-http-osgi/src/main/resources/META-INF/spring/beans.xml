@@ -33,7 +33,7 @@
     <import resource="classpath:META-INF/cxf/osgi/cxf-extension-osgi.xml" />
 
 	<jaxws:endpoint id="HTTPEndpoint"
-	    implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
+	    implementor="org.apache.servicemix.examples.cxf_http_osgi.HelloWorldImpl"
 	    address="/HelloWorldOSGi"
 	    wsdlLocation="wsdl/hello_world.wsdl"
 	    endpointName="e:HelloWorldImplPort"

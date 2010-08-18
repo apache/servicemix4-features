@@ -217,6 +217,11 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.examples</groupId>
+            <artifactId>org.apache.servicemix.examples.itests.test-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.examples</groupId>
 	    <artifactId>org.apache.servicemix.examples.itests.cxf-http-osgi</artifactId>
             <version>${project.version}</version>
         </dependency>
