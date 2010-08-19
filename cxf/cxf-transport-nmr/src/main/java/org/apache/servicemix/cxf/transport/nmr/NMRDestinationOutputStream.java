@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.security.auth.Subject;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -112,7 +113,8 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                         }
                     }
 
-
+                    //copy securitySubject
+                    xchng.getOut().setSecuritySubject((Subject) outMessage.get(NMRTransportFactory.NMR_SECURITY_SUBJECT));
                     xchng.getOut().setBody(new DOMSource(doc));
                 }
                 LOG.fine(new org.apache.cxf.common.i18n.Message("POST.DISPATCH", LOG).toString());

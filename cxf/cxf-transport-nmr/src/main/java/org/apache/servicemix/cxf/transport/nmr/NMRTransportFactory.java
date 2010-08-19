@@ -48,6 +48,7 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
     DestinationFactory {
     
     public static final String TRANSPORT_ID = "http://cxf.servicemix.apache.org/transport/nmr";
+    public static String NMR_SECURITY_SUBJECT = "NMR_SECURITY_SUBJECT";
     
     private NMR nmr;
     private Bus bus;

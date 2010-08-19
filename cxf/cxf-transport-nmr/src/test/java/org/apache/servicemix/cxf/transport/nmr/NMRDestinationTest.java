@@ -63,7 +63,7 @@ public class NMRDestinationTest extends AbstractJBITest {
         
         
         org.apache.servicemix.nmr.api.Exchange messageExchange = control.createMock(org.apache.servicemix.nmr.api.Exchange.class);
-        EasyMock.expect(messageExchange.getOut()).andReturn(normalizedMessage);
+        EasyMock.expect(messageExchange.getOut()).andReturn(normalizedMessage).times(2);
         message.put(org.apache.servicemix.nmr.api.Exchange.class, messageExchange);
         channel.send(messageExchange);
         EasyMock.replay(channel);

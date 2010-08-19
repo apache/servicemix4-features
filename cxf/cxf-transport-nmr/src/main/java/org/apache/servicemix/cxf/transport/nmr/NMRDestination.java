@@ -140,6 +140,9 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             	}
             }
             
+            //copy securitySubject
+            inMessage.put(NMRTransportFactory.NMR_SECURITY_SUBJECT, nm.getSecuritySubject());
+            
             inMessage.setDestination(this);
             getMessageObserver().onMessage(inMessage);
 

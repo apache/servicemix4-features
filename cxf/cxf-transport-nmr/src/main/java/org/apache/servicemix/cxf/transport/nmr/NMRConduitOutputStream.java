@@ -32,6 +32,7 @@ import java.util.logging.Logger;
 
 import javax.activation.DataHandler;
 import javax.jws.WebService;
+import javax.security.auth.Subject;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
@@ -139,6 +140,8 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                 }
             }
             
+            //copy securitySubject
+            inMsg.setSecuritySubject((Subject) message.get(NMRTransportFactory.NMR_SECURITY_SUBJECT));
             
             LOG.info("service for exchange " + serviceName);
 
@@ -184,6 +187,9 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                 		inMessage.put(ent.getKey(), ent.getValue());
                 	}
                 }
+                
+                //copy securitySubject
+                inMessage.put(NMRTransportFactory.NMR_SECURITY_SUBJECT, nm.getSecuritySubject());
                 
                 conduit.getMessageObserver().onMessage(inMessage);
 
