@@ -19,16 +19,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:ctx="http://www.springframework.org/schema/context"
-       xmlns:osgi="http://camel.apache.org/schema/osgi"
+       xmlns:camel="http://camel.apache.org/schema/spring"
        xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
-       http://camel.apache.org/schema/osgi http://camel.apache.org/schema/osgi/camel-osgi.xsd
        http://www.springframework.org/schema/osgi-compendium http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd">
 
-  <osgi:camelContext xmlns="http://camel.apache.org/schema/spring">
+  <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
     <!-- install the Java DSL route builder -->
     <package>org.apache.servicemix.examples.camel</package>
     <!-- install the route which is defined with xml tags -->
@@ -37,7 +36,7 @@
       <bean ref="myTransform" method="transform"/>
       <to uri="log:ExampleRouter"/>
     </route>
-  </osgi:camelContext>
+  </camel:camelContext>
 
   <bean id="myTransform" class="org.apache.servicemix.examples.camel.MyTransform">
     <property name="prefix" value="${prefix}"/>

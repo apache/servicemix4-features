@@ -19,16 +19,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:osgi="http://www.springframework.org/schema/osgi"
-       xmlns:camel-osgi="http://camel.apache.org/schema/osgi"
+       xmlns:camel="http://camel.apache.org/schema/spring"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd
-       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
-       http://camel.apache.org/schema/osgi http://camel.apache.org/schema/osgi/camel-osgi.xsd">
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
   <import resource="classpath:org/apache/servicemix/camel/nmr/camel-nmr.xml" />
 
-  <camel-osgi:camelContext xmlns="http://camel.apache.org/schema/spring">
+  <camel:camelContext xmlns="http://camel.apache.org/schema/spring">
     <!-- Route periodically sent events into the NMR -->
     <route>
       <from uri="timer://myTimer?fixedRate=true&amp;period=2000"/>
@@ -40,7 +39,7 @@
       <bean ref="myTransform" method="transform"/>
       <to uri="log:ExampleRouter"/>
     </route>
-  </camel-osgi:camelContext>
+  </camel:camelContext>
 
   <bean id="myTransform" class="org.apache.servicemix.examples.camel.MyTransform">
     <property name="prefix" value="MyTransform"/>
