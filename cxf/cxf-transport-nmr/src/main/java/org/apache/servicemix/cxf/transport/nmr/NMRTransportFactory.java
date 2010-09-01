@@ -24,14 +24,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 import org.apache.cxf.Bus;
-import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.configuration.Configurer;
+import org.apache.cxf.interceptor.Interceptor;
+import org.apache.cxf.message.Message;
 import org.apache.cxf.service.model.EndpointInfo;
 import org.apache.cxf.transport.AbstractTransportFactory;
 import org.apache.cxf.transport.Conduit;
@@ -147,6 +147,17 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
     
     public void removeDestination(String epName) {
         destinationMap.remove(epName);
+    }
+    
+    public static void removeUnusedInterceptprs(Message message) {
+		if (message.getInterceptorChain() != null) {
+			for (Interceptor interceptor : message.getInterceptorChain()) {
+				if (interceptor.getClass().getName().equals(
+						"org.apache.cxf.interceptor.AttachmentOutInterceptor")) {
+					message.getInterceptorChain().remove(interceptor);
+				}
+			}
+		}
     }
     
 }

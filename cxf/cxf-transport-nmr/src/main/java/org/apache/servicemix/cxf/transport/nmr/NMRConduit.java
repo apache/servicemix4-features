@@ -29,7 +29,6 @@ import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.transport.AbstractConduit;
 import org.apache.cxf.ws.addressing.EndpointReferenceType;
-import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.NMR;
 
 
@@ -64,8 +63,11 @@ public class NMRConduit extends AbstractConduit {
     
     public void prepare(Message message) throws IOException {
         getLogger().log(Level.FINE, "JBIConduit send message");
-                
+        NMRTransportFactory.removeUnusedInterceptprs(message);	
         message.setContent(OutputStream.class,
                            new NMRConduitOutputStream(message, nmr, target, this));
     }    
+    
+    
+
 }
