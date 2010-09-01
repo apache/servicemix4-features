@@ -50,6 +50,9 @@
             <outputDirectory>/</outputDirectory>
             <includes>
               <include>bin/admin</include>
+              <include>bin/karaf</include>  <!-- we need this one in here for admin:create'd instances to work -->
+              <include>bin/start</include>
+              <include>bin/stop</include>
             </includes>
             <fileMode>0755</fileMode>
         </fileSet>
