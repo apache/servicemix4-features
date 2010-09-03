@@ -19,37 +19,39 @@
 
 package org.apache.servicemix.cxf.transport.nmr;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
+import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
+
+import org.apache.cxf.io.CachedOutputStream;
+import org.apache.cxf.staxutils.StaxUtils;
 
 
 
 public final class NMRMessageHelper {
 
 
-    private static final TransformerFactory TRANSFORMER_FACTORY = TransformerFactory.newInstance();
-
-    private NMRMessageHelper() {
+	private NMRMessageHelper() {
         // complete
     }
 
-    public static InputStream convertMessageToInputStream(Source src) throws IOException,
-        TransformerConfigurationException, TransformerException {
-
-        final Transformer transformer = TRANSFORMER_FACTORY.newTransformer();
-
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        StreamResult result = new StreamResult(baos);
-        transformer.transform(src, result);
-        
-        return new ByteArrayInputStream(baos.toByteArray());
+    public static InputStream convertMessageToInputStream(Source src) throws IOException {
+    	CachedOutputStream cos = new CachedOutputStream();
+    	try {
+    		StaxUtils.copy(src, cos);
+    		return cos.getInputStream();
+    	} catch (XMLStreamException e) {
+    		IOException ioe = new IOException(e.getMessage());
+    		ioe.initCause(e);
+    		throw ioe;
+    	} finally {
+    		try {
+    			cos.close();
+    		} catch (Exception ex) {
+    			//ignore
+    		}
+    	}
     }
 }
