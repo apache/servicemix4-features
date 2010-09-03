@@ -87,7 +87,7 @@
     <bundle>mvn:org.apache.cxf/cxf-bundle/${cxf.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-io/1.3.2_3</bundle>
     <feature version='${camel.version}'>camel-spring</feature>
-    <feature version='${karaf.version}}'>http</feature>
+    <feature version='${karaf.version}'>http</feature>
     <bundle>mvn:org.apache.camel/camel-cxf/${camel.version}</bundle>
   </feature>
   <feature name='camel-cache' version='${camel.version}'>
