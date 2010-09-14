@@ -229,7 +229,7 @@
       <stringtemplate.version>3.2_3</stringtemplate.version>
       <tranql.version>1.6</tranql.version>
       <velocity.version>1.6.2_3</velocity.version>
-      <wsdl4j.version>1.6.2_2</wsdl4j.version>
+      <wsdl4j.version>1.6.2_3</wsdl4j.version>
       <woodstox.version>4.0.8</woodstox.version>
       <woodstox.stax2api.version>3.0.1</woodstox.stax2api.version>
       <xstream.version>1.2.2</xstream.version>
