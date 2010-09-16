@@ -32,7 +32,7 @@
   <artifactId>features</artifactId>
   <packaging>pom</packaging>
   <version>4.3.0-SNAPSHOT</version>
-  <name>Apache ServiceMix Features</name>
+  <name>Apache ServiceMix :: Features</name>
   <inceptionYear>2005</inceptionYear>
 
   <modules>
@@ -59,201 +59,215 @@
   </prerequisites>
 
   <properties>
-      <maven.assembly.version>2.2-beta-4</maven.assembly.version>
-      <xfire.maven.plugin>4.1</xfire.maven.plugin>
-      <abdera.version>0.4.0-incubating_3</abdera.version>
-      <activemq.version>5.4.0</activemq.version>
-      <acegi.version>1.0.0</acegi.version>
-      <ant.version>1.7.0_3</ant.version>
-      <antlr2.version>2.7.7_2</antlr2.version>
-      <antlr.version>3.0.1_1</antlr.version>
-      <antlr-runtime.version>3.0.1_1</antlr-runtime.version>
-      <aopalliance.version>1.0_3</aopalliance.version>
-      <asm.version>2.2.3_3</asm.version>
-      <bcel.version>5.2_2</bcel.version>
-      <bnd.version>0.0.384</bnd.version>
-      <cglib.version>2.1_3_4</cglib.version>
-      <camel.version>2.4.0</camel.version>
-      <commons-management.version>1.0</commons-management.version>
-      <commons-beanutils.version>1.8.2_1</commons-beanutils.version>
-      <commons-collections.version>3.2.1_1</commons-collections.version>
-      <commons-csv.version>1.0-r706899_1</commons-csv.version>
-      <commons-httpclient.version>3.1_4</commons-httpclient.version>
-      <commons-io.version>1.4_1</commons-io.version>
-      <commons-codec.version>1.3_2</commons-codec.version>
-      <commons-jxpath.version>1.2_3</commons-jxpath.version>
-      <commons-logging.version>1.1.1</commons-logging.version>
-      <commons-net.version>1.4.1_3</commons-net.version>
-      <commons-pool.version>1.5.4_1</commons-pool.version>
-      <commons-pool.activemq.version>1.4_1</commons-pool.activemq.version>
-      <commons-dbcp.version>1.3</commons-dbcp.version>
-      <commons-vfs.version>1.0_3</commons-vfs.version>
-      <commons-jexl.version>1.1_3</commons-jexl.version>
-      <commons-lang-version>2.4_3</commons-lang-version>
-      <axiom.version>1.2.8</axiom.version>
-      <cxf.version>2.2.10</cxf.version>
-      <derby.version>10.5.3.0_1</derby.version>
-      <dom4j.version>1.6.1_2</dom4j.version>
-      <drools.version>4.0.7_4</drools.version>
-      <depends.maven.plugin.version>1.2</depends.maven.plugin.version>
-      <equinox.version>3.6.0.v20100517</equinox.version>
-      <fastinfoset.version>1.2.7_2</fastinfoset.version>
-      <features.maven.plugin.version>1.1</features.maven.plugin.version>
-      <felix.bundlerepository.version>1.6.4</felix.bundlerepository.version>
+      <sonar.skippedModules>examples</sonar.skippedModules>
+  
+      <!-- OSGi (Karaf, Felix Framework, Aries) -->
+      <aries.jpa.version>0.2-incubating</aries.jpa.version>
+      <aries.util.version>0.2-incubating</aries.util.version>
+      <aries.transaction.version>0.2-incubating</aries.transaction.version>
+      <felix.fileinstall.version>3.0.2</felix.fileinstall.version>
+      <felix.prefs.version>1.0.4</felix.prefs.version>
+      <karaf.version>2.0.0</karaf.version>
       <osgi.compendium.version>4.2.0</osgi.compendium.version>
       <osgi.core.version>4.2.0</osgi.core.version>
-      <felix.configadmin.version>1.2.4</felix.configadmin.version>
-      <felix.fileinstall.version>3.0.0</felix.fileinstall.version>
-      <felix.framework.version>3.0.1</felix.framework.version>
-      <karaf.version>2.0.0</karaf.version>
-      <felix.plugin.version>2.1.0</felix.plugin.version>
-      <felix.prefs.version>1.0.4</felix.prefs.version>
-      <flatpack.version>3.1.1_3</flatpack.version>
-      <geronimo.annotation.version>1.0</geronimo.annotation.version>
-      <geronimo.ejb3.version>1.0.1</geronimo.ejb3.version>
-      <geronimo.el.version>1.0.1</geronimo.el.version>
-      <geronimo.interceptor.version>1.0.1</geronimo.interceptor.version>
-      <geronimo.jacc.version>1.0.1</geronimo.jacc.version>
-      <geronimo.jaxrpc.version>2.0.0</geronimo.jaxrpc.version>
-      <geronimo.j2ee.connector.version>2.0.0</geronimo.j2ee.connector.version>
-      <geronimo.j2ee.management.version>1.0.1</geronimo.j2ee.management.version>
-      <geronimo.jms.version>1.1.1</geronimo.jms.version>
-      <geronimo.jta.version>1.1.1</geronimo.jta.version>
-      <geronimo.jpa.version>1.1</geronimo.jpa.version>
-      <geronimo.saaj.version>1.0.0</geronimo.saaj.version>
-      <geronimo.servlet.version>1.1.2</geronimo.servlet.version>
-      <geronimo.stax.version>1.0.1</geronimo.stax.version>
-      <geronimo.wsmetadata.version>1.1.2</geronimo.wsmetadata.version>
-      <geronimo.transaction.version>2.1.3</geronimo.transaction.version>
-      <geronimo.connector.version>2.1.3</geronimo.connector.version>
-      <geronimo.javamail.provider.version>1.8-r755222_1</geronimo.javamail.provider.version>
-      <groovy.version>1.5.6_3</groovy.version>
-      <howl.version>1.0.1-1_1</howl.version>
-      <httpcore.version>4.0-alpha6_1</httpcore.version>
-      <hamcrest.version>1.2-dev1_2</hamcrest.version>
-      <ibatis.version>2.3.4.726_2</ibatis.version>
-      <irclib.version>1.10_2</irclib.version>
-      <isorelax.version>20050913_2</isorelax.version>
-      <jackrabbit.version>1.5.3</jackrabbit.version>
-      <jasper.version>6.0.14_2</jasper.version>
-      <jaxb.api.version>2.1</jaxb.api.version>
-      <jaxb.impl.version>2.1.12_1</jaxb.impl.version>
-      <jaxen.version>1.1.1_1</jaxen.version>
-      <jaxws.api.version>2.1</jaxws.api.version>
-      <jaxrs.api.version>1.0</jaxrs.api.version>
-      <javax.mail.version>1.4.3</javax.mail.version>
-      <jcr-api.version>1.0_2</jcr-api.version>
-      <jdt.core.version>3.2.3_3</jdt.core.version>
-      <jdom.version>1.1_2</jdom.version>
-      <jencks.version>2.2</jencks.version>
-      <jetty.version>6.1.22</jetty.version>
-      <jetty.bundle.version>6.1.22_1</jetty.bundle.version>
-      <jexcelapi.version>2.4.2_2</jexcelapi.version>
-      <jettison.version>1.2</jettison.version>
-      <jing.version>20030619_2</jing.version>
-      <jline.version>0.9.94</jline.version>
-      <jruby.version>1.1.2_2</jruby.version>
-      <joda-time.version>1.5.2_2</joda-time.version>
-      <josql.version>1.5_3</josql.version>
-      <jsch.version>0.1.31_3</jsch.version>
-      <jsmpp.version>2.0_2</jsmpp.version>
-      <juel.version>2.1.0_2</juel.version>
-      <junit.version>4.7</junit.version>
-      <junit.bundle.version>4.7_1</junit.bundle.version>
-      <log4j.version>1.2.16</log4j.version>
-      <mvel.version>1.3.12_1</mvel.version>
-      <mina.version>2.0.0-M6</mina.version>
-      <mina.original.version>1.1.6</mina.original.version>
-      <neethi.version>2.0.4_2</neethi.version>
-      <ognl.version>2.7.3_3</ognl.version>
-      <easymock.version>2.4</easymock.version>
-      <ode.version>1.3.4</ode.version>
-      <oscache.version>2.4_3</oscache.version>
-      <oscore.version>2.2.4_3</oscore.version>
-      <osworkflow.version>2.7.0_3</osworkflow.version>
-      <oro.version>2.0.8_3</oro.version>
-      <openejb.version>3.0-beta-2</openejb.version>
-      <openjpa.version>2.0.0</openjpa.version>
-      <pax.exam.version>1.1.0</pax.exam.version>
-      <pax.runner.version>1.2.1</pax.runner.version>
-      <pax.logging.version>1.4</pax.logging.version>
-      <pax.url.version>1.1.2</pax.url.version>
-      <pax.web.version>0.7.2</pax.web.version>
-      <propertyset.version>1.3_3</propertyset.version>
-      <qpid.version>1.0-incubating-M2.1_1</qpid.version>
-      <quartz.version>1.6.1_3</quartz.version>
-      <rhino.version>1.7R1_1</rhino.version>
-      <saaj.impl.version>1.3.2_1</saaj.impl.version>
-      <saxon.version>9.1.0.8_1</saxon.version>
-      <scriptengines.version>1.1</scriptengines.version>
-      <servicemix3.version>3.3</servicemix3.version>
+      
+      <!-- ActiveMQ -->
+      <activemq.version>5.4.0</activemq.version>
+      
+      <!-- Camel and features linked dependencies -->
+      <camel.version>2.4.0</camel.version>
+      
+      <!-- CXF -->
+      <cxf.version>2.2.10</cxf.version>
+      
+      <!-- Geronimo -->
+      <geronimo-annotation.version>1.0</geronimo-annotation.version>
+      <geronimo-connector.version>2.1.3</geronimo-connector.version>
+      <geronimo-el.version>1.0.1</geronimo-el.version>
+      <geronimo-j2ee-connector.version>2.0.0</geronimo-j2ee-connector.version>
+      <geronimo-j2ee-management.version>1.0.1</geronimo-j2ee-management.version>
+      <geronimo-jms.version>1.1.1</geronimo-jms.version>
+      <geronimo-jpa.version>1.1</geronimo-jpa.version>
+      <geronimo-jsp.version>1.0.1</geronimo-jsp.version>
+      <geronimo-jta.version>1.1.1</geronimo-jta.version>
+      <geronimo-saaj.version>1.0.0</geronimo-saaj.version>
+      <geronimo-servlet.version>1.1.2</geronimo-servlet.version>
+      <geronimo-ws-metadata.version>1.1.2</geronimo-ws-metadata.version>
+      <geronimo-transaction.version>2.1.3</geronimo-transaction.version>
+      
+      <!-- Bundles -->
+      <abdera.bundle.version>0.4.0-incubating_4</abdera.bundle.version>
+      <ant.bundle.version>1.7.0_4</ant.bundle.version>
+      <antlr2.bundle.version>2.7.7_3</antlr2.bundle.version>
+      <antlr.bundle.version>3.0.1_4</antlr.bundle.version>
+      <antlr-runtime.bundle.version>3.0.1_2</antlr-runtime.bundle.version>
+      <aopalliance.bundle.version>1.0_4</aopalliance.bundle.version>
+      <asm.bundle.version>2.2.3_4</asm.bundle.version>
+      <bcel.bundle.version>5.2_3</bcel.bundle.version>
+      <cglib.bundle.version>2.1_3_6</cglib.bundle.version>
+      <commons-beanutils.bundle.version>1.8.2_1</commons-beanutils.bundle.version>
+      <commons-codec.bundle.version>1.3_3</commons-codec.bundle.version>
+      <commons-collections.bundle.version>3.2.1_1</commons-collections.bundle.version>
+      <commons-csv.bundle.version>1.0-r706899_4</commons-csv.bundle.version>
+      <commons-httpclient.bundle.version>3.1_5</commons-httpclient.bundle.version>
+      <commons-io.bundle.version>1.4_1</commons-io.bundle.version>
+      <commons-jexl.bundle.version>1.1_4</commons-jexl.bundle.version>
+      <commons-jxpath.bundle.version>1.2_4</commons-jxpath.bundle.version>
+      <commons-lang.bundle.version>2.4_4</commons-lang.bundle.version>
+      <commons-net.bundle.version>1.4.1_4</commons-net.bundle.version>
+      <commons-pool.bundle.version>1.5.4_2</commons-pool.bundle.version>
+      <commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
+      <dom4j.bundle.version>1.6.1_3</dom4j.bundle.version>
+      <dozer.bundle.version>5.2.0_2</dozer.bundle.version>
+      <drools.bundle.version>4.0.7_5</drools.bundle.version>
+      <fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
+      <flatpack.bundle.version>3.1.1_4</flatpack.bundle.version>
+      <freemarker.bundle.version>2.3.15_4</freemarker.bundle.version>
+      <groovy.bundle.version>1.5.6_4</groovy.bundle.version>
+      <hapi.bundle.version>0.5.1_4</hapi.bundle.version>
+      <howl.bundle.version>1.0.1-1_2</howl.bundle.version>
+      <ibatis-sqlmap.bundle.version>2.3.4.726_3</ibatis-sqlmap.bundle.version>
+      <irclib.bundle.version>1.10_3</irclib.bundle.version>
+      <isorelax.bundle.version>20050913_3</isorelax.bundle.version>
+      <jaxb-impl.bundle.version>2.1.12_2</jaxb-impl.bundle.version>
+      <jaxp-ri.bundle.version>1.4.2_4</jaxp-ri.bundle.version>
+      <jaxen.bundle.version>1.1.1_1</jaxen.bundle.version>
+      <jcr-api.bundle.version>1.0_3</jcr-api.bundle.version>
+      <jdt-core.bundle.version>3.2.3_4</jdt-core.bundle.version>
+      <jdom.bundle.version>1.1_3</jdom.bundle.version>
+      <jetty.bundle.version>6.1.22_2</jetty.bundle.version>
+      <jetty-cometd.bundle.version>6.1.22_1</jetty-cometd.bundle.version>
+      <jexcelapi.bundle.version>2.4.2_3</jexcelapi.bundle.version>
+      <jing.bundle.version>20030619_3</jing.bundle.version>
+      <jruby.bundle.version>1.1.2_3</jruby.bundle.version>
+      <joda-time.bundle.version>1.5.2_3</joda-time.bundle.version>
+      <josql.bundle.version>1.5_4</josql.bundle.version>
+      <jsch.bundle.version>0.1.31_4</jsch.bundle.version>
+      <jsmpp.bundle.version>2.0_3</jsmpp.bundle.version>
+      <juel.bundle.version>2.1.0_3</juel.bundle.version>
+      <junit.bundle.version>4.7_2</junit.bundle.version>
+      <mina.bundle.version>1.1.7_4</mina.bundle.version>
+      <mvel.bundle.version>1.3.12_2</mvel.bundle.version>
+      <neethi.bundle.version>2.0.4_3</neethi.bundle.version>
+      <ognl.bundle.version>2.7.3_4</ognl.bundle.version>
+      <openjpa.bundle.version>2.0.0_1</openjpa.bundle.version>
+      <opensaml.bundle.version>1.1_5</opensaml.bundle.version>
+      <oscache.bundle.version>2.4_4</oscache.bundle.version>
+      <oscore.bundle.version>2.2.4_4</oscore.bundle.version>
+      <osworkflow.bundle.version>2.7.0_4</osworkflow.bundle.version>
+      <oro.bundle.version>2.0.8_4</oro.bundle.version>
+      <propertyset.bundle.version>1.3_4</propertyset.bundle.version>
+      <protobuf-java.bundle.version>2.3.0_1</protobuf-java.bundle.version>
+      <qpid.bundle.version>0.5.0_3</qpid.bundle.version>
+      <quartz.bundle.version>1.6.6_2</quartz.bundle.version>
+      <rhino.bundle.version>1.7R1_3</rhino.bundle.version>
+      <saaj-impl.bundle.version>1.3.2_2</saaj-impl.bundle.version>
+      <saxon.bundle.version>9.1.0.8_1</saxon.bundle.version>
+      <serp.bundle.version>1.13.1_3</serp.bundle.version>
+      <smack.bundle.version>3.1.0_2</smack.bundle.version>
+      <snmp4j.bundle.version>1.8.1_4</snmp4j.bundle.version>
+      <stringtemplate.bundle.version>3.2_4</stringtemplate.bundle.version>
+      <tagsoup.bundle.version>1.2_4</tagsoup.bundle.version>
+      <velocity.bundle.version>1.6.2_4</velocity.bundle.version>
+      <werken-xpath.bundle.version>0.9.4_4</werken-xpath.bundle.version>
+      <wsdl4j.bundle.version>1.6.2_3</wsdl4j.bundle.version>
+      <xalan.bundle.version>2.7.1_3</xalan.bundle.version>
+      <xerces.bundle.version>2.9.1_4</xerces.bundle.version>
+      <xmlbeans.bundle.version>2.4.0_4</xmlbeans.bundle.version>
+      <xmlresolver.bundle.version>1.2_3</xmlresolver.bundle.version>
+      <xmlsec.bundle.version>1.4.3_3</xmlsec.bundle.version>
+      <xpp3.bundle.version>1.1.4c_4</xpp3.bundle.version>
+      <xstream.bundle.version>1.3_4</xstream.bundle.version>
+      
+      <!-- API versions -->
+      <jaxb-api.version>2.1</jaxb-api.version>
+      <jaxws-api.version>2.1</jaxws-api.version>
+      <jaxrs-api.version>1.1</jaxrs-api.version>
+      
+      <!-- Components and SMX Resources -->
+      <servicemix3.version>3.3.1</servicemix3.version>
       <servicemix-utils.version>1.3.0-SNAPSHOT</servicemix-utils.version>
       <servicemix.legal.version>1.0</servicemix.legal.version>
       <servicemix.nmr.version>1.3.0-SNAPSHOT</servicemix.nmr.version>
       <servicemix.specs.version>1.4.0</servicemix.specs.version>
-
-      <servicemix-shared-version>2010.02-SNAPSHOT</servicemix-shared-version>
-      <servicemix-quartz-version>2010.02-SNAPSHOT</servicemix-quartz-version>
-      <servicemix-jms-version>2010.02-SNAPSHOT</servicemix-jms-version>
-      <servicemix-jsr181-version>2010.02-SNAPSHOT</servicemix-jsr181-version>
-      <servicemix-http-version>2010.02-SNAPSHOT</servicemix-http-version>
-      <servicemix-mail-version>2010.02-SNAPSHOT</servicemix-mail-version>
-      <servicemix-osworkflow-version>2010.02-SNAPSHOT</servicemix-osworkflow-version>
-      <servicemix-wsn2005-version>2010.02-SNAPSHOT</servicemix-wsn2005-version>
-      <servicemix-bean-version>2010.02-SNAPSHOT</servicemix-bean-version>
-      <servicemix-eip-version>2010.02-SNAPSHOT</servicemix-eip-version>
-      <servicemix-script-version>2010.02-SNAPSHOT</servicemix-script-version>
-      <servicemix-scripting-version>2010.02-SNAPSHOT</servicemix-scripting-version>
-      <servicemix-validation-version>2010.02-SNAPSHOT</servicemix-validation-version>
-      <servicemix-ftp-version>2010.02-SNAPSHOT</servicemix-ftp-version>
-      <servicemix-xmpp-version>2010.02-SNAPSHOT</servicemix-xmpp-version>
-      <servicemix-saxon-version>2010.02-SNAPSHOT</servicemix-saxon-version>
-      <servicemix-truezip-version>2010.02-SNAPSHOT</servicemix-truezip-version>
-      <servicemix-camel-version>2010.02-SNAPSHOT</servicemix-camel-version>
-      <servicemix-cxf-bc-version>2010.02-SNAPSHOT</servicemix-cxf-bc-version>
-      <servicemix-cxf-se-version>2010.02-SNAPSHOT</servicemix-cxf-se-version>
-      <servicemix-drools-version>2010.02-SNAPSHOT</servicemix-drools-version>
-      <servicemix-file-version>2010.02-SNAPSHOT</servicemix-file-version>
-      <servicemix-snmp-version>2010.02-SNAPSHOT</servicemix-snmp-version>
-      <servicemix-smpp-version>2010.02-SNAPSHOT</servicemix-smpp-version>
-      <servicemix-vfs-version>2010.02-SNAPSHOT</servicemix-vfs-version>
-      <servicemix-exec-version>2010.02-SNAPSHOT</servicemix-exec-version>
-      <servicemix-jbi-plugin-version>4.3</servicemix-jbi-plugin-version>
-
-      <serp.version>1.13.1_2</serp.version>
-      <smack.version>3.0.4_2</smack.version>
-      <snmp4j.version>1.8.1_3</snmp4j.version>
+      <servicemix-shared.version>2010.02-SNAPSHOT</servicemix-shared.version>
+      <servicemix-quartz.version>2010.02-SNAPSHOT</servicemix-quartz.version>
+      <servicemix-jms.version>2010.02-SNAPSHOT</servicemix-jms.version>
+      <servicemix-jsr181.version>2010.02-SNAPSHOT</servicemix-jsr181.version>
+      <servicemix-http.version>2010.02-SNAPSHOT</servicemix-http.version>
+      <servicemix-mail.version>2010.02-SNAPSHOT</servicemix-mail.version>
+      <servicemix-osworkflow.version>2010.02-SNAPSHOT</servicemix-osworkflow.version>
+      <servicemix-wsn2005.version>2010.02-SNAPSHOT</servicemix-wsn2005.version>
+      <servicemix-bean.version>2010.02-SNAPSHOT</servicemix-bean.version>
+      <servicemix-eip.version>2010.02-SNAPSHOT</servicemix-eip.version>
+      <servicemix-script.version>2010.02-SNAPSHOT</servicemix-script.version>
+      <servicemix-scripting.version>2010.02-SNAPSHOT</servicemix-scripting.version>
+      <servicemix-validation.version>2010.02-SNAPSHOT</servicemix-validation.version>
+      <servicemix-ftp.version>2010.02-SNAPSHOT</servicemix-ftp.version>
+      <servicemix-xmpp.version>2010.02-SNAPSHOT</servicemix-xmpp.version>
+      <servicemix-saxon.version>2010.02-SNAPSHOT</servicemix-saxon.version>
+      <servicemix-truezip.version>2010.02-SNAPSHOT</servicemix-truezip.version>
+      <servicemix-camel.version>2010.02-SNAPSHOT</servicemix-camel.version>
+      <servicemix-cxf-bc.version>2010.02-SNAPSHOT</servicemix-cxf-bc.version>
+      <servicemix-cxf-se.version>2010.02-SNAPSHOT</servicemix-cxf-se.version>
+      <servicemix-drools.version>2010.02-SNAPSHOT</servicemix-drools.version>
+      <servicemix-file.version>2010.02-SNAPSHOT</servicemix-file.version>
+      <servicemix-snmp.version>2010.02-SNAPSHOT</servicemix-snmp.version>
+      <servicemix-smpp.version>2010.02-SNAPSHOT</servicemix-smpp.version>
+      <servicemix-vfs.version>2010.02-SNAPSHOT</servicemix-vfs.version>
+      <servicemix-exec.version>2010.02-SNAPSHOT</servicemix-exec.version>
+      
+      <!-- PAX -->
+      <pax-url.version>1.1.2</pax-url.version>
+      <pax-web.version>0.7.2</pax-web.version>
+      
+      <!-- Spring -->
       <spring.version>3.0.3.RELEASE</spring.version>
-      <spring.integration.version>1.0.0.RC2</spring.integration.version>
       <spring.osgi.version>1.2.0</spring.osgi.version>
-      <stringtemplate.version>3.2_3</stringtemplate.version>
+      
+      <!-- ODE -->
+      <ode.version>1.3.4</ode.version>
+      
+      <!-- Maven Plugin -->
+      <depends-maven-plugin.version>1.2</depends-maven-plugin.version>
+      <jbi-maven-plugin.version>4.4-SNAPSHOT</jbi-maven-plugin.version>
+      <maven-assembly-plugin.version>2.2-beta-4</maven-assembly-plugin.version>
+      <maven-bundle-plugin.version>2.1.0</maven-bundle-plugin.version>
+      <xfire-maven-plugin.version>4.1</xfire-maven-plugin.version>
+      
+      <!-- Other Dependencies -->
+      <axiom.version>1.2.8</axiom.version>
+      <commons-dbcp.version>1.3</commons-dbcp.version>
+      <commons-jxpath.version>1.3</commons-jxpath.version>
+      <commons-logging.version>1.1.1</commons-logging.version>
+      <commons-management.version>1.0</commons-management.version>
+      <commons-net.version>2.0</commons-net.version>
+      <derby.version>10.5.3.0_1</derby.version>
+      <easymock.version>2.4</easymock.version>
+      <groovy.version>1.7.0</groovy.version>
+      <httpcomponents.version>4.0.1</httpcomponents.version>
+      <jackrabbit.version>1.5.3</jackrabbit.version>
+      <jaxb.api.version>2.1</jaxb.api.version>
+      <jaxws.api.version>2.1</jaxws.api.version>
+      <jaxrs.api.version>1.0</jaxrs.api.version>
+      <javax.mail.version>1.4.3</javax.mail.version>
+      <jencks.version>2.2</jencks.version>
+      <jetty.version>6.1.22</jetty.version>
+      <jettison.version>1.2</jettison.version>
+      <jline.version>0.9.94</jline.version>
+      <junit.version>4.7</junit.version>
+      <log4j.version>1.2.16</log4j.version>
+      <mina.version>1.1.7</mina.version>
+      <openejb.version>3.0-beta-2</openejb.version>
+      <openjpa.version>2.0.0</openjpa.version>
+      <scriptengines.version>1.1</scriptengines.version>
       <tranql.version>1.6</tranql.version>
-      <velocity.version>1.6.2_3</velocity.version>
-      <wsdl4j.version>1.6.2_3</wsdl4j.version>
       <woodstox.version>4.0.8</woodstox.version>
       <woodstox.stax2api.version>3.0.1</woodstox.stax2api.version>
-      <xstream.version>1.2.2</xstream.version>
-      <xstream.bundle.version>1.3_3</xstream.bundle.version>
-      <xbean.version>3.7</xbean.version>
-      <xmlbeans.version>2.4.0_3</xmlbeans.version>
-      <xmlschema.version>1.4.5</xmlschema.version>
-      <xmlsec.version>1.4.3_2</xmlsec.version>
-      <opensaml.version>1.1_4</opensaml.version>
-      <xalan.version>2.7.1_2</xalan.version>
-      <xerces.version>2.9.1_3</xerces.version>
-      <xmlresolver.version>1.2_2</xmlresolver.version>
-      <xpp3.version>1.1.4c_3</xpp3.version>
-      <werken-xpath.version>0.9.4_3</werken-xpath.version>
       <wss4j.version>1.5.8</wss4j.version>
-      <jaxp.ri.version>1.4.2_3</jaxp.ri.version>
-      <aries.blueprint.version>0.1-r964701</aries.blueprint.version>
-      <aries.util.version>0.1-r964701</aries.util.version>
-      <aries.jpa.version>0.1-r964701</aries.jpa.version>
-      <aries.transaction.version>0.1-r964701</aries.transaction.version>
-      <felix.gogo.version>0.2.2</felix.gogo.version>
-      <osgi.jmx.version>4.2.0.200907080519</osgi.jmx.version>
-      <sshd.version>0.3.0</sshd.version>      
-      <sonar.skippedModules>examples</sonar.skippedModules>
+      <xstream.version>1.2.2</xstream.version>
+      <xbean.version>3.7</xbean.version>
+      <xmlschema.version>1.4.5</xmlschema.version>
   </properties>
 
   <repositories>
@@ -354,7 +368,19 @@
            <snapshots>
                <enabled>false</enabled>
            </snapshots>
-       </repository>
+       </repository>        
+       <!-- scriptengines googlecode repo -->
+       <repository>
+            <id>scriptengines</id>
+            <name>ScriptEngines Repository</name>
+            <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>     
+                <enabled>false</enabled>
+            </snapshots>     
+        </repository>
    </repositories>
 
   <pluginRepositories>
@@ -434,17 +460,17 @@
       <dependency>
           <groupId>org.apache.mina</groupId>
           <artifactId>mina-core</artifactId>
-          <version>${mina.original.version}</version>
+          <version>${mina.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.mina</groupId>
           <artifactId>mina-filter-ssl</artifactId>
-          <version>${mina.original.version}</version>
+          <version>${mina.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.servicemix.bundles</groupId>
           <artifactId>org.apache.servicemix.bundles.mvel</artifactId>
-          <version>${mvel.version}</version>
+          <version>${mvel.bundle.version}</version>
       </dependency>
       <dependency>
           <groupId>junit</groupId>
@@ -469,32 +495,32 @@
       <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-jms_1.1_spec</artifactId>
-          <version>${geronimo.jms.version}</version>
+          <version>${geronimo-jms.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-jta_1.1_spec</artifactId>
-          <version>${geronimo.jta.version}</version>
+          <version>${geronimo-jta.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-servlet_1.5_spec</artifactId>
-          <version>${geronimo.servlet.version}</version>
+          <version>${geronimo-servlet.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>
-          <version>${geronimo.j2ee.connector.version}</version>
+          <version>${geronimo-j2ee-connector.version}</version>
       </dependency>
       <dependency>
-                <groupId>org.apache.geronimo.specs</groupId>
-                <artifactId>geronimo-jaxws_2.1_spec</artifactId>
-                <version>1.0</version>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-jaxws_2.1_spec</artifactId>
+          <version>1.0</version>
       </dependency>
       <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
-          <version>${geronimo.j2ee.management.version}</version>
+          <version>${geronimo-j2ee-management.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.activemq</groupId>
@@ -590,27 +616,27 @@
       <dependency>
           <groupId>org.ops4j.pax.exam</groupId>
           <artifactId>pax-exam</artifactId>
-          <version>${pax.exam.version}</version>
+          <version>${pax-exam.version}</version>
       </dependency>
       <dependency>
           <groupId>org.ops4j.pax.exam</groupId>
           <artifactId>pax-exam-junit</artifactId>
-          <version>${pax.exam.version}</version>
+          <version>${pax-exam.version}</version>
       </dependency>
       <dependency>
           <groupId>org.ops4j.pax.exam</groupId>
           <artifactId>pax-exam-container-default</artifactId>
-          <version>${pax.exam.version}</version>
+          <version>${pax-exam.version}</version>
       </dependency>
       <dependency>
           <groupId>org.ops4j.pax.exam</groupId>
           <artifactId>pax-exam-junit-extender-impl</artifactId>
-          <version>${pax.exam.version}</version>
+          <version>${pax-exam.version}</version>
       </dependency>
       <dependency>
           <groupId>org.ops4j.pax.runner</groupId>
           <artifactId>pax-runner-no-jcl</artifactId>
-          <version>${pax.runner.version}</version>
+          <version>${pax-runner.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -633,13 +659,13 @@
               <plugin>
                   <groupId>org.apache.servicemix.tooling</groupId>
                   <artifactId>jbi-maven-plugin</artifactId>
-                  <version>${servicemix-jbi-plugin-version}</version>
+                  <version>${jbi-maven-plugin.version}</version>
                   <extensions>true</extensions>
               </plugin>
               <plugin>
                   <groupId>org.apache.felix</groupId>
                   <artifactId>maven-bundle-plugin</artifactId>
-                  <version>${felix.plugin.version}</version>
+                  <version>${maven-bundle-plugin.version}</version>
                   <extensions>true</extensions>
               </plugin>
               <plugin>
@@ -670,7 +696,7 @@
               <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-assembly-plugin</artifactId>
-                  <version>${maven.assembly.version}</version>
+                  <version>${maven-assembly-plugin.version}</version>
               </plugin>
               <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
