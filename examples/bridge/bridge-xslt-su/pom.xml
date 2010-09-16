@@ -30,13 +30,13 @@
     <groupId>org.apache.servicemix.examples.bridge</groupId>
     <artifactId>bridge-xslt-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Bridge :: XSLT</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge :: XSLT SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-saxon</artifactId>
-            <version>${servicemix-saxon-version}</version>
+            <version>${servicemix-saxon.version}</version>
         </dependency>
     </dependencies>
 
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

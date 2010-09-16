@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>bridge-camel</artifactId>
-    <name>ServiceMix :: Examples :: Bridge :: Camel</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge Camel</name>
     <packaging>pom</packaging>
     
     <modules>
@@ -96,7 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven.assembly.version}</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <inherited>false</inherited>
                 <executions>
                     <execution>

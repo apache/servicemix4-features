@@ -28,7 +28,7 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>org.apache.servicemix.examples.itests</artifactId>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix Examples Integration Tests</name>
+    <name>Apache ServiceMix :: Features :: Examples :: iTests</name>
     
  
     <modules>

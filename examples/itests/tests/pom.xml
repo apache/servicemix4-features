@@ -29,7 +29,7 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>org.apache.servicemix.examples.itests.tests</artifactId>
     <packaging>jar</packaging>
-    <name>Apache ServiceMix Examples Integration Tests</name>
+    <name>Apache ServiceMix :: Features :: Examples :: iTests :: Integration Tests</name>
 
     <dependencies>
         <dependency>
@@ -74,12 +74,12 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.ant</artifactId>
-            <version>${ant.version}</version>
+            <version>${ant.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jaxb-impl</artifactId>
-            <version>${jaxb.impl.version}</version>
+            <version>${jaxb-impl.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -89,12 +89,12 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.neethi</artifactId>
-            <version>${neethi.version}</version>
+            <version>${neethi.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.saaj-impl</artifactId>
-            <version>${saaj.impl.version}</version>
+            <version>${saaj-impl.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.woodstox</groupId>
@@ -104,7 +104,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.wsdl4j</artifactId>
-            <version>${wsdl4j.version}</version>
+            <version>${wsdl4j.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.commons.schema</groupId>
@@ -114,12 +114,12 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xmlresolver</artifactId>
-            <version>${xmlresolver.version}</version>
+            <version>${xmlresolver.bundle.version}</version>
         </dependency>
         <dependency>
              <groupId>org.apache.servicemix.bundles</groupId> 
              <artifactId>org.apache.servicemix.bundles.cglib</artifactId> 
-             <version>${cglib.version}</version>
+             <version>${cglib.bundle.version}</version>
         </dependency>     
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -294,7 +294,7 @@
         <dependency>
 		    <groupId>org.apache.geronimo.specs</groupId>
 		    <artifactId>geronimo-annotation_1.1_spec</artifactId>
-            <version>${geronimo.annotation.version}</version>
+            <version>${geronimo-annotation.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -304,27 +304,27 @@
         <dependency>
 	        <groupId>org.apache.geronimo.specs</groupId>
 	        <artifactId>geronimo-servlet_2.5_spec</artifactId>
-            <version>${geronimo.servlet.version}</version>
+            <version>${geronimo-servlet.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>
-          <version>${geronimo.j2ee.connector.version}</version>
+          <version>${geronimo-j2ee-connector.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
-          <version>${geronimo.j2ee.management.version}</version>
+          <version>${geronimo-j2ee-management.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-jta_1.1_spec</artifactId>
-          <version>${geronimo.jta.version}</version>
+          <version>${geronimo-jta.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.servicemix.bundles</groupId>
           <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-          <version>${commons-pool.version}</version>
+          <version>${commons-pool.bundle.version}</version>
         </dependency>
         <dependency>
           <groupId>org.apache.xbean</groupId>
@@ -361,42 +361,42 @@
         <dependency>
           <groupId>org.apache.geronimo.specs</groupId>
           <artifactId>geronimo-jms_1.1_spec</artifactId>
-          <version>${geronimo.jms.version}</version>
+          <version>${geronimo-jms.version}</version>
         </dependency>
         <dependency>
 		    <groupId>org.apache.geronimo.specs</groupId>
 		    <artifactId>geronimo-saaj_1.3_spec</artifactId>
-            <version>${geronimo.saaj.version}</version>
+            <version>${geronimo-saaj.version}</version>
         </dependency>
         <dependency>
 		    <groupId>org.apache.geronimo.specs</groupId>
 		    <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-            <version>${geronimo.wsmetadata.version}</version>
+            <version>${geronimo-ws-metadata.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-api</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-spi</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-runtime</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-jetty</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-extender-whiteboard</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -437,38 +437,38 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.bcel</artifactId>
-            <version>${bcel.version}</version>
+            <version>${bcel.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xerces</artifactId>
-            <version>${xerces.version}</version>
+            <version>${xerces.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xalan</artifactId>
-            <version>${xalan.version}</version>
+            <version>${xalan.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
-            <version>${xmlsec.version}</version>
+            <version>${xmlsec.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
+            <version>${commons-codec.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-            <version>${commons-httpclient.version}</version>
+            <version>${commons-httpclient.bundle.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.abdera</artifactId>
-            <version>${abdera.version}</version>
+            <version>${abdera.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jettison</groupId>
@@ -478,7 +478,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xmlbeans</artifactId>
-            <version>${xmlbeans.version}</version>
+            <version>${xmlbeans.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
@@ -488,23 +488,23 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-lang</artifactId>
-            <version>${commons-lang-version}</version>
+            <version>${commons-lang.bundle.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.velocity</artifactId>
-            <version>${velocity.version}</version>
+            <version>${velocity.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.oro</artifactId>
-            <version>${oro.version}</version>
+            <version>${oro.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.josql</artifactId>
-            <version>${josql.version}</version>
+            <version>${josql.bundle.version}</version>
         </dependency>
 
         <dependency>
@@ -515,7 +515,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.opensaml</artifactId>
-            <version>${opensaml.version}</version>
+            <version>${opensaml.bundle.version}</version>
         </dependency>
 
     </dependencies>
@@ -526,7 +526,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>depends-maven-plugin</artifactId>
-                <version>${depends.maven.plugin.version}</version>
+                <version>${depends-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>generate-depends-file</id>

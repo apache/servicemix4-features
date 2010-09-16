@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples.bridge</groupId>
     <artifactId>bridge-client</artifactId>
-    <name>ServiceMix :: Samples :: Bridge :: Client</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge :: Client</name>
 
     <dependencies>
         <dependency>

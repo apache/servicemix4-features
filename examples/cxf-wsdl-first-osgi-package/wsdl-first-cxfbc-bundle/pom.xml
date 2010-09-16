@@ -29,7 +29,7 @@
     <groupId>org.apache.servicemix.examples.cxf-wsdl-first-osgi-package</groupId>
     <artifactId>wsdl-first-cxfbc-bundle</artifactId>
     <packaging>bundle</packaging>
-    <name>ServiceMix :: Samples :: WSDL first :: CXF BC BUNDLE</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First OSGi Package :: CXF BC Bundle</name>
 
     <dependencies>
         <dependency>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-            <version>${geronimo.wsmetadata.version}</version>
+            <version>${geronimo-ws-metadata.version}</version>
         </dependency>
     </dependencies>
 

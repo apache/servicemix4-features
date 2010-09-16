@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>bridge</artifactId>
-    <name>ServiceMix :: Samples :: Bridge</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge</name>
     <packaging>pom</packaging>
     
     <modules>
@@ -96,7 +96,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

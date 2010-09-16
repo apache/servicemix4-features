@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>loan-broker</artifactId>
-    <name>ServiceMix :: Samples :: Loan Broker</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL</name>
     <packaging>pom</packaging>
     
     <properties>
@@ -99,7 +99,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven.assembly.version}</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <inherited>false</inherited>
                 <executions>
                     <execution>

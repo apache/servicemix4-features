@@ -29,13 +29,13 @@
     <groupId>org.apache.servicemix.examples.wsdl-first</groupId>
     <artifactId>wsdl-first-http-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: WSDL first :: HTTP</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First :: HTTP SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-http</artifactId>
-            <version>${servicemix-http-version}</version>
+            <version>${servicemix-http.version}</version>
         </dependency>
     </dependencies>
 
@@ -44,7 +44,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

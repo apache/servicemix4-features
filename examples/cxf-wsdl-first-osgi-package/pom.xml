@@ -28,7 +28,7 @@
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>cxf-wsdl-first-osgi-package</artifactId>
-    <name>ServiceMix :: Samples :: CXF WSDL first Osgi Package</name>
+    <name>Apache ServiceMix :: Features :: Examples :: CXF WSDL First OSGi Package</name>
     <packaging>pom</packaging>
     
     <!-- Add ServiceMix repositories for snaphots and releases -->

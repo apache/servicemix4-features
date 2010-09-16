@@ -30,13 +30,13 @@
     <groupId>org.apache.servicemix.examples.loan-broker</groupId>
     <artifactId>loan-broker-bean-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Loan Broker :: Bean</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: Bean SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-bean</artifactId>
-            <version>${servicemix-bean-version}</version>
+            <version>${servicemix-bean.version}</version>
         </dependency>
     </dependencies>
 
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

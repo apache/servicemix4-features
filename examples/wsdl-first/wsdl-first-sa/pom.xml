@@ -29,7 +29,7 @@
     <groupId>org.apache.servicemix.examples.wsdl-first</groupId>
     <artifactId>wsdl-first-sa</artifactId>
     <packaging>jbi-service-assembly</packaging>
-    <name>ServiceMix :: Samples :: WSDL first :: SA</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First :: SA</name>
 
     <dependencies>
         <dependency>
@@ -49,7 +49,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

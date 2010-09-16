@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
     <artifactId>bridge-camel-client</artifactId>
-    <name>ServiceMix :: Samples :: Bridge :: Camel :: Client</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge Camel :: Client</name>
 
     <dependencies>
         <dependency>

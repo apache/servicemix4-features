@@ -31,7 +31,7 @@
     <artifactId>apache-servicemix</artifactId>
     <packaging>pom</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix :: Assembly</name>
+    <name>Apache ServiceMix :: Features :: Assembly</name>
 
     <dependencies>
         <!-- making sure all karaf dependencies are in our local Maven repo -->
@@ -67,7 +67,7 @@
             <version>${servicemix.nmr.version}</version>
             <type>zip</type>
         </dependency>
-        <!-- adding other dependencies for the SMX4 assembly -->
+        <!-- adding other dependencies for the SMX4 assembly --> 
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>org.apache.geronimo.components</groupId>
             <artifactId>geronimo-connector</artifactId>
-            <version>${geronimo.connector.version}</version>
+            <version>${geronimo-connector.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -129,11 +129,12 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.mvel</artifactId>
+            <version>${mvel.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.drools</artifactId>
-            <version>${drools.version}</version>
+            <version>${drools.bundle.version}</version>
         </dependency>        
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -143,37 +144,37 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.groovy</artifactId>
-            <version>${groovy.version}</version>
+            <version>${groovy.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jdt-core</artifactId>
-            <version>${jdt.core.version}</version>
+            <version>${jdt-core.bundle.version}</version>
         </dependency>       
          <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
+            <version>${commons-codec.bundle.version}</version>
         </dependency> 
          <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-net</artifactId>
-            <version>${commons-net.version}</version>
+            <version>${commons-net.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-lang</artifactId>
-            <version>${commons-lang-version}</version>
+            <version>${commons-lang.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.velocity</artifactId>
-            <version>${velocity.version}</version>
+            <version>${velocity.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jdom</artifactId>
-            <version>${jdom.version}</version>
+            <version>${jdom.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.commons.axiom</groupId>
@@ -188,17 +189,17 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.saaj-impl</artifactId>
-            <version>${saaj.impl.version}</version>
+            <version>${saaj-impl.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.wsdl4j</artifactId>
-            <version>${wsdl4j.version}</version>
+            <version>${wsdl4j.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.opensaml</artifactId>
-            <version>${opensaml.version}</version>
+            <version>${opensaml.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.security</groupId>
@@ -208,37 +209,37 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
-            <version>${xmlsec.version}</version>
+            <version>${xmlsec.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.bcel</artifactId>
-            <version>${bcel.version}</version>
+            <version>${bcel.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-            <version>${commons-httpclient.version}</version>
+            <version>${commons-httpclient.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-collections</artifactId>
-            <version>${commons-collections.version}</version>
+            <version>${commons-collections.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.oro</artifactId>
-            <version>${oro.version}</version>
+            <version>${oro.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.rhino</artifactId>
-            <version>${rhino.version}</version>
+            <version>${rhino.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jruby</artifactId>
-            <version>${jruby.version}</version>
+            <version>${jruby.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
@@ -292,22 +293,22 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.howl</artifactId>
-            <version>${howl.version}</version>
+            <version>${howl.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.saxon</artifactId>
-            <version>${saxon.version}</version>
+            <version>${saxon.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.asm</artifactId>
-            <version>${asm.version}</version>
+            <version>${asm.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.fastinfoset</artifactId>
-            <version>${fastinfoset.version}</version>
+            <version>${fastinfoset.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jencks</groupId>
@@ -327,42 +328,42 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.quartz</artifactId>
-            <version>${quartz.version}</version>
+            <version>${quartz.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.oscore</artifactId>
-            <version>${oscore.version}</version>
+            <version>${oscore.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.osworkflow</artifactId>
-            <version>${osworkflow.version}</version>
+            <version>${osworkflow.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
-            <version>${antlr.version}</version>
+            <version>${antlr.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.antlr-runtime</artifactId>
-            <version>${antlr-runtime.version}</version>
+            <version>${antlr-runtime.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.propertyset</artifactId>
-            <version>${propertyset.version}</version>
+            <version>${propertyset.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.snmp4j</artifactId>
-            <version>${snmp4j.version}</version>
+            <version>${snmp4j.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jsmpp</artifactId>
-            <version>${jsmpp.version}</version>
+            <version>${jsmpp.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -382,7 +383,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.neethi</artifactId>
-            <version>${neethi.version}</version>
+            <version>${neethi.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.commons.schema</groupId>
@@ -392,36 +393,36 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xmlresolver</artifactId>
-            <version>${xmlresolver.version}</version>
+            <version>${xmlresolver.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xerces</artifactId>
-            <version>${xerces.version}</version>
+            <version>${xerces.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xalan</artifactId>
-            <version>${xalan.version}</version>
+            <version>${xalan.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jaxb-impl</artifactId>
-            <version>${jaxb.impl.version}</version>
+            <version>${jaxb-impl.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jaxb-api-${jaxb.api.version}</artifactId>
+            <artifactId>org.apache.servicemix.specs.jaxb-api-${jaxb-api.version}</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jaxws-api-${jaxws.api.version}</artifactId>
+            <artifactId>org.apache.servicemix.specs.jaxws-api-${jaxws-api.version}</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}</artifactId>
+            <artifactId>org.apache.servicemix.specs.jsr311-api-${jaxrs-api.version}</artifactId>
             <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
@@ -452,22 +453,22 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-jms_1.1_spec</artifactId>
-            <version>${geronimo.jms.version}</version>
+            <version>${geronimo-jms.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
-            <version>${geronimo.j2ee.management.version}</version>
+            <version>${geronimo-j2ee-management.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-annotation_1.1_spec</artifactId>
-            <version>${geronimo.annotation.version}</version>
+            <version>${geronimo-annotation.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-            <version>${geronimo.wsmetadata.version}</version>
+            <version>${geronimo-ws-metadata.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -484,7 +485,7 @@
         <dependency>
             <groupId>org.apache.geronimo.components</groupId>
             <artifactId>geronimo-transaction</artifactId>
-            <version>${geronimo.transaction.version}</version>
+            <version>${geronimo-transaction.version}</version>
         </dependency>
         <dependency>
            <groupId>javax.mail</groupId>
@@ -505,58 +506,6 @@
             <groupId>org.apache.servicemix.cxf</groupId>
             <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <!--
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-core</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-cxf</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-ejbd</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-http</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-javaagent</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-jee</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-loader</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-server</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.openejb</groupId>
-            <artifactId>openejb-webservices</artifactId>
-            <version>${openejb.version}</version>
-        </dependency>
-        -->
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-            <version>${commons-pool.activemq.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -621,42 +570,42 @@
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-api</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-spi</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-runtime</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-jetty</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-jsp</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-extender-war</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.web</groupId>
             <artifactId>pax-web-extender-whiteboard</artifactId>
-            <version>${pax.web.version}</version>
+            <version>${pax-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.url</groupId>
             <artifactId>pax-url-war</artifactId>
-            <version>${pax.url.version}</version>
+            <version>${pax-url.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mortbay.jetty</groupId>
@@ -715,142 +664,142 @@
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-http</artifactId>
-            <version>${servicemix-http-version}</version>
+            <version>${servicemix-http.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-jms</artifactId>
-            <version>${servicemix-jms-version}</version>
+            <version>${servicemix-jms.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-drools</artifactId>
-            <version>${servicemix-drools-version}</version>
+            <version>${servicemix-drools.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-eip</artifactId>
-            <version>${servicemix-eip-version}</version>
+            <version>${servicemix-eip.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-script</artifactId>
-            <version>${servicemix-script-version}</version>
+            <version>${servicemix-script.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-scripting</artifactId>
-            <version>${servicemix-scripting-version}</version>
+            <version>${servicemix-scripting.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-validation</artifactId>
-            <version>${servicemix-validation-version}</version>
+            <version>${servicemix-validation.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-wsn2005</artifactId>
-            <version>${servicemix-wsn2005-version}</version>
+            <version>${servicemix-wsn2005.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-file</artifactId>
-            <version>${servicemix-file-version}</version>
+            <version>${servicemix-file.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-ftp</artifactId>
-            <version>${servicemix-ftp-version}</version>
+            <version>${servicemix-ftp.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-xmpp</artifactId>
-            <version>${servicemix-xmpp-version}</version>
+            <version>${servicemix-xmpp.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-saxon</artifactId>
-            <version>${servicemix-saxon-version}</version>
+            <version>${servicemix-saxon.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-quartz</artifactId>
-            <version>${servicemix-quartz-version}</version>
+            <version>${servicemix-quartz.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-jsr181</artifactId>
-            <version>${servicemix-jsr181-version}</version>
+            <version>${servicemix-jsr181.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-mail</artifactId>
-            <version>${servicemix-mail-version}</version>
+            <version>${servicemix-mail.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-osworkflow</artifactId>
-            <version>${servicemix-osworkflow-version}</version>
+            <version>${servicemix-osworkflow.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-bean</artifactId>
-            <version>${servicemix-bean-version}</version>
+            <version>${servicemix-bean.version}</version>
         </dependency>                
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-truezip</artifactId>
-            <version>${servicemix-truezip-version}</version>
+            <version>${servicemix-truezip.version}</version>
         </dependency>                
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-cxf-se</artifactId>
-            <version>${servicemix-cxf-se-version}</version>
+            <version>${servicemix-cxf-se.version}</version>
         </dependency>                
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-cxf-bc</artifactId>
-            <version>${servicemix-cxf-bc-version}</version>
+            <version>${servicemix-cxf-bc.version}</version>
         </dependency>                
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-camel</artifactId>
-            <version>${servicemix-camel-version}</version>
+            <version>${servicemix-camel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-snmp</artifactId>
-            <version>${servicemix-snmp-version}</version>
+            <version>${servicemix-snmp.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-vfs</artifactId>
-            <version>${servicemix-vfs-version}</version>
+            <version>${servicemix-vfs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-exec</artifactId>
-            <version>${servicemix-exec-version}</version>
+            <version>${servicemix-exec.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-vfs</artifactId>
-            <version>${commons-vfs.version}</version>
+            <version>${commons-vfs.bundle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-smpp</artifactId>
-            <version>${servicemix-smpp-version}</version>
+            <version>${servicemix-smpp.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-shared</artifactId>
-            <version>${servicemix-shared-version}</version>
+            <version>${servicemix-shared.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-common</artifactId>
-            <version>${servicemix-shared-version}</version>
+            <version>${servicemix-shared.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
@@ -900,7 +849,7 @@
           <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.commons-jexl</artifactId>
-                <version>${commons-jexl.version}</version>
+                <version>${commons-jexl.bundle.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>junit</groupId>
@@ -911,7 +860,7 @@
            <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.jaxp-ri</artifactId>
-                <version>${jaxp.ri.version}</version>
+                <version>${jaxp-ri.bundle.version}</version>
             </dependency>
   
 			<dependency>
@@ -931,19 +880,7 @@
 				</exclusions>
 			</dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>scriptengines</id>
-            <name>ScriptEngines Repository</name>
-            <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>     
-                <enabled>false</enabled>
-            </snapshots>     
-        </repository>
-    </repositories>
+    
     <build>
         <resources>
             <resource>
@@ -1159,7 +1096,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven.assembly.version}</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>unix-bin</id>

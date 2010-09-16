@@ -29,13 +29,13 @@
     <groupId>org.apache.servicemix.examples.loan-broker</groupId>
     <artifactId>loan-broker-drools-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Loan Broker :: Drools</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: Drools SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-drools</artifactId>
-            <version>${servicemix-drools-version}</version>
+            <version>${servicemix-drools.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
@@ -52,7 +52,7 @@
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-compiler</artifactId>
-            <version>4.0.7</version>
+            <version>5.0.1</version>
             <scope>test</scope>
             <exclusions>
               <exclusion>
@@ -88,7 +88,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

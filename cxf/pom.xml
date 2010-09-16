@@ -30,7 +30,7 @@
     <artifactId>cxf</artifactId>
     <packaging>pom</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix CXF Support</name>
+    <name>Apache ServiceMix :: Features :: CXF Support</name>
 
     <modules>
         <module>cxf-transport-nmr</module>

@@ -27,13 +27,13 @@
   <groupId>org.apache.servicemix.examples.camel</groupId>
   <artifactId>camel-sa</artifactId>
   <packaging>jbi-service-assembly</packaging>
-  <name>ServiceMix :: Samples :: Camel :: SA</name>
+  <name>Apache ServiceMix :: Features :: Examples :: Camel :: SA</name>
 
   <dependencies>
     <dependency>
       <groupId>org.apache.servicemix</groupId>
       <artifactId>servicemix-camel</artifactId>
-      <version>${servicemix-camel-version}</version>      
+      <version>${servicemix-camel.version}</version>      
     </dependency> 
     <dependency>
       <groupId>org.apache.servicemix.examples.camel</groupId>
@@ -46,11 +46,8 @@
       <plugin>
         <groupId>org.apache.servicemix.tooling</groupId>
         <artifactId>jbi-maven-plugin</artifactId>
-        <version>${servicemix-jbi-plugin-version}</version> 
+        <version>${jbi-maven-plugin.version}</version> 
         <extensions>true</extensions>
-        <configuration>
-          <type>service-assembly</type>         
-        </configuration>
       </plugin>
     </plugins>
   </build>

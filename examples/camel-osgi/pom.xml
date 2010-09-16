@@ -31,7 +31,7 @@
     <artifactId>camel-osgi</artifactId>
     <packaging>bundle</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix Example :: Camel OSGi</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Camel OSGi</name>
 
     <dependencies>
         <dependency>

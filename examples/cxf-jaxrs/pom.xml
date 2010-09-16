@@ -31,13 +31,13 @@
     <artifactId>cxf-jaxrs</artifactId>
     <packaging>bundle</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix Example :: CXF JAX-RS OSGI</name>
+    <name>Apache ServiceMix :: Features :: Examples :: CXF JAX-RS OSGI</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.jsr311-api-1.0</artifactId>
-            <version>1.3.0</version>
+            <version>${servicemix.specs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
@@ -48,7 +48,7 @@
        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-            <version>${commons-httpclient.version}</version>
+            <version>${commons-httpclient.bundle.version}</version>
         </dependency>
     </dependencies>
 

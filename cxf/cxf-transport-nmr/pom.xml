@@ -30,7 +30,7 @@
     <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
     <packaging>bundle</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix CXF Transport for NMR</name>
+    <name>Apache ServiceMix :: Features :: CXF Support :: Transport For NMR</name>
 
     <dependencies>
         <dependency>
@@ -46,17 +46,17 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-            <version>${geronimo.wsmetadata.version}</version>
+            <version>${geronimo-ws-metadata.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-annotation_1.1_spec</artifactId>
-            <version>${geronimo.annotation.version}</version>
+            <version>${geronimo-annotation.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-servlet_2.5_spec</artifactId>
-            <version>${geronimo.servlet.version}</version>
+            <version>${geronimo-servlet.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
@@ -111,7 +111,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>depends-maven-plugin</artifactId>
-                <version>${depends.maven.plugin.version}</version>
+                <version>${depends-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>generate-depends-file</id>

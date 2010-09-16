@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples.cxf-wsdl-first</groupId>
     <artifactId>wsdl-first-client</artifactId>
-    <name>ServiceMix :: Samples :: WSDL first :: Client</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First :: Client</name>
 
     <dependencies>
         <dependency>

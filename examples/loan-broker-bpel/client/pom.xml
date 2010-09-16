@@ -29,7 +29,7 @@
 
     <groupId>org.apache.servicemix.examples.loan-broker</groupId>
     <artifactId>loan-broker-jms-client</artifactId>
-    <name>ServiceMix :: Samples :: Loan Broker :: JMS Client</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: JMS Client</name>
 
     <dependencies>
 	<dependency>

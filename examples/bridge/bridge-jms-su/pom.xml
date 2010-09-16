@@ -30,13 +30,13 @@
     <groupId>org.apache.servicemix.examples.bridge</groupId>
     <artifactId>bridge-jms-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Bridge :: JMS</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge :: JMS SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-jms</artifactId>
-            <version>${servicemix-jms-version}</version>
+            <version>${servicemix-jms.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
@@ -65,7 +65,7 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
-            <version>1.0.1</version>
+            <version>${geronimo-j2ee-management.version}</version>
         </dependency>
     </dependencies>
 
@@ -74,7 +74,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

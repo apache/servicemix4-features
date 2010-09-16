@@ -30,7 +30,8 @@
     <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
     <artifactId>bridge-camel-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Examples :: Bridge :: Camel :: SU</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge Camel :: Camel SU</name>
+    
     <properties>
       <componentName>servicemix-camel</componentName>
     </properties>

@@ -30,14 +30,14 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>org.apache.servicemix.examples.itests.cxf-ws-security-osgi</artifactId>
     <packaging>bundle</packaging>
-    <name>Apache ServiceMix Example ITESTS BUNDLE :: CXF WS SECURITY OSGi</name>
+    <name>Apache ServiceMix :: Features :: Examples :: iTests :: CXF WS Security OSGi</name>
 
     <dependencies>
 
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-            <version>${geronimo.wsmetadata.version}</version>
+            <version>${geronimo-ws-metadata.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>

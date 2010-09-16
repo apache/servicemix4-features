@@ -29,13 +29,13 @@
     <groupId>org.apache.servicemix.examples.loan-broker</groupId>
     <artifactId>loan-broker-jms-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Loan Broker :: JMS</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: JMS SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-jms</artifactId>
-            <version>${servicemix-jms-version}</version>
+            <version>${servicemix-jms.version}</version>
         </dependency>
 	<dependency>
             <groupId>org.apache.activemq</groupId>
@@ -79,7 +79,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

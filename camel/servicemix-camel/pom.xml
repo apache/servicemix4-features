@@ -31,7 +31,7 @@
     <artifactId>org.apache.servicemix.camel.component</artifactId>
     <packaging>bundle</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix Camel Component</name>
+    <name>Apache ServiceMix :: Features :: Camel Support :: Component</name>
 
     <dependencies>
         <dependency>

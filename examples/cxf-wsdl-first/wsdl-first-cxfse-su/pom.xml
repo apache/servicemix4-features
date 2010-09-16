@@ -29,13 +29,13 @@
     <groupId>org.apache.servicemix.examples.cxf-wsdl-first</groupId>
     <artifactId>wsdl-first-cxfse-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: WSDL first :: CXF SE</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First :: CXF SE SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-cxf-se</artifactId>
-            <version>${servicemix-cxf-se-version}</version>
+            <version>${servicemix-cxf-se.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.xml.ws</groupId>
@@ -112,7 +112,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

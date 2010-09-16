@@ -38,18 +38,18 @@
   <artifactId>org.apache.servicemix.features.deps</artifactId>
   <packaging>pom</packaging>
   <version>4.3.0-SNAPSHOT</version>
-  <name>Apache ServiceMix Dependencies</name>
+  <name>Apache ServiceMix :: Features :: Dependencies</name>
 
   <dependencies>
     <dependency>
       <groupId>org.apache.servicemix.bundles</groupId>
       <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
-      <version>${antlr2.version}</version>
+      <version>${antlr2.bundle.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.servicemix.bundles</groupId>
       <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-      <version>${commons-pool.version}</version>
+      <version>${commons-pool.bundle.version}</version>
     </dependency>
   </dependencies>
 

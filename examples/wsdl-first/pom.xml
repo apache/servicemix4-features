@@ -28,7 +28,7 @@
 
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>wsdl-first</artifactId>
-    <name>ServiceMix :: Samples :: WSDL first</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First</name>
     <packaging>pom</packaging>
     
     <!-- Add ServiceMix repositories for snaphots and releases -->
@@ -92,7 +92,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>${maven.assembly.version}</version>
+                <version>${maven-assembly-plugin.version}</version>
                 <inherited>false</inherited>
                 <executions>
                     <execution>
@@ -112,7 +112,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

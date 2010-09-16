@@ -30,7 +30,7 @@
     <groupId>org.apache.servicemix.examples</groupId>
     <artifactId>org.apache.servicemix.examples.itests.test-commons</artifactId>
     <packaging>bundle</packaging>
-    <name>Apache ServiceMix Example ITESTS BUNDLE :: COMMON CLASSES</name>
+    <name>Apache ServiceMix :: Features :: Examples :: iTests :: Common Classes</name>
 
     <dependencies>
         <dependency>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-            <version>${geronimo.wsmetadata.version}</version>
+            <version>${geronimo-ws-metadata.version}</version>
         </dependency>
     </dependencies>
 

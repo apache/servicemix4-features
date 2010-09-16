@@ -21,10 +21,10 @@
     <repository>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</repository>
     <feature name="connector" version="${version}">
         <feature version="${aries.transaction.version}">transaction</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo.connector.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle> 
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo-j2ee-connector.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo-connector.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle> 
         <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>                                 
         <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
         <bundle>mvn:org.springframework/spring-context/${spring.version}</bundle>
@@ -34,42 +34,42 @@
     <feature name="cxf" version="${cxf.version}">
 		<feature>transaction</feature>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo.annotation.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo-annotation.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo-ws-metadata.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-${jaxb.api.version}/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-${jaxws.api.version}/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
         <bundle>mvn:javax.mail/mail/${javax.mail.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/${asm.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.fastinfoset/${fastinfoset.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.neethi/${neethi.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/${saaj.impl.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/${asm.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.fastinfoset/${fastinfoset.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb-impl.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.neethi/${neethi.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/${saaj-impl.bundle.version}</bundle>
         <bundle>mvn:org.codehaus.woodstox/stax2-api/${woodstox.stax2api.version}</bundle>
         <bundle>mvn:org.codehaus.woodstox/woodstox-core-asl/${woodstox.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/${xmlresolver.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xerces/${xerces.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/${bcel.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/${xalan.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-${jaxrs.api.version}/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.opensaml/${opensaml.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/${xmlresolver.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xerces/${xerces.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/${bcel.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/${xalan.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-${jaxrs-api.version}/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.opensaml/${opensaml.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.version}</bundle>
-    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/${commons-lang-version}</bundle>
-    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/${velocity.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.bundle.version}</bundle>
+    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/${commons-lang.bundle.version}</bundle>
+    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.velocity/${velocity.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.commons.axiom/axiom-impl/${axiom.version}</bundle>
         <bundle>mvn:org.apache.ws.commons.axiom/axiom-api/${axiom.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle>
         <bundle>mvn:org.apache.cxf/cxf-bundle/${cxf.version}</bundle>
     </feature>
     <feature name="cxf-osgi" version="${version}">
@@ -78,9 +78,9 @@
     </feature>
     <feature name="cxf-jaxrs" version="${version}">
         <feature version="${version}">cxf-osgi</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.bundle.version}</bundle>
         <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.bundle.version}</bundle>
     </feature>
     <feature name="cxf-nmr" version="${version}">
         <feature version="${cxf.version}">cxf</feature>
@@ -88,17 +88,14 @@
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.transport.nmr/${version}</bundle>
         <bundle>mvn:org.apache.servicemix.cxf/org.apache.servicemix.cxf.binding.nmr/${version}</bundle>
     </feature>
-    
-
     <feature name="camel-nmr" version="${version}">
         <feature version="${camel.version}">camel</feature>
         <feature version="${servicemix.nmr.version}">nmr</feature>
-        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-${jaxws.api.version}/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-${jaxws-api.version}/${servicemix.specs.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo-ws-metadata.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.camel/org.apache.servicemix.camel.component/${version}</bundle>
     </feature>
-    
     <feature name="camel-activemq" version="${version}">
         <feature version="${activemq.version}">activemq</feature>
         <feature version="${camel.version}">camel-jms</feature>
@@ -121,7 +118,7 @@
     <feature name="examples-cxf-jaxrs" version="${version}">
         <feature version="${version}">cxf-jaxrs</feature>
         <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs/${version}</bundle>
     </feature>
     <feature name="examples-cxf-nmr" version="${version}">
@@ -151,8 +148,8 @@
         <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
     </feature>
     <feature name="examples-cxf-wsdl-first-osgi-package" version="${version}">
-        <feature version="${servicemix-cxf-bc-version}">servicemix-cxf-bc</feature>
-        <feature version="${servicemix-cxf-se-version}">servicemix-cxf-se</feature>
+        <feature version="${servicemix-cxf-bc.version}">servicemix-cxf-bc</feature>
+        <feature version="${servicemix-cxf-se.version}">servicemix-cxf-se</feature>
         <bundle>mvn:org.springframework/spring-beans/${spring.version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfbc-bundle/${version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples.cxf-wsdl-first-osgi-package/wsdl-first-cxfse-bundle/${version}</bundle>
@@ -167,167 +164,169 @@
     <feature name="examples-cxf-ws-rm" version="${version}">
         <bundle>mvn:org.apache.servicemix.examples/cxf-ws-rm/${version}</bundle>
     </feature>
+    
     <!--
       -
       -  JBI Components
       -
-      -->
-    <feature name="servicemix-shared" version="${servicemix-shared-version}">
+    -->
+      
+    <feature name="servicemix-shared" version="${servicemix-shared.version}">
         <feature version="${servicemix.nmr.version}">jbi</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle>mvn:org.apache.xbean/xbean-classloader/${xbean.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-utils/${servicemix-utils.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-common/${servicemix-shared-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-common/${servicemix-shared.version}</bundle>
     </feature>
-    <feature name="servicemix-cxf-bc" version="${servicemix-cxf-bc-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-cxf-bc" version="${servicemix-cxf-bc.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>        
-        <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared-version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-cxf-bc/${servicemix-cxf-bc-version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>        
+        <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-cxf-bc/${servicemix-cxf-bc.version}</bundle>
     </feature>
-    <feature name="servicemix-file" version="${servicemix-file-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix/servicemix-file/${servicemix-file-version}</bundle>
+    <feature name="servicemix-file" version="${servicemix-file.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-file/${servicemix-file.version}</bundle>
     </feature>
-    <feature name="servicemix-ftp" version="${servicemix-ftp-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-net/${commons-net.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/${commons-pool.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-ftp/${servicemix-ftp-version}</bundle>
+    <feature name="servicemix-ftp" version="${servicemix-ftp.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-net/${commons-net.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-pool/${commons-pool.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-ftp/${servicemix-ftp.version}</bundle>
     </feature>
-    <feature name="servicemix-http" version="${servicemix-http-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo.servlet.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.version}</bundle>
+    <feature name="servicemix-http" version="${servicemix-http.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared-version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared-version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http.version}</bundle>
     </feature>
-    <feature name="servicemix-jms" version="${servicemix-jms-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-jms" version="${servicemix-jms.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared-version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared-version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo.j2ee.connector.version}</bundle>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo.jms.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo-j2ee-connector.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
         <bundle>mvn:org.springframework/spring-jms/${spring.version}</bundle>
         <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-jms/${servicemix-jms-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-jms/${servicemix-jms.version}</bundle>
     </feature>
-    <feature name="servicemix-mail" version="${servicemix-mail-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-mail" version="${servicemix-mail.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
         <bundle>mvn:javax.mail/mail/${javax.mail.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-mail/${servicemix-mail-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-mail/${servicemix-mail.version}</bundle>
     </feature>
-    <feature name="servicemix-bean" version="${servicemix-bean-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo.annotation.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-bean/${servicemix-bean-version}</bundle>
+    <feature name="servicemix-bean" version="${servicemix-bean.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo-annotation.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-bean/${servicemix-bean.version}</bundle>
     </feature>
-    <feature name="servicemix-camel" version="${servicemix-camel-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-camel" version="${servicemix-camel.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <feature version="${camel.version}">camel</feature>
-        <bundle>mvn:org.apache.servicemix/servicemix-camel/${servicemix-camel-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-camel/${servicemix-camel.version}</bundle>
     </feature>
-    <feature name="servicemix-drools" version="${servicemix-drools-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/${jdt.core.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/${antlr.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.drools/${drools.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mvel/${mvel.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-drools/${servicemix-drools-version}</bundle>
+    <feature name="servicemix-drools" version="${servicemix-drools.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/${jdt-core.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/${antlr-runtime.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.drools/${drools.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mvel/${mvel.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-drools/${servicemix-drools.version}</bundle>
     </feature>
-    <feature name="servicemix-cxf-se" version="${servicemix-cxf-se-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-cxf-se" version="${servicemix-cxf-se.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
         <bundle>mvn:org.apache.cxf/cxf-rt-bindings-jbi/${cxf.version}</bundle>
         <bundle>mvn:org.apache.cxf/cxf-rt-transports-jbi/${cxf.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-cxf-se/${servicemix-cxf-se-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-cxf-se/${servicemix-cxf-se.version}</bundle>
     </feature>
-    <feature name="servicemix-eip" version="${servicemix-eip-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix/servicemix-eip/${servicemix-eip-version}</bundle>
+    <feature name="servicemix-eip" version="${servicemix-eip.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-eip/${servicemix-eip.version}</bundle>
     </feature>
-    <feature name="servicemix-osworkflow" version="${servicemix-osworkflow-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr.version}</bundle>
-    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscore/${oscore.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.propertyset/${propertyset.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.osworkflow/${osworkflow.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-osworkflow/${servicemix-osworkflow-version}</bundle>
+    <feature name="servicemix-osworkflow" version="${servicemix-osworkflow.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr.bundle.version}</bundle>
+    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oscore/${oscore.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.propertyset/${propertyset.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.osworkflow/${osworkflow.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-osworkflow/${servicemix-osworkflow.version}</bundle>
     </feature>
-    <feature name="servicemix-quartz" version="${servicemix-quartz-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.version}</bundle>
+    <feature name="servicemix-quartz" version="${servicemix-quartz.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+    	<bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.bundle.version}</bundle>
         <bundle>mvn:org.springframework/spring-context-support/${spring.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-quartz/${servicemix-quartz-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-quartz/${servicemix-quartz.version}</bundle>
     </feature>
-    <feature name="servicemix-scripting" version="${servicemix-scripting-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-scripting" version="${servicemix-scripting.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/${asm.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr2.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.groovy/${groovy.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.rhino/${rhino.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jruby/${jruby.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/${asm.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr2.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.groovy/${groovy.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.rhino/${rhino.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jruby/${jruby.bundle.version}</bundle>
         <bundle>mvn:com.google.code.scriptengines/scriptengines-groovy/${scriptengines.version}</bundle>
         <bundle>mvn:com.google.code.scriptengines/scriptengines-javascript/${scriptengines.version}</bundle>
         <bundle>mvn:com.google.code.scriptengines/scriptengines-jruby/${scriptengines.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-scripting/${servicemix-scripting-version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-scripting/${servicemix-scripting.version}</bundle>
     </feature>
-    <feature name="servicemix-validation" version="${servicemix-validation-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix/servicemix-validation/${servicemix-validation-version}</bundle>
+    <feature name="servicemix-validation" version="${servicemix-validation.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix/servicemix-validation/${servicemix-validation.version}</bundle>
     </feature>
-    <feature name="servicemix-saxon" version="${servicemix-saxon-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saxon/${saxon.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-saxon/${servicemix-saxon-version}</bundle>
+    <feature name="servicemix-saxon" version="${servicemix-saxon.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saxon/${saxon.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-saxon/${servicemix-saxon.version}</bundle>
     </feature>
-    <feature name="servicemix-wsn2005" version="${servicemix-wsn2005-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
+    <feature name="servicemix-wsn2005" version="${servicemix-wsn2005.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <feature version="${activemq.version}">activemq</feature>
-        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo.wsmetadata.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo-ws-metadata.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-${jaxb.api.version}/${servicemix.specs.version}</bundle>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-${jaxws.api.version}/${servicemix.specs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb.impl.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-wsn2005/${servicemix-wsn2005-version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb-impl.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-wsn2005/${servicemix-wsn2005.version}</bundle>
     </feature>
-    <feature name="servicemix-snmp" version="${servicemix-snmp-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.snmp4j/${snmp4j.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-snmp/${servicemix-snmp-version}</bundle>
+    <feature name="servicemix-snmp" version="${servicemix-snmp.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.snmp4j/${snmp4j.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-snmp/${servicemix-snmp.version}</bundle>
     </feature>
-    <feature name="servicemix-vfs" version="${servicemix-vfs-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/${commons-vfs.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-vfs/${servicemix-vfs-version}</bundle>
+    <feature name="servicemix-vfs" version="${servicemix-vfs.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/${commons-vfs.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-vfs/${servicemix-vfs.version}</bundle>
     </feature>
-    <feature name="servicemix-smpp" version="${servicemix-smpp-version}">
-        <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/${jsmpp.version}</bundle>
-        <bundle>mvn:org.apache.servicemix/servicemix-smpp/${servicemix-smpp-version}</bundle>
+    <feature name="servicemix-smpp" version="${servicemix-smpp.version}">
+        <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/${jsmpp.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix/servicemix-smpp/${servicemix-smpp.version}</bundle>
     </feature>
-    <feature name="servicemix-exec" version="${servicemix-exec-version}">
-         <feature version="${servicemix-shared-version}">servicemix-shared</feature>
-         <bundle>mvn:org.apache.servicemix/servicemix-exec/${servicemix-exec-version}</bundle>
+    <feature name="servicemix-exec" version="${servicemix-exec.version}">
+         <feature version="${servicemix-shared.version}">servicemix-shared</feature>
+         <bundle>mvn:org.apache.servicemix/servicemix-exec/${servicemix-exec.version}</bundle>
     </feature>
     
     <!-- Default broker configuration -->

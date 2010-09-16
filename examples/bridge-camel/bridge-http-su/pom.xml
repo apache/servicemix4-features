@@ -30,13 +30,13 @@
     <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
     <artifactId>bridge-http-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Bridge Camel:: HTTP</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge Camel :: HTTP SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-http</artifactId>
-            <version>${servicemix-http-version}</version>
+            <version>${servicemix-http.version}</version>
         </dependency>
     </dependencies>
 
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

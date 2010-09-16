@@ -30,7 +30,7 @@
     <groupId>org.apache.servicemix.examples.loan-broker</groupId>
     <artifactId>loan-broker-ode-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: Loan Broker :: Ode</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: ODE SU</name>
 
     <properties>
         <componentName>OdeBpelEngine</componentName>
@@ -41,7 +41,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

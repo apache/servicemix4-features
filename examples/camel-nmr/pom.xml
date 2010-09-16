@@ -31,7 +31,7 @@
     <artifactId>camel-nmr</artifactId>
     <packaging>bundle</packaging>
     <version>4.3.0-SNAPSHOT</version>
-    <name>Apache ServiceMix Example :: Camel NMR</name>
+    <name>Apache ServiceMix :: Features :: Examples :: Camel NMR</name>
 
     <dependencies>
         <dependency>

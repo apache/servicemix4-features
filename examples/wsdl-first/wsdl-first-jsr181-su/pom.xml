@@ -29,13 +29,13 @@
     <groupId>org.apache.servicemix.examples.wsdl-first</groupId>
     <artifactId>wsdl-first-jsr181-su</artifactId>
     <packaging>jbi-service-unit</packaging>
-    <name>ServiceMix :: Samples :: WSDL first :: JSR181</name>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First :: JSR181 SU</name>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-jsr181</artifactId>
-            <version>${servicemix-jsr181-version}</version>
+            <version>${servicemix-jsr181.version}</version>
         </dependency>
     </dependencies>
 
@@ -51,7 +51,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>xfire-maven-plugin</artifactId>
-                <version>${xfire.maven.plugin}</version>
+                <version>${xfire-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -71,7 +71,7 @@
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>jbi-maven-plugin</artifactId>
-                <version>${servicemix-jbi-plugin-version}</version>
+                <version>${jbi-maven-plugin.version}</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

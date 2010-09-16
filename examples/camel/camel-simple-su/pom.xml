@@ -27,7 +27,7 @@
   <groupId>org.apache.servicemix.examples.camel</groupId>
   <artifactId>camel-simple-su</artifactId>
   <packaging>jbi-service-unit</packaging>
-  <name>ServiceMix :: Samples :: Camel :: Simple SU</name>
+  <name>Apache ServiceMix :: Features :: Examples :: Camel :: Camel Simple SU</name>
   <properties>
      <componentName>servicemix-camel</componentName>
   </properties>
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.apache.servicemix</groupId>
       <artifactId>servicemix-camel</artifactId>      
-      <version>${servicemix-camel-version}</version>     
+      <version>${servicemix-camel.version}</version>     
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -56,7 +56,7 @@
       <plugin>
         <groupId>org.apache.servicemix.tooling</groupId>
         <artifactId>jbi-maven-plugin</artifactId>
-        <version>${servicemix-jbi-plugin-version}</version>
+        <version>${jbi-maven-plugin.version}</version>
         <extensions>true</extensions>
       </plugin> 
     </plugins>
