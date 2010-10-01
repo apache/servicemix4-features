@@ -90,6 +90,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
                        
             //for activemq
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-lang"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jasypt"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.josql"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.oro"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.velocity"),
