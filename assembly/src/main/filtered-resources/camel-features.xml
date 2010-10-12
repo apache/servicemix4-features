@@ -25,7 +25,7 @@
   <feature name='camel-core' version='${camel.version}'>
     <feature version="${spring.version}">spring</feature>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
-    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-${jaxb-api.version}/${servicemix.specs.version}</bundle>
+    <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxb-api-2.1/${servicemix.specs.version}</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.stax-api-1.0/${servicemix.specs.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jaxb-impl/${jaxb-impl.bundle.version}</bundle>
     <bundle>mvn:org.fusesource.commonman/commons-management/${commons-management.version}</bundle>
@@ -66,7 +66,7 @@
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/${xmlresolver.bundle.version}</bundle>
     <bundle>mvn:org.codehaus.woodstox/woodstox-core-asl/${woodstox.version}</bundle>
-    <bundle>mvn:org.codehaus.woodstox/stax2-api/${woodstox.stax2api.version}</bundle>
+    <bundle>mvn:org.codehaus.woodstox/stax2-api/${woodstox.stax2-api.version}</bundle>
     <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/${commons-lang.bundle.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.bundle.version}</bundle>
