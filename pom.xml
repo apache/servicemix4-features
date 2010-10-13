@@ -121,7 +121,7 @@
 		<cxf.version>2.2.10</cxf.version>
 
 		<!-- Geronimo -->
-		<geronimo-annotation.version>1.0</geronimo-annotation.version>
+		<geronimo-annotation.version>1.1.1</geronimo-annotation.version>
 		<geronimo-connector.version>2.1.3</geronimo-connector.version>
 		<geronimo-el.version>1.0.1</geronimo-el.version>
 		<geronimo-j2ee-connector.version>2.0.0</geronimo-j2ee-connector.version>
@@ -756,11 +756,6 @@
                <artifactId>geronimo-annotation_1.0_spec</artifactId>
                <version>${geronimo-annotation.version}</version>
            </dependency>
-	       <dependency>
-	           <groupId>org.apache.geronimo.specs</groupId>
-	           <artifactId>geronimo-annotation_1.1_spec</artifactId>
-	           <version>${geronimo-annotation.version}</version>
-	       </dependency>
 	       <dependency>
 	           <groupId>org.apache.geronimo.specs</groupId>
 	           <artifactId>geronimo-j2ee-connector_1.5_spec</artifactId>

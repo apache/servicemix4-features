@@ -79,7 +79,7 @@
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.neethi/${neethi.bundle.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.bundle.version}</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxws-api-${jaxws-api.version}/${servicemix.specs.version}</bundle>
-    <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo-annotation.version}</bundle>
+    <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo-annotation.version}</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
     <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr311-api-1.0/${servicemix.specs.version}</bundle>
@@ -211,7 +211,7 @@
   <feature name='camel-guice' version='${camel.version}'>
     <bundle>mvn:http://guiceyfruit.googlecode.com/svn/repo/releases!org.guiceyfruit/guiceyfruit-core/2.0</bundle>
     <bundle>mvn:http://guiceyfruit.googlecode.com/svn/repo/releases!org.guiceyfruit/guice-all/2.0</bundle>
-    <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/${geronimo-annotation.version}</bundle>
+    <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo-annotation.version}</bundle>
     <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/${aopalliance.bundle.version}</bundle>
     <feature version='${camel.version}'>camel-core</feature>
     <bundle>mvn:org.apache.camel/camel-guice/${camel.version}</bundle>
