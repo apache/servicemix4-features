@@ -118,7 +118,7 @@
 		<camel.version>2.4.0</camel.version>
 
 		<!-- CXF -->
-		<cxf.version>2.2.10</cxf.version>
+		<cxf.version>2.2.11</cxf.version>
 
 		<!-- Geronimo -->
 		<geronimo-annotation.version>1.1.1</geronimo-annotation.version>
@@ -297,7 +297,7 @@
 		<tranql.version>1.6</tranql.version>
 		<woodstox.version>4.0.8</woodstox.version>
 		<woodstox.stax2-api.version>3.0.2</woodstox.stax2-api.version>
-		<wss4j.version>1.5.8</wss4j.version>
+		<wss4j.version>1.5.9</wss4j.version>
 		<xbean.version>3.7</xbean.version>
 		<xmlschema.version>1.4.5</xmlschema.version>
 	</properties>
