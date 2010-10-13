@@ -54,7 +54,7 @@
     </feature>
     
     <!-- do "features:install war" before installing this one -->
-    <feature name="activemq-web-console" version="${activemq.version">
+    <feature name="activemq-web-console" version="${activemq.version}">
         <bundle>war:mvn:org.apache.activemq/activemq-web-console/${activemq.version}/war?Webapp-Context=activemq-web-console</bundle>
     </feature>
     
