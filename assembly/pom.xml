@@ -215,12 +215,6 @@
         <!-- ActiveMQ -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-karaf</artifactId>
-            <type>xml</type>
-            <classifier>features</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-blueprint</artifactId>
         </dependency>
         <dependency>
@@ -570,10 +564,6 @@
             <artifactId>scriptengines-groovy</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-        </dependency>
-        <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
         </dependency>
@@ -689,7 +679,7 @@
                             <descriptors>
                                 <descriptor>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
-                                <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</descriptor>
+                                <descriptor>file:${basedir}/target/classes/activemq-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/camel-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/ode-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>

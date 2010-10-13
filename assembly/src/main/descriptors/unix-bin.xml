@@ -16,8 +16,7 @@
     limitations under the License.
 -->
 <assembly>
-    <id></id> <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301
--->
+    <id></id> <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
     <formats>
         <format>tar.gz</format>
     </formats>
@@ -174,6 +173,13 @@
             <source>${basedir}/target/classes/features.xml</source>
             <outputDirectory>system/org/apache/servicemix/${artifactId}/${version}</outputDirectory>
             <destName>${artifactId}-${version}-features.xml</destName>
+            <fileMode>0644</fileMode>
+            <lineEnding>unix</lineEnding>
+        </file>
+        <file>
+            <source>${basedir}/target/classes/activemq-features.xml</source>
+            <outputDirectory>system/org/apache/activemq/activemq-karaf/${activemq.version}</outputDirectory>
+            <destName>activemq-karaf-${activemq.version}-features.xml</destName>
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
