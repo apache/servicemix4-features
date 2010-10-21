@@ -335,7 +335,17 @@
 	           <artifactId>org.apache.karaf.management</artifactId>
 	           <version>${karaf.version}</version>
 	       </dependency>
-	   
+	       <dependency>
+	           <groupId>org.apache.karaf</groupId>
+	           <artifactId>org.apache.karaf.main</artifactId>
+	           <version>${karaf.version}</version>
+	       </dependency>
+	       <dependency>
+	           <groupId>org.apache.karaf.jaas</groupId>
+	           <artifactId>org.apache.karaf.jaas.boot</artifactId>
+	           <version>${karaf.version}</version>
+	       </dependency>
+	       
 	       <!-- OSGi and Felix -->
 	       <dependency>
 	           <groupId>org.apache.felix</groupId>
@@ -356,6 +366,13 @@
 	           <groupId>org.osgi</groupId>
 	           <artifactId>org.osgi.core</artifactId>
 	           <version>${osgi.core.version}</version>
+	       </dependency>
+	       
+	       <!-- ServiceMix -->
+	       <dependency>
+	           <groupId>org.apache.servicemix</groupId>
+	           <artifactId>apache-servicemix</artifactId>
+	           <version>${servicemix.version}</version>
 	       </dependency>
 	   
 	       <!-- ServiceMix NMR -->
