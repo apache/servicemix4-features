@@ -100,7 +100,8 @@
             </systemProperty>
           </systemProperties>
           <scanIntervalSeconds>10</scanIntervalSeconds>
-          <webAppSourceDirectory>${project.build.directory}/${project.build.finalName}</webAppSourceDirectory>
+          <webAppSourceDirectory>${basedir}/target/${artifactId}-${version}</webAppSourceDirectory>
+          <webApp>${basedir}/target/${artifactId}-${version}.war</webApp>
         </configuration>
       </plugin>
       <plugin>
