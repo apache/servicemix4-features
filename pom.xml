@@ -58,45 +58,57 @@
 	<prerequisites>
 		<maven>2.2.1</maven>
 	</prerequisites>
-	
-	<repositories>
-       <!-- Java.net Maven Repository, required by javax.mail -->
-       <repository>
-           <id>java.net</id>
-           <name>Java.net Maven2 Repository</name>
-           <url>http://download.java.net/maven/2</url>
-           <releases>
-               <enabled>true</enabled>
-           </releases>
-           <snapshots>
-               <enabled>false</enabled>
-           </snapshots>
-       </repository>
-	   <!-- JBoss Maven Repository, required by Drools -->
-	   <repository>
-	       <id>jboss</id>
-	       <name>JBoss Maven2 Repository</name>
-	       <url>http://repository.jboss.com/maven2</url>
-	       <releases>
-	           <enabled>true</enabled>
-	       </releases>
-	       <snapshots>
-	           <enabled>false</enabled>
-	       </snapshots>
-	   </repository>
-	   <!-- Scriptengines Google Maven Repository, required by scriptengines -->
-	   <repository>
-	       <id>scriptengines</id>
-	       <name>Scriptengines Google Code Maven Repository</name>
-	       <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
-	       <releases>
-	           <enabled>true</enabled>
-	       </releases>
-	       <snapshots>
-	           <enabled>false</enabled>
-	       </snapshots>
-	   </repository>
-	</repositories>
+
+    <repositories>
+        <!-- Java.net Maven Repository, required by javax.mail -->
+        <repository>
+            <id>java.net</id>
+            <name>Java.net Maven2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- JBoss Maven Repository, required by Drools -->
+        <repository>
+            <id>jboss</id>
+            <name>JBoss Maven2 Repository</name>
+            <url>http://repository.jboss.com/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- Scriptengines Google Maven Repository, required by scriptengines -->
+        <repository>
+            <id>scriptengines</id>
+            <name>Scriptengines Google Code Maven Repository</name>
+            <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- ServiceMix' Maven 2 repository: xmlpull 1.1.3.4d_b4_min is not in central repo -->
+        <repository>
+            <id>servicemix.m2-repo</id>
+            <name>ServiceMix' Maven 2 repository</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 	<properties>
 		<sonar.skippedModules>examples</sonar.skippedModules>
