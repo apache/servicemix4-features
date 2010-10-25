@@ -41,8 +41,8 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
         super(uri, component);
         this.endpointName = endpointName;
     }
-    @Override
 
+    @Override
     public void configureProperties(Map<String, Object> options) {
         synchronous = Boolean.valueOf((String) options.remove(SYNCHRONOUS));
     }

@@ -117,22 +117,29 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
      * - finishing the NMR Exchange MEP
      */
     private void handleResponse(Exchange exchange, Channel client, org.apache.servicemix.nmr.api.Exchange e) {
-        if (e.getPattern() != Pattern.InOnly) {
-            if (e.getError() != null) {
-                exchange.setException(e.getError());
-            } else {
-                exchange.getProperties().putAll(e.getProperties());
-                if (e.getFault().getBody() != null) {
-                    exchange.getOut().setFault(true);
-                    getEndpoint().getComponent().getBinding().copyNmrMessageToCamelMessage(e.getFault(), exchange.getOut());
-                } else {
-                    getEndpoint().getComponent().getBinding().copyNmrMessageToCamelMessage(e.getOut(), exchange.getOut());
-                }
-                e.setStatus(Status.Done);
-                channel.send(e);
-            }
-
+        if (e.getError() != null) {
+            handleErrorResponse(exchange, client, e);
+        } else {
+            handleSuccessResponse(exchange, client, e);
         }
+    }
+
+    private void handleSuccessResponse(Exchange exchange, Channel client, org.apache.servicemix.nmr.api.Exchange e) {
+        if (e.getPattern() != Pattern.InOnly) {
+            exchange.getProperties().putAll(e.getProperties());
+            if (e.getFault().getBody() != null) {
+                exchange.getOut().setFault(true);
+                getEndpoint().getComponent().getBinding().copyNmrMessageToCamelMessage(e.getFault(), exchange.getOut());
+            } else {
+                getEndpoint().getComponent().getBinding().copyNmrMessageToCamelMessage(e.getOut(), exchange.getOut());
+            }
+            e.setStatus(Status.Done);
+            channel.send(e);
+        }
+    }
+
+    private void handleErrorResponse(Exchange camel, Channel client, org.apache.servicemix.nmr.api.Exchange nmr) {
+        camel.setException(nmr.getError());
     }
 
     @Override
