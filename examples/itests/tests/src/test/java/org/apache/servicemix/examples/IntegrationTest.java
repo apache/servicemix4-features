@@ -177,7 +177,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
         waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-http-osgi");
         Thread.sleep(5000);
 
-        ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
+        String filter = "(&(" + "objectclass=" + HelloWorld.class.getName() + ")(TEST-BUNDLE-NAME=cxf-http-osgi))";
+        ServiceReference ref = bundleContext.getServiceReferences(null, filter)[0];
         assertNotNull("Service Reference is null", ref);
 
         org.apache.servicemix.examples.cxf.HelloWorld helloWorld = null;
@@ -192,8 +193,8 @@ public class IntegrationTest extends AbstractIntegrationTest {
         Thread.sleep(5000);
         waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-jms-osgi");
         Thread.sleep(5000);
-
-        ServiceReference ref = bundleContext.getServiceReference(HelloWorld.class.getName());
+        String filter = "(&(" + "objectclass=" + HelloWorld.class.getName() + ")(TEST-BUNDLE-NAME=cxf-jms-osgi))";
+        ServiceReference ref = bundleContext.getServiceReferences(null, filter)[0];
         assertNotNull("Service Reference is null", ref);
 
         org.apache.servicemix.examples.cxf.HelloWorld helloWorld = null;

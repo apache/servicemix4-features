@@ -58,7 +58,11 @@
     </jaxws:client>
  
     <osgi:service id="testHelloWorld" ref="client"
-        interface="org.apache.servicemix.examples.cxf.HelloWorld"/>
+        interface="org.apache.servicemix.examples.cxf.HelloWorld">
+        <osgi:service-properties>
+            <entry key="TEST-BUNDLE-NAME" value="cxf-nmr-osgi" />
+        </osgi:service-properties>
+    </osgi:service>
 
 
 </beans>

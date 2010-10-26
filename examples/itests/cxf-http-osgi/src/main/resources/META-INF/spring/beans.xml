@@ -52,7 +52,11 @@
      	address="http://localhost:8080/cxf/HelloWorldOSGi"/>   
  
     <osgi:service id="testHelloWorld" ref="client"
-        interface="org.apache.servicemix.examples.cxf.HelloWorld"/>
+        interface="org.apache.servicemix.examples.cxf.HelloWorld">
+        <osgi:service-properties>
+            <entry key="TEST-BUNDLE-NAME" value="cxf-http-osgi" />
+        </osgi:service-properties>
+    </osgi:service>
 
 
 </beans>

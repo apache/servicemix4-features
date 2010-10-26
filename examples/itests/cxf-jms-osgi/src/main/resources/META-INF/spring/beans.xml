@@ -22,7 +22,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
 	xmlns:osgi="http://www.springframework.org/schema/osgi"
-	xsi:schemaLocation="
+	xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
 		http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
@@ -37,7 +38,13 @@
 	    endpointName="e:HelloWorldImplPort"
 	    serviceName="s:HelloWorldImplService"
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"
-        xmlns:s="http://cxf.examples.servicemix.apache.org/"/>
+            xmlns:s="http://cxf.examples.servicemix.apache.org/">
+            <jaxws:features>
+                <bean xmlns="http://www.springframework.org/schema/beans"
+                        class="org.apache.cxf.transport.jms.JMSConfigFeature"
+                        p:jmsConfig-ref="jmsConfig"/>
+            </jaxws:features>
+        </jaxws:endpoint>
 
 
     <jaxws:client id="client" 
@@ -47,10 +54,33 @@
 	    xmlns:e="http://cxf.examples.servicemix.apache.org/"
         xmlns:s="http://cxf.examples.servicemix.apache.org/"
      	wsdlLocation="wsdl/hello_world.wsdl"
-     	/>   
+     	>
+        <jaxws:features>
+                <bean xmlns="http://www.springframework.org/schema/beans"
+                        class="org.apache.cxf.transport.jms.JMSConfigFeature"
+                        p:jmsConfig-ref="jmsConfig"/>
+        </jaxws:features>
+    </jaxws:client>   
  
+    <bean id="jmsConfig" class="org.apache.cxf.transport.jms.JMSConfiguration"
+        p:connectionFactory-ref="jmsConnectionFactory"
+        p:targetDestination="test.cxf.jmstransport.queue"
+     />
+
+     <bean id="jmsConnectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory">
+                <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                        <property name="brokerURL" value="tcp://localhost:61616" />
+                </bean>
+        </property>
+    </bean>
+
     <osgi:service id="testHelloWorld" ref="client"
-        interface="org.apache.servicemix.examples.cxf.HelloWorld"/>
+        interface="org.apache.servicemix.examples.cxf.HelloWorld">
+        <osgi:service-properties>
+            <entry key="TEST-BUNDLE-NAME" value="cxf-jms-osgi" />
+        </osgi:service-properties>
+    </osgi:service>
 
 
 </beans>

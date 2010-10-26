@@ -83,7 +83,8 @@
 							org.apache.activemq.usage,
 							org.apache.activemq.broker,
 							javax.jms,
-							org.apache.servicemix.examples.cxf
+							org.apache.servicemix.examples.cxf,
+                                                        org.apache.cxf.transport.jms, org.springframework.jms.connection
                         </Import-Package>
 						<Export-Package>org.apache.servicemix.examples.cxf_jms_osgi</Export-Package>
 						<Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
