@@ -17,6 +17,8 @@
      limitations under the License.
   -->
 <features>
+    <repository>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</repository>
+    <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
     <feature name="openjpa" version="${openjpa.version}">
         <feature>transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo-annotation.version}</bundle>

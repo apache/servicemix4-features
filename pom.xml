@@ -114,12 +114,13 @@
 		<sonar.skippedModules>examples</sonar.skippedModules>
 
 		<!-- OSGi (Karaf, Felix, Aries) -->
+        <aries.blueprint.version>0.2-incubating</aries.blueprint.version>
 		<aries.jpa.version>0.2-incubating</aries.jpa.version>
 		<aries.util.version>0.2-incubating</aries.util.version>
 		<aries.transaction.version>0.2-incubating</aries.transaction.version>
 		<felix.fileinstall.version>3.0.2</felix.fileinstall.version>
 		<felix.prefs.version>1.0.4</felix.prefs.version>
-		<karaf.version>2.1.0</karaf.version>
+		<karaf.version>2.1.1-SNAPSHOT</karaf.version>
 		<osgi.compendium.version>4.2.0</osgi.compendium.version>
 		<osgi.core.version>4.2.0</osgi.core.version>
 
@@ -127,7 +128,7 @@
 		<activemq.version>5.4.1</activemq.version>
 
 		<!-- Camel -->
-		<camel.version>2.4.0</camel.version>
+		<camel.version>2.5.0</camel.version>
 
 		<!-- CXF -->
 		<cxf.version>2.2.11</cxf.version>
@@ -158,6 +159,7 @@
 		<asm.bundle.version>2.2.3_4</asm.bundle.version>
 		<bcel.bundle.version>5.2_3</bcel.bundle.version>
 		<cglib.bundle.version>2.1_3_6</cglib.bundle.version>
+        <cometd-java-server.bundle.version>1.0.1_2</cometd-java-server.bundle.version>
 		<commons-beanutils.bundle.version>1.8.2_1</commons-beanutils.bundle.version>
 		<commons-codec.bundle.version>1.3_3</commons-codec.bundle.version>
 		<commons-collections.bundle.version>3.2.1_1</commons-collections.bundle.version>
@@ -169,13 +171,14 @@
 		<commons-pool.bundle.version>1.5.4_2</commons-pool.bundle.version>
 		<commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
 		<dom4j.bundle.version>1.6.1_3</dom4j.bundle.version>
-		<dozer.bundle.version>5.2.0_2</dozer.bundle.version>
+		<dozer.bundle.version>5.3.0_1-SNAPSHOT</dozer.bundle.version>
 		<drools.bundle.version>5.1.1_1-SNAPSHOT</drools.bundle.version>
 		<fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
 		<flatpack.bundle.version>3.1.1_4</flatpack.bundle.version>
 		<freemarker.bundle.version>2.3.15_4</freemarker.bundle.version>
-		<groovy.bundle.version>1.5.6_4</groovy.bundle.version>
 		<hapi.bundle.version>0.5.1_4</hapi.bundle.version>
+        <groovy.bundle.version>1.5.6_4</groovy.bundle.version>
+        <hibernate-validator.bundle.version>4.1.0.Final_1</hibernate-validator.bundle.version>
 		<ibatis-sqlmap.bundle.version>2.3.4.726_3</ibatis-sqlmap.bundle.version>
 		<irclib.bundle.version>1.10_3</irclib.bundle.version>
 		<isorelax.bundle.version>20050913_3</isorelax.bundle.version>
@@ -185,7 +188,7 @@
 		<jcr-api.bundle.version>1.0_3</jcr-api.bundle.version>
 		<jdt-core.bundle.version>3.2.3_4</jdt-core.bundle.version>
 		<jdom.bundle.version>1.1_3</jdom.bundle.version>
-		<jetty.bundle.version>6.1.22_2</jetty.bundle.version>
+		<jetty.bundle.version>6.1.25_1-SNAPSHOT</jetty.bundle.version>
 		<jetty-cometd.bundle.version>6.1.22_1</jetty-cometd.bundle.version>
 		<jexcelapi.bundle.version>2.4.2_3</jexcelapi.bundle.version>
 		<jing.bundle.version>20030619_3</jing.bundle.version>
@@ -193,9 +196,11 @@
 		<joda-time.bundle.version>1.5.2_3</joda-time.bundle.version>
 		<josql.bundle.version>1.5_4</josql.bundle.version>
 		<jsch.bundle.version>0.1.31_4</jsch.bundle.version>
-		<jsmpp.bundle.version>2.0_3</jsmpp.bundle.version>
+        <jsendnsca-core.bundle.version>1.3.1_2</jsendnsca-core.bundle.version>
+		<jsmpp.bundle.version>2.1.0_2</jsmpp.bundle.version>
 		<juel.bundle.version>2.1.0_3</juel.bundle.version>
 		<junit.bundle.version>4.7_2</junit.bundle.version>
+        <lucene.bundle.version>3.0.1_2</lucene.bundle.version>
 		<mina.bundle.version>1.1.7_4</mina.bundle.version>
 		<mvel.bundle.version>1.3.12_2</mvel.bundle.version>
 		<neethi.bundle.version>2.0.4_3</neethi.bundle.version>
@@ -209,10 +214,12 @@
 		<propertyset.bundle.version>1.3_4</propertyset.bundle.version>
 		<protobuf-java.bundle.version>2.3.0_1</protobuf-java.bundle.version>
 		<qpid.bundle.version>0.5.0_3</qpid.bundle.version>
-		<quartz.bundle.version>1.6.6_2</quartz.bundle.version>
+		<quartz.bundle.version>1.8.3_2</quartz.bundle.version>
 		<rhino.bundle.version>1.7R1_3</rhino.bundle.version>
+        <rome.bundle.version>1.0_1</rome.bundle.version>
 		<saaj-impl.bundle.version>1.3.2_2</saaj-impl.bundle.version>
 		<saxon.bundle.version>9.1.0.8_1</saxon.bundle.version>
+        <scala-library.bundle.version>2.8.0_1</scala-library.bundle.version>
 		<serp.bundle.version>1.13.1_3</serp.bundle.version>
 		<smack.bundle.version>3.1.0_2</smack.bundle.version>
 		<snmp4j.bundle.version>1.8.1_4</snmp4j.bundle.version>
@@ -223,7 +230,7 @@
 		<wsdl4j.bundle.version>1.6.2_3</wsdl4j.bundle.version>
 		<xalan.bundle.version>2.7.1_3</xalan.bundle.version>
 		<xerces.bundle.version>2.9.1_4</xerces.bundle.version>
-		<xmlbeans.bundle.version>2.4.0_4</xmlbeans.bundle.version>
+		<xmlbeans.bundle.version>2.5.0_1</xmlbeans.bundle.version>
 		<xmlresolver.bundle.version>1.2_3</xmlresolver.bundle.version>
 		<xmlsec.bundle.version>1.4.3_3</xmlsec.bundle.version>
 		<xpp3.bundle.version>1.1.4c_4</xpp3.bundle.version>
@@ -264,11 +271,11 @@
 		<servicemix-exec.version>2010.02-SNAPSHOT</servicemix-exec.version>
 
 		<!-- PAX -->
-		<pax.url.version>1.1.2</pax.url.version>
-		<pax.web.version>0.7.2</pax.web.version>
+		<pax.url.version>1.1.3</pax.url.version>
+		<pax.web.version>0.7.3</pax.web.version>
 
 		<!-- Spring -->
-		<spring.version>3.0.3.RELEASE</spring.version>
+		<spring.version>3.0.4.RELEASE</spring.version>
 		<spring.osgi.version>1.2.0</spring.osgi.version>
 
 		<!-- ODE -->
@@ -285,6 +292,7 @@
 		<axiom.version>1.2.8</axiom.version>
 		<bouncycastle.version>140</bouncycastle.version>
 		<commons-dbcp.version>1.3</commons-dbcp.version>
+        <commons-exec.version>1.0.1</commons-exec.version>
 		<commons-jexl.version>2.0.1</commons-jexl.version>
 		<commons-jxpath.version>1.3</commons-jxpath.version>
 		<commons-logging.version>1.1.1</commons-logging.version>
@@ -293,18 +301,26 @@
 		<derby.version>10.5.3.0_1</derby.version>
 		<drools.version>5.1.1</drools.version>
 		<easymock.version>2.4</easymock.version>
-		<groovy.version>1.7.0</groovy.version>
+        <guiceyfruit.version>2.0</guiceyfruit.version>
+		<groovy.version>1.7.5</groovy.version>
+        <hawtbuf.version>1.2</hawtbuf.version>
+        <hawtdb.version>1.5</hawtdb.version>
 		<httpcomponents.version>4.0.1</httpcomponents.version>
 		<jackrabbit.version>1.5.3</jackrabbit.version>
+        <jackson.version>1.6.0</jackson.version>
 		<jaxp-ri.version>1.4.2</jaxp-ri.version>
 		<jaxws-api.version>2.1</jaxws-api.version>
+        <javassist.version>3.9.0</javassist.version>
 		<javax.mail.version>1.4.3</javax.mail.version>
+        <jetty.version>7.1.6.v20100715</jetty.version>
 		<jettison.version>1.2</jettison.version>
 		<junit.version>4.7</junit.version>
 		<log4j.version>1.2.16</log4j.version>
 		<lingo.version>1.3</lingo.version>
+        <netty.version>3.2.3.Final</netty.version>
 		<openjpa.version>2.0.0</openjpa.version>
 		<opensaml.version>1.0.1</opensaml.version>
+        <restlet.version>1.1.10</restlet.version>
 		<scriptengines.version>1.1</scriptengines.version>
 		<tranql.version>1.6</tranql.version>
 		<woodstox.version>4.0.8</woodstox.version>
