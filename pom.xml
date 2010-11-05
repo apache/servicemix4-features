@@ -327,8 +327,9 @@
 		<woodstox.stax2-api.version>3.0.2</woodstox.stax2-api.version>
 		<wss4j.version>1.5.9</wss4j.version>
 		<xbean.version>3.7</xbean.version>
-		<xmlschema.version>1.4.5</xmlschema.version>
-	</properties>
+        <xfire.version>1.0.1</xfire.version>
+        <xmlschema.version>1.4.5</xmlschema.version>
+    </properties>
 
 	<dependencyManagement>
 	   <dependencies>
@@ -1325,7 +1326,7 @@
 	       <dependency>
 	           <groupId>xfire</groupId>
 	           <artifactId>opensaml</artifactId>
-	           <version>${opensaml.version}</version>
+	           <version>${xfire.version}</version>
 	       </dependency>
 	       
 	   </dependencies>
