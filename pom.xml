@@ -328,7 +328,7 @@
 		<wss4j.version>1.5.9</wss4j.version>
 		<xbean.version>3.7</xbean.version>
         <xfire.version>1.0.1</xfire.version>
-        <xmlschema.version>1.4.5</xmlschema.version>
+        <xmlschema.version>1.4.7</xmlschema.version>
     </properties>
 
 	<dependencyManagement>
