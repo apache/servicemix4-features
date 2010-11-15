@@ -181,7 +181,7 @@
     <feature name="servicemix-cxf-bc" version="${servicemix-cxf-bc.version}">
         <feature version="${servicemix-shared.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.springframework/spring-tx/${spring.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
@@ -206,7 +206,7 @@
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty-bundle/${jetty.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http.version}</bundle>
