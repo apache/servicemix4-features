@@ -96,7 +96,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!-- ServiceMix' Maven 2 repository: xmlpull 1.1.3.4d_b4_min is not in central repo -->
+        <!-- ServiceMix' Maven 2 repository: jsmpp 2.0 is not in central repo -->
         <repository>
             <id>servicemix.m2-repo</id>
             <name>ServiceMix' Maven 2 repository</name>
@@ -308,7 +308,7 @@
 		<httpcomponents.version>4.0.1</httpcomponents.version>
 		<jackrabbit.version>1.5.3</jackrabbit.version>
         <jackson.version>1.6.0</jackson.version>
-		<jaxp-ri.version>1.4.2</jaxp-ri.version>
+		<jaxp-ri.version>1.4.4</jaxp-ri.version>
 		<jaxws-api.version>2.1</jaxws-api.version>
         <javassist.version>3.9.0</javassist.version>
 		<javax.mail.version>1.4.3</javax.mail.version>
