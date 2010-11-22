@@ -118,11 +118,14 @@
                   <configuration>
                       <artifactItems>
                           <artifactItem>
-                              <!--<groupId>org.apache.servicemix</groupId>
-			      <artifactId>apache-servicemix</artifactId>-->
-                              <groupId>org.apache.karaf</groupId>
+                              <groupId>org.apache.servicemix</groupId>
+			                  <artifactId>apache-servicemix</artifactId>
+                              <version>${pom.version}</version>                     
+                              <!--<groupId>org.apache.karaf</groupId>
                               <artifactId>apache-karaf</artifactId>
                               <version>2.1.0</version>
+                              -->
+
                               <type>zip</type>
                               <overWrite>true</overWrite>
                               <outputDirectory>${project.build.directory}/smx4/WEB-INF</outputDirectory>
@@ -146,8 +149,8 @@
                   <configuration>
                       <tasks>
                           <move todir="${project.build.directory}/smx4/WEB-INF/servicemix">
-                              <!-- <fileset dir="${project.build.directory}/smx4/WEB-INF/apache-servicemix-${pom.version}" /> -->
-                                   <fileset dir="${project.build.directory}/smx4/WEB-INF/apache-karaf-2.1.0" />
+                              <fileset dir="${project.build.directory}/smx4/WEB-INF/apache-servicemix-${pom.version}" /> 
+                              <!--      <fileset dir="${project.build.directory}/smx4/WEB-INF/apache-karaf-2.1.0" /> -->
                           </move>
                       </tasks>
                   </configuration>
