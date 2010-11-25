@@ -280,7 +280,7 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/${xalan.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.hapi/${hapi.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mina/${mina.bundle.version}}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mina/${mina.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-hl7/${camel.version}</bundle>
     </feature>
     <feature name="camel-hawtdb" version="${camel.version}">
