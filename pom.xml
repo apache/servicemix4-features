@@ -120,7 +120,7 @@
 		<aries.transaction.version>0.2-incubating</aries.transaction.version>
 		<felix.fileinstall.version>3.0.2</felix.fileinstall.version>
 		<felix.prefs.version>1.0.4</felix.prefs.version>
-		<karaf.version>2.1.1</karaf.version>
+		<karaf.version>2.1.2</karaf.version>
 		<osgi.compendium.version>4.2.0</osgi.compendium.version>
 		<osgi.core.version>4.2.0</osgi.core.version>
 
