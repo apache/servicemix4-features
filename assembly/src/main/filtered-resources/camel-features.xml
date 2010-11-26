@@ -99,6 +99,8 @@
     </feature>
     <feature name='camel-castor' version='${camel.version}'>
         <feature version='${camel.version}'>camel-core</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.regexp/${regexp.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.castor/${castor.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-castor/${camel.version}</bundle>
     </feature>
