@@ -99,7 +99,7 @@
     </feature>
     <feature name='camel-castor' version='${camel.version}'>
         <feature version='${camel.version}'>camel-core</feature>
-        <bundle>mvn:http://repository.springsource.com/maven/bundles/external!org.codehaus.castor/com.springsource.org.castor/1.2.0</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.castor/${castor.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-castor/${camel.version}</bundle>
     </feature>
     <feature name="camel-crypto" version="${camel.version}">

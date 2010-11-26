@@ -159,6 +159,7 @@
 		<asm.bundle.version>2.2.3_4</asm.bundle.version>
 		<bcel.bundle.version>5.2_3</bcel.bundle.version>
 		<cglib.bundle.version>2.1_3_6</cglib.bundle.version>
+        <castor.bundle.version>1.3.1_1-SNAPSHOT</castor.bundle.version>
         <cometd-java-server.bundle.version>1.0.1_2</cometd-java-server.bundle.version>
 		<commons-beanutils.bundle.version>1.8.2_1</commons-beanutils.bundle.version>
 		<commons-codec.bundle.version>1.3_3</commons-codec.bundle.version>
