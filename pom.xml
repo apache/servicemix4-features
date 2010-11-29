@@ -180,6 +180,7 @@
 		<freemarker.bundle.version>2.3.15_4</freemarker.bundle.version>
 		<hapi.bundle.version>0.5.1_4</hapi.bundle.version>
         <groovy.bundle.version>1.5.6_4</groovy.bundle.version>
+        <guiceyfruit.bundle.version>2.0_1-SNAPSHOT</guiceyfruit.bundle.version>
         <hibernate-validator.bundle.version>4.1.0.Final_1</hibernate-validator.bundle.version>
 		<ibatis-sqlmap.bundle.version>2.3.4.726_3</ibatis-sqlmap.bundle.version>
 		<irclib.bundle.version>1.10_3</irclib.bundle.version>
@@ -304,7 +305,6 @@
 		<derby.version>10.5.3.0_1</derby.version>
 		<drools.version>5.1.1</drools.version>
 		<easymock.version>2.4</easymock.version>
-        <guiceyfruit.version>2.0</guiceyfruit.version>
 		<groovy.version>1.7.5</groovy.version>
         <hawtbuf.version>1.2</hawtbuf.version>
         <hawtdb.version>1.5</hawtdb.version>
