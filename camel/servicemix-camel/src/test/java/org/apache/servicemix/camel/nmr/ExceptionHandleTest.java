@@ -163,6 +163,9 @@ public class ExceptionHandleTest extends CamelTestSupport {
         ClientProxy.getClient(greeter).getInInterceptors().add(new LoggingInInterceptor());
         ClientProxy.getClient(greeter).getOutInterceptors().add(new LoggingOutInterceptor());
         greeter.greetMeOneWay("test oneway");
+        // Need to sleep a while as Camel is using Async Engine, 
+        // we need to make sure the camel context is not shutdown rightly.
+        Thread.sleep(1000); 
     }
     
     public void testGetTransportFactoryFromBus() throws Exception {
