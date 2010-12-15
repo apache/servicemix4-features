@@ -30,6 +30,8 @@ import org.apache.camel.ExchangePattern;
 import org.apache.camel.Message;
 import org.apache.camel.impl.DefaultExchange;
 import org.apache.camel.impl.DefaultMessage;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Pattern;
 
@@ -37,6 +39,7 @@ import org.apache.servicemix.nmr.api.Pattern;
  * The binding object will help us to deal with copying between the NMR exchange and camel exchange
  */
 public class ServiceMixBinding {
+    private final transient Log LOG = LogFactory.getLog(ServiceMixBinding.class);
     public static final String NMR_MESSAGE = "nmrMessage";
     public static final String NMR_EXCHANGE = "nmrExchange";
     public static final String NMR_OPERATION = "nmrOperation";
@@ -129,6 +132,8 @@ public class ServiceMixBinding {
             if (nmrMessage.getAttachment(name) instanceof DataHandler) {
                 DataHandler dataHandler = (DataHandler) nmrMessage.getAttachment(name);             
                 camelMessage.addAttachment(name, dataHandler);
+            } else {
+                LOG.warn("NMR attachement of " + name + " is not a instance of DataHandler, cannot copy it into Camel message.");
             }
         }
         
