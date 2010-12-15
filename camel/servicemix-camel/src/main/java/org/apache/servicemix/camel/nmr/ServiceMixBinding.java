@@ -51,7 +51,9 @@ public class ServiceMixBinding {
             //addSecuritySubject(nmrMessage, camelMessage);
 
             // propagate the security subject
-            nmrMessage.setSecuritySubject(camelMessage.getHeader(Exchange.AUTHENTICATION, Subject.class));
+            if (camelMessage.getHeader(Exchange.AUTHENTICATION, Subject.class) != null) {
+                nmrMessage.setSecuritySubject(camelMessage.getHeader(Exchange.AUTHENTICATION, Subject.class));
+            }
         }
     }
 
@@ -62,7 +64,9 @@ public class ServiceMixBinding {
         addCamelAttachments(nmrMessage, camelMessage);
 
         // copy the security subject
-        camelMessage.setHeader(Exchange.AUTHENTICATION, nmrMessage.getSecuritySubject());
+        if (nmrMessage.getSecuritySubject() != null) {
+            camelMessage.setHeader(Exchange.AUTHENTICATION, nmrMessage.getSecuritySubject());
+        }
     }
     
     public org.apache.servicemix.nmr.api.Exchange populateNmrExchangeFromCamelExchange(Exchange camelExchange, Channel client)  {
