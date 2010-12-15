@@ -51,6 +51,7 @@
 			<plugin>
 				<groupId>org.apache.servicemix.tooling</groupId>
 				<artifactId>xfire-maven-plugin</artifactId>
+                <version>4.2</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>

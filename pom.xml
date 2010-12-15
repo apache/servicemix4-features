@@ -1260,11 +1260,6 @@
 	           <version>${axiom.version}</version>
 	       </dependency>
 	       <dependency>
-	           <groupId>org.apache.ws.commons.schema</groupId>
-	           <artifactId>XmlSchema</artifactId>
-	           <version>${xmlschema.version}</version>
-	       </dependency>
-	       <dependency>
 	           <groupId>org.apache.ws.security</groupId>
 	           <artifactId>wss4j</artifactId>
 	           <version>${wss4j.version}</version>
@@ -1347,6 +1342,11 @@
 						<autoVersionSubmodules>true</autoVersionSubmodules>
 					</configuration>
 				</plugin>
+                <plugin>
+                    <groupId>org.apache.servicemix.tooling</groupId>
+                    <artifactId>depends-maven-plugin</artifactId>
+                    <version>${depends-maven-plugin.version}</version>
+                </plugin>
 				<plugin>
 					<groupId>org.apache.servicemix.tooling</groupId>
 					<artifactId>jbi-maven-plugin</artifactId>
