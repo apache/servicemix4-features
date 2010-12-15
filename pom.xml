@@ -159,7 +159,7 @@
 		<asm.bundle.version>2.2.3_4</asm.bundle.version>
 		<bcel.bundle.version>5.2_3</bcel.bundle.version>
 		<cglib.bundle.version>2.1_3_6</cglib.bundle.version>
-        <castor.bundle.version>1.3.1_1-SNAPSHOT</castor.bundle.version>
+        <castor.bundle.version>1.3.1_1</castor.bundle.version>
         <cometd-java-server.bundle.version>1.0.1_2</cometd-java-server.bundle.version>
 		<commons-beanutils.bundle.version>1.8.2_1</commons-beanutils.bundle.version>
 		<commons-codec.bundle.version>1.3_3</commons-codec.bundle.version>
@@ -172,15 +172,15 @@
 		<commons-pool.bundle.version>1.5.4_2</commons-pool.bundle.version>
 		<commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
 		<dom4j.bundle.version>1.6.1_3</dom4j.bundle.version>
-		<dozer.bundle.version>5.3.0_1-SNAPSHOT</dozer.bundle.version>
-		<drools.bundle.version>5.1.1_1-SNAPSHOT</drools.bundle.version>
-        <ehcache.bundle.version>1.6.2_1-SNAPSHOT</ehcache.bundle.version>
+		<dozer.bundle.version>5.3.0_1</dozer.bundle.version>
+		<drools.bundle.version>5.1.1_1</drools.bundle.version>
+        <ehcache.bundle.version>1.6.2_1</ehcache.bundle.version>
 		<fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
 		<flatpack.bundle.version>3.1.1_4</flatpack.bundle.version>
 		<freemarker.bundle.version>2.3.15_4</freemarker.bundle.version>
 		<hapi.bundle.version>0.5.1_4</hapi.bundle.version>
         <groovy.bundle.version>1.5.6_4</groovy.bundle.version>
-        <guiceyfruit.bundle.version>2.0_1-SNAPSHOT</guiceyfruit.bundle.version>
+        <guiceyfruit.bundle.version>2.0_1</guiceyfruit.bundle.version>
         <hibernate-validator.bundle.version>4.1.0.Final_1</hibernate-validator.bundle.version>
 		<ibatis-sqlmap.bundle.version>2.3.4.726_3</ibatis-sqlmap.bundle.version>
 		<irclib.bundle.version>1.10_3</irclib.bundle.version>
@@ -242,10 +242,10 @@
 
 		<!-- ServiceMix Components and Resources -->
 		<smx3.version>3.3.1</smx3.version>
-		<servicemix-utils.version>1.3.0-SNAPSHOT</servicemix-utils.version>
+		<servicemix-utils.version>1.3.0</servicemix-utils.version>
 		<servicemix.legal.version>1.0</servicemix.legal.version>
 		<servicemix.nmr.version>1.3.0-SNAPSHOT</servicemix.nmr.version>
-		<servicemix.specs.version>1.6-SNAPSHOT</servicemix.specs.version>
+		<servicemix.specs.version>1.6.0</servicemix.specs.version>
 		
 		<servicemix-shared.version>2010.02-SNAPSHOT</servicemix-shared.version>
 		<servicemix-quartz.version>2010.02-SNAPSHOT</servicemix-quartz.version>
@@ -287,7 +287,7 @@
 
 		<!-- Maven Plugins -->
 		<depends-maven-plugin.version>1.2</depends-maven-plugin.version>
-		<jbi-maven-plugin.version>4.4-SNAPSHOT</jbi-maven-plugin.version>
+		<jbi-maven-plugin.version>4.4</jbi-maven-plugin.version>
 		<maven-antrun-plugin.version>1.2</maven-antrun-plugin.version>
 		<maven-assembly-plugin.version>2.2-beta-4</maven-assembly-plugin.version>
 		<maven-bundle-plugin.version>2.1.0</maven-bundle-plugin.version>
@@ -1324,11 +1324,6 @@
 	           <artifactId>opensaml</artifactId>
 	           <version>${xfire.version}</version>
 	       </dependency>
-	       <dependency>
-	           <groupId>org.apache.woden</groupId>
-	           <artifactId>woden</artifactId>
-	           <version>1.0M8</version>
-           </dependency>
 	   </dependencies>
 	</dependencyManagement>
 
