@@ -76,7 +76,7 @@
         <repository>
             <id>jboss</id>
             <name>JBoss Maven2 Repository</name>
-            <url>http://repository.jboss.com/maven2</url>
+            <url>http://repository.jboss.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -96,10 +96,10 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!-- ServiceMix' Maven 2 repository: jsmpp 2.0 is not in central repo -->
+        <!-- ServiceMix Maven 2 repository: jsmpp 2.0 is not in central repo -->
         <repository>
             <id>servicemix.m2-repo</id>
-            <name>ServiceMix' Maven 2 repository</name>
+            <name>ServiceMix Maven 2 repository</name>
             <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
             <releases>
                 <enabled>true</enabled>
