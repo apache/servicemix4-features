@@ -125,7 +125,7 @@
 		<osgi.core.version>4.2.0</osgi.core.version>
 
 		<!-- ActiveMQ -->
-		<activemq.version>5.4.1</activemq.version>
+		<activemq.version>5.4.2</activemq.version>
 
 		<!-- Camel -->
 		<camel.version>2.5.0</camel.version>
