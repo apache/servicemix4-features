@@ -275,8 +275,8 @@
 		<servicemix-exec.version>2010.02</servicemix-exec.version>
 
 		<!-- PAX -->
-		<pax.url.version>1.1.3</pax.url.version>
-		<pax.web.version>0.7.3</pax.web.version>
+		<pax.url.version>1.2.1</pax.url.version>
+		<pax.web.version>0.7.4</pax.web.version>
 
 		<!-- Spring -->
 		<spring.version>3.0.4.RELEASE</spring.version>
