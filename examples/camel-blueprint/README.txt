@@ -28,7 +28,7 @@ deploy the properties file from the ServiceMix console.
 
 Explanation
 -----------
-The Camel route is defined in a Spring XML file, beans.xml, which can be
+The Camel route is defined in a Blueprint XML file, blueprint.xml, which can be
 found in the src/main/resources/OSGI-INF/blueprint directory of this example.
 The route is defined in the <route> element and can be explained as follows:
 
@@ -40,10 +40,10 @@ The route is defined in the <route> element and can be explained as follows:
 3. A log endpoint sends the transformed message to the
    Jakarta commons logger.
       
-The beans.xml file also contains the following elements: 
+The blueprint.xml file also contains the following elements:
 
 -  A <bean> element that instantiates the transformer bean using standard
-   Spring configuration syntax and specifies a prefix value using a
+   Blueprint configuration syntax and specifies a prefix value using a
    property placeholder. 
    
 -  An <cm:property-placeholder> element which allows you to specify placeholder
@@ -108,7 +108,7 @@ following being logged to your console screen:
 Updating and Redeploying the Properties File from the Console
 -------------------------------------------------------------
 You can update and redeploy the properties file that is used by the
-properties placeholder in the beans.xml from console as follows:
+properties placeholder in the blueprint.xml from console as follows:
 
 1. Edit the org.apache.servicemix.examples.cfg file, located in the
    same folder as this README, by changing the value of the "prefix"
@@ -200,7 +200,7 @@ similar to the following being logged to your console screen:
 
 Now, if you have not already done so, try updating and redeploying,
 from the console, the properties file that is used by the properties
-placeholder in the beans.xml file. For details on how to do this, see
+placeholder in the blueprint.xml file. For details on how to do this, see
 the "Updating and Redeploying the Properties File from the Console"
 section above.
 
