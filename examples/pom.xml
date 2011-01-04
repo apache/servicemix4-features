@@ -36,6 +36,7 @@
 		<module>bridge</module>
 		<module>bridge-camel</module>
 		<module>camel</module>
+		<module>camel-blueprint</module>
 		<module>cxf-wsdl-first</module>
 		<module>wsdl-first</module>
 		<module>loan-broker-bpel</module>

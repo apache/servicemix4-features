@@ -245,6 +245,13 @@
               <lineEnding>dos</lineEnding>
         </file>
         <file>
+              <source>${basedir}/../examples/camel-blueprint/README.txt</source>
+              <outputDirectory>/examples/camel-blueprint</outputDirectory>
+              <filtered>true</filtered>
+              <fileMode>0644</fileMode>
+              <lineEnding>dos</lineEnding>
+        </file>
+        <file>
               <source>${basedir}/../examples/cxf-wsdl-first/README.txt</source>
               <outputDirectory>/examples/cxf-wsdl-first</outputDirectory>
               <filtered>true</filtered>

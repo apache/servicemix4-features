@@ -129,6 +129,10 @@
         <feature version="${camel.version}">camel</feature>
         <bundle>mvn:org.apache.servicemix.examples/camel-osgi/${version}</bundle>
     </feature>
+    <feature name="examples-camel-blueprint" version="${version}">
+        <feature version="${camel.version}">camel-blueprint</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-blueprint/${version}</bundle>
+    </feature>
     <feature name="examples-camel-nmr" version="${version}">
         <feature version="${version}">camel-nmr</feature>
         <bundle>mvn:org.apache.servicemix.examples/camel-nmr/${version}</bundle>
