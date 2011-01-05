@@ -244,7 +244,7 @@
 		<smx3.version>3.3.1</smx3.version>
 		<servicemix-utils.version>1.3.0</servicemix-utils.version>
 		<servicemix.legal.version>1.0</servicemix.legal.version>
-		<servicemix.nmr.version>1.3.0-SNAPSHOT</servicemix.nmr.version>
+		<servicemix.nmr.version>1.3.0</servicemix.nmr.version>
 		<servicemix.specs.version>1.6.0</servicemix.specs.version>
 
         <servicemix-bean.version>2010.02</servicemix-bean.version>
