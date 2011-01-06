@@ -21,7 +21,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-
     <parent>
         <groupId>org.apache.servicemix.features</groupId>
         <artifactId>features</artifactId>
