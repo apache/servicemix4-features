@@ -19,31 +19,31 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>loan-broker</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>loan-broker</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.apache.servicemix.examples.loan-broker</groupId>
-	<artifactId>loan-broker-ode-su</artifactId>
-	<packaging>jbi-service-unit</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: ODE SU</name>
+    <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+    <artifactId>loan-broker-ode-su</artifactId>
+    <packaging>jbi-service-unit</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: ODE SU</name>
 
-	<properties>
-		<componentName>OdeBpelEngine</componentName>
-	</properties>
+    <properties>
+        <componentName>OdeBpelEngine</componentName>
+    </properties>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.servicemix.tooling</groupId>
-				<artifactId>jbi-maven-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
-	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

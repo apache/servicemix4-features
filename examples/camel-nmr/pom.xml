@@ -19,40 +19,40 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>camel-nmr</artifactId>
-	<packaging>bundle</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: Camel NMR</name>
+    <artifactId>camel-nmr</artifactId>
+    <packaging>bundle</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: Camel NMR</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>org.apache.servicemix.camel.nmr,org.apache.servicemix.nmr.api,*</Import-Package>
-						<Private-Package>org.apache.servicemix.examples.camel</Private-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>org.apache.servicemix.camel.nmr,org.apache.servicemix.nmr.api,*</Import-Package>
+                        <Private-Package>org.apache.servicemix.examples.camel</Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

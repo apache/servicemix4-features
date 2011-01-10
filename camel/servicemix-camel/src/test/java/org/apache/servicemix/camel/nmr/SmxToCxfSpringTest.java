@@ -39,8 +39,8 @@ public class SmxToCxfSpringTest extends SmxToCxfTest {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	from("cxf:bean:routerEndpoint").to("smx:bean:testEndpoint");
-            	from("smx:bean:testEndpoint").to("cxf:bean:serviceEndpoint");              
+                from("cxf:bean:routerEndpoint").to("smx:bean:testEndpoint");
+                from("smx:bean:testEndpoint").to("cxf:bean:serviceEndpoint");              
             }
         };
     }

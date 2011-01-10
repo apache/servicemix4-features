@@ -108,13 +108,13 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
     }
 
     public void process(Exchange exchange) {
-    	if (exchange == null || exchange.getStatus() != Status.Active) {
-    		return;
-    	}
-		if (exchange.getPattern() == Pattern.InOnly || exchange.getPattern() == Pattern.RobustInOnly) {
-			exchange.setStatus(Status.Done);
-			getChannel().send(exchange);
-		}
+        if (exchange == null || exchange.getStatus() != Status.Active) {
+            return;
+        }
+        if (exchange.getPattern() == Pattern.InOnly || exchange.getPattern() == Pattern.RobustInOnly) {
+            exchange.setStatus(Status.Done);
+            getChannel().send(exchange);
+        }
         QName opName = exchange.getOperation();
         getLogger().fine("dispatch method: " + opName);
 
@@ -129,15 +129,15 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             //copy attachments
             Collection<Attachment> cxfAttachmentList = new ArrayList<Attachment>();
             for (Map.Entry<String, Object> ent : nm.getAttachments().entrySet()) {
-            	cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
+                cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
             }
             inMessage.setAttachments(cxfAttachmentList);
             
             //copy properties
             for (Map.Entry<String, Object> ent : nm.getHeaders().entrySet()) {
-            	if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
-            		inMessage.put(ent.getKey(), ent.getValue());
-            	}
+                if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
+                    inMessage.put(ent.getKey(), ent.getValue());
+                }
             }
             
             //copy securitySubject
@@ -182,7 +182,7 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             // setup the message to be send back
             Channel dc = channel;
             message.put(Exchange.class, inMessage.get(Exchange.class));
-            NMRTransportFactory.removeUnusedInterceptprs(message);	
+            NMRTransportFactory.removeUnusedInterceptprs(message);    
             message.setContent(OutputStream.class, new NMRDestinationOutputStream(inMessage, message, dc));
             
         }        

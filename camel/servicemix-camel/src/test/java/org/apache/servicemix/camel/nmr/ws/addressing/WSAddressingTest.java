@@ -54,8 +54,8 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class WSAddressingTest extends CamelTestSupport implements VerificationCache {
-	
-	
+    
+    
     
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
 
@@ -113,7 +113,7 @@ public class WSAddressingTest extends CamelTestSupport implements VerificationCa
     
     @Override
     protected void setUp() throws Exception {
-    	applicationContext = createApplicationContext();
+        applicationContext = createApplicationContext();
         super.setUp();        
         startService();
         
@@ -148,13 +148,13 @@ public class WSAddressingTest extends CamelTestSupport implements VerificationCa
     }
     
     protected void startService() {       
-    	Object implementor = new GreeterImpl();
+        Object implementor = new GreeterImpl();
         endpoint = javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
     
     @Override
     protected void tearDown() throws Exception {
-    	if (applicationContext != null) {
+        if (applicationContext != null) {
             applicationContext.destroy();
         }
         if (server != null) {
@@ -181,20 +181,20 @@ public class WSAddressingTest extends CamelTestSupport implements VerificationCa
         return new RouteBuilder() {
             public void configure() {
                 // configure the route from spring application
-            	errorHandler(noErrorHandler());
-            	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
-            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
+                errorHandler(noErrorHandler());
+                from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
+                from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
             }
         };
     }
     
     protected CamelContext createCamelContext() throws Exception {
-    	camelContext = SpringCamelContext.springCamelContext(applicationContext);
-    	smxComponent = new ServiceMixComponent();
-    	nmr = new ServiceMix();
-    	((ServiceMix)nmr).init();
-    	smxComponent.setNmr(nmr);
-    	camelContext.addComponent("smx", smxComponent);
+        camelContext = SpringCamelContext.springCamelContext(applicationContext);
+        smxComponent = new ServiceMixComponent();
+        nmr = new ServiceMix();
+        ((ServiceMix)nmr).init();
+        smxComponent.setNmr(nmr);
+        camelContext.addComponent("smx", smxComponent);
         return camelContext;
     }
     
@@ -202,7 +202,7 @@ public class WSAddressingTest extends CamelTestSupport implements VerificationCa
         return new ClassPathXmlApplicationContext("org/apache/servicemix/camel/ws/addressing/server.xml");
     }
 
-	
+    
     public void testImplicitMAPs() throws Exception {
         try {
             String greeting = greeter.greetMe("implicit1");

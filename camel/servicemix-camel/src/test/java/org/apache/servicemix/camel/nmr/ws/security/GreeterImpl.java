@@ -17,18 +17,18 @@
 package org.apache.servicemix.camel.nmr.ws.security;
 
 @javax.jws.WebService(
-	    serviceName = "SOAPServiceWSSecurity", 
-	    portName = "TimestampSignEncrypt", 
-	    endpointInterface = "org.apache.hello_world_soap_http.Greeter",
-	    targetNamespace = "http://apache.org/hello_world_soap_http",
-	    wsdlLocation = "org/apache/servicemix/camel/ws/security/hello_world.wsdl"
-	)
-	public class GreeterImpl 
-	    extends org.apache.hello_world_soap_http.GreeterImpl {
+        serviceName = "SOAPServiceWSSecurity", 
+        portName = "TimestampSignEncrypt", 
+        endpointInterface = "org.apache.hello_world_soap_http.Greeter",
+        targetNamespace = "http://apache.org/hello_world_soap_http",
+        wsdlLocation = "org/apache/servicemix/camel/ws/security/hello_world.wsdl"
+    )
+    public class GreeterImpl 
+        extends org.apache.hello_world_soap_http.GreeterImpl {
 
-	    public String greetMe(String me) {
-	        System.out.println("\n\n*** GreetMe called with: " + me + "***\n\n");
-	        return "Hello " + me;
-	    }
-	    
-	}
+        public String greetMe(String me) {
+            System.out.println("\n\n*** GreetMe called with: " + me + "***\n\n");
+            return "Hello " + me;
+        }
+        
+    }

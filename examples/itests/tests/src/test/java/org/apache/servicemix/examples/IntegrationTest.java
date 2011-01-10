@@ -53,32 +53,32 @@ public class IntegrationTest extends AbstractIntegrationTest {
     private Properties dependencies;
 
     /**
-	 * The manifest to use for the "virtual bundle" created
-	 * out of the test classes and resources in this project
-	 *
-	 * This is actually the boilerplate manifest with one additional
-	 * import-package added. We should provide a simpler customization
-	 * point for such use cases that doesn't require duplication
-	 * of the entire manifest...
-	 */
-	protected String getManifestLocation() {
-		return "classpath:org/apache/servicemix/MANIFEST.MF";
-	}
+     * The manifest to use for the "virtual bundle" created
+     * out of the test classes and resources in this project
+     *
+     * This is actually the boilerplate manifest with one additional
+     * import-package added. We should provide a simpler customization
+     * point for such use cases that doesn't require duplication
+     * of the entire manifest...
+     */
+    protected String getManifestLocation() {
+        return "classpath:org/apache/servicemix/MANIFEST.MF";
+    }
 
     /**
-	 * The location of the packaged OSGi bundles to be installed
-	 * for this test. Values are Spring resource paths. The bundles
-	 * we want to use are part of the same multi-project maven
-	 * build as this project is. Hence we use the localMavenArtifact
-	 * helper method to find the bundles produced by the package
-	 * phase of the maven build (these tests will run after the
-	 * packaging phase, in the integration-test phase).
-	 *
-	 * JUnit, commons-logging, spring-core and the spring OSGi
-	 * test bundle are automatically included so do not need
-	 * to be specified here.
-	 */
-	protected String[] getTestBundlesNames() {
+     * The location of the packaged OSGi bundles to be installed
+     * for this test. Values are Spring resource paths. The bundles
+     * we want to use are part of the same multi-project maven
+     * build as this project is. Hence we use the localMavenArtifact
+     * helper method to find the bundles produced by the package
+     * phase of the maven build (these tests will run after the
+     * packaging phase, in the integration-test phase).
+     *
+     * JUnit, commons-logging, spring-core and the spring OSGi
+     * test bundle are automatically included so do not need
+     * to be specified here.
+     */
+    protected String[] getTestBundlesNames() {
         return new String[] {
             getBundle("org.apache.felix", "org.apache.felix.prefs"),
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.activation-api-1.1"),
@@ -215,10 +215,10 @@ public class IntegrationTest extends AbstractIntegrationTest {
         Channel client = nmr.createChannel();
         Exchange e = client.createExchange(Pattern.InOut);
         for (Endpoint ep : nmr.getEndpointRegistry().getServices()) {
-        	e.setTarget(nmr.getEndpointRegistry().lookup(nmr.getEndpointRegistry().getProperties(ep)));
-        	e.getIn().setBody(new StringSource("<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><ns2:sayHi xmlns:ns2=\"http://cxf.examples.servicemix.apache.org/\"><arg0>Bonjour</arg0></ns2:sayHi></soap:Body></soap:Envelope>"));
-        	boolean res = client.sendSync(e);
-        	assertTrue(res);
+            e.setTarget(nmr.getEndpointRegistry().lookup(nmr.getEndpointRegistry().getProperties(ep)));
+            e.getIn().setBody(new StringSource("<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><ns2:sayHi xmlns:ns2=\"http://cxf.examples.servicemix.apache.org/\"><arg0>Bonjour</arg0></ns2:sayHi></soap:Body></soap:Envelope>"));
+            boolean res = client.sendSync(e);
+            assertTrue(res);
         }
     
     }

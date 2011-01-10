@@ -19,52 +19,52 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.apache.servicemix.examples</groupId>
-	<artifactId>wsdl-first</artifactId>
-	<name>Apache ServiceMix :: Features :: Examples :: WSDL First</name>
-	<packaging>pom</packaging>
+    <groupId>org.apache.servicemix.examples</groupId>
+    <artifactId>wsdl-first</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: WSDL First</name>
+    <packaging>pom</packaging>
 
-	<modules>
-		<module>wsdl-first-jsr181-su</module>
-		<module>wsdl-first-http-su</module>
-		<module>wsdl-first-sa</module>
-	</modules>
+    <modules>
+        <module>wsdl-first-jsr181-su</module>
+        <module>wsdl-first-http-su</module>
+        <module>wsdl-first-sa</module>
+    </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<inherited>false</inherited>
-				<executions>
-					<execution>
-						<id>src</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptors>
-								<descriptor>src/main/assembly/src.xml</descriptor>
-							</descriptors>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.servicemix.tooling</groupId>
-				<artifactId>jbi-maven-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
-	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>src</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/src.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <!--
 
@@ -20,74 +20,74 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>cxf-ws-security-osgi</artifactId>
-	<packaging>bundle</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: CXF WS-Security OSGi</name>
+    <artifactId>cxf-ws-security-osgi</artifactId>
+    <packaging>bundle</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: CXF WS-Security OSGi</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix</groupId>
-			<artifactId>servicemix-utils</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.ws.security</groupId>
-			<artifactId>wss4j</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ws.security</groupId>
+            <artifactId>wss4j</artifactId>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>
-							javax.jws,
-							javax.xml.bind.annotation,
-							javax.wsdl,
-							META-INF.cxf,
-							META-INF.cxf.osgi,
-							org.apache.cxf.bus,
-							org.apache.cxf.bus.spring,
-							org.apache.cxf.bus.resource,
-							org.apache.cxf.configuration.spring,
-							org.apache.cxf.resource,
-							org.apache.cxf.transport.http_osgi,
-							org.apache.cxf.ws.security.wss4j,
-							org.springframework.beans.factory.config,
-							javax.security.auth.callback,
-							org.apache.ws.security,
-							org.apache.commons.logging,
-							org.apache.servicemix.util
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>
+                            javax.jws,
+                            javax.xml.bind.annotation,
+                            javax.wsdl,
+                            META-INF.cxf,
+                            META-INF.cxf.osgi,
+                            org.apache.cxf.bus,
+                            org.apache.cxf.bus.spring,
+                            org.apache.cxf.bus.resource,
+                            org.apache.cxf.configuration.spring,
+                            org.apache.cxf.resource,
+                            org.apache.cxf.transport.http_osgi,
+                            org.apache.cxf.ws.security.wss4j,
+                            org.springframework.beans.factory.config,
+                            javax.security.auth.callback,
+                            org.apache.ws.security,
+                            org.apache.commons.logging,
+                            org.apache.servicemix.util
                         </Import-Package>
-						<Export-Package>org.apache.servicemix.examples.cxf</Export-Package>
-						<Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
-					</instructions>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>org.apache.servicemix.examples.cxf.Client</mainClass>
-					<includePluginDependencies>false</includePluginDependencies>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                        <Export-Package>org.apache.servicemix.examples.cxf</Export-Package>
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.apache.servicemix.examples.cxf.Client</mainClass>
+                    <includePluginDependencies>false</includePluginDependencies>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

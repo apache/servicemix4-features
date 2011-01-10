@@ -37,8 +37,8 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class WSSecurityTest extends CamelTestSupport {
-	
-	private static final Logger LOG = LogUtils.getL7dLogger(WSSecurityTest.class);
+    
+    private static final Logger LOG = LogUtils.getL7dLogger(WSSecurityTest.class);
     
     private static final java.net.URL WSDL_LOC;
     static {
@@ -67,7 +67,7 @@ public class WSSecurityTest extends CamelTestSupport {
     
     @Override
     protected void setUp() throws Exception {
-    	applicationContext = createApplicationContext();
+        applicationContext = createApplicationContext();
         super.setUp();        
         startService();
 
@@ -76,14 +76,14 @@ public class WSSecurityTest extends CamelTestSupport {
 
     
     protected void startService() {
-    	Object implementor = new GreeterImpl();
-    	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
+        Object implementor = new GreeterImpl();
+        javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
  
     }
     
     @Override
     protected void tearDown() throws Exception {
-    	if (applicationContext != null) {
+        if (applicationContext != null) {
             applicationContext.destroy();
         }
         if (server != null) {
@@ -95,20 +95,20 @@ public class WSSecurityTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
-            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
+                from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
+                from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
             }
         };
     }
     
     protected CamelContext createCamelContext() throws Exception {
-    	camelContext = SpringCamelContext.springCamelContext(applicationContext);
-    	
-    	smxComponent = new ServiceMixComponent();
-    	nmr = new ServiceMix();
-    	((ServiceMix)nmr).init();
-    	smxComponent.setNmr(nmr);
-    	camelContext.addComponent("smx", smxComponent);
+        camelContext = SpringCamelContext.springCamelContext(applicationContext);
+        
+        smxComponent = new ServiceMixComponent();
+        nmr = new ServiceMix();
+        ((ServiceMix)nmr).init();
+        smxComponent.setNmr(nmr);
+        camelContext.addComponent("smx", smxComponent);
         return camelContext;
     }
     
@@ -139,5 +139,5 @@ public class WSSecurityTest extends CamelTestSupport {
         ret = greeter.greetMe("ffang");
         assertEquals(ret, "Hello ffang");
     }
-	
+    
 }

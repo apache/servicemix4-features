@@ -46,7 +46,7 @@
       <cxfbc:consumer wsdl="/wsdl/greeter_control.wsdl"
                       targetEndpoint="GreeterPort"
                       targetService="greeter:BasicGreeterService"
-		      targetInterface="greeter:Greeter"
+              targetInterface="greeter:Greeter"
                       busCfg="org/apache/servicemix/cxfbc/ws/policy/addr.xml"
                       >
         <cxfbc:inInterceptors>

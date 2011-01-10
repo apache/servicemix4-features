@@ -56,7 +56,7 @@ public class CxfMessageTest extends CamelSpringTestSupport {
     }
 
     protected void startService() {
-     	Object implementor = new PersonImpl();
+         Object implementor = new PersonImpl();
         String address = "http://localhost:19000/PersonService/";
         Endpoint.publish(address, implementor);
     }
@@ -72,20 +72,20 @@ public class CxfMessageTest extends CamelSpringTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	//from(routerEndpointURI).to("smx:testEndpoint");// like what do in binding component
-            	//from("smx:testEndpoint").to(serviceEndpointURI);// like what do in se
+                //from(routerEndpointURI).to("smx:testEndpoint");// like what do in binding component
+                //from("smx:testEndpoint").to(serviceEndpointURI);// like what do in se
             }
         };
     }
     
     public void testInvokingServiceFromCXFClient() throws Exception {  
      
-    	URL wsdlURL = getClass().getClassLoader().getResource("person.wsdl");
+        URL wsdlURL = getClass().getClassLoader().getResource("person.wsdl");
         
 
         System.out.println(wsdlURL);
         PersonService ss = new PersonService(wsdlURL, new QName("http://servicemix.apache.org/samples/wsdl-first", 
-			"PersonService"));
+            "PersonService"));
         Person client = ss.getSoap();
         ClientProxy.getClient(client).getOutInterceptors().add(new LoggingOutInterceptor());
         ClientProxy.getClient(client).getInInterceptors().add(new LoggingInInterceptor());

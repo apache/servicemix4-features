@@ -19,50 +19,50 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>loan-broker</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>loan-broker</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.apache.servicemix.examples.loan-broker</groupId>
-	<artifactId>loan-broker-sa</artifactId>
-	<packaging>jbi-service-assembly</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: SA</name>
+    <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+    <artifactId>loan-broker-sa</artifactId>
+    <packaging>jbi-service-assembly</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL :: SA</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.servicemix.examples.loan-broker</groupId>
-			<artifactId>loan-broker-ode-su</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.examples.loan-broker</groupId>
-			<artifactId>loan-broker-bean-su</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.examples.loan-broker</groupId>
-			<artifactId>loan-broker-drools-su</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.examples.loan-broker</groupId>
-			<artifactId>loan-broker-jms-su</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+            <artifactId>loan-broker-ode-su</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+            <artifactId>loan-broker-bean-su</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+            <artifactId>loan-broker-drools-su</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.examples.loan-broker</groupId>
+            <artifactId>loan-broker-jms-su</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.servicemix.tooling</groupId>
-				<artifactId>jbi-maven-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

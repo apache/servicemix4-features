@@ -19,55 +19,55 @@
 -->
 <!-- $Rev: 356052 $ $Date: 2005-12-11 14:41:20 -0800 (dim., 11 d√©c. 2005) $ -->
 <definitions targetNamespace="urn:logicblaze:soa:bank"
-	xmlns:tns="urn:logicblaze:soa:bank"
-	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    xmlns:tns="urn:logicblaze:soa:bank"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-	<types>
-		<xsd:schema
-			targetNamespace="urn:logicblaze:soa:bank"
-			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <types>
+        <xsd:schema
+            targetNamespace="urn:logicblaze:soa:bank"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-			<xsd:complexType name="getLoanQuoteRequest">
-				<xsd:sequence>
-					<xsd:element name="ssn" type="xsd:string" />
-					<xsd:element name="amount" type="xsd:double" />
-					<xsd:element name="duration" type="xsd:int" />
-					<xsd:element name="score" type="xsd:int" />
-					<xsd:element name="length" type="xsd:int" />
-				</xsd:sequence>
-			</xsd:complexType>
+            <xsd:complexType name="getLoanQuoteRequest">
+                <xsd:sequence>
+                    <xsd:element name="ssn" type="xsd:string" />
+                    <xsd:element name="amount" type="xsd:double" />
+                    <xsd:element name="duration" type="xsd:int" />
+                    <xsd:element name="score" type="xsd:int" />
+                    <xsd:element name="length" type="xsd:int" />
+                </xsd:sequence>
+            </xsd:complexType>
 
-			<xsd:complexType name="getLoanQuoteResponse">
-				<xsd:sequence>
-					<xsd:element name="rate" type="xsd:double" />
-				</xsd:sequence>
-			</xsd:complexType>
+            <xsd:complexType name="getLoanQuoteResponse">
+                <xsd:sequence>
+                    <xsd:element name="rate" type="xsd:double" />
+                </xsd:sequence>
+            </xsd:complexType>
 
-			<xsd:element name="getLoanQuoteRequest" type="tns:getLoanQuoteRequest" />
-			<xsd:element name="getLoanQuoteResponse" type="tns:getLoanQuoteResponse" />
+            <xsd:element name="getLoanQuoteRequest" type="tns:getLoanQuoteRequest" />
+            <xsd:element name="getLoanQuoteResponse" type="tns:getLoanQuoteResponse" />
 
-		</xsd:schema>
-	</types>
+        </xsd:schema>
+    </types>
 
-	<message name="getLoanQuoteRequest">
-		<part name="payload" element="tns:getLoanQuoteRequest" />
-	</message>
+    <message name="getLoanQuoteRequest">
+        <part name="payload" element="tns:getLoanQuoteRequest" />
+    </message>
 
-	<message name="getLoanQuoteResponse">
-		<part name="payload" element="tns:getLoanQuoteResponse" />
-	</message>
+    <message name="getLoanQuoteResponse">
+        <part name="payload" element="tns:getLoanQuoteResponse" />
+    </message>
 
-	<portType name="Bank">
-		<operation name="getLoanQuote">
-			<input message="tns:getLoanQuoteRequest" />
-			<output message="tns:getLoanQuoteResponse" />
-		</operation>
-	</portType>
+    <portType name="Bank">
+        <operation name="getLoanQuote">
+            <input message="tns:getLoanQuoteRequest" />
+            <output message="tns:getLoanQuoteResponse" />
+        </operation>
+    </portType>
 
-	<plnk:partnerLinkType name="BankPL">
-		<plnk:role name="BankService" portType="tns:Bank" />
-	</plnk:partnerLinkType>
+    <plnk:partnerLinkType name="BankPL">
+        <plnk:role name="BankService" portType="tns:Bank" />
+    </plnk:partnerLinkType>
 
 </definitions>

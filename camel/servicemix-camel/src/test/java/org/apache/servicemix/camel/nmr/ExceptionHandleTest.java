@@ -46,16 +46,16 @@ import org.apache.servicemix.nmr.core.ServiceMix;
 
 
 public class ExceptionHandleTest extends CamelTestSupport {
-	protected static final String ROUTER_ADDRESS = "camel://jetty:http://localhost:19000/SoapContext/SoapPort";
+    protected static final String ROUTER_ADDRESS = "camel://jetty:http://localhost:19000/SoapContext/SoapPort";
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.hello_world_soap_http.Greeter";
     private static final String WSDL_LOCATION = "wsdlURL=/wsdl/hello_world.wsdl";
     private static final String SERVICE_NAME = "serviceName=%7bhttp://apache.org/hello_world_soap_http%7dSOAPService";
 
     private String routerEndpointURI = "cxf://" + ROUTER_ADDRESS + "?" + SERVICE_CLASS 
-    	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
+        + "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
     private String serviceEndpointURI = "cxf://" + SERVICE_ADDRESS + "?" + SERVICE_CLASS
-    	+ "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
+        + "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
 
     private CamelContext camelContext;
     private ServiceMixComponent smxComponent;
@@ -65,8 +65,8 @@ public class ExceptionHandleTest extends CamelTestSupport {
     @Override
     protected void setUp() throws Exception {
         super.setUp();        
-    	Object implementor = new GreeterImpl();
-    	endpoint = javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
+        Object implementor = new GreeterImpl();
+        endpoint = javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
     
     @Override
@@ -87,24 +87,24 @@ public class ExceptionHandleTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	errorHandler(noErrorHandler());
-            	from(routerEndpointURI).to("smx:testEndpoint");// like what do in binding component
-            	from("smx:testEndpoint").to(serviceEndpointURI);// like what do in se
+                errorHandler(noErrorHandler());
+                from(routerEndpointURI).to("smx:testEndpoint");// like what do in binding component
+                from("smx:testEndpoint").to(serviceEndpointURI);// like what do in se
             }
         };
     }
     
     protected CamelContext createCamelContext() throws Exception {
-    	camelContext = new DefaultCamelContext(createJndiContext());
-    	Bus bus = BusFactory.getDefaultBus();
-    	CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
-        	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
-    	camelTransportFactory.setCamelContext(camelContext);
-    	smxComponent = new ServiceMixComponent();
-    	nmr = new ServiceMix();
-    	((ServiceMix)nmr).init();
-    	smxComponent.setNmr(nmr);
-    	camelContext.addComponent("smx", smxComponent);
+        camelContext = new DefaultCamelContext(createJndiContext());
+        Bus bus = BusFactory.getDefaultBus();
+        CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
+            .getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
+        camelTransportFactory.setCamelContext(camelContext);
+        smxComponent = new ServiceMixComponent();
+        nmr = new ServiceMix();
+        ((ServiceMix)nmr).init();
+        smxComponent.setNmr(nmr);
+        camelContext.addComponent("smx", smxComponent);
         return camelContext;
     }
 
@@ -116,7 +116,7 @@ public class ExceptionHandleTest extends CamelTestSupport {
     }
 
     public void testException() throws Exception {
-    	URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");
+        URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");
         assertNotNull(wsdl);
         SOAPService service1 = new SOAPService(wsdl, new QName(
                 "http://apache.org/hello_world_soap_http", "SOAPService"));
@@ -152,7 +152,7 @@ public class ExceptionHandleTest extends CamelTestSupport {
     } 
     
     public void testOneway() throws Exception {
-    	URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");
+        URL wsdl = getClass().getResource("/wsdl/hello_world.wsdl");
         assertNotNull(wsdl);
         SOAPService service1 = new SOAPService(wsdl, new QName(
                 "http://apache.org/hello_world_soap_http", "SOAPService"));
@@ -169,8 +169,8 @@ public class ExceptionHandleTest extends CamelTestSupport {
     }
     
     public void testGetTransportFactoryFromBus() throws Exception {
-    	Bus bus = BusFactory.getDefaultBus();
-    	assertNotNull(bus.getExtension(ConduitInitiatorManager.class)
-        	.getConduitInitiator(CamelTransportFactory.TRANSPORT_ID));
+        Bus bus = BusFactory.getDefaultBus();
+        assertNotNull(bus.getExtension(ConduitInitiatorManager.class)
+            .getConduitInitiator(CamelTransportFactory.TRANSPORT_ID));
     }
 }

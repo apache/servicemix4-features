@@ -30,7 +30,7 @@
         <include>LICENSE*</include>
         <include>NOTICE*</include>
         <include>pom.xml</include>
-	<include>build.xml</include>
+    <include>build.xml</include>
         <include>src/**/*</include>
         <include>*/pom.xml</include>
         <include>*/src/**/*</include>

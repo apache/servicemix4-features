@@ -43,7 +43,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 public class WSRMTest extends CamelTestSupport {
-	
+    
     private static final Logger LOG = LogUtils.getL7dLogger(WSRMTest.class);
     
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
@@ -60,7 +60,7 @@ public class WSRMTest extends CamelTestSupport {
     
     @Override
     protected void setUp() throws Exception {
-    	applicationContext = createApplicationContext();
+        applicationContext = createApplicationContext();
         super.setUp();        
         startService();
 
@@ -69,14 +69,14 @@ public class WSRMTest extends CamelTestSupport {
 
     
     protected void startService() {
-    	Object implementor = new GreeterImpl();
-    	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
+        Object implementor = new GreeterImpl();
+        javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
  
     }
     
     @Override
     protected void tearDown() throws Exception {
-    	if (applicationContext != null) {
+        if (applicationContext != null) {
             applicationContext.destroy();
         }
         if (server != null) {
@@ -88,19 +88,19 @@ public class WSRMTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
-            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
+                from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
+                from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");       
             }
         };
     }
     
     protected CamelContext createCamelContext() throws Exception {
-    	camelContext = SpringCamelContext.springCamelContext(applicationContext);
-    	smxComponent = new ServiceMixComponent();
-    	nmr = new ServiceMix();
-    	((ServiceMix)nmr).init();
-    	smxComponent.setNmr(nmr);
-    	camelContext.addComponent("smx", smxComponent);
+        camelContext = SpringCamelContext.springCamelContext(applicationContext);
+        smxComponent = new ServiceMixComponent();
+        nmr = new ServiceMix();
+        ((ServiceMix)nmr).init();
+        smxComponent.setNmr(nmr);
+        camelContext.addComponent("smx", smxComponent);
         return camelContext;
     }
     
@@ -110,10 +110,10 @@ public class WSRMTest extends CamelTestSupport {
     
 
     public void testDecoupled() throws Exception {
-    	SpringBusFactory bf = new SpringBusFactory();
+        SpringBusFactory bf = new SpringBusFactory();
         bus = bf.createBus("/org/apache/servicemix/camel/ws/rm/decoupled.xml");
-    	BusFactory.setDefaultBus(bus);
-    	LoggingInInterceptor in = new LoggingInInterceptor();
+        BusFactory.setDefaultBus(bus);
+        LoggingInInterceptor in = new LoggingInInterceptor();
         bus.getInInterceptors().add(in);
         bus.getInFaultInterceptors().add(in);
         LoggingOutInterceptor out = new LoggingOutInterceptor();

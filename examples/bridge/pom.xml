@@ -19,35 +19,35 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>bridge</artifactId>
-	<name>Apache ServiceMix :: Features :: Examples :: Bridge</name>
-	<packaging>pom</packaging>
+    <artifactId>bridge</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge</name>
+    <packaging>pom</packaging>
 
-	<modules>
-		<module>bridge-http-su</module>
-		<module>bridge-eip-su</module>
-		<module>bridge-xslt-su</module>
-		<module>bridge-jms-su</module>
-		<module>bridge-sa</module>
-		<module>client</module>
-	</modules>
+    <modules>
+        <module>bridge-http-su</module>
+        <module>bridge-eip-su</module>
+        <module>bridge-xslt-su</module>
+        <module>bridge-jms-su</module>
+        <module>bridge-sa</module>
+        <module>client</module>
+    </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.servicemix.tooling</groupId>
-				<artifactId>jbi-maven-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
-	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

@@ -19,49 +19,49 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>loan-broker</artifactId>
-	<name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL</name>
-	<packaging>pom</packaging>
+    <artifactId>loan-broker</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: Loan Broker BPEL</name>
+    <packaging>pom</packaging>
 
-	<modules>
-		<module>loan-broker-bean-su</module>
-		<module>loan-broker-drools-su</module>
-		<module>loan-broker-ode-su</module>
-		<module>loan-broker-jms-su</module>
-		<module>loan-broker-sa</module>
-		<module>client</module>
-	</modules>
+    <modules>
+        <module>loan-broker-bean-su</module>
+        <module>loan-broker-drools-su</module>
+        <module>loan-broker-ode-su</module>
+        <module>loan-broker-jms-su</module>
+        <module>loan-broker-sa</module>
+        <module>client</module>
+    </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<inherited>false</inherited>
-				<executions>
-					<execution>
-						<id>src</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptors>
-								<descriptor>src/main/assembly/src.xml</descriptor>
-							</descriptors>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>src</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/src.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

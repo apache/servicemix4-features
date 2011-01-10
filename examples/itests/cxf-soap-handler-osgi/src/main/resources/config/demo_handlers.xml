@@ -21,9 +21,9 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee">
     <handler-chain>
-	<handler>
-		<handler-name>LoggingHandler</handler-name>
-		<handler-class>org.apache.servicemix.examples.cxf.soaphandler.LoggingHandler</handler-class>
-	</handler>
+    <handler>
+        <handler-name>LoggingHandler</handler-name>
+        <handler-class>org.apache.servicemix.examples.cxf.soaphandler.LoggingHandler</handler-class>
+    </handler>
     </handler-chain>
 </handler-chains>

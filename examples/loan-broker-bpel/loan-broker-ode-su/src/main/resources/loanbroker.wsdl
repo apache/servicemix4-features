@@ -19,85 +19,85 @@
 -->
 <!-- $Rev: 356052 $ $Date: 2005-12-11 14:41:20 -0800 (dim., 11 d√©c. 2005) $ -->
 <definitions targetNamespace="urn:logicblaze:soa:loanbroker"
-	xmlns:tns="urn:logicblaze:soa:loanbroker"
-	xmlns="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/">
+    xmlns:tns="urn:logicblaze:soa:loanbroker"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/">
 
-	<import namespace="urn:logicblaze:soa:creditagency"
-		location="creditagency.wsdl" />
+    <import namespace="urn:logicblaze:soa:creditagency"
+        location="creditagency.wsdl" />
 
-	<import namespace="urn:logicblaze:soa:bank"
-		location="bank.wsdl" />
+    <import namespace="urn:logicblaze:soa:bank"
+        location="bank.wsdl" />
 
-	<!-- type defs -->
-	<types>
-		<xsd:schema
-			targetNamespace="urn:logicblaze:soa:loanbroker"
-			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- type defs -->
+    <types>
+        <xsd:schema
+            targetNamespace="urn:logicblaze:soa:loanbroker"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-			<xsd:complexType name="getLoanQuoteRequest">
-				<xsd:sequence>
-					<xsd:element name="ssn" type="xsd:string" />
-					<xsd:element name="amount" type="xsd:double" />
-					<xsd:element name="duration" type="xsd:int" />
-				</xsd:sequence>
-			</xsd:complexType>
+            <xsd:complexType name="getLoanQuoteRequest">
+                <xsd:sequence>
+                    <xsd:element name="ssn" type="xsd:string" />
+                    <xsd:element name="amount" type="xsd:double" />
+                    <xsd:element name="duration" type="xsd:int" />
+                </xsd:sequence>
+            </xsd:complexType>
 
-			<xsd:complexType name="getLoanQuoteResponse">
-				<xsd:sequence>
-					<xsd:element name="rate" type="xsd:double" />
-				</xsd:sequence>
-			</xsd:complexType>
+            <xsd:complexType name="getLoanQuoteResponse">
+                <xsd:sequence>
+                    <xsd:element name="rate" type="xsd:double" />
+                </xsd:sequence>
+            </xsd:complexType>
 
-			<xsd:complexType name="unknownSSNFault">
-				<xsd:sequence>
-					<xsd:element name="ssn" type="xsd:string" />
-				</xsd:sequence>
-			</xsd:complexType>
+            <xsd:complexType name="unknownSSNFault">
+                <xsd:sequence>
+                    <xsd:element name="ssn" type="xsd:string" />
+                </xsd:sequence>
+            </xsd:complexType>
 
-			<xsd:complexType name="invalidSSNFault">
-				<xsd:sequence>
-					<xsd:element name="ssn" type="xsd:string" />
-				</xsd:sequence>
-			</xsd:complexType>
+            <xsd:complexType name="invalidSSNFault">
+                <xsd:sequence>
+                    <xsd:element name="ssn" type="xsd:string" />
+                </xsd:sequence>
+            </xsd:complexType>
 
-			<xsd:element name="getLoanQuoteRequest" type="tns:getLoanQuoteRequest" />
-			<xsd:element name="getLoanQuoteResponse" type="tns:getLoanQuoteResponse" />
-			<xsd:element name="unknownSSNFault" type="tns:unknownSSNFault" />
-			<xsd:element name="invalidSSNFault" type="tns:invalidSSNFault" />
+            <xsd:element name="getLoanQuoteRequest" type="tns:getLoanQuoteRequest" />
+            <xsd:element name="getLoanQuoteResponse" type="tns:getLoanQuoteResponse" />
+            <xsd:element name="unknownSSNFault" type="tns:unknownSSNFault" />
+            <xsd:element name="invalidSSNFault" type="tns:invalidSSNFault" />
 
-		</xsd:schema>
-	</types>
+        </xsd:schema>
+    </types>
 
-	<message name="getLoanQuoteRequest">
-		<part name="payload" element="tns:getLoanQuoteRequest" />
-	</message>
+    <message name="getLoanQuoteRequest">
+        <part name="payload" element="tns:getLoanQuoteRequest" />
+    </message>
 
-	<message name="getLoanQuoteResponse">
-		<part name="payload" element="tns:getLoanQuoteResponse" />
-	</message>
+    <message name="getLoanQuoteResponse">
+        <part name="payload" element="tns:getLoanQuoteResponse" />
+    </message>
 
-	<message name="unknownSSNFault">
-		<part name="payload" element="tns:unknownSSNFault" />
-	</message>
+    <message name="unknownSSNFault">
+        <part name="payload" element="tns:unknownSSNFault" />
+    </message>
 
-	<message name="invalidSSNFault">
-		<part name="payload" element="tns:invalidSSNFault" />
-	</message>
+    <message name="invalidSSNFault">
+        <part name="payload" element="tns:invalidSSNFault" />
+    </message>
 
-	<portType name="LoanBroker">
-		<operation name="getLoanQuote">
-			<input message="tns:getLoanQuoteRequest" />
-			<output message="tns:getLoanQuoteResponse" />
-			<fault name="UnknownSSN" message="tns:unknownSSNFault" />
-			<fault name="InvalidSSN" message="tns:invalidSSNFault" />
-		</operation>
-	</portType>
+    <portType name="LoanBroker">
+        <operation name="getLoanQuote">
+            <input message="tns:getLoanQuoteRequest" />
+            <output message="tns:getLoanQuoteResponse" />
+            <fault name="UnknownSSN" message="tns:unknownSSNFault" />
+            <fault name="InvalidSSN" message="tns:invalidSSNFault" />
+        </operation>
+    </portType>
 
-	<plnk:partnerLinkType name="LoanBrokerPL">
-		<plnk:role name="LoanBrokerService" portType="tns:LoanBroker" />
-	</plnk:partnerLinkType>
+    <plnk:partnerLinkType name="LoanBrokerPL">
+        <plnk:role name="LoanBrokerService" portType="tns:LoanBroker" />
+    </plnk:partnerLinkType>
 
 </definitions>

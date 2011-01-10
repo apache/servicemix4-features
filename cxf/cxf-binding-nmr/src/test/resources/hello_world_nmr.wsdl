@@ -30,13 +30,13 @@
     <wsdl:types>
         <schema targetNamespace="http://apache.org/hello_world/types/nmr" 
             xmlns="http://www.w3.org/2001/XMLSchema"
-	    xmlns:tns="http://apache.org/hello_world/types/nmr"
+        xmlns:tns="http://apache.org/hello_world/types/nmr"
             elementFormDefault="qualified">
-	    <simpleType name="MyStringType">
-		<restriction base="string">
-		    <maxLength value="30" />
-		</restriction>
-	    </simpleType>
+        <simpleType name="MyStringType">
+        <restriction base="string">
+            <maxLength value="30" />
+        </restriction>
+        </simpleType>
 
             <element name="sayHi">
                 <complexType/>
@@ -105,7 +105,7 @@
     </wsdl:message>
     <wsdl:message name="pingMeResponse">
         <wsdl:part name="out" element="x1:pingMeResponse"/>
-    </wsdl:message>		
+    </wsdl:message>        
     <wsdl:message name="pingMeFault">
         <wsdl:part name="faultDetail" element="x1:faultDetail"/>
     </wsdl:message>

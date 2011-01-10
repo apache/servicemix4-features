@@ -33,25 +33,25 @@ import org.apache.cxf.staxutils.StaxUtils;
 public final class NMRMessageHelper {
 
 
-	private NMRMessageHelper() {
+    private NMRMessageHelper() {
         // complete
     }
 
     public static InputStream convertMessageToInputStream(Source src) throws IOException {
-    	CachedOutputStream cos = new CachedOutputStream();
-    	try {
-    		StaxUtils.copy(src, cos);
-    		return cos.getInputStream();
-    	} catch (XMLStreamException e) {
-    		IOException ioe = new IOException(e.getMessage());
-    		ioe.initCause(e);
-    		throw ioe;
-    	} finally {
-    		try {
-    			cos.close();
-    		} catch (Exception ex) {
-    			//ignore
-    		}
-    	}
+        CachedOutputStream cos = new CachedOutputStream();
+        try {
+            StaxUtils.copy(src, cos);
+            return cos.getInputStream();
+        } catch (XMLStreamException e) {
+            IOException ioe = new IOException(e.getMessage());
+            ioe.initCause(e);
+            throw ioe;
+        } finally {
+            try {
+                cos.close();
+            } catch (Exception ex) {
+                //ignore
+            }
+        }
     }
 }

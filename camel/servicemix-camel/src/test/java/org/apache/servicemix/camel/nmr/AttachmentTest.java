@@ -49,22 +49,22 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AttachmentTest extends CamelTestSupport {
     
-	protected static final String SERVICE_ADDRESS = "local://smx/attachment";
-	protected static final String ROUTER_ADDRESS = "http://localhost:9036/mime-test";
-	
-	protected static final String SERVICE_CLASS = "serviceClass=org.apache.cxf.mime.TestMtom";
+    protected static final String SERVICE_ADDRESS = "local://smx/attachment";
+    protected static final String ROUTER_ADDRESS = "http://localhost:9036/mime-test";
+    
+    protected static final String SERVICE_CLASS = "serviceClass=org.apache.cxf.mime.TestMtom";
      
     
     
-	
-	public static final QName MTOM_PORT = new QName(
+    
+    public static final QName MTOM_PORT = new QName(
             "http://cxf.apache.org/mime", "TestMtomPort");
 
     public static final QName MTOM_SERVICE = new QName(
             "http://cxf.apache.org/mime", "TestMtomService");
-	
-	protected AbstractXmlApplicationContext applicationContext;
-	
+    
+    protected AbstractXmlApplicationContext applicationContext;
+    
     
            
     
@@ -87,9 +87,9 @@ public class AttachmentTest extends CamelTestSupport {
     
     protected void startService() {
         //start a service
-    	Object implementor = new MtomImpl();
+        Object implementor = new MtomImpl();
         
-    	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
+        javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
     
    
@@ -97,8 +97,8 @@ public class AttachmentTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
-            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");
+                from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
+                from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");
             }
         };
     }
@@ -115,9 +115,9 @@ public class AttachmentTest extends CamelTestSupport {
 
     
     public void testAttachment() throws Exception {  
-    	TestMtom mtomPort = createPort(MTOM_SERVICE, MTOM_PORT, TestMtom.class,
+        TestMtom mtomPort = createPort(MTOM_SERVICE, MTOM_PORT, TestMtom.class,
                 true);
-    	try {
+        try {
             
             Holder<DataHandler> param = new Holder<DataHandler>();
             

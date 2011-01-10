@@ -23,30 +23,30 @@ import org.apache.servicemix.drools.model.Exchange;
 global org.apache.servicemix.drools.model.JbiHelper jbi;
 
 rule UnkownOperation
-	when
+    when
       Exchange( status == Exchange.ACTIVE, $in : in !=null,
          operation != "{urn:logicblaze:soa:creditagency}getCreditHistoryLength",
          operation != "{urn:logicblaze:soa:creditagency}getCreditScore",
          eval(jbi == null || !jbi.isExchangeHandled()))
-	then
-		jbi.fault("<UnknownOperation xmlns='urn:logicblaze:soa:creditagency'/>");
+    then
+        jbi.fault("<UnknownOperation xmlns='urn:logicblaze:soa:creditagency'/>");
 end
 
 rule CreditHistory
-	when
+    when
       Exchange( status == Exchange.ACTIVE, $in : in != null,
          operation == "{urn:logicblaze:soa:creditagency}getCreditHistoryLength",
          eval(jbi == null || !jbi.isExchangeHandled()))
-	then
-		jbi.answer("<getCreditHistoryLengthResponse xmlns='urn:logicblaze:soa:creditagency'><length>" + 100 + "</length></getCreditHistoryLengthResponse>");
+    then
+        jbi.answer("<getCreditHistoryLengthResponse xmlns='urn:logicblaze:soa:creditagency'><length>" + 100 + "</length></getCreditHistoryLengthResponse>");
 end
 
 rule CreditScore
-	when
+    when
       Exchange( status == Exchange.ACTIVE, $in : in != null,
          operation == "{urn:logicblaze:soa:creditagency}getCreditScore",
          eval(jbi == null || !jbi.isExchangeHandled()))
-	then
-		jbi.answer("<getCreditScoreResponse xmlns='urn:logicblaze:soa:creditagency'><score>" + 1000 + "</score></getCreditScoreResponse>");
+    then
+        jbi.answer("<getCreditScoreResponse xmlns='urn:logicblaze:soa:creditagency'><score>" + 1000 + "</score></getCreditScoreResponse>");
 end
 

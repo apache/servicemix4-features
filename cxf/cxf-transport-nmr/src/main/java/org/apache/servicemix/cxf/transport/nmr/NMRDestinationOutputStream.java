@@ -49,7 +49,7 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
     private Channel channel;
     
     public NMRDestinationOutputStream(Message m,
-    						   Message outM,
+                               Message outM,
                                Channel dc) {
         super();
         inMessage = m;
@@ -94,10 +94,10 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                         xchng.setError(f);
                     }
                 } else {
-                	//copy attachments
+                    //copy attachments
                     if (outMessage != null && outMessage.getAttachments() != null) {
                         for (Attachment att : outMessage.getAttachments()) {
-                        	xchng.getOut().addAttachment(att.getId(), att
+                            xchng.getOut().addAttachment(att.getId(), att
                                     .getDataHandler());
                         }
                     }
@@ -109,7 +109,7 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                         if (ent.getValue() instanceof Serializable
                                 && !(ent.getValue() instanceof Map)
                                 && !(ent.getValue() instanceof Collection)) {
-                        	xchng.getOut().setHeader(ent.getKey(), ent.getValue());
+                            xchng.getOut().setHeader(ent.getKey(), ent.getValue());
                         }
                     }
 

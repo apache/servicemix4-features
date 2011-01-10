@@ -25,5 +25,5 @@ import org.apache.cxf.greeter_control.AbstractGreeterImpl;
         endpointInterface = "org.apache.cxf.greeter_control.Greeter", 
         targetNamespace = "http://cxf.apache.org/greeter_control")
 public class GreeterImpl extends AbstractGreeterImpl {
-	
+    
 }

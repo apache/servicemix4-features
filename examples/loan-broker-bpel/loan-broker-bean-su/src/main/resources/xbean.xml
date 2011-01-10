@@ -18,7 +18,7 @@
 
 -->
 <beans xmlns:bean="http://servicemix.apache.org/bean/1.0" 
-	   xmlns:bk="urn:logicblaze:soa:bank">
+       xmlns:bk="urn:logicblaze:soa:bank">
 
   <bean:endpoint service="bk:Bank1" endpoint="bank">
       <bean:bean>

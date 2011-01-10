@@ -24,13 +24,13 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
     ">
 
-	  <camelContext xmlns="http://camel.apache.org/schema/spring">
+      <camelContext xmlns="http://camel.apache.org/schema/spring">
             <route>
-	      <from uri="jbi:endpoint:http://servicemix.apache.org/samples/bridge/pipeline/endpoint"/>
+          <from uri="jbi:endpoint:http://servicemix.apache.org/samples/bridge/pipeline/endpoint"/>
               <to uri="xslt:bridge.xslt"/>
               <to uri="log:org.apache.servicemix.example?level=INFO"/>
               <to uri="jbi:endpoint:http://servicemix.apache.org/samples/bridge/jms/endpoint"/>
             </route>
-	  </camelContext>
+      </camelContext>
 
 </beans>

@@ -24,8 +24,8 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
     ">
 
-	  <camelContext xmlns="http://camel.apache.org/schema/spring">
-	    <package>org.apache.servicemix.samples</package>
-	  </camelContext>
+      <camelContext xmlns="http://camel.apache.org/schema/spring">
+        <package>org.apache.servicemix.samples</package>
+      </camelContext>
 
 </beans>

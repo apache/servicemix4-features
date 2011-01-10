@@ -63,7 +63,7 @@ public class NMRConduit extends AbstractConduit {
     
     public void prepare(Message message) throws IOException {
         getLogger().log(Level.FINE, "JBIConduit send message");
-        NMRTransportFactory.removeUnusedInterceptprs(message);	
+        NMRTransportFactory.removeUnusedInterceptprs(message);    
         message.setContent(OutputStream.class,
                            new NMRConduitOutputStream(message, nmr, target, this));
     }    

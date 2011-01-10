@@ -19,77 +19,77 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>cxf-jaxrs</artifactId>
-	<packaging>bundle</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: CXF JAX-RS OSGI</name>
+    <artifactId>cxf-jaxrs</artifactId>
+    <packaging>bundle</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: CXF JAX-RS OSGI</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.servicemix.specs</groupId>
-			<artifactId>org.apache.servicemix.specs.jsr311-api-1.0</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.specs</groupId>
-			<artifactId>org.apache.servicemix.specs.jaxb-api-2.1</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.jsr311-api-1.0</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.jaxb-api-2.1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-httpclient</artifactId>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>
-							javax.wsdl,
-							javax.xml.bind,
-							javax.xml.bind.annotation,
-							javax.ws.rs,
-							META-INF.cxf,
-							META-INF.cxf.osgi,
-							org.apache.cxf.bus,
-							org.apache.cxf.bus.spring,
-							org.apache.cxf.bus.resource,
-							org.apache.cxf.resource,
-							org.apache.cxf.configuration.spring,
-							org.apache.cxf.binding,
-							org.apache.cxf.jaxrs.utils,
-							org.apache.cxf.transport.http_osgi,
-							org.springframework.beans.factory.config,
-							org.apache.servicemix.examples.cxf.jaxrs,
-							org.apache.commons.httpclient,
-							org.apache.commons.httpclient.methods
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>
+                            javax.wsdl,
+                            javax.xml.bind,
+                            javax.xml.bind.annotation,
+                            javax.ws.rs,
+                            META-INF.cxf,
+                            META-INF.cxf.osgi,
+                            org.apache.cxf.bus,
+                            org.apache.cxf.bus.spring,
+                            org.apache.cxf.bus.resource,
+                            org.apache.cxf.resource,
+                            org.apache.cxf.configuration.spring,
+                            org.apache.cxf.binding,
+                            org.apache.cxf.jaxrs.utils,
+                            org.apache.cxf.transport.http_osgi,
+                            org.springframework.beans.factory.config,
+                            org.apache.servicemix.examples.cxf.jaxrs,
+                            org.apache.commons.httpclient,
+                            org.apache.commons.httpclient.methods
                         </Import-Package>
-						<Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
-						<Export-Package>org.apache.servicemix.examples.cxf.jaxrs
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
+                        <Export-Package>org.apache.servicemix.examples.cxf.jaxrs
                         </Export-Package>
-						<DynamicImport-Package>javax.ws.rs.*</DynamicImport-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>org.apache.servicemix.examples.cxf.jaxrs.client.Client</mainClass>
-					<includePluginDependencies>false</includePluginDependencies>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                        <DynamicImport-Package>javax.ws.rs.*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.apache.servicemix.examples.cxf.jaxrs.client.Client</mainClass>
+                    <includePluginDependencies>false</includePluginDependencies>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -19,53 +19,53 @@
         limitations under the License.
     -->
 
-	<!-- 
-	   ATTENTION: This project is an ugly workaround to pull in some duplicated 
-	   dependencies which otherwise would be ignored by maven and make the build 
-	   fail. The reason is that those deps only differ in the version numbers to 
-	   deps used in the assembly. 
-	-->
+    <!-- 
+       ATTENTION: This project is an ugly workaround to pull in some duplicated 
+       dependencies which otherwise would be ignored by maven and make the build 
+       fail. The reason is that those deps only differ in the version numbers to 
+       deps used in the assembly. 
+    -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.features</groupId>
-		<artifactId>features</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.features</groupId>
+        <artifactId>features</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>org.apache.servicemix.features.deps</artifactId>
-	<packaging>pom</packaging>
-	<name>Apache ServiceMix :: Features :: Dependencies</name>
+    <artifactId>org.apache.servicemix.features.deps</artifactId>
+    <packaging>pom</packaging>
+    <name>Apache ServiceMix :: Features :: Dependencies</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.antlr</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.bundles</groupId>
-			<artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.antlr</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>resolve</goal>
-						</goals>
-						<configuration>
-							<silent>true</silent>
-							<excludeTransitive>true</excludeTransitive>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>resolve</goal>
+                        </goals>
+                        <configuration>
+                            <silent>true</silent>
+                            <excludeTransitive>true</excludeTransitive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

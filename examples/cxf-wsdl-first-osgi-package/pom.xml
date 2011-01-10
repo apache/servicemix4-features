@@ -19,23 +19,23 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.apache.servicemix.examples</groupId>
-	<artifactId>cxf-wsdl-first-osgi-package</artifactId>
-	<name>Apache ServiceMix :: Features :: Examples :: CXF WSDL First OSGi Package</name>
-	<packaging>pom</packaging>
+    <groupId>org.apache.servicemix.examples</groupId>
+    <artifactId>cxf-wsdl-first-osgi-package</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: CXF WSDL First OSGi Package</name>
+    <packaging>pom</packaging>
 
-	<modules>
-		<module>wsdl-first-cxfse-bundle</module>
-		<module>wsdl-first-cxfbc-bundle</module>
-		<module>client</module>
-	</modules>
+    <modules>
+        <module>wsdl-first-cxfse-bundle</module>
+        <module>wsdl-first-cxfbc-bundle</module>
+        <module>client</module>
+    </modules>
 
 </project>

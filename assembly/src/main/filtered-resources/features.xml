@@ -102,9 +102,9 @@
     </feature>
 
     <!--
-	  -
-	  -  Examples
-	  -
+      -
+      -  Examples
+      -
     -->
 
     <feature name="examples-cxf-osgi" version="${version}">

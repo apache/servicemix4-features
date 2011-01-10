@@ -124,7 +124,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             //copy attachments
             if (message != null && message.getAttachments() != null) {
                 for (Attachment att : message.getAttachments()) {
-                	inMsg.addAttachment(att.getId(), att
+                    inMsg.addAttachment(att.getId(), att
                             .getDataHandler());
                 }
             }
@@ -136,7 +136,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                 if (ent.getValue() instanceof Serializable
                         && !(ent.getValue() instanceof Map)
                         && !(ent.getValue() instanceof Collection)) {
-                	inMsg.setHeader(ent.getKey(), ent.getValue());
+                    inMsg.setHeader(ent.getKey(), ent.getValue());
                 }
             }
             
@@ -177,15 +177,15 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                 //copy attachments
                 Collection<Attachment> cxfAttachmentList = new ArrayList<Attachment>();
                 for (Map.Entry<String, Object> ent : nm.getAttachments().entrySet()) {
-                	cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
+                    cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
                 }
                 inMessage.setAttachments(cxfAttachmentList);
                 
                 //copy properties
                 for (Map.Entry<String, Object> ent : nm.getHeaders().entrySet()) {
-                	if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
-                		inMessage.put(ent.getKey(), ent.getValue());
-                	}
+                    if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
+                        inMessage.put(ent.getKey(), ent.getValue());
+                    }
                 }
                 
                 //copy securitySubject

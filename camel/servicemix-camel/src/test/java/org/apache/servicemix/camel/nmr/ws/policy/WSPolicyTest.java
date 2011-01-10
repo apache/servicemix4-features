@@ -43,8 +43,8 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class WSPolicyTest extends CamelTestSupport {
-	
-	private static final Logger LOG = LogUtils.getL7dLogger(WSPolicyTest.class);
+    
+    private static final Logger LOG = LogUtils.getL7dLogger(WSPolicyTest.class);
     
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
 
@@ -60,7 +60,7 @@ public class WSPolicyTest extends CamelTestSupport {
     
     @Override
     protected void setUp() throws Exception {
-    	applicationContext = createApplicationContext();
+        applicationContext = createApplicationContext();
         super.setUp();        
         startService();
     }
@@ -68,13 +68,13 @@ public class WSPolicyTest extends CamelTestSupport {
 
     
     protected void startService() throws Exception {
-    	Object implementor = new GreeterImpl();
-    	javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
+        Object implementor = new GreeterImpl();
+        javax.xml.ws.Endpoint.publish(SERVICE_ADDRESS, implementor);
     }
     
     @Override
     protected void tearDown() throws Exception {
-    	if (applicationContext != null) {
+        if (applicationContext != null) {
             applicationContext.destroy();
         }
         if (server != null) {
@@ -86,9 +86,9 @@ public class WSPolicyTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-            	errorHandler(noErrorHandler());
-            	from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
-            	from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");  
+                errorHandler(noErrorHandler());
+                from("cxf:bean:routerEndpoint").to("smx:testEndpoint");
+                from("smx:testEndpoint").to("cxf:bean:serviceEndpoint");  
                 
                 
             }
@@ -98,13 +98,13 @@ public class WSPolicyTest extends CamelTestSupport {
     
     @Override
     protected CamelContext createCamelContext() throws Exception {
-    	camelContext = SpringCamelContext.springCamelContext(applicationContext);
-    	
-    	smxComponent = new ServiceMixComponent();
-    	nmr = new ServiceMix();
-    	((ServiceMix)nmr).init();
-    	smxComponent.setNmr(nmr);
-    	camelContext.addComponent("smx", smxComponent);
+        camelContext = SpringCamelContext.springCamelContext(applicationContext);
+        
+        smxComponent = new ServiceMixComponent();
+        nmr = new ServiceMix();
+        ((ServiceMix)nmr).init();
+        smxComponent.setNmr(nmr);
+        camelContext.addComponent("smx", smxComponent);
         return camelContext;
     }
     
@@ -113,9 +113,9 @@ public class WSPolicyTest extends CamelTestSupport {
     }
     
     public void testUsingAddressing() throws Exception {
-    	SpringBusFactory bf = new SpringBusFactory();
-    	bus = bf
-        	.createBus("/org/apache/servicemix/camel/ws/policy/addr.xml");
+        SpringBusFactory bf = new SpringBusFactory();
+        bus = bf
+            .createBus("/org/apache/servicemix/camel/ws/policy/addr.xml");
         LoggingInInterceptor in = new LoggingInInterceptor();
         bus.getInInterceptors().add(in);
         bus.getInFaultInterceptors().add(in);
@@ -158,5 +158,5 @@ public class WSPolicyTest extends CamelTestSupport {
             assertEquals(1, (int) ex.getFaultInfo().getMinor());
         }
     }
-	
+    
 }

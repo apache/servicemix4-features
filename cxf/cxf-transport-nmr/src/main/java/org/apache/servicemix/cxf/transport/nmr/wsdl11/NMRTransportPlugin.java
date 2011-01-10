@@ -31,13 +31,13 @@ import org.apache.cxf.wsdl.AbstractWSDLPlugin;
 import org.apache.servicemix.cxf.transport.nmr.NMRTransportFactory;
 
 public class NMRTransportPlugin extends AbstractWSDLPlugin {
-	
-	
+    
+    
 
     public ExtensibilityElement createExtension(Map<String, Object> args) throws WSDLException {
         AddressType jbiAddress = null;
         jbiAddress = (AddressType)registry.createExtension(Port.class, 
-        		new QName(NMRTransportFactory.TRANSPORT_ID, "address"));
+                new QName(NMRTransportFactory.TRANSPORT_ID, "address"));
         return jbiAddress;
     }
 

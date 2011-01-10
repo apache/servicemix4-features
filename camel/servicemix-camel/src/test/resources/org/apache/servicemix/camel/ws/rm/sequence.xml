@@ -62,7 +62,7 @@
       <cxfbc:consumer wsdl="/wsdl/greeter_control.wsdl"
                       targetEndpoint="ControlPort"
                       targetService="greeter:ControlService"
-		      targetInterface="greeter:Control"
+              targetInterface="greeter:Control"
                       >
         <cxfbc:inInterceptors>
           <bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>

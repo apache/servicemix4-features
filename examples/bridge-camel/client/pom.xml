@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+    
     <!--
     
         Licensed to the Apache Software Foundation (ASF) under one or more
@@ -19,43 +19,43 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>bridge-camel</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>bridge-camel</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.apache.servicemix.examples.bridge-camel</groupId>
-	<artifactId>bridge-camel-client</artifactId>
-	<name>Apache ServiceMix :: Features :: Examples :: Bridge Camel :: Client</name>
+    <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
+    <artifactId>bridge-camel-client</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: Bridge Camel :: Client</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.servicemix</groupId>
-			<artifactId>servicemix-utils</artifactId>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix</groupId>
+            <artifactId>servicemix-utils</artifactId>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>org.apache.servicemix.samples.bridgecamel.Client</mainClass>
-					<includePluginDependencies>false</includePluginDependencies>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.apache.servicemix.samples.bridgecamel.Client</mainClass>
+                    <includePluginDependencies>false</includePluginDependencies>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

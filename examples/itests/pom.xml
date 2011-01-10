@@ -19,28 +19,28 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
-	
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>org.apache.servicemix.examples.itests</artifactId>
-	<packaging>pom</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: iTests</name>
+    <artifactId>org.apache.servicemix.examples.itests</artifactId>
+    <packaging>pom</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: iTests</name>
 
-	<modules>
-		<module>test-commons</module>
-		<module>cxf-http-osgi</module>
-		<module>cxf-ws-security-osgi</module>
-		<module>cxf-jms-osgi</module>
-		<module>cxf-nmr-osgi</module>
-		<module>cxf-soap-handler-osgi</module>
-		<module>cxf-handler-cfg</module>
-		<module>cxf-mtom-osgi</module>
-		<module>tests</module>
-	</modules>
+    <modules>
+        <module>test-commons</module>
+        <module>cxf-http-osgi</module>
+        <module>cxf-ws-security-osgi</module>
+        <module>cxf-jms-osgi</module>
+        <module>cxf-nmr-osgi</module>
+        <module>cxf-soap-handler-osgi</module>
+        <module>cxf-handler-cfg</module>
+        <module>cxf-mtom-osgi</module>
+        <module>tests</module>
+    </modules>
 
 </project>

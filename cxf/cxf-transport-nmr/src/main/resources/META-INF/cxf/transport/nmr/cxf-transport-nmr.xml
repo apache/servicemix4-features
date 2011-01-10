@@ -25,8 +25,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://www.springframework.org/schema/osgi  http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
     <bean class="org.apache.servicemix.cxf.transport.nmr.NMRTransportFactory"
-	      id="org.apache.servicemix.cxf.transport.nmr.NMRTransportFactory"
-	      lazy-init="true">
+          id="org.apache.servicemix.cxf.transport.nmr.NMRTransportFactory"
+          lazy-init="true">
         <property name="bus" ref="cxf"/>
         <property name="nmr">
             <osgi:reference interface="org.apache.servicemix.nmr.api.NMR"/>

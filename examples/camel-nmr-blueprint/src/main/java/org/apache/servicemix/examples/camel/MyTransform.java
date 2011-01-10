@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  * @version $Revision: 640450 $
  */
 public class MyTransform  {
-	private static final transient Logger logger = Logger.getLogger(MyTransform.class.getName());
+    private static final transient Logger logger = Logger.getLogger(MyTransform.class.getName());
     private boolean verbose = true;
     private String prefix = "MyTransform";
 

@@ -150,14 +150,14 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
     }
     
     public static void removeUnusedInterceptprs(Message message) {
-		if (message.getInterceptorChain() != null) {
-			for (Interceptor interceptor : message.getInterceptorChain()) {
-				if (interceptor.getClass().getName().equals(
-						"org.apache.cxf.interceptor.AttachmentOutInterceptor")) {
-					message.getInterceptorChain().remove(interceptor);
-				}
-			}
-		}
+        if (message.getInterceptorChain() != null) {
+            for (Interceptor interceptor : message.getInterceptorChain()) {
+                if (interceptor.getClass().getName().equals(
+                        "org.apache.cxf.interceptor.AttachmentOutInterceptor")) {
+                    message.getInterceptorChain().remove(interceptor);
+                }
+            }
+        }
     }
     
 }

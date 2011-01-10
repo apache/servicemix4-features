@@ -24,12 +24,12 @@
 http://cxf.apache.org/ws/rm/manager http://cxf.apache.org/schemas/configuration/wsrm-manager.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<import resource="rminterceptors.xml" />
+    <import resource="rminterceptors.xml" />
 
-	<wsrm-mgr:rmManager id="org.apache.cxf.ws.rm.RMManager">
-		<wsrm-mgr:sourcePolicy>
-			<wsrm-mgr:sequenceTerminationPolicy maxLength="1" />
-		</wsrm-mgr:sourcePolicy>
-	</wsrm-mgr:rmManager>
+    <wsrm-mgr:rmManager id="org.apache.cxf.ws.rm.RMManager">
+        <wsrm-mgr:sourcePolicy>
+            <wsrm-mgr:sequenceTerminationPolicy maxLength="1" />
+        </wsrm-mgr:sourcePolicy>
+    </wsrm-mgr:rmManager>
 
 </beans>

@@ -28,7 +28,7 @@ import org.apache.servicemix.util.FileUtil;
 public class Client{
     public static void main(String[] args) {
         try {
-	    new Client().sendRequest();
+        new Client().sendRequest();
         } catch (Exception e) {
             e.printStackTrace();
         }

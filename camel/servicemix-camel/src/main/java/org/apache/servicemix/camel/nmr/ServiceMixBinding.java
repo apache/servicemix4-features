@@ -73,13 +73,13 @@ public class ServiceMixBinding {
     }
     
     public org.apache.servicemix.nmr.api.Exchange populateNmrExchangeFromCamelExchange(Exchange camelExchange, Channel client)  {
-    	org.apache.servicemix.nmr.api.Exchange e = client.createExchange(
+        org.apache.servicemix.nmr.api.Exchange e = client.createExchange(
                 Pattern.fromWsdlUri(camelExchange.getPattern().getWsdlUri()));
-    	e.getProperties().putAll(camelExchange.getProperties());
-    	org.apache.servicemix.nmr.api.Message inMessage = e.getIn();
+        e.getProperties().putAll(camelExchange.getProperties());
+        org.apache.servicemix.nmr.api.Message inMessage = e.getIn();
         copyCamelMessageToNmrMessage(inMessage, camelExchange.getIn());
         return e;
-        	   	
+                   
     }
     
     

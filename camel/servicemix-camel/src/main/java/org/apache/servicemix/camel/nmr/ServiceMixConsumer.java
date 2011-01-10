@@ -70,9 +70,9 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
      * through the defined route
      */
     public void process(Exchange exchange) {
-    	if (exchange.getStatus() == Status.Active) {
+        if (exchange.getStatus() == Status.Active) {
             try {
-            	org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
+                org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
                 camelExchange.addOnCompletion(this);
 
                 getAsyncProcessor().process(camelExchange, new AsyncCallback() {
@@ -97,13 +97,13 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
         // just copy the camelExchange back to the nmr exchange
         exchange.getProperties().putAll(camelExchange.getProperties());
         if (camelExchange.getException() != null) {
-        	exchange.setError(camelExchange.getException());
+            exchange.setError(camelExchange.getException());
             exchange.setStatus(Status.Error);
         } else if (camelExchange.hasOut() && !camelExchange.getOut().isFault()) {
-        	getEndpoint().getComponent().getBinding().
+            getEndpoint().getComponent().getBinding().
                 copyCamelMessageToNmrMessage(exchange.getOut(), camelExchange.getOut());
         } else if (camelExchange.hasOut() && camelExchange.getOut().isFault()) {
-        	getEndpoint().getComponent().getBinding().
+            getEndpoint().getComponent().getBinding().
                 copyCamelMessageToNmrMessage(exchange.getFault(), camelExchange.getOut());
         } else {
             exchange.setStatus(Status.Done);

@@ -19,67 +19,67 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>org.apache.servicemix.examples.itests</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>org.apache.servicemix.examples.itests</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<artifactId>org.apache.servicemix.examples.itests.cxf-http-osgi</artifactId>
-	<packaging>bundle</packaging>
-	<name>Apache ServiceMix :: Features :: Examples :: iTests :: CXF OSGi</name>
+    <artifactId>org.apache.servicemix.examples.itests.cxf-http-osgi</artifactId>
+    <packaging>bundle</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: iTests :: CXF OSGi</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicemix.examples</groupId>
-			<artifactId>org.apache.servicemix.examples.itests.test-commons</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.examples</groupId>
+            <artifactId>org.apache.servicemix.examples.itests.test-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<configuration>
-					<instructions>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>
-							javax.jws,
-							javax.wsdl,
-							javax.xml.bind,
-							javax.xml.bind.annotation,
-							javax.xml.namespace,
-							javax.xml.ws,
-							META-INF.cxf,
-							META-INF.cxf.osgi,
-							org.apache.cxf.bus,
-							org.apache.cxf.bus.spring,
-							org.apache.cxf.bus.resource,
-							org.apache.cxf.configuration.spring,
-							org.apache.cxf.resource,
-							org.apache.cxf.transport.http_osgi,
-							org.springframework.beans.factory.config,
-							org.apache.servicemix.examples.cxf
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>
+                            javax.jws,
+                            javax.wsdl,
+                            javax.xml.bind,
+                            javax.xml.bind.annotation,
+                            javax.xml.namespace,
+                            javax.xml.ws,
+                            META-INF.cxf,
+                            META-INF.cxf.osgi,
+                            org.apache.cxf.bus,
+                            org.apache.cxf.bus.spring,
+                            org.apache.cxf.bus.resource,
+                            org.apache.cxf.configuration.spring,
+                            org.apache.cxf.resource,
+                            org.apache.cxf.transport.http_osgi,
+                            org.springframework.beans.factory.config,
+                            org.apache.servicemix.examples.cxf
                         </Import-Package>
-						<Export-Package>org.apache.servicemix.examples.cxf_http_osgi</Export-Package>
-						<Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                        <Export-Package>org.apache.servicemix.examples.cxf_http_osgi</Export-Package>
+                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

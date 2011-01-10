@@ -19,32 +19,32 @@
         limitations under the License.
     -->
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.servicemix.examples</groupId>
-		<artifactId>examples</artifactId>
-		<version>4.3.0-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+    </parent>
 
-	<groupId>org.apache.servicemix.examples</groupId>
-	<artifactId>camel</artifactId>
-	<name>Apache ServiceMix :: Features :: Examples :: Camel</name>
-	<packaging>pom</packaging>
+    <groupId>org.apache.servicemix.examples</groupId>
+    <artifactId>camel</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: Camel</name>
+    <packaging>pom</packaging>
 
-	<modules>
-		<module>camel-simple-su</module>
-		<module>camel-sa</module>
-	</modules>
+    <modules>
+        <module>camel-simple-su</module>
+        <module>camel-sa</module>
+    </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.servicemix.tooling</groupId>
-				<artifactId>jbi-maven-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
-	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>
