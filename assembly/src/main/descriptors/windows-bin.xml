@@ -272,6 +272,13 @@
               <fileMode>0644</fileMode>
               <lineEnding>dos</lineEnding>
             </file>
+        <file>
+          <source>${basedir}/../examples/camel-nmr-blueprint/README.txt</source>
+          <outputDirectory>/examples/camel-nmr-blueprint</outputDirectory>
+          <filtered>true</filtered>
+          <fileMode>0644</fileMode>
+          <lineEnding>dos</lineEnding>
+        </file>
             <file>
               <source>${basedir}/../examples/cxf-nmr/README.txt</source>
               <outputDirectory>/examples/cxf-nmr</outputDirectory>
