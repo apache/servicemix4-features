@@ -423,6 +423,14 @@
                <type>zip</type>
                <version>${servicemix.nmr.version}</version>
            </dependency>
+           <dependency>
+               <groupId>org.apache.servicemix.nmr</groupId>
+               <artifactId>apache-servicemix-nmr</artifactId>
+               <version>${servicemix.nmr.version}</version>
+               <type>xml</type>
+       	       <classifier>features</classifier>
+           </dependency>
+
 	       <dependency>
 	           <groupId>org.apache.servicemix.nmr</groupId>
 	           <artifactId>org.apache.servicemix.nmr.api</artifactId>

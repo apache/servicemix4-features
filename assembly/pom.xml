@@ -153,7 +153,14 @@
             <artifactId>apache-servicemix-nmr</artifactId>
             <type>tar.gz</type>
         </dependency>
-        
+       
+        <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>apache-servicemix-nmr</artifactId>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+ 
         <!-- ServiceMix Specs -->
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
