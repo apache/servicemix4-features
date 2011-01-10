@@ -52,7 +52,7 @@
     
     <issueManagement>
         <system>jira</system>
-        <url>http://issues.apache.org/activemq/browse/SMX4</url>
+        <url>http://issues.apache.org/jira/browse/SMX4</url>
     </issueManagement>
 
     <prerequisites>
