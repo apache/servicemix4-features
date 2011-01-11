@@ -186,7 +186,7 @@
         <irclib.bundle.version>1.10_3</irclib.bundle.version>
         <isorelax.bundle.version>20050913_3</isorelax.bundle.version>
         <jasypt.bundle.version>1.6_1</jasypt.bundle.version>
-        <jaxb-impl.bundle.version>2.1.12_2</jaxb-impl.bundle.version>
+        <jaxb-impl.bundle.version>2.1.13_1</jaxb-impl.bundle.version>
         <jaxen.bundle.version>1.1.1_1</jaxen.bundle.version>
         <jcr-api.bundle.version>1.0_3</jcr-api.bundle.version>
         <jdt-core.bundle.version>3.2.3_4</jdt-core.bundle.version>
