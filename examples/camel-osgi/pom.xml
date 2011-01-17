@@ -51,6 +51,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Description>${project.description}</Bundle-Description>
                         <Import-Package>*</Import-Package>
                         <Private-Package>org.apache.servicemix.examples.camel</Private-Package>
                     </instructions>

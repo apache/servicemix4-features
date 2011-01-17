@@ -39,6 +39,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Description>${project.description}</Bundle-Description>
                         <Import-Package>org.apache.servicemix.camel.nmr,org.apache.servicemix.nmr.api,*</Import-Package>
                         <Private-Package>org.apache.servicemix.examples.camel</Private-Package>
                     </instructions>

@@ -171,6 +171,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>*</Import-Package>
                         <Export-Package>org.apache.servicemix.camel.nmr*</Export-Package>
+                        <Bundle-Description>${project.description}</Bundle-Description>
                     </instructions>
                 </configuration>
             </plugin>

@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+        <!ELEMENT project (modelVersion|parent|artifactId|packaging|name|dependencies|build)*>
+        <!ATTLIST project
+                xmlns CDATA #REQUIRED
+                xmlns:xsi CDATA #REQUIRED
+                xsi:schemaLocation CDATA #REQUIRED>
+        <!ELEMENT modelVersion (#PCDATA)>
+        <!ELEMENT parent (groupId|artifactId|version)*>
+        <!ELEMENT groupId (#PCDATA)>
+        <!ELEMENT artifactId (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT packaging (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT dependencies (dependency)*>
+        <!ELEMENT dependency (groupId|artifactId|scope)*>
+        <!ELEMENT scope (#PCDATA)>
+        <!ELEMENT build (plugins)*>
+        <!ELEMENT plugins (plugin)*>
+        <!ELEMENT plugin (groupId|artifactId|executions|configuration)*>
+        <!ELEMENT executions (execution)*>
+        <!ELEMENT execution (id|phase|configuration|goals)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT phase (#PCDATA)>
+        <!ELEMENT configuration (sourceRoot|wsdlOptions|instructions|mainClass|includePluginDependencies)*>
+        <!ELEMENT sourceRoot (#PCDATA)>
+        <!ELEMENT wsdlOptions (wsdlOption)*>
+        <!ELEMENT wsdlOption (wsdl)*>
+        <!ELEMENT wsdl (#PCDATA)>
+        <!ELEMENT goals (goal)*>
+        <!ELEMENT goal (#PCDATA)>
+        <!ELEMENT instructions (Bundle-SymbolicName|Import-Package|Require-Bundle|Export-Package)*>
+        <!ELEMENT Bundle-SymbolicName (#PCDATA)>
+        <!ELEMENT Import-Package (#PCDATA)>
+        <!ELEMENT Require-Bundle (#PCDATA)>
+        <!ELEMENT Export-Package (#PCDATA)>
+        <!ELEMENT mainClass (#PCDATA)>
+        <!ELEMENT includePluginDependencies (#PCDATA)>
+        ]>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
@@ -76,6 +114,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Description>${project.description}</Bundle-Description>
                         <Import-Package>
                             javax.jws,
                             javax.wsdl,
