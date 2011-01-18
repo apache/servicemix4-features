@@ -58,6 +58,7 @@
                             javax.jws,
                             javax.xml.bind.annotation,
                             javax.wsdl,
+                            javax.xml.namespace,
                             META-INF.cxf,
                             META-INF.cxf.osgi,
                             org.apache.cxf.bus,

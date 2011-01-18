@@ -23,7 +23,9 @@
     xmlns:test="http://cxf.apache.org/greeter_control"
     xmlns:cxf="http://camel.apache.org/schema/cxf"
     xmlns:camel="http://camel.apache.org/schema/spring"
+    xmlns:http="http://cxf.apache.org/transports/http/configuration"
     xsi:schemaLocation="
+        http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd
         http://www.springframework.org/schema/beans                     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
         http://cxf.apache.org/jaxws                                     http://cxf.apache.org/schemas/jaxws.xsd
         http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
@@ -32,6 +34,7 @@
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
     <import resource="classpath:META-INF/cxf/cxf-extension-http-jetty.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-extension-http.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-extension-local.xml" />
     
     <bean class="org.apache.camel.component.cxf.transport.CamelTransportFactory" lazy-init="true">
@@ -43,7 +46,9 @@
             </list>
         </property>
     </bean>
-        
+    <http:conduit name="{http://cxf.apache.org/greeter_control}GreeterPort.http-conduit">
+      <http:client AllowChunking="false" DecoupledEndpoint="http://localhost:9995/decoupled_endpoint"/>
+    </http:conduit>    
     <camel:camelContext id="camel_context">
     </camel:camelContext>
 

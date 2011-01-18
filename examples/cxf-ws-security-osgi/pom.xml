@@ -73,7 +73,8 @@
                             javax.security.auth.callback,
                             org.apache.ws.security,
                             org.apache.commons.logging,
-                            org.apache.servicemix.util
+                            org.apache.servicemix.util,
+                            org.apache.ws.security.processor
                         </Import-Package>
                         <Export-Package>org.apache.servicemix.examples.cxf</Export-Package>
                         <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>

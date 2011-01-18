@@ -36,6 +36,7 @@ import org.apache.cxf.endpoint.ServerImpl;
 import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.jaxws.ServiceImpl;
 import org.apache.cxf.jaxws.support.ServiceDelegateAccessor;
+import org.apache.cxf.message.Message;
 import org.apache.cxf.ws.addressing.AddressingProperties;
 import org.apache.cxf.ws.addressing.ContextUtils;
 import org.apache.cxf.ws.addressing.EndpointReferenceType;
@@ -316,14 +317,14 @@ public class WSAddressingTest extends CamelTestSupport implements VerificationCa
         staticBus.shutdown(true);
     }
     
-    private void addInterceptors(List<Interceptor> chain,
+    private void addInterceptors(List<Interceptor<? extends Message>> chain,
                                      Interceptor[] interceptors) {
         for (int i = 0; i < interceptors.length; i++) {
             chain.add(interceptors[i]);
         }
     }
     
-    private void removeInterceptors(List<Interceptor> chain,
+    private void removeInterceptors(List<Interceptor<? extends Message>> chain,
                                  Interceptor[] interceptors) {
         for (int i = 0; i < interceptors.length; i++) {
             chain.add(interceptors[i]);
