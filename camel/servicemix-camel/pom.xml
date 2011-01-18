@@ -30,6 +30,7 @@
     <artifactId>org.apache.servicemix.camel.component</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: Camel Support :: Component</name>
+    <description>Apache Camel component tight integrated in the NMR</description>
 
     <dependencies>
         <dependency>

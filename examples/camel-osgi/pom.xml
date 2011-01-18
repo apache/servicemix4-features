@@ -30,6 +30,7 @@
     <artifactId>camel-osgi</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: Examples :: Camel OSGi</name>
+    <description>Camel example using OSGi instead of JBI</description>
 
     <dependencies>
         <dependency>

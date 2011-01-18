@@ -31,6 +31,7 @@
     <artifactId>wsdl-first-cxfse-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: Examples :: WSDL First OSGi Package :: CXF SE Bundle</name>
+    <description>CXF WSDL first example :: CXF SE Bundle</description>
 
     <dependencies>
         <dependency>

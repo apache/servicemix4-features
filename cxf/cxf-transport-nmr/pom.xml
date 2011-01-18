@@ -30,6 +30,7 @@
     <artifactId>org.apache.servicemix.cxf.transport.nmr</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: CXF Support :: Transport For NMR</name>
+    <description>Apache CXF Transport integration to NMR</description>
 
     <dependencies>
         <dependency>

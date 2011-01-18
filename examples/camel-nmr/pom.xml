@@ -30,6 +30,7 @@
     <artifactId>camel-nmr</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: Examples :: Camel NMR</name>
+    <description>Camel Example using the Camel NMR component</description>
 
     <dependencies>
         <dependency>

@@ -30,6 +30,7 @@
     <artifactId>org.apache.servicemix.cxf.binding.nmr</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: CXF Support :: Binding For NMR</name>
+    <description>Apache CXF Binding integration in the NMR </description>
 
     <dependencies>
         <dependency>

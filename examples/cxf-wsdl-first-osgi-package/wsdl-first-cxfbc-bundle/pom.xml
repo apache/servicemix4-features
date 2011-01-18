@@ -31,6 +31,7 @@
     <artifactId>wsdl-first-cxfbc-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: Examples :: WSDL First OSGi Package :: CXF BC Bundle</name>
+    <description>CXF WSDL first example :: CXF BC Bundle</description>
 
     <dependencies>
         <dependency>
