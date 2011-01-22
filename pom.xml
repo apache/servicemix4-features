@@ -131,8 +131,8 @@
         <camel.version>2.6-SNAPSHOT</camel.version>
 
         <!-- CXF -->
-        <cxf.xjc-utils.version>2.3.0</cxf.xjc-utils.version>
-        <cxf.version>2.3.2-SNAPSHOT</cxf.version>
+        <cxf.xjc-utils.version>2.3.2</cxf.xjc-utils.version>
+        <cxf.version>2.3.2</cxf.version>
 
         <!-- Geronimo -->
         <geronimo-annotation.version>1.1.1</geronimo-annotation.version>
