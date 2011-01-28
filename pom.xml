@@ -163,19 +163,19 @@
         <castor.bundle.version>1.3.1_1</castor.bundle.version>
         <cometd-java-server.bundle.version>1.0.1_2</cometd-java-server.bundle.version>
         <commons-beanutils.bundle.version>1.8.2_1</commons-beanutils.bundle.version>
-        <commons-codec.bundle.version>1.3_3</commons-codec.bundle.version>
+        <commons-codec.bundle.version>1.4</commons-codec.bundle.version>
         <commons-collections.bundle.version>3.2.1_1</commons-collections.bundle.version>
         <commons-csv.bundle.version>1.0-r706899_4</commons-csv.bundle.version>
         <commons-httpclient.bundle.version>3.1_5</commons-httpclient.bundle.version>
         <commons-io.bundle.version>1.4_1</commons-io.bundle.version>
         <commons-lang.bundle.version>2.4_4</commons-lang.bundle.version>
-        <commons-net.bundle.version>1.4.1_4</commons-net.bundle.version>
+        <commons-net.bundle.version>2.2</commons-net.bundle.version>
         <commons-pool.bundle.version>1.5.4_2</commons-pool.bundle.version>
         <commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
         <dom4j.bundle.version>1.6.1_3</dom4j.bundle.version>
         <dozer.bundle.version>5.3.0_1</dozer.bundle.version>
         <drools.bundle.version>5.1.1_1</drools.bundle.version>
-        <ehcache.bundle.version>1.6.2_1</ehcache.bundle.version>
+        <ehcache.bundle.version>2.3.0_1</ehcache.bundle.version>
         <fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
         <flatpack.bundle.version>3.1.1_4</flatpack.bundle.version>
         <freemarker.bundle.version>2.3.15_4</freemarker.bundle.version>
@@ -186,6 +186,7 @@
         <ibatis-sqlmap.bundle.version>2.3.4.726_3</ibatis-sqlmap.bundle.version>
         <irclib.bundle.version>1.10_3</irclib.bundle.version>
         <isorelax.bundle.version>20050913_3</isorelax.bundle.version>
+        <jain-sip-ri.bundle.version>1.2.154_1</jain-sip-ri.bundle.version>
         <jasypt.bundle.version>1.6_1</jasypt.bundle.version>
         <jaxb.api.version>2.2</jaxb.api.version>
         <jaxb-impl.bundle.version>2.2.1.1_1</jaxb-impl.bundle.version> 
@@ -200,14 +201,14 @@
         <jruby.bundle.version>1.1.2_3</jruby.bundle.version>
         <joda-time.bundle.version>1.5.2_3</joda-time.bundle.version>
         <josql.bundle.version>1.5_4</josql.bundle.version>
-        <jsch.bundle.version>0.1.31_4</jsch.bundle.version>
+        <jsch.bundle.version>0.1.44_1</jsch.bundle.version>
         <jsendnsca-core.bundle.version>1.3.1_2</jsendnsca-core.bundle.version>
         <jsmpp.bundle.version>2.1.0_2</jsmpp.bundle.version>
         <juel.bundle.version>2.1.0_3</juel.bundle.version>
         <junit.bundle.version>4.7_2</junit.bundle.version>
         <lucene.bundle.version>3.0.1_2</lucene.bundle.version>
         <mina.bundle.version>1.1.7_4</mina.bundle.version>
-        <mvel.bundle.version>1.3.12_2</mvel.bundle.version>
+        <mvel.bundle.version>2.0.8_4</mvel.bundle.version>
         <neethi.bundle.version>2.0.4_3</neethi.bundle.version>
         <ognl.bundle.version>2.7.3_4</ognl.bundle.version>
         <openjpa.bundle.version>2.0.0_1</openjpa.bundle.version>
@@ -227,6 +228,7 @@
         <saxon.bundle.version>9.1.0.8_1</saxon.bundle.version>
         <scala-library.bundle.version>2.8.0_1</scala-library.bundle.version>
         <serp.bundle.version>1.13.1_3</serp.bundle.version>
+        <shiro.bundle.version>1.1.0_1</shiro.bundle.version>
         <smack.bundle.version>3.1.0_2</smack.bundle.version>
         <snmp4j.bundle.version>1.8.1_4</snmp4j.bundle.version>
         <stringtemplate.bundle.version>3.2_4</stringtemplate.bundle.version>
@@ -249,32 +251,33 @@
         <servicemix.nmr.version>1.4.0-SNAPSHOT</servicemix.nmr.version>
         <servicemix.specs.version>1.7.0</servicemix.specs.version>
 
-        <servicemix-bean.version>2011.01-SNAPSHOT</servicemix-bean.version>
-        <servicemix-camel.version>2011.01-SNAPSHOT</servicemix-camel.version>
-        <servicemix-cxf-bc.version>2011.01-SNAPSHOT</servicemix-cxf-bc.version>
-        <servicemix-cxf-se.version>2011.01-SNAPSHOT</servicemix-cxf-se.version>
-        <servicemix-drools.version>2011.01-SNAPSHOT</servicemix-drools.version>
-        <servicemix-eip.version>2011.01-SNAPSHOT</servicemix-eip.version>
-        <servicemix-exec.version>2011.01-SNAPSHOT</servicemix-exec.version>
-        <servicemix-file.version>2011.01-SNAPSHOT</servicemix-file.version>
-        <servicemix-ftp.version>2011.01-SNAPSHOT</servicemix-ftp.version>
-        <servicemix-http.version>2011.01-SNAPSHOT</servicemix-http.version>
-        <servicemix-jms.version>2011.01-SNAPSHOT</servicemix-jms.version>
-        <servicemix-jsr181.version>2011.01-SNAPSHOT</servicemix-jsr181.version>
-        <servicemix-mail.version>2011.01-SNAPSHOT</servicemix-mail.version>
-        <servicemix-osworkflow.version>2011.01-SNAPSHOT</servicemix-osworkflow.version>
-        <servicemix-quartz.version>2011.01-SNAPSHOT</servicemix-quartz.version>
-        <servicemix-saxon.version>2011.01-SNAPSHOT</servicemix-saxon.version>
-        <servicemix-script.version>2011.01-SNAPSHOT</servicemix-script.version>
-        <servicemix-scripting.version>2011.01-SNAPSHOT</servicemix-scripting.version>
-        <servicemix-shared.version>2011.01-SNAPSHOT</servicemix-shared.version>
-        <servicemix-smpp.version>2011.01-SNAPSHOT</servicemix-smpp.version>
-        <servicemix-snmp.version>2011.01-SNAPSHOT</servicemix-snmp.version>
-        <servicemix-truezip.version>2011.01-SNAPSHOT</servicemix-truezip.version>
-        <servicemix-validation.version>2011.01-SNAPSHOT</servicemix-validation.version>
-        <servicemix-vfs.version>2011.01-SNAPSHOT</servicemix-vfs.version>
-        <servicemix-wsn2005.version>2011.01-SNAPSHOT</servicemix-wsn2005.version>
-        <servicemix-xmpp.version>2011.01-SNAPSHOT</servicemix-xmpp.version>
+        <servicemix.components.version>2011.01-SNAPSHOT</servicemix.components.version>
+        <servicemix-bean.version>${servicemix.components.version}</servicemix-bean.version>
+        <servicemix-camel.version>${servicemix.components.version}</servicemix-camel.version>
+        <servicemix-cxf-bc.version>${servicemix.components.version}</servicemix-cxf-bc.version>
+        <servicemix-cxf-se.version>${servicemix.components.version}</servicemix-cxf-se.version>
+        <servicemix-drools.version>${servicemix.components.version}</servicemix-drools.version>
+        <servicemix-eip.version>${servicemix.components.version}</servicemix-eip.version>
+        <servicemix-exec.version>${servicemix.components.version}</servicemix-exec.version>
+        <servicemix-file.version>${servicemix.components.version}</servicemix-file.version>
+        <servicemix-ftp.version>${servicemix.components.version}</servicemix-ftp.version>
+        <servicemix-http.version>${servicemix.components.version}</servicemix-http.version>
+        <servicemix-jms.version>${servicemix.components.version}</servicemix-jms.version>
+        <servicemix-jsr181.version>${servicemix.components.version}</servicemix-jsr181.version>
+        <servicemix-mail.version>${servicemix.components.version}</servicemix-mail.version>
+        <servicemix-osworkflow.version>${servicemix.components.version}</servicemix-osworkflow.version>
+        <servicemix-quartz.version>${servicemix.components.version}</servicemix-quartz.version>
+        <servicemix-saxon.version>${servicemix.components.version}</servicemix-saxon.version>
+        <servicemix-script.version>${servicemix.components.version}</servicemix-script.version>
+        <servicemix-scripting.version>${servicemix.components.version}</servicemix-scripting.version>
+        <servicemix-shared.version>${servicemix.components.version}</servicemix-shared.version>
+        <servicemix-smpp.version>${servicemix.components.version}</servicemix-smpp.version>
+        <servicemix-snmp.version>${servicemix.components.version}</servicemix-snmp.version>
+        <servicemix-truezip.version>${servicemix.components.version}</servicemix-truezip.version>
+        <servicemix-validation.version>${servicemix.components.version}</servicemix-validation.version>
+        <servicemix-vfs.version>${servicemix.components.version}</servicemix-vfs.version>
+        <servicemix-wsn2005.version>${servicemix.components.version}</servicemix-wsn2005.version>
+        <servicemix-xmpp.version>${servicemix.components.version}</servicemix-xmpp.version>
 
         <!-- PAX -->
         <pax.url.version>1.2.1</pax.url.version>
@@ -303,7 +306,7 @@
         <commons-jxpath.version>1.3</commons-jxpath.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <commons-management.version>1.0</commons-management.version>
-        <commons-net.version>2.0</commons-net.version>
+        <commons-net.version>${commons-net.bundle.version}</commons-net.version>
         <derby.version>10.5.3.0_1</derby.version>
         <drools.version>5.1.1</drools.version>
         <easymock.version>2.4</easymock.version>
@@ -316,14 +319,14 @@
         <jaxp-ri.version>1.4.4</jaxp-ri.version>
         <jaxws-api.version>2.2</jaxws-api.version>
         <jaxrs.api.version>1.1</jaxrs.api.version>
-        <javassist.version>3.9.0</javassist.version>
+        <javassist.version>3.9.0.GA</javassist.version>
         <javax.mail.version>1.4.3</javax.mail.version>
         <jetty.version>7.2.2.v20101205</jetty.version>
         <jettison.version>1.2</jettison.version>
         <junit.version>4.7</junit.version>
         <log4j.version>1.2.16</log4j.version>
         <lingo.version>1.3</lingo.version>
-        <netty.version>3.2.3.Final</netty.version>
+        <netty.version>3.2.3.Final_1</netty.version>
         <openjpa.version>2.0.0</openjpa.version>
         <opensaml.version>1.1</opensaml.version>
         <restlet.version>1.1.10</restlet.version>
@@ -1014,8 +1017,8 @@
                <version>${commons-beanutils.bundle.version}</version>
            </dependency>
            <dependency>
-               <groupId>org.apache.servicemix.bundles</groupId>
-               <artifactId>org.apache.servicemix.bundles.commons-codec</artifactId>
+               <groupId>commons-codec</groupId>
+               <artifactId>commons-codec</artifactId>
                <version>${commons-codec.bundle.version}</version>
            </dependency>
            <dependency>
@@ -1034,8 +1037,8 @@
                <version>${commons-httpclient.bundle.version}</version>
            </dependency>
            <dependency>
-               <groupId>org.apache.servicemix.bundles</groupId>
-               <artifactId>org.apache.servicemix.bundles.commons-net</artifactId>
+               <groupId>commons-net</groupId>
+               <artifactId>commons-net</artifactId>
                <version>${commons-net.bundle.version}</version>
            </dependency>
            <dependency>

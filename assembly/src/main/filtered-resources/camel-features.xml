@@ -57,7 +57,7 @@
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
+        <bundle>mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/${ant.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/${bcel.bundle.version}</bundle>
@@ -106,13 +106,13 @@
     </feature>
     <feature name="camel-crypto" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
+        <bundle>mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-crypto/${camel.version}</bundle>
     </feature>
     <feature name="camel-http" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
+        <bundle>mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-http/${camel.version}</bundle>
     </feature>
@@ -173,7 +173,7 @@
     <feature name="camel-atom" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
+        <bundle>mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-atom/${camel.version}</bundle>
     </feature>
     <feature name="camel-bam" version="${camel.version}">
@@ -252,7 +252,7 @@
         <bundle>mvn:org.apache.camel/camel-freemarker/${camel.version}</bundle>
     </feature>
     <feature name="camel-ftp" version="${camel.version}">
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-net/${commons-net.bundle.version}</bundle>
+        <bundle>mvn:commons-net/commons-net/${commons-net.bundle.version}</bundle>
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsch/${jsch.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-ftp/${camel.version}</bundle>
@@ -260,7 +260,7 @@
     <feature name="camel-guice" version="${camel.version}">
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo-annotation.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/${aopalliance.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.guiceyfruit/${guiceyfruit.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.guice/${guiceyfruit.bundle.version}</bundle>
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.camel/camel-guice/${camel.version}</bundle>
     </feature>
@@ -315,7 +315,7 @@
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.camel/camel-jasypt/${camel.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-lang/${commons-lang.bundle.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-codec/${commons-codec.bundle.version}</bundle>
+        <bundle>mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jasypt/${jasypt.bundle.version}</bundle>
     </feature>
     <feature name="camel-jaxb" version="${camel.version}">
@@ -414,11 +414,12 @@
     </feature>
     <feature name="camel-netty" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
-        <bundle>mvn:http://repository.jboss.org/nexus/content/groups/public!org.jboss.netty/netty/${netty.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.netty/${netty.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-netty/${camel.version}</bundle>
     </feature>
     <feature name="camel-ognl" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ognl/${ognl.bundle.version}</bundle>
         <bundle>mvn:http://repository.springsource.com/maven/bundles/external!org.jboss.javassist/com.springsource.javassist/${javassist.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-ognl/${camel.version}</bundle>
     </feature>
@@ -474,12 +475,14 @@
     </feature>
     <feature name="camel-sip" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
-        <bundle>wrap:mvn:http://repository.jboss.org/nexus/content/groups/public!javax.sip/jain-sip-api/1.2</bundle>
+        <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jain-sip-api-1.2/${servicemix.specs.version}</bundle>
+	    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jain-sip-ri/${jain-sip-ri.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-sip/${camel.version}</bundle>
     </feature>
     <feature name="camel-shiro" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
-        <bundle>wrap:mvn:https://repository.apache.org!org.apache.shiro/shiro-core/1.0.0-incubating</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-beanutils/${commons-beanutils.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.shiro/${shiro.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-shiro/${camel.version}</bundle>
     </feature>
     <feature name="camel-smpp" version="${camel.version}">
@@ -532,7 +535,7 @@
         <feature version="${camel.version}">camel-spring</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr2.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.stringtemplate/${stringtemplate.bundle.version}</bundle>
-        <bundle>mvn:org.apache.camel/camel-string-template/${camel.version}</bundle>
+        <bundle>mvn:org.apache.camel/camel-stringtemplate/${camel.version}</bundle>
     </feature>
     <feature name="camel-tagsoup" version="${camel.version}">
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.tagsoup/${tagsoup.bundle.version}</bundle>
