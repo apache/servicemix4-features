@@ -20,6 +20,7 @@
     <feature name='camel' version='${camel.version}'>
         <feature version='${camel.version}'>camel-core</feature>
         <feature version='${camel.version}'>camel-spring</feature>
+        <feature version='${camel.version}'>camel-blueprint</feature>
     </feature>
     <feature name='camel-core' version='${camel.version}'>
         <feature version="${spring.version}">spring</feature>
