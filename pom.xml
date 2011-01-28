@@ -211,7 +211,7 @@
         <mvel.bundle.version>2.0.8_4</mvel.bundle.version>
         <neethi.bundle.version>2.0.4_3</neethi.bundle.version>
         <ognl.bundle.version>2.7.3_4</ognl.bundle.version>
-        <openjpa.bundle.version>2.0.0_1</openjpa.bundle.version>
+        <openjpa.bundle.version>1.2.1_3</openjpa.bundle.version>
         <opensaml.bundle.version>1.1_5</opensaml.bundle.version>
         <oscache.bundle.version>2.4_4</oscache.bundle.version>
         <oscore.bundle.version>2.2.4_4</oscore.bundle.version>
