@@ -145,7 +145,7 @@ public class ExceptionHandleTest extends CamelTestSupport {
             BindingProvider bp = (BindingProvider)greeter;
             Map<String, Object> responseContext = bp.getResponseContext();
             Integer responseCode = (Integer) responseContext.get(Message.RESPONSE_CODE);
-            assertEquals(200, responseCode.intValue());                
+            assertEquals(500, responseCode.intValue());                
             assertNotNull(brlf.getFaultInfo());
             assertEquals("BadRecordLitFault", brlf.getFaultInfo());
         }
