@@ -251,7 +251,7 @@
         <servicemix.nmr.version>1.4.0-SNAPSHOT</servicemix.nmr.version>
         <servicemix.specs.version>1.7.0</servicemix.specs.version>
 
-        <servicemix.components.version>2011.01-SNAPSHOT</servicemix.components.version>
+        <servicemix.components.version>2011.01</servicemix.components.version>
         <servicemix-bean.version>${servicemix.components.version}</servicemix-bean.version>
         <servicemix-camel.version>${servicemix.components.version}</servicemix-camel.version>
         <servicemix-cxf-bc.version>${servicemix.components.version}</servicemix-cxf-bc.version>
