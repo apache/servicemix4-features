@@ -132,8 +132,6 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-742] - Upgrade to Spring 3.0.5.RELEASE
 * [SMX4-745] - Upgrade to Camel 2.6.0
 * [SMX4-746] - Upgrade to CXF 2.3.2
-* [SMX4-747] - Add OSGi unit tests focused on Camel, CXF and camel-cxf
-* [SMX4-753] - Improve out-of-the-box integration between Camel and ActiveMQ
 * [SMX4-754] - Upgrade to ServiceMix Components 2011.01
 * [SMX4-755] - Upgrade to ServiceMix NMR 1.4.0
 
