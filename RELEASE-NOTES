@@ -161,7 +161,6 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-593] - Create Bundles for SIP API and RI.
 * [SMX4-607] - downgrade geronimo-annotation version to 1.0 from 1.1
 * [SMX4-613] - Create a wrap bundle dozer 5.3.0
-* [SMX4-655] - Release ServiceMix 4.3.0
 * [SMX4-668] - Upgrade to MVEL 2.0.18
 * [SMX4-671] - add scala 2.8.1 bundle
 * [SMX4-672] - Create a wrap bundle for Jetty 6.1.26
