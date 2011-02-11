@@ -31,7 +31,7 @@
     <groupId>org.apache.servicemix.features</groupId>
     <artifactId>features</artifactId>
     <packaging>pom</packaging>
-    <version>4.4.0-SNAPSHOT</version>
+    <version>4.3.0-SNAPSHOT</version>
     <name>Apache ServiceMix :: Features</name>
     <inceptionYear>2005</inceptionYear>
 
