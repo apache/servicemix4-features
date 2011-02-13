@@ -134,6 +134,7 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-746] - Upgrade to CXF 2.3.2
 * [SMX4-754] - Upgrade to ServiceMix Components 2011.01
 * [SMX4-755] - Upgrade to ServiceMix NMR 1.4.0
+* [SMX4-757] - Upgrade to Apache ODE 1.3.5
 
 ** New Feature
 * [SMX4-558] - Add a wrap bundle of xmlbeans 2.5.0

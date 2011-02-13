@@ -190,13 +190,6 @@
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
-        <file>
-            <source>${basedir}/target/classes/ode-features.xml</source>
-            <outputDirectory>system/org/apache/servicemix/ode-jbi-karaf/${ode.version}</outputDirectory>
-            <destName>ode-jbi-karaf-${ode.version}-features.xml</destName>
-            <fileMode>0644</fileMode>
-            <lineEnding>unix</lineEnding>
-        </file>
 
         <file>
             <source>${basedir}/target/maven-shared-archive-resources/META-INF/LICENSE</source>
@@ -366,15 +359,15 @@
                 <include>org.apache.servicemix.nmr:apache-servicemix-nmr:xml:features</include>
             </includes>
         </dependencySet>
-        <!--dependencySet>
+        <dependencySet>
             <outputDirectory>/system</outputDirectory>
-            <outputFileNameMapping>org/apache/camel/karaf/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+            <outputFileNameMapping>org/apache/ode/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
-                <include>org.apache.camel.karaf:apache-camel:xml:features</include>
+                <include>org.apache.ode:ode-jbi-karaf:xml:features</include>
             </includes>
-        </dependencySet-->
+        </dependencySet>
         <dependencySet>
             <outputDirectory>/system</outputDirectory>
             <unpack>false</unpack>
