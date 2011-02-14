@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>org.apache.servicemix.examples.itests</artifactId>
-        <version>4.4.0-SNAPSHOT</version>
+        <version>4.3.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>org.apache.servicemix.examples.itests.cxf-soap-handler-osgi</artifactId>
