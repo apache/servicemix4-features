@@ -343,7 +343,7 @@
         </dependencySet>
         <dependencySet>
             <outputDirectory>/system</outputDirectory>
-            <outputFileNameMapping>org/apache/ode/${artifact.artifactId}/${artifact.baseVersion}/${artifacti.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+            <outputFileNameMapping>org/apache/ode/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
