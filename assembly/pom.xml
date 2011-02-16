@@ -733,6 +733,8 @@
                                 <feature>servicemix-snmp</feature>
                                 <feature>servicemix-vfs</feature>
                                 <feature>servicemix-smpp</feature>
+                                <!-- ODE -->
+                                <feature>ode</feature>
                             </features>
                             <repository>target/features-repo</repository>
                         </configuration>
