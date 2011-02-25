@@ -93,6 +93,7 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-763] - Remove examples/web from the distribution
 * [SMX4-764] - Override Apache Felix Framework version to 3.0.8 in the distribution
 * [SMX4-765] - ServiceMix doesn't start with Java 1.5.0
+* [SMX4-766] - Upgrade to Felix Framework 3.0.9
 
 ** Improvement
 * [SMX4-512] - Upgrade to ActiveMQ 5.3.1
