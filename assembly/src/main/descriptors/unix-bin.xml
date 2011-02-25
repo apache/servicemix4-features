@@ -146,6 +146,7 @@
                 <exclude>**/.settings/**</exclude>
                 <exclude>**/wsdl-first/**</exclude>
                 <exclude>**/loan-broker-bpel/**</exclude>
+                <exclude>**/web/**</exclude>
             </excludes>
         </fileSet>
         

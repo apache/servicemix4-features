@@ -34,6 +34,9 @@
              <exclude>etc/users.properties</exclude>
              <exclude>etc/custom.properties</exclude>
              <exclude>etc/jre.properties</exclude>
+             <!-- SMX4-764 - Override the Felix Framework version -->
+             <exclude>etc/config.properties</exclude>
+             <exclude>system/org/apache/felix/org.apache.felix.framework/**</exclude>
              <exclude>LICENSE</exclude>
              <exclude>NOTICE</exclude>
              <exclude>README</exclude>
@@ -126,6 +129,7 @@
               <exclude>**/.settings/**</exclude>
               <exclude>**/wsdl-first/**</exclude>
               <exclude>**/loan-broker-bpel/**</exclude>
+              <exclude>**/web/**</exclude>
           </excludes>
       </fileSet>
 
@@ -426,6 +430,16 @@
             <includes>
                 <include>org.apache.servicemix.specs:org.apache.servicemix.specs.jaxp-api-1.4</include>
                 <include>org.apache.servicemix.specs:org.apache.servicemix.specs.stax-api-1.0</include>
+            </includes>
+        </dependencySet>
+        <!-- SMX4-764 - Override the Felix Framework version -->
+        <dependencySet>
+            <outputDirectory>/system</outputDirectory>
+            <unpack>false</unpack>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputFileNameMapping>org/apache/felix/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+            <includes>
+                <include>org.apache.felix:org.apache.felix.framework</include>
             </includes>
         </dependencySet>
 
