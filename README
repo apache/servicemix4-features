@@ -30,10 +30,10 @@ play.
 Getting Started
 ===============
 For an Apache ServiceMix 4 source distribution, please read 
-BUILDING.txt for instructions on building Apache ServiceMix 4. 
+BUILDING for instructions on building Apache ServiceMix 4.
 
 For an Apache ServiceMix 4 binary distribution, please read 
-RELEASE-NOTES.txt for installation instructions and list of supported 
+RELEASE-NOTES for installation instructions and list of supported
 and unsupported features.
 
 Alternatively, you can also find out how to get started here:

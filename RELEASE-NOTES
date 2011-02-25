@@ -34,12 +34,15 @@ bugfixes and feature enhancements over the 4.2.0 release.  ServiceMix 4.3.0 incl
   OSGi and JBI compatible components for common integration bindings such as FTP, HTTP, JMS, etc. as well as
   service engines such as Camel (Enterprise Integration Patterns), Quartz, JSR-223 Scripting, etc.
 
-
 ServiceMix 4.3.0 also ships with a web console for administering and deploying endpoints and components,
 additional OSGi bundles, and configuration files.  We also include support for running outof the box web applications
 via WAR file deployment.  This release includes preliminary implementations of the OSGi Enterprise Specification 4.2
 and includes support for OSGi fragment bundles.  OSGi framework support defauls to Apache Felix, but can be changed
 via a simple configuration paramater to use Eclipse Equinox.
+
+ Java 1.5.0 support
+ ------------------
+To be able to run ServiceMix 4.3.0 using Java 1.5.0, you need to remove jaxp-ri-1.4.4.jar from the lib/endorsed folder.
 
  Changelog
  ---------
