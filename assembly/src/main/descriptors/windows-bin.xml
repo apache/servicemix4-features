@@ -35,8 +35,10 @@
              <exclude>etc/custom.properties</exclude>
              <exclude>etc/jre.properties</exclude>
              <!-- SMX4-764 - Override the Felix Framework version -->
+             <!-- begin snippet -->
              <exclude>etc/config.properties</exclude>
              <exclude>system/org/apache/felix/org.apache.felix.framework/**</exclude>
+             <!-- end snippet -->
              <exclude>LICENSE</exclude>
              <exclude>NOTICE</exclude>
              <exclude>README</exclude>
@@ -433,6 +435,7 @@
             </includes>
         </dependencySet>
         <!-- SMX4-764 - Override the Felix Framework version -->
+        <!-- begin snippet -->
         <dependencySet>
             <outputDirectory>/system</outputDirectory>
             <unpack>false</unpack>
@@ -442,6 +445,7 @@
                 <include>org.apache.felix:org.apache.felix.framework</include>
             </includes>
         </dependencySet>
+        <!-- end snippet -->
 
     </dependencySets>
 

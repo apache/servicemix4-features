@@ -87,6 +87,8 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-749] - JBI deployer version range is not up to date
 * [SMX4-760] - JAXB API and implementation version mismatch in Camel features descriptor
 * [SMX4-761] - cxf-osgi example miss a package import which cause it fail with felix
+* [SMX4-763] - Remove examples/web from the distribution
+* [SMX4-764] - Override Apache Felix Framework version to 3.0.8 in the distribution
 
 ** Improvement
 * [SMX4-512] - Upgrade to ActiveMQ 5.3.1
