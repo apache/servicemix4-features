@@ -51,6 +51,7 @@
         <module>cxf-wsdl-first-osgi-package</module>
         <module>cxf-ws-security-osgi</module>
         <module>cxf-ws-rm</module>
+        <module>web</module>
         <module>itests</module>
     </modules>
 
