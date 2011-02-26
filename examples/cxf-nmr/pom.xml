@@ -49,11 +49,16 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Description>${project.description}</Bundle-Description>
                         <Import-Package>
-                            javax.jws, javax.wsdl,
-                            META-INF.cxf,META-INF.cxf.transport.nmr,
+                            javax.jws,
+                            javax.xml.namespace,
+                            javax.wsdl,
+                            META-INF.cxf,
+                            META-INF.cxf.transport.nmr,
                             org.springframework.beans.factory.config,
                             org.apache.servicemix.cxf.transport.nmr,
-                            org.apache.servicemix.nmr.api,org.apache.servicemix.nmr.api.event,org.apache.servicemix.nmr.api.internal
+                            org.apache.servicemix.nmr.api,
+                            org.apache.servicemix.nmr.api.event,
+                            org.apache.servicemix.nmr.api.internal
                         </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxf</Private-Package>
                         <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
