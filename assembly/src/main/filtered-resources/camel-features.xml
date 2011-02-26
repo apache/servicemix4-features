@@ -42,7 +42,9 @@
     <feature name="camel-blueprint" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.camel/camel-blueprint/${camel.version}</bundle>
-        <bundle>mvn:org.apache.aries.blueprint/org.apache.aries.blueprint/${aries.blueprint.version}</bundle>
+        <!-- this should be already installed in Karaf, let's ignore it 
+        <bundle>mvn:org.apache.aries.blueprint/org.apache.aries.blueprint/${aries.blueprint.version}</bundle> 
+        -->
     </feature>
     <feature name='camel-test' version='${camel.version}'>
         <feature version='${camel.version}'>camel-spring</feature>
