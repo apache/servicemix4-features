@@ -49,7 +49,7 @@ public class WebAppListener implements ServletContextListener {
         try {
             System.err.println("contextDestroyed");
             if (main != null) {
-                main.destroy(false);
+                main.destroy();
             }
         } catch (Exception e) {
             e.printStackTrace();

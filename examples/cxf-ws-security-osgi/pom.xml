@@ -59,6 +59,7 @@
                         <Import-Package>
                             javax.jws,
                             javax.xml.bind.annotation,
+                            javax.xml.namespace,
                             javax.wsdl,
                             META-INF.cxf,
                             META-INF.cxf.osgi,

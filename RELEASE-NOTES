@@ -34,12 +34,15 @@ bugfixes and feature enhancements over the 4.2.0 release.  ServiceMix 4.3.0 incl
   OSGi and JBI compatible components for common integration bindings such as FTP, HTTP, JMS, etc. as well as
   service engines such as Camel (Enterprise Integration Patterns), Quartz, JSR-223 Scripting, etc.
 
-
 ServiceMix 4.3.0 also ships with a web console for administering and deploying endpoints and components,
 additional OSGi bundles, and configuration files.  We also include support for running outof the box web applications
 via WAR file deployment.  This release includes preliminary implementations of the OSGi Enterprise Specification 4.2
 and includes support for OSGi fragment bundles.  OSGi framework support defauls to Apache Felix, but can be changed
 via a simple configuration paramater to use Eclipse Equinox.
+
+ Java 1.5.0 support
+ ------------------
+To be able to run ServiceMix 4.3.0 using Java 1.5.0, you need to remove jaxp-ri-1.4.4.jar from the lib/endorsed folder.
 
  Changelog
  ---------
@@ -86,6 +89,10 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-748] - Improve logging policy to avoid impact on performances
 * [SMX4-749] - JBI deployer version range is not up to date
 * [SMX4-760] - JAXB API and implementation version mismatch in Camel features descriptor
+* [SMX4-761] - cxf-osgi example miss a package import which cause it fail with felix
+* [SMX4-763] - Remove examples/web from the distribution
+* [SMX4-764] - Override Apache Felix Framework version to 3.0.8 in the distribution
+* [SMX4-765] - ServiceMix doesn't start with Java 1.5.0
 
 ** Improvement
 * [SMX4-512] - Upgrade to ActiveMQ 5.3.1
@@ -136,6 +143,7 @@ Release Notes - ServiceMix 4 - Version 4.3.0
 * [SMX4-754] - Upgrade to ServiceMix Components 2011.01
 * [SMX4-755] - Upgrade to ServiceMix NMR 1.4.0
 * [SMX4-757] - Upgrade to Apache ODE 1.3.5
+* [SMX4-766] - Upgrade to Felix Framework 3.0.9
 
 ** New Feature
 * [SMX4-558] - Add a wrap bundle of xmlbeans 2.5.0

@@ -32,6 +32,10 @@
     <packaging>pom</packaging>
     <name>Apache ServiceMix :: Features :: Assembly</name>
 
+    <properties>
+        <felix.framework.version>3.0.9</felix.framework.version>
+    </properties>
+
     <dependencies>
         
         <!-- Karaf -->
@@ -54,6 +58,15 @@
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.war</artifactId>
+        </dependency>
+
+        <!-- Felix -->
+        <!-- SMX4-764 - Override the Felix Framework version to use 3.0.8 -->
+        <!-- SMX4-766 - Upgrade to Felix Framework 3.0.9 -->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.framework</artifactId>
+            <version>${felix.framework.version}</version>
         </dependency>
         
         <!-- ServiceMix Components -->
