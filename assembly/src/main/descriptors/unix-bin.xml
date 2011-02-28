@@ -47,15 +47,12 @@
             </excludes>
         </fileSet>
 
-        <!-- Copy over bin/servicemix separately to get the correct file mode -->
+        <!-- Copy over bin/* scripts separately to get the correct file mode -->
         <fileSet>
             <directory>target/dependencies/unix/apache-karaf-${karaf.version}</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
-              <include>bin/admin</include>
-              <include>bin/karaf</include>  <!-- we need this one in here for admin:create'd instances to work -->
-              <include>bin/start</include>
-              <include>bin/stop</include>
+              <include>bin/*</include>
             </includes>
             <fileMode>0755</fileMode>
         </fileSet>
