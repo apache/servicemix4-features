@@ -44,7 +44,7 @@
                         disableOutput="true"
                         language="groovy" />
 	
-    <bean id="myscript" class="org.apache.servicemix.document.factory.DocumentFactory">
+    <bean id="myscript" class="org.apache.servicemix.document.impl.spring.SpringDocumentFactory">
       <property name="repository" ref="repository" />
       <property name="document">
         <value>
