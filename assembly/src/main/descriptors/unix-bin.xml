@@ -18,6 +18,7 @@
 <assembly>
     <id></id> <!-- intentionally left blank -> http://jira.codehaus.org/browse/MASSEMBLY-301 -->
     <formats>
+        <format>jar</format>
         <format>tar.gz</format>
     </formats>
     <fileSets>
