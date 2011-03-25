@@ -50,14 +50,10 @@
             <type>tar.gz</type>
         </dependency>
         <dependency>
-            <groupId>org.apache.karaf</groupId>
-            <artifactId>apache-karaf</artifactId>
-            <type>xml</type>
+            <groupId>org.apache.karaf.assemblies.features</groupId>
+            <artifactId>standard</artifactId>
             <classifier>features</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.karaf.deployer</groupId>
-            <artifactId>org.apache.karaf.deployer.war</artifactId>
+            <type>xml</type>
         </dependency>
 
         <!-- Felix -->
@@ -483,10 +479,6 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.jetty</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.jruby</artifactId>
         </dependency>
         <dependency>
@@ -711,7 +703,8 @@
                         </goals>
                         <configuration>
                             <descriptors>
-                                <descriptor>mvn:org.apache.karaf/apache-karaf/${karaf.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.assemblies.features/standard/${karaf.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.assemblies.features/enterprise/${karaf.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/activemq-features.xml</descriptor>
                                 <descriptor>file:${basedir}/target/classes/camel-features.xml</descriptor>

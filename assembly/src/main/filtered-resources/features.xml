@@ -20,7 +20,7 @@
     <repository>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</repository>
     <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
     <feature name="connector" version="${version}">
-        <feature version="${aries.transaction.version}">transaction</feature>
+        <feature version="${aries.version}">transaction</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo-j2ee-connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo-connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
@@ -226,7 +226,18 @@
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty.bundle.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-util/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-io/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-http/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-client/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-continuation/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-jmx/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-server/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-security/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-servlet/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-servlets/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-xml/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-webapp/${jetty.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http.version}</bundle>

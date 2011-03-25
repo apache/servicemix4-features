@@ -58,7 +58,18 @@
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/${asm.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.fastinfoset/${fastinfoset.bundle.version}</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty.bundle.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-util/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-io/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-http/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-client/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-continuation/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-jmx/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-server/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-security/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-servlet/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-servlets/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-xml/${jetty.version}</bundle>
+        <bundle>mvn:org.eclipse.jetty/jetty-webapp/${jetty.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdom/${jdom.bundle.version}</bundle>
         <bundle>mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
