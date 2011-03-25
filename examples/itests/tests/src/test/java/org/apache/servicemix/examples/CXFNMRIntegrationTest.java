@@ -16,32 +16,14 @@
  */
 package org.apache.servicemix.examples;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.net.URL;
-import java.util.jar.Manifest;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.List;
-
-import javax.xml.transform.Source;
-
-import org.apache.cxf.Bus;
 import org.apache.servicemix.examples.cxf.HelloWorld;
-import org.apache.servicemix.jbi.jaxp.StringSource;
-import org.apache.servicemix.nmr.api.Channel;
-import org.apache.servicemix.nmr.api.Endpoint;
-import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.NMR;
-import org.apache.servicemix.nmr.api.Pattern;
-import org.apache.servicemix.nmr.api.Status;
 import org.apache.servicemix.platform.testing.support.AbstractIntegrationTest;
-import org.springframework.osgi.test.platform.OsgiPlatform;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
+
+import java.util.Properties;
+import java.util.jar.Manifest;
 
 public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
 
@@ -102,7 +84,19 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xerces"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xalan"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.xmlsec"),
-            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty"),
+            //getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.jetty"),
+            getBundle("org.eclipse.jetty", "jetty-util"),
+            getBundle("org.eclipse.jetty", "jetty-io"),
+            getBundle("org.eclipse.jetty", "jetty-http"),
+            getBundle("org.eclipse.jetty", "jetty-client"),
+            getBundle("org.eclipse.jetty", "jetty-continuation"),
+            getBundle("org.eclipse.jetty", "jetty-jmx"),
+            getBundle("org.eclipse.jetty", "jetty-server"),
+            getBundle("org.eclipse.jetty", "jetty-security"),
+            getBundle("org.eclipse.jetty", "jetty-servlet"),
+            getBundle("org.eclipse.jetty", "jetty-servlets"),
+            getBundle("org.eclipse.jetty", "jetty-xml"),
+            getBundle("org.eclipse.jetty", "jetty-webapp"),
             getBundle("javax.mail", "mail"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.commons-codec"),
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.abdera"),
