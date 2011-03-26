@@ -490,7 +490,7 @@
     <feature name="camel-sip" version="${camel.version}">
         <feature version="${camel.version}">camel-core</feature>
         <bundle>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jain-sip-api-1.2/${servicemix.specs.version}</bundle>
-	    <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jain-sip-ri/${jain-sip-ri.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jain-sip-ri/${jain-sip-ri.bundle.version}</bundle>
         <bundle>mvn:org.apache.camel/camel-sip/${camel.version}</bundle>
     </feature>
     <feature name="camel-shiro" version="${camel.version}">
