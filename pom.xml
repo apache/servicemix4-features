@@ -68,6 +68,15 @@
     </prerequisites>
 
     <repositories>
+        <!-- Required to allow building with a snapshot of the NMR (parent POM) -->
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://repository.apache.org/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
         <!-- Java.net Maven Repository, required by javax.mail -->
         <repository>
             <id>java.net</id>
