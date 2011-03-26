@@ -16,16 +16,18 @@
  */
 package org.apache.servicemix.examples.camel;
 
-import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Date;
 
 /**
  * @version $Revision: 640450 $
  */
 public class MyTransform  {
-    private static final transient Log LOG = LogFactory.getLog(MyTransform.class);
+
+    private static final transient Logger LOG = LoggerFactory.getLogger(MyTransform.class);
+
     private boolean verbose = true;
     private String prefix = "MyTransform";
 

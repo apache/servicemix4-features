@@ -73,7 +73,6 @@
                             org.springframework.beans.factory.config,
                             javax.security.auth.callback,
                             org.apache.ws.security,
-                            org.apache.commons.logging,
                             org.apache.servicemix.util,
                             org.apache.ws.security.processor
                         </Import-Package>

@@ -70,8 +70,7 @@
                             org.apache.cxf.ws.security.wss4j,
                             org.springframework.beans.factory.config,
                             javax.security.auth.callback,
-                            org.apache.ws.security,
-                            org.apache.commons.logging
+                            org.apache.ws.security
                         </Import-Package>
                         <Export-Package>org.apache.servicemix.examples.cxf</Export-Package>
                         <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>

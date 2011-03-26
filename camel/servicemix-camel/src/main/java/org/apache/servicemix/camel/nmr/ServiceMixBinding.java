@@ -30,16 +30,18 @@ import org.apache.camel.ExchangePattern;
 import org.apache.camel.Message;
 import org.apache.camel.impl.DefaultExchange;
 import org.apache.camel.impl.DefaultMessage;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.servicemix.nmr.api.Channel;
 import org.apache.servicemix.nmr.api.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The binding object will help us to deal with copying between the NMR exchange and camel exchange
  */
 public class ServiceMixBinding {
-    private final transient Log LOG = LogFactory.getLog(ServiceMixBinding.class);
+
+    private final transient Logger LOG = LoggerFactory.getLogger(ServiceMixBinding.class);
+
     public static final String NMR_MESSAGE = "nmrMessage";
     public static final String NMR_EXCHANGE = "nmrExchange";
     public static final String NMR_OPERATION = "nmrOperation";
