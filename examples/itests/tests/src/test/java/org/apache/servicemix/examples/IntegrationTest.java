@@ -16,7 +16,6 @@
  */
 package org.apache.servicemix.examples;
 
-import com.sun.tools.javac.resources.version;
 import org.apache.cxf.Bus;
 import org.apache.servicemix.examples.cxf.HelloWorld;
 import org.apache.servicemix.jbi.jaxp.StringSource;
