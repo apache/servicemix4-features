@@ -186,13 +186,6 @@
             <fileMode>0644</fileMode>
             <lineEnding>unix</lineEnding>
         </file>
-        <file>
-            <source>${basedir}/target/classes/camel-features.xml</source>
-            <outputDirectory>system/org/apache/camel/karaf/apache-camel/${camel.version}</outputDirectory>
-            <destName>apache-camel-${camel.version}-features.xml</destName>
-            <fileMode>0644</fileMode>
-            <lineEnding>unix</lineEnding>
-        </file>
 
         <file>
             <source>${basedir}/target/maven-shared-archive-resources/META-INF/LICENSE</source>
