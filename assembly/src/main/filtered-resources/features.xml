@@ -227,18 +227,7 @@
         <bundle>mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle>mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-util/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-io/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-http/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-client/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-continuation/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-jmx/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-server/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-security/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-servlet/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-servlets/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-xml/${jetty.version}</bundle>
-        <bundle>mvn:org.eclipse.jetty/jetty-webapp/${jetty.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty6.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap/${servicemix-shared.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-soap2/${servicemix-shared.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix-http.version}</bundle>
