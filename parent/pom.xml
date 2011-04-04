@@ -41,7 +41,7 @@
   <!-- Properties -->
   <properties>
     <cxf.version>2.3.3</cxf.version>
-    <servicemix.nmr.version>${project.parent.version}</servicemix.nmr.version>
+    <servicemix.nmr.version>1.5.0-SNAPSHOT</servicemix.nmr.version>
   </properties>
 
   <!-- Managed dependencies -->

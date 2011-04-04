@@ -424,14 +424,8 @@
             <useProjectArtifact>false</useProjectArtifact>
             <outputFileNameMapping>org/apache/servicemix/bundles/${artifact.artifactId}/${artifact.baseVersion}/${artifact.artifactId}-${artifact.baseVersion}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
             <includes>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.aopalliance</include>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.cglib</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.jaxp-ri</include>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.oro</include>
                 <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-jexl</include>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-vfs</include>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-codec</include>
-                <include>org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-httpclient</include>
             </includes>
         </dependencySet>
         <dependencySet>
