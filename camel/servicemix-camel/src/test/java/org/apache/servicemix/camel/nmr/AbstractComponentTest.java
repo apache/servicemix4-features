@@ -16,8 +16,8 @@
  */
 package org.apache.servicemix.camel.nmr;
 
-import org.apache.camel.ContextTestSupport;
 import org.apache.camel.impl.JndiRegistry;
+import org.apache.camel.test.junit4.CamelTestSupport;
 import org.apache.servicemix.executors.ExecutorFactory;
 import org.apache.servicemix.executors.impl.ExecutorConfig;
 import org.apache.servicemix.executors.impl.ExecutorFactoryImpl;
@@ -37,14 +37,14 @@ import java.util.List;
  * - the NMR component is available with URI prefix nmr:
  * - a client channel to the NMR can be obtained with the {@link #getChannel()} method
  */
-public abstract class AbstractComponentTest extends ContextTestSupport implements ExchangeListener {
+public abstract class AbstractComponentTest extends CamelTestSupport implements ExchangeListener {
 
     private ServiceMix nmr;
     private ServiceMixComponent component;
     private Channel channel;
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         nmr = new ServiceMix();
         nmr.setExecutorFactory(createExecutorFactory());
         nmr.init();
@@ -58,7 +58,7 @@ public abstract class AbstractComponentTest extends ContextTestSupport implement
     }
 
     @Override
-    protected void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         for (ServiceMixProducer producer : findEndpoints(ServiceMixProducer.class)) {
             if (producer.getContinuations().size() > 0) {
                 // let's wait for a moment to give the last exchanges the time to get Done

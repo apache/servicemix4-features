@@ -20,6 +20,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
+import org.junit.Test;
 
 /**
  * A very basic NMR test, just testing if the Exchange can flow through the NMR
@@ -29,6 +30,7 @@ public class CamelTryCatchTest extends AbstractComponentTest {
 
     private static final String REQUEST_MESSAGE = "Simple message body";
 
+    @Test
     public void testInOnlyTryCatch() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:caught");
         mock.expectedMessageCount(1);
@@ -38,6 +40,7 @@ public class CamelTryCatchTest extends AbstractComponentTest {
         assertMockEndpointsSatisfied();
     }
 
+    @Test
     public void testInOutTryCatch() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:caught");
         mock.expectedMessageCount(1);

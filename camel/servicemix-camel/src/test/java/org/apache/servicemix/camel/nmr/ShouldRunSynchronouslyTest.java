@@ -20,6 +20,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
+import org.junit.Test;
 
 /**
  * Test case for the ?synchronous=true setting on a camel consumer endpoint
@@ -28,6 +29,7 @@ public class ShouldRunSynchronouslyTest extends AbstractComponentTest {
 
     private static final String HANDLED_BY_THREAD = "HandledByThread";
 
+    @Test
     public void testProcessingOnSameThread() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:simple");
         mock.expectedBodiesReceived("Simple message body");

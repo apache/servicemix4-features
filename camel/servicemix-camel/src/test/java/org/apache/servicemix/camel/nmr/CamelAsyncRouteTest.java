@@ -25,6 +25,8 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.servicemix.nmr.api.Status;
 
+import org.junit.Test;
+
 /**
  * Test case for making sure that the component behaves properly if the Camel route is using
  * asynchronous elements (e.g. threads or seda queues)
@@ -40,12 +42,13 @@ public class CamelAsyncRouteTest extends AbstractComponentTest {
     private CountDownLatch done;
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
 
         done = new CountDownLatch(COUNT);
     }
 
+    @Test
     public void testCamelThreads() throws InterruptedException {
         expectDefaultMessageCount("mock:sent");
         expectDefaultMessageCount("mock:threads").whenAnyExchangeReceived(new AssertHandledByCamelThreadProcessor());
@@ -60,6 +63,7 @@ public class CamelAsyncRouteTest extends AbstractComponentTest {
                    done.await(DELAY, TimeUnit.MILLISECONDS));
     }
 
+    @Test
     public void testCamelSeda() throws InterruptedException {
         expectDefaultMessageCount("mock:sent");
         expectDefaultMessageCount("mock:seda");

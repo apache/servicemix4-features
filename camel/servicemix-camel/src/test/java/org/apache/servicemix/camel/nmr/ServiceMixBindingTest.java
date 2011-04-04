@@ -19,6 +19,7 @@ package org.apache.servicemix.camel.nmr;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.servicemix.nmr.api.Exchange;
 import org.apache.servicemix.nmr.api.Pattern;
+import org.junit.Test;
 
 /**
  * Test cases for {@link org.apache.servicemix.camel.nmr.ServiceMixBinding}
@@ -31,6 +32,7 @@ public class ServiceMixBindingTest extends AbstractComponentTest {
 
     private ServiceMixBinding binding = new ServiceMixBinding();
 
+    @Test
     public void testToCamelAndBackToNmr() {
         Exchange nmr = getChannel().createExchange(Pattern.InOnly);
         nmr.setProperty(KEY, VALUE);

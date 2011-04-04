@@ -21,6 +21,7 @@ import org.apache.camel.ExchangePattern;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
+import org.junit.Test;
 
 import javax.security.auth.Subject;
 import java.security.Principal;
@@ -39,6 +40,7 @@ public class SecuritySubjectTest extends AbstractComponentTest {
     /*
      * Test case for conveying security subject information in an InOnly MEP
      */
+    @Test
     public void testInOnlyWithSecuritySubject() throws Exception {
         Subject subject = createSubject(CLARK_KENT);
 
@@ -54,6 +56,7 @@ public class SecuritySubjectTest extends AbstractComponentTest {
     /*
      * Test case for conveying security subject information in an InOut MEP
      */
+    @Test
     public void testInOutWithSecuritySubject() throws Exception {
         final Subject subject = createSubject(CLARK_KENT);
 

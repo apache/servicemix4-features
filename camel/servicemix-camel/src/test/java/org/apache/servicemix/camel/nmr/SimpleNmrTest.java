@@ -20,6 +20,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
+import org.junit.Test;
 
 /**
  * A very basic NMR test, just testing if the Exchange can flow through the NMR
@@ -30,6 +31,7 @@ public class SimpleNmrTest extends AbstractComponentTest {
     private static final String REQUEST_MESSAGE = "Simple message body";
     private static final String RESPONSE_MESSAGE = "Simple message reply";
 
+    @Test
     public void testSimpleInOnly() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:simple");
         mock.expectedBodiesReceived(REQUEST_MESSAGE);
@@ -39,6 +41,7 @@ public class SimpleNmrTest extends AbstractComponentTest {
         assertMockEndpointsSatisfied();
     }
 
+    @Test
     public void testSimpleInOnlyWithMultipleHops() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:hops");
         mock.expectedBodiesReceived(REQUEST_MESSAGE);
@@ -48,6 +51,7 @@ public class SimpleNmrTest extends AbstractComponentTest {
         assertMockEndpointsSatisfied();        
     }
 
+    @Test
     public void testSimpleInOut() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:simple");
         mock.expectedBodiesReceived(REQUEST_MESSAGE);
@@ -59,6 +63,7 @@ public class SimpleNmrTest extends AbstractComponentTest {
                      RESPONSE_MESSAGE, response);
     }
 
+    @Test
     public void testSimpleInOutWithMultipleHops() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:hops");
         mock.expectedBodiesReceived(REQUEST_MESSAGE);
@@ -70,6 +75,7 @@ public class SimpleNmrTest extends AbstractComponentTest {
                      RESPONSE_MESSAGE, response);
     }
 
+    @Test
     public void testSimpleInvalidEndpoint() throws InterruptedException {
         Exchange exchange = template.send("direct:error", new Processor() {
             public void process(Exchange exchange) throws Exception {
