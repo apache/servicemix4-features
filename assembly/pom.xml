@@ -163,6 +163,7 @@
                                 <feature>servicemix-vfs</feature>
                                 <feature>servicemix-smpp</feature>
                             </features>
+                            <includeMvnBasedDescriptors>true</includeMvnBasedDescriptors>
                             <repository>target/features-repo</repository>
                         </configuration>
                     </execution>
