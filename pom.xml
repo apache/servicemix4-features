@@ -202,7 +202,6 @@
         <commons-jexl.version>2.0.1</commons-jexl.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <drools.version>5.1.1</drools.version>
-        <httpcomponents.version>4.0.1</httpcomponents.version>
         <javax.mail.version>1.4.3</javax.mail.version>
         <jaxp-ri.version>1.4.4</jaxp-ri.version>
         <jaxws-api.version>2.2</jaxws-api.version>
