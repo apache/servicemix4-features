@@ -185,7 +185,7 @@
     <feature name="servicemix-shared" version="${servicemix.components.version}" resolver="(obr)">
         <feature version="${servicemix.nmr.version}">jbi</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
-        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
+        <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle dependency="true">mvn:org.apache.xbean/xbean-classloader/${xbean.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix/servicemix-utils/${servicemix.utils.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-common/${servicemix.components.version}</bundle>
@@ -267,6 +267,7 @@
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/${jdt-core.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/${antlr-runtime.bundle.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.drools/${drools.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mvel/${mvel.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-drools/${servicemix.components.version}</bundle>

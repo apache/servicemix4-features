@@ -64,6 +64,16 @@
             <lineEnding>dos</lineEnding>
        </fileSet>
 
+       <!-- Using the NMR's startup.properties because that has OBR support enabled by default -->
+       <fileSet>
+           <directory>target/dependencies/unix/apache-servicemix-nmr-${servicemix.nmr.version}/etc</directory>
+           <outputDirectory>/etc</outputDirectory>
+           <lineEnding>unix</lineEnding>
+           <includes>
+               <include>startup.properties</include>
+           </includes>
+       </fileSet>
+
       <!-- Copy over nmr examples files -->
       <fileSet>
            <directory>target/dependencies/win/apache-servicemix-nmr-${servicemix.nmr.version}/examples</directory>

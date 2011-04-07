@@ -145,6 +145,7 @@
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
                             </descriptors>
                             <features>
+                                <feature>obr</feature>
                                 <feature>activemq</feature>
                                 <feature>activemq-blueprint</feature>
                                 <feature>activemq-broker</feature>

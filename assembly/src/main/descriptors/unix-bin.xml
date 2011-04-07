@@ -36,6 +36,7 @@
               <exclude>etc/users.properties</exclude>
               <exclude>etc/custom.properties</exclude>
               <exclude>etc/jre.properties</exclude>
+              <exclude>etc/startup.properties</exclude>
               <!-- SMX4-764 - Override Felix Framework version -->
               <!-- begin snippet -->
               <exclude>system/org/apache/felix/org.apache.felix.framework/**</exclude>
@@ -74,6 +75,16 @@
             <directory>target/dependencies/unix/apache-servicemix-nmr-${servicemix.nmr.version}/ant</directory>
             <outputDirectory>/ant</outputDirectory>
             <lineEnding>unix</lineEnding>
+       </fileSet>
+
+       <!-- Using the NMR's startup.properties because that has OBR support enabled by default -->
+       <fileSet>
+           <directory>target/dependencies/unix/apache-servicemix-nmr-${servicemix.nmr.version}/etc</directory>
+           <outputDirectory>/etc</outputDirectory>
+           <lineEnding>unix</lineEnding>
+           <includes>
+               <include>startup.properties</include>
+           </includes>
        </fileSet>
 
        <!-- Copy over nmr examples files -->
