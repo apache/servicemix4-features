@@ -19,6 +19,10 @@
            xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0"
            xmlns:amq="http://activemq.apache.org/schema/core">
 
+    <manifest>
+      Export-Service = javax.jms.ConnectionFactory
+    </manifest>
+
     <!-- Allows us to use system properties as variables in this configuration file -->
     <ext:property-placeholder />
 
