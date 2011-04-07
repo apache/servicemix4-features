@@ -320,7 +320,8 @@
         <dependencySet>
             <outputDirectory>/lib/endorsed</outputDirectory>
             <includes>
-                <include>com.sun.xml.parsers:jaxp-ri</include>
+                <include>org.apache.xerces:xercesImpl</include>
+                <include>org.apache.xerces:xml-apis</include>
             </includes>
         </dependencySet>
         <dependencySet>

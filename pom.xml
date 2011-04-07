@@ -204,6 +204,7 @@
         <drools.version>5.1.1</drools.version>
         <javax.mail.version>1.4.3</javax.mail.version>
         <jaxp-ri.version>1.4.4</jaxp-ri.version>
+        <xerces.version>2.11.0</xerces.version>
         <jaxws-api.version>2.2</jaxws-api.version>
         <jetty.version>7.3.1.v20110307</jetty.version>
         <jettison.version>1.2</jettison.version>
@@ -556,6 +557,16 @@
                <groupId>com.sun.xml.parsers</groupId>
                <artifactId>jaxp-ri</artifactId>
                <version>${jaxp-ri.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.apache.xerces</groupId>
+               <artifactId>xercesImpl</artifactId>
+               <version>${xerces.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.apache.xerces</groupId>
+               <artifactId>xml-apis</artifactId>
+               <version>${xerces.version}</version>
            </dependency>
            <dependency>
                <groupId>commons-logging</groupId>
