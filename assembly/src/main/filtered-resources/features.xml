@@ -185,14 +185,16 @@
     <feature name="servicemix-shared" version="${servicemix.components.version}" resolver="(obr)">
         <feature version="${servicemix.nmr.version}">jbi</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
-        <bundle>mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <bundle dependency="true">mvn:org.apache.xbean/xbean-classloader/${xbean.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix/servicemix-utils/${servicemix.utils.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-common/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-cxf-bc" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
+        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
         <bundle dependency="true">mvn:org.eclipse.jetty/jetty-util/${jetty.version}</bundle>
         <bundle dependency="true">mvn:org.eclipse.jetty/jetty-io/${jetty.version}</bundle>
         <bundle dependency="true">mvn:org.eclipse.jetty/jetty-http/${jetty.version}</bundle>
@@ -211,10 +213,12 @@
         <bundle>mvn:org.apache.servicemix/servicemix-cxf-bc/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-file" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix/servicemix-file/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-ftp" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.oro/${oro.bundle.version}</bundle>
         <bundle dependency="true">mvn:commons-net/commons-net/${commons-net.bundle.version}</bundle>
@@ -222,6 +226,7 @@
         <bundle>mvn:org.apache.servicemix/servicemix-ftp/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-http" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
         <bundle dependency="true">mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
@@ -235,6 +240,7 @@
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-jms" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.ws.commons.schema/XmlSchema/${xmlschema.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
@@ -248,12 +254,14 @@
         <bundle>mvn:org.apache.servicemix/servicemix-jms/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-mail" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
         <bundle dependency="true">mvn:javax.mail/mail/${javax.mail.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-mail/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-bean" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/${geronimo-annotation.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-bean/${servicemix.components.version}</bundle>
@@ -264,6 +272,7 @@
         <bundle>mvn:org.apache.servicemix/servicemix-camel/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-drools" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jdt-core/${jdt-core.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr-runtime/${antlr-runtime.bundle.version}</bundle>
@@ -273,6 +282,7 @@
         <bundle>mvn:org.apache.servicemix/servicemix-drools/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-cxf-se" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
         <bundle>mvn:org.apache.cxf/cxf-rt-bindings-jbi/${cxf.version}</bundle>
@@ -280,10 +290,12 @@
         <bundle>mvn:org.apache.servicemix/servicemix-cxf-se/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-eip" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix/servicemix-eip/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-osworkflow" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.antlr/${antlr.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.bundle.version}</bundle>
@@ -294,6 +306,7 @@
         <bundle>mvn:org.apache.servicemix/servicemix-osworkflow/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-quartz" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-collections/${commons-collections.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.quartz/${quartz.bundle.version}</bundle>
@@ -301,6 +314,7 @@
         <bundle>mvn:org.apache.servicemix/servicemix-quartz/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-scripting" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/${servicemix.specs.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/${asm.bundle.version}</bundle>
@@ -314,15 +328,18 @@
         <bundle>mvn:org.apache.servicemix/servicemix-scripting/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-validation" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix/servicemix-validation/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-saxon" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saxon/${saxon.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-saxon/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-wsn2005" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <feature version="${activemq.version}">activemq</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec/${geronimo-ws-metadata.version}</bundle>
@@ -333,21 +350,25 @@
         <bundle>mvn:org.apache.servicemix/servicemix-wsn2005/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-snmp" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.snmp4j/${snmp4j.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-snmp/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-vfs" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-vfs/${commons-vfs.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-vfs/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-smpp" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsmpp/${jsmpp.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-smpp/${servicemix.components.version}</bundle>
     </feature>
     <feature name="servicemix-exec" version="${servicemix.components.version}" resolver="(obr)">
+        <bundle dependency="true">mvn:org.apache.xbean/xbean-spring/${xbean.version}</bundle>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle>mvn:org.apache.servicemix/servicemix-exec/${servicemix.components.version}</bundle>
     </feature>
