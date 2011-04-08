@@ -95,11 +95,6 @@
             <classifier>features</classifier>
         </dependency>
 
-        <!-- JAXP RI to be included in lib/endorsed -->
-        <dependency>
-            <groupId>com.sun.xml.parsers</groupId>
-            <artifactId>jaxp-ri</artifactId>
-        </dependency>
         <!--Xerces jar to be included in lib/endorsed -->
         <dependency>
             <groupId>org.apache.xerces</groupId>
@@ -109,7 +104,16 @@
             <groupId>org.apache.xerces</groupId>
             <artifactId>xercesImpl</artifactId>
         </dependency>
-
+        <!--xalan jar to be included in lib/endorsed-->
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>serializer</artifactId>
+        </dependency>
+        
     </dependencies>
     
     <build>

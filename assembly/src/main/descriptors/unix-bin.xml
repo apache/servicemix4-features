@@ -349,6 +349,8 @@
             <includes>
                 <include>org.apache.xerces:xercesImpl</include>
                 <include>org.apache.xerces:xml-apis</include>
+                <include>xalan:xalan</include>
+                <include>xalan:serializer</include>
             </includes>
         </dependencySet>
         <dependencySet>
