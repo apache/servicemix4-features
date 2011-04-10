@@ -150,10 +150,14 @@
                             </descriptors>
                             <features>
                                 <feature>obr</feature>
+                                <feature>config</feature>
                                 <feature>activemq</feature>
                                 <feature>activemq-blueprint</feature>
                                 <feature>activemq-broker</feature>
                                 <feature>camel</feature>
+                                <feature>camel-activemq</feature>
+                                <feature>camel-nmr</feature>
+                                <feature>camel-cxf</feature>
                                 <feature>jbi-cluster</feature>
                                 <feature>war</feature>
                                 <!-- ServiceMix Components -->
