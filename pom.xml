@@ -143,6 +143,7 @@
         <antlr.bundle.version>3.0.1_4</antlr.bundle.version>
         <antlr-runtime.bundle.version>3.0.1_2</antlr-runtime.bundle.version>
         <asm.bundle.version>3.3_1</asm.bundle.version>
+        <asm2.bundle.version>2.2.3_4</asm2.bundle.version>
         <bcel.bundle.version>5.2_3</bcel.bundle.version>
         <commons-beanutils.bundle.version>1.8.2_1</commons-beanutils.bundle.version>
         <commons-codec.bundle.version>1.4</commons-codec.bundle.version>
