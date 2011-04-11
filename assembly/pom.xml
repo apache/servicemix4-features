@@ -104,6 +104,7 @@
             <groupId>org.apache.xerces</groupId>
             <artifactId>xercesImpl</artifactId>
         </dependency>
+
         <!--xalan jar to be included in lib/endorsed-->
         <dependency>
             <groupId>xalan</groupId>
