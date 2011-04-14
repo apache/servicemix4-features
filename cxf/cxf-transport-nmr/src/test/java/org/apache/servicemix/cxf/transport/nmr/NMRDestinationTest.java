@@ -20,9 +20,11 @@
 package org.apache.servicemix.cxf.transport.nmr;
 
 import java.io.ByteArrayInputStream;
+import java.security.AccessController;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
+import javax.security.auth.Subject;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
@@ -37,8 +39,13 @@ import org.apache.cxf.service.model.InterfaceInfo;
 import org.apache.cxf.service.model.ServiceInfo;
 import org.apache.cxf.transport.MessageObserver;
 import org.apache.servicemix.nmr.api.Channel;
+import org.apache.servicemix.nmr.api.Endpoint;
 import org.apache.servicemix.nmr.api.EndpointRegistry;
+import org.apache.servicemix.nmr.api.Pattern;
 import org.apache.servicemix.nmr.api.Status;
+import org.apache.servicemix.nmr.api.security.UserPrincipal;
+import org.apache.servicemix.nmr.api.service.ServiceHelper;
+import org.apache.servicemix.nmr.core.ServiceMix;
 import org.easymock.EasyMock;
 
 
@@ -137,6 +144,55 @@ public class NMRDestinationTest extends AbstractJBITest {
         };
         destination.setMessageObserver(observer);
         destination.process(xchg);
+        assertNotNull(inMessage);
+    }
+    
+    @Test
+    public void testNMRDestinationRunAsSubjct() throws Exception {
+    	ServiceMix smx = new ServiceMix();
+        smx.init();
+        nmr = smx;
+        EndpointInfo ei = new EndpointInfo();
+        ei.setAddress("nmr:dumy?RUN_AS_SUBJECT=true");
+        ei.setName(new QName("http://test", "endpoint"));
+        ServiceInfo si = new ServiceInfo();
+        si.setName(new QName("http://test", "service"));
+        InterfaceInfo interInfo = new InterfaceInfo(si, new QName("http://test", "interface"));
+        si.setInterface(interInfo);
+        ei.setService(si);
+        nmrTransportFactory.setNmr(nmr);
+        NMRDestination destination = (NMRDestination) nmrTransportFactory.getDestination(ei);
+        destination.activate();
+               
+        assertNotNull(destination);
+        
+        Subject subject = new Subject();
+        subject.getPrincipals().add(new UserPrincipal("ffang"));
+
+        Channel channel = nmr.createChannel();
+        org.apache.servicemix.nmr.api.Exchange exchange = channel.createExchange(Pattern.InOut);
+        exchange.setTarget(
+                nmr.getEndpointRegistry().lookup(ServiceHelper.createMap(Endpoint.NAME, "dumy")));
+        exchange.getIn().setSecuritySubject(subject);
+        Source source = new StreamSource(new ByteArrayInputStream(
+                "<message>TestHelloWorld</message>".getBytes()));
+        exchange.getIn().setBody(source);
+        observer = new MessageObserver() {
+            public void onMessage(Message m) {                    
+                inMessage = m;
+                Subject receivedSubject = 
+                	(Subject)inMessage.get(NMRTransportFactory.NMR_SECURITY_SUBJECT);
+                assertNotNull(receivedSubject);
+                assertEquals(receivedSubject.getPrincipals().size(), 1);
+                assertEquals(receivedSubject.getPrincipals().iterator().next().getName(), "ffang");
+                Subject onBefalfsubject = Subject.getSubject(AccessController.getContext());
+                assertNotNull(onBefalfsubject);
+                assertEquals(onBefalfsubject, receivedSubject);
+            }
+        };
+        destination.setMessageObserver(observer);
+        channel.send(exchange);       
+        Thread.sleep(2000);
         assertNotNull(inMessage);
     }
 }

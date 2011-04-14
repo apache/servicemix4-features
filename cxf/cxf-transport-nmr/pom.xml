@@ -38,6 +38,11 @@
             <artifactId>org.apache.servicemix.nmr.api</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.nmr</groupId>
+            <artifactId>org.apache.servicemix.nmr.core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
         </dependency>
