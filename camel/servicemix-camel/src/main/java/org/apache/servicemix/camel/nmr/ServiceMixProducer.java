@@ -22,10 +22,10 @@ import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.Exchange;
 import org.apache.servicemix.nmr.api.*;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
+import org.apache.servicemix.nmr.core.util.UuidGenerator;
 
 import java.util.Collections;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -171,7 +171,7 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
      */
     private Map<String,Object> createEndpointMap() {
         return ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME,
-                ServiceMixProducer.class.getName() + "-" + UUID.randomUUID(),
+                ServiceMixProducer.class.getName() + "-" + UuidGenerator.getInstance(),
                 TARGET_ENDPOINT_NAME,
                 getEndpoint().getEndpointName());
 
