@@ -33,9 +33,11 @@ import org.apache.camel.Processor;
 public class ServiceMixEndpoint extends DefaultEndpoint {
 
     private static final String SYNCHRONOUS = "synchronous";
+    private static final String RUN_AS_SUBJECT = "RUN_AS_SUBJECT";
 
     private String endpointName;
     private boolean synchronous;
+    private boolean runAsSubject;
 
     public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
         super(uri, component);
@@ -45,6 +47,7 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     @Override
     public void configureProperties(Map<String, Object> options) {
         synchronous = Boolean.valueOf((String) options.remove(SYNCHRONOUS));
+        runAsSubject = Boolean.valueOf((String) options.remove(RUN_AS_SUBJECT));
     }
 
     public ServiceMixComponent getComponent() {
@@ -59,6 +62,10 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
         return synchronous;
     }
 
+    public boolean isRunAsSubject() {
+        return runAsSubject;
+    }
+    
     public Producer createProducer() throws Exception {
         return new ServiceMixProducer(this, getComponent().getNmr());
     }

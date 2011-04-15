@@ -58,6 +58,7 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
         Map<String, Object> result = ServiceHelper.createMap(Endpoint.NAME,
                                                              getEndpoint().getEndpointName());
         result.put(Endpoint.CHANNEL_SYNC_DELIVERY, getEndpoint().isSynchronous());
+        result.put(Endpoint.RUN_AS_SUBJECT, getEndpoint().isRunAsSubject());
         return result;
     }
 
