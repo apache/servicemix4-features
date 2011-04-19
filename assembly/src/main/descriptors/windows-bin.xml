@@ -35,6 +35,7 @@
              <exclude>etc/users.properties</exclude>
              <exclude>etc/custom.properties</exclude>
              <exclude>etc/jre.properties</exclude>
+             <exclude>etc/startup.properties</exclude>
              <!-- SMX4-764 - Override the Felix Framework version -->
              <!-- begin snippet -->
              <exclude>system/org/apache/felix/org.apache.felix.framework/**</exclude>
