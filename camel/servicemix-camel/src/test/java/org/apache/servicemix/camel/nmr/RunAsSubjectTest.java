@@ -51,7 +51,7 @@ public class RunAsSubjectTest  extends AbstractComponentTest {
                 from("direct:inonly").setHeader(Exchange.AUTHENTICATION).constant(subject).
                 	to("nmr:helloworld");
                    
-                from("nmr:helloworld?RUN_AS_SUBJECT=true").process(new SubjectProcessor());
+                from("nmr:helloworld?runAsSubject=true").process(new SubjectProcessor());
                     
             }
         };

@@ -33,7 +33,7 @@ import org.apache.camel.Processor;
 public class ServiceMixEndpoint extends DefaultEndpoint {
 
     private static final String SYNCHRONOUS = "synchronous";
-    private static final String RUN_AS_SUBJECT = "RUN_AS_SUBJECT";
+    public static final String RUN_AS_SUBJECT = "runAsSubject";
 
     private String endpointName;
     private boolean synchronous;
