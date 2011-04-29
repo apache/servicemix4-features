@@ -112,7 +112,6 @@ public class WSRMTest extends CamelTestSupport {
     public void testDecoupled() throws Exception {
         SpringBusFactory bf = new SpringBusFactory();
         bus = bf.createBus("/org/apache/servicemix/camel/ws/rm/decoupled.xml");
-        BusFactory.setDefaultBus(bus);
         LoggingInInterceptor in = new LoggingInInterceptor();
         bus.getInInterceptors().add(in);
         bus.getInFaultInterceptors().add(in);

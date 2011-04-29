@@ -165,7 +165,6 @@
         <josql.bundle.version>1.5_4</josql.bundle.version>
         <jsmpp.bundle.version>2.1.0_2</jsmpp.bundle.version>
         <mvel.bundle.version>2.0.8_4</mvel.bundle.version>
-        <neethi.bundle.version>2.0.4_3</neethi.bundle.version>
         <opensaml.bundle.version>1.1_5</opensaml.bundle.version>
         <oscore.bundle.version>2.2.4_4</oscore.bundle.version>
         <osworkflow.bundle.version>2.7.0_4</osworkflow.bundle.version>
@@ -216,10 +215,11 @@
         <spring.osgi.version>1.2.0</spring.osgi.version>
         <woodstox.version>4.1.1</woodstox.version>
         <woodstox.stax2-api.version>3.0.2</woodstox.stax2-api.version>    
-        <wss4j.version>1.5.11</wss4j.version>
+        <wss4j.version>1.6.0</wss4j.version>
+        <neethi.version>3.0.0</neethi.version>
         <xfire.version>1.0.1</xfire.version>
         <xbean.version>3.7</xbean.version>
-        <xmlschema.version>1.4.7</xmlschema.version>
+        <xmlschema.version>2.0</xmlschema.version>
     </properties>
 
     <dependencyManagement>
@@ -449,9 +449,9 @@
                <version>${mvel.bundle.version}</version>
            </dependency>
            <dependency>
-               <groupId>org.apache.servicemix.bundles</groupId>
-               <artifactId>org.apache.servicemix.bundles.neethi</artifactId>
-               <version>${neethi.bundle.version}</version>
+                <groupId>org.apache.neethi</groupId>
+                <artifactId>neethi</artifactId>
+                <version>${neethi.version}</version>
            </dependency>
            <dependency>
                <groupId>org.apache.servicemix.bundles</groupId>
@@ -596,10 +596,21 @@
                <version>${commons-jexl.version}</version>
            </dependency>
            <dependency>
-               <groupId>org.apache.ws.commons.schema</groupId>
-               <artifactId>XmlSchema</artifactId>
-               <version>${xmlschema.version}</version>
-           </dependency>
+                <groupId>org.apache.ws.xmlschema</groupId>
+                <artifactId>xmlschema-core</artifactId>
+                <version>${xmlschema.version}</version>
+                <exclusions>
+                    <!-- on IBM jdk, XmlSchema pulls these in -->
+                    <exclusion>
+                        <groupId>org.apache.bcel</groupId>
+                        <artifactId>bcel</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>xalan</groupId>
+                        <artifactId>xalan</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
            <dependency>
                <groupId>org.apache.ws.commons.axiom</groupId>
                <artifactId>axiom-api</artifactId>

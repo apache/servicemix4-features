@@ -70,7 +70,7 @@
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.binding,
                             org.apache.cxf.jaxrs.utils,
-                            org.apache.cxf.transport.http_osgi,
+                            org.apache.cxf.transport.http,
                             org.springframework.beans.factory.config,
                             org.apache.servicemix.examples.cxf.jaxrs,
                             org.apache.commons.httpclient,

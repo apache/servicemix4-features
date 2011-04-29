@@ -17,6 +17,8 @@
 package org.apache.servicemix.camel.nmr;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.naming.Context;
@@ -100,6 +102,9 @@ public class ExceptionHandleTest extends CamelTestSupport {
         CamelTransportFactory camelTransportFactory = (CamelTransportFactory) bus.getExtension(ConduitInitiatorManager.class)
             .getConduitInitiator(CamelTransportFactory.TRANSPORT_ID);
         camelTransportFactory.setCamelContext(camelContext);
+        List<String> ids = new ArrayList<String>();
+        ids.add(CamelTransportFactory.TRANSPORT_ID);
+        camelTransportFactory.setTransportIds(ids);
         smxComponent = new ServiceMixComponent();
         nmr = new ServiceMix();
         ((ServiceMix)nmr).init();

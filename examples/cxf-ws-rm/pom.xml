@@ -95,7 +95,7 @@
                             org.apache.cxf.resource,
                             org.apache.cxf.interceptor, org.apache.cxf.io, org.apache.cxf.message, org.apache.cxf.phase,
                             org.apache.cxf.ws.addressing, org.apache.cxf.ws.rm,
-                            org.apache.cxf.transport.http_osgi,
+                            org.apache.cxf.transport.http,
                             org.apache.servicemix.util,
                             org.springframework.beans.factory.config
                         </Import-Package>

@@ -66,7 +66,7 @@
                             org.apache.cxf.bus.resource,
                             org.apache.cxf.configuration.spring,
                             org.apache.cxf.resource,
-                            org.apache.cxf.transport.http_osgi,
+                            org.apache.cxf.transport.http,
                             org.apache.cxf.ws.security.wss4j,
                             org.springframework.beans.factory.config,
                             javax.security.auth.callback,

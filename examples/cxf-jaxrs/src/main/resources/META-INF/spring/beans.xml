@@ -27,8 +27,6 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
   <import resource="classpath:META-INF/cxf/cxf.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-jaxrs-binding.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-http.xml" />
     <import resource="classpath:META-INF/cxf/osgi/cxf-extension-osgi.xml" />
 
     <jaxrs:server id="customerService" address="/crm">

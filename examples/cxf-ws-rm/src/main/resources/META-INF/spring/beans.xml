@@ -35,11 +35,6 @@
           http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
     <import resource="classpath:META-INF/cxf/cxf.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-http.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-rm.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-addr.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-http-jetty.xml" />
 
     <jaxws:endpoint id="helloWorld"
                     implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"

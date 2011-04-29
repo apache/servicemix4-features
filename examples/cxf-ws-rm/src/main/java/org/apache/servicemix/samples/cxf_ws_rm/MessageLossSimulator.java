@@ -106,7 +106,7 @@ public class MessageLossSimulator extends AbstractPhaseInterceptor<Message> {
         @Override
         protected void onFirstWrite() throws IOException {
             if (LOG.isLoggable(Level.FINE)) {
-                BigInteger nr = RMContextUtils.retrieveRMProperties(outMessage, true)
+                Long nr = RMContextUtils.retrieveRMProperties(outMessage, true)
                     .getSequence().getMessageNumber();
                 LOG.fine("Losing message " + nr);
             }

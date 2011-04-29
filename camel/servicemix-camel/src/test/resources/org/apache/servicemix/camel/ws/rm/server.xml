@@ -32,10 +32,6 @@
         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
     ">
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
-    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
-    <import resource="classpath:META-INF/cxf/cxf-extension-http-jetty.xml"/>
-    <import resource="classpath:META-INF/cxf/cxf-extension-http.xml"/>
-    <import resource="classpath:META-INF/cxf/cxf-extension-local.xml" />
     
     <bean class="org.apache.camel.component.cxf.transport.CamelTransportFactory" lazy-init="true">
         <property name="bus" ref="cxf"/>
@@ -62,24 +58,22 @@
         <cxf:features>
             <bean class="org.apache.cxf.feature.LoggingFeature"/>
         </cxf:features>
-        <cxf:outInterceptors>
-            <ref bean="mapAggregator"/>
-            <ref bean="mapCodec"/>
-        </cxf:outInterceptors>
         <cxf:inInterceptors>
-            <ref bean="mapCodec"/>
-            <ref bean="mapAggregator"/>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
         </cxf:inInterceptors>
-        
-        <cxf:outFaultInterceptors>
-            <ref bean="mapAggregator"/>
-            <ref bean="mapCodec"/>
-        </cxf:outFaultInterceptors>
         <cxf:inFaultInterceptors>
-            <ref bean="mapCodec"/>
-            <ref bean="mapAggregator"/>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
         </cxf:inFaultInterceptors>
-
+        <cxf:outInterceptors>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
+        </cxf:outInterceptors>
+        <cxf:outFaultInterceptors>
+                <ref bean="mapAggregator"/>
+                <ref bean="mapCodec"/>
+        </cxf:outFaultInterceptors>
     </cxf:cxfEndpoint>
 
 
