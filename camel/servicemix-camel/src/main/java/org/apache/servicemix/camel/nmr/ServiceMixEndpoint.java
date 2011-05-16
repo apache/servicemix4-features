@@ -34,10 +34,13 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
 
     private static final String SYNCHRONOUS = "synchronous";
     public static final String RUN_AS_SUBJECT = "runAsSubject";
+    private static final String TIMEOUT = "timeout";
+    private static final Long DEFAULT_TIMEOUT = new Long(0);
 
     private String endpointName;
     private boolean synchronous;
     private boolean runAsSubject;
+    private Long timeOut = DEFAULT_TIMEOUT;
 
     public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
         super(uri, component);
@@ -48,6 +51,15 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     public void configureProperties(Map<String, Object> options) {
         synchronous = Boolean.valueOf((String) options.remove(SYNCHRONOUS));
         runAsSubject = Boolean.valueOf((String) options.remove(RUN_AS_SUBJECT));
+        timeOut = parseLongOption(options, TIMEOUT);
+    }
+
+    private Long parseLongOption(Map<String, Object> options, String timeout) {
+        String value = (String) options.remove(TIMEOUT);
+        if (value != null) {
+            return Long.parseLong(value);
+        }
+        return 0l;
     }
 
     public ServiceMixComponent getComponent() {
@@ -65,6 +77,11 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     public boolean isRunAsSubject() {
         return runAsSubject;
     }
+
+    public Long getTimeOut() {
+        return timeOut;
+    }
+
     
     public Producer createProducer() throws Exception {
         return new ServiceMixProducer(this, getComponent().getNmr());

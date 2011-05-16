@@ -62,7 +62,7 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
             ex.printStackTrace();
         }
 
-        channel.sendSync(e);
+        channel.sendSync(e, getEndpoint().getTimeOut());
 
         handleResponse(exchange, channel, e);
     }
@@ -82,10 +82,15 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
                     ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME,
                             getEndpoint().getEndpointName())));
 
-            continuations.put(e.getId(), new Continuation(exchange, asyncCallback));
-            channel.send(e);
-
-            return false;
+            if (isSendSyncRequired()) {
+                process(exchange);
+                asyncCallback.done(true);
+                return true;
+            } else {
+                continuations.put(e.getId(), new Continuation(exchange, asyncCallback));
+                channel.send(e);
+                return false;
+            }
         } catch (Exception ex) {
             log.warn("Error occured while sending NMR exchange", ex);
 
@@ -197,5 +202,13 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
             this.exchange = exchange;
             this.callback = callback;
         }
+    }
+
+    /*
+     * Check if sendSync is required for interacting with the NMR.
+     * Currently, sendSync is required only if a timeout has been configured on the endpoint.
+     */
+    private boolean isSendSyncRequired() {
+        return getEndpoint().getTimeOut() > 0;
     }
 }
