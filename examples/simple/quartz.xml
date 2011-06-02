@@ -47,7 +47,7 @@
 	
 	<quartz:endpoint service="b:service" endpoint="endpoint" targetService="b:receiver">
         <quartz:trigger>
-            <quartz:simple repeatCount="500" repeatInterval="1000" startDelay="2000" />
+            <quartz:simple repeatCount="500" repeatInterval="1000" startDelay="5000" />
         </quartz:trigger>
 	</quartz:endpoint>
 	
