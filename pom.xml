@@ -155,7 +155,6 @@
         <commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
         <drools.bundle.version>5.1.1_1</drools.bundle.version>
         <fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
-        <groovy.bundle.version>1.5.6_4</groovy.bundle.version>
         <jaxb.api.version>2.2</jaxb.api.version>
         <jaxb-impl.bundle.version>2.2.1.1_1</jaxb-impl.bundle.version> 
         <jdt-core.bundle.version>3.2.3_4</jdt-core.bundle.version>
@@ -202,6 +201,7 @@
         <commons-jexl.version>2.0.1</commons-jexl.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <drools.version>5.1.1</drools.version>
+        <groovy.version>1.8.0</groovy.version>
         <javax.mail.version>1.4.4</javax.mail.version>
         <jaxp-ri.version>1.4.4</jaxp-ri.version>
         <xerces.version>2.11.0</xerces.version>
@@ -408,11 +408,6 @@
                <groupId>org.apache.servicemix.bundles</groupId>
                <artifactId>org.apache.servicemix.bundles.fastinfoset</artifactId>
                <version>${fastinfoset.bundle.version}</version>
-           </dependency>
-           <dependency>
-               <groupId>org.apache.servicemix.bundles</groupId>
-               <artifactId>org.apache.servicemix.bundles.groovy</artifactId>
-               <version>${groovy.bundle.version}</version>
            </dependency>
            <dependency>
                <groupId>org.apache.servicemix.bundles</groupId>
@@ -641,6 +636,11 @@
                <groupId>org.codehaus.jettison</groupId>
                <artifactId>jettison</artifactId>
                <version>${jettison.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.codehaus.groovy</groupId>
+               <artifactId>groovy-all</artifactId>
+               <version>${groovy.version}</version>
            </dependency>
            <dependency>
                <groupId>org.drools</groupId>
