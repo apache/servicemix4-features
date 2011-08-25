@@ -26,6 +26,7 @@ import javax.xml.namespace.QName;
 
 
 import org.apache.cxf.Bus;
+import org.apache.cxf.BusFactory;
 import org.apache.cxf.binding.BindingFactoryManager;
 import org.apache.cxf.common.i18n.Message;
 import org.apache.cxf.common.logging.LogUtils;
@@ -82,7 +83,7 @@ public class NMROperationInInterceptorTest extends Assert {
         
         EndpointInfo endpointInfo = new EndpointInfo();
         endpointInfo.setBinding(new NMRBindingInfo(null, NMRConstants.NS_NMR_BINDING));
-        Endpoint ep = new EndpointImpl(null, null, endpointInfo);
+        Endpoint ep = new EndpointImpl(BusFactory.getDefaultBus(), null, endpointInfo);
         msg.setExchange(new ExchangeImpl());
         msg.getExchange().put(Endpoint.class, ep);
         try { 
