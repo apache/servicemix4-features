@@ -164,7 +164,8 @@
         <josql.bundle.version>1.5_4</josql.bundle.version>
         <jsmpp.bundle.version>2.1.0_2</jsmpp.bundle.version>
         <mvel.bundle.version>2.0.8_4</mvel.bundle.version>
-        <opensaml.bundle.version>1.1_5</opensaml.bundle.version>
+        <opensaml.bundle.version>2.4.1_1</opensaml.bundle.version>
+        <jodatime.bundle.version>1.5.2_2</jodatime.bundle.version>
         <oscore.bundle.version>2.2.4_4</oscore.bundle.version>
         <osworkflow.bundle.version>2.7.0_4</osworkflow.bundle.version>
         <oro.bundle.version>2.0.8_4</oro.bundle.version>
@@ -180,7 +181,7 @@
         <xerces.bundle.version>2.9.1_4</xerces.bundle.version>
         <xmlbeans.bundle.version>2.5.0_1</xmlbeans.bundle.version>
         <xmlresolver.bundle.version>1.2_3</xmlresolver.bundle.version>
-        <xmlsec.bundle.version>1.4.4_1</xmlsec.bundle.version>
+        <xmlsec.bundle.version>1.4.5_1</xmlsec.bundle.version>
 
         <!-- ServiceMix legal shared resources -->
         <servicemix.legal.version>1.0</servicemix.legal.version>
@@ -448,6 +449,11 @@
                 <groupId>org.apache.neethi</groupId>
                 <artifactId>neethi</artifactId>
                 <version>${neethi.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.apache.servicemix.bundles</groupId>
+               <artifactId>org.apache.servicemix.bundles.joda-time</artifactId>
+               <version>${jodatime.bundle.version}</version>
            </dependency>
            <dependency>
                <groupId>org.apache.servicemix.bundles</groupId>

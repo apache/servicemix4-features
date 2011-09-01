@@ -97,6 +97,7 @@ public class IntegrationTest extends AbstractIntegrationTest {
             
             //for ws-security
             getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.opensaml"),
+            getBundle("org.apache.servicemix.bundles", "org.apache.servicemix.bundles.joda-time"),
             getBundle("org.apache.ws.security", "wss4j"),
  
             getBundle("org.apache.servicemix.specs", "org.apache.servicemix.specs.jbi-api-1.0"),            
