@@ -97,12 +97,8 @@ in the ServiceMix console:
 
 You should see an entry similar to the following:
 
-10:20:56,169 | INFO  | xtenderThread-76 | ConfigurerImpl                   |
-ransport.nmr.NMRTransportFactory  127 | Could not determine bean name for
-instance of class org.apache.servicemix.cxf.transport.nmr.NMRDestination.
-10:20:56,171 | INFO  | xtenderThread-76 | ServerImpl                       |
-e.cxf.frontend.ServerFactoryBean  118 | Setting the server's publish address
-to be nmr:HelloWorld
+08:47:32,091 | INFO  | ExtenderThread-8 | ServerImpl                       |  
+-  -  | Setting the server's publish address to be nmr:HelloWorld
 
 Uninstalling the Example
 ------------------------
