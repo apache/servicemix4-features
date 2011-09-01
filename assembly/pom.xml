@@ -150,6 +150,7 @@
                                 <feature>camel-activemq</feature>
                                 <feature>camel-nmr</feature>
                                 <feature>camel-cxf</feature>
+                                <feature>camel-blueprint</feature>
                                 <feature>jbi-cluster</feature>
                                 <feature>war</feature>
                                 <!-- ServiceMix Components -->
