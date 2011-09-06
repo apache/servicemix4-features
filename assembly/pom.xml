@@ -86,6 +86,15 @@
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
+   
+        <!-- Cxf -->
+        <dependency>
+            <groupId>org.apache.cxf.karaf</groupId>
+            <artifactId>apache-cxf</artifactId>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+
 
         <!--Xerces jar to be included in lib/endorsed -->
         <dependency>
@@ -138,9 +147,12 @@
                                 <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</descriptor>
                                 <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</descriptor>
                                 <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
                             </descriptors>
                             <features>
+                                <feature>cxf</feature>
+                                <feature>saaj</feature>
                                 <feature>obr</feature>
                                 <feature>config</feature>
                                 <feature>activemq</feature>
