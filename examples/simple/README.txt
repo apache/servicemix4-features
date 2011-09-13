@@ -25,7 +25,7 @@ Add new endpoints using XML configuration files only.
 
 Explanation
 -----------
-There are two parts to this example: Quartz and Groovy. In both cases,
+There are three parts to this example: Quartz, Groovy and WSN. In all three cases,
 the JBI endpoints are specified in Spring XML files. When the XML files 
 are deployed to ServiceMix the endpoints are automatically registered
 in the NMR.  
@@ -48,6 +48,18 @@ written in Groovy, using the ServiceMix scripting service engine.
 The Groovy script is stored in ServiceMix's document repository
 and the script is executed whenever a message is received by the
 'receiver' service.
+
+3. WSN:
+The wsn.xml file, also located in the same directory as this README,
+demonstrates how to deploy JBI endpoints in XML file. It contains http
+endpoints which expose a WS-Notification broker. You can test WS-Notification 
+broker with the client.html in this folder, open client.html in a browser
+and you can
+create pull point
+subsribe
+Notify
+getMessages
+
 
 
 Prerequisites for Running the Example
