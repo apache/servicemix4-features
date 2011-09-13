@@ -54,7 +54,7 @@ Prerequisites for Running the Example
 -------------------------------------
 1. You must have the following installed on your machine:
 
-   - JDK 1.5 or higher
+   - JDK 1.6 or higher
       
   For more information, see the README in the top-level examples
   directory.

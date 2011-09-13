@@ -49,9 +49,9 @@ Prerequisites for Building and Running the Example
 --------------------------------------------------
 1. You must have the following installed on your machine:
 
-   - JDK 1.5 or higher
+   - JDK 1.6 or higher
 
-   - Maven 2.0.9 or higher (for building)
+   - Maven 2.2.1 or higher (for building)
    
   For more information, see the README in the top-level examples
   directory.

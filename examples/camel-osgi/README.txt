@@ -28,6 +28,14 @@ ServiceMix console.
 
 Explanation
 -----------
+
+This example provides two Camel routes:
+- A XML route
+- A Java route
+
+
+XML Route
+---------
 The Camel route is defined in a Spring XML file, beans.xml, which can be
 found in the src/main/resources/META-INF/spring directory of this example.
 The route is defined in the <route> element and can be explained as follows:
@@ -52,14 +60,20 @@ The beans.xml file also contains the following elements:
    
 The route and configuration are deployed in an OSGi bundle.   
 
-   
+Java Route
+---------   
+The Java Camel route is defined in a Java soure file, MyRouteBuilder, which can be
+found in the src/main/java/org/apache/servicemix/examples/camel directory
+of this example. The route is similar to the XML route which is explained above.
+
+
 Prerequisites for Running the Example
 -------------------------------------
 1. You must have the following installed on your machine:
 
-   - JDK 1.5 or higher
+   - JDK 1.6 or higher
 
-   - Maven 2.0.9 or higher (for building)
+   - Maven 2.2.1 or higher (for building)
    
   For more information, see the README in the top-level examples
   directory.
@@ -98,12 +112,8 @@ information about the features facility, see the README.txt file in the
 examples parent directory.
 
 Once the example is running, periodic events are routed to the transform
-method of the MyTransform class and you should see output similar to the
-following being logged to your console screen:
-
->>>> MyTransform set body:  Tue Aug 11 16:56:06 BST 2009
->>>> MyTransform set body:  Tue Aug 11 16:56:08 BST 2009
->>>> MyTransform set body:  Tue Aug 11 16:56:10 BST 2009
+method of the MyTransform class and you should see output on your console screen.
+The output should be from both the XML and Java Camel routes.
 
 Updating and Redeploying the Properties File from the Console
 -------------------------------------------------------------
@@ -145,13 +155,9 @@ properties placeholder in the beans.xml from console as follows:
     
           osgi:restart <bundle_id>
   
-  The prefix of the output should change, and the output should look
-  similar to the following:
-
-  >>>> YourTransform set body:  Tue Aug 11 17:14:12 BST 2009
-  >>>> YourTransform set body:  Tue Aug 11 17:14:14 BST 2009
-  >>>> YourTransform set body:  Tue Aug 11 17:14:16 BST 2009
-  
+  The prefix of the output should change, and the output on the console should
+  be updated accordingly.
+ 
 For information on how to stop and/or uninstall the example, see
 "Stopping and Uninstalling the Example" below.
 
@@ -192,11 +198,7 @@ yourself, complete the following steps:
    
 Once the example is running, periodic events are routed to the
 transform method of the MyTransform class and you should see output
-similar to the following being logged to your console screen:
-
->>>> MyTransform set body:  Tue Aug 11 16:56:06 BST 2009
->>>> MyTransform set body:  Tue Aug 11 16:56:08 BST 2009
->>>> MyTransform set body:  Tue Aug 11 16:56:10 BST 2009
+on your console screen.
 
 Now, if you have not already done so, try updating and redeploying,
 from the console, the properties file that is used by the properties

@@ -27,9 +27,9 @@ Prerequisites for Running the Example
 -------------------------------------
 You must have the following installed on your machine:
 
-  - JDK 1.5 or higher
+  - JDK 1.6 or higher
 
-  - Maven 2.0.9 or higher
+  - Maven 2.2.1 or higher
 
 
 Building and Deploying

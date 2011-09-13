@@ -52,7 +52,7 @@ Prerequisites for Building and Running the Example
 --------------------------------------------------
 1. You must have the following installed on your machine:
 
-   - JDK 1.5 or higher
+   - JDK 1.6 or higher
 
    - Maven 2.2.1 or higher (for building)
    
