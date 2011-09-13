@@ -191,6 +191,147 @@
                             <repository>target/features-repo</repository>
                         </configuration>
                     </execution>
+                    <!-- We are going to repeat this execution to prepare a repository for the full distro -->
+                    <execution>
+                        <id>add-features-to-repo-full</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>add-features-to-repo</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>mvn:org.apache.karaf.assemblies.features/standard/${karaf.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.karaf.assemblies.features/enterprise/${karaf.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.servicemix.nmr/apache-servicemix-nmr/${servicemix.nmr.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.activemq/activemq-karaf/${activemq.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</descriptor>
+                                <descriptor>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</descriptor>
+                                <descriptor>file:${basedir}/target/classes/features.xml</descriptor>
+                            </descriptors>
+                            <features>
+                                <feature>cxf</feature>
+                                <feature>saaj</feature>
+                                <feature>obr</feature>
+                                <feature>config</feature>
+                                <feature>activemq</feature>
+                                <feature>activemq-blueprint</feature>
+                                <feature>activemq-broker</feature>
+                                <feature>camel</feature>
+                                <feature>camel-activemq</feature>
+                                <feature>camel-ahc</feature>
+                                <feature>camel-amqp</feature>
+                                <feature>camel-atom</feature>
+                                <feature>camel-aws</feature>
+                                <feature>camel-bam</feature>
+                                <feature>camel-bean-validator</feature>
+                                <feature>camel-bindy</feature>
+                                <feature>camel-blueprint</feature>
+                                <feature>camel-castor</feature>
+                                <feature>camel-cometd</feature>
+                                <feature>camel-crypto</feature>
+                                <feature>camel-csv</feature>
+                                <feature>camel-cxf</feature>
+                                <feature>camel-cxf</feature>
+                                <feature>camel-dozer</feature>
+                                <feature>camel-eventadmin</feature>
+                                <feature>camel-exec</feature>
+                                <feature>camel-flatpack</feature>
+                                <feature>camel-ftp</feature>
+                                <feature>camel-groovy</feature>
+                                <feature>camel-guice</feature>
+                                <feature>camel-hawtdb</feature>
+                                <feature>camel-hazelcast</feature>
+                                <feature>camel-hdfs</feature>
+                                <feature>camel-hl7</feature>
+                                <feature>camel-http4</feature>
+                                <feature>camel-http</feature>
+                                <feature>camel-ibatis</feature>
+                                <feature>camel-irc</feature>
+                                <feature>camel-jackson</feature>
+                                <feature>camel-jasypt</feature>
+                                <feature>camel-jaxb</feature>
+                                <feature>camel-jcr</feature>
+                                <feature>camel-jdbc</feature>
+                                <feature>camel-jetty</feature>
+                                <feature>camel-jibx</feature>
+                                <feature>camel-jing</feature>
+                                <feature>camel-jms</feature>
+                                <feature>camel-jmx</feature>
+                                <feature>camel-josql</feature>
+                                <feature>camel-jpa</feature>
+                                <feature>camel-juel</feature>
+                                <feature>camel-jxpath</feature>
+                                <feature>camel-kestrel</feature>
+                                <feature>camel-ldap</feature>
+                                <feature>camel-lucene</feature>
+                                <feature>camel-mail</feature>
+                                <feature>camel-mina</feature>
+                                <feature>camel-msv</feature>
+                                <feature>camel-mvel</feature>
+                                <feature>camel-mybatis</feature>
+                                <feature>camel-nagios</feature>
+                                <feature>camel-nmr</feature>
+                                <feature>camel-ognl</feature>
+                                <feature>camel-paxlogging</feature>
+                                <feature>camel-printer</feature>
+                                <feature>camel-protobuf</feature>
+                                <feature>camel-quartz</feature>
+                                <feature>camel-quickfix</feature>
+                                <feature>camel-restlet</feature>
+                                <feature>camel-rmi</feature>
+                                <feature>camel-routebox</feature>
+                                <feature>camel-rss</feature>
+                                <feature>camel-ruby</feature>
+                                <feature>camel-saxon</feature>
+                                <feature>camel-scala</feature>
+                                <feature>camel-script</feature>
+                                <feature>camel-servlet</feature>
+                                <feature>camel-shiro</feature>
+                                <feature>camel-smpp</feature>
+                                <feature>camel-snmp</feature>
+                                <feature>camel-soap</feature>
+                                <feature>camel-spring-integration</feature>
+                                <feature>camel-spring-javaconfig</feature>
+                                <feature>camel-spring-security</feature>
+                                <feature>camel-spring-ws</feature>
+                                <feature>camel-sql</feature>
+                                <feature>camel-stream</feature>
+                                <feature>camel-string-template</feature>
+                                <feature>camel-syslog</feature>
+                                <feature>camel-tagsoup</feature>
+                                <feature>camel-velocity</feature>
+                                <feature>camel-xmlbeans</feature>
+                                <feature>camel-xmlsecurity</feature>
+                                <feature>camel-xmpp</feature>
+                                <feature>camel-xstream</feature>
+                                <feature>jbi-cluster</feature>
+                                <feature>war</feature>
+                                <!-- ServiceMix Components -->
+                                <feature>servicemix-cxf-bc</feature>
+                                <feature>servicemix-file</feature>
+                                <feature>servicemix-ftp</feature>
+                                <feature>servicemix-http</feature>
+                                <feature>servicemix-jms</feature>
+                                <feature>servicemix-mail</feature>
+                                <feature>servicemix-bean</feature>
+                                <feature>servicemix-camel</feature>
+                                <feature>servicemix-cxf-se</feature>
+                                <feature>servicemix-drools</feature>
+                                <feature>servicemix-eip</feature>
+                                <feature>servicemix-osworkflow</feature>
+                                <feature>servicemix-quartz</feature>
+                                <feature>servicemix-scripting</feature>
+                                <feature>servicemix-validation</feature>
+                                <feature>servicemix-saxon</feature>
+                                <feature>servicemix-wsn2005</feature>
+                                <feature>servicemix-snmp</feature>
+                                <feature>servicemix-vfs</feature>
+                                <feature>servicemix-smpp</feature>
+                            </features>
+                            <includeMvnBasedDescriptors>true</includeMvnBasedDescriptors>
+                            <repository>target/features-repo-full</repository>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -319,6 +460,34 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>unix-bin-jbi</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/unix-bin-jbi.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                            <tarLongFileMode>gnu</tarLongFileMode>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unix-bin-full</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/unix-bin-full.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                            <tarLongFileMode>gnu</tarLongFileMode>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>windows-bin</id>
                         <phase>package</phase>
                         <goals>
@@ -331,6 +500,33 @@
                             <finalName>${project.artifactId}-${project.version}</finalName>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>windows-bin-jbi</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/windows-bin-jbi.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>windows-bin-full</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/descriptors/windows-bin-full.xml</descriptor>
+                            </descriptors>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                        </configuration>
+                    </execution>
+
                     <execution>
                         <id>unix-src</id>
                         <phase>package</phase>
