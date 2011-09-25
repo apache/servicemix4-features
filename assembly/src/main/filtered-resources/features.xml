@@ -27,7 +27,7 @@
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo-j2ee-connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo-connector.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
-        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle>
         <bundle dependency="true">mvn:org.springframework/spring-tx/${spring.version}</bundle>
         <bundle dependency="true">mvn:org.springframework/spring-beans/${spring.version}</bundle>
         <bundle dependency="true">mvn:org.springframework/spring-context/${spring.version}</bundle>                                       ‚
@@ -159,7 +159,7 @@
     <feature name="servicemix-cxf-bc" version="${servicemix.components.version}" resolver="(obr)" start-level='50'>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
-        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle>
         <bundle dependency="true">mvn:org.eclipse.jetty/jetty-util/${jetty.version}</bundle>
         <bundle dependency="true">mvn:org.eclipse.jetty/jetty-io/${jetty.version}</bundle>
         <bundle dependency="true">mvn:org.eclipse.jetty/jetty-http/${jetty.version}</bundle>
@@ -190,7 +190,7 @@
     </feature>
     <feature name="servicemix-http" version="${servicemix.components.version}" resolver="(obr)" start-level='50'>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
-        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/${geronimo-servlet.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle>
         <bundle dependency="true">mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.ws.xmlschema/xmlschema-core/${xmlschema.version}</bundle>
