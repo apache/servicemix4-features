@@ -159,19 +159,7 @@
     <feature name="servicemix-cxf-bc" version="${servicemix.components.version}" resolver="(obr)" start-level='50'>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <feature version="${cxf.version}">cxf</feature>
-        <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-servlet_2.5_spec/${geronimo-servlet.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-util/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-io/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-http/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-client/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-continuation/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-jmx/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-server/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-security/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-servlet/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-servlets/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-xml/${jetty.version}</bundle>
-        <bundle dependency="true">mvn:org.eclipse.jetty/jetty-webapp/${jetty.version}</bundle>
+        <feature>jetty</feature>
         <bundle dependency="true">mvn:org.springframework/spring-tx/${spring.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix/servicemix-soap2/${servicemix.components.version}</bundle>
