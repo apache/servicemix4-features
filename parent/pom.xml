@@ -16,19 +16,16 @@
     See the License for the specific language governing permissions and
     limitations under the License.
   -->
+  <parent>
+    <groupId>org.apache.servicemix</groupId>
+    <artifactId>features</artifactId>
+    <version>4.4.0-SNAPSHOT</version>
+  </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>org.apache.servicemix.nmr</groupId>
-    <artifactId>parent</artifactId>
-    <version>1.5.0-SNAPSHOT</version>
-    <relativePath>../../nmr/pom.xml</relativePath>
-  </parent>
-  
+
   <groupId>org.apache.servicemix</groupId>
   <artifactId>parent</artifactId>
-  <version>4.4.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache ServiceMix :: Parent</name>
@@ -40,13 +37,77 @@
 
   <!-- Properties -->
   <properties>
+    <activemq.version>5.5.0</activemq.version>
+    <camel.version>2.8.1</camel.version>
     <cxf.version>2.4.2</cxf.version>
+    <karaf.version>2.2.2</karaf.version>
+
+    <servicemix.components.version>2011.02-SNAPSHOT</servicemix.components.version>
     <servicemix.nmr.version>1.5.0-SNAPSHOT</servicemix.nmr.version>
+    <servicemix.specs.version>1.8.0</servicemix.specs.version>
+    <servicemix.utils.version>1.5.0-SNAPSHOT</servicemix.utils.version>
   </properties>
 
   <!-- Managed dependencies -->
   <dependencyManagement>
     <dependencies>
+      <!-- managed dependencies for all the Camel components -->
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-parent</artifactId>
+        <version>${camel.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- ServiceMix NMR -->
+      <dependency>
+        <groupId>org.apache.servicemix.nmr</groupId>
+        <artifactId>apache-servicemix-nmr</artifactId>
+        <type>tar.gz</type>
+        <version>${servicemix.nmr.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.servicemix.nmr</groupId>
+        <artifactId>apache-servicemix-nmr</artifactId>
+        <type>zip</type>
+        <version>${servicemix.nmr.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.servicemix.nmr</groupId>
+        <artifactId>apache-servicemix-nmr</artifactId>
+        <version>${servicemix.nmr.version}</version>
+        <type>xml</type>
+        <classifier>features</classifier>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.servicemix.nmr</groupId>
+        <artifactId>nmr-parent</artifactId>
+        <version>${servicemix.nmr.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Apache Karaf -->
+      <dependency>
+          <groupId>org.apache.karaf</groupId>
+          <artifactId>karaf</artifactId>
+          <version>${karaf.version}</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.karaf</groupId>
+          <artifactId>apache-karaf</artifactId>
+          <version>${karaf.version}</version>
+          <type>tar.gz</type>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.karaf</groupId>
+          <artifactId>apache-karaf</artifactId>
+          <version>${karaf.version}</version>
+          <type>zip</type>
+      </dependency>
 
       <!-- Apache CXF -->
       <dependency>

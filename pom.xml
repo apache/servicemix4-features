@@ -23,12 +23,12 @@
 
     <parent>
         <groupId>org.apache.servicemix</groupId>
-        <artifactId>parent</artifactId>
-        <version>4.4.0-SNAPSHOT</version>
-        <relativePath>parent/pom.xml</relativePath>
+        <artifactId>servicemix-pom</artifactId>
+        <version>5</version>
+        <relativePath>../servicemix-pom/pom.xml</relativePath>
     </parent>
 
-    <groupId>org.apache.servicemix.features</groupId>
+    <groupId>org.apache.servicemix</groupId>
     <artifactId>features</artifactId>
     <packaging>pom</packaging>
     <version>4.4.0-SNAPSHOT</version>
@@ -220,34 +220,6 @@
                <version>${felix.prefs.version}</version>
            </dependency>
 
-           <!-- ServiceMix NMR -->
-           <dependency>
-               <groupId>org.apache.servicemix.nmr</groupId>
-               <artifactId>apache-servicemix-nmr</artifactId>
-               <type>tar.gz</type>
-               <version>${servicemix.nmr.version}</version>
-           </dependency>
-           <dependency>
-               <groupId>org.apache.servicemix.nmr</groupId>
-               <artifactId>apache-servicemix-nmr</artifactId>
-               <type>zip</type>
-               <version>${servicemix.nmr.version}</version>
-           </dependency>
-           <dependency>
-               <groupId>org.apache.servicemix.nmr</groupId>
-               <artifactId>apache-servicemix-nmr</artifactId>
-               <version>${servicemix.nmr.version}</version>
-               <type>xml</type>
-               <classifier>features</classifier>
-           </dependency>
-           <dependency>
-               <groupId>org.apache.servicemix.nmr</groupId>
-               <artifactId>nmr-parent</artifactId>
-               <version>${servicemix.nmr.version}</version>
-               <type>pom</type>
-               <scope>import</scope>
-           </dependency>
-
            <!-- Camel -->
            <dependency>
                <groupId>org.apache.camel.karaf</groupId>
@@ -337,6 +309,11 @@
                <groupId>org.springframework</groupId>
                <artifactId>spring-tx</artifactId>
                <version>${spring.version}</version>
+           </dependency>
+           <dependency>
+               <groupId>org.springframework.osgi</groupId>
+               <artifactId>spring-osgi-core</artifactId>
+               <version>${spring.osgi.version}</version>
            </dependency>
            <dependency>
                <groupId>org.springframework.osgi</groupId>
