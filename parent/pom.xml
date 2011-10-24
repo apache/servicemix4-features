@@ -60,6 +60,12 @@
         <scope>import</scope>
       </dependency>
 
+      <dependency>
+        <groupId>org.apache.servicemix.features</groupId>
+        <artifactId>org.apache.servicemix.features.branding</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
       <!-- ServiceMix NMR -->
       <dependency>
         <groupId>org.apache.servicemix.nmr</groupId>
