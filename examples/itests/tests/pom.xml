@@ -54,8 +54,18 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.karaf</groupId>
-            <artifactId>org.apache.karaf.management</artifactId>
+            <groupId>org.apache.karaf.jaas</groupId>
+            <artifactId>org.apache.karaf.jaas.boot</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.jaas</groupId>
+            <artifactId>org.apache.karaf.jaas.config</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.management</groupId>
+            <artifactId>org.apache.karaf.management.server</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -357,6 +367,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

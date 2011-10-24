@@ -64,7 +64,7 @@
 
         <!-- Text Files -->
         <fileSet>
-            <directory>${basedir}/..</directory>
+            <directory>${basedir}/../..</directory>
             <outputDirectory>src</outputDirectory>
             <includes>
                 <include>**/*</include>

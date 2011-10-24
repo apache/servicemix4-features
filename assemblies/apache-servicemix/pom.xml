@@ -333,6 +333,7 @@
                                         <descriptor>src/main/descriptors/unix-src.xml</descriptor>
                                     </descriptors>
                                 </configuration>
+                                <inherited>false</inherited>
                             </execution>
                             <execution>
                                 <id>windows-src</id>
@@ -345,6 +346,7 @@
                                         <descriptor>src/main/descriptors/windows-src.xml</descriptor>
                                     </descriptors>
                                 </configuration>
+                                <inherited>false</inherited>
                             </execution>
                         </executions>
                     </plugin>
