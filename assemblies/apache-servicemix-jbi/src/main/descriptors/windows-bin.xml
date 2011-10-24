@@ -22,6 +22,8 @@
         <format>zip</format>
     </formats>
 
+    <baseDirectory>apache-servicemix-${version}</baseDirectory>
+
     <componentDescriptors>
         <componentDescriptor>target/shared/common-bin.xml</componentDescriptor>
         <componentDescriptor>target/shared/common-windows-bin.xml</componentDescriptor>
@@ -76,14 +78,6 @@
     </fileSets>
 
     <files>
-        <file>
-            <source>${basedir}/target/classes/features.xml</source>
-            <outputDirectory>system/org/apache/servicemix/${artifactId}/${version}</outputDirectory>
-            <destName>${artifactId}-${version}-features.xml</destName>
-            <fileMode>0644</fileMode>
-            <lineEnding>dos</lineEnding>
-        </file>
-
         <!--filtering README.txt-->
         <file>
             <source>${basedir}/../../examples/README.txt</source>

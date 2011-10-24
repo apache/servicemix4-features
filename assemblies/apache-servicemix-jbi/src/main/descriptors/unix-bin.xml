@@ -23,6 +23,8 @@
         <format>tar.gz</format>
     </formats>
 
+    <baseDirectory>apache-servicemix-${version}</baseDirectory>
+
     <componentDescriptors>
         <componentDescriptor>target/shared/common-bin.xml</componentDescriptor>
         <componentDescriptor>target/shared/common-unix-bin.xml</componentDescriptor>
@@ -67,15 +69,6 @@
     </fileSets>
 
     <files>
-        <!-- Install the features descriptor into the system repository -->
-        <file>
-            <source>${basedir}/target/classes/features.xml</source>
-            <outputDirectory>system/org/apache/servicemix/${artifactId}/${version}</outputDirectory>
-            <destName>${artifactId}-${version}-features.xml</destName>
-            <fileMode>0644</fileMode>
-            <lineEnding>unix</lineEnding>
-        </file>
-
         <!--filtering README.txt-->
         <file>
             <source>${basedir}/../../examples/README.txt</source>

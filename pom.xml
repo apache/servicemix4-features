@@ -41,7 +41,7 @@
         <module>camel</module>
         <module>cxf</module>
         <module>examples</module>
-        <module>assembly</module>
+        <module>assemblies</module>
     </modules>
 
     <scm>
@@ -180,8 +180,8 @@
         <!-- Maven Plugins -->
         <depends-maven-plugin.version>1.2</depends-maven-plugin.version>
         <jbi-maven-plugin.version>4.4</jbi-maven-plugin.version>
-        <maven-antrun-plugin.version>1.2</maven-antrun-plugin.version>
-        <maven-assembly-plugin.version>2.2-beta-4</maven-assembly-plugin.version>
+        <maven-antrun-plugin.version>1.6</maven-antrun-plugin.version>
+        <maven-assembly-plugin.version>2.2.1</maven-assembly-plugin.version>
         <maven-bundle-plugin.version>2.1.0</maven-bundle-plugin.version>
 
         <!-- Other Dependencies -->
@@ -776,18 +776,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <version>${maven-antrun-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>ant-contrib</groupId>
-                            <artifactId>ant-contrib</artifactId>
-                            <version>1.0b3</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>ant</groupId>
-                            <artifactId>ant-optional</artifactId>
-                            <version>1.5.3-1</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
