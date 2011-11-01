@@ -176,7 +176,7 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
      */
     private Map<String,Object> createEndpointMap() {
         return ServiceHelper.createMap(org.apache.servicemix.nmr.api.Endpoint.NAME,
-                ServiceMixProducer.class.getName() + "-" + UuidGenerator.getInstance(),
+                ServiceMixProducer.class.getName() + "-" + getEndpoint().getEndpointName(),
                 TARGET_ENDPOINT_NAME,
                 getEndpoint().getEndpointName());
 
