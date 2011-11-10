@@ -47,6 +47,12 @@
         <module>cxf-wsdl-first-osgi-package</module>
         <module>cxf-ws-security-osgi</module>
         <module>cxf-ws-rm</module> 
+        <module>camel-blueprint</module>
+        <module>camel-nmr-blueprint</module>
+        <module>karaf-demos</module>
+        <module>interceptors</module>
+        <module>cluster</module>
+        <module>nmr</module>
    </modules>
 
 </project>
