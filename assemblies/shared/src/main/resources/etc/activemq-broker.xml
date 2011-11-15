@@ -109,7 +109,7 @@
 
     <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
 
-        <property name="brokerURL" value="${activemq.url}" />
+        <property name="brokerURL" value="vm://default?create=false&amp;waitForStart=10000" />
     </bean>
 
     <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
