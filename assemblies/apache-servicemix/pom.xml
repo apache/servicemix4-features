@@ -119,7 +119,6 @@
                             </descriptors>
                             <features>
                                 <feature>cxf</feature>
-                                <feature>saaj</feature>
                                 <feature>obr</feature>
                                 <feature>config</feature>
                                 <feature>activemq</feature>
