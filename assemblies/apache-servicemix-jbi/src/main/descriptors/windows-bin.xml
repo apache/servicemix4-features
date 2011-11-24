@@ -28,6 +28,7 @@
         <componentDescriptor>target/shared/common-bin.xml</componentDescriptor>
         <componentDescriptor>target/shared/common-windows-bin.xml</componentDescriptor>
         <componentDescriptor>target/shared/examples-windows-bin.xml</componentDescriptor>
+        <componentDescriptor>target/shared/jbi-unix-bin.xml</componentDescriptor>
     </componentDescriptors>
 
 </assembly>
