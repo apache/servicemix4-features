@@ -56,8 +56,6 @@
         <!-- NMR examples -->        
         <module>nmr/interceptors</module>
         <module>nmr/basic</module>
-
-        <module>itests</module>
     </modules>
 
 </project>

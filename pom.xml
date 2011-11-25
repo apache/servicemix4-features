@@ -41,6 +41,7 @@
         <module>camel</module>
         <module>cxf</module>
         <module>examples</module>
+        <module>itests</module>
         <module>assemblies</module>
     </modules>
 
