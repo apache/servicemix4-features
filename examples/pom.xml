@@ -34,28 +34,10 @@
     <name>Apache ServiceMix :: Features :: Examples</name>
 
     <modules>
-        <module>bridge</module>
-        <module>bridge-camel</module>
         <module>camel</module>
-        <module>camel-blueprint</module>
-        <module>camel-nmr-blueprint</module>
-        <module>cxf-wsdl-first</module>
-        <module>wsdl-first</module>
-        <module>loan-broker-bpel</module>
-        <module>camel-nmr</module>
-        <module>camel-osgi</module>
-        <module>cxf-camel-nmr</module>
-        <module>cxf-nmr</module>
-        <module>cxf-osgi</module>
-        <module>cxf-jaxrs</module>
-        <module>cxf-ws-addressing</module>
-        <module>cxf-wsdl-first-osgi-package</module>
-        <module>cxf-ws-security-osgi</module>
-        <module>cxf-ws-rm</module>
-
-        <!-- NMR examples -->        
-        <module>nmr/interceptors</module>
-        <module>nmr/basic</module>
+        <module>cxf</module>
+        <module>jbi</module>
+        <module>nmr</module>
     </modules>
 
 </project>

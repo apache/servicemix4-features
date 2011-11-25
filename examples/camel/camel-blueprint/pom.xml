@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <!--
-
         Licensed to the Apache Software Foundation (ASF) under one or more
         contributor license agreements.  See the NOTICE file distributed with
         this work for additional information regarding copyright ownership.
@@ -21,21 +21,31 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix.features</groupId>
-        <artifactId>features</artifactId>
-        <version>${project.version}</version>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>camel-examples</artifactId>
+        <version>4.4.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>examples</artifactId>
-    <packaging>pom</packaging>
-    <version>${project.version}</version>
-    <name>Apache ServiceMix :: Examples</name>
+    <artifactId>camel-blueprint</artifactId>
+    <packaging>bundle</packaging>
+    <name>Apache ServiceMix :: Features :: Examples :: Camel Blueprint</name>
+    <description>Camel Example using blueprint for configuration</description>
 
-    <modules>
-        <module>camel</module>
-        <module>cxf</module>
-        <module>karaf</module>
-   </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Description>${project.description}</Bundle-Description>
+                        <Import-Package>*,org.apache.camel.osgi</Import-Package>
+                        <Private-Package>org.apache.servicemix.examples.camel</Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

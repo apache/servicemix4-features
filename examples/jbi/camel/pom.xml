@@ -28,13 +28,23 @@
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>camel-examples</artifactId>
+    <artifactId>camel</artifactId>
+    <name>Apache ServiceMix :: Features :: Examples :: Camel</name>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix :: Features :: Examples :: Camel </name>
 
     <modules>
-        <module>camel-blueprint</module>
-        <module>camel-osgi</module>
+        <module>camel-simple-su</module>
+        <module>camel-sa</module>
     </modules>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>jbi-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

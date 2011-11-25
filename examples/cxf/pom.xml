@@ -28,13 +28,16 @@
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>camel-examples</artifactId>
+    <artifactId>cxf</artifactId>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix :: Features :: Examples :: Camel </name>
+    <name>Apache ServiceMix :: Features :: Examples :: CXF</name>
 
     <modules>
-        <module>camel-blueprint</module>
-        <module>camel-osgi</module>
+        <module>cxf-osgi</module>
+        <module>cxf-jaxrs</module>
+        <module>cxf-ws-addressing</module>
+        <module>cxf-ws-security-osgi</module>
+        <module>cxf-ws-rm</module>
     </modules>
 
 </project>

@@ -28,13 +28,17 @@
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>camel-examples</artifactId>
+    <artifactId>nmr</artifactId>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix :: Features :: Examples :: Camel </name>
+    <name>Apache ServiceMix :: Features :: Examples :: NMR</name>
 
     <modules>
-        <module>camel-blueprint</module>
-        <module>camel-osgi</module>
+        <module>basic</module>
+        <module>camel-nmr-blueprint</module>
+        <module>camel-nmr</module>
+        <module>cxf-camel-nmr</module>
+        <module>cxf-nmr</module>
+        <module>interceptors</module>
     </modules>
 
 </project>
