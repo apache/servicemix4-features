@@ -23,7 +23,7 @@
 
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
-        <artifactId>examples</artifactId>
+        <artifactId>nmr</artifactId>
         <version>4.4.0-SNAPSHOT</version>
     </parent>
 
