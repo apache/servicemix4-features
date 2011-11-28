@@ -73,6 +73,85 @@ Karaf examples
   Embeds Apache Karaf in a web application.
 
 
+NMR examples
+============
+
+- basic
+  Contains a client and endpoint bundle showing the basic functionality of the NMR.
+
+  1. /endpoint
+     Deploys a custom endpoint into the NMR registry.
+
+  2. /client
+     Deploys a client class that interacts with the NMR to communicate with
+     the endpoint.
+
+- camel-nmr
+  Deploys two Camel EIP routes that communicate with each other via the
+  ServiceMix NMR, using Spring to define the Camel routes.
+
+- camel-nmr-blueprint
+  Deploys two Camel EIP routes that communicate with each other via the
+  ServiceMix NMR, using Blueprint to define the Camel routes.
+
+- cxf-camel-nmr
+  Deploys a Camel route that transforms a message and passes it to a CXF
+  web service via the ServiceMix NMR.
+
+- cxf-nmr
+  Creates a web service using CXF and Spring-DM, and publishes it to the
+  ServiceMix NMR.
+
+- interceptors
+  Contains two interceptor examples:
+
+  1. /endpoint
+     Deploys a custom endpoint listener that captures and reports, to
+     the ServiceMix log, when an endpoint registers and unregisters with
+     the NMR.
+
+  2. /exchange
+     Deploys a custom exchange listener that captures and reports, to
+     the ServiceMix log, the exchanges that are sent and delivered using
+     the NMR.
+
+
+JBI examples
+============
+
+- bridge
+  Uses the original ServiceMix EIP component and JBI to create a
+  protocol bridge that receives a message via HTTP, transforms it
+  and sends it to a JMS queue.
+  
+  This example uses the older ServiceMix EIP implementation. The
+  bridge-camel example (see below), on the other hand, uses Camel to
+  achieve the same result.
+  
+- bridge-camel
+  Uses Camel and JBI to create a protocol bridge that receives a
+  message via HTTP, transforms it and sends it to a JMS queue.
+  
+  This example uses the newer Camel integration framework.
+  
+- camel
+  Deploys a simple Camel EIP route, written in Java, as a JBI component.
+
+- cluster
+  Creates two child container instances with one JBI endpoint of each of them,
+  using the JBI clustering engine to interconnect the two endpoints.
+
+- cxf-wsdl-first
+  Publishes, as a JBI service assembly, a WSDL-defined web service created
+  using CXF.
+
+- cxf-wsdl-first-osgi-package
+  Publishes, as OSGi bundles, a WSDL-defined web service created using CXF.
+
+- simple
+  Adds new endpoints using XML configuration files only.
+
+
 Prerequisites for Running the Examples
 =========================================
 
