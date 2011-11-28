@@ -32,7 +32,7 @@
     <camelContext xmlns="http://camel.apache.org/schema/blueprint">
         <!-- Route periodically sent events into the NMR -->
         <route>
-            <from uri="timer://myTimer?fixedRate=true&amp;period=2000" />
+            <from uri="timer://myTimer?fixedRate=true&amp;period=2000&amp;delay=5000" />
             <to uri="nmr:ExampleRouter" />
         </route>
         <!-- Route exchange from the NMR endpoint to a log endpoint -->
