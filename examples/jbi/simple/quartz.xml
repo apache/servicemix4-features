@@ -41,7 +41,7 @@
 	<camel:camelContext>
 	    <camel:route>
 	        <camel:from uri="jbi:endpoint:http://servicemix.apache.org/examples/camel/receiver/endpoint" />
-	        <camel:to uri="log:test" />
+	        <camel:to uri="log:test?showStreams=true" />
         </camel:route>
 	</camel:camelContext>
 	
