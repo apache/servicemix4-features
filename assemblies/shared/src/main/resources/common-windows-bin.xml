@@ -30,7 +30,6 @@
              <exclude>etc/users.properties</exclude>
              <exclude>etc/custom.properties</exclude>
              <exclude>etc/jre.properties</exclude>
-             <exclude>etc/startup.properties</exclude>
              <exclude>system/**</exclude>
              <exclude>LICENSE</exclude>
              <exclude>NOTICE</exclude>
@@ -70,6 +69,9 @@
       <fileSet>
           <directory>target/classes/etc</directory>
           <outputDirectory>/etc/</outputDirectory>
+          <includes>
+              <include>*.*</include>
+          </includes>
           <lineEnding>dos</lineEnding>
           <fileMode>0644</fileMode>
       </fileSet>
