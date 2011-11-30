@@ -38,18 +38,12 @@
                 <exclude>pom.xml</exclude>
                 <!-- we need add filtered README.txt, so exclude the raw one here -->
                 <exclude>**/README.txt</exclude>
-                <!-- exclude the integration tests -->
-                <exclude>**/itests/**</exclude>
                 <!-- exclude build output/IDE config/... files -->
                 <exclude>**/target/**</exclude>
                 <exclude>**/.classpath</exclude>
                 <exclude>**/.project</exclude>
                 <exclude>**/.settings/**</exclude>
                 <exclude>**/*.i??</exclude>
-                <!-- exclude these 3 failing demos -->
-                <exclude>**/wsdl-first/**</exclude>
-                <exclude>**/loan-broker-bpel/**</exclude>
-                <exclude>**/web/**</exclude>
             </excludes>
         </fileSet>
 
@@ -61,6 +55,7 @@
             <fileMode>0644</fileMode>
             <includes>
                 <include>README.txt</include>
+                <include>activemq/**/README.txt</include>
                 <include>camel/**/README.txt</include>
                 <include>cxf/**/README.txt</include>
             </includes>
