@@ -91,7 +91,7 @@
       </dependency>
       <dependency>
         <groupId>org.apache.servicemix.nmr</groupId>
-        <artifactId>nmr-parent</artifactId>
+        <artifactId>parent</artifactId>
         <version>${servicemix.nmr.version}</version>
         <type>pom</type>
         <scope>import</scope>
