@@ -70,7 +70,11 @@
       -  Examples
       -
     -->
-
+    <feature name="examples-activemq-camel-blueprint" version="${version}" resolver="(obr)">
+        <feature version="${version}">camel-activemq</feature>
+        <feature version="${camel.version}">camel-blueprint</feature>
+        <bundle>mvn:org.apache.servicemix.examples/activemq-camel-blueprint/${version}</bundle>
+    </feature>
     <feature name="examples-cxf-osgi" version="${version}" resolver="(obr)">
         <feature version="${version}">cxf-osgi</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jbi-api-1.0/${servicemix.specs.version}</bundle>

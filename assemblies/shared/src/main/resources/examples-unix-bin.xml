@@ -30,6 +30,7 @@
             <outputDirectory>/examples/</outputDirectory>
             <lineEnding>unix</lineEnding>
             <includes>
+                <include>activemq/**</include>
                 <include>camel/**</include>
                 <include>cxf/**</include>
             </includes>
