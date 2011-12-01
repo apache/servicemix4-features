@@ -57,6 +57,12 @@ CXF examples
   it through the OSGi HTTP service.  It includes a custom CallbackHandler implementation
   to show you how to implement your own authentication logic.
 
+ActiveMQ Examples
+=================
+
+- activemq-camel-blueprint
+  Deploys Camel EIP routes as an OSGi bundle using Blueprint. These routes
+  make use of an ActiveMQ queue hosted on the local broker deployed in ServiceMix.
 
 Karaf examples
 ==============

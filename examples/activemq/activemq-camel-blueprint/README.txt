@@ -21,7 +21,7 @@ ActiveMQ & Camel in Blueprint Example
 Purpose
 -------
 Deploys Camel EIP routes as an OSGi bundle using Blueprint. These routes
-makes use of an ActiveMQ queue hosted on the local broker deployed in ServiceMix.
+make use of an ActiveMQ queue hosted on the local broker deployed in ServiceMix.
 
 Configuration makes use of the OSGi Configuration Admin service and
 Blueprint property placeholders, and the example demonstrates how to
