@@ -33,6 +33,7 @@
     <name>Apache ServiceMix :: Examples</name>
 
     <modules>
+        <module>activemq</module>
         <module>camel</module>
         <module>cxf</module>
         <module>karaf</module>
