@@ -222,24 +222,6 @@
                <version>${felix.prefs.version}</version>
            </dependency>
 
-           <!-- Camel -->
-           <dependency>
-               <groupId>org.apache.camel.karaf</groupId>
-               <artifactId>apache-camel</artifactId>
-               <version>${camel.version}</version>
-               <type>xml</type>
-               <classifier>features</classifier>
-           </dependency>
-   
-           <dependency>
-               <groupId>org.apache.cxf.karaf</groupId>
-               <artifactId>apache-cxf</artifactId>
-               <version>${cxf.version}</version>
-               <type>xml</type>
-               <classifier>features</classifier>
-           </dependency>
-
-           
            <!-- Geronimo -->
            <dependency>
                <groupId>org.apache.geronimo.specs</groupId>

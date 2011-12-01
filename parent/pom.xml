@@ -64,6 +64,22 @@
       </dependency>
 
       <dependency>
+         <groupId>org.apache.camel.karaf</groupId>
+         <artifactId>apache-camel</artifactId>
+         <version>${camel.version}</version>
+         <type>xml</type>
+         <classifier>features</classifier>
+      </dependency>
+
+      <dependency>
+          <groupId>org.apache.cxf.karaf</groupId>
+          <artifactId>apache-cxf</artifactId>
+          <version>${cxf.version}</version>
+          <type>xml</type>
+          <classifier>features</classifier>
+      </dependency>
+
+      <dependency>
         <groupId>org.apache.servicemix.features</groupId>
         <artifactId>org.apache.servicemix.features.branding</artifactId>
         <version>${project.version}</version>
