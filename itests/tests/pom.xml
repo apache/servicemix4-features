@@ -430,7 +430,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
-            <artifactId>org.apache.servicemix.specs.jsr311-api-1.1</artifactId>
+            <artifactId>org.apache.servicemix.specs.jsr311-api-1.1.1</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
