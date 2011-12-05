@@ -128,7 +128,6 @@
                             javax.xml.ws.handler,
                             javax.xml.ws.handler.soap,
                             META-INF.cxf,
-                            META-INF.cxf.osgi,
                             org.apache.cxf.bus,
                             org.apache.cxf.bus.spring,
                             org.apache.cxf.bus.resource,
@@ -142,7 +141,6 @@
                             org.apache.servicemix.util,
                             org.springframework.beans.factory.config
                         </Import-Package>
-                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                         <Export-Package>
                             org.apache.servicemix.examples.cxf.wsaddressing,
                             org.apache.hello_world_soap_http,

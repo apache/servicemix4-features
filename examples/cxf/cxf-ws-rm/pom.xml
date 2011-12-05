@@ -85,22 +85,18 @@
                             javax.wsdl,
                             javax.xml.ws,
                             javax.xml.namespace,
-                            META-INF.cxf,
-                            META-INF.cxf.osgi,
-                            org.apache.cxf,
-                            org.apache.cxf.bus,
-                            org.apache.cxf.bus.spring,
-                            org.apache.cxf.bus.resource,
-                            org.apache.cxf.configuration.spring,
-                            org.apache.cxf.resource,
-                            org.apache.cxf.interceptor, org.apache.cxf.io, org.apache.cxf.message, org.apache.cxf.phase,
-                            org.apache.cxf.ws.addressing, org.apache.cxf.ws.rm,
-                            org.apache.cxf.transport.http,
-                            org.apache.servicemix.util,
+                            org.apache.cxf, 
+                            org.apache.cxf.bus.spring, 
+                            org.apache.cxf.interceptor, 
+                            org.apache.cxf.io, 
+                            org.apache.cxf.message, 
+                            org.apache.cxf.phase, 
+                            org.apache.cxf.ws.addressing, 
+                            org.apache.cxf.ws.rm, 
+                            org.apache.cxf.ws.rm.v200702,
                             org.springframework.beans.factory.config
                         </Import-Package>
                         <Private-Package>org.apache.servicemix.examples.cxf</Private-Package>
-                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                     </instructions>
                 </configuration>
             </plugin>

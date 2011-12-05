@@ -34,7 +34,6 @@
           http://cxf.apache.org/ws/rm/manager http://cxf.apache.org/schemas/configuration/wsrm-manager.xsd
           http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
-    <import resource="classpath:META-INF/cxf/cxf.xml" />
 
     <jaxws:endpoint id="helloWorld"
                     implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
