@@ -26,8 +26,6 @@ under the License.
     http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 
-    <bean id="myPasswordCallback" class="org.apache.servicemix.examples.cxf.ServerPasswordCallback"/>
-
     <jaxws:endpoint id="helloWorld"
         implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
         address="/HelloWorldSecurity">
@@ -37,15 +35,18 @@ under the License.
                     <map>
                         <entry key="action" value="UsernameToken"/>
                         <entry key="passwordType" value="PasswordText"/>
-                        <entry key="passwordCallbackRef">
-                            <ref bean="myPasswordCallback"/>
-                        </entry>
-
                     </map>
                 </constructor-arg>
             </bean>
+            <ref bean="authenticationInterceptor"/>
         </jaxws:inInterceptors>
+        <jaxws:properties>
+            <entry key="ws-security.validate.token" value="false"/>
+        </jaxws:properties>
     </jaxws:endpoint>
+    <bean id="authenticationInterceptor" class="org.apache.cxf.interceptor.security.JAASLoginInterceptor">
+       <property name="contextName" value="karaf"/>
+    </bean>
 
 </beans>
 <!-- END SNIPPET: beans -->

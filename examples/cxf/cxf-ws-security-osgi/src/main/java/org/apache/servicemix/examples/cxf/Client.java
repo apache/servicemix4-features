@@ -16,14 +16,14 @@
  */
 package org.apache.servicemix.examples.cxf;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 
-import org.apache.servicemix.util.FileUtil;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
+
 
 public class Client{
     public static void main(String[] args) {
@@ -35,20 +35,21 @@ public class Client{
     }
     
     public void sendRequest() throws Exception {
-        URLConnection connection = new URL("http://localhost:8181/cxf/HelloWorldSecurity")
-                .openConnection();
-        connection.setDoInput(true);
-        connection.setDoOutput(true);
-        OutputStream os = connection.getOutputStream();
-        // Post the request file.
-        InputStream fis = getClass().getClassLoader().getResourceAsStream("org/apache/servicemix/examples/cxf/request.xml");
-        FileUtil.copyInputStream(fis, os);
-        // Read the response.
-        InputStream is = connection.getInputStream();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        FileUtil.copyInputStream(is, baos);
-        System.out.println("the response is =====>");
-        System.out.println(baos.toString());
+        JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
+        factory.setServiceClass(HelloWorld.class);
+        factory.setAddress("http://localhost:8181/cxf/HelloWorldSecurity");
+        HelloWorld client = (HelloWorld) factory.create();
+        
+        Map<String, Object> outProps = new HashMap<String, Object>();
+        outProps.put("action", "UsernameToken");
+
+        //add a CustomerSecurityInterceptor for client side to init wss4j staff
+        //retrieve and set user/password,  users can easily add this interceptor
+        //through spring configuration also
+        ClientProxy.getClient(client).getOutInterceptors().add(new CustomerSecurityInterceptor());
+        ClientProxy.getClient(client).getOutInterceptors().add(new WSS4JOutInterceptor());
+        String ret = client.sayHi("ffang");
+        System.out.println(ret);
     }
 
 }

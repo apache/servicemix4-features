@@ -21,7 +21,8 @@ CXF WS-SECURITY OSGi HTTP WEB SERVICE
 Purpose
 -------
 Create a web service with CXF using WS-SECURITY and expose it through the OSGi HTTP
-Service.
+Service, then it will leverage cxf JAASLoginInterceptor to authenticate against karaf
+default jaas configuration.
 
 
 Explanation
@@ -33,12 +34,10 @@ apache/servicemix/examples/cxf directory of this example.
 The beans.xml file, located in the src/main/resources/META-INF/spring
 directory:
 
-1. Imports the configuration files needed to enable CXF and OSGi work
-   together.
 
-2. Configures the web service endpoint as follows:
+1. Configures the web service endpoint as follows:
 
-   <jaxws:endpoint id="helloWorld"
+    <jaxws:endpoint id="helloWorld"
         implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
         address="/HelloWorldSecurity">
         <jaxws:inInterceptors>
@@ -47,15 +46,20 @@ directory:
                     <map>
                         <entry key="action" value="UsernameToken"/>
                         <entry key="passwordType" value="PasswordText"/>
-                        <entry key="passwordCallbackRef">
-                            <ref bean="myPasswordCallback"/>
-                        </entry>
-
                     </map>
                 </constructor-arg>
             </bean>
+            <ref bean="authenticationInterceptor"/>
         </jaxws:inInterceptors>
+        <jaxws:properties>
+            <entry key="ws-security.validate.token" value="false"/>
+        </jaxws:properties>
     </jaxws:endpoint>
+    <bean id="authenticationInterceptor" class="org.apache.cxf.interceptor.security.JAASLoginInterceptor">
+       <property name="contextName" value="karaf"/>
+    </bean>
+
+This will leverage cxf JAASLoginInterceptor to authenticate against karaf default jaas configuration through property contextName, which store username/password/role in SMX_HOME/etc/users.properties, to run this example, need add joe=password in etc/users.properties. Users can easily change to use other jaas context(JDBC,LDAP etc) as described from http://karaf.apache.org/manual/2.2.4/developers-guide/security-framework.html.
 
 
 Prerequisites for Running the Example
@@ -140,15 +144,10 @@ To run the java code client:
 
      mvn compile exec:java
 
-   If the client request is successful, a response similar to the
-   following should appear in the ServiceMix console:
-
-   <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-     <soap:Body><ns2:sayHiResponse xmlns:ns2="http://cxf.examples.
-       servicemix.apache.org/"><return>Hello John Doe</return>
-       </ns2:sayHiResponse>
-     </soap:Body>
-   </soap:Envelope>
+   If the client request is successful, 
+   it will print out
+       Hello ffang
+   in the ServiceMix console:
 
 
 Changing /cxf servlet alias
