@@ -91,17 +91,10 @@
                             javax.xml.namespace,
                             javax.xml.soap,
                             javax.xml.ws,
-                            META-INF.cxf,
-                            org.apache.cxf.bus,
-                            org.apache.cxf.bus.spring,
-                            org.apache.cxf.bus.resource,
-                            org.apache.cxf.configuration.spring,
-                            org.apache.cxf.resource,
                             org.apache.servicemix.cxfse,
                             org.springframework.beans.factory.config,
                             org.apache.servicemix.common.osgi
                         </Import-Package>
-                        <Require-Bundle>org.apache.cxf.bundle</Require-Bundle>
                         <Export-Package>
                             org.apache.servicemix.samples.wsdl_first,
                             org.apache.servicemix.samples.wsdl_first.types
