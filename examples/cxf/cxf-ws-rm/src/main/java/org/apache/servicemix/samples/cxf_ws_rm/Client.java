@@ -52,7 +52,7 @@ public final class Client {
             // Endpoint Address
             Service service = Service.create(Client.class.getResource("/HelloWorld.wsdl"), SERVICE_NAME);
 
-            String endpointAddress = "http://localhost:9191/HelloWorld";
+            String endpointAddress = "http://localhost:8181/cxf/HelloWorld";
 
             // Add a port to the Service
             service.addPort(PORT_NAME, SOAPBinding.SOAP11HTTP_BINDING, endpointAddress);

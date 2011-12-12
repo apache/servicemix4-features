@@ -38,7 +38,7 @@
     <jaxws:endpoint id="helloWorld"
                     implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
                     wsdlLocation="classpath:HelloWorld.wsdl"
-                        address="http://localhost:9191/HelloWorld"/>
+                        address="/HelloWorld"/>
         <cxf:bus>
         <cxf:features>
             <cxf:logging/>
