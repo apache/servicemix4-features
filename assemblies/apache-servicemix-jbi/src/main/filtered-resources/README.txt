@@ -52,10 +52,16 @@ CXF examples
   Uses CXF to create a web service enabled for WS-ReliableMessaging, and exposes
   it through the OSGi HTTP service.
 
-- cxf-ws-security
-  Uses CXF to create a web service enabled for WS-Security, and exposes
-  it through the OSGi HTTP service.  It includes a custom CallbackHandler implementation
-  to show you how to implement your own authentication logic.
+- cxf-ws-security-osgi
+  Create a web service with CXF using WS-SECURITY and expose it through the OSGi HTTP
+  Service, then it will leverage cxf JAASLoginInterceptor to authenticate against karaf
+  default jaas configuration.
+
+- cxf-ws-security-blueprint
+  Create a web service with CXF using WS-SECURITY and blueprint configuration,
+  and expose it through the OSGi HTTP
+  Service, then it will leverage cxf JAASLoginInterceptor to authenticate against karaf
+  default jaas configuration.
 
 
 Karaf examples
