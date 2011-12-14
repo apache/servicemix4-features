@@ -45,10 +45,10 @@
 
     <karaf.version>2.2.4</karaf.version>
 
-    <servicemix.components.version>2011.02-SNAPSHOT</servicemix.components.version>
-    <servicemix.nmr.version>1.5.0-SNAPSHOT</servicemix.nmr.version>
+    <servicemix.components.version>2011.02</servicemix.components.version>
+    <servicemix.nmr.version>1.5.0</servicemix.nmr.version>
     <servicemix.specs.version>1.9.0</servicemix.specs.version>
-    <servicemix.utils.version>1.5.0-SNAPSHOT</servicemix.utils.version>
+    <servicemix.utils.version>1.5.0</servicemix.utils.version>
   </properties>
 
   <!-- Managed dependencies -->
