@@ -147,6 +147,11 @@
         <bundle>mvn:org.apache.servicemix.examples/cxf-ws-rm/${version}</bundle>
     </feature>
 
+    <feature name="examples-nmr" version="${version}">
+        <bundle>mvn:org.apache.servicemix.examples/org.apache.servicemix.examples.nmr.endpoint/${pom.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/org.apache.servicemix.examples.nmr.client/${pom.version}</bundle>
+    </feature>
+
     <!--
       -
       -  JBI Components
