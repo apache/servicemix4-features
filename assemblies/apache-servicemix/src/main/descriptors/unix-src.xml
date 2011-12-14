@@ -18,7 +18,6 @@
 <assembly>
     <id>src</id>
     <formats>
-        <format>jar</format>
         <format>tar.gz</format>
     </formats>
     <fileSets>
