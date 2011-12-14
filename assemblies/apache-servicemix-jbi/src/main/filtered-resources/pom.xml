@@ -39,6 +39,18 @@
         <module>nmr</module>
         <module>jbi</module>
         <module>karaf</module>
-   </modules>
+    </modules>
+
+    <repositories>
+        <!-- Required to build the examples in a SNAPSHOT assembly -->
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://repository.apache.org/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
 
 </project>
