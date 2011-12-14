@@ -113,6 +113,7 @@
 
         <!-- CXF -->
         <cxf.xjc-utils.version>2.3.2</cxf.xjc-utils.version>
+        <cxf.codegen-plugin.version>2.4.4</cxf.codegen-plugin.version>
 
         <!-- Geronimo -->
         <geronimo-annotation.version>1.1.1</geronimo-annotation.version>
@@ -691,7 +692,7 @@
                 <plugin>
                     <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-codegen-plugin</artifactId>
-                    <version>${cxf.version}</version>
+                    <version>${cxf.codegen-plugin.version}</version>
                     <dependencies>
                         <dependency>
                             <groupId>xerces</groupId>
@@ -703,6 +704,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
+                    <version>2.2.1</version>
                     <configuration>
                         <preparationGoals>clean install</preparationGoals>
                         <goals>deploy</goals>
