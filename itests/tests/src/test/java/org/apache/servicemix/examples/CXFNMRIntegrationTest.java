@@ -120,8 +120,8 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.management"),
             getBundle("org.apache.servicemix.nmr", "org.apache.servicemix.nmr.osgi"),
             getBundle("org.apache.servicemix.document", "org.apache.servicemix.document"),
-            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.test-commons"),
-            getBundle("org.apache.servicemix.examples", "org.apache.servicemix.examples.itests.cxf-nmr-osgi"),
+            getBundle("org.apache.servicemix.itests", "org.apache.servicemix.itests.test-commons"),
+            getBundle("org.apache.servicemix.itests", "org.apache.servicemix.itests.cxf-nmr-osgi"),
         };
     }
 
@@ -129,7 +129,7 @@ public class CXFNMRIntegrationTest extends AbstractIntegrationTest {
     
     public void testNMROsgi() throws Exception {
         Thread.sleep(5000);
-        waitOnContextCreation("org.apache.servicemix.examples.itests.cxf-nmr-osgi");
+        waitOnContextCreation("org.apache.servicemix.itests.cxf-nmr-osgi");
         Thread.sleep(5000);
         NMR nmr = getOsgiService(NMR.class);
         assertNotNull(nmr);

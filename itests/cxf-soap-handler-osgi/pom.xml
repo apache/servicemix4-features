@@ -22,14 +22,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix</groupId>
+        <groupId>org.apache.servicemix.itests</groupId>
         <artifactId>itests</artifactId>
         <version>4.4.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>org.apache.servicemix.examples.itests.cxf-soap-handler-osgi</artifactId>
+    <artifactId>org.apache.servicemix.itests.cxf-soap-handler-osgi</artifactId>
     <packaging>bundle</packaging>
-    <name>Apache ServiceMix :: Features :: Examples :: iTests :: CXF SOAP Handler OSGi</name>
+    <name>Apache ServiceMix :: Features :: Integration Tests :: CXF SOAP Handler OSGi</name>
 
     <dependencies>
         <dependency>

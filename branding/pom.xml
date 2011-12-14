@@ -28,6 +28,7 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
+    <groupId>org.apache.servicemix.features</groupId>
     <artifactId>org.apache.servicemix.features.branding</artifactId>
     <packaging>bundle</packaging>
     <name>Apache ServiceMix :: Features :: Branding Support</name>

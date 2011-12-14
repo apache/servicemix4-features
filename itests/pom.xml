@@ -28,6 +28,7 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
+    <groupId>org.apache.servicemix.itests</groupId>
     <artifactId>itests</artifactId>
     <packaging>pom</packaging>
     <name>Apache ServiceMix :: Features :: Integration Tests</name>
