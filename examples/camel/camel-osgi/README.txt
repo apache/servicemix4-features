@@ -127,7 +127,7 @@ properties placeholder in the beans.xml from console as follows:
 2. Copy the updated configuration file to your <servicemix_home>/etc
    directory. You can do this from the ServiceMix console by typing:
 
-     copy $YOUR_SERVICEMIX_HOME/examples/camel-osgi/org.apache.servicemix.examples.cfg
+     copy $YOUR_SERVICEMIX_HOME/examples/camel/camel-osgi/org.apache.servicemix.examples.cfg
      $YOUR_SERVICEMIX_HOME/etc
 
    On Windows you need to replace / in the path with \\.
@@ -174,7 +174,7 @@ yourself, complete the following steps:
      features:uninstall examples-camel-osgi
 
 2. Build the example by opening a command prompt, changing directory to
-   examples/camel-osgi (this example) and entering the following Maven
+   examples/camel/camel-osgi (this example) and entering the following Maven
    command:
 
      mvn install

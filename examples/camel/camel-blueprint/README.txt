@@ -117,7 +117,7 @@ properties placeholder in the blueprint.xml from console as follows:
 2. Copy the updated configuration file to your <servicemix_home>/etc
    directory. You can do this from the ServiceMix console by typing:
 
-     copy $YOUR_SERVICEMIX_HOME/examples/camel-osgi/org.apache.servicemix.examples.cfg
+     copy $YOUR_SERVICEMIX_HOME/examples/camel/camel-blueprint/org.apache.servicemix.examples.cfg
      $YOUR_SERVICEMIX_HOME/etc
 
    On Windows you need to replace / in the path with \\.
@@ -162,13 +162,13 @@ To install and run the example where you build the example bundle
 yourself, complete the following steps:
 
 1. If you have already run the example using the prebuilt version as
-   described above, you must first uninstall the examples-camel-osgi
+   described above, you must first uninstall the examples-camel-blueprint
    feature by entering the following command in the ServiceMix console:
 
      features:uninstall examples-camel-blueprint
 
 2. Build the example by opening a command prompt, changing directory to
-   examples/camel-osgi (this example) and entering the following Maven
+   examples/camel/camel-blueprint (this example) and entering the following Maven
    command:
 
      mvn install
