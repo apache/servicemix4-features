@@ -91,6 +91,7 @@
                                 <feature>servicemix-snmp</feature>
                                 <feature>servicemix-vfs</feature>
                                 <feature>servicemix-smpp</feature>
+                                <feature>servicemix-exec</feature>
                             </features>
                             <includeMvnBasedDescriptors>true</includeMvnBasedDescriptors>
                             <repository>target/features-repo</repository>
