@@ -207,6 +207,9 @@
                             <value>com.ctc.wstx.stax.WstxOutputFactory</value>
                         </property>
                     </systemProperties>
+                    <excludes>
+                        <exclude>**/TimeoutTest*.*</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>

@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 
 import javax.xml.transform.Source;
 
-import org.apache.camel.converter.jaxp.StringSource;
+import org.apache.camel.StringSource;
 import org.apache.camel.converter.jaxp.XmlConverter;
 
 /**
