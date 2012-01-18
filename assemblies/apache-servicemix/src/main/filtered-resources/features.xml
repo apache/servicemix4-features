@@ -41,9 +41,9 @@
     </feature>
     <feature name="cxf-jaxrs" version="${version}" resolver="(obr)" start-level='50'>
         <feature version="${version}">cxf-osgi</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.bundle.version}</bundle>
-        <bundle>mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.bundle.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.abdera/${abdera.bundle.version}</bundle>
+        <bundle dependency="true">mvn:org.codehaus.jettison/jettison/${jettison.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/${xmlbeans.bundle.version}</bundle>
     </feature>
     <feature name="cxf-nmr" version="${version}" resolver="(obr)" start-level='50'>
         <feature version="${cxf.version}">cxf</feature>
