@@ -15,6 +15,39 @@
  * limitations under the License.
  */
 
+                      Apache ServiceMix 4.4.1
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.4.1 is a minor release of the OSGi based ServiceMix ESB platform.  This release contains a few core dependency 
+upgrades as well as some additional bug fixes.  ServiceMix 4.4.1 includes the following dependencies:
+
+- Apache ActiveMQ 5.5.1 (http://activemq.apache.org)
+- Apache Camel 2.8.4 (http://camel.apache.org)
+- Apache CXF 2.4.6 (http://cxf.apache.org)
+- Apache Karaf 2.2.4 (http://karaf.apache.org)
+- Apache ServiceMix NMR 1.5.0
+- Apache ServiceMix JBI Components 2011.02
+
+ Changelog
+ ---------
+ 
+ ** Bug
+    * [SMX4-1024] - Incorrect Apache XML Security Version in POM
+    * [SMX4-1094] - feature connector can't be load cause aries.version is not defined
+
+** Improvement
+    * [SMX4-1026] - Upgrade to CXF 2.4.5
+    * [SMX4-1030] - Upgrade to Camel 2.8.4
+    * [SMX4-1037] - some bundle miss dependency="true" in cxf-jaxrs feature
+    * [SMX4-1044] - Upgrade to CXF 2.4.6
+
+** Task
+    * [SMX4-1031] - Release Apache ServiceMix 4.4.1
+    * [SMX4-1082] - Upgrade to CXF 2.4.6
+
+
                       Apache ServiceMix 4.4.0
                   ================================
  Overview
