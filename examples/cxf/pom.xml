@@ -35,6 +35,8 @@
     <modules>
         <module>cxf-osgi</module>
         <module>cxf-jaxrs</module>
+        <module>cxf-jaxws-blueprint</module>
+        <module>cxf-jaxrs-blueprint</module>
         <module>cxf-ws-addressing</module>
         <module>cxf-ws-security-osgi</module>
         <module>cxf-ws-security-blueprint</module>
