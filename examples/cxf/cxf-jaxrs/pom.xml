@@ -63,11 +63,11 @@
                             javax.ws.rs,
                             javax.ws.rs.core,
                             org.springframework.beans.factory.config,
-                            org.apache.servicemix.examples.cxf.jaxrs,
                             org.apache.commons.httpclient,
                             org.apache.commons.httpclient.methods
                         </Import-Package>
-                        <Export-Package>org.apache.servicemix.examples.cxf.jaxrs
+                        <Export-Package>
+                            org.apache.servicemix.examples.cxf.jaxrs
                         </Export-Package>
                     </instructions>
                 </configuration>

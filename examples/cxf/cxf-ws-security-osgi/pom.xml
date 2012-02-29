@@ -78,8 +78,6 @@
                             org.springframework.beans.factory.config,
                             javax.security.auth.callback,
                             org.apache.ws.security,
-                            org.apache.commons.logging,
-                            org.apache.servicemix.util,
                             org.apache.ws.security.processor,
                             org.apache.cxf.interceptor.security,
                             org.apache.cxf, org.apache.cxf.endpoint, org.apache.cxf.frontend, org.apache.cxf.interceptor, org.apache.cxf.jaxws, org.apache.cxf.message, org.apache.cxf.phase

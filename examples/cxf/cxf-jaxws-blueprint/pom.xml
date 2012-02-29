@@ -61,7 +61,7 @@
                             org.osgi.service.blueprint
                         </Import-Package>
                         <Export-Package>
-                            !org.apache.servicemix.examples.cxf*
+                            org.apache.servicemix.examples.cxf
                         </Export-Package>
                     </instructions>
                 </configuration>
