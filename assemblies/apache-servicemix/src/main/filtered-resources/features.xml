@@ -193,7 +193,7 @@
         <bundle dependency="true">mvn:commons-codec/commons-codec/${commons-codec.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.ws.xmlschema/xmlschema-core/${xmlschema.version}</bundle>
-        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.santuario/xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jetty/${jetty6.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix/servicemix-http/${servicemix.components.version}</bundle>
@@ -201,7 +201,7 @@
     <feature name="servicemix-jms" version="${servicemix.components.version}" resolver="(obr)" start-level='50'>
         <feature version="${servicemix.components.version}">servicemix-shared</feature>
         <bundle dependency="true">mvn:org.apache.ws.xmlschema/xmlschema-core/${xmlschema.version}</bundle>
-        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlsec/${xmlsec.bundle.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.santuario/xmlsec/${xmlsec.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.ws.security/wss4j/${wss4j.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo-j2ee-connector.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
