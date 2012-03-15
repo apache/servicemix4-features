@@ -172,7 +172,7 @@
         <xerces.bundle.version>2.9.1_4</xerces.bundle.version>
         <xmlbeans.bundle.version>2.5.0_1</xmlbeans.bundle.version>
         <xmlresolver.bundle.version>1.2_3</xmlresolver.bundle.version>
-        <xmlsec.bundle.version>1.4.5_1</xmlsec.bundle.version>
+        <xmlsec.bundle.version>1.5.1</xmlsec.bundle.version>
 
         <!-- ServiceMix legal shared resources -->
         <servicemix.legal.version>1.0</servicemix.legal.version>
@@ -206,7 +206,7 @@
         <scriptengines.version>1.1</scriptengines.version>
         <spring.version>3.0.7.RELEASE</spring.version>
         <spring.osgi.version>1.2.1</spring.osgi.version>
-        <wss4j.version>1.6.1</wss4j.version>
+        <wss4j.version>1.6.5</wss4j.version>
         <neethi.version>3.0.0</neethi.version>
         <xfire.version>1.0.1</xfire.version>
         <xbean.version>3.7</xbean.version>
@@ -488,8 +488,8 @@
                <version>${xmlresolver.bundle.version}</version>
            </dependency>
            <dependency>
-               <groupId>org.apache.servicemix.bundles</groupId>
-               <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
+               <groupId>org.apache.santuario</groupId>
+               <artifactId>xmlsec</artifactId>
                <version>${xmlsec.bundle.version}</version>
            </dependency>
            

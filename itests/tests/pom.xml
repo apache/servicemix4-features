@@ -405,8 +405,8 @@
             <artifactId>org.apache.servicemix.bundles.xalan</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.xmlsec</artifactId>
+            <groupId>org.apache.santuario</groupId>
+            <artifactId>xmlsec</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
