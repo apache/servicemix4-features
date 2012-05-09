@@ -59,7 +59,7 @@ directory:
        <property name="contextName" value="karaf"/>
     </bean>
 
-This will leverage cxf JAASLoginInterceptor to authenticate against karaf default jaas configuration through property contextName, which store username/password/role in SMX_HOME/etc/users.properties, to run this example, need add joe=password in etc/users.properties. Users can easily change to use other jaas context(JDBC,LDAP etc) as described from http://karaf.apache.org/manual/2.2.4/developers-guide/security-framework.html.
+This will leverage cxf JAASLoginInterceptor to authenticate against karaf default jaas configuration through property contextName, which store username/password/role in SMX_HOME/etc/users.properties. Users can easily change to use other jaas context(JDBC,LDAP etc) as described from http://karaf.apache.org/manual/2.2.4/developers-guide/security-framework.html.
 
 
 Prerequisites for Running the Example

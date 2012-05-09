@@ -40,7 +40,7 @@ public class CustomerSecurityInterceptor extends AbstractPhaseInterceptor<Messag
         outProps.put("action", "UsernameToken");
 
         outProps.put("passwordType", "PasswordText");
-        outProps.put("user", "joe");
+        outProps.put("user", "smx");
         outProps.put("passwordCallbackClass", "org.apache.servicemix.examples.cxf.ClientPasswordCallback");
         for (Interceptor inteceptor : message.getInterceptorChain()) {
             //set properties for WSS4JOutInterceptor

@@ -31,8 +31,8 @@ public class ClientPasswordCallback implements CallbackHandler {
 
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
 
-        if (pc.getIdentifier().equals("joe")) {
-            pc.setPassword("password");
+        if (pc.getIdentifier().equals("smx")) {
+            pc.setPassword("smx");
         }
     }
 
