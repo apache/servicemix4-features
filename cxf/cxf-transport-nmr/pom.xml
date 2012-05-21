@@ -166,13 +166,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.cxf</groupId>
-                        <artifactId>cxf-common-utilities</artifactId>
-                        <version>${cxf.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <!-- exclude generated class from Cobertura reports -->
             <plugin>

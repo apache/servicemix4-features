@@ -24,7 +24,8 @@ import java.util.Map;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.AbstractPhaseInterceptor;
 import org.apache.cxf.phase.Phase;
-import org.apache.cxf.ws.addressing.AddressingPropertiesImpl;
+import org.apache.cxf.ws.addressing.AddressingProperties;
+import org.apache.cxf.ws.addressing.impl.AddressingPropertiesImpl;
 import org.apache.cxf.ws.addressing.ContextUtils;
 import org.apache.cxf.ws.addressing.Names;
 
@@ -61,7 +62,7 @@ public class MAPVerifier extends AbstractPhaseInterceptor<Message> {
             (String)mapProperties.get(isOutbound 
                                       ? WSAddressingTest.OUTBOUND_KEY
                                       : WSAddressingTest.INBOUND_KEY);
-        AddressingPropertiesImpl maps = 
+        AddressingProperties maps = 
             (AddressingPropertiesImpl)message.get(mapProperty);
         if (ContextUtils.isRequestor(message)) {
             if (isOutbound) {

@@ -67,7 +67,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-common-utilities</artifactId>
+            <artifactId>cxf-api</artifactId>
         </dependency>
     </dependencies>
 

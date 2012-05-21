@@ -39,7 +39,7 @@
   <properties>
     <activemq.version>5.5.1</activemq.version>
     <camel.version>2.9.0</camel.version>
-    <cxf.version>2.5.2</cxf.version>
+    <cxf.version>2.6.0</cxf.version>
 
     <felix.obr.version>1.6.4</felix.obr.version>
 
