@@ -97,7 +97,7 @@ file in the examples parent directory.
 Running a Client
 ----------------
 
-You can browse WSDL at:
+You can browse WADL at:
 
 http://localhost:8181/cxf/crm/customerservice?_wadl&_type=xml
 
