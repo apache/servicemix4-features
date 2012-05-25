@@ -15,6 +15,35 @@
  * limitations under the License.
  */
 
+                      Apache ServiceMix 4.4.2
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.4.2 is a minor release of the OSGi based ServiceMix ESB platform.  This release contains a few core dependency
+upgrades as well as some additional bug fixes.  ServiceMix 4.4.2 includes the following dependencies:
+
+- Apache ActiveMQ 5.5.1 (http://activemq.apache.org)
+- Apache Camel 2.8.5 (http://camel.apache.org)
+- Apache CXF 2.4.6 (http://cxf.apache.org)
+- Apache Karaf 2.2.4 (http://karaf.apache.org)
+- Apache ServiceMix NMR 1.5.0
+- Apache ServiceMix JBI Components 2011.02
+
+ Changelog
+ ---------
+
+** Improvement
+    * [SMX4-1120] - remove some uncessary features
+
+** Task
+    * [SMX4-1109] - upgrade to wss4j 1.6.5 and xmlsec 1.5.1
+    * [SMX4-1143] - Upgrade to Camel 2.8.5
+
+** Wish
+    * [SMX4-944] - Provide a SMX test jar
+
+
                       Apache ServiceMix 4.4.1
                   ================================
  Overview
