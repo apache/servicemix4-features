@@ -41,6 +41,7 @@
         <module>cxf-ws-security-osgi</module>
         <module>cxf-ws-security-blueprint</module>
         <module>cxf-ws-rm</module>
+        <module>cxf-ws-security-signature</module>
     </modules>
 
 </project>

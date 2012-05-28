@@ -63,6 +63,11 @@ CXF examples
   Service, then it will leverage cxf JAASLoginInterceptor to authenticate against karaf
   default jaas configuration.
 
+- cxf-ws-security-signature
+  Create a web service with CXF using WS-SECURITY Signature action and expose it through the OSGi HTTP
+  Service, the main purpose is to demonstrate how to use signaturePropRefId WSS4J configuration in
+  OSGi container.
+
 
 Karaf examples
 ==============
