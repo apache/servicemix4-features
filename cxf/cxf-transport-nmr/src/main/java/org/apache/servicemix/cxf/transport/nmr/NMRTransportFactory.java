@@ -26,7 +26,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.configuration.Configurer;
@@ -56,7 +55,6 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
 
     private Collection<String> activationNamespaces;
 
-    @Resource
     public void setBus(Bus b) {
         bus = b;
     }
@@ -67,11 +65,6 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
     
     public Set<String> getUriPrefixes() {
         return Collections.singleton("nmr");
-    }
-
-    @Resource
-    public void setActivationNamespaces(Collection<String> ans) {
-        activationNamespaces = ans;
     }
 
     public NMR getNmr() {
