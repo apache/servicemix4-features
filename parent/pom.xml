@@ -43,7 +43,7 @@
 
     <felix.obr.version>1.6.4</felix.obr.version>
 
-    <karaf.version>2.2.4</karaf.version>
+    <karaf.version>2.2.7</karaf.version>
     <aries.version>0.3</aries.version>
 
     <servicemix.components.version>2012.01-SNAPSHOT</servicemix.components.version>
