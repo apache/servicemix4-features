@@ -209,7 +209,7 @@
         <wss4j.version>1.6.5</wss4j.version>
         <neethi.version>3.0.0</neethi.version>
         <xfire.version>1.0.1</xfire.version>
-        <xbean.version>3.7</xbean.version>
+        <xbean.version>3.11.1</xbean.version>
         <xmlschema.version>2.0</xmlschema.version>
     </properties>
 
