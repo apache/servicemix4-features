@@ -22,24 +22,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix</groupId>
-        <artifactId>parent</artifactId>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
         <version>4.5.0-SNAPSHOT</version>
-        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>examples</artifactId>
+    <artifactId>akka-examples</artifactId>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix :: Features :: Examples</name>
+    <name>Apache ServiceMix :: Examples :: Akka</name>
 
     <modules>
-        <module>activemq</module>
-        <!-- <module>akka</module>  commented out now until Akka OSGi bundle are available in a repo -->
-        <module>camel</module>
-        <module>cxf</module>
-        <module>jbi</module>
-        <module>nmr</module>
+        <module>akka-camel</module>
     </modules>
 
 </project>
