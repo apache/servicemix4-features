@@ -319,14 +319,16 @@
     <feature name="activiti" version="${activiti.version}" resolver="(obr)">
         <feature version="${cxf.version}">cxf-specs</feature>
         <feature version="${aries.version}">transaction</feature>
+        <feature version="${camel.version}">camel</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mybatis/${mybatis.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.scripting-api-1.0/${servicemix.specs.version}</bundle>
         <bundle dependency="true">mvn:commons-lang/commons-lang/${commons-lang.version}</bundle>
+        <bundle dependency="true">mvn:com.h2database/h2/${h2.version}</bundle>
         <bundle>mvn:org.activiti/activiti-engine/${activiti.version}</bundle>
         <bundle>mvn:org.activiti/activiti-osgi/${activiti.version}</bundle>
         <bundle>mvn:org.activiti/activiti-camel/${activiti.version}</bundle>
-        <bundle>mvn:org.apche.servicemix.activiti/org.apache.servicemix.activiti.config/${project.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.activiti/org.apache.servicemix.activiti.config/${project.version}</bundle>
     </feature>
 
 </features>

@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!--
-    
         Licensed to the Apache Software Foundation (ASF) under one or more
         contributor license agreements.  See the NOTICE file distributed with
         this work for additional information regarding copyright ownership.
@@ -22,25 +21,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.servicemix</groupId>
-        <artifactId>parent</artifactId>
+        <groupId>org.apache.servicemix.examples</groupId>
+        <artifactId>examples</artifactId>
         <version>4.5.0-SNAPSHOT</version>
-        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
     <groupId>org.apache.servicemix.examples</groupId>
-    <artifactId>examples</artifactId>
+    <artifactId>activiti-examples</artifactId>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix :: Features :: Examples</name>
+    <name>Apache ServiceMix :: Examples :: Activiti</name>
 
     <modules>
-        <module>activemq</module>
-        <module>activiti</module>
-        <!-- <module>akka</module>  commented out now until Akka OSGi bundle are available in a repo -->
-        <module>camel</module>
-        <module>cxf</module>
-        <module>jbi</module>
-        <module>nmr</module>
+        <module>activiti-camel</module>
     </modules>
 
 </project>
