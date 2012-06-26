@@ -37,6 +37,7 @@
 
     <modules>
         <module>parent</module>
+        <module>activiti</module>
         <module>branding</module>
         <module>camel</module>
         <module>cxf</module>
@@ -106,6 +107,18 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <!-- Alfresco repository contains Activiti artifacts -->
+        <repository>
+            <id>alfresco.public</id>
+            <name>Alfresco Public Repository</name>
+            <url>https://maven.alfresco.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <properties>
@@ -155,6 +168,7 @@
         <josql.bundle.version>1.5_4</josql.bundle.version>
         <jsmpp.bundle.version>2.1.0_2</jsmpp.bundle.version>
         <mvel.bundle.version>2.0.8_4</mvel.bundle.version>
+        <mybatis.bundle.version>3.0.2_1</mybatis.bundle.version>
         <opensaml.bundle.version>2.4.1_1</opensaml.bundle.version>
         <jodatime.bundle.version>1.5.2_2</jodatime.bundle.version>
         <oscore.bundle.version>2.2.4_4</oscore.bundle.version>
@@ -191,6 +205,7 @@
         <axiom.version>1.2.12</axiom.version>
         <bouncycastle.version>140</bouncycastle.version>
         <commons-jexl.version>2.0.1</commons-jexl.version>
+        <commons-lang.version>2.6</commons-lang.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <drools.version>5.1.1</drools.version>
         <groovy.version>1.8.3</groovy.version>

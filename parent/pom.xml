@@ -38,6 +38,7 @@
   <!-- Properties -->
   <properties>
     <activemq.version>5.5.1</activemq.version>
+    <activiti.version>5.9</activiti.version>
     <camel.version>2.9.0</camel.version>
     <cxf.version>2.6.1</cxf.version>
 
@@ -86,7 +87,24 @@
         <version>${project.version}</version>
       </dependency>
 
-      <!-- ServiceMix NMR -->
+      <dependency>
+        <groupId>org.activiti</groupId>
+        <artifactId>activiti-camel</artifactId>
+        <version>${activiti.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.activiti</groupId>
+        <artifactId>activiti-engine</artifactId>
+        <version>${activiti.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.activiti</groupId>
+        <artifactId>activiti-osgi</artifactId>
+        <version>${activiti.version}</version>
+      </dependency>
+
+
+        <!-- ServiceMix NMR -->
       <dependency>
         <groupId>org.apache.servicemix.nmr</groupId>
         <artifactId>apache-servicemix-nmr</artifactId>
