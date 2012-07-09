@@ -149,7 +149,7 @@
         <jaxb-impl.bundle.version>2.2.1.1_1</jaxb-impl.bundle.version>
         <jaxp-ri.bundle.version>1.4.4_2</jaxp-ri.bundle.version>
         <jdt-core.bundle.version>3.2.3_4</jdt-core.bundle.version>
-        <jdom.bundle.version>1.1_3</jdom.bundle.version>
+        <jdom.bundle.version>1.1_4</jdom.bundle.version>
         <jetty6.bundle.version>6.1.26_1</jetty6.bundle.version>
         <jruby.bundle.version>1.1.2_3</jruby.bundle.version>
         <josql.bundle.version>1.5_4</josql.bundle.version>
