@@ -99,14 +99,17 @@
                     <artifactId>cxf-rt-frontend-jaxrs</artifactId>
                 </exclusion>
             </exclusions>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-jetty</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-http</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>
@@ -126,6 +129,7 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>bouncycastle</groupId>
@@ -135,6 +139,7 @@
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-jaxws_2.2_spec</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>xfire</groupId>
@@ -231,9 +236,9 @@
                 <executions>
                     <execution>
                         <id>generate-test-sources</id>
-                        <phase>generate-sources</phase>
+                        <phase>generate-test-sources</phase>
                         <configuration>
-                            <sourceRoot>${basedir}/target/generated/test/java</sourceRoot>
+                            <testSourceRoot>${basedir}/target/generated/test/java</testSourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${basedir}/src/test/resources/person.wsdl</wsdl>
