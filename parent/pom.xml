@@ -40,7 +40,7 @@
     <activemq.version>5.5.1</activemq.version>
     <activiti.version>5.9</activiti.version>
     <camel.version>2.9.0</camel.version>
-    <cxf.version>2.6.1</cxf.version>
+    <cxf.version>2.6.2</cxf.version>
 
     <felix.obr.version>1.6.4</felix.obr.version>
 
@@ -601,6 +601,11 @@
       <dependency>
         <groupId>org.apache.servicemix.specs</groupId>
         <artifactId>org.apache.servicemix.specs.jsr311-api-1.1.1</artifactId>
+        <version>${servicemix.specs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.servicemix.specs</groupId>
+        <artifactId>org.apache.servicemix.specs.java-persistence-api-2.0</artifactId>
         <version>${servicemix.specs.version}</version>
       </dependency>
       <dependency>

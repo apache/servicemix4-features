@@ -79,6 +79,10 @@
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.dom4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.ant</artifactId>
         </dependency>
         <dependency>
@@ -255,6 +259,10 @@
             <groupId>org.apache.servicemix.examples</groupId>
             <artifactId>cxf-nmr</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.java-persistence-api-2.0</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
