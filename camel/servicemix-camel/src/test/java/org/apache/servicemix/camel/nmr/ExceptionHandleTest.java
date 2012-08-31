@@ -52,7 +52,7 @@ public class ExceptionHandleTest extends CamelTestSupport {
     protected static final String SERVICE_ADDRESS = "local://smx/hello_world";
     protected static final String SERVICE_CLASS = "serviceClass=org.apache.hello_world_soap_http.Greeter";
     private static final String WSDL_LOCATION = "wsdlURL=/wsdl/hello_world.wsdl";
-    private static final String SERVICE_NAME = "serviceName=%7bhttp://apache.org/hello_world_soap_http%7dSOAPService";
+    private static final String SERVICE_NAME = "serviceName={http://apache.org/hello_world_soap_http}SOAPService";
 
     private String routerEndpointURI = "cxf://" + ROUTER_ADDRESS + "?" + SERVICE_CLASS 
         + "&" + WSDL_LOCATION + "&" + SERVICE_NAME + "&dataFormat=POJO&bus=#Bus";
