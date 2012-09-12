@@ -44,7 +44,7 @@
 
     <felix.obr.version>1.6.4</felix.obr.version>
 
-    <karaf.version>2.2.7</karaf.version>
+    <karaf.version>2.2.9</karaf.version>
     <aries.version>0.3</aries.version>
     <pax.logging.version>1.6.5</pax.logging.version>
 
