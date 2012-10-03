@@ -24,12 +24,12 @@
 
     <parent>
         <groupId>org.apache.servicemix.logging</groupId>
-        <artifactId>osgi-logging</artifactId>
+        <artifactId>logging</artifactId>
         <version>4.5.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>pax-jms-appender</artifactId>
-    <name>Apache ServiceMix :: Features :: Pax Logging Support :: JMS Appender</name>
+    <artifactId>jms-appender</artifactId>
+    <name>Apache ServiceMix :: Features :: Logging :: JMS Appender</name>
 
     <packaging>bundle</packaging>
 
@@ -80,7 +80,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
                             *
                         </Import-Package>

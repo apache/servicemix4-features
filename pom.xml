@@ -40,7 +40,7 @@
         <module>activiti</module>
         <module>branding</module>
         <module>camel</module>
-        <module>osgi-logging</module>
+        <module>logging</module>
         <module>cxf</module>
         <module>examples</module>
         <module>itests</module>

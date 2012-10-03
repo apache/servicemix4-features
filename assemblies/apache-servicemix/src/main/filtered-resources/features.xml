@@ -317,7 +317,7 @@
 
     <feature name="jms-appender" version="${version}" resolver="(obr)" start-level="50">
         <feature version="${version}">activemq-broker</feature>
-        <bundle>mvn:org.apache.servicemix.logging/pax-jms-appender/${version}</bundle>
+        <bundle>mvn:org.apache.servicemix.logging/jms-appender/${version}</bundle>
     </feature>
 
     <!-- Activiti support -->

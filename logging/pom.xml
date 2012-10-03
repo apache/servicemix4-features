@@ -28,9 +28,9 @@
     </parent>
 
     <groupId>org.apache.servicemix.logging</groupId>
-    <artifactId>osgi-logging</artifactId>
+    <artifactId>logging</artifactId>
     <packaging>pom</packaging>
-    <name>Apache ServiceMix :: Features :: Pax Logging Support</name>
+    <name>Apache ServiceMix :: Features :: Logging</name>
 
     <modules>
         <module>jms-appender</module>
