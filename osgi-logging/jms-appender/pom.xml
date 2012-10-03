@@ -34,20 +34,41 @@
     <packaging>bundle</packaging>
 
     <dependencies>
+         <dependency>
+            <groupId>org.ops4j.pax.logging</groupId>
+            <artifactId>pax-logging-service</artifactId>
+            <version>${pax.logging.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.ops4j.pax.logging</groupId>
             <artifactId>pax-logging-api</artifactId>
             <version>${pax.logging.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.ops4j.pax.logging</groupId>
-            <artifactId>pax-logging-service</artifactId>
-            <version>${pax.logging.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
             <version>${activemq.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20090211</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -61,16 +82,14 @@
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Import-Package>
-                            org.ops4j.pax.logging;resolution:=optional,
-                            org.osgi.service.blueprint;resolution:=optional,
-                            org.ops4j.pax.logging.spi*;resolution:=optional,
-                            org.slf4j,
-                            javax.jms,
-                            org.apache.activemq
+                            *
                         </Import-Package>
-                        <Export-Package>
-                            org.apache.servicemix.logging
-                        </Export-Package>
+                        <Private-Package>
+                            org.apache.servicemix.logging.jms
+                        </Private-Package>
+                        <Embed-Dependency>
+                            json
+                        </Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>

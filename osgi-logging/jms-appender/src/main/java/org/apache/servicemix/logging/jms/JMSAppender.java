@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.servicemix.logging;
+package org.apache.servicemix.logging.jms;
 
 import org.ops4j.pax.logging.spi.PaxAppender;
 import org.ops4j.pax.logging.spi.PaxLoggingEvent;
@@ -22,12 +22,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jms.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class JMSAppender implements PaxAppender {
 
     private static final transient Logger LOG = LoggerFactory.getLogger(JMSAppender.class);
+
+    private static final String DEFAULT_EVENT_FORMAT = "default";
+    private static final String LOGSTASH_EVENT_FORMAT = "logstash";
+
 
     private ConnectionFactory jmsConnectionFactory;
     private Connection connection;
@@ -36,13 +38,14 @@ public class JMSAppender implements PaxAppender {
     private Topic topic;
     private String destinationName;
 
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+    private LoggingEventFormat format = new DefaultLoggingEventFormat();
+
+
 
     public void init() {
         /*
         * Create connection. Create session from connection; false means
         * session is not transacted.
-        * Finally, close connection.
         */
         try {
             connection = jmsConnectionFactory.createConnection();
@@ -70,56 +73,14 @@ public class JMSAppender implements PaxAppender {
     }
 
     public void doAppend(PaxLoggingEvent paxLoggingEvent) {
-
         try {
-            StringBuilder writer = new StringBuilder();
-
-            writer.append("Error");
-            writer.append(",\n  \"timestamp\" : " + formatDate(paxLoggingEvent.getTimeStamp()));
-            writer.append(",\n  \"level\" : " + paxLoggingEvent.getLevel().toString());
-            writer.append(",\n  \"logger\" : " + paxLoggingEvent.getLoggerName());
-            writer.append(",\n  \"thread\" : " + paxLoggingEvent.getThreadName());
-            writer.append(",\n  \"message\" : " + paxLoggingEvent.getMessage());
-
-            String[] throwable = paxLoggingEvent.getThrowableStrRep();
-            if (throwable != null) {
-                writer.append(",\n  \"exception\" : [");
-                for (int i = 0; i < throwable.length; i++) {
-                    if (i != 0)
-                        writer.append(", " + throwable[i]);
-                }
-                writer.append("]");
-            }
-
-            writer.append(",\n  \"properties\" : { ");
-            boolean first = true;
-            for (Object key : paxLoggingEvent.getProperties().keySet()) {
-                if (first) {
-                    first = false;
-                } else {
-                    writer.append(", ");
-                }
-                writer.append("key : " + key.toString());
-                writer.append(": " + paxLoggingEvent.getProperties().get(key).toString());
-            }
-            writer.append(" }");
-            writer.append("\n}");
-
             // Send message to the destination
             TextMessage message = session.createTextMessage();
-            message.setText(writer.toString());
+            message.setText(format.toString(paxLoggingEvent));
             publisher.send(message);
-
-            // System.out.println(">> Message created : " + writer.toString());
-
-        } catch (Exception e) {
+        } catch (JMSException e) {
             e.printStackTrace();
         }
-
-    }
-
-    private String formatDate(long timestamp) {
-        return simpleDateFormat.format(new Date(timestamp));
     }
 
     public void setJmsConnectionFactory(ConnectionFactory jmsConnectionFactory) {
@@ -130,4 +91,11 @@ public class JMSAppender implements PaxAppender {
         this.destinationName = destinationName;
     }
 
+    public void setFormat(String name) {
+        if (LOGSTASH_EVENT_FORMAT.equals(name)) {
+            format = new LogstashEventFormat();
+        } else {
+            format = new DefaultLoggingEventFormat();
+        }
+    }
 }
