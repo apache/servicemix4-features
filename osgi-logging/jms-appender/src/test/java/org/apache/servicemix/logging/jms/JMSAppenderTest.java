@@ -17,17 +17,12 @@
 package org.apache.servicemix.logging.jms;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.camel.component.ActiveMQComponent;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.test.junit4.CamelTestSupport;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggingEvent;
-import org.junit.Before;
-import org.junit.Test;
-import org.ops4j.pax.logging.service.internal.PaxLoggingEventImpl;
-import org.ops4j.pax.logging.spi.PaxLoggingEvent;
+import org.junit.*;
 
 import javax.naming.Context;
 
@@ -36,17 +31,30 @@ import javax.naming.Context;
  */
 public class JMSAppenderTest extends CamelTestSupport {
 
-    private static final String BROKER_URL = "vm://test.broker?broker.persistent=false";
     private static final String EVENTS_TOPIC = "Events";
 
     private JMSAppender appender;
+    private static BrokerService broker;
+
+    @BeforeClass
+    public static void setupBroker() throws Exception {
+        broker = new BrokerService();
+        broker.setPersistent(false);
+        broker.setUseJmx(false);
+        broker.setBrokerName("test.broker");
+        broker.start();
+    }
 
     @Before
     public void setupBrokerAndAppender() throws Exception {
         appender = new JMSAppender();
-        appender.setJmsConnectionFactory(new ActiveMQConnectionFactory(BROKER_URL));
+        appender.setJmsConnectionFactory(new ActiveMQConnectionFactory(broker.getVmConnectorURI().toString() + "?create=false"));
         appender.setDestinationName(EVENTS_TOPIC);
-        appender.init();
+    }
+
+    @AfterClass
+    public static void stopBroker() throws Exception {
+        broker.stop();
     }
 
     @Test
@@ -59,20 +67,39 @@ public class JMSAppenderTest extends CamelTestSupport {
         assertMockEndpointsSatisfied();
     }
 
-    @Override
-    protected Context createJndiContext() throws Exception {
-        Context context = super.createJndiContext();
-        context.bind("amq", ActiveMQComponent.activeMQComponent(BROKER_URL));
-        return context;
+    @Test
+    public void testReconnectToBroker() throws Exception {
+        MockEndpoint events = getMockEndpoint("mock:events");
+        events.expectedMessageCount(2);
+
+        appender.doAppend(MockEvents.createInfoEvent());
+
+        // let's tamper with the underlying JMS connection, causing us to get an exception on the next log event
+        // afterwards, the appender should recover and start logging again automatically
+        appender.getOrCreateConnection().close();
+        appender.doAppend(MockEvents.createInfoEvent());
+
+        appender.doAppend(MockEvents.createInfoEvent());
+
+        assertMockEndpointsSatisfied();
+
+
     }
 
     @Override
-    protected RouteBuilder createRouteBuilder() throws Exception {
+    protected Context createJndiContext() throws Exception {
+        Context context = super.createJndiContext();
+        context.bind("amq", ActiveMQComponent.activeMQComponent(broker.getVmConnectorURI().toString() + "?create=false"));
+        return context;
+    }
+
+     @Override
+     protected RouteBuilder createRouteBuilder() throws Exception {
         return new RouteBuilder() {
             @Override
             public void configure() throws Exception {
                 from("amq:topic://" + EVENTS_TOPIC).to("mock:events");
             }
         };
-    }
+     }
 }

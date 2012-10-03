@@ -34,52 +34,25 @@ public class JMSAppender implements PaxAppender {
     private ConnectionFactory jmsConnectionFactory;
     private Connection connection;
     private Session session;
-    private MessageProducer publisher;
-    private Topic topic;
+    private MessageProducer producer;
     private String destinationName;
 
     private LoggingEventFormat format = new DefaultLoggingEventFormat();
 
-
-
-    public void init() {
-        /*
-        * Create connection. Create session from connection; false means
-        * session is not transacted.
-        */
-        try {
-            connection = jmsConnectionFactory.createConnection();
-            session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            topic = session.createTopic(destinationName);
-            publisher = session.createProducer(topic);
-            publisher.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
-
-            LOG.debug("Connection created with ActiveMQ for JMS Pax Appender.");
-
-        } catch (JMSException e) {
-            LOG.error(e.getMessage());
-        }
-    }
-
     public void close() {
-        if (connection != null) {
-            try {
-                connection.close();
-                LOG.debug("Connection closed with ActiveMQ for JMS Pax Appender.");
-            } catch (JMSException e) {
-                LOG.error(e.getMessage());
-            }
-        }
+        closeJMSResources();
     }
 
     public void doAppend(PaxLoggingEvent paxLoggingEvent) {
         try {
             // Send message to the destination
-            TextMessage message = session.createTextMessage();
+            TextMessage message = getOrCreateSession().createTextMessage();
             message.setText(format.toString(paxLoggingEvent));
-            publisher.send(message);
+            getOrCreatePublisher().send(message);
         } catch (JMSException e) {
-            e.printStackTrace();
+            LOG.warn("Exception caught while sending log event - reinitializing JMS resources to recover", e);
+            closeJMSResources();
+
         }
     }
 
@@ -96,6 +69,53 @@ public class JMSAppender implements PaxAppender {
             format = new LogstashEventFormat();
         } else {
             format = new DefaultLoggingEventFormat();
+        }
+    }
+
+    protected Connection getOrCreateConnection() throws JMSException {
+        if (connection == null) {
+            connection = jmsConnectionFactory.createConnection();
+        }
+        return connection;
+    }
+
+    protected Session getOrCreateSession() throws JMSException {
+        if (session == null) {
+            session = getOrCreateConnection().createSession(false, Session.AUTO_ACKNOWLEDGE);
+        }
+        return session;
+    }
+
+    protected MessageProducer getOrCreatePublisher() throws JMSException {
+        if (producer == null) {
+            Destination topic = session.createTopic(destinationName);
+            producer = session.createProducer(topic);
+            producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+        }
+
+        return producer;
+    }
+
+    private void closeJMSResources() {
+        try {
+            if (producer != null) {
+                producer.close();
+                producer = null;
+            }
+            if (session != null) {
+                session.close();
+                session = null;
+            }
+            if (connection != null) {
+                connection.close();
+                connection = null;
+            }
+        } catch (JMSException e) {
+            LOG.debug("Exception caught while closing JMS resources", e);
+            // let's just set all the fields to null so stuff will be re-created
+            producer = null;
+            session = null;
+            connection = null;
         }
     }
 }

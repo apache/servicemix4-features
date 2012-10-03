@@ -25,7 +25,7 @@
     <!-- Need OSGI JMS Connection Factory Service exposed  -->
     <reference id="jmsConnectionFactory" interface="javax.jms.ConnectionFactory"/>
 
-    <bean id="appender" class="org.apache.servicemix.logging.jms.JMSAppender" init-method="init" destroy-method="close">
+    <bean id="appender" class="org.apache.servicemix.logging.jms.JMSAppender" destroy-method="close">
         <property name="jmsConnectionFactory" ref="jmsConnectionFactory"/>
         <property name="destinationName" value="${destinationName}" />
         <property name="format" value="${format}"/>
