@@ -20,7 +20,12 @@
            xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
            xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0">
 
-    <cm:property-placeholder persistent-id="org.apache.servicemix.logging" update-strategy="reload"/>
+    <cm:property-placeholder persistent-id="org.apache.servicemix.logging.jms" update-strategy="reload">
+        <cm:default-properties>
+            <cm:property name="destinationName" value="Logging.Events"/>
+            <cm:property name="format" value="default"/>
+        </cm:default-properties>
+    </cm:property-placeholder>
 
     <!-- Need OSGI JMS Connection Factory Service exposed  -->
     <reference id="jmsConnectionFactory" interface="javax.jms.ConnectionFactory"/>
