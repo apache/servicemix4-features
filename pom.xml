@@ -156,7 +156,7 @@
         <commons-httpclient.bundle.version>3.1_6</commons-httpclient.bundle.version>
         <commons-lang.bundle.version>2.4_4</commons-lang.bundle.version>
         <commons-net.bundle.version>2.2</commons-net.bundle.version>
-        <commons-pool.bundle.version>1.5.4_2</commons-pool.bundle.version>
+        <commons-pool.version>1.6</commons-pool.version>
         <commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
         <drools.bundle.version>5.1.1_1</drools.bundle.version>
         <fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
@@ -370,9 +370,9 @@
                <version>${commons-net.bundle.version}</version>
            </dependency>
            <dependency>
-               <groupId>org.apache.servicemix.bundles</groupId>
-               <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
-               <version>${commons-pool.bundle.version}</version>
+               <groupId>commons-pool</groupId>
+               <artifactId>commons-pool</artifactId>
+               <version>${commons-pool.version}</version>
            </dependency>
            <dependency>
                <groupId>org.apache.servicemix.bundles</groupId>

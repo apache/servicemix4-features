@@ -37,7 +37,7 @@
 
   <!-- Properties -->
   <properties>
-    <activemq.version>5.5.1</activemq.version>
+    <activemq.version>5.7.0</activemq.version>
     <activiti.version>5.9</activiti.version>
     <camel.version>2.10.1</camel.version>
     <cxf.version>2.6.2</cxf.version>
