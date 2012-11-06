@@ -46,6 +46,7 @@
 
     <karaf.version>2.2.9</karaf.version>
     <aries.version>0.3</aries.version>
+    <aries.transaction.version>0.3.1</aries.transaction.version>
     <pax.logging.version>1.6.5</pax.logging.version>
 
     <servicemix.components.version>2012.01-SNAPSHOT</servicemix.components.version>

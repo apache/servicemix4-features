@@ -24,7 +24,7 @@
 
 
     <feature name="connector" version="${version}" resolver="(obr)" start-level='50'>
-        <feature version="${aries.version}">transaction</feature>
+        <feature version="${aries.transaction.version}">transaction</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-j2ee-connector_1.5_spec/${geronimo-j2ee-connector.version}</bundle>
         <bundle>mvn:org.apache.geronimo.components/geronimo-connector/${geronimo-connector.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${geronimo-jms.version}</bundle>
@@ -328,7 +328,7 @@
     <!-- Activiti support -->
     <feature name="activiti" version="${activiti.version}" resolver="(obr)">
         <feature version="${cxf.version}">cxf-specs</feature>
-        <feature version="${aries.version}">transaction</feature>
+        <feature version="${aries.transaction.version}">transaction</feature>
         <feature version="${camel.version}">camel</feature>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${wsdl4j.bundle.version}</bundle>
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.mybatis/${mybatis.bundle.version}</bundle>
