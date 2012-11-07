@@ -149,6 +149,13 @@
         <bundle>mvn:org.apache.servicemix.examples/org.apache.servicemix.examples.nmr.client/${pom.version}</bundle>
     </feature>
 
+    <feature name="examples-activiti-camel" version="${version}" resolver="(obr)">
+	      <feature version="${camel.version}">camel-core</feature>
+        <feature version="${activiti.version}">activiti</feature>
+        <bundle>mvn:org.apache.servicemix.examples/activiti-camel/${version}</bundle>
+    </feature>
+
+
     <!--
       -
       -  JBI Components

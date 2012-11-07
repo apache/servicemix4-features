@@ -31,6 +31,7 @@
             <lineEnding>unix</lineEnding>
             <includes>
                 <include>activemq/**</include>
+                <include>activiti/**</include>
                 <include>camel/**</include>
                 <include>cxf/**</include>
             </includes>
@@ -56,6 +57,7 @@
             <includes>
                 <include>README.txt</include>
                 <include>activemq/**/README.txt</include>
+                <include>activiti/**/README.txt</include>
                 <include>camel/**/README.txt</include>
                 <include>cxf/**/README.txt</include>
             </includes>

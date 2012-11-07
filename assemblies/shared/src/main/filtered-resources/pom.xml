@@ -34,6 +34,7 @@
 
     <modules>
         <module>activemq</module>
+        <module>activiti</module>
         <module>camel</module>
         <module>cxf</module>
         <module>karaf</module>
