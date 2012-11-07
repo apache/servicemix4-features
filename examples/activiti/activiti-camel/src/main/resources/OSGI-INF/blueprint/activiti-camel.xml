@@ -34,16 +34,6 @@
     <reference id="runtimeService" interface="org.activiti.engine.RuntimeService" />
 
     <!--
-        In Activiti 5.9, the ActivitiComponent does not have a default constructor, so you
-        have to explicitly instantiate it here
-
-        This will not be necessary any more in later versions of Activiti
-    -->
-    <bean id="activiti" class="org.activiti.camel.ActivitiComponent">
-        <argument ref="camelContext" />
-    </bean>
-
-    <!--
         Register a context provider to link the Camel context to the OrderProcess definition.
         Doing this will allow your BPMN process to communicate with the Camel routes using the
         ${camel} expression
