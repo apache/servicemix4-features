@@ -25,7 +25,9 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -144,10 +146,18 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             }
             inMessage.setAttachments(cxfAttachmentList);
             
-            //copy properties
+            //copy properties and setup the cxf protocol header
+            Map<String, List<String>> protocolHeaders = new TreeMap<String, List<String>>(String.CASE_INSENSITIVE_ORDER);
+            inMessage.put(Message.PROTOCOL_HEADERS, protocolHeaders);
+
             for (Map.Entry<String, Object> ent : nm.getHeaders().entrySet()) {
                 if (!ent.getKey().equals(Message.REQUESTOR_ROLE)) {
                     inMessage.put(ent.getKey(), ent.getValue());
+                }
+                if (ent.getValue() instanceof String) {
+            	    List<String> value = new ArrayList<String>();
+            	    value.add((String)ent.getValue());
+            	    protocolHeaders.put(ent.getKey(), value);
                 }
             }
             
