@@ -22,6 +22,8 @@ package org.apache.servicemix.cxf.transport.nmr;
 import java.io.ByteArrayInputStream;
 import java.security.AccessController;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import javax.security.auth.Subject;
@@ -129,7 +131,9 @@ public class NMRDestinationTest extends AbstractJBITest {
         EasyMock.expect(xchg.getStatus()).andReturn(Status.Active);
         EasyMock.expect(xchg.getIn()).andReturn(inMsg);
         EasyMock.expect(inMsg.getAttachments()).andReturn(new HashMap<String, Object>());
-        EasyMock.expect(inMsg.getHeaders()).andReturn(new HashMap<String, Object>());
+        Map<String, Object> nmrHeaders = new HashMap<String, Object>();
+        nmrHeaders.put("hello", "world");
+        EasyMock.expect(inMsg.getHeaders()).andReturn(nmrHeaders);
         Source source = new StreamSource(new ByteArrayInputStream(
                             "<message>TestHelloWorld</message>".getBytes()));
         EasyMock.expect(inMsg.getBody(Source.class)).andReturn(source);
@@ -145,6 +149,9 @@ public class NMRDestinationTest extends AbstractJBITest {
         destination.setMessageObserver(observer);
         destination.process(xchg);
         assertNotNull(inMessage);
+        @SuppressWarnings("unchecked")
+		Map<String, List<String>> protocolHeaders = (Map<String, List<String>>)inMessage.get(Message.PROTOCOL_HEADERS);
+        assertEquals("We should get a right protocol headers", "world", protocolHeaders.get("hello").get(0));
     }
     
     @Test
