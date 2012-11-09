@@ -17,7 +17,8 @@
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
            xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
            xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0"
-           xmlns:amq="http://activemq.apache.org/schema/core">
+           xmlns:amq="http://activemq.apache.org/schema/core"
+           xmlns:blueprint="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
     <manifest>
       Export-Service = javax.jms.ConnectionFactory
@@ -26,8 +27,7 @@
     <!-- Allows us to use system properties as variables in this configuration file -->
     <ext:property-placeholder />
 
-    <broker xmlns="http://activemq.apache.org/schema/core" brokerName="default" dataDirectory="${karaf.data}/activemq/default" useShutdownHook="false">
-
+    <broker xmlns="http://activemq.apache.org/schema/core" blueprint:id="broker" brokerName="default" dataDirectory="${karaf.data}/activemq/default" useShutdownHook="false">
        <!--
             For better performances use VM cursor and small memory limit.
             For more information, see:
@@ -107,7 +107,7 @@
 
     </broker>
 
-    <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+    <bean id="activemqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory" depends-on="broker">
 
         <property name="brokerURL" value="vm://default?create=false&amp;waitForStart=10000" />
     </bean>
@@ -118,12 +118,12 @@
     </bean>
 
     <bean id="resourceManager" class="org.apache.activemq.pool.ActiveMQResourceManager" init-method="recoverResource">
-          <property name="transactionManager" ref="transactionManager" />
-          <property name="connectionFactory" ref="activemqConnectionFactory" />
-          <property name="resourceName" value="activemq.default" />
+        <property name="transactionManager" ref="recoverableTxManager" />
+        <property name="connectionFactory" ref="activemqConnectionFactory" />
+        <property name="resourceName" value="activemq.${name}" />
     </bean>
 
-    <reference id="transactionManager" interface="javax.transaction.TransactionManager" />
+    <reference id="recoverableTxManager" interface="org.apache.geronimo.transaction.manager.RecoverableTransactionManager" availability="mandatory" />
 
     <service ref="pooledConnectionFactory" interface="javax.jms.ConnectionFactory">
         <service-properties>
