@@ -37,6 +37,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="transactionManager" ref="transactionManager"/>
         <property name="databaseSchemaUpdate" value="true"/>
+        <property name="transactionsExternallyManaged" value="true" />
     </bean>
 
     <!--
