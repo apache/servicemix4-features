@@ -42,6 +42,11 @@
             <artifactId>cxf-api</artifactId>
             <version>${cxf.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -58,7 +63,8 @@
                             javax.wsdl,
                             javax.xml.namespace,
                             org.apache.cxf.helpers,
-                            org.osgi.service.blueprint
+                            org.osgi.service.blueprint,
+                            *
                         </Import-Package>
                         <Export-Package>
                             org.apache.servicemix.examples.cxf

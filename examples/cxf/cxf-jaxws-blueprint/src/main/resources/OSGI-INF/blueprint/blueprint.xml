@@ -35,7 +35,9 @@ http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/ja
     <jaxws:endpoint id="helloWorld"
                     implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
                     address="/HelloWorld">
-       
+        <jaxws:outInterceptors>
+            <bean class="org.apache.servicemix.examples.cxf.EnableCORSInterceptor"/>
+        </jaxws:outInterceptors>
     </jaxws:endpoint>
 
 </blueprint>
