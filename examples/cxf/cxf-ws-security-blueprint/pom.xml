@@ -80,6 +80,7 @@
                             org.apache.ws.security,
                             org.apache.ws.security.processor,
                             org.apache.cxf.interceptor.security,
+                            org.apache.cxf.transport.http,
                             org.apache.cxf, org.apache.cxf.endpoint, org.apache.cxf.frontend, org.apache.cxf.interceptor, org.apache.cxf.jaxws, org.apache.cxf.message, org.apache.cxf.phase
                         </Import-Package>
                         <Export-Package>org.apache.servicemix.examples.cxf</Export-Package>
