@@ -40,6 +40,9 @@ under the License.
             </bean>
             <ref bean="authenticationInterceptor"/>
         </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <bean class="org.apache.servicemix.examples.cxf.EnableCORSInterceptor"/>
+        </jaxws:outInterceptors>
         <jaxws:properties>
             <entry key="ws-security.validate.token" value="false"/>
         </jaxws:properties>
