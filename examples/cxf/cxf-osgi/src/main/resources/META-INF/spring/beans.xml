@@ -28,7 +28,11 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
     <jaxws:endpoint id="helloWorld"
                     implementor="org.apache.servicemix.examples.cxf.HelloWorldImpl"
-                    address="/HelloWorld"/>
+                    address="/HelloWorld">
+        <jaxws:outInterceptors>
+            <bean class="org.apache.servicemix.examples.cxf.EnableCORSInterceptor"/>
+        </jaxws:outInterceptors>
+    </jaxws:endpoint>
 
 </beans>
 <!-- END SNIPPET: beans -->

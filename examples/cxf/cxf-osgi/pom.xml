@@ -40,6 +40,17 @@
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-utils</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-security</artifactId>
+            <version>${cxf.version}</version>
         </dependency>
     </dependencies>
 
@@ -57,7 +68,8 @@
                             javax.wsdl,
                             javax.xml.namespace,
                             org.apache.servicemix.util,
-                            org.springframework.beans.factory.config
+                            org.springframework.beans.factory.config,
+                            *
                         </Import-Package>
                         <Export-Package>
                             org.apache.servicemix.examples.cxf
