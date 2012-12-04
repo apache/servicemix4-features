@@ -42,6 +42,9 @@
             <jaxws:features>
                 <bean class="org.apache.cxf.feature.LoggingFeature"/>
             </jaxws:features>
+            <jaxws:outInterceptors>
+                <bean class="org.apache.servicemix.examples.cxf.EnableCORSInterceptor"/>
+            </jaxws:outInterceptors>
         </jaxws:endpoint>
 
        

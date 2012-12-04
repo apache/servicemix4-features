@@ -39,12 +39,18 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix</groupId>
             <artifactId>servicemix-utils</artifactId>
+            <version>1.5.0</version>
         </dependency>
     </dependencies>
 
@@ -101,6 +107,8 @@
                             org.apache.cxf.ws.addressing,
                             org.apache.cxf.ws.addressing.soap,
                             org.apache.servicemix.util,
+                            org.apache.cxf.message, 
+                            org.apache.cxf.phase,
                             org.springframework.beans.factory.config
                         </Import-Package>
                         <Export-Package>
