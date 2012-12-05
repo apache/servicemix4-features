@@ -88,11 +88,11 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                 LOG.fine(new org.apache.cxf.common.i18n.Message("CREATE.NORMALIZED.MESSAGE", LOG).toString());
                 if (inMessage.getExchange().getOutFaultMessage() != null) {
                     org.apache.cxf.interceptor.Fault f = (org.apache.cxf.interceptor.Fault) inMessage.getContent(Exception.class);
-                    if (f.hasDetails()) {
-                        xchng.getFault().setBody(new DOMSource(doc));
-                    } else {
+                    if (!f.hasDetails()) {
                         xchng.setError(f);
                     }
+                    // As the fault is already marshalled by the fault handler
+                    xchng.getFault().setBody(new DOMSource(doc));
                 } else {
                     //copy attachments
                     if (outMessage != null && outMessage.getAttachments() != null) {
