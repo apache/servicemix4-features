@@ -143,9 +143,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>bouncycastle</groupId>
-            <artifactId>bcprov-jdk14</artifactId>
-            <scope>runtime</scope>
+             <groupId>org.bouncycastle</groupId>
+             <artifactId>bcprov-jdk15on</artifactId>
+             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
