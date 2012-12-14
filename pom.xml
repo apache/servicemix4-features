@@ -187,7 +187,7 @@
         <xerces.bundle.version>2.9.1_4</xerces.bundle.version>
         <xmlbeans.bundle.version>2.5.0_1</xmlbeans.bundle.version>
         <xmlresolver.bundle.version>1.2_3</xmlresolver.bundle.version>
-        <xmlsec.bundle.version>1.5.2</xmlsec.bundle.version>
+        <xmlsec.bundle.version>1.5.1</xmlsec.bundle.version>
 
         <!-- ServiceMix legal shared resources -->
         <servicemix.legal.version>1.0</servicemix.legal.version>
@@ -204,7 +204,7 @@
 
         <!-- Other Dependencies -->
         <axiom.version>1.2.12</axiom.version>
-        <bouncycastle.version>1.47</bouncycastle.version>
+        <bouncycastle.version>140</bouncycastle.version>
         <commons-jexl.version>2.0.1</commons-jexl.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-logging.version>1.1.1</commons-logging.version>
@@ -224,7 +224,7 @@
         <scriptengines.version>1.1</scriptengines.version>
         <spring.version>3.0.7.RELEASE</spring.version>
         <spring.osgi.version>1.2.1</spring.osgi.version>
-        <wss4j.version>1.6.8</wss4j.version>
+        <wss4j.version>1.6.7</wss4j.version>
         <neethi.version>3.0.0</neethi.version>
         <xfire.version>1.0.1</xfire.version>
         <xbean.version>3.11.1</xbean.version>
@@ -523,8 +523,8 @@
            
            <!-- Other Dependencies -->
            <dependency>
-               <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15on</artifactId>
+               <groupId>bouncycastle</groupId>
+               <artifactId>bcprov-jdk14</artifactId>
                <version>${bouncycastle.version}</version>
            </dependency>
            <dependency>
