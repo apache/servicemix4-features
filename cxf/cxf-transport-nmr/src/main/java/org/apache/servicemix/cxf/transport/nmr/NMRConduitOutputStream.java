@@ -101,8 +101,12 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             assert ws != null;
             QName interfaceName = new QName(ws.targetNamespace(), ws.name());
             QName serviceName;
+            String address = null;
+            String portName = null;
             if (target != null) {
                 serviceName = EndpointReferenceUtils.getServiceName(target, conduit.getBus());
+                address = EndpointReferenceUtils.getAddress(target);
+                portName = EndpointReferenceUtils.getPortName(target);
             } else {
                 serviceName = message.getExchange().get(org.apache.cxf.service.Service.class).getName();
             }
@@ -151,6 +155,18 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             }
             if (serviceName != null) {
                 refProps.put(Endpoint.SERVICE_NAME, serviceName.toString());
+            }
+            
+            if (address != null && address.startsWith("nmr:")) {
+                if (address.indexOf("?") > 0) {
+                    refProps.put(Endpoint.NAME, address.substring(4, address.indexOf("?")));
+                } else {
+                    refProps.put(Endpoint.NAME, address.substring(4));
+                }
+            } else {
+                if (portName != null) {
+                    refProps.put(Endpoint.NAME, portName);
+                }
             }
             Reference ref = channel.getNMR().getEndpointRegistry().lookup(refProps);
             xchng.setTarget(ref);
