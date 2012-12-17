@@ -84,6 +84,12 @@
         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs-blueprint/${version}</bundle>
     </feature>
+    <feature name="examples-cxf-jaxws-blueprint" version="${version}" resolver="(obr)">
+        <feature version="${cxf.version}">cxf</feature>
+        <bundle dependency="true">mvn:org.springframework/spring-beans/${spring.version}</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/${commons-httpclient.bundle.version}</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-jaxws-blueprint/${version}</bundle>
+    </feature>
     <feature name="examples-cxf-nmr" version="${version}" resolver="(obr)">
         <feature version="${version}">cxf-nmr</feature>
         <bundle dependency="true">mvn:org.springframework/spring-beans/${spring.version}</bundle>
