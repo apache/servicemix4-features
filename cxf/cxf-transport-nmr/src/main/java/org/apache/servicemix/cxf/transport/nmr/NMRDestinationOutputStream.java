@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 import javax.security.auth.Subject;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamSource;
 
 import org.w3c.dom.Document;
 
@@ -78,12 +78,8 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                 return;
             } else {
                 InputStream bais = getInputStream();
-                LOG.finest(new org.apache.cxf.common.i18n.Message("BUILDING.DOCUMENT", LOG).toString());
-                DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
-                docBuilderFactory.setNamespaceAware(true);
-                DocumentBuilder builder = docBuilderFactory.newDocumentBuilder();
-                Document doc = builder.parse(bais);
-            
+                StreamSource ss = new StreamSource(bais);
+                           
                 Exchange xchng = inMessage.get(Exchange.class);
                 LOG.fine(new org.apache.cxf.common.i18n.Message("CREATE.NORMALIZED.MESSAGE", LOG).toString());
                 if (inMessage.getExchange().getOutFaultMessage() != null) {
@@ -92,7 +88,7 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                         xchng.setError(f);
                     }
                     // As the fault is already marshalled by the fault handler
-                    xchng.getFault().setBody(new DOMSource(doc));
+                    xchng.getFault().setBody(ss);
                 } else {
                     //copy attachments
                     if (outMessage != null && outMessage.getAttachments() != null) {
@@ -115,7 +111,7 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
 
                     //copy securitySubject
                     xchng.getOut().setSecuritySubject((Subject) outMessage.get(NMRTransportFactory.NMR_SECURITY_SUBJECT));
-                    xchng.getOut().setBody(new DOMSource(doc));
+                    xchng.getOut().setBody(ss);
                 }
                 LOG.fine(new org.apache.cxf.common.i18n.Message("POST.DISPATCH", LOG).toString());
                 channel.send(xchng);
