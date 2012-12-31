@@ -39,7 +39,7 @@
   <properties>
     <activemq.version>5.7.0</activemq.version>
     <activiti.version>5.10</activiti.version>
-    <camel.version>2.10.2</camel.version>
+    <camel.version>2.10.3</camel.version>
     <cxf.version>2.6.3</cxf.version>
 
     <felix.obr.version>1.6.4</felix.obr.version>
@@ -51,7 +51,7 @@
 
     <servicemix.components.version>2012.01-SNAPSHOT</servicemix.components.version>
     <servicemix.nmr.version>1.6.0-SNAPSHOT</servicemix.nmr.version>
-    <servicemix.specs.version>2.1.0</servicemix.specs.version>
+    <servicemix.specs.version>2.2.0</servicemix.specs.version>
     <servicemix.utils.version>1.6.0-SNAPSHOT</servicemix.utils.version>
   </properties>
 
