@@ -49,10 +49,10 @@
     <aries.transaction.version>0.3.1</aries.transaction.version>
     <pax.logging.version>1.6.5</pax.logging.version>
 
-    <servicemix.components.version>2012.01-SNAPSHOT</servicemix.components.version>
-    <servicemix.nmr.version>1.6.0-SNAPSHOT</servicemix.nmr.version>
+    <servicemix.components.version>2013.01</servicemix.components.version>
+    <servicemix.nmr.version>1.6.0</servicemix.nmr.version>
     <servicemix.specs.version>2.2.0</servicemix.specs.version>
-    <servicemix.utils.version>1.6.0-SNAPSHOT</servicemix.utils.version>
+    <servicemix.utils.version>1.6.0</servicemix.utils.version>
   </properties>
 
   <!-- Managed dependencies -->
