@@ -24,13 +24,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Logger;
-
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
-
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.message.ExchangeImpl;
 import org.apache.cxf.message.Message;
@@ -71,6 +73,12 @@ public class NMRConduitTest extends AbstractJBITest {
         Class<org.apache.servicemix.cxf.transport.nmr.Greeter> greeterCls
             = org.apache.servicemix.cxf.transport.nmr.Greeter.class;
         message.put(Method.class.getName(), greeterCls.getMethod("sayHi"));
+        Map<String, List<String>> protocolHeaders = new TreeMap<String, List<String>>(String.CASE_INSENSITIVE_ORDER);
+        List<String> value = new ArrayList<String>();
+        value.add("value");
+        protocolHeaders.put("myHeader", value);
+        message.put(Message.PROTOCOL_HEADERS,  protocolHeaders);
+
         
         org.apache.cxf.message.Exchange exchange = new ExchangeImpl();
         exchange.setOneWay(false);
@@ -86,6 +94,9 @@ public class NMRConduitTest extends AbstractJBITest {
         EasyMock.expect(channel.createExchange(Pattern.InOut)).andReturn(xchg);
         org.apache.servicemix.nmr.api.Message inMsg = control.createMock(org.apache.servicemix.nmr.api.Message.class);
         EasyMock.expect(xchg.getIn()).andReturn(inMsg);
+        // just need to make sure the customer header is set
+        inMsg.setHeader("myHeader", "value");
+        EasyMock.expectLastCall();
         EndpointRegistry endpoints = control.createMock(EndpointRegistry.class);
         EasyMock.expect(channel.getNMR()).andReturn(nmr);
         EasyMock.expect(nmr.getEndpointRegistry()).andReturn(endpoints);
@@ -108,7 +119,10 @@ public class NMRConduitTest extends AbstractJBITest {
         OutputStream os = message.getContent(OutputStream.class);
         assertTrue("The OutputStream should not be null ", os != null);
         os.write("HelloWorld".getBytes());
-        os.close();              
+        os.close();
+        control.verify();
+        // check the customer protocol header
+        //assertEquals("Should get the customer header here.", "value", headers.get("myHeader"));
         InputStream is = inMessage.getContent(InputStream.class);
         assertNotNull(is);
         XMLStreamReader reader = StaxUtils.createXMLStreamReader(is, null);
