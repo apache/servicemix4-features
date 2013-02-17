@@ -27,16 +27,15 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
-
 import javax.activation.DataHandler;
 import javax.jws.WebService;
 import javax.security.auth.Subject;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
-
 import org.apache.cxf.attachment.AttachmentImpl;
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.io.CachedOutputStream;
@@ -141,6 +140,17 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                         && !(ent.getValue() instanceof Map)
                         && !(ent.getValue() instanceof Collection)) {
                     inMsg.setHeader(ent.getKey(), ent.getValue());
+                }
+            }
+
+            // we need to copy the protocol headers
+            Map<String, List<String>> protocolHeaders = (Map<String, List<String>>)message.get(Message.PROTOCOL_HEADERS);
+            if (protocolHeaders != null) {
+                for (Map.Entry<String, List<String>> ent : protocolHeaders.entrySet()) {
+                    if (ent.getValue().size() > 0) {
+                        // here we just put the first header value
+                        inMsg.setHeader(ent.getKey(), ent.getValue().get(0));
+                    }
                 }
             }
             
