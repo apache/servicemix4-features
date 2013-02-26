@@ -367,5 +367,11 @@
         <bundle>mvn:org.activiti/activiti-camel/${activiti.version}</bundle>
         <bundle>mvn:org.apache.servicemix.activiti/org.apache.servicemix.activiti.config/${project.version}</bundle>
     </feature>
+    
+    <feature name="saaj" resolver='(obr)'>
+        <bundle start-level='25'>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.saaj-impl/${saaj-impl.bundle.version}</bundle>
+        <bundle start-level='10'>mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix.specs.version}</bundle>
+        <bundle start-level='10' dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.activation-api-1.1/${servicemix.specs.version}</bundle>
+    </feature>
 
 </features>
