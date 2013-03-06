@@ -126,8 +126,8 @@
         <felix.prefs.version>1.0.4</felix.prefs.version>
 
         <!-- CXF -->
-        <cxf.xjc-utils.version>2.3.2</cxf.xjc-utils.version>
-        <cxf.codegen-plugin.version>2.4.4</cxf.codegen-plugin.version>
+        <cxf.xjc-utils.version>2.6.1</cxf.xjc-utils.version>
+        <cxf.codegen-plugin.version>2.6.6</cxf.codegen-plugin.version>
 
         <!-- Geronimo -->
         <geronimo-annotation.version>1.1.1</geronimo-annotation.version>
