@@ -64,7 +64,7 @@
                                 <feature>activemq-spring</feature>
                                 <feature>activemq-broker</feature>
                                 <feature>camel</feature>
-                                <feature>camel-activemq</feature>
+                                <feature>activemq-camel</feature>
                                 <feature>camel-nmr</feature>
                                 <feature>camel-cxf</feature>
                                 <feature>camel-blueprint</feature>
