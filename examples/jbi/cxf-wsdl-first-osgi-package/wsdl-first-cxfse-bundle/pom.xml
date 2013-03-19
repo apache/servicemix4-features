@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>cxf-wsdl-first-osgi-package</artifactId>
-        <version>4.5.1-SNAPSHOT</version>
+        <version>4.5.1</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples.cxf-wsdl-first-osgi-package</groupId>
