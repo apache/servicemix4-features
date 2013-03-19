@@ -15,6 +15,37 @@
  * limitations under the License.
  */
 
+                      Apache ServiceMix 4.5.1
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.5.1 is a minor release of the OSGi based ServiceMix ESB platform.  This release picks up new versions of
+Apache Camel and Apache CXF.  It also contains a few bug fixes/
+
+ServiceMix 4.5.0 includes the following major dependency versions:
+- Apache ActiveMQ 5.7.0 (http://activemq.apache.org)
+- Activiti 5.10 (http://www.activiti.org)
+- Apache Camel 2.10.4 (http://camel.apache.org)
+- Apache CXF 2.6.6 (http://cxf.apache.org)
+- Apache Karaf 2.2.10 (http://karaf.apache.org)
+- Apache ServiceMix NMR 1.6.0
+- Apache ServiceMix JBI Components 2013.01
+
+ Changelog
+ ---------
+
+** Bug
+    * [SMX4-1286] - Replace camel-activemq with activemq-camel
+    * [SMX4-1380] - Exception when using CXF/SAAJ in ServiceMix 4.5.0
+    * [SMX4-1399] - incorrect readme.txt files in cxf examples
+    * [SMX4-1401] - cxf-ws-security-blueprint log4j warning + wrong README info
+
+** Task
+    * [SMX4-1318] - upgrade to cxf 2.6.6
+    * [SMX4-1388] - Release Apache ServiceMix 4.5.1
+
+
                       Apache ServiceMix 4.5.0
                   ================================
  Overview
