@@ -15,6 +15,105 @@
  * limitations under the License.
  */
 
+                      Apache ServiceMix 4.5.0
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.5.0 is a major release of the OSGi based ServiceMix ESB platform.  This release contains many
+bugfixes and feature enhancements over the 4.5.0 release.  New features include support for Activiti and a JMS log
+appender implementation.
+
+ServiceMix 4.5.0 includes the following major dependency upgrades:
+- Apache ActiveMQ 5.7.0 (http://activemq.apache.org)
+- Activiti 5.10 (http://www.activiti.org)
+- Apache Camel 2.10.3 (http://camel.apache.org)
+- Apache CXF 2.6.3 (http://cxf.apache.org)
+- Apache Karaf 2.2.10 (http://karaf.apache.org)
+- Apache ServiceMix NMR 1.6.0
+- Apache ServiceMix JBI Components 2013.01
+
+ Changelog
+ ---------
+
+** Bug
+    * [SMX4-537] - Startup script (bin/servicemix) misconfigures java.ext.dirs, breaking things like SSL in CXF
+    * [SMX4-784] - activemq:list/activemq:query/activemq:bstat command doesn't work
+    * [SMX4-1013] - Port already in use warning message in JBI assembly
+    * [SMX4-1084] - ServiceMix won't boot when Felix 4.0.x is used
+    * [SMX4-1094] - feature connector can't be load cause aries.version is not defined
+    * [SMX4-1150] - Unable to install examples-cxf-jaxrs feature
+    * [SMX4-1172] - upgrade to cxf 2.6.1
+    * [SMX4-1193] - servicemix-shared feature is not self-contained
+    * [SMX4-1204] - remove unnecessary runtime dependency for camel-nmr component
+    * [SMX4-1206] - JBI configuration present in non-JBI assemblies
+    * [SMX4-1207] - minimal kit by default will install activemq-broker.xml bundle
+    * [SMX4-1258] - servicemix-saxon feature is missing dependencies
+    * [SMX4-1271] - WarDeployer tries to load README file
+    * [SMX4-1272] - Error installing 'connector' and 'activiti' features
+    * [SMX4-1273] - cxf-nmr trasport should copy the message header which value is String as the Protocol Header
+    * [SMX4-1276] - At examples-activiti-camel startup get  has *ERROR* Configuration
+    * [SMX4-1277] - ResourceManager in activemq-broker.xml doesn't recover from TX after crash
+    * [SMX4-1278] - Jetty logging to console
+    * [SMX4-1285] - Activiti camel Test failed Order process lookup.
+    * [SMX4-1287] - nmr toc has broken link
+    * [SMX4-1314] -  CXF NMR transport throws NPE when it handles the fault message
+    * [SMX4-1315] - Can't install servicemix-drools feature
+    * [SMX4-1317] - activemq-broker.xml should be given start-level 50
+    * [SMX4-1342] - Cxf examples that need org.apache.commons.httpclient does not start
+
+** Improvement
+    * [SMX4-1019] - Remove README file from deploy directory to avoid WarDeployer error message on TRACE
+    * [SMX4-1037] - some bundle miss dependency="true" in cxf-jaxrs feature
+    * [SMX4-1107] - Added cxf blueprint examples
+    * [SMX4-1108] - Upgrade CXF version to 2.5.2
+    * [SMX4-1120] - remove some uncessary features
+    * [SMX4-1132] - cxf-ws-security-osgi/blueprint example should use smx/smx by default
+    * [SMX4-1145] - add a new cxf ws-security example which demonstrate how to use signaturePropRefId in OSGi container
+    * [SMX4-1179] - remove unecessary annotations from cxf nmr transport
+    * [SMX4-1187] - Upgrade to XBean 3.11.1
+    * [SMX4-1191] - Add support for Activiti
+    * [SMX4-1224] - remove jetty6 bundle from  kit
+    * [SMX4-1256] - Add Logstash event message format to JMS appender
+    * [SMX4-1262] - remove jre.properties.cxf from SMX distribution
+    * [SMX4-1313] - Add EnableCORSInterceptor for cxf related examples
+    * [SMX4-1316] - add address/endpintName for dispatch process for CXF NMR transport
+    * [SMX4-1319] - use StreamSource but not DOMSource for cxf-nmr-transport
+    * [SMX4-1320] - missing features for cxf-jaxrs-blueprint and cxf-jaxws-blueprint example
+    * [SMX4-1338] - Upgrade to Karaf 2.2.10
+
+** Task
+    * [SMX4-1004] - upgrade to cxf 2.5.1
+    * [SMX4-1005] - upgrade to camel 2.9
+    * [SMX4-1022] - wrap the smack bundle 3.2.1
+    * [SMX4-1032] - add twitter4j-core and twitter4j-stream 2.2.5 bundle
+    * [SMX4-1036] - Create Bundler wrap of saxon 9.3.0.11
+    * [SMX4-1109] - upgrade to wss4j 1.6.5 and xmlsec 1.5.1
+    * [SMX4-1115] - Align jdom version with Camel
+    * [SMX4-1128] - Upgrade to Karaf 2.2.7
+    * [SMX4-1129] - Upgrade to Camel 2.9.2
+    * [SMX4-1130] - Upgrade to CXF 2.5.3
+    * [SMX4-1131] - Upgrade to ActiveMQ 5.6.0
+    * [SMX4-1134] - Upgrade to Camel 2.10.x
+    * [SMX4-1135] - Upgrade to CXF 2.6.x
+    * [SMX4-1146] - AWS SDK 1.3.10 bundle
+    * [SMX4-1194] - Align http client version with Camel
+    * [SMX4-1225] - upgrade to cxf 2.6.2
+    * [SMX4-1227] - upgrade to camel 2.10.1
+    * [SMX4-1228] - upgrade to spring 3.0.7.RELEAS
+    * [SMX4-1241] - upgrade to karaf 2.2.9
+    * [SMX4-1242] - endorse the smx spec api jar
+    * [SMX4-1257] - Release Apache ServiceMix 4.5.0
+    * [SMX4-1263] - upgrade to activemq 5.7.0
+    * [SMX4-1267] - upgrade to cxf 2.6.3
+    * [SMX4-1274] - upgrade to activiti 5.10
+    * [SMX4-1275] - Add Activiti examples to the release
+    * [SMX4-1323] - upgrade to saxon 9.3.0.11
+
+** Wish
+    * [SMX4-944] - Provide a SMX test jar
+
+
                       Apache ServiceMix 4.4.0
                   ================================
  Overview
