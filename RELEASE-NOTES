@@ -40,6 +40,7 @@ ServiceMix 4.5.0 includes the following major dependency versions:
     * [SMX4-1380] - Exception when using CXF/SAAJ in ServiceMix 4.5.0
     * [SMX4-1399] - incorrect readme.txt files in cxf examples
     * [SMX4-1401] - cxf-ws-security-blueprint log4j warning + wrong README info
+    * [SMX4-1405] - NMR example is broken
 
 ** Task
     * [SMX4-1318] - upgrade to cxf 2.6.6
