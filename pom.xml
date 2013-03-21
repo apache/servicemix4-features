@@ -31,7 +31,7 @@
     <groupId>org.apache.servicemix</groupId>
     <artifactId>features</artifactId>
     <packaging>pom</packaging>
-    <version>4.5.2-SNAPSHOT</version>
+    <version>4.5.1</version>
     <name>Apache ServiceMix :: Features</name>
     <inceptionYear>2005</inceptionYear>
 
@@ -48,9 +48,9 @@
     </modules>
 
     <scm>
-        <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</connection>
-        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</developerConnection>
-        <url>http://svn.apache.org/viewvc/servicemix/smx4/features/trunk/</url>
+        <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/tags/features-4.5.1</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/tags/features-4.5.1</developerConnection>
+        <url>http://svn.apache.org/viewvc/servicemix/smx4/features/tags/features-4.5.1</url>
     </scm>
     
     <issueManagement>
