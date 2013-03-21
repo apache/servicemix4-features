@@ -155,6 +155,7 @@
     </feature>
 
     <feature name="examples-nmr" version="${version}">
+        <feature version="${servicemix.nmr.version}">nmr</feature>
         <bundle>mvn:org.apache.servicemix.examples/org.apache.servicemix.examples.nmr.endpoint/${pom.version}</bundle>
         <bundle>mvn:org.apache.servicemix.examples/org.apache.servicemix.examples.nmr.client/${pom.version}</bundle>
     </feature>
