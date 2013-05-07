@@ -35,11 +35,13 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     private static final String SYNCHRONOUS = "synchronous";
     public static final String RUN_AS_SUBJECT = "runAsSubject";
     private static final String TIMEOUT = "timeout";
+    private static final String THROW_EXCEPTION_ON_FAILURE = "throwExceptionOnFailure";
     private static final Long DEFAULT_TIMEOUT = new Long(0);
 
     private String endpointName;
     private boolean synchronous;
     private boolean runAsSubject;
+    private boolean throwExceptionOnFailure = true;
     private Long timeOut = DEFAULT_TIMEOUT;
 
     public ServiceMixEndpoint(ServiceMixComponent component, String uri, String endpointName) {
@@ -51,6 +53,7 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     public void configureProperties(Map<String, Object> options) {
         synchronous = Boolean.valueOf((String) options.remove(SYNCHRONOUS));
         runAsSubject = Boolean.valueOf((String) options.remove(RUN_AS_SUBJECT));
+        setThrowExceptionOnFailure(Boolean.valueOf((String) options.remove(THROW_EXCEPTION_ON_FAILURE)));
         timeOut = parseLongOption(options, TIMEOUT);
     }
 
@@ -102,5 +105,13 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
 
     public String getEndpointName() {
         return endpointName;
+    }
+
+    public boolean isThrowExceptionOnFailure() {
+        return throwExceptionOnFailure;
+    }
+
+    public void setThrowExceptionOnFailure(boolean throwExceptionOnFailure) {
+        this.throwExceptionOnFailure = throwExceptionOnFailure;
     }
 }

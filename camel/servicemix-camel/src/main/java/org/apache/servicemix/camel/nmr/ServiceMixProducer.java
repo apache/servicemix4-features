@@ -22,7 +22,6 @@ import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.Exchange;
 import org.apache.servicemix.nmr.api.*;
 import org.apache.servicemix.nmr.api.service.ServiceHelper;
-import org.apache.servicemix.nmr.core.util.UuidGenerator;
 
 import java.util.Collections;
 import java.util.Map;
@@ -122,7 +121,8 @@ public class ServiceMixProducer extends DefaultProducer implements Endpoint, Asy
      * - finishing the NMR Exchange MEP
      */
     private void handleResponse(Exchange exchange, Channel client, org.apache.servicemix.nmr.api.Exchange e) {
-        if (e.getError() != null) {
+        
+        if (e.getError() != null && getEndpoint().isThrowExceptionOnFailure()) {
             handleErrorResponse(exchange, client, e);
         } else {
             handleSuccessResponse(exchange, client, e);
