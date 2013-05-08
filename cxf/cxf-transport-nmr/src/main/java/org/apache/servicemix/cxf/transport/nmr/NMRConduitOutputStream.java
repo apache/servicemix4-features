@@ -94,7 +94,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             Exchange exchange = message.getExchange();
             BindingOperationInfo bop = exchange.get(BindingOperationInfo.class);
 
-            LOG.info(new org.apache.cxf.common.i18n.Message("INVOKE.SERVICE", LOG).toString() + clz);
+            LOG.fine(new org.apache.cxf.common.i18n.Message("INVOKE.SERVICE", LOG).toString() + clz);
 
             WebService ws = clz.getAnnotation(WebService.class);
             assert ws != null;
@@ -110,7 +110,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
                 serviceName = message.getExchange().get(org.apache.cxf.service.Service.class).getName();
             }
           
-            LOG.info(new org.apache.cxf.common.i18n.Message("CREATE.MESSAGE.EXCHANGE", LOG).toString() + serviceName);
+            LOG.fine(new org.apache.cxf.common.i18n.Message("CREATE.MESSAGE.EXCHANGE", LOG).toString() + serviceName);
             org.apache.servicemix.nmr.api.Exchange xchng;
             if (isOneWay) {
                 xchng = channel.createExchange(Pattern.InOnly);
@@ -121,8 +121,8 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             }
 
             org.apache.servicemix.nmr.api.Message inMsg = xchng.getIn();
-            LOG.info(new org.apache.cxf.common.i18n.Message("EXCHANGE.ENDPOINT", LOG).toString() + serviceName);
-            LOG.info("setup message contents on " + inMsg);
+            LOG.fine(new org.apache.cxf.common.i18n.Message("EXCHANGE.ENDPOINT", LOG).toString() + serviceName);
+            LOG.fine("setup message contents on " + inMsg);
             inMsg.setBody(getMessageContent(message));
             //copy attachments
             if (message != null && message.getAttachments() != null) {
@@ -157,7 +157,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             //copy securitySubject
             inMsg.setSecuritySubject((Subject) message.get(NMRTransportFactory.NMR_SECURITY_SUBJECT));
             
-            LOG.info("service for exchange " + serviceName);
+            LOG.fine("service for exchange " + serviceName);
 
             Map<String,Object> refProps = new HashMap<String,Object>();
             if (interfaceName != null) {
@@ -181,7 +181,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             Reference ref = channel.getNMR().getEndpointRegistry().lookup(refProps);
             xchng.setTarget(ref);
             xchng.setOperation(bop.getName());
-            LOG.info("sending message");
+            LOG.fine("sending message");
             if (!isOneWay) {
                 channel.sendSync(xchng);
                 Source content = null;
