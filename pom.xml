@@ -158,7 +158,7 @@
         <commons-net.bundle.version>2.2</commons-net.bundle.version>
         <commons-pool.version>1.6</commons-pool.version>
         <commons-vfs.bundle.version>1.0_5</commons-vfs.bundle.version>
-        <drools.bundle.version>${drools.version}</drools.bundle.version>
+        <drools.bundle.version>5.5.0.Final_1</drools.bundle.version>
         <fastinfoset.bundle.version>1.2.7_3</fastinfoset.bundle.version>
         <jaxb.api.version>2.2</jaxb.api.version>
         <jaxb-impl.bundle.version>2.2.1.1_1</jaxb-impl.bundle.version>
