@@ -24,6 +24,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Producer;
 import org.apache.camel.Consumer;
 import org.apache.camel.Processor;
+import org.apache.camel.impl.SynchronousDelegateProducer;
 
 /**
  * A Camel {@link Endpoint} to interact with the ServiceMix NMR from within a Camel route
@@ -87,7 +88,11 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
 
     
     public Producer createProducer() throws Exception {
-        return new ServiceMixProducer(this, getComponent().getNmr());
+        if (isSynchronous()) {
+            return new SynchronousDelegateProducer(new ServiceMixProducer(this, getComponent().getNmr()));
+        } else {
+            return new ServiceMixProducer(this, getComponent().getNmr());
+        }
     }
 
     public Consumer createConsumer(Processor processor) throws Exception {

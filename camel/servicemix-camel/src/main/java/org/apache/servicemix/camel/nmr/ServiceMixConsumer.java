@@ -75,13 +75,17 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
             try {
                 org.apache.camel.Exchange camelExchange = getEndpoint().createExchange(exchange);
                 camelExchange.addOnCompletion(this);
-
-                getAsyncProcessor().process(camelExchange, new AsyncCallback() {
-
-                    public void done(boolean doneSync) {
-                        // this is handled by the onComplete/onFailure method
-                    }
-                });
+                if (getEndpoint().isSynchronous()) {
+                    getProcessor().process(camelExchange);
+                    // need to send the response back here
+                    onComplete(camelExchange);
+                } else {
+                    getAsyncProcessor().process(camelExchange, new AsyncCallback() {
+                        public void done(boolean doneSync) {
+                            // this is handled by the onComplete/onFailure method
+                        }
+                    });
+                }
             } catch (Exception e) {
                 exchange.setError(e);
                 exchange.setStatus(Status.Error);

@@ -17,12 +17,9 @@
 package org.apache.servicemix.camel.nmr;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.mock.MockEndpoint;
+import org.apache.camel.Producer;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.servicemix.nmr.api.AbortedException;
+import org.apache.camel.impl.SynchronousDelegateProducer;
 import org.junit.Test;
 
 /**
@@ -36,6 +33,14 @@ public class ServiceMixComponentTest extends AbstractComponentTest {
     public void testSimpleUri() {
         ServiceMixEndpoint endpoint = (ServiceMixEndpoint) context.getEndpoint("nmr:Test");
         assertNotNull(endpoint);
+    }
+
+    @Test
+    public void testSyncOperation() throws Exception {
+        ServiceMixEndpoint endpoint = (ServiceMixEndpoint) context.getEndpoint("nmr:Test?synchronous=true");
+        assertNotNull(endpoint);
+        Producer producer = endpoint.createProducer();
+        assertTrue("It should be the instance of ", producer instanceof SynchronousDelegateProducer);
     }
 
     @Test
