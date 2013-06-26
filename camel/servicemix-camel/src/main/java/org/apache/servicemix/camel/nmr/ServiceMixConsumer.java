@@ -77,8 +77,7 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
                 camelExchange.addOnCompletion(this);
                 if (getEndpoint().isSynchronous()) {
                     getProcessor().process(camelExchange);
-                    // need to send the response back here
-                    onComplete(camelExchange);
+                    // no need to send the response back here, this is handled by the onComplete/onFailure method
                 } else {
                     getAsyncProcessor().process(camelExchange, new AsyncCallback() {
                         public void done(boolean doneSync) {
