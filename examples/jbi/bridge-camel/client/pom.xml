@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>bridge-camel</artifactId>
-        <version>4.5.2</version>
+        <version>4.5.3-SNAPSHOT</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples.bridge-camel</groupId>
