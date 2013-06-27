@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.apache.servicemix.examples</groupId>
         <artifactId>camel</artifactId>
-        <version>4.5.2-SNAPSHOT</version>
+        <version>4.5.2</version>
     </parent>
 
     <groupId>org.apache.servicemix.examples.camel</groupId>
