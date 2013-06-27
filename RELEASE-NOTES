@@ -15,6 +15,48 @@
  * limitations under the License.
  */
 
+                      Apache ServiceMix 4.5.2
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.5.2 is a minor release of the OSGi based ServiceMix ESB platform.  This release picks up new versions of
+Apache Camel and Apache Karaf.  It also contains a few bug fixes.
+
+ServiceMix 4.5.2 includes the following major dependency versions:
+- Apache ActiveMQ 5.7.0 (http://activemq.apache.org)
+- Activiti 5.10 (http://www.activiti.org)
+- Apache Camel 2.10.5 (http://camel.apache.org)
+- Apache CXF 2.6.6 (http://cxf.apache.org)
+- Apache Karaf 2.2.11 (http://karaf.apache.org)
+- Apache ServiceMix NMR 1.6.1
+- Apache ServiceMix JBI Components 2013.01
+
+ Changelog
+ ---------
+
+Release Notes - ServiceMix 4 - Version 4.5.2
+
+** Bug
+    * [SMX4-1381] - cannot install servicemix-drools feature
+    * [SMX4-1423] - No org.apache.cxf.jaxws.spi.ProviderImpl found 
+    * [SMX4-1424] - Use official org.jruby:jruby lib
+    * [SMX4-1448] - Activiti repository URL missing in Pax URL Maven configuration
+    * [SMX4-1451] - Upgrade to Karaf 2.2.11
+    * [SMX4-1455] - drools install error
+    * [SMX4-1472] - servicemix-camel component should honor the synchronous option 
+    * [SMX4-1486] - Update to Camel 2.10.5
+
+** Improvement
+    * [SMX4-1378] - cxf-nmr trasport should copy the message header  from CXF the Protocol Header
+    * [SMX4-1452] - introduce a throwExceptionOnFailure parameter for camel-nmr producer endpoint
+
+** Task
+    * [SMX4-1453] - Excessive logging in CXF NMR binding and transport
+    * [SMX4-1487] - Release Apache ServiceMix 4.5.2
+
+
+
                       Apache ServiceMix 4.5.1
                   ================================
  Overview
@@ -23,7 +65,7 @@
 Apache ServiceMix 4.5.1 is a minor release of the OSGi based ServiceMix ESB platform.  This release picks up new versions of
 Apache Camel and Apache CXF.  It also contains a few bug fixes/
 
-ServiceMix 4.5.0 includes the following major dependency versions:
+ServiceMix 4.5.1 includes the following major dependency versions:
 - Apache ActiveMQ 5.7.0 (http://activemq.apache.org)
 - Activiti 5.10 (http://www.activiti.org)
 - Apache Camel 2.10.4 (http://camel.apache.org)
