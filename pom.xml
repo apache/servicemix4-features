@@ -182,7 +182,7 @@
         <saxon.bundle.version>9.3.0.11_2</saxon.bundle.version>
         <snmp4j.bundle.version>1.8.1_4</snmp4j.bundle.version>
         <velocity.bundle.version>1.7_1</velocity.bundle.version>
-        <wsdl4j.bundle.version>1.6.2_3</wsdl4j.bundle.version>
+        <wsdl4j.bundle.version>1.6.2_6</wsdl4j.bundle.version>
         <xalan.bundle.version>2.7.1_3</xalan.bundle.version>
         <xerces.bundle.version>2.9.1_4</xerces.bundle.version>
         <xmlbeans.bundle.version>2.5.0_1</xmlbeans.bundle.version>
