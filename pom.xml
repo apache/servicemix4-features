@@ -229,7 +229,7 @@
         <neethi.version>3.0.0</neethi.version>
         <xfire.version>1.0.1</xfire.version>
         <xbean.version>3.11.1</xbean.version>
-        <xmlschema.version>2.0</xmlschema.version>
+        <xmlschema.version>2.0.3</xmlschema.version>
     </properties>
 
     <dependencyManagement>
