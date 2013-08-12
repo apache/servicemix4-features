@@ -83,9 +83,14 @@ public class NMRDestinationOutputStream extends CachedOutputStream {
                 Exchange xchng = inMessage.get(Exchange.class);
                 LOG.fine(new org.apache.cxf.common.i18n.Message("CREATE.NORMALIZED.MESSAGE", LOG).toString());
                 if (inMessage.getExchange().getOutFaultMessage() != null) {
-                    org.apache.cxf.interceptor.Fault f = (org.apache.cxf.interceptor.Fault) inMessage.getContent(Exception.class);
-                    if (!f.hasDetails()) {
-                        xchng.setError(f);
+                    Exception ex = inMessage.getContent(Exception.class);
+                    if (ex instanceof org.apache.cxf.interceptor.Fault) {
+                        org.apache.cxf.interceptor.Fault f = (org.apache.cxf.interceptor.Fault) inMessage.getContent(Exception.class);
+                        if (!f.hasDetails()) {
+                            xchng.setError(f);
+                        }
+                    } else {
+                        xchng.setError(ex);
                     }
                     // As the fault is already marshalled by the fault handler
                     xchng.getFault().setBody(ss);
