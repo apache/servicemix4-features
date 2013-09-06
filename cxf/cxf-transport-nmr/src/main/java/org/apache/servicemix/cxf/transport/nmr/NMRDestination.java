@@ -85,7 +85,19 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
         this.properties.put(Endpoint.SERVICE_NAME, info.getService().getName().toString());
         this.properties.put(Endpoint.INTERFACE_NAME, info.getInterface().getName().toString());
         
-        
+        if (address.indexOf("?") > 0) {
+            String[] props = address.substring(address.indexOf("?") + 1).split("&");
+            for (String prop : props) {
+                if (prop.indexOf("=") > 0) {
+                    String key = prop.substring(0, prop.indexOf("="));
+                    String val = prop.substring(prop.indexOf("=") + 1);
+                    if (key.equals("synchronous")) {
+                        key = Endpoint.CHANNEL_SYNC_DELIVERY;
+                    }
+                    this.properties.put(key, val);
+                }
+            }
+        }
     }
 
     public void setChannel(Channel dc) {
