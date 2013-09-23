@@ -59,6 +59,14 @@ public class ServiceMixConsumer extends DefaultConsumer implements org.apache.se
                                                              getEndpoint().getEndpointName());
         result.put(Endpoint.CHANNEL_SYNC_DELIVERY, getEndpoint().isSynchronous());
         result.put(Endpoint.RUN_AS_SUBJECT, getEndpoint().isRunAsSubject());
+        String interfaceName = getEndpoint().getInterfaceName();
+        if (interfaceName != null && interfaceName.length() > 0) {
+            result.put(Endpoint.INTERFACE_NAME, interfaceName);
+        }
+        String serviceName = getEndpoint().getServiceName();
+        if (serviceName != null && serviceName.length() > 0) {
+            result.put(Endpoint.SERVICE_NAME, serviceName);
+        }
         return result;
     }
 

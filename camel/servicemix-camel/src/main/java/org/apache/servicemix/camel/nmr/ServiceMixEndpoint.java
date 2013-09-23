@@ -37,9 +37,13 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     public static final String RUN_AS_SUBJECT = "runAsSubject";
     private static final String TIMEOUT = "timeout";
     private static final String THROW_EXCEPTION_ON_FAILURE = "throwExceptionOnFailure";
+    private static final String INTERFACE_NAME = "interfaceName";
+    private static final String SERVICE_NAME = "serviceName";
     private static final Long DEFAULT_TIMEOUT = new Long(0);
 
     private String endpointName;
+    private String interfaceName;
+    private String serviceName;
     private boolean synchronous;
     private boolean runAsSubject;
     private boolean throwExceptionOnFailure = true;
@@ -54,6 +58,8 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
     public void configureProperties(Map<String, Object> options) {
         synchronous = Boolean.valueOf((String) options.remove(SYNCHRONOUS));
         runAsSubject = Boolean.valueOf((String) options.remove(RUN_AS_SUBJECT));
+        interfaceName = (String)options.remove(INTERFACE_NAME);
+        serviceName = (String)options.remove(SERVICE_NAME);
         setThrowExceptionOnFailure(Boolean.valueOf((String) options.remove(THROW_EXCEPTION_ON_FAILURE)));
         timeOut = parseLongOption(options, TIMEOUT);
     }
@@ -118,5 +124,21 @@ public class ServiceMixEndpoint extends DefaultEndpoint {
 
     public void setThrowExceptionOnFailure(boolean throwExceptionOnFailure) {
         this.throwExceptionOnFailure = throwExceptionOnFailure;
+    }
+
+    public String getInterfaceName() {
+        return interfaceName;
+    }
+
+    public void setInterfaceName(String interfaceName) {
+        this.interfaceName = interfaceName;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 }
