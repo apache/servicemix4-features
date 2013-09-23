@@ -102,7 +102,7 @@ public class NMRDestinationTest extends AbstractJBITest {
     @Test
     public void testNMRDestination() throws Exception {
         EndpointInfo ei = new EndpointInfo();
-        ei.setAddress("nmr://dumy");
+        ei.setAddress("nmr:dummy");
         ei.setName(new QName("http://test", "endpoint"));
         ServiceInfo si = new ServiceInfo();
         si.setName(new QName("http://test", "service"));
@@ -113,7 +113,7 @@ public class NMRDestinationTest extends AbstractJBITest {
         nmrTransportFactory.setNmr(nmr);
         NMRDestination destination = (NMRDestination) nmrTransportFactory.getDestination(ei);
         assertNotNull(destination);
-        String destName = ei.getService().getName().toString()
+        String destName = "dummy" + ei.getService().getName().toString()
         + ei.getInterface().getName().toString();
         try {
             nmrTransportFactory.putDestination(destName, destination);

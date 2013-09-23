@@ -40,6 +40,7 @@ import org.apache.cxf.transport.Destination;
 import org.apache.cxf.transport.DestinationFactory;
 import org.apache.cxf.transport.DestinationFactoryManager;
 import org.apache.cxf.ws.addressing.EndpointReferenceType;
+import org.apache.servicemix.nmr.api.Endpoint;
 import org.apache.servicemix.nmr.api.NMR;
 import org.apache.servicemix.nmr.api.ServiceMixException;
 
@@ -116,8 +117,21 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
         if (null != configurer) {
             configurer.configureBean(destination);
         }
+        String address = ei.getAddress();
+        String endpointName = "";
+        if (address != null && address.startsWith("nmr:")) {
+            if (address.indexOf("?") > 0) {
+                endpointName = address.substring(4, address.indexOf("?"));
+            } else {
+                endpointName = address.substring(4);
+            }
+        } else {
+            endpointName = ei.getName().toString();
+        }
+
+        
         try {
-            putDestination(ei.getService().getName().toString()
+            putDestination(endpointName + ei.getService().getName().toString()
                 + ei.getInterface().getName().toString(), destination);
         } catch (ServiceMixException e) {
             throw new IOException(e.getMessage());
@@ -127,7 +141,7 @@ public class NMRTransportFactory extends AbstractTransportFactory implements Con
     
     public void putDestination(String epName, NMRDestination destination) throws ServiceMixException {
         if (destinationMap.containsKey(epName)) {
-            throw new ServiceMixException("JBIDestination for Endpoint "
+            throw new ServiceMixException("NMRDestination for Endpoint "
                                    + epName + " already be created");
         } else {
             destinationMap.put(epName, destination);

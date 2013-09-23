@@ -56,7 +56,7 @@ import org.apache.servicemix.nmr.api.ServiceMixException;
 import org.apache.servicemix.nmr.api.Status;
 
 public class NMRDestination extends AbstractDestination implements Endpoint {
-    
+
     private static final Logger LOG = LogUtils.getL7dLogger(NMRDestination.class);
     private NMR nmr;
     private Channel channel;
@@ -68,23 +68,23 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
         this.properties = new HashMap<String, Object>();
         String address = info.getAddress();
         if (address != null && address.indexOf(Endpoint.RUN_AS_SUBJECT) >= 0) {
-        	String asSubject = address.substring(address.indexOf(Endpoint.RUN_AS_SUBJECT) 
-        			+ Endpoint.RUN_AS_SUBJECT.length() + 1);
-        	this.properties.put(Endpoint.RUN_AS_SUBJECT, asSubject);
+            String asSubject = address.substring(address.indexOf(Endpoint.RUN_AS_SUBJECT)
+                                                 + Endpoint.RUN_AS_SUBJECT.length() + 1);
+            this.properties.put(Endpoint.RUN_AS_SUBJECT, asSubject);
         }
         if (address != null && address.startsWith("nmr:")) {
-        	if (address.indexOf("?") > 0) {
-        		this.properties.put(Endpoint.NAME, address.substring(4, address.indexOf("?")));
-        	} else {
-        		this.properties.put(Endpoint.NAME, address.substring(4));
-        	}
+            if (address.indexOf("?") > 0) {
+                this.properties.put(Endpoint.NAME, address.substring(4, address.indexOf("?")));
+            } else {
+                this.properties.put(Endpoint.NAME, address.substring(4));
+            }
         } else {
             this.properties.put(Endpoint.NAME, info.getName().toString());
         }
-        
+
         this.properties.put(Endpoint.SERVICE_NAME, info.getService().getName().toString());
         this.properties.put(Endpoint.INTERFACE_NAME, info.getInterface().getName().toString());
-        
+
         if (address.indexOf("?") > 0) {
             String[] props = address.substring(address.indexOf("?") + 1).split("&");
             for (String prop : props) {
@@ -103,24 +103,23 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
     public void setChannel(Channel dc) {
         this.channel = dc;
     }
-    
+
     public Channel getChannel() {
         return this.channel;
     }
-    
+
     protected Logger getLogger() {
         return LOG;
     }
-    
+
     /**
      * @param inMessage the incoming message
      * @return the inbuilt backchannel
      */
     protected Conduit getInbuiltBackChannel(Message inMessage) {
-        return new BackChannelConduit(EndpointReferenceUtils.getAnonymousEndpointReference(),
-                                      inMessage);
+        return new BackChannelConduit(EndpointReferenceUtils.getAnonymousEndpointReference(), inMessage);
     }
-    
+
     public void shutdown() {
     }
 
@@ -128,7 +127,7 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
         nmr.getEndpointRegistry().unregister(this, properties);
     }
 
-    public void activate()  {
+    public void activate() {
         nmr.getEndpointRegistry().register(this, properties);
     }
 
@@ -148,18 +147,19 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
 
             MessageImpl inMessage = new MessageImpl();
             inMessage.put(Exchange.class, exchange);
-            
+
             final InputStream in = NMRMessageHelper.convertMessageToInputStream(nm.getBody(Source.class));
             inMessage.setContent(InputStream.class, in);
-            //copy attachments
+            // copy attachments
             Collection<Attachment> cxfAttachmentList = new ArrayList<Attachment>();
             for (Map.Entry<String, Object> ent : nm.getAttachments().entrySet()) {
-                cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler) ent.getValue()));
+                cxfAttachmentList.add(new AttachmentImpl(ent.getKey(), (DataHandler)ent.getValue()));
             }
             inMessage.setAttachments(cxfAttachmentList);
-            
-            //copy properties and setup the cxf protocol header
-            Map<String, List<String>> protocolHeaders = new TreeMap<String, List<String>>(String.CASE_INSENSITIVE_ORDER);
+
+            // copy properties and setup the cxf protocol header
+            Map<String, List<String>> protocolHeaders = new TreeMap<String, List<String>>(
+                                                                                          String.CASE_INSENSITIVE_ORDER);
             inMessage.put(Message.PROTOCOL_HEADERS, protocolHeaders);
 
             for (Map.Entry<String, Object> ent : nm.getHeaders().entrySet()) {
@@ -167,35 +167,36 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
                     inMessage.put(ent.getKey(), ent.getValue());
                 }
                 if (ent.getValue() instanceof String) {
-            	    List<String> value = new ArrayList<String>();
-            	    value.add((String)ent.getValue());
-            	    protocolHeaders.put(ent.getKey(), value);
+                    List<String> value = new ArrayList<String>();
+                    value.add((String)ent.getValue());
+                    protocolHeaders.put(ent.getKey(), value);
                 }
             }
-            
-            //copy securitySubject
+
+            // copy securitySubject
             inMessage.put(NMRTransportFactory.NMR_SECURITY_SUBJECT, nm.getSecuritySubject());
-            
+
             inMessage.setDestination(this);
             getMessageObserver().onMessage(inMessage);
 
         } catch (Exception ex) {
-            getLogger().log(Level.SEVERE, new org.apache.cxf.common.i18n.Message("ERROR.PREPARE.MESSAGE", getLogger()).toString(), ex);
+            getLogger().log(Level.SEVERE,
+                            new org.apache.cxf.common.i18n.Message("ERROR.PREPARE.MESSAGE", getLogger())
+                                .toString(), ex);
             throw new ServiceMixException(ex);
         }
     }
 
-
     protected class BackChannelConduit extends AbstractConduit {
-        
+
         protected Message inMessage;
         protected NMRDestination nmrDestination;
-                
+
         BackChannelConduit(EndpointReferenceType ref, Message message) {
             super(ref);
             inMessage = message;
         }
-        
+
         /**
          * Register a message observer for incoming messages.
          * 
@@ -206,8 +207,8 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
         }
 
         /**
-         * Send an outbound message, assumed to contain all the name-value
-         * mappings of the corresponding input message (if any). 
+         * Send an outbound message, assumed to contain all the name-value mappings of the corresponding input
+         * message (if any).
          * 
          * @param message the message to be sent.
          */
@@ -215,15 +216,15 @@ public class NMRDestination extends AbstractDestination implements Endpoint {
             // setup the message to be send back
             Channel dc = channel;
             message.put(Exchange.class, inMessage.get(Exchange.class));
-            NMRTransportFactory.removeUnusedInterceptprs(message);    
+            NMRTransportFactory.removeUnusedInterceptprs(message);
             message.setContent(OutputStream.class, new NMRDestinationOutputStream(inMessage, message, dc));
-            
-        }        
+
+        }
 
         protected Logger getLogger() {
             return LOG;
         }
-        
+
     }
-    
+
 }
