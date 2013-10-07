@@ -48,9 +48,9 @@
     </modules>
 
     <scm>
-        <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</connection>
-        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/trunk</developerConnection>
-        <url>http://svn.apache.org/viewvc/servicemix/smx4/features/trunk/</url>
+        <connection>scm:svn:http://svn.apache.org/repos/asf/servicemix/smx4/features/branches/features-4.5.x</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/servicemix/smx4/features/branches/features-4.5.x</developerConnection>
+        <url>http://svn.apache.org/viewvc/servicemix/smx4/features/branches/features-4.5.x</url>
     </scm>
     
     <issueManagement>
