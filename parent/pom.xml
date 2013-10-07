@@ -39,8 +39,8 @@
   <properties>
     <activemq.version>5.7.0</activemq.version>
     <activiti.version>5.10</activiti.version>
-    <camel.version>2.10.6</camel.version>
-    <cxf.version>2.6.8</cxf.version>
+    <camel.version>2.10.7</camel.version>
+    <cxf.version>2.6.9</cxf.version>
     <cxf.features.version>${cxf.version}</cxf.features.version>
     <felix.obr.version>1.6.4</felix.obr.version>
 
@@ -50,7 +50,7 @@
     <pax.logging.version>1.6.5</pax.logging.version>
 
     <servicemix.components.version>2013.01</servicemix.components.version>
-    <servicemix.nmr.version>1.6.2-SNAPSHOT</servicemix.nmr.version>
+    <servicemix.nmr.version>1.6.1</servicemix.nmr.version>
     <servicemix.specs.version>2.2.0</servicemix.specs.version>
     <servicemix.utils.version>1.6.0</servicemix.utils.version>
   </properties>
