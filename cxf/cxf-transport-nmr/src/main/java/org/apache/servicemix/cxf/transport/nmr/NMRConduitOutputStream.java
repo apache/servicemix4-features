@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.activation.DataHandler;
 import javax.jws.WebService;
@@ -293,7 +294,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
         } catch (IOException e) {
             throw e;
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.log(Level.SEVERE, e.getMessage(), e);
             throw new IOException(e.toString());
         }
 
