@@ -294,7 +294,7 @@ public class NMRConduitOutputStream extends CachedOutputStream {
             throw e;
         } catch (Exception e) {
             e.printStackTrace();
-            new IOException(e.toString());
+            throw new IOException(e.toString());
         }
 
     }
