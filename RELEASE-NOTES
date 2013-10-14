@@ -14,6 +14,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
+                       Apache ServiceMix 4.5.3
+                  ================================
+ Overview
+ --------
+
+Apache ServiceMix 4.5.3 is a minor release of the OSGi based ServiceMix ESB platform.  This release picks up new versions of
+Apache Camel and Apache CXF.  It also contains a few bug fixes.
+
+ServiceMix 4.5.3 includes the following major dependency versions:
+- Apache ActiveMQ 5.7.0 (http://activemq.apache.org)
+- Activiti 5.10 (http://www.activiti.org)
+- Apache Camel 2.10.7 (http://camel.apache.org)
+- Apache CXF 2.6.9 (http://cxf.apache.org)
+- Apache Karaf 2.2.11 (http://karaf.apache.org)
+- Apache ServiceMix NMR 1.6.1
+- Apache ServiceMix JBI Components 2013.01
+
+ Changelog
+ ---------
+
+Release Notes - ServiceMix 4 - Version 4.5.3
+
+** Bug
+    * [SMX4-1513] - add type check to avoid CCE in cxf nmr transport
+    * [SMX4-1546] - The cxf nmr transport should provide a synchronous option
+    * [SMX4-1577] - Release Apache ServiceMix 4.5.3
+    * [SMX4-1579] - Upgrade to Camel 2.10.7
+    * [SMX4-1580] - Upgrade to CXF 2.6.9
+    * [SMX4-1585] - org.apache.servicemix.cxf.transport.nmr.NMRConduitOutputStream.commitOutputMessage() does not propagate exception.
+
+** Improvement
+    * [SMX4-1547] - use EndpointName + ServiceName + InterfaceName as a Key to distinguish a NMR destination
+    * [SMX4-1548] - add interfaceName|serviceName option for camel-nmr consumer endpoint
+
 
                       Apache ServiceMix 4.5.2
                   ================================
