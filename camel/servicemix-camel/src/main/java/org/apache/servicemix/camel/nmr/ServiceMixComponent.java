@@ -27,7 +27,7 @@ import org.apache.servicemix.nmr.api.NMR;
  */
 public class ServiceMixComponent extends DefaultComponent {
 
-    private NMR nmr;
+    private static NMR nmr;
     private ServiceMixBinding binding;
     
     public ServiceMixComponent() {
