@@ -44,7 +44,7 @@
     <cxf.features.version>${cxf.version}</cxf.features.version>
     <felix.obr.version>1.6.4</felix.obr.version>
 
-    <karaf.version>2.2.11</karaf.version>
+    <karaf.version>4.3.8</karaf.version>
     <aries.version>0.3</aries.version>
     <aries.transaction.version>0.3.1</aries.transaction.version>
     <pax.logging.version>1.6.5</pax.logging.version>
